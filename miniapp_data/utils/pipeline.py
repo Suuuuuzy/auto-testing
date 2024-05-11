@@ -6,10 +6,7 @@ from pipeline_utils.modify_babel import modify_babel_path
 from pipeline_utils.modify_app_json import check_all_paths
 from pipeline_utils.modify_config_json import modify_config_with_url
 
-
-if __name__ == '__main__':
-    ROOT_PATH = "C:/Users/zhiha/OneDrive/Desktop/auto-testing/miniapp_data/unveil_unpacked_data"
-    MINIRPOGRAM_NAME = "wxfffff4d4572ed699-pc"
+def main(ROOT_PATH, MINIRPOGRAM_NAME):
     MINIRPOGRAM_PATH = os.path.join(ROOT_PATH, MINIRPOGRAM_NAME)
 
     print('\nStep 1: check config existence and modify config so that url can be processed unchecked\n')
@@ -33,3 +30,9 @@ if __name__ == '__main__':
 
     print('\nStep 5: Modify @babel typeof definition\n')
     modify_babel_path(MINIRPOGRAM_PATH)
+
+if __name__ == '__main__':
+    ROOT_PATH = "/Users/jianjia/Documents/projects/mini-app/WeMinT_dataset/groundtruth/miniprograms"
+    MINIRPOGRAM_NAME = "wx4b7fbaa1c41967fe"
+    for file in tqdm(os.listdir(ROOT_PATH)):
+        main(ROOT_PATH, file)

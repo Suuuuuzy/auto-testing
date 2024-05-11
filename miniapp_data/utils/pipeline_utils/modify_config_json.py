@@ -9,7 +9,7 @@ def modify_config_with_url(root_path, miniprogram_name):
          config_json = {
              "appid": "wxc26bf025c84ef3b7",
              "compileType": "miniprogram",
-             "libVersion": "3.4.3",
+             "libVersion": "2.25.3",
              "packOptions": {
                  "ignore": [],
                  "include": []
@@ -39,7 +39,7 @@ def modify_config_with_url(root_path, miniprogram_name):
             config_json = {
              "appid": "wxc26bf025c84ef3b7",
              "compileType": "miniprogram",
-             "libVersion": "3.4.3",
+             "libVersion": "2.25.3",
              "packOptions": {
                  "ignore": [],
                  "include": []
