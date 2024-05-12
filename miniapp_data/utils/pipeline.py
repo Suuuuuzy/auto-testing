@@ -1,5 +1,8 @@
 import os
 from tqdm import tqdm
+import logging
+logger = logging.getLogger(__name__)
+from config import *
 from pipeline_utils.modify_wxml import format_wxml_style_attribute, find_wxml_files
 from pipeline_utils.modify_wxs import find_wxs_files
 from pipeline_utils.modify_babel import modify_babel_path
@@ -32,7 +35,13 @@ def main(ROOT_PATH, MINIRPOGRAM_NAME):
     modify_babel_path(MINIRPOGRAM_PATH)
 
 if __name__ == '__main__':
-    ROOT_PATH = "/Users/jianjia/Documents/projects/mini-app/WeMinT_dataset/groundtruth/miniprograms"
-    MINIRPOGRAM_NAME = "wx4b7fbaa1c41967fe"
-    for file in tqdm(os.listdir(ROOT_PATH)):
-        main(ROOT_PATH, file)
+    logging.basicConfig(filename='myapp.log', level=logging.INFO)
+    logger.info('Started')
+    # ROOT_PATH = "/media/data4/jianjia_data4/miniapp_data/WeMinT_dataset/groundtruth/miniprograms"
+    # MINIRPOGRAM_NAME = "wx4b7fbaa1c41967fe"
+    files = os.listdir(unpacked_wxapkg_ROOT)
+    files = [i for i in files if not i.startswith('.')]
+    for file in tqdm(files):
+        main(unpacked_wxapkg_ROOT, file)
+        logger.info(file, ' preprocessing finished\n')
+    logger.info('Finished')
