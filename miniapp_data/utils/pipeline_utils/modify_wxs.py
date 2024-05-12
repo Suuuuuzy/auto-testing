@@ -1,4 +1,6 @@
 import re, os
+import logging
+logger = logging.getLogger(__name__)
 
 def format_wxs_style_attribute(file_path):
     try:
@@ -41,19 +43,11 @@ def format_wxs_style_attribute(file_path):
         print(f"An error occurred: {e}")
 
 def find_wxs_files(directory):
-    for root, dirs, _ in os.walk(directory):
-        if 'wxs' in dirs:
-            wxs_dir = os.path.join(root, 'wxs')
-            wxs_files = os.listdir(wxs_dir)
-            if 'bem.wxs' in wxs_files:
-                bem_dir = os.path.join(wxs_dir, 'bem.wxs')
-                print(f'found bem.wxs at {bem_dir}')
-                format_wxs_style_attribute(bem_dir)
-                return
-                # return
-        else:
-            for sub_dir in dirs:
-                find_wxs_files(os.path.join(root, sub_dir))
+    for root, dirs, files in os.walk(directory):
+      for file in files:
+            if file=="bem.wxs":
+              logger.info("found bem.wxs at:{}".format(os.path.join(root, file)))
+              format_wxs_style_attribute(os.path.join(root, file))
 
     
 def parse_wxs():
@@ -135,5 +129,7 @@ var touchmove = (function (event,ownerInstance){
 
 # Example usage
 if __name__ == '__main__':
-    wxs_FILE_PATH = 'C:/Users/zhiha/OneDrive/Desktop/auto-testing/miniapp_data/utils/bem-trial.wxs'
-    format_wxs_style_attribute(wxs_FILE_PATH)
+    # wxs_FILE_PATH = 'C:/Users/zhiha/OneDrive/Desktop/auto-testing/miniapp_data/utils/bem-trial.wxs'
+    # format_wxs_style_attribute(wxs_FILE_PATH)
+    logging.basicConfig(filename='modify_wxs.log', level=logging.INFO)
+    find_wxs_files("/media/data4/jianjia_data4/miniapp_data/WeMinT_dataset/groundtruth/miniprograms/wx94eb4215c646f0c4")

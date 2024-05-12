@@ -5,8 +5,6 @@ def find_wxml_files(directory, wxml_files):
         for file in files:
             if file.endswith('.wxml'):
                 wxml_files.append(os.path.join(root, file))
-        for sub_dir in dirs:
-            wxml_files = find_wxml_files(os.path.join(directory, sub_dir), wxml_files)
     return wxml_files
 
 def format_wxml_style_attribute(file_path):
