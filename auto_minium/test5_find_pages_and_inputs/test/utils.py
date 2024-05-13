@@ -9,12 +9,6 @@ def write_to_file(content, file_name):
         # Write the content
             print(content)
             sys.stdout = original_stdout
-    except FileNotFoundError:
-    # If the file does not exist, create it and then append content
-        with open(file_name, 'w') as file:
-            sys.stdout = file
-            print(content)
-            sys.stdout = original_stdout
     except Exception as e:
         sys.stdout = original_stdout
         print("An error occurred:", e)
