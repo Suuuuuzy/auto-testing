@@ -34,8 +34,20 @@ class BaseDef(minium.MiniTest):
         all_pages_path = self.app.get_all_pages_path()
         return all_pages_path
 
+    def find_all_buttons(self):
+        all_buttons = self.page.get_elements("button")
+        return all_buttons
+    
     def find_all_inputs(self):
         all_inputs = self.page.get_elements("input")
+        return all_inputs
+    
+    def find_all_forms(self):
+        all_forms = self.page.get_elements("form")
+        return all_forms
+
+    def find_all_inputs_from_component(self, component):
+        all_inputs = component.get_elements(input)
         return all_inputs
     
     def element_is_exists(self, element):
