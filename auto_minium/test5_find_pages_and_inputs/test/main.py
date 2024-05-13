@@ -1,3 +1,5 @@
+#!/usr/bin/env python3.8
+
 from test_minium import Minium_Query
 import unittest, time, datetime
 from utils import write_to_file
