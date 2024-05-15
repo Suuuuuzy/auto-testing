@@ -8,6 +8,7 @@ from pipeline_utils.modify_wxs import find_wxs_files
 from pipeline_utils.modify_babel import modify_babel_path
 from pipeline_utils.modify_app_json import check_all_paths
 from pipeline_utils.modify_config_json import modify_config_with_url
+from pipeline_utils.solve_fail import solve_fail
 
 def main(ROOT_PATH, MINIRPOGRAM_NAME):
     MINIRPOGRAM_PATH = os.path.join(ROOT_PATH, MINIRPOGRAM_NAME)
@@ -33,6 +34,9 @@ def main(ROOT_PATH, MINIRPOGRAM_NAME):
 
     print('\nStep 5: Modify @babel typeof definition\n')
     modify_babel_path(MINIRPOGRAM_PATH)
+    
+    print('\nStep 6: Solve FAIL\n')
+    solve_fail(MINIRPOGRAM_PATH)
 
 if __name__ == '__main__':
     logging.basicConfig(filename='myapp.log', level=logging.INFO)
@@ -41,7 +45,8 @@ if __name__ == '__main__':
     # MINIRPOGRAM_NAME = "wx4b7fbaa1c41967fe"
     files = os.listdir(unpacked_wxapkg_ROOT)
     files = [i for i in files if not i.startswith('.')]
+    files = ['wx940e8bc440dd2eb9', 'wx45cf09091aead547', 'wxad2e9789b5076244', 'wx8b0d722749666d1c', 'wx7dcf14c63c2e78da', 'wx93a380ad767c58ac', 'wx791f877ab36ea8b2', 'wxaf291362a455b5e1', 'wx7e20bfb214e0423f']
     for file in tqdm(files):
         main(unpacked_wxapkg_ROOT, file)
-        logger.info(file, ' preprocessing finished\n')
+        logger.info(f'{file} preprocessing finished\n')
     logger.info('Finished')
