@@ -8,7 +8,7 @@ from pipeline_utils.modify_wxs import find_wxs_files
 from pipeline_utils.modify_babel import modify_babel_path
 from pipeline_utils.modify_app_json import check_all_paths
 from pipeline_utils.modify_config_json import modify_config_with_url
-from pipeline_utils.solve_fail import solve_fail
+from pipeline_utils.solve_fail import solve_fail_in_mini
 
 def main(ROOT_PATH, MINIRPOGRAM_NAME):
     MINIRPOGRAM_PATH = os.path.join(ROOT_PATH, MINIRPOGRAM_NAME)
@@ -36,7 +36,7 @@ def main(ROOT_PATH, MINIRPOGRAM_NAME):
     modify_babel_path(MINIRPOGRAM_PATH)
     
     print('\nStep 6: Solve FAIL\n')
-    solve_fail(MINIRPOGRAM_PATH)
+    solve_fail_in_mini(MINIRPOGRAM_PATH)
 
 if __name__ == '__main__':
     logging.basicConfig(filename='myapp.log', level=logging.INFO)
