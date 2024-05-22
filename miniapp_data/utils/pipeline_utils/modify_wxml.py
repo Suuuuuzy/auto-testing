@@ -24,6 +24,16 @@ def format_wxml_style_attribute(file_path):
             formatted_match = match.replace('\n', ' ').replace('\t', ' ').replace(' ', '')
             content = content.replace(f'style="{match}"', f'style="{formatted_match}"')
 
+        # Input string
+        # input_string = 'wx:key="{{index}}"'
+        # output_string = 'wx:key="index"'
+
+        # Regular expression pattern to match wx:key="{{index}}"
+        pattern = r'wx:key\s*=\s*{{(.*?)}}'
+
+        # Replace the matched pattern with wx:key="index"
+        content = re.sub(pattern, r'wx:key="\1"', content)
+
         # Write the modified content back to the file
         with open(file_path, 'w', encoding='utf-8') as file:
             file.write(content)
@@ -34,5 +44,5 @@ def format_wxml_style_attribute(file_path):
 
 # Example usage
 if __name__ == '__main__':
-    WXML_FILE_PATH = 'shop-dialog-mod.wxml'
+    WXML_FILE_PATH = '/media/data4/jianjia_data4/miniapp_data/WeMinT_dataset/groundtruth/miniprograms/wx4aab7ae2aacd0ea7/pages/index/index.wxml'
     format_wxml_style_attribute(WXML_FILE_PATH)
