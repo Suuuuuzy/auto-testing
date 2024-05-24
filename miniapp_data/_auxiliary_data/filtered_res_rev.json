@@ -1,0 +1,1149 @@
+[
+    {
+        "MiniApp": "wxad2e9789b5076244",
+        "API": "wx.chooseInvoice",
+        "GroundTruth": 2,
+        "MiniDroid": 0,
+        "TaintMini": 0,
+        "GroundTruth_Pages": [
+            "pages/submit-order/submit-order",
+            "pages/bill/apply/apply"
+        ],
+        "MiniDroid_Pages": [],
+        "TaintMini_Pages": []
+    },
+    {
+        "MiniApp": "wxad2e9789b5076244",
+        "API": "wx.getUserInfo",
+        "GroundTruth": 3,
+        "MiniDroid": 3,
+        "TaintMini": 3,
+        "GroundTruth_Pages": [
+            "pages/user/user",
+            "pages/binding-phone/binding-phone",
+            "pages/gift-coupon/gift-coupon"
+        ],
+        "MiniDroid_Pages": [
+            "pages/user/user",
+            "pages/binding-phone/binding-phone",
+            "pages/gift-coupon/gift-coupon"
+        ],
+        "TaintMini_Pages": [
+            "gift-coupon/gift-coupon",
+            "user/user",
+            "binding-phone/binding-phone"
+        ]
+    },
+    {
+        "MiniApp": "wxad2e9789b5076244",
+        "API": "wx.chooseInvoiceTitle",
+        "GroundTruth": 2,
+        "MiniDroid": 1,
+        "TaintMini": 1,
+        "GroundTruth_Pages": [
+            "pages/submit-order/submit-order",
+            "pages/bill/apply/apply"
+        ],
+        "MiniDroid_Pages": [
+            "pages/bill/apply/apply"
+        ],
+        "TaintMini_Pages": [
+            "bill/apply/apply"
+        ]
+    },
+    {
+        "MiniApp": "wxad2e9789b5076244",
+        "API": "wx.saveImageToPhotosAlbum",
+        "GroundTruth": 3,
+        "MiniDroid": 2,
+        "TaintMini": 0,
+        "GroundTruth_Pages": [
+            "pages/prod/prod",
+            "components/template/spreadsharecode/spreadsharecode",
+            "pages/sale-list/view/view"
+        ],
+        "MiniDroid_Pages": [
+            "pages/prod/prod",
+            "pages/sale-list/view/view"
+        ],
+        "TaintMini_Pages": []
+    },
+    {
+        "MiniApp": "wx94453ac9e8af894a",
+        "API": "wx.getLocation",
+        "GroundTruth": 1,
+        "MiniDroid": 0,
+        "TaintMini": 0,
+        "GroundTruth_Pages": [
+            "app"
+        ],
+        "MiniDroid_Pages": [],
+        "TaintMini_Pages": []
+    },
+    {
+        "MiniApp": "wx94453ac9e8af894a",
+        "API": "wx.chooseImage",
+        "GroundTruth": 3,
+        "MiniDroid": 3,
+        "TaintMini": 3,
+        "GroundTruth_Pages": [
+            "pages/index/index",
+            "pages/familyface/familyface",
+            "pages/upphoto/upphoto"
+        ],
+        "MiniDroid_Pages": [
+            "pages/index/index",
+            "pages/familyface/familyface",
+            "pages/upphoto/upphoto"
+        ],
+        "TaintMini_Pages": [
+            "index/index",
+            "upphoto/upphoto",
+            "familyface/familyface"
+        ]
+    },
+    {
+        "MiniApp": "wx94453ac9e8af894a",
+        "API": "wx.getUserInfo",
+        "GroundTruth": 4,
+        "MiniDroid": 3,
+        "TaintMini": 4,
+        "GroundTruth_Pages": [
+            "pages/index/index",
+            "pages/index2/index",
+            "pages/my/my",
+            "app"
+        ],
+        "MiniDroid_Pages": [
+            "pages/index/index",
+            "pages/index2/index",
+            "pages/my/my"
+        ],
+        "TaintMini_Pages": [
+            "index_bak/index",
+            "index/index",
+            "my/my",
+            "index2/index"
+        ]
+    },
+    {
+        "MiniApp": "wx94453ac9e8af894a",
+        "API": "wx.createCameraContext",
+        "GroundTruth": 2,
+        "MiniDroid": 2,
+        "TaintMini": 0,
+        "GroundTruth_Pages": [
+            "pages/index/index",
+            "pages/upphoto/upphoto"
+        ],
+        "MiniDroid_Pages": [
+            "pages/index/index",
+            "pages/upphoto/upphoto"
+        ],
+        "TaintMini_Pages": []
+    },
+    {
+        "MiniApp": "wx4e1b2aca85a4de6d",
+        "API": "wx.getLocation",
+        "GroundTruth": 2,
+        "MiniDroid": 2,
+        "TaintMini": 2,
+        "GroundTruth_Pages": [
+            "pages/index/index",
+            "pages/home/home3"
+        ],
+        "MiniDroid_Pages": [
+            "pages/index/index",
+            "pages/home/home3"
+        ],
+        "TaintMini_Pages": [
+            "index/index",
+            "home/home3"
+        ]
+    },
+    {
+        "MiniApp": "wx4e1b2aca85a4de6d",
+        "API": "wx.getUserProfile",
+        "GroundTruth": 1,
+        "MiniDroid": 1,
+        "TaintMini": 1,
+        "GroundTruth_Pages": [
+            "pages/my/my"
+        ],
+        "MiniDroid_Pages": [
+            "pages/my/my"
+        ],
+        "TaintMini_Pages": [
+            "my/my"
+        ]
+    },
+    {
+        "MiniApp": "wx7fbb70a732424777",
+        "API": "wx.getLocation",
+        "GroundTruth": 1,
+        "MiniDroid": 1,
+        "TaintMini": 1,
+        "GroundTruth_Pages": [
+            "pages/activity/detail/activityDetail"
+        ],
+        "MiniDroid_Pages": [
+            "pages/activity/detail/activityDetail"
+        ],
+        "TaintMini_Pages": [
+            "activity/detail/activityDetail"
+        ]
+    },
+    {
+        "MiniApp": "wx7fbb70a732424777",
+        "API": "wx.saveImageToPhotosAlbum",
+        "GroundTruth": 4,
+        "MiniDroid": 4,
+        "TaintMini": 0,
+        "GroundTruth_Pages": [
+            "pages/activity/detail/activityDetail",
+            "pages/news/article/article",
+            "pages/album/albumList/albumList",
+            "pages/album/albumDetail/albumDetail"
+        ],
+        "MiniDroid_Pages": [
+            "pages/activity/detail/activityDetail",
+            "pages/news/article/article",
+            "pages/album/albumList/albumList",
+            "pages/album/albumDetail/albumDetail"
+        ],
+        "TaintMini_Pages": []
+    },
+    {
+        "MiniApp": "wx7fbb70a732424777",
+        "API": "wx.getUserProfile",
+        "GroundTruth": 6,
+        "MiniDroid": 6,
+        "TaintMini": 6,
+        "GroundTruth_Pages": [
+            "pages/home/home",
+            "pages/mine/mine",
+            "pages/join/memberClaim/first/claimInfo",
+            "pages/join/memberApply/preface/preface",
+            "pages/join/memberApply/joinMember/joinMember",
+            "pages/join/circleApply/circleApply"
+        ],
+        "MiniDroid_Pages": [
+            "pages/home/home",
+            "pages/mine/mine",
+            "pages/join/memberClaim/first/claimInfo",
+            "pages/join/memberApply/preface/preface",
+            "pages/join/memberApply/joinMember/joinMember",
+            "pages/join/circleApply/circleApply"
+        ],
+        "TaintMini_Pages": [
+            "join/circleApply/circleApply",
+            "join/memberClaim/first/claimInfo",
+            "mine/mine",
+            "join/memberApply/preface/preface",
+            "join/memberApply/joinMember/joinMember",
+            "home/home"
+        ]
+    },
+    {
+        "MiniApp": "wxa12867f7bb06a013",
+        "API": "wx.getLocation",
+        "GroundTruth": 1,
+        "MiniDroid": 0,
+        "TaintMini": 0,
+        "GroundTruth_Pages": [
+            "app"
+        ],
+        "MiniDroid_Pages": [],
+        "TaintMini_Pages": []
+    },
+    {
+        "MiniApp": "wxa12867f7bb06a013",
+        "API": "wx.chooseImage",
+        "GroundTruth": 8,
+        "MiniDroid": 7,
+        "TaintMini": 7,
+        "GroundTruth_Pages": [
+            "pages/population/add",
+            "pages/property/index",
+            "pages/help/feedProblem",
+            "pages/readMeter/readMeter",
+            "pages/residentBusiness/transferName",
+            "pages/residentBusiness/pipeAlteration",
+            "pages/residentBusiness/modifyContactInfo",
+            "app"
+        ],
+        "MiniDroid_Pages": [
+            "pages/population/add",
+            "pages/property/index",
+            "pages/help/feedProblem",
+            "pages/readMeter/readMeter",
+            "pages/residentBusiness/transferName",
+            "pages/residentBusiness/pipeAlteration",
+            "pages/residentBusiness/modifyContactInfo"
+        ],
+        "TaintMini_Pages": [
+            "readMeter/readMeter",
+            "residentBusiness/modifyContactInfo",
+            "residentBusiness/transferName",
+            "population/add",
+            "property/index",
+            "help/feedProblem",
+            "residentBusiness/pipeAlteration"
+        ]
+    },
+    {
+        "MiniApp": "wxa12867f7bb06a013",
+        "API": "wx.getUserInfo",
+        "GroundTruth": 1,
+        "MiniDroid": 0,
+        "TaintMini": 0,
+        "GroundTruth_Pages": [
+            "app"
+        ],
+        "MiniDroid_Pages": [],
+        "TaintMini_Pages": []
+    },
+    {
+        "MiniApp": "wxa12867f7bb06a013",
+        "API": "wx.chooseLocation",
+        "GroundTruth": 2,
+        "MiniDroid": 2,
+        "TaintMini": 2,
+        "GroundTruth_Pages": [
+            "pages/account/addr",
+            "pages/nonresidentBusiness/openAccount"
+        ],
+        "MiniDroid_Pages": [
+            "pages/account/addr",
+            "pages/nonresidentBusiness/openAccount"
+        ],
+        "TaintMini_Pages": [
+            "nonresidentBusiness/openAccount",
+            "account/addr"
+        ]
+    },
+    {
+        "MiniApp": "wx8d762feb611da990",
+        "API": "wx.chooseAddress",
+        "GroundTruth": 1,
+        "MiniDroid": 1,
+        "TaintMini": 1,
+        "GroundTruth_Pages": [
+            "pages/userInfo/userAddressList/userAddressList"
+        ],
+        "MiniDroid_Pages": [
+            "pages/userInfo/userAddressList/userAddressList"
+        ],
+        "TaintMini_Pages": [
+            "userInfo/userAddressList/userAddressList"
+        ]
+    },
+    {
+        "MiniApp": "wx8d762feb611da990",
+        "API": "wx.getUserInfo",
+        "GroundTruth": 1,
+        "MiniDroid": 0,
+        "TaintMini": 0,
+        "GroundTruth_Pages": [
+            "app"
+        ],
+        "MiniDroid_Pages": [],
+        "TaintMini_Pages": []
+    },
+    {
+        "MiniApp": "wx8d762feb611da990",
+        "API": "wx.getLocation",
+        "GroundTruth": 1,
+        "MiniDroid": 0,
+        "TaintMini": 0,
+        "GroundTruth_Pages": [
+            "app"
+        ],
+        "MiniDroid_Pages": [],
+        "TaintMini_Pages": []
+    },
+    {
+        "MiniApp": "wxacc203631394b9c4",
+        "API": "wx.getLocation",
+        "GroundTruth": 1,
+        "MiniDroid": 1,
+        "TaintMini": 1,
+        "GroundTruth_Pages": [
+            "pages/qrcode/qrcode_index/qrcode_index"
+        ],
+        "MiniDroid_Pages": [
+            "pages/qrcode/qrcode_index/qrcode_index"
+        ],
+        "TaintMini_Pages": [
+            "qrcode/qrcode_index/qrcode_index"
+        ]
+    },
+    {
+        "MiniApp": "wx83a1f19d142cbfb8",
+        "API": "wx.getUserInfo",
+        "GroundTruth": 1,
+        "MiniDroid": 1,
+        "TaintMini": 1,
+        "GroundTruth_Pages": [
+            "pages/index/index"
+        ],
+        "MiniDroid_Pages": [
+            "pages/index/index"
+        ],
+        "TaintMini_Pages": [
+            "index/index"
+        ]
+    },
+    {
+        "MiniApp": "wx83a1f19d142cbfb8",
+        "API": "wx.saveImageToPhotosAlbum",
+        "GroundTruth": 1,
+        "MiniDroid": 1,
+        "TaintMini": 1,
+        "GroundTruth_Pages": [
+            "pages/payplatform/payplatform"
+        ],
+        "MiniDroid_Pages": [
+            "pages/payplatform/payplatform"
+        ],
+        "TaintMini_Pages": [
+            "payplatform/payplatform"
+        ]
+    },
+    {
+        "MiniApp": "wx83a1f19d142cbfb8",
+        "API": "wx.chooseImage",
+        "GroundTruth": 1,
+        "MiniDroid": 1,
+        "TaintMini": 1,
+        "GroundTruth_Pages": [
+            "pages/myPersonDetail/myPersonDetail"
+        ],
+        "MiniDroid_Pages": [
+            "pages/myPersonDetail/myPersonDetail"
+        ],
+        "TaintMini_Pages": [
+            "myPersonDetail/myPersonDetail"
+        ]
+    },
+    {
+        "MiniApp": "wx83a1f19d142cbfb8",
+        "API": "wx.chooseLocation",
+        "GroundTruth": 1,
+        "MiniDroid": 1,
+        "TaintMini": 1,
+        "GroundTruth_Pages": [
+            "pages/locationSel/locationSel"
+        ],
+        "MiniDroid_Pages": [
+            "pages/locationSel/locationSel"
+        ],
+        "TaintMini_Pages": [
+            "locationSel/locationSel"
+        ]
+    },
+    {
+        "MiniApp": "wx7c544dd972e54c8e",
+        "API": "wx.saveImageToPhotosAlbum",
+        "GroundTruth": 1,
+        "MiniDroid": 1,
+        "TaintMini": 1,
+        "GroundTruth_Pages": [
+            "pages/distributor/storecard/storecard"
+        ],
+        "MiniDroid_Pages": [
+            "pages/distributor/storecard/storecard"
+        ],
+        "TaintMini_Pages": [
+            "distributor/storecard/storecard"
+        ]
+    },
+    {
+        "MiniApp": "wx7c544dd972e54c8e",
+        "API": "wx.getLocation",
+        "GroundTruth": 1,
+        "MiniDroid": 1,
+        "TaintMini": 1,
+        "GroundTruth_Pages": [
+            "pages/detail/detail"
+        ],
+        "MiniDroid_Pages": [
+            "pages/detail/detail"
+        ],
+        "TaintMini_Pages": [
+            "detail/detail"
+        ]
+    },
+    {
+        "MiniApp": "wx7c544dd972e54c8e",
+        "API": "wx.chooseImage",
+        "GroundTruth": 6,
+        "MiniDroid": 6,
+        "TaintMini": 6,
+        "GroundTruth_Pages": [
+            "pages/userset/userset",
+            "pages/applyservice/applyservice",
+            "pages/distributor/storeinfo/storeinfo",
+            "pages/distributor/distributorexplain/distributorexplain",
+            "pages/evaluation/evaluation",
+            "pages/supportvalueapply/supportvalueapply"
+        ],
+        "MiniDroid_Pages": [
+            "pages/userset/userset",
+            "pages/applyservice/applyservice",
+            "pages/distributor/storeinfo/storeinfo",
+            "pages/distributor/distributorexplain/distributorexplain",
+            "pages/evaluation/evaluation",
+            "pages/supportvalueapply/supportvalueapply"
+        ],
+        "TaintMini_Pages": [
+            "evaluation/evaluation",
+            "distributor/storeinfo/storeinfo",
+            "distributor/distributorexplain/distributorexplain",
+            "applyservice/applyservice",
+            "supportvalueapply/supportvalueapply",
+            "userset/userset"
+        ]
+    },
+    {
+        "MiniApp": "wx7c544dd972e54c8e",
+        "API": "wx.chooseAddress",
+        "GroundTruth": 7,
+        "MiniDroid": 6,
+        "TaintMini": 6,
+        "GroundTruth_Pages": [
+            "pages/confirmorder/confirmorder",
+            "pages/myaddress/myaddress",
+            "pages/addresslist/addresslist",
+            "pages/pintuan/confirmorder/confirmorder",
+            "pages/seckilling/submitorder/submitorder",
+            "pages/reduceauction/confirmorder/confirmorder",
+            "pages/stairgroup/confirmorder/confirmorder"
+        ],
+        "MiniDroid_Pages": [
+            "pages/myaddress/myaddress",
+            "pages/addresslist/addresslist",
+            "pages/pintuan/confirmorder/confirmorder",
+            "pages/seckilling/submitorder/submitorder",
+            "pages/reduceauction/confirmorder/confirmorder",
+            "pages/stairgroup/confirmorder/confirmorder"
+        ],
+        "TaintMini_Pages": [
+            "myaddress/myaddress",
+            "stairgroup/confirmorder/confirmorder",
+            "addresslist/addresslist",
+            "reduceauction/confirmorder/confirmorder",
+            "seckilling/submitorder/submitorder",
+            "pintuan/confirmorder/confirmorder"
+        ]
+    },
+    {
+        "MiniApp": "wx99717e68e6fc4244",
+        "API": "wx.saveImageToPhotosAlbum",
+        "GroundTruth": 1,
+        "MiniDroid": 1,
+        "TaintMini": 0,
+        "GroundTruth_Pages": [
+            "pages/productDetail/index"
+        ],
+        "MiniDroid_Pages": [
+            "pages/productDetail/index"
+        ],
+        "TaintMini_Pages": []
+    },
+    {
+        "MiniApp": "wx0bc8123197e70985",
+        "API": "wx.getLocation",
+        "GroundTruth": 5,
+        "MiniDroid": 5,
+        "TaintMini": 3,
+        "GroundTruth_Pages": [
+            "pages/index/index",
+            "pages/governmentCoupon/index/index",
+            "pages/venue/list/list",
+            "pages/venue/detail/detail",
+            "pages/productOrder/code/code"
+        ],
+        "MiniDroid_Pages": [
+            "pages/index/index",
+            "pages/governmentCoupon/index/index",
+            "pages/venue/list/list",
+            "pages/venue/detail/detail",
+            "pages/productOrder/code/code"
+        ],
+        "TaintMini_Pages": [
+            "productOrder/code/code",
+            "venue/list/list",
+            "governmentCoupon/index/index"
+        ]
+    },
+    {
+        "MiniApp": "wx0bc8123197e70985",
+        "API": "wx.chooseImage",
+        "GroundTruth": 1,
+        "MiniDroid": 1,
+        "TaintMini": 0,
+        "GroundTruth_Pages": [
+            "pages/productOrder/comment/comment"
+        ],
+        "MiniDroid_Pages": [
+            "pages/productOrder/comment/comment"
+        ],
+        "TaintMini_Pages": []
+    },
+    {
+        "MiniApp": "wx7bf99600808c08a2",
+        "API": "wx.getLocation",
+        "GroundTruth": 2,
+        "MiniDroid": 2,
+        "TaintMini": 2,
+        "GroundTruth_Pages": [
+            "pages/nearbylist/nearbylist",
+            "pages/drawnearbylist/drawnearbylist"
+        ],
+        "MiniDroid_Pages": [
+            "pages/nearbylist/nearbylist",
+            "pages/drawnearbylist/drawnearbylist"
+        ],
+        "TaintMini_Pages": [
+            "nearbylist/nearbylist",
+            "drawnearbylist/drawnearbylist"
+        ]
+    },
+    {
+        "MiniApp": "wx7bf99600808c08a2",
+        "API": "wx.chooseImage",
+        "GroundTruth": 6,
+        "MiniDroid": 6,
+        "TaintMini": 6,
+        "GroundTruth_Pages": [
+            "pages/index/index",
+            "pages/DIYcontent/DIYcontent",
+            "pages/userfeedback/userfeedback",
+            "pages/PComment/PComment",
+            "pages/navigationpage/navigationpage",
+            "pages/SecondaryPage/SecondaryPage"
+        ],
+        "MiniDroid_Pages": [
+            "pages/index/index",
+            "pages/DIYcontent/DIYcontent",
+            "pages/userfeedback/userfeedback",
+            "pages/PComment/PComment",
+            "pages/navigationpage/navigationpage",
+            "pages/SecondaryPage/SecondaryPage"
+        ],
+        "TaintMini_Pages": [
+            "index/index",
+            "PComment/PComment",
+            "SecondaryPage/SecondaryPage",
+            "userfeedback/userfeedback",
+            "navigationpage/navigationpage",
+            "DIYcontent/DIYcontent"
+        ]
+    },
+    {
+        "MiniApp": "wx7bf99600808c08a2",
+        "API": "wx.getUserInfo",
+        "GroundTruth": 1,
+        "MiniDroid": 1,
+        "TaintMini": 0,
+        "GroundTruth_Pages": [
+            "pages/smashgoldeneggs/smashgoldeneggs"
+        ],
+        "MiniDroid_Pages": [
+            "pages/smashgoldeneggs/smashgoldeneggs"
+        ],
+        "TaintMini_Pages": []
+    },
+    {
+        "MiniApp": "wx7bf99600808c08a2",
+        "API": "wx.chooseAddress",
+        "GroundTruth": 1,
+        "MiniDroid": 1,
+        "TaintMini": 0,
+        "GroundTruth_Pages": [
+            "pages/UserCenter/UserCenter"
+        ],
+        "MiniDroid_Pages": [
+            "pages/UserCenter/UserCenter"
+        ],
+        "TaintMini_Pages": []
+    },
+    {
+        "MiniApp": "wx7bf99600808c08a2",
+        "API": "wx.saveImageToPhotosAlbum",
+        "GroundTruth": 11,
+        "MiniDroid": 7,
+        "TaintMini": 1,
+        "GroundTruth_Pages": [
+            "pages/productdetail/productdetail",
+            "pages/fightgroupsdetail/fightgroupsdetail",
+            "pages/Receivetails/Receivetails",
+            "pages/endorsement/endorsement",
+            "pages/orderdetail/orderdetail",
+            "pages/favorableorderdetail/favorableorderdetail",
+            "pages/bargain/bargain",
+            "pages/bargainDetail/bargainDetail",
+            "pages/orderMessageDetail/orderMessageDetail",
+            "pages/Popularitycharts/Popularitycharts",
+            "server/productdetail/productdetail"
+        ],
+        "MiniDroid_Pages": [
+            "pages/productdetail/productdetail",
+            "pages/endorsement/endorsement",
+            "pages/orderdetail/orderdetail",
+            "pages/bargain/bargain",
+            "pages/bargainDetail/bargainDetail",
+            "pages/orderMessageDetail/orderMessageDetail",
+            "pages/Popularitycharts/Popularitycharts"
+        ],
+        "TaintMini_Pages": [
+            "Popularitycharts/Popularitycharts"
+        ]
+    },
+    {
+        "MiniApp": "wx4ce9c3cff6c3c610",
+        "API": "wx.saveVideoToPhotosAlbum",
+        "GroundTruth": 1,
+        "MiniDroid": 1,
+        "TaintMini": 0,
+        "GroundTruth_Pages": [
+            "pages/index/index"
+        ],
+        "MiniDroid_Pages": [
+            "pages/index/index"
+        ],
+        "TaintMini_Pages": []
+    },
+    {
+        "MiniApp": "wx78d2ee5255a3ed63",
+        "API": "wx.chooseAddress",
+        "GroundTruth": 1,
+        "MiniDroid": 0,
+        "TaintMini": 0,
+        "GroundTruth_Pages": [
+            "pages/address/address"
+        ],
+        "MiniDroid_Pages": [],
+        "TaintMini_Pages": []
+    },
+    {
+        "MiniApp": "wx78d2ee5255a3ed63",
+        "API": "wx.chooseImage",
+        "GroundTruth": 2,
+        "MiniDroid": 2,
+        "TaintMini": 2,
+        "GroundTruth_Pages": [
+            "pages/index/index",
+            "pages/set/set"
+        ],
+        "MiniDroid_Pages": [
+            "pages/index/index",
+            "pages/set/set"
+        ],
+        "TaintMini_Pages": [
+            "set/set",
+            "index/index"
+        ]
+    },
+    {
+        "MiniApp": "wx78d2ee5255a3ed63",
+        "API": "wx.saveImageToPhotosAlbum",
+        "GroundTruth": 3,
+        "MiniDroid": 3,
+        "TaintMini": 0,
+        "GroundTruth_Pages": [
+            "pages/shareImg/shareImg",
+            "pages/qrvoucher/qrvoucher",
+            "pages/scanning/scanning"
+        ],
+        "MiniDroid_Pages": [
+            "pages/shareImg/shareImg",
+            "pages/qrvoucher/qrvoucher",
+            "pages/scanning/scanning"
+        ],
+        "TaintMini_Pages": []
+    },
+    {
+        "MiniApp": "wx9f612fdcc555956c",
+        "API": "wx.chooseInvoice",
+        "GroundTruth": 1,
+        "MiniDroid": 0,
+        "TaintMini": 0,
+        "GroundTruth_Pages": [
+            "pages/OrderCreate/OrderCreate"
+        ],
+        "MiniDroid_Pages": [],
+        "TaintMini_Pages": []
+    },
+    {
+        "MiniApp": "wx9f612fdcc555956c",
+        "API": "wx.getUserInfo",
+        "GroundTruth": 1,
+        "MiniDroid": 0,
+        "TaintMini": 0,
+        "GroundTruth_Pages": [
+            "app"
+        ],
+        "MiniDroid_Pages": [],
+        "TaintMini_Pages": []
+    },
+    {
+        "MiniApp": "wx9f612fdcc555956c",
+        "API": "wx.saveImageToPhotosAlbum",
+        "GroundTruth": 7,
+        "MiniDroid": 6,
+        "TaintMini": 3,
+        "GroundTruth_Pages": [
+            "pages/ProductDetail/ProductDetail",
+            "pages/MyShare/MyShare",
+            "pages/Course_Detail/Course_Detail",
+            "pages/Group_Detail/Group_Detail",
+            "pages/SecKill_Detail/SecKill_Detail",
+            "pages/CutPriceDetail/CutPriceDetail",
+            "pages/MyShareCode/MyShareCode"
+        ],
+        "MiniDroid_Pages": [
+            "pages/ProductDetail/ProductDetail",
+            "pages/MyShare/MyShare",
+            "pages/Group_Detail/Group_Detail",
+            "pages/SecKill_Detail/SecKill_Detail",
+            "pages/CutPriceDetail/CutPriceDetail",
+            "pages/MyShareCode/MyShareCode"
+        ],
+        "TaintMini_Pages": [
+            "SecKill_Detail/SecKill_Detail",
+            "ProductDetail/ProductDetail",
+            "Group_Detail/Group_Detail"
+        ]
+    },
+    {
+        "MiniApp": "wx9f612fdcc555956c",
+        "API": "wx.getLocation",
+        "GroundTruth": 3,
+        "MiniDroid": 0,
+        "TaintMini": 0,
+        "GroundTruth_Pages": [
+            "pages/OrderTrace/OrderTrace",
+            "pages/StoreList/StoreList",
+            "pages/StoreLists/StoreLists"
+        ],
+        "MiniDroid_Pages": [],
+        "TaintMini_Pages": []
+    },
+    {
+        "MiniApp": "wx9f612fdcc555956c",
+        "API": "wx.chooseImage",
+        "GroundTruth": 1,
+        "MiniDroid": 1,
+        "TaintMini": 1,
+        "GroundTruth_Pages": [
+            "pages/OrderComment/OrderComment"
+        ],
+        "MiniDroid_Pages": [
+            "pages/OrderComment/OrderComment"
+        ],
+        "TaintMini_Pages": [
+            "OrderComment/OrderComment"
+        ]
+    },
+    {
+        "MiniApp": "wx9f612fdcc555956c",
+        "API": "wx.chooseInvoiceTitle",
+        "GroundTruth": 1,
+        "MiniDroid": 1,
+        "TaintMini": 1,
+        "GroundTruth_Pages": [
+            "pages/OrderCreate/OrderCreate"
+        ],
+        "MiniDroid_Pages": [
+            "pages/OrderCreate/OrderCreate"
+        ],
+        "TaintMini_Pages": [
+            "OrderCreate/OrderCreate"
+        ]
+    },
+    {
+        "MiniApp": "wx9f612fdcc555956c",
+        "API": "wx.chooseAddress",
+        "GroundTruth": 3,
+        "MiniDroid": 0,
+        "TaintMini": 0,
+        "GroundTruth_Pages": [
+            "pages/OrderCreate/OrderCreate",
+            "pages/ExchangeOrderCreate/ExchangeOrderCreate",
+            "pages/Group_OrderCreate/Group_OrderCreate"
+        ],
+        "MiniDroid_Pages": [],
+        "TaintMini_Pages": []
+    },
+    {
+        "MiniApp": "wx7a4e7d465ac09eea",
+        "API": "wx.saveImageToPhotosAlbum",
+        "GroundTruth": 4,
+        "MiniDroid": 4,
+        "TaintMini": 4,
+        "GroundTruth_Pages": [
+            "pages/goods/index",
+            "pages/sharing/goods/index",
+            "pages/bargain/goods/index",
+            "pages/sharp/goods/index"
+        ],
+        "MiniDroid_Pages": [
+            "pages/goods/index",
+            "pages/sharing/goods/index",
+            "pages/bargain/goods/index",
+            "pages/sharp/goods/index"
+        ],
+        "TaintMini_Pages": [
+            "goods/index",
+            "sharp/goods/index",
+            "sharing/goods/index",
+            "bargain/goods/index"
+        ]
+    },
+    {
+        "MiniApp": "wx7a4e7d465ac09eea",
+        "API": "wx.getUserProfile",
+        "GroundTruth": 1,
+        "MiniDroid": 0,
+        "TaintMini": 0,
+        "GroundTruth_Pages": [
+            "app"
+        ],
+        "MiniDroid_Pages": [],
+        "TaintMini_Pages": []
+    },
+    {
+        "MiniApp": "wx7a4e7d465ac09eea",
+        "API": "wx.getLocation",
+        "GroundTruth": 2,
+        "MiniDroid": 1,
+        "TaintMini": 1,
+        "GroundTruth_Pages": [
+            "pages/_select/extract_point/index",
+            "app"
+        ],
+        "MiniDroid_Pages": [
+            "pages/_select/extract_point/index"
+        ],
+        "TaintMini_Pages": [
+            "_select/extract_point/index"
+        ]
+    },
+    {
+        "MiniApp": "wx7a4e7d465ac09eea",
+        "API": "wx.chooseImage",
+        "GroundTruth": 6,
+        "MiniDroid": 6,
+        "TaintMini": 4,
+        "GroundTruth_Pages": [
+            "pages/user/message/apply/index",
+            "pages/order/comment/comment",
+            "pages/order/refund/apply/apply",
+            "pages/dealer/addus/addus",
+            "pages/sharing/order/comment/comment",
+            "pages/sharing/order/refund/apply/apply"
+        ],
+        "MiniDroid_Pages": [
+            "pages/user/message/apply/index",
+            "pages/order/comment/comment",
+            "pages/order/refund/apply/apply",
+            "pages/dealer/addus/addus",
+            "pages/sharing/order/comment/comment",
+            "pages/sharing/order/refund/apply/apply"
+        ],
+        "TaintMini_Pages": [
+            "order/refund/apply/apply",
+            "sharing/order/refund/apply/apply",
+            "dealer/addus/addus",
+            "user/message/apply/index"
+        ]
+    },
+    {
+        "MiniApp": "wx7a4e7d465ac09eea",
+        "API": "wx.chooseAddress",
+        "GroundTruth": 2,
+        "MiniDroid": 2,
+        "TaintMini": 2,
+        "GroundTruth_Pages": [
+            "pages/address/create",
+            "pages/address/detail"
+        ],
+        "MiniDroid_Pages": [
+            "pages/address/create",
+            "pages/address/detail"
+        ],
+        "TaintMini_Pages": [
+            "address/detail",
+            "address/create"
+        ]
+    },
+    {
+        "MiniApp": "wx8b0d722749666d1c",
+        "API": "wx.chooseImage",
+        "GroundTruth": 4,
+        "MiniDroid": 4,
+        "TaintMini": 4,
+        "GroundTruth_Pages": [
+            "pages/classchoice/classchoice",
+            "pages/editclass/editclass",
+            "pages/faceenter/faceenter",
+            "pages/member/member"
+        ],
+        "MiniDroid_Pages": [
+            "pages/classchoice/classchoice",
+            "pages/editclass/editclass",
+            "pages/faceenter/faceenter",
+            "pages/member/member"
+        ],
+        "TaintMini_Pages": [
+            "member/member",
+            "classchoice/classchoice",
+            "faceenter/faceenter",
+            "editclass/editclass"
+        ]
+    },
+    {
+        "MiniApp": "wx8b0d722749666d1c",
+        "API": "wx.getUserInfo",
+        "GroundTruth": 4,
+        "MiniDroid": 2,
+        "TaintMini": 1,
+        "GroundTruth_Pages": [
+            "pages/index/index",
+            "pages/result/result",
+            "pages/result3/result3",
+            "app"
+        ],
+        "MiniDroid_Pages": [
+            "pages/index/index",
+            "pages/result3/result3"
+        ],
+        "TaintMini_Pages": [
+            "result3/result3"
+        ]
+    },
+    {
+        "MiniApp": "wx8b0d722749666d1c",
+        "API": "wx.createCameraContext",
+        "GroundTruth": 1,
+        "MiniDroid": 1,
+        "TaintMini": 0,
+        "GroundTruth_Pages": [
+            "pages/faceenter/faceenter"
+        ],
+        "MiniDroid_Pages": [
+            "pages/faceenter/faceenter"
+        ],
+        "TaintMini_Pages": []
+    },
+    {
+        "MiniApp": "wx8b0d722749666d1c",
+        "API": "wx.saveImageToPhotosAlbum",
+        "GroundTruth": 2,
+        "MiniDroid": 1,
+        "TaintMini": 0,
+        "GroundTruth_Pages": [
+            "pages/result/result",
+            "pages/result3/result3"
+        ],
+        "MiniDroid_Pages": [
+            "pages/result3/result3"
+        ],
+        "TaintMini_Pages": []
+    },
+    {
+        "MiniApp": "wx7951c581d9200725",
+        "API": "wx.chooseImage",
+        "GroundTruth": 1,
+        "MiniDroid": 1,
+        "TaintMini": 1,
+        "GroundTruth_Pages": [
+            "pages/make/index"
+        ],
+        "MiniDroid_Pages": [
+            "pages/make/index"
+        ],
+        "TaintMini_Pages": [
+            "make/index"
+        ]
+    },
+    {
+        "MiniApp": "wx7951c581d9200725",
+        "API": "wx.saveImageToPhotosAlbum",
+        "GroundTruth": 1,
+        "MiniDroid": 1,
+        "TaintMini": 1,
+        "GroundTruth_Pages": [
+            "pages/share/index"
+        ],
+        "MiniDroid_Pages": [
+            "pages/share/index"
+        ],
+        "TaintMini_Pages": [
+            "share/index"
+        ]
+    },
+    {
+        "MiniApp": "wx7951c581d9200725",
+        "API": "wx.getUserProfile",
+        "GroundTruth": 1,
+        "MiniDroid": 1,
+        "TaintMini": 1,
+        "GroundTruth_Pages": [
+            "pages/share/index"
+        ],
+        "MiniDroid_Pages": [
+            "pages/share/index"
+        ],
+        "TaintMini_Pages": [
+            "share/index"
+        ]
+    },
+    {
+        "MiniApp": "wxaf291362a455b5e1",
+        "API": "wx.getLocation",
+        "GroundTruth": 3,
+        "MiniDroid": 3,
+        "TaintMini": 3,
+        "GroundTruth_Pages": [
+            "pages/sdf_firstpage/sdf_firstpage",
+            "pages/member_mainpage/member_mainpage",
+            "pages/store_list/store_list"
+        ],
+        "MiniDroid_Pages": [
+            "pages/sdf_firstpage/sdf_firstpage",
+            "pages/member_mainpage/member_mainpage",
+            "pages/store_list/store_list"
+        ],
+        "TaintMini_Pages": [
+            "store_list/store_list",
+            "member_mainpage/member_mainpage",
+            "sdf_firstpage/sdf_firstpage"
+        ]
+    },
+    {
+        "MiniApp": "wxaf291362a455b5e1",
+        "API": "wx.getUserProfile",
+        "GroundTruth": 4,
+        "MiniDroid": 3,
+        "TaintMini": 3,
+        "GroundTruth_Pages": [
+            "pages/grade_buy/grade_buy",
+            "pages/spellgroup_mainpage/spellgroup_mainpage",
+            "pages/assis_mainpage/assis_mainpage",
+            "pages/bargain_mainpage/bargain_mainpage"
+        ],
+        "MiniDroid_Pages": [
+            "pages/grade_buy/grade_buy",
+            "pages/spellgroup_mainpage/spellgroup_mainpage",
+            "pages/bargain_mainpage/bargain_mainpage"
+        ],
+        "TaintMini_Pages": [
+            "spellgroup_mainpage/spellgroup_mainpage",
+            "bargain_mainpage/bargain_mainpage",
+            "grade_buy/grade_buy"
+        ]
+    }
+]
