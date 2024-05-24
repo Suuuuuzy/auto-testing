@@ -6,6 +6,7 @@ from utils import write_to_file
 
 if __name__ == "__main__":
     start_time = time.time()
+    write_to_file("start time: " + str(datetime.datetime.fromtimestamp(start_time).isoformat()), 'test_result_log.txt')
     loaded_suite = unittest.TestLoader().loadTestsFromTestCase(Minium_Query)
     result = unittest.TextTestRunner().run(loaded_suite)
     elapse_time = "elapse time: " +  str(datetime.timedelta(seconds=(time.time() - start_time))) + "\n"
