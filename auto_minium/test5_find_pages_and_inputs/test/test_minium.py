@@ -13,13 +13,13 @@ class Minium_Query(BaseDef):
             # self.page.wait_for(1)
             # 1. inputs
             inputs = self.find_all_inputs()
-            print(f"there are {len(inputs)} inputs on page {page}")
+            self.logger.info(f"there are {len(inputs)} inputs on page {page}")
             for input_block in inputs:
                 try:
                     input_block.input(text_input, with_confirm=True)
                     self.logger.info(f'action: input something in input in page: {page}')
                 except Exception as e:
-                    print(f'encountering error during query: {e}')
+                    self.logger.info(f'encountering error during query: {e}')
                 # self.screen_shot_save("(" + page  + ")")
                 # self.page.wait_for(5)
                 value = input_block.attribute("value")[0]
