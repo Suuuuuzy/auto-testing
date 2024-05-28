@@ -2,9 +2,15 @@ from basedef import BaseDef
 import os
 
 class Minium_Query(BaseDef):
-    
+    def setUp(self):
+        appid = self.mini.project_path.split('/')[-1] + "_528"
+        # __setLog__('/home/suzy/temp/new_taint_log_file/'+appid)
+        result = self.app.evaluate(
+            "function(){args=arguments;__setLog__('/home/suzy/temp/new_taint_log_file/'+args[0])}",[appid], sync=True
+        )
+        
     def test_inputs(self):
-        text_input = self.mini.project_path
+        text_input = "miniumjavascript"
         pages = self.find_all_pages()
 
         for page in pages:
