@@ -2,12 +2,17 @@ import os, subprocess
 from tqdm import tqdm
 from config import *
 import logging
+logger = logging.getLogger(__name__)
+
 import platform
 from pathlib import Path
 
-logger = logging.getLogger(__name__)
-logging.basicConfig(filename='unpack_with_unveil.log',  level=logging.DEBUG)
-logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+logging.basicConfig(
+    filename='unpack_with_unveil.log',
+    level=logging.DEBUG,
+    format='%(asctime)s.%(msecs)03d %(levelname)s %(module)s - %(funcName)s: %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S',
+)
 
 # Decompile with unveilr
 class UnsupportedOSException(Exception):
@@ -58,20 +63,27 @@ def decompile_wxapkg_with_unveilr(wxapkg, output_path=None):
         logger.error(e)
         return False
 
-
-if __name__ == '__main__':
-    # ROOT = 'C:/Users/zhiha/OneDrive/Desktop/auto-testing/miniapp_data/raw_data'
-    all_unpacked_packages = os.listdir(wxapkg_ROOT)
-    all_unpacked_packages= [i for i in all_unpacked_packages if i.endswith("wxapkg")]
-    logger.info("Total wxapkg number: "+len(all_unpacked_packages))
-    unpacked = os.listdir(wxapkg_unpacked_ROOT)
+def main():
+    all_unpacked_packages= [i for i in os.listdir(large_scale_wxapkg_ROOT) if i.endswith("wxapkg")]
+    logger.info("Total wxapkg number: "+ str(len(all_unpacked_packages)))
+    
+    unpacked = os.listdir(large_scale_wxapkg_unpacked_ROOT)
     all_unpacked_packages = [i for i in all_unpacked_packages if i.replace(".wxapkg", "") not in unpacked]
-    logger.info("Unpacked: "+ len(all_unpacked_packages))
-    all_unpacked_packages = all_unpacked_packages[:100]
+    
+    unpacked = dataj_large_scale_wxapkg_unpacked_ROOT
+    all_unpacked_packages = [i for i in all_unpacked_packages if i.replace(".wxapkg", "") not in unpacked]
+
+    with open('unpack_with_unveil.log') as f:
+        content = f.read()
+    all_unpacked_packages = [i for i in all_unpacked_packages if i.replace(".wxapkg", "") not in content]
+    logger.info("Unpacked: "+  str(len(all_unpacked_packages)))
+    
+    # all_unpacked_packages = all_unpacked_packages[:100]
     for package in tqdm(all_unpacked_packages):
-        # print(os.path.join(wxapkg_ROOT, package))
         try:
-            decompile_wxapkg_with_unveilr(os.path.join(wxapkg_ROOT, package), os.path.join(wxapkg_unpacked_ROOT, package.replace(".wxapkg", "")))
+            decompile_wxapkg_with_unveilr(os.path.join(large_scale_wxapkg_ROOT, package), os.path.join(dataj_large_scale_wxapkg_unpacked_ROOT, package.replace(".wxapkg", "")))
         except Exception as e:
             logger.error(f'package {package} encountering error when trying to unpack: {str(e)}')
             
+if __name__ == '__main__':
+    main()

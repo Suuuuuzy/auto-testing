@@ -1,9 +1,15 @@
 import os, json
+import logging
+logger = logging.getLogger(__name__)
 
 def read_json_file(file_path):
-    with open(file_path, 'r', encoding='utf-8') as file:
-        json_data = file.read()
-    return json.loads(json_data)
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            json_data = file.read()
+        return json.loads(json_data)
+    except:
+        logger.error(f"read json file: {file_path} error")
+        return None
 
 def write_json_file(file_path, json_data):
     with open(file_path, 'w', encoding='utf-8') as file:
@@ -61,7 +67,9 @@ def check_all_paths(root_path, miniprogram_name, app_json_path=None):
     APP_JSON_PATH = app_json_path if app_json_path else os.path.join(MINIRPOGRAM_PATH, 'app.json')
     
     json_data = read_json_file(APP_JSON_PATH)
-
+    if not json_data:
+        return
+    
     if check_borderStyle(json_data) is False:
         json_data['tabBar']['borderStyle'] = 'white'
 
