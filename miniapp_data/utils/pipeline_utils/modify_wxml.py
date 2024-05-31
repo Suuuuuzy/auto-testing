@@ -34,8 +34,14 @@ def format_wxml_style_attribute(file_path):
         # Replace the matched pattern with wx:key="index"
         content = re.sub(pattern, r'wx:key="\1"', content)
 
-        # Regular expression to match the pattern and remove unnecessary spaces and line breaks
-        pattern = r'(<[^>]*?)\s*\n\s*(>)'
+        # Regular expression to match the pattern and remove unnecessary line breaks and spaces
+        pattern = r"'\s*(.*?)\s*'"
+        replacement = "'" + r'\1' + "'"
+
+        # Perform the substitution
+        content = re.sub(pattern, replacement, content)
+        
+        pattern = r'(<[^>]*?)\s*(>)'
 
         # Replacement string
         replacement = r'\1\2'

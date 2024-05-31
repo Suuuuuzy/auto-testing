@@ -1,11 +1,12 @@
 import os, subprocess
 from tqdm import tqdm
-from config import *
+# from config import *
 import logging
 logger = logging.getLogger(__name__)
-
+import json
 import platform
 from pathlib import Path
+import multiprocessing as mp
 
 logging.basicConfig(
     filename='unpack_with_unveil.log',
@@ -63,27 +64,50 @@ def decompile_wxapkg_with_unveilr(wxapkg, output_path=None):
         logger.error(e)
         return False
 
-def main():
-    all_unpacked_packages= [i for i in os.listdir(large_scale_wxapkg_ROOT) if i.endswith("wxapkg")]
-    logger.info("Total wxapkg number: "+ str(len(all_unpacked_packages)))
+def handle_wxapkgs(wxapkgs):
+    wxapkg_paths = wxapkgs
+    for i in wxapkg_paths:
+        output_path = '/media/dataj/miniapp_data/wxapkgs-11w-unpacked-new/'+i
+        wxapkg_path = "/media/dataj/miniapp_data/wxapkgs-11w/" + i + ".wxapkg"
+        if os.path.exists(output_path):
+            logger.info('Decompile Success: {}'.format(output_path))
+        else:
+            if os.path.exists(wxapkg_path):
+                decompile_wxapkg_with_unveilr(wxapkg_path, output_path)
+                
+    # all_unpacked_packages= [i for i in os.listdir(large_scale_wxapkg_ROOT) if i.endswith("wxapkg")]
+    # logger.info("Total wxapkg number: "+ str(len(all_unpacked_packages)))
     
-    unpacked = os.listdir(large_scale_wxapkg_unpacked_ROOT)
-    all_unpacked_packages = [i for i in all_unpacked_packages if i.replace(".wxapkg", "") not in unpacked]
+    # unpacked = os.listdir(large_scale_wxapkg_unpacked_ROOT)
+    # all_unpacked_packages = [i for i in all_unpacked_packages if i.replace(".wxapkg", "") not in unpacked]
     
-    unpacked = dataj_large_scale_wxapkg_unpacked_ROOT
-    all_unpacked_packages = [i for i in all_unpacked_packages if i.replace(".wxapkg", "") not in unpacked]
+    # unpacked = dataj_large_scale_wxapkg_unpacked_ROOT
+    # all_unpacked_packages = [i for i in all_unpacked_packages if i.replace(".wxapkg", "") not in unpacked]
 
-    with open('unpack_with_unveil.log') as f:
-        content = f.read()
-    all_unpacked_packages = [i for i in all_unpacked_packages if i.replace(".wxapkg", "") not in content]
-    logger.info("Unpacked: "+  str(len(all_unpacked_packages)))
+    # with open('unpack_with_unveil.log') as f:
+    #     content = f.read()
+    # all_unpacked_packages = [i for i in all_unpacked_packages if i.replace(".wxapkg", "") not in content]
+    # logger.info("Unpacked: "+  str(len(all_unpacked_packages)))
     
-    # all_unpacked_packages = all_unpacked_packages[:100]
-    for package in tqdm(all_unpacked_packages):
-        try:
-            decompile_wxapkg_with_unveilr(os.path.join(large_scale_wxapkg_ROOT, package), os.path.join(dataj_large_scale_wxapkg_unpacked_ROOT, package.replace(".wxapkg", "")))
-        except Exception as e:
-            logger.error(f'package {package} encountering error when trying to unpack: {str(e)}')
+    # # all_unpacked_packages = all_unpacked_packages[:100]
+    # for package in tqdm(all_unpacked_packages):
+    #     try:
+    #         decompile_wxapkg_with_unveilr(os.path.join(large_scale_wxapkg_ROOT, package), os.path.join(dataj_large_scale_wxapkg_unpacked_ROOT, package.replace(".wxapkg", "")))
+    #     except Exception as e:
+    #         logger.error(f'package {package} encountering error when trying to unpack: {str(e)}')
             
+
+def main():
+    # with open('/media/dataj/miniapp_data/wxapkgs-11w.json', 'r') as fp:
+    with open('/media/dataj/miniapp_data/test.json', 'r') as fp:
+        package_names = json.load(fp)
+    # processes = 128
+    processes = 12
+    batch_size = (len(package_names) + processes - 1) // processes
+    batched_package_names = [package_names[i:i+batch_size] for i in range(0, len(package_names), batch_size)]
+    with mp.Pool(processes=processes) as pool:
+        pool.map(handle_wxapkgs, batched_package_names)
+    main()
+    
 if __name__ == '__main__':
     main()

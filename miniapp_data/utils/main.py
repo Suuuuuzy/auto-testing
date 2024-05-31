@@ -10,14 +10,14 @@ from pipeline_utils.modify_app_json import check_all_paths
 from pipeline_utils.modify_config_json import modify_config_with_url
 from pipeline_utils.solve_fail import solve_fail_in_mini
 
-def main(ROOT_PATH, MINIRPOGRAM_NAME):
-    MINIRPOGRAM_PATH = os.path.join(ROOT_PATH, MINIRPOGRAM_NAME)
+def main(MINIRPOGRAM_PATH):
+    # MINIRPOGRAM_PATH = os.path.join(ROOT_PATH, MINIRPOGRAM_NAME)
 
     print('\nStep 1: check config existence and modify config so that url can be processed unchecked\n')
-    modify_config_with_url(ROOT_PATH, MINIRPOGRAM_NAME)
+    modify_config_with_url(MINIRPOGRAM_PATH)
 
     print('Step 2: Eliminate all missing pages\n')
-    check_all_paths(ROOT_PATH, MINIRPOGRAM_NAME)
+    check_all_paths(MINIRPOGRAM_PATH)
 
     print('\nStep 3: Check all invalid style format in wxml files and modify them\n')
     all_wxml_files = find_wxml_files(MINIRPOGRAM_PATH, [])
@@ -47,6 +47,6 @@ if __name__ == '__main__':
     logging.basicConfig(filename='myapp.log', level=logging.INFO)
     logger.info('Started')
     file = "wx4b1dfa2b8f503e6f"
-    main(ROOT, file)
+    main("/Users/jianjia/WeChatProjects/wxa96c29b7188364a6-pc")
     logger.info(f'{file} preprocessing finished\n')
     logger.info('Finished')
