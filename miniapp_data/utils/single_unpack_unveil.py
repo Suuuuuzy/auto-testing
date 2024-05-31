@@ -50,7 +50,7 @@ def decompile_wxapkg_with_unveilr(wxapkg, output_path=None):
         raise UnsupportedOSException("Unsupported OS: {} {}".format(system, machine))
     
     if output_path is not None:
-        cmdline = [decompiler_tool, wxapkg, '-o', output_path, '-f']
+        cmdline = [decompiler_tool, wxapkg, '-o', output_path, '-f', '--clear-output']
     else:
         cmdline = [decompiler_tool, wxapkg, '-f']
 
@@ -65,6 +65,6 @@ def decompile_wxapkg_with_unveilr(wxapkg, output_path=None):
 
     
 if __name__ == '__main__':
-    wxapkg_path = ''
-    output_path = ''
+    wxapkg_path = '/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w/wx98312615635dcc17-pc.wxapkg'
+    output_path = '/media/dataj/miniapp_data/wxapkgs-42w-unpacked/wx98312615635dcc17-pc'
     decompile_wxapkg_with_unveilr(wxapkg_path, output_path)
