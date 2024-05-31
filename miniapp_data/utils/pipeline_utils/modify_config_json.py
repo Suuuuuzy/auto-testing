@@ -1,8 +1,7 @@
 import os
 from .modify_app_json import read_json_file, write_json_file
 
-def modify_config_with_url(root_path, miniprogram_name):
-    miniprogram_path = os.path.join(root_path, miniprogram_name)
+def modify_config_with_url(miniprogram_path):
 
     config_path = os.path.join(miniprogram_path, 'project.config.json')
     if (os.path.exists(config_path) is False):

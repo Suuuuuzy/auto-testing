@@ -62,8 +62,7 @@ def check_borderStyle(json_data):
                 return False
     return True
 
-def check_all_paths(root_path, miniprogram_name, app_json_path=None):
-    MINIRPOGRAM_PATH = os.path.join(root_path, miniprogram_name)
+def check_all_paths(MINIRPOGRAM_PATH, app_json_path=None):
     APP_JSON_PATH = app_json_path if app_json_path else os.path.join(MINIRPOGRAM_PATH, 'app.json')
     
     json_data = read_json_file(APP_JSON_PATH)
