@@ -59,3 +59,27 @@ home.spec.js需改参数：
 3. copy output.json里面的所有东西，paste到一个js file里面，然后在所有data之前写 export const project_and_pages = （variable 名字project_and_pages可以随意变化，但需要对应home.spec.js里面的
 
 4. 退到jest_wechat_miniprogram (我的npm好像是install在那里的）。跑npm test
+
+## wxml parser: wxml_parser
+
+* .vscode --> 里面有相应的configuration参数。在gcc的standard library上，还使用了 "nlohmann/json.hpp"来读取miniprogram里面的app.json
+
+* utils.h / utils.cpp --> 一些helper function和 #define block
+
+* Attribute.h --> 任何出现在element的tag里面的attribute存储使用的base class
+
+* HTMLTokenizer.h / HTMLTokenizer.cpp --> 文件的tokenizer。使用的标准是HTML Standard (https://html.spec.whatwg.org/)，根据miniprogram 使用tokenize的报错情况进行了修改。修改的主要部分用 "// SPECIAL CASE FOR WXML:"标出
+
+* Node.h --> 定义parser 搭建AST使用的所有node classes。分别是 Node (virtual base class); RootNode (root for AST); ElementWrapperNode (any tag); AttributeNode (tag attributes, name + value); DataNode (any text data)
+
+* WXMLDocumentParser.h / WXMLDocumentParser.cpp --> parser class
+
+* test_script.cpp --> main script，用来检测并记录一个miniprogram里面所有页面与bind相关的attribute。还没有进行下一步的信息提取处理，所以暂时只会显示bind method, 使用 function，和当前element的AST
+  
+* debug_script.cpp --> main script，用来debug单个wxml的parse / tokenize error
+
+**executables** (在Makefile中定义的）
+
+1. make/make parse --> compile出executable parse，用来运行test_script.cpp
+   
+3. make debug --> compile出executable debug，用来运行debug_script.cpp
