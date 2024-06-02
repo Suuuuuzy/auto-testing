@@ -1,0 +1,2616 @@
+this is #10 out of the 19 miniprograms
+surveying miniprogram /home/bella-xia/auto-testing/data/0_passing_groundtruth/wx8d762feb611da990
+
+pages/store/storeIndex
+
+Element #0
+Bind method: bindclose Function call: closeOpenGift
+#element{opengift} {depth: 2}
+  #attribute{bindclose: closeOpenGift}
+
+
+pages/index/index
+
+
+pages/store/project/detail/projectDetail
+
+Element #0
+Bind method: bindshowactivityrules Function call: showActivityRules
+#element{activitydetail} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindshowactivityrules: showActivityRules}
+  #attribute{goodsinfo: {{activityInfo.activityGoodsObj}}}
+
+Element #1
+Bind method: bindbuybtnclick Function call: buyBtnClick
+#element{activitybottomview} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindbuybtnclick: buyBtnClick}
+
+Element #2
+Bind method: bindtap Function call: topMenuItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: topMenuItemClick}
+  #attribute{class: menuItem {{topMenuIndex==0?'select':''}}}
+  #attribute{data-index: 0}
+  data{商品详情}
+
+Element #3
+Bind method: bindtap Function call: topMenuItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: topMenuItemClick}
+  #attribute{class: menuItem {{topMenuIndex==1?'select':''}}}
+  #attribute{data-index: 1}
+  data{购买须知}
+
+Element #4
+Bind method: bindclose Function call: hideActivityBuy
+#element{activitybuy} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindclose: hideActivityBuy}
+  #attribute{bindpushpaybtnclick: pushPayBtnClick}
+  #attribute{wx:if: {{showBuyFlag}}}
+
+Element #5
+Bind method: bindpushpaybtnclick Function call: pushPayBtnClick
+#element{activitybuy} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindclose: hideActivityBuy}
+  #attribute{bindpushpaybtnclick: pushPayBtnClick}
+  #attribute{wx:if: {{showBuyFlag}}}
+
+
+pages/store/product/detail/productDetail
+
+Element #0
+Bind method: bindshowactivityrules Function call: showActivityRules
+#element{activitydetail} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindshowactivityrules: showActivityRules}
+  #attribute{goodsinfo: {{activityInfo.activityGoodsObj}}}
+
+Element #1
+Bind method: bindbuybtnclick Function call: buyBtnClick
+#element{activitybottomview} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindbuybtnclick: buyBtnClick}
+
+Element #2
+Bind method: bindtap Function call: topMenuItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: topMenuItemClick}
+  #attribute{class: menuItem {{topMenuIndex==0?'select':''}}}
+  #attribute{data-index: 0}
+  data{商品详情}
+
+Element #3
+Bind method: bindtap Function call: topMenuItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: topMenuItemClick}
+  #attribute{class: menuItem {{topMenuIndex==1?'select':''}}}
+  #attribute{data-index: 1}
+  data{购买须知}
+
+Element #4
+Bind method: bindtap Function call: pushShopCart
+#element{view} {depth: 2}
+  #attribute{bindtap: pushShopCart}
+  #attribute{class: shopCartItem notEmpty}
+  #element{text} {depth: 3}
+    #attribute{class: iconfont icon-shopCart}
+
+Element #5
+Bind method: bindaddgoodstoshopcart Function call: addGoodsToShopCart
+#element{activitybuy} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindaddgoodstoshopcart: addGoodsToShopCart}
+  #attribute{bindclose: hideActivityBuy}
+  #attribute{bindpushpaybtnclick: pushPayBtnClick}
+  #attribute{wx:if: {{showBuyFlag}}}
+
+Element #6
+Bind method: bindclose Function call: hideActivityBuy
+#element{activitybuy} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindaddgoodstoshopcart: addGoodsToShopCart}
+  #attribute{bindclose: hideActivityBuy}
+  #attribute{bindpushpaybtnclick: pushPayBtnClick}
+  #attribute{wx:if: {{showBuyFlag}}}
+
+Element #7
+Bind method: bindpushpaybtnclick Function call: pushPayBtnClick
+#element{activitybuy} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindaddgoodstoshopcart: addGoodsToShopCart}
+  #attribute{bindclose: hideActivityBuy}
+  #attribute{bindpushpaybtnclick: pushPayBtnClick}
+  #attribute{wx:if: {{showBuyFlag}}}
+
+
+pages/store/vipCard/detail/vipCardDetail
+
+Element #0
+Bind method: bindshowactivityrules Function call: showActivityRules
+#element{activitydetail} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindshowactivityrules: showActivityRules}
+  #attribute{goodsinfo: {{activityInfo.activityGoodsObj}}}
+
+Element #1
+Bind method: bindbuybtnclick Function call: buyBtnClick
+#element{activitybottomview} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindbuybtnclick: buyBtnClick}
+
+Element #2
+Bind method: bindtap Function call: topMenuItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: topMenuItemClick}
+  #attribute{class: menuItem {{topMenuIndex==0?'select':''}}}
+  #attribute{data-index: 0}
+  data{商品详情}
+
+Element #3
+Bind method: bindtap Function call: topMenuItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: topMenuItemClick}
+  #attribute{class: menuItem {{topMenuIndex==1?'select':''}}}
+  #attribute{data-index: 1}
+  data{购买须知}
+
+Element #4
+Bind method: bindclose Function call: hideActivityBuy
+#element{activitybuy} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindclose: hideActivityBuy}
+  #attribute{bindpushpaybtnclick: pushPayBtnClick}
+  #attribute{wx:if: {{showBuyFlag}}}
+
+Element #5
+Bind method: bindpushpaybtnclick Function call: pushPayBtnClick
+#element{activitybuy} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindclose: hideActivityBuy}
+  #attribute{bindpushpaybtnclick: pushPayBtnClick}
+  #attribute{wx:if: {{showBuyFlag}}}
+
+
+pages/shopList/shopList
+
+Element #0
+Bind method: bindtap Function call: shopItemClick
+#element{view} {depth: 2}
+  #attribute{bindtap: shopItemClick}
+  #attribute{class: shopItem}
+  #attribute{data-index: {{index}}}
+  #attribute{wx:for: {{shopList}}}
+  #attribute{wx:key: shopItem}
+  #element{view} {depth: 3}
+    #attribute{class: imgView}
+    #element{image} {depth: 4}
+      #attribute{mode: aspectFill}
+      #attribute{src: {{item.logo}}}
+  #element{view} {depth: 3}
+    #attribute{class: shopInfoView}
+    #element{view} {depth: 4}
+      #attribute{class: nameView overflowText}
+      scriptdata{item.name}
+    #element{view} {depth: 4}
+      #attribute{class: addressView}
+      #element{text} {depth: 5}
+        #attribute{class: iconfont icon-address}
+      scriptdata{item.address}
+      data{
+            }
+  #element{button} {depth: 3}
+    #attribute{catchtap: callTell}
+    #attribute{class: btn-phone iconfont icon-phone Icon_Phone}
+    #attribute{data-phone: {{item.phone}}}
+
+
+pages/store/seckill/seckillDetail/seckillDetail
+
+Element #0
+Bind method: bindshowactivityrules Function call: showActivityRules
+#element{activitydetail} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindshowactivityrules: showActivityRules}
+  #attribute{goodsinfo: {{activityInfo.activityGoodsObj}}}
+
+Element #1
+Bind method: bindbuybtnclick Function call: buyBtnClick
+#element{activitybottomview} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindbuybtnclick: buyBtnClick}
+
+Element #2
+Bind method: bindtap Function call: topMenuItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: topMenuItemClick}
+  #attribute{class: menuItem {{topMenuIndex==0?'select':''}}}
+  #attribute{data-index: 0}
+  data{商品详情}
+
+Element #3
+Bind method: bindtap Function call: topMenuItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: topMenuItemClick}
+  #attribute{class: menuItem {{topMenuIndex==1?'select':''}}}
+  #attribute{data-index: 1}
+  data{购买须知}
+
+Element #4
+Bind method: bindclose Function call: hideActivityBuy
+#element{activitybuy} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindclose: hideActivityBuy}
+  #attribute{bindpushpaybtnclick: pushPayBtnClick}
+  #attribute{wx:if: {{showBuyFlag}}}
+
+Element #5
+Bind method: bindpushpaybtnclick Function call: pushPayBtnClick
+#element{activitybuy} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindclose: hideActivityBuy}
+  #attribute{bindpushpaybtnclick: pushPayBtnClick}
+  #attribute{wx:if: {{showBuyFlag}}}
+
+
+pages/userInfo/userAuth/userAuth
+
+Element #0
+Bind method: bindgetphonenumber Function call: getUserMobile
+#element{button} {depth: 3}
+  #attribute{bindgetphonenumber: getUserMobile}
+  #attribute{class: mobileBtn}
+  #attribute{opentype: getPhoneNumber}
+  data{授权手机号
+        }
+
+Element #1
+Bind method: bindtap Function call: showTip
+#element{button} {depth: 2}
+  #attribute{bindtap: showTip}
+  #attribute{class: btn-login}
+  #attribute{wx:if: {{!mobile}}}
+  data{立即登录}
+
+Element #2
+Bind method: bindgetuserinfo Function call: getUserInfoAuth
+#element{button} {depth: 2}
+  #attribute{bindgetuserinfo: getUserInfoAuth}
+  #attribute{class: btn-login}
+  #attribute{opentype: getUserInfo}
+  #attribute{wx:if: {{mobile}}}
+  data{立即登录}
+
+Element #3
+Bind method: bindtap Function call: close
+#element{button} {depth: 2}
+  #attribute{bindtap: close}
+  #attribute{class: btn-back}
+  data{暂不登录}
+
+
+pages/store/orderPay/orderPay
+
+Element #0
+Bind method: bindtap Function call: pushAddressPage
+#element{view} {depth: 3}
+  #attribute{bindtap: pushAddressPage}
+  #attribute{class: receiveInfoView}
+  #attribute{wx:if: {{orderPayActivityInfo.pickUpGoodsWay==2}}}
+  #element{view} {depth: 4}
+    #attribute{class: userView}
+    scriptdata{curReceiveInfo?curReceiveInfo.receiver:'设置收货地址'}
+    #element{text} {depth: 5}
+      scriptdata{curReceiveInfo.phone}
+  #element{view} {depth: 4}
+    #attribute{class: addressView}
+    #element{text} {depth: 5}
+      #attribute{wx:if: {{curReceiveInfo}}}
+      scriptdata{curReceiveInfo.addressText}
+  #element{text} {depth: 4}
+    #attribute{class: iconfont icon-right}
+
+Element #1
+Bind method: bindtap Function call: submitOrder
+#element{button} {depth: 3}
+  #attribute{bindtap: submitOrder}
+  #attribute{class: btn-commit}
+  scriptdata{submitFlag?'处理中...':'提交订单'}
+
+
+pages/store/project/list/projectList
+
+Element #0
+Bind method: bindtap Function call: activityItemClick
+#element{view} {depth: 2}
+  #attribute{bindtap: activityItemClick}
+  #attribute{class: activityItem}
+  #attribute{data-item: {{item}}}
+  #attribute{wx:for: {{dataList}}}
+  #attribute{wx:key: item}
+  #element{view} {depth: 3}
+    #attribute{class: imgView}
+    #element{image} {depth: 4}
+      #attribute{mode: aspectFill}
+      #attribute{src: {{item.coverImg}}}
+  #element{view} {depth: 3}
+    #attribute{class: textView}
+    #element{view} {depth: 4}
+      #attribute{class: nameView fw-500 overflowText}
+      scriptdata{item.activityName}
+      data{
+            }
+    #element{view} {depth: 4}
+      #attribute{class: saleCntView}
+      data{已售}
+      scriptdata{item.saleCnt||0}
+    #element{view} {depth: 4}
+      #attribute{class: priceView fw-500}
+      #element{label} {depth: 5}
+        #attribute{class: label-price}
+        data{￥}
+        #element{text} {depth: 6}
+          scriptdata{item.price}
+      #element{label} {depth: 5}
+        #attribute{class: label-orgPrice}
+        data{原价￥}
+        scriptdata{item.orgPrice}
+    #element{button} {depth: 4}
+      #attribute{class: btn-buy}
+      data{购买}
+
+
+pages/store/product/list/productList
+
+Element #0
+Bind method: bindtap Function call: activityItemClick
+#element{view} {depth: 2}
+  #attribute{bindtap: activityItemClick}
+  #attribute{class: activityItem}
+  #attribute{data-item: {{item}}}
+  #attribute{wx:for: {{dataList}}}
+  #attribute{wx:key: item}
+  #element{view} {depth: 3}
+    #attribute{class: imgView}
+    #element{image} {depth: 4}
+      #attribute{mode: aspectFill}
+      #attribute{src: {{item.coverImg}}}
+  #element{view} {depth: 3}
+    #attribute{class: textView}
+    #element{view} {depth: 4}
+      #attribute{class: nameView overflowText fw-500}
+      scriptdata{item.activityName}
+      data{
+            }
+    #element{view} {depth: 4}
+      #attribute{class: saleCntView}
+      data{已售}
+      scriptdata{item.saleCnt||0}
+    #element{view} {depth: 4}
+      #attribute{class: priceView fw-500}
+      #element{label} {depth: 5}
+        #attribute{class: label-price}
+        data{￥}
+        #element{text} {depth: 6}
+          scriptdata{item.price}
+      #element{label} {depth: 5}
+        #attribute{class: label-orgPrice}
+        data{原价￥}
+        scriptdata{item.orgPrice}
+    #element{button} {depth: 4}
+      #attribute{class: btn-buy}
+      data{购买}
+
+Element #1
+Bind method: bindtap Function call: pushShopCart
+#element{view} {depth: 2}
+  #attribute{bindtap: pushShopCart}
+  #attribute{class: shopCartItem notEmpty}
+  #element{text} {depth: 3}
+    #attribute{class: iconfont icon-shopCart}
+
+
+pages/store/seckill/list/seckillList
+
+Element #0
+Bind method: bindtap Function call: activityItemClick
+#element{view} {depth: 2}
+  #attribute{bindtap: activityItemClick}
+  #attribute{class: seckillItem}
+  #attribute{data-item: {{item}}}
+  #attribute{wx:for: {{dataList}}}
+  #attribute{wx:key: seckillItem}
+  #element{view} {depth: 3}
+    #attribute{class: imgView}
+    #element{image} {depth: 4}
+      #attribute{mode: aspectFill}
+      #attribute{src: {{item.coverImg}}}
+      #attribute{wx:if: {{item.coverImg}}}
+  #element{view} {depth: 3}
+    #attribute{class: textView}
+    #element{view} {depth: 4}
+      #attribute{class: nameView fw-500 overflowText}
+      scriptdata{item.activityName}
+      data{
+            }
+    #element{view} {depth: 4}
+      #attribute{class: saleCntView}
+      data{已有}
+      scriptdata{item.saleCnt||0}
+      data{人抢购}
+    #element{view} {depth: 4}
+      #attribute{class: priceView fw-500}
+      #element{label} {depth: 5}
+        #attribute{class: label-price}
+        data{￥}
+        #element{text} {depth: 6}
+          scriptdata{item.price}
+      #element{label} {depth: 5}
+        #attribute{class: label-orgPrice}
+        data{原价￥}
+        scriptdata{item.orgPrice}
+  #element{view} {depth: 3}
+    #attribute{class: timeView}
+    #element{view} {depth: 4}
+      #attribute{class: countdownView}
+      #element{view} {depth: 5}
+        #attribute{class: leftTextView}
+        scriptdata{item.leftText}
+      #element{view} {depth: 5}
+        #attribute{class: timeView}
+        #attribute{wx:if: {{item.cntdownInfo}}}
+        #element{text} {depth: 6}
+          #attribute{wx:if: {{item.cntdownInfo.d>0}}}
+          scriptdata{item.cntdownInfo.d}
+          data{天}
+        #element{view} {depth: 6}
+          scriptdata{item.cntdownInfo.show_h1}
+          scriptdata{item.cntdownInfo.show_h2}
+        data{:}
+        #element{view} {depth: 6}
+          scriptdata{item.cntdownInfo.show_m1}
+          scriptdata{item.cntdownInfo.show_m2}
+        data{:}
+        #element{view} {depth: 6}
+          scriptdata{item.cntdownInfo.show_s1}
+          scriptdata{item.cntdownInfo.show_s2}
+    #element{button} {depth: 4}
+      #attribute{class: btn-buy}
+      data{抢购}
+
+
+pages/store/vipCard/list/vipCardList
+
+Element #0
+Bind method: bindtap Function call: activityItemClick
+#element{view} {depth: 2}
+  #attribute{bindtap: activityItemClick}
+  #attribute{class: vipCardItem}
+  #attribute{data-item: {{item}}}
+  #attribute{wx:for: {{dataList}}}
+  #attribute{wx:key: vipCardItem}
+  #element{view} {depth: 3}
+    #attribute{class: cardView}
+    #element{view} {depth: 4}
+      #attribute{class: nameView fw-500}
+      scriptdata{item.activityName}
+      data{
+            }
+    #element{view} {depth: 4}
+      #attribute{class: cView}
+      scriptdata{item.contentText}
+      data{
+            }
+  #element{view} {depth: 3}
+    #attribute{class: bView}
+    #element{view} {depth: 4}
+      #attribute{class: tagView}
+      #element{label} {depth: 5}
+        #attribute{class: label-type}
+        scriptdata{item.tagText}
+      #element{label} {depth: 5}
+        #attribute{class: label-saleCnt}
+        data{已售 }
+        scriptdata{item.saleCnt||0}
+    #element{view} {depth: 4}
+      #attribute{class: priceView fw-500}
+      #element{label} {depth: 5}
+        #attribute{class: label-price}
+        data{￥}
+        #element{text} {depth: 6}
+          scriptdata{item.price}
+      #element{label} {depth: 5}
+        #attribute{class: label-orgPrice}
+        data{原价￥}
+        scriptdata{item.orgPrice}
+    #element{button} {depth: 4}
+      #attribute{class: btn-buy}
+      data{购买}
+
+
+pages/userInfo/userOrder/list/userOrderList
+
+Element #0
+Bind method: bindtap Function call: menuItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: menuItemClick}
+  #attribute{class: menuItem {{curMenu.index==item.index?'select':''}}}
+  #attribute{data-item: {{item}}}
+  #attribute{wx:for: {{menuList}}}
+  scriptdata{item.text}
+  data{
+
+            }
+  #element{view} {depth: 4}
+    #attribute{class: selectView}
+    #attribute{wx:if: {{curMenu.index==item.index?'select':''}}}
+
+Element #1
+Bind method: bindtap Function call: orderItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: orderItemClick}
+  #attribute{class: orderItem}
+  #attribute{data-item: {{item}}}
+  #attribute{wx:for: {{dataList}}}
+  #attribute{wx:key: orderItem}
+  #element{view} {depth: 4}
+    #attribute{class: tView}
+    #element{view} {depth: 5}
+      #attribute{class: orderIdView}
+      data{单号：}
+      scriptdata{item.id}
+    #element{view} {depth: 5}
+      #attribute{class: statusView status-{{item.orderStatus}}}
+      scriptdata{item.orderStatusText}
+  #element{view} {depth: 4}
+    #attribute{class: goodsView}
+    #element{view} {depth: 5}
+      #attribute{class: goodsItem}
+      #attribute{wx:for: {{item.marketActivityOrderList}}}
+      #attribute{wx:for-item: obj}
+      #attribute{wx:key: activityObj}
+      #element{view} {depth: 6}
+        #attribute{class: imgView}
+        #element{image} {depth: 7}
+          #attribute{mode: aspectFill}
+          #attribute{src: {{obj.coverImg}}}
+      #element{view} {depth: 6}
+        #attribute{class: textView}
+        #element{view} {depth: 7}
+          #attribute{class: cView fw-500}
+          #element{label} {depth: 8}
+            #attribute{class: label-tag}
+            scriptdata{item.activityTypeText}
+          scriptdata{obj.activityName}
+          data{
+                        }
+        #element{view} {depth: 7}
+          #attribute{class: rightView}
+          #element{view} {depth: 8}
+            #attribute{class: priceView}
+            data{￥}
+            #element{text} {depth: 9}
+              scriptdata{obj.price}
+          #element{view} {depth: 8}
+            #attribute{class: cntView}
+            data{x}
+            #element{text} {depth: 9}
+              scriptdata{obj.number}
+  #element{view} {depth: 4}
+    #attribute{class: amtView fw-500}
+    #element{label} {depth: 5}
+      #attribute{class: label-totalAmt}
+      data{总价 ￥}
+      #element{text} {depth: 6}
+        scriptdata{item.totalMoney||0}
+    #element{label} {depth: 5}
+      #attribute{class: label-disAmt}
+      #attribute{wx:if: {{item.discount}}}
+      data{优惠 ￥}
+      #element{text} {depth: 6}
+        scriptdata{item.discount}
+    #element{label} {depth: 5}
+      #attribute{class: label-payAmt}
+      data{实付 ￥}
+      #element{text} {depth: 6}
+        scriptdata{item.amount}
+
+
+pages/userInfo/userOrder/detail/orderDetail
+
+Element #0
+Bind method: bindtap Function call: copyBtnClick
+#element{button} {depth: 5}
+  #attribute{bindtap: copyBtnClick}
+  #attribute{class: btn-copy}
+  #attribute{data-text: {{orderInfo.delivery.expNo}}}
+  data{复制}
+
+Element #1
+Bind method: bindtap Function call: pushActivityShot
+#element{view} {depth: 4}
+  #attribute{bindtap: pushActivityShot}
+  #attribute{class: listItem}
+  data{交易快照：
+                }
+  #element{text} {depth: 5}
+    data{订单购买时候的商品详情}
+
+Element #2
+Bind method: bindtap Function call: shareBtnClick
+#element{button} {depth: 3}
+  #attribute{bindtap: shareBtnClick}
+  #attribute{class: btn-initShareImg}
+  data{生成海报}
+
+
+pages/store/groupBuy/list/groupBuyList
+
+Element #0
+Bind method: bindtap Function call: activityItemClick
+#element{view} {depth: 2}
+  #attribute{bindtap: activityItemClick}
+  #attribute{class: activityItem}
+  #attribute{data-item: {{item}}}
+  #attribute{wx:for: {{dataList}}}
+  #attribute{wx:key: seckillItem}
+  #element{view} {depth: 3}
+    #attribute{class: imgView}
+    #element{image} {depth: 4}
+      #attribute{mode: aspectFill}
+      #attribute{src: {{item.coverImg}}}
+      #attribute{wx:if: {{item.coverImg}}}
+  #element{view} {depth: 3}
+    #attribute{class: textView}
+    #element{view} {depth: 4}
+      #attribute{class: nameView overflowText fw-500}
+      scriptdata{item.activityName}
+      data{
+            }
+    #element{view} {depth: 4}
+      #attribute{class: tagView}
+      #element{label} {depth: 5}
+        #attribute{class: label-saleCnt}
+        data{已团 }
+        scriptdata{item.saleCnt||0}
+      #element{label} {depth: 5}
+        #attribute{class: label-type}
+        scriptdata{item.tagText}
+    #element{view} {depth: 4}
+      #attribute{class: priceView fw-500}
+      #element{label} {depth: 5}
+        #attribute{class: label-price}
+        data{￥}
+        #element{text} {depth: 6}
+          scriptdata{item.price}
+      #element{label} {depth: 5}
+        #attribute{class: label-orgPrice}
+        data{原价￥}
+        scriptdata{item.orgPrice}
+    #element{button} {depth: 4}
+      #attribute{class: btn-buy}
+      data{购买}
+
+
+pages/store/groupBuy/detail/groupBuyDetail
+
+Element #0
+Bind method: bindtap Function call: pushGroupDetail
+#element{view} {depth: 3}
+  #attribute{bindtap: pushGroupDetail}
+  #attribute{class: groupItem}
+  #attribute{data-item: {{item}}}
+  #attribute{wx:if: {{activityInfo.gatherGroupFlag==1}}}
+  #attribute{wx:for: {{activityInfo.groupSaleList}}}
+  #attribute{wx:key: groupItem}
+  #element{view} {depth: 4}
+    #attribute{class: avatarView}
+    #element{view} {depth: 5}
+      #attribute{class: imgView}
+      #element{image} {depth: 6}
+        #attribute{mode: aspectFill}
+        #attribute{src: {{item.avatar}}}
+    #element{view} {depth: 5}
+      #attribute{class: imgView}
+      #element{image} {depth: 6}
+        #attribute{mode: aspectFill}
+        #attribute{src: https://static.bokao2o.com/marketApp/Def_Icon_GroupEmpty.png}
+  #element{view} {depth: 4}
+    #attribute{class: textView}
+    #element{view} {depth: 5}
+      #attribute{class: cntView}
+      data{还差}
+      #element{text} {depth: 6}
+        scriptdata{item.emptyCnt||0}
+      data{人成团}
+    #element{view} {depth: 5}
+      #attribute{class: timeView}
+      scriptdata{item.timeText}
+  #element{button} {depth: 4}
+    #attribute{class: btn-join}
+    data{去参团}
+
+Element #1
+Bind method: bindshowactivityrules Function call: showActivityRules
+#element{activitydetail} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindshowactivityrules: showActivityRules}
+  #attribute{goodsinfo: {{activityInfo.activityGoodsObj}}}
+
+Element #2
+Bind method: bindbuybtnclick Function call: buyBtnClick
+#element{activitybottomview} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindbuybtnclick: buyBtnClick}
+
+Element #3
+Bind method: bindtap Function call: topMenuItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: topMenuItemClick}
+  #attribute{class: menuItem {{topMenuIndex==0?'select':''}}}
+  #attribute{data-index: 0}
+  data{商品详情}
+
+Element #4
+Bind method: bindtap Function call: topMenuItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: topMenuItemClick}
+  #attribute{class: menuItem {{topMenuIndex==1?'select':''}}}
+  #attribute{data-index: 1}
+  data{购买须知}
+
+Element #5
+Bind method: bindclose Function call: hideActivityBuy
+#element{activitybuy} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindclose: hideActivityBuy}
+  #attribute{bindpushpaybtnclick: pushPayBtnClick}
+  #attribute{wx:if: {{showBuyFlag}}}
+
+Element #6
+Bind method: bindpushpaybtnclick Function call: pushPayBtnClick
+#element{activitybuy} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindclose: hideActivityBuy}
+  #attribute{bindpushpaybtnclick: pushPayBtnClick}
+  #attribute{wx:if: {{showBuyFlag}}}
+
+
+pages/store/groupBuy/groupDetail/groupDetail
+
+Element #0
+Bind method: bindshowactivityrules Function call: showActivityRules
+#element{activitydetail} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindshowactivityrules: showActivityRules}
+  #attribute{goodsinfo: {{activityInfo.activityGoodsObj}}}
+
+Element #1
+Bind method: bindtap Function call: pushGroupBuyDetail
+#element{button} {depth: 3}
+  #attribute{bindtap: pushGroupBuyDetail}
+  #attribute{class: btn-buy btn-detail}
+  data{开新团}
+
+Element #2
+Bind method: bindtap Function call: pushPayBtnClick
+#element{button} {depth: 3}
+  #attribute{bindtap: pushPayBtnClick}
+  #attribute{class: btn-buy}
+  #attribute{wx:if: {{groupInfo.fullFlag||!groupInfo.joinFlag}}}
+  scriptdata{buyBtnText}
+
+Element #3
+Bind method: bindtap Function call: topMenuItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: topMenuItemClick}
+  #attribute{class: menuItem {{topMenuIndex==0?'select':''}}}
+  #attribute{data-index: 0}
+  data{商品详情}
+
+Element #4
+Bind method: bindtap Function call: topMenuItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: topMenuItemClick}
+  #attribute{class: menuItem {{topMenuIndex==1?'select':''}}}
+  #attribute{data-index: 1}
+  data{购买须知}
+
+
+pages/userInfo/userAddressList/userAddressList
+
+Element #0
+Bind method: bindtap Function call: addressItemSelect
+#element{view} {depth: 2}
+  #attribute{bindtap: addressItemSelect}
+  #attribute{class: addressItem}
+  #attribute{data-item: {{item}}}
+  #attribute{wx:for: {{receiveAddresses}}}
+  #attribute{wx:key: addressItem}
+  #element{view} {depth: 3}
+    #attribute{class: userView}
+    scriptdata{item.receiver}
+    #element{text} {depth: 4}
+      scriptdata{item.phone}
+  #element{view} {depth: 3}
+    #attribute{class: addressView}
+    scriptdata{item.region.provinceName}
+    data{ }
+    scriptdata{item.region.cityName}
+    data{ }
+    scriptdata{item.region.areaName}
+    data{ }
+    scriptdata{item.address}
+    data{
+        }
+  #element{button} {depth: 3}
+    #attribute{catchtap: delBtnClick}
+    #attribute{class: btn-del}
+    #attribute{data-index: {{index}}}
+    #attribute{data-iten: {{item}}}
+    data{删除}
+
+Element #1
+Bind method: bindtap Function call: addBtnClick
+#element{button} {depth: 3}
+  #attribute{bindtap: addBtnClick}
+  #attribute{class: btn-def}
+  data{新增地址}
+
+
+pages/store/shopCart/shopCart
+
+Element #0
+Bind method: bindtap Function call: shopItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: shopItemClick}
+  #attribute{class: shopView fw-500 {{selectShop&&selectShop.compId==item.compId&&item.select?'select':''}}}
+  #attribute{data-shopidx: {{index}}}
+  scriptdata{item.name}
+  data{
+        }
+
+Element #1
+Bind method: bindtap Function call: productItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: productItemClick}
+  #attribute{class: productItem {{selectShop&&selectShop.compId==item.compId&&obj.select?'select':''}}}
+  #attribute{data-itemidx: {{idx}}}
+  #attribute{data-shopidx: {{index}}}
+  #attribute{wx:for: {{item.dataList}}}
+  #attribute{wx:for-index: idx}
+  #attribute{wx:for-item: obj}
+  #attribute{wx:key: productItem}
+  #element{view} {depth: 4}
+    #attribute{class: imgView}
+    #element{image} {depth: 5}
+      #attribute{mode: aspectFill}
+      #attribute{src: {{obj.coverImg}}}
+  #element{view} {depth: 4}
+    #attribute{class: textView}
+    #element{view} {depth: 5}
+      #attribute{class: nameView fw-500}
+      scriptdata{obj.activityGoodsName}
+    #element{label} {depth: 5}
+      #attribute{class: label-type}
+      scriptdata{obj.buyInfo.attributeText}
+    #element{view} {depth: 5}
+      #attribute{class: priceView fw-500}
+      #element{label} {depth: 6}
+        #attribute{class: label-price}
+        data{￥ }
+        #element{text} {depth: 7}
+          scriptdata{obj.buyInfo.price}
+      #element{label} {depth: 6}
+        #attribute{class: label-cnt}
+        data{x }
+        #element{text} {depth: 7}
+          scriptdata{obj.buyInfo.buyCnt}
+
+Element #2
+Bind method: bindtap Function call: pushPayBtnClick
+#element{button} {depth: 3}
+  #attribute{bindtap: pushPayBtnClick}
+  #attribute{class: btn-def}
+  data{去结算}
+
+
+pages/store/shopCartPay/shopCartPay
+
+Element #0
+Bind method: bindtap Function call: pushAddressPage
+#element{view} {depth: 3}
+  #attribute{bindtap: pushAddressPage}
+  #attribute{class: receiveInfoView}
+  #element{view} {depth: 4}
+    #attribute{class: userView}
+    scriptdata{curReceiveInfo?curReceiveInfo.receiver:'设置收货地址'}
+    #element{text} {depth: 5}
+      scriptdata{curReceiveInfo.phone}
+  #element{view} {depth: 4}
+    #attribute{class: addressView}
+    #element{text} {depth: 5}
+      #attribute{wx:if: {{curReceiveInfo}}}
+      scriptdata{curReceiveInfo.addressText}
+  #element{text} {depth: 4}
+    #attribute{class: iconfont icon-right}
+
+Element #1
+Bind method: bindtap Function call: submitOrder
+#element{button} {depth: 3}
+  #attribute{bindtap: submitOrder}
+  #attribute{class: btn-commit}
+  scriptdata{submitFlag?'处理中...':'提交订单'}
+
+
+pages/userInfo/userInfoIndex
+
+Element #0
+Bind method: bindtap Function call: menuItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: menuItemClick}
+  #attribute{class: menuItem}
+  #attribute{data-item: {{item}}}
+  #attribute{wx:if: {{!item.hide}}}
+  #attribute{wx:for: {{groupItem.list}}}
+  #attribute{wx:key: menuItem}
+  #element{view} {depth: 4}
+    #attribute{class: iconView}
+    #element{text} {depth: 5}
+      #attribute{class: iconfont {{item.icon}}}
+      #attribute{style: color:{{item.iconColor}}}
+  #element{view} {depth: 4}
+    #attribute{class: textView}
+    scriptdata{item.text}
+
+Element #1
+Bind method: bindtap Function call: pushSeatCodeOrder
+#element{view} {depth: 2}
+  #attribute{bindtap: pushSeatCodeOrder}
+  #attribute{class: orderBtn}
+  #attribute{wx:if: {{seatCodeInfo}}}
+  data{买单}
+
+
+pages/userInfo/userCenter/course/courseList
+
+Element #0
+Bind method: bindtap Function call: listItemClick
+#element{view} {depth: 2}
+  #attribute{bindtap: listItemClick}
+  #attribute{class: listItem}
+  #attribute{data-item: {{item}}}
+  #attribute{wx:for: {{dataList}}}
+  #attribute{wx:key: dataItem}
+  #element{view} {depth: 3}
+    #attribute{class: topView}
+    #element{view} {depth: 4}
+      #attribute{class: nameView}
+      scriptdata{item.name}
+      data{
+            }
+    #element{view} {depth: 4}
+      #attribute{class: applyView}
+      scriptdata{item.projectName}
+      data{
+            }
+  #element{view} {depth: 3}
+    #attribute{class: bView}
+    data{已用：}
+    #element{text} {depth: 4}
+      scriptdata{item.usedCount||0}
+    data{剩余：}
+    #element{text} {depth: 4}
+      scriptdata{item.count}
+
+
+pages/userInfo/userCenter/package/packageList
+
+Element #0
+Bind method: bindtap Function call: listItemClick
+#element{view} {depth: 2}
+  #attribute{bindtap: listItemClick}
+  #attribute{class: listItem}
+  #attribute{data-item: {{item}}}
+  #attribute{wx:for: {{dataList}}}
+  #attribute{wx:key: dataItem}
+  #element{view} {depth: 3}
+    #attribute{class: topView}
+    #element{view} {depth: 4}
+      #attribute{class: nameView}
+      scriptdata{item.name}
+      data{
+            }
+    #element{view} {depth: 4}
+      #attribute{class: applyView}
+      data{有效期：}
+      scriptdata{item.endDateStr}
+      data{
+            }
+  #element{view} {depth: 3}
+    #attribute{class: contentView}
+    #element{view} {depth: 4}
+      #attribute{class: subItem}
+      #attribute{wx:for: {{item.packagesEntries}}}
+      #attribute{wx:for-item: obj}
+      #attribute{wx:key: subItem}
+      #element{view} {depth: 5}
+        #attribute{class: typeView type-{{obj.type}}}
+        scriptdata{obj.typeText}
+      #element{view} {depth: 5}
+        #attribute{class: cView}
+        #element{view} {depth: 6}
+          #attribute{class: applyItem}
+          #attribute{wx:for: {{obj.links}}}
+          #attribute{wx:for-item: linkObj}
+          #attribute{wx:key: linkObj}
+          scriptdata{linkObj.name}
+          data{
+                    }
+        #element{view} {depth: 6}
+          #attribute{class: cntView}
+          #element{view} {depth: 7}
+            #attribute{class: fsTagView}
+            #attribute{wx:if: {{obj.links&&obj.links.length>1}}}
+          #element{view} {depth: 7}
+            #attribute{class: centerView}
+            data{总：}
+            #element{text} {depth: 8}
+              scriptdata{obj.totalCnt}
+            data{剩：}
+            #element{text} {depth: 8}
+              scriptdata{obj.count}
+
+
+pages/userInfo/userCenter/qua/quaList
+
+Element #0
+Bind method: bindtap Function call: listItemClick
+#element{view} {depth: 2}
+  #attribute{bindtap: listItemClick}
+  #attribute{class: listItem}
+  #attribute{data-item: {{item}}}
+  #attribute{wx:for: {{dataList}}}
+  #attribute{wx:key: dataItem}
+  #element{view} {depth: 3}
+    #attribute{class: topView}
+    #element{view} {depth: 4}
+      #attribute{class: nameView}
+      scriptdata{item.name||item.rights.name}
+      data{
+            }
+    #element{view} {depth: 4}
+      #attribute{class: applyView}
+      data{有效期：}
+      scriptdata{item.endDateStr}
+      data{
+            }
+  #element{view} {depth: 3}
+    #attribute{class: bView}
+    scriptdata{item.applyText}
+    data{ 享：}
+    #element{text} {depth: 4}
+      scriptdata{item.disText}
+    data{优惠
+        }
+
+
+pages/userInfo/userCenter/store/storeList
+
+Element #0
+Bind method: bindtap Function call: listItemClick
+#element{view} {depth: 2}
+  #attribute{bindtap: listItemClick}
+  #attribute{class: listItem}
+  #attribute{data-item: {{item}}}
+  #attribute{wx:for: {{dataList}}}
+  #attribute{wx:key: dataItem}
+  #element{view} {depth: 3}
+    #attribute{class: topView}
+    #element{view} {depth: 4}
+      #attribute{class: nameView}
+      scriptdata{item.name}
+      data{
+            }
+    #element{view} {depth: 4}
+      #attribute{class: applyView}
+      scriptdata{item.applyText}
+      data{
+            }
+  #element{view} {depth: 3}
+    #attribute{class: bView}
+    data{储值余额：}
+    #element{text} {depth: 4}
+      scriptdata{item.amount}
+
+
+pages/userInfo/userCenter/voucher/voucherList
+
+
+pages/userInfo/userCenter/consHistory/consHistory
+
+Element #0
+Bind method: bindtap Function call: menuItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: menuItemClick}
+  #attribute{class: menuItem {{menuIndex==item.index?'select':''}}}
+  #attribute{data-index: {{item.index}}}
+  #attribute{wx:for: {{menuList}}}
+  #attribute{wx:key: menuItem}
+  scriptdata{item.text}
+
+
+pages/store/customPage
+
+
+pages/store/customTabItem/customTabItem1
+
+
+pages/store/customTabItem/customTabItem2
+
+
+pages/store/customTabItem/customTabItem3
+
+
+pages/userInfo/empInfo/empBind/empBind
+
+Element #0
+Bind method: bindtap Function call: bindBtnClick
+#element{button} {depth: 3}
+  #attribute{bindtap: bindBtnClick}
+  #attribute{class: btn-bind}
+  data{微信绑定}
+
+
+pages/userInfo/empInfo/empInfo
+
+Element #0
+Bind method: bindchange Function call: bindStaffChange
+#element{picker} {depth: 2}
+  #attribute{bindchange: bindStaffChange}
+  #attribute{class: shopView}
+  #attribute{range: {{staffList}}}
+  #attribute{rangekey: text}
+  #attribute{value: {{index}}}
+  #attribute{wx:if: {{staffInfo}}}
+  scriptdata{staffInfo.compName||staffInfo.compId+'-门店'}
+  data{
+        }
+  #element{label} {depth: 3}
+    #attribute{class: icon-more iconfont}
+
+Element #1
+Bind method: bindtap Function call: pushSubPage
+#element{view} {depth: 4}
+  #attribute{bindtap: pushSubPage}
+  #attribute{class: shareItem fw-500}
+  #attribute{data-key: share}
+  data{活动分享
+            }
+
+Element #2
+Bind method: bindtap Function call: pushSubPage
+#element{view} {depth: 4}
+  #attribute{bindtap: pushSubPage}
+  #attribute{class: posterItem fw-500}
+  #attribute{data-key: poster}
+  data{营销海报
+            }
+
+Element #3
+Bind method: bindtap Function call: pushSubPage
+#element{view} {depth: 4}
+  #attribute{bindtap: pushSubPage}
+  #attribute{class: yjItem fw-500}
+  #attribute{data-key: yj}
+  data{我的业绩
+            }
+
+
+pages/userInfo/empInfo/empMarket/empMarket
+
+Element #0
+Bind method: bindtap Function call: menuItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: menuItemClick}
+  #attribute{class: menuItem {{curMenu.index==item.index?'select':''}}}
+  #attribute{data-item: {{item}}}
+  #attribute{wx:for: {{menuList}}}
+  scriptdata{item.text}
+  data{
+
+            }
+  #element{view} {depth: 4}
+    #attribute{class: selectView}
+    #attribute{wx:if: {{curMenu.index==item.index?'select':''}}}
+
+Element #1
+Bind method: bindtap Function call: activityItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: activityItemClick}
+  #attribute{class: activityItem}
+  #attribute{data-item: {{item}}}
+  #attribute{wx:for: {{dataList}}}
+  #attribute{wx:key: orderItem}
+  #element{view} {depth: 4}
+    #attribute{class: imgView}
+    #element{image} {depth: 5}
+      #attribute{mode: aspectFill}
+      #attribute{src: {{item.coverImg}}}
+  #element{view} {depth: 4}
+    #attribute{class: textView}
+    #element{view} {depth: 5}
+      #attribute{class: nameView overflowText}
+      scriptdata{item.activityName}
+      data{
+                }
+    #element{view} {depth: 5}
+      #attribute{class: tagView}
+      #element{label} {depth: 6}
+        data{已售}
+        scriptdata{item.empSaleCnt||0}
+      #element{label} {depth: 6}
+        data{总浏览}
+        scriptdata{item.totalViews||0}
+      #element{label} {depth: 6}
+        #attribute{wx:if: {{item.tagText}}}
+        scriptdata{item.tagText}
+    #element{view} {depth: 5}
+      #attribute{class: priceView}
+      #element{label} {depth: 6}
+        #attribute{class: label-price}
+        data{￥}
+        #element{text} {depth: 7}
+          scriptdata{item.price}
+      #element{label} {depth: 6}
+        #attribute{class: label-orgPrice}
+        data{原价￥}
+        scriptdata{item.orgPrice}
+    #element{view} {depth: 5}
+      #attribute{class: btnView}
+      #element{button} {depth: 6}
+        #attribute{bindtap: groupInfoBtnClick}
+        #attribute{class: btn-groupInfo}
+        #attribute{data-item: {{item}}}
+        #attribute{wx:if: {{curMenu.index==1}}}
+        data{拼团进度}
+      #element{button} {depth: 6}
+        #attribute{bindtap: shareBtnClick}
+        #attribute{class: btn-share}
+        #attribute{data-item: {{item}}}
+        data{分享客户}
+
+Element #2
+Bind method: bindtap Function call: groupInfoBtnClick
+#element{button} {depth: 6}
+  #attribute{bindtap: groupInfoBtnClick}
+  #attribute{class: btn-groupInfo}
+  #attribute{data-item: {{item}}}
+  #attribute{wx:if: {{curMenu.index==1}}}
+  data{拼团进度}
+
+Element #3
+Bind method: bindtap Function call: shareBtnClick
+#element{button} {depth: 6}
+  #attribute{bindtap: shareBtnClick}
+  #attribute{class: btn-share}
+  #attribute{data-item: {{item}}}
+  data{分享客户}
+
+Element #4
+Bind method: bindtap Function call: shareShopClick
+#element{view} {depth: 2}
+  #attribute{bindtap: shareShopClick}
+  #attribute{class: shopShareView}
+  #attribute{wx:if: {{storeIndexInfo}}}
+  data{整店分享}
+
+Element #5
+Bind method: bindtap Function call: closePopView
+#element{view} {depth: 2}
+  #attribute{bindtap: closePopView}
+  #attribute{catchtouchmove: return}
+  #attribute{class: popView}
+  #attribute{wx:if: {{showPopView}}}
+  #element{view} {depth: 3}
+    #attribute{catchtap: disTap}
+    #attribute{class: contentView}
+    #element{view} {depth: 4}
+      #attribute{bindtap: shareHBClick}
+      #attribute{class: subItem}
+      #element{image} {depth: 5}
+        #attribute{class: img-icon}
+        #attribute{src: https://static.bokao2o.com/marketApp/Def_Icon_ShareHB.png}
+      #element{view} {depth: 5}
+        #attribute{class: textView}
+        data{生成海报}
+    #element{view} {depth: 4}
+      #attribute{bindtap: sharePYQClick}
+      #attribute{class: subItem}
+      #element{image} {depth: 5}
+        #attribute{class: img-icon}
+        #attribute{src: https://static.bokao2o.com/marketApp/Def_Icon_SharePYQ.png}
+      #element{view} {depth: 5}
+        #attribute{class: textView}
+        data{分享朋友圈}
+
+Element #6
+Bind method: bindtap Function call: shareHBClick
+#element{view} {depth: 4}
+  #attribute{bindtap: shareHBClick}
+  #attribute{class: subItem}
+  #element{image} {depth: 5}
+    #attribute{class: img-icon}
+    #attribute{src: https://static.bokao2o.com/marketApp/Def_Icon_ShareHB.png}
+  #element{view} {depth: 5}
+    #attribute{class: textView}
+    data{生成海报}
+
+Element #7
+Bind method: bindtap Function call: sharePYQClick
+#element{view} {depth: 4}
+  #attribute{bindtap: sharePYQClick}
+  #attribute{class: subItem}
+  #element{image} {depth: 5}
+    #attribute{class: img-icon}
+    #attribute{src: https://static.bokao2o.com/marketApp/Def_Icon_SharePYQ.png}
+  #element{view} {depth: 5}
+    #attribute{class: textView}
+    data{分享朋友圈}
+
+
+pages/share/posterShare
+
+Element #0
+Bind method: bindtap Function call: imgClick
+#element{view} {depth: 1}
+  #attribute{bindtap: imgClick}
+  #attribute{class: posterView}
+  #element{image} {depth: 2}
+    #attribute{src: {{posterImg}}}
+    #attribute{style: height:{{imgH}}px}
+
+
+pages/userInfo/empInfo/empOrder/empOrder
+
+Element #0
+Bind method: bindchange Function call: bindDateChange
+#element{picker} {depth: 5}
+  #attribute{bindchange: bindDateChange}
+  #attribute{data-key: start}
+  #attribute{end: {{now}}}
+  #attribute{mode: date}
+  #attribute{start: 2019-01-01}
+  #attribute{value: {{date}}}
+  scriptdata{startDate}
+  data{
+                }
+
+Element #1
+Bind method: bindchange Function call: bindDateChange
+#element{picker} {depth: 5}
+  #attribute{bindchange: bindDateChange}
+  #attribute{data-key: end}
+  #attribute{end: {{now}}}
+  #attribute{mode: date}
+  #attribute{start: 2019-01-01}
+  #attribute{value: {{date}}}
+  scriptdata{endDate}
+  data{
+                }
+
+Element #2
+Bind method: bindchange Function call: bindTypeChange
+#element{picker} {depth: 5}
+  #attribute{bindchange: bindTypeChange}
+  #attribute{range: {{typeList}}}
+  #attribute{rangekey: text}
+  #attribute{value: {{index}}}
+  scriptdata{curType.text}
+  data{
+                }
+
+
+pages/userInfo/empInfo/empGroupTeamInfo/empGroupTeamInfo
+
+Element #0
+Bind method: bindchange Function call: bindDateChange
+#element{picker} {depth: 5}
+  #attribute{bindchange: bindDateChange}
+  #attribute{data-key: start}
+  #attribute{end: {{now}}}
+  #attribute{mode: date}
+  #attribute{start: 2019-01-01}
+  #attribute{value: {{date}}}
+  scriptdata{startDate}
+  data{
+                }
+
+Element #1
+Bind method: bindchange Function call: bindDateChange
+#element{picker} {depth: 5}
+  #attribute{bindchange: bindDateChange}
+  #attribute{data-key: end}
+  #attribute{end: {{now}}}
+  #attribute{mode: date}
+  #attribute{start: 2019-01-01}
+  #attribute{value: {{date}}}
+  scriptdata{endDate}
+  data{
+                }
+
+Element #2
+Bind method: bindchange Function call: bindTypeChange
+#element{picker} {depth: 5}
+  #attribute{bindchange: bindTypeChange}
+  #attribute{range: {{typeList}}}
+  #attribute{rangekey: text}
+  #attribute{value: {{index}}}
+  scriptdata{curType.text}
+  data{
+                }
+
+
+pages/userInfo/onlineVip/onlineVip
+
+Element #0
+Bind method: bindchange Function call: selectVipLevChange
+#element{swiper} {depth: 3}
+  #attribute{bindchange: selectVipLevChange}
+  #attribute{circular: true}
+  #attribute{class: swiper-vip}
+  #attribute{duration: 600}
+  #attribute{interval: 6000}
+  #element{swiper-item} {depth: 4}
+    #attribute{class: vipItem}
+    #attribute{data-index: {{index}}}
+    #attribute{data-item: {{item}}}
+    #attribute{wx:for: {{dataList}}}
+    #attribute{wx:key: vipItem}
+    #element{view} {depth: 5}
+      #attribute{class: bcView}
+      #element{view} {depth: 6}
+        #attribute{class: priceView}
+        data{￥}
+        #element{label} {depth: 7}
+          scriptdata{item.price}
+        data{/年}
+      #element{view} {depth: 6}
+        #attribute{class: nameView}
+        scriptdata{item.level}
+
+Element #1
+Bind method: bindtap Function call: agreementItemClick
+#element{view} {depth: 4}
+  #attribute{bindtap: agreementItemClick}
+  #attribute{class: agreementView}
+  #element{image} {depth: 5}
+    #attribute{src: https://static.bokao2o.com/marketApp/Def_Icon_Choose_{{agreementFlag?'S':'N'}}.png}
+  data{已阅读并同意
+                }
+  #element{label} {depth: 5}
+    #attribute{catchtap: pushAgreementContent}
+    data{《商城会员协议》}
+
+Element #2
+Bind method: bindtap Function call: buyBtnClick
+#element{button} {depth: 5}
+  #attribute{bindtap: buyBtnClick}
+  #attribute{class: {{disFlag?'btn-dis':''}}}
+  scriptdata{disFlag?'已购买':'购买会员资格'}
+
+Element #3
+Bind method: bindtap Function call: closePopView
+#element{view} {depth: 2}
+  #attribute{bindtap: closePopView}
+  #attribute{class: popView}
+  #attribute{wx:if: {{showPopViewFlag}}}
+  #element{view} {depth: 3}
+    #attribute{catchtap: disTap}
+    #attribute{class: contentView}
+    #element{view} {depth: 4}
+      #attribute{wx:for: {{xyText}}}
+      #attribute{wx:key: xyText}
+      scriptdata{item}
+
+
+pages/userInfo/userCenter/userInfo/userInfo
+
+Element #0
+Bind method: bindtap Function call: listItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: listItemClick}
+  #attribute{class: listItem}
+  #attribute{data-item: {{obj}}}
+  #attribute{wx:for: {{item.list}}}
+  #attribute{wx:for-item: obj}
+  #attribute{wx:key: item}
+  #element{label} {depth: 4}
+    #attribute{class: label-left}
+    scriptdata{obj.text}
+  #element{view} {depth: 4}
+    #attribute{class: cView}
+    #attribute{wx:if: {{!obj.pickerFlag}}}
+    scriptdata{memberInfo[obj.key]||'未设置'}
+    data{
+            }
+  #element{picker} {depth: 4}
+    #attribute{bindchange: pickerChange}
+    #attribute{class: cView}
+    #attribute{data-key: {{obj.key}}}
+    #attribute{range: {{genderList}}}
+    #attribute{rangekey: text}
+    #attribute{value: {{memberInfo[obj.key]}}}
+    #attribute{wx:if: {{obj.key=='genderText'}}}
+    #element{view} {depth: 5}
+      #attribute{class: cView overflowText}
+      scriptdata{memberInfo[obj.key]||'未设置'}
+      data{
+                }
+  #element{picker} {depth: 4}
+    #attribute{bindchange: birthdayChange}
+    #attribute{class: cView}
+    #attribute{end: 2020-09-01}
+    #attribute{mode: date}
+    #attribute{start: 1900-01-01}
+    #attribute{value: {{memberInfo[obj.key]}}}
+    #attribute{wx:if: {{obj.key=='birthday'}}}
+    #element{view} {depth: 5}
+      #attribute{class: cView overflowText}
+      scriptdata{memberInfo[obj.key]||'未设置'}
+      data{
+                }
+
+Element #1
+Bind method: bindchange Function call: pickerChange
+#element{picker} {depth: 4}
+  #attribute{bindchange: pickerChange}
+  #attribute{class: cView}
+  #attribute{data-key: {{obj.key}}}
+  #attribute{range: {{genderList}}}
+  #attribute{rangekey: text}
+  #attribute{value: {{memberInfo[obj.key]}}}
+  #attribute{wx:if: {{obj.key=='genderText'}}}
+  #element{view} {depth: 5}
+    #attribute{class: cView overflowText}
+    scriptdata{memberInfo[obj.key]||'未设置'}
+    data{
+                }
+
+Element #2
+Bind method: bindchange Function call: birthdayChange
+#element{picker} {depth: 4}
+  #attribute{bindchange: birthdayChange}
+  #attribute{class: cView}
+  #attribute{end: 2020-09-01}
+  #attribute{mode: date}
+  #attribute{start: 1900-01-01}
+  #attribute{value: {{memberInfo[obj.key]}}}
+  #attribute{wx:if: {{obj.key=='birthday'}}}
+  #element{view} {depth: 5}
+    #attribute{class: cView overflowText}
+    scriptdata{memberInfo[obj.key]||'未设置'}
+    data{
+                }
+
+Element #3
+Bind method: bindchange Function call: bindChange
+#element{picker-view} {depth: 4}
+  #attribute{bindchange: bindChange}
+  #attribute{indicatorstyle: height: 50px;}
+  #attribute{style: width:100%;height:300px;}
+  #attribute{value: {{value}}}
+  #element{picker-view-column} {depth: 5}
+    #element{view} {depth: 6}
+      #attribute{style: line-height:50px;text-align:center;}
+      #attribute{wx:for: {{years}}}
+      #attribute{wx:key: {{years}}}
+      scriptdata{item}
+      data{年
+                    }
+  #element{picker-view-column} {depth: 5}
+    #element{view} {depth: 6}
+      #attribute{style: line-height:50px;text-align:center;}
+      #attribute{wx:for: {{months}}}
+      #attribute{wx:key: {{months}}}
+      scriptdata{item}
+      data{月
+                    }
+  #element{picker-view-column} {depth: 5}
+    #element{view} {depth: 6}
+      #attribute{style: line-height:50px;text-align:center;}
+      #attribute{wx:for: {{days}}}
+      #attribute{wx:key: {{days}}}
+      scriptdata{item}
+      data{日
+                    }
+
+
+pages/userInfo/userCenter/userInfo/changeUserInfo/changeUserInfo
+
+Element #0
+Bind method: bindinput Function call: inputChange
+#element{input} {depth: 3}
+  #attribute{bindinput: inputChange}
+  #attribute{class: input-name}
+  #attribute{data-key: name}
+  #attribute{placeholder: 请输入姓名}
+  #attribute{placeholderstyle: color: #ccc;}
+  #attribute{type: text}
+  #attribute{value: {{memberInfo.name}}}
+
+Element #1
+Bind method: bindinput Function call: inputChange
+#element{input} {depth: 3}
+  #attribute{bindinput: inputChange}
+  #attribute{class: input-mobile}
+  #attribute{data-key: mobile}
+  #attribute{placeholder: 请输入手机号}
+  #attribute{placeholderstyle: color: #ccc;}
+  #attribute{type: text}
+  #attribute{value: {{memberInfo.mobile}}}
+
+Element #2
+Bind method: bindinput Function call: inputChange
+#element{input} {depth: 4}
+  #attribute{bindinput: inputChange}
+  #attribute{class: input-code}
+  #attribute{data-key: authCode}
+  #attribute{placeholder: 请输入验证码}
+  #attribute{placeholderstyle: color: #ccc;}
+  #attribute{type: text}
+
+Element #3
+Bind method: bindtap Function call: getAuthCode
+#element{button} {depth: 4}
+  #attribute{bindtap: getAuthCode}
+  #attribute{class: btn-code}
+  scriptdata{authText}
+
+Element #4
+Bind method: bindtap Function call: cancelBtnClick
+#element{button} {depth: 3}
+  #attribute{bindtap: cancelBtnClick}
+  #attribute{class: btn-cancel}
+  data{取消}
+
+Element #5
+Bind method: bindtap Function call: saveBtnClick
+#element{button} {depth: 3}
+  #attribute{bindtap: saveBtnClick}
+  #attribute{class: btn-save}
+  data{确定}
+
+
+pages/res/resIndex
+
+Element #0
+Bind method: bindtap Function call: pushMRResApp
+#element{view} {depth: 2}
+  #attribute{bindtap: pushMRResApp}
+  #attribute{class: pushView}
+  data{跳转美容预约小程序}
+
+
+pages/res/resAdd/resAdd
+
+Element #0
+Bind method: bindtap Function call: empInfoClick
+#element{view} {depth: 2}
+  #attribute{bindtap: empInfoClick}
+  #attribute{class: empInfoView}
+  #attribute{style: color:{{styleColor.textColor}};background:{{styleColor.bcColor}}}
+  #attribute{wx:if: {{resEmpInfo}}}
+  #element{view} {depth: 3}
+    #attribute{class: imgView}
+    #element{image} {depth: 4}
+      #attribute{mode: aspectFill}
+      #attribute{src: {{resEmpInfo.avatar||'https://static.bokao2o.com/images/bg200.png'}}}
+  #element{view} {depth: 3}
+    #attribute{class: infoView}
+    #element{view} {depth: 4}
+      #attribute{class: nameView overflowText}
+      scriptdata{resEmpInfo.name}
+      data{
+            }
+    #element{view} {depth: 4}
+      #attribute{class: jobView}
+      scriptdata{resEmpInfo.jobTitle}
+      data{
+            }
+  #element{view} {depth: 3}
+    #attribute{class: resetEmpView icon-reset iconfont}
+    #attribute{wx:if: {{tempResType=='reserveRes'}}}
+
+Element #1
+Bind method: bindtap Function call: dateItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: dateItemClick}
+  #attribute{class: dateItem {{item.dateText==dateInfo.dateText?'select':''}}}
+  #attribute{data-item: {{item}}}
+  #attribute{wx:for: {{dateList}}}
+  #attribute{wx:key: {{index}}}
+  #element{view} {depth: 4}
+    #attribute{class: weekView}
+    scriptdata{item.weekText}
+  #element{view} {depth: 4}
+    #attribute{class: dateView}
+    scriptdata{item.dateText}
+  #element{label} {depth: 4}
+    #attribute{class: label-tag}
+    #attribute{style: background:{{styleColor.bcColor}}}
+    #attribute{wx:if: {{item.dateText==dateInfo.dateText}}}
+
+Element #2
+Bind method: bindtap Function call: timeItemClick
+#element{view} {depth: 5}
+  #attribute{bindtap: timeItemClick}
+  #attribute{class: timeItem {{item.disFlag?'disItem':''}} {{item.hours==timeInfo.hours?'select':''}}}
+  #attribute{data-item: {{item}}}
+  #attribute{style: width:{{timeItemW}}px;background:{{item.hours==timeInfo.hours?styleColor.bcColor:'#f8f8f8'}};}
+  #attribute{wx:for: {{mTimeList}}}
+  #attribute{wx:key: {{index}}}
+  scriptdata{item.showText}
+  data{
+                }
+
+Element #3
+Bind method: bindtap Function call: timeItemClick
+#element{view} {depth: 5}
+  #attribute{bindtap: timeItemClick}
+  #attribute{class: timeItem {{item.disFlag?'disItem':''}} {{item.hours==timeInfo.hours?'select':''}}}
+  #attribute{data-item: {{item}}}
+  #attribute{style: width:{{timeItemW}}px;background:{{item.hours==timeInfo.hours?styleColor.bcColor:'#f8f8f8'}};}
+  #attribute{wx:for: {{nTimeList}}}
+  #attribute{wx:key: {{index}}}
+  scriptdata{item.showText}
+  data{
+                }
+
+Element #4
+Bind method: bindtap Function call: timeItemClick
+#element{view} {depth: 5}
+  #attribute{bindtap: timeItemClick}
+  #attribute{class: timeItem {{item.disFlag?'disItem':''}} {{item.hours==timeInfo.hours?'select':''}}}
+  #attribute{data-item: {{item}}}
+  #attribute{style: width:{{timeItemW}}px;background:{{item.hours==timeInfo.hours?styleColor.bcColor:'#f8f8f8'}};}
+  #attribute{wx:for: {{aTimeList}}}
+  #attribute{wx:key: {{index}}}
+  scriptdata{item.showText}
+  data{
+                }
+
+Element #5
+Bind method: bindtap Function call: backStepClick
+#element{button} {depth: 5}
+  #attribute{bindtap: backStepClick}
+  #attribute{class: btn-back}
+  #attribute{wx:if: {{stepIndex==2&&tempResType!='reserveRes'}}}
+
+Element #6
+Bind method: bindtap Function call: closePopView
+#element{button} {depth: 5}
+  #attribute{bindtap: closePopView}
+  #attribute{class: btn-close}
+
+Element #7
+Bind method: bindtap Function call: resTypeItemClick
+#element{view} {depth: 6}
+  #attribute{bindtap: resTypeItemClick}
+  #attribute{class: resTypeItem overflowText {{item.select?'select':''}}}
+  #attribute{data-index: {{index}}}
+  #attribute{data-item: {{item}}}
+  #attribute{style: width:{{resTypeItemW}}px;background:{{item.select?styleColor.bcColor:'#f8f8f8'}};}
+  #attribute{wx:if: {{!item.hide}}}
+  #attribute{wx:for: {{resTypeList}}}
+  #attribute{wx:key: {{index}}}
+  scriptdata{item.name}
+  data{
+                    }
+
+Element #8
+Bind method: bindinput Function call: inputValue
+#element{input} {depth: 7}
+  #attribute{bindinput: inputValue}
+  #attribute{data-key: userName}
+  #attribute{placeholder: 填写姓名}
+  #attribute{value: {{userName}}}
+
+Element #9
+Bind method: bindtap Function call: genderItemClick
+#element{view} {depth: 8}
+  #attribute{bindtap: genderItemClick}
+  #attribute{class: manItem {{gender==1?'select':''}}}
+  #attribute{data-sex: 1}
+  #attribute{style: background:{{gender==1?styleColor.bcColor:'#f8f8f8'}};}
+  data{男
+                            }
+
+Element #10
+Bind method: bindtap Function call: genderItemClick
+#element{view} {depth: 8}
+  #attribute{bindtap: genderItemClick}
+  #attribute{class: womanItem {{gender!=1?'select':''}}}
+  #attribute{data-sex: 0}
+  #attribute{style: background:{{gender==0?styleColor.bcColor:'#f8f8f8'}};}
+  data{女
+                            }
+
+Element #11
+Bind method: bindinput Function call: inputValue
+#element{input} {depth: 7}
+  #attribute{bindinput: inputValue}
+  #attribute{data-key: mobile}
+  #attribute{placeholder: 填写手机号}
+  #attribute{value: {{mobile}}}
+
+Element #12
+Bind method: bindgetphonenumber Function call: getCurrentMobile
+#element{button} {depth: 7}
+  #attribute{bindgetphonenumber: getCurrentMobile}
+  #attribute{class: btn-mobile}
+  #attribute{formtype: submit}
+  #attribute{opentype: getPhoneNumber}
+  data{授权
+                        }
+
+Element #13
+Bind method: bindinput Function call: inputValue
+#element{input} {depth: 7}
+  #attribute{bindinput: inputValue}
+  #attribute{data-key: remark}
+  #attribute{placeholder: 填写备注信息}
+  #attribute{value: {{remark}}}
+
+Element #14
+Bind method: bindtap Function call: resItemClick
+#element{view} {depth: 5}
+  #attribute{bindtap: resItemClick}
+  #attribute{class: empItem}
+  #attribute{data-item: {{item}}}
+  #attribute{wx:for: {{resEmpList}}}
+  #attribute{wx:key: resEmp}
+  #element{view} {depth: 6}
+    #attribute{class: imgView}
+    #element{image} {depth: 7}
+      #attribute{mode: aspectFill}
+      #attribute{src: {{item.avatar||'https://static.bokao2o.com/images/bg200.png'}}}
+  #element{view} {depth: 6}
+    #attribute{class: infoView}
+    #element{view} {depth: 7}
+      #attribute{class: nameView overflowText}
+      #element{text} {depth: 8}
+        #attribute{class: text-name}
+        scriptdata{item.name}
+      #element{text} {depth: 8}
+        #attribute{class: text-job}
+        scriptdata{item.jobTitle}
+
+Element #15
+Bind method: bindtap Function call: nextBtnClick
+#element{button} {depth: 3}
+  #attribute{bindtap: nextBtnClick}
+  #attribute{class: btn-next}
+  #attribute{style: color:{{styleColor.textColor}};background:{{styleColor.bcColor}}}
+  scriptdata{stepIndex<2?'下一步':'确认预约'}
+  data{
+        }
+
+
+pages/res/empCard/empCard
+
+
+pages/userInfo/userRes/userRes
+
+Element #0
+Bind method: bindtap Function call: switchStatus
+#element{view} {depth: 3}
+  #attribute{bindtap: switchStatus}
+  #attribute{class: menuItem {{active==item.id?'select':''}}}
+  #attribute{data-type: {{item.id}}}
+  #attribute{wx:for: {{status}}}
+  #attribute{wx:key: {{index}}}
+  scriptdata{item.name}
+  data{
+
+            }
+  #element{view} {depth: 4}
+    #attribute{class: flagView}
+    #attribute{wx:if: {{active==item.type}}}
+
+Element #1
+Bind method: bindtap Function call: cancelReserve
+#element{button} {depth: 6}
+  #attribute{bindtap: cancelReserve}
+  #attribute{class: cancelBtn}
+  #attribute{data-id: {{item.id}}}
+  #attribute{wx:if: {{item.status==0||item.status==1}}}
+  data{取消预约}
+
+
+pages/userInfo/userOrder/activityShot/activityShot
+
+Element #0
+Bind method: bindshowactivityrules Function call: showActivityRules
+#element{activitydetail} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindshowactivityrules: showActivityRules}
+  #attribute{goodsinfo: {{activityInfo.activityGoodsObj}}}
+
+Element #1
+Bind method: bindtap Function call: topMenuItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: topMenuItemClick}
+  #attribute{class: menuItem {{topMenuIndex==0?'select':''}}}
+  #attribute{data-index: 0}
+  data{商品详情}
+
+Element #2
+Bind method: bindtap Function call: topMenuItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: topMenuItemClick}
+  #attribute{class: menuItem {{topMenuIndex==1?'select':''}}}
+  #attribute{data-index: 1}
+  data{购买须知}
+
+
+pages/userInfo/empInfo/empPoster/empPoster
+
+Element #0
+Bind method: bindtap Function call: posterItemClick
+#element{view} {depth: 2}
+  #attribute{bindtap: posterItemClick}
+  #attribute{class: posterItem}
+  #attribute{data-item: {{item}}}
+  #attribute{wx:for: {{dataList}}}
+  #attribute{wx:key: posterItem}
+  #element{view} {depth: 3}
+    #attribute{class: imgView}
+    #element{image} {depth: 4}
+      #attribute{mode: aspectFill}
+      #attribute{src: {{item.image}}}
+  #element{view} {depth: 3}
+    #attribute{class: textView}
+    #element{view} {depth: 4}
+      #attribute{class: nameView}
+      scriptdata{item.posterName}
+    #element{view} {depth: 4}
+      #attribute{class: btnView}
+      #element{button} {depth: 5}
+        data{下载}
+
+
+pages/store/coupon/list/couponList
+
+Element #0
+Bind method: bindtap Function call: activityItemClick
+#element{view} {depth: 2}
+  #attribute{bindtap: activityItemClick}
+  #attribute{class: couponItem}
+  #attribute{data-item: {{item}}}
+  #attribute{wx:for: {{dataList}}}
+  #attribute{wx:key: vipCardItem}
+  #element{view} {depth: 3}
+    #attribute{class: cView}
+    #element{view} {depth: 4}
+      #attribute{class: nameView}
+      scriptdata{item.activityName}
+    #element{view} {depth: 4}
+      #attribute{class: contentView}
+      #attribute{wx:if: {{item.activityGoodsObj&&item.activityGoodsObj.category=='cash'}}}
+      #element{label} {depth: 5}
+        #attribute{class: label-price}
+        data{￥}
+        #element{text} {depth: 6}
+          scriptdata{item.activityGoodsObj.amount}
+      #element{label} {depth: 5}
+        #attribute{class: label-tip}
+        #attribute{wx:if: {{item.activityGoodsObj.minConsumeAmt}}}
+        data{满}
+        #element{text} {depth: 6}
+          scriptdata{item.activityGoodsObj.minConsumeAmt}
+        data{元可用
+                }
+      #element{label} {depth: 5}
+        #attribute{class: label-tip}
+        #attribute{wx:if: {{!item.activityGoodsObj.minConsumeAmt}}}
+        data{不限最低使用金额
+                }
+    #element{view} {depth: 4}
+      #attribute{class: contentView}
+      #attribute{wx:if: {{item.activityGoodsObj&&item.activityGoodsObj.category=='project'}}}
+      #element{label} {depth: 5}
+        #attribute{class: label-project}
+        #element{text} {depth: 6}
+          scriptdata{item.activityGoodsObj.name}
+        data{1张
+                }
+  #element{view} {depth: 3}
+    #attribute{class: rightView {{item.activityGoodsObj.category}}}
+    #element{view} {depth: 4}
+      #attribute{class: typeView}
+      scriptdata{item.activityGoodsObj.categoryText}
+    #element{view} {depth: 4}
+      #attribute{class: btnView}
+      #element{button} {depth: 5}
+        data{立即领取}
+
+
+pages/store/coupon/detail/couponDetail
+
+Element #0
+Bind method: bindtap Function call: pushShopListPage
+#element{view} {depth: 3}
+  #attribute{bindtap: pushShopListPage}
+  #attribute{class: shopView}
+  #element{text} {depth: 4}
+    #attribute{class: iconfont icon-shop}
+  #element{text} {depth: 4}
+    scriptdata{curShop.name}
+  #element{text} {depth: 4}
+    #attribute{class: iconfont icon-right}
+
+Element #1
+Bind method: bindtap Function call: buyBtnClick
+#element{button} {depth: 3}
+  #attribute{bindtap: buyBtnClick}
+  #attribute{class: btn-buy}
+  #attribute{wx:if: {{activityInfo.buyStatus==1}}}
+  data{立即领取}
+
+Element #2
+Bind method: bindtap Function call: buyBtnClick
+#element{button} {depth: 3}
+  #attribute{bindtap: buyBtnClick}
+  #attribute{class: btn-dis}
+  #attribute{wx:if: {{activityInfo.buyStatus!=1}}}
+  scriptdata{activityInfo.buyStatusText}
+
+
+pages/userInfo/myCards/myCards
+
+Element #0
+Bind method: bindgetphonenumber Function call: getUserMobile
+#element{button} {depth: 4}
+  #attribute{bindgetphonenumber: getUserMobile}
+  #attribute{class: btn-bind}
+  #attribute{opentype: getPhoneNumber}
+  #attribute{wx:if: {{!JZDZFlag}}}
+  data{微信绑卡}
+
+Element #1
+Bind method: bindtap Function call: pushPswCardBind
+#element{button} {depth: 4}
+  #attribute{bindtap: pushPswCardBind}
+  #attribute{class: btn-bind}
+  #attribute{wx:if: {{JZDZFlag}}}
+  data{会员绑卡}
+
+Element #2
+Bind method: bindchange Function call: selectCardChange
+#element{swiper} {depth: 3}
+  #attribute{bindchange: selectCardChange}
+  #attribute{circular: true}
+  #attribute{class: swiper-vip}
+  #attribute{duration: 600}
+  #attribute{nextmargin: 32px}
+  #attribute{previousmargin: 32px}
+  #element{swiper-item} {depth: 4}
+    #attribute{class: vipItem}
+    #attribute{data-index: {{index}}}
+    #attribute{data-item: {{item}}}
+    #attribute{wx:for: {{cardList}}}
+    #attribute{wx:key: vipItem}
+    #element{view} {depth: 5}
+      #attribute{class: bcView}
+      #element{view} {depth: 6}
+        #attribute{class: nameView}
+        scriptdata{item.typeName}
+      #element{view} {depth: 6}
+        #attribute{class: idView}
+        scriptdata{item.cardNo}
+      #element{view} {depth: 6}
+        #attribute{class: dateView}
+        #attribute{wx:if: {{!hideDateFlag}}}
+        data{有效期至 }
+        scriptdata{item.effectiveDate}
+
+Element #3
+Bind method: bindtap Function call: showCardQrCode
+#element{button} {depth: 4}
+  #attribute{bindtap: showCardQrCode}
+  data{展示条码}
+
+Element #4
+Bind method: bindtap Function call: listItemClick
+#element{view} {depth: 4}
+  #attribute{bindtap: listItemClick}
+  #attribute{class: listItem}
+  #attribute{data-key: {{item.key}}}
+  #attribute{wx:for: {{menuList}}}
+  #attribute{wx:key: listItem}
+  scriptdata{item.text}
+  data{
+                }
+  #element{text} {depth: 5}
+    #attribute{class: iconfont icon-right}
+
+Element #5
+Bind method: bindtap Function call: closeCardQrCode
+#element{view} {depth: 2}
+  #attribute{bindtap: closeCardQrCode}
+  #attribute{class: popView}
+  #attribute{wx:if: {{qrCodeFlag}}}
+  #element{view} {depth: 3}
+    #attribute{catchtap: disTap}
+    #attribute{class: contentView}
+    #element{view} {depth: 4}
+      #attribute{class: barCodeView}
+      #attribute{wx:if: {{vipCardNum}}}
+      #element{canvas} {depth: 5}
+        #attribute{canvasid: barcode}
+        #attribute{disablescroll: true}
+        #attribute{style: width:300px}
+    #element{view} {depth: 4}
+      #attribute{class: numberView}
+      #attribute{wx:if: {{vipCardNum}}}
+      scriptdata{vipCardNum}
+    #element{view} {depth: 4}
+      #attribute{class: contentImgCode}
+      #attribute{wx:if: {{vipCardNum}}}
+      #element{canvas} {depth: 5}
+        #attribute{canvasid: qrcode}
+        #attribute{disablescroll: true}
+
+
+pages/userInfo/myCards/cardManage/cardManage
+
+Element #0
+Bind method: bindchange Function call: selectCardChange
+#element{swiper} {depth: 2}
+  #attribute{bindchange: selectCardChange}
+  #attribute{circular: true}
+  #attribute{class: swiper-vip}
+  #attribute{duration: 600}
+  #attribute{nextmargin: 32px}
+  #attribute{previousmargin: 32px}
+  #element{swiper-item} {depth: 3}
+    #attribute{class: vipItem}
+    #attribute{data-index: {{index}}}
+    #attribute{data-item: {{item}}}
+    #attribute{wx:for: {{cardList}}}
+    #attribute{wx:key: vipItem}
+    #element{view} {depth: 4}
+      #attribute{class: bcView}
+      #element{view} {depth: 5}
+        #attribute{class: nameView}
+        scriptdata{item.typeName}
+      #element{view} {depth: 5}
+        #attribute{class: idView}
+        scriptdata{item.cardNo}
+      #element{view} {depth: 5}
+        #attribute{class: dateView}
+        data{有效期至 }
+        scriptdata{item.effectiveDate}
+
+Element #1
+Bind method: bindtap Function call: unbindCardClick
+#element{button} {depth: 3}
+  #attribute{bindtap: unbindCardClick}
+  data{解绑此卡}
+
+
+pages/userInfo/myCards/avoidPswPay/avoidPswPay
+
+Element #0
+Bind method: bindchange Function call: inputPsw
+#element{input} {depth: 3}
+  #attribute{bindchange: inputPsw}
+  #attribute{placeholder: 请输入会员卡密码（6位数字）}
+  #attribute{placeholderstyle: color: #bbb;}
+  #attribute{type: password}
+
+Element #1
+Bind method: bindtap Function call: saveBtnClick
+#element{button} {depth: 3}
+  #attribute{bindtap: saveBtnClick}
+  data{申请}
+
+
+pages/userInfo/myCards/changePsw/changePsw
+
+Element #0
+Bind method: bindchange Function call: inputChange
+#element{input} {depth: 3}
+  #attribute{bindchange: inputChange}
+  #attribute{data-key: mobile}
+  #attribute{placeholder: 请输入您的手机号}
+  #attribute{placeholderstyle: color: #bbb;}
+  #attribute{value: {{mobile}}}
+
+Element #1
+Bind method: bindinput Function call: inputChange
+#element{input} {depth: 3}
+  #attribute{bindinput: inputChange}
+  #attribute{class: input-code}
+  #attribute{data-key: authCode}
+  #attribute{placeholder: 请输入验证码}
+  #attribute{placeholderstyle: color: #ccc;}
+  #attribute{type: text}
+
+Element #2
+Bind method: bindtap Function call: getAuthCode
+#element{button} {depth: 3}
+  #attribute{bindtap: getAuthCode}
+  #attribute{class: btn-code}
+  scriptdata{authText}
+
+Element #3
+Bind method: bindchange Function call: inputChange
+#element{input} {depth: 3}
+  #attribute{bindchange: inputChange}
+  #attribute{data-key: password}
+  #attribute{placeholder: 请输入会员卡密码（6位数字）}
+  #attribute{placeholderstyle: color: #bbb;}
+  #attribute{type: password}
+
+Element #4
+Bind method: bindtap Function call: saveBtnClick
+#element{button} {depth: 3}
+  #attribute{bindtap: saveBtnClick}
+  data{确认}
+
+
+pages/userInfo/myCards/wxNotice/wxNotice
+
+
+pages/cashOrder/cashOrder
+
+Element #0
+Bind method: bindtap Function call: orderBtnClick
+#element{button} {depth: 4}
+  #attribute{bindtap: orderBtnClick}
+  #attribute{class: btn-order}
+  data{开单}
+
+Element #1
+Bind method: bindtap Function call: pushUserCenterPage
+#element{button} {depth: 5}
+  #attribute{bindtap: pushUserCenterPage}
+  #attribute{class: btn-user}
+  data{会员中心}
+
+Element #2
+Bind method: bindtap Function call: pushStorePage
+#element{button} {depth: 5}
+  #attribute{bindtap: pushStorePage}
+  #attribute{class: btn-store}
+  data{去商场看看}
+
+Element #3
+Bind method: bindtap Function call: payBtnClick
+#element{button} {depth: 5}
+  #attribute{bindtap: payBtnClick}
+  #attribute{class: btn-buy}
+  data{买单}
+
+Element #4
+Bind method: bindtap Function call: pushStoreIndex
+#element{button} {depth: 4}
+  #attribute{bindtap: pushStoreIndex}
+  #attribute{class: btn-order}
+  data{去商城看看}
+
+
+pages/userInfo/myCards/pwdBindCard/pwdBindCard
+
+Element #0
+Bind method: bindchange Function call: inputChange
+#element{input} {depth: 5}
+  #attribute{bindchange: inputChange}
+  #attribute{data-key: cardNo}
+  #attribute{placeholder: 请输入您的卡号}
+  #attribute{placeholderstyle: color: #bbb;}
+
+Element #1
+Bind method: bindchange Function call: inputChange
+#element{input} {depth: 5}
+  #attribute{bindchange: inputChange}
+  #attribute{data-key: mobile}
+  #attribute{placeholder: 请输入您的手机号}
+  #attribute{placeholderstyle: color: #bbb;}
+  #attribute{value: {{mobile}}}
+
+Element #2
+Bind method: bindchange Function call: inputChange
+#element{input} {depth: 5}
+  #attribute{bindchange: inputChange}
+  #attribute{data-key: password}
+  #attribute{placeholder: 请输入您的会员卡密码}
+  #attribute{placeholderstyle: color: #bbb;}
+  #attribute{type: password}
+
+Element #3
+Bind method: bindtap Function call: bindBtnClick
+#element{button} {depth: 4}
+  #attribute{bindtap: bindBtnClick}
+  #attribute{class: btn-bind}
+  data{确认绑卡}
+
+
+pages/userInfo/distribution/distribution
+
+Element #0
+Bind method: bindtap Function call: menuItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: menuItemClick}
+  #attribute{class: menuItem {{menuIndex==0?'select':''}}}
+  #attribute{data-index: 0}
+  data{分销订单}
+
+Element #1
+Bind method: bindtap Function call: menuItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: menuItemClick}
+  #attribute{class: menuItem {{menuIndex==1?'select':''}}}
+  #attribute{data-index: 1}
+  data{分销汇总}
+
+Element #2
+Bind method: bindchange Function call: bindDateChange
+#element{picker} {depth: 4}
+  #attribute{bindchange: bindDateChange}
+  #attribute{data-key: startDate}
+  #attribute{mode: date}
+  #attribute{value: {{startDate}}}
+  #element{view} {depth: 5}
+    #attribute{class: picker}
+    scriptdata{startDate}
+    data{
+                }
+
+Element #3
+Bind method: bindchange Function call: bindDateChange
+#element{picker} {depth: 4}
+  #attribute{bindchange: bindDateChange}
+  #attribute{data-key: endDate}
+  #attribute{mode: date}
+  #attribute{value: {{endDate}}}
+  #element{view} {depth: 5}
+    #attribute{class: picker}
+    scriptdata{endDate}
+    data{
+                }
+
+Element #4
+Bind method: bindtap Function call: refreshDataList
+#element{button} {depth: 3}
+  #attribute{bindtap: refreshDataList}
+  data{查询}
+
+Element #5
+Bind method: bindtap Function call: rootUserItemClick
+#element{view} {depth: 4}
+  #attribute{bindtap: rootUserItemClick}
+  #attribute{class: rootItem cItem}
+  #attribute{data-index: {{index}}}
+  #element{view} {depth: 5}
+    #attribute{class: imgView}
+    #element{image} {depth: 6}
+      #attribute{mode: aspectFill}
+      #attribute{src: {{item.avatar}}}
+  #element{view} {depth: 5}
+    #attribute{class: textView}
+    #element{view} {depth: 6}
+      #attribute{class: tipView}
+      #element{view} {depth: 7}
+        #attribute{class: nameView}
+        data{昵称}
+      #element{view} {depth: 7}
+        #attribute{class: cntView}
+        data{分销人数}
+      #element{view} {depth: 7}
+        #attribute{class: amtView}
+        data{佣金}
+    #element{view} {depth: 6}
+      #attribute{class: valView}
+      #element{view} {depth: 7}
+        #attribute{class: nameView}
+        scriptdata{item.name}
+      #element{view} {depth: 7}
+        #attribute{class: cntView}
+        scriptdata{item.shareCount}
+      #element{view} {depth: 7}
+        #attribute{class: amtView}
+        data{佣金：}
+        scriptdata{item.totalCommission}
+        data{
+                        }
+
+
+pages/userInfo/cardHistory/cardHistory
+
+
+pages/store/coupon/couponGiving/couponGiving
+
+Element #0
+Bind method: bindtap Function call: pushShopListPage
+#element{view} {depth: 3}
+  #attribute{bindtap: pushShopListPage}
+  #attribute{class: shopView}
+  #element{text} {depth: 4}
+    #attribute{class: iconfont icon-shop}
+  #element{text} {depth: 4}
+    scriptdata{curShop.name}
+  #element{text} {depth: 4}
+    #attribute{class: iconfont icon-right}
+
+Element #1
+Bind method: bindtap Function call: getBtnClick
+#element{button} {depth: 3}
+  #attribute{bindtap: getBtnClick}
+  #attribute{class: btn-buy}
+  #attribute{wx:if: {{voucherInfo.useStatus==0}}}
+  data{立即领取}
+
+Element #2
+Bind method: bindtap Function call: getBtnClick
+#element{button} {depth: 3}
+  #attribute{bindtap: getBtnClick}
+  #attribute{class: btn-dis}
+  #attribute{wx:if: {{voucherInfo.useStatus!=0}}}
+  scriptdata{voucherInfo.buyStatusText}
+
+
+pages/sharedPartner/sharedPartnerIndex
+
+Element #0
+Bind method: bindtap Function call: menuItemClick
+#element{view} {depth: 2}
+  #attribute{bindtap: menuItemClick}
+  #attribute{class: menuItem}
+  #attribute{data-item: {{item}}}
+  #attribute{data-key: {{item.key}}}
+  #attribute{wx:for: {{menuList}}}
+  #element{image} {depth: 3}
+    #attribute{class: img-icon}
+    #attribute{src: {{item.icon}}}
+  #element{view} {depth: 3}
+    scriptdata{item.text}
+
+
+pages/sharedPartner/sharedPartnerJoin/sharedPartnerJoin
+
+Element #0
+Bind method: bindtap Function call: linkBtnClick
+#element{button} {depth: 2}
+  #attribute{bindtap: linkBtnClick}
+  #attribute{class: btn-link}
+  data{立即领取}
+
+
+pages/sharedPartner/mySharedPartner/mySharedPartner
+
+Element #0
+Bind method: bindtap Function call: menuItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: menuItemClick}
+  #attribute{class: menuItem {{menuIndex==0?'select':''}}}
+  #attribute{data-index: 0}
+  data{我的下线}
+
+Element #1
+Bind method: bindtap Function call: menuItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: menuItemClick}
+  #attribute{class: menuItem {{menuIndex==1?'select':''}}}
+  #attribute{data-index: 1}
+  data{佣金明细}
+
+Element #2
+Bind method: bindinput Function call: inputValue
+#element{input} {depth: 3}
+  #attribute{bindinput: inputValue}
+  #attribute{data-key: keyword}
+  #attribute{placeholder: 请输入微信名称搜索}
+  #attribute{value: {{keyword}}}
+
+Element #3
+Bind method: bindtap Function call: initReq
+#element{button} {depth: 3}
+  #attribute{bindtap: initReq}
+  data{查询}
+
+
+pages/store/partnerPlant/detail/partnerPlantDetail
+
+Element #0
+Bind method: bindshowactivityrules Function call: showActivityRules
+#element{activitydetail} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindshowactivityrules: showActivityRules}
+  #attribute{goodsinfo: {{activityInfo.activityGoodsObj}}}
+
+Element #1
+Bind method: bindbuybtnclick Function call: buyBtnClick
+#element{activitybottomview} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindbuybtnclick: buyBtnClick}
+
+Element #2
+Bind method: bindtap Function call: topMenuItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: topMenuItemClick}
+  #attribute{class: menuItem {{topMenuIndex==0?'select':''}}}
+  #attribute{data-index: 0}
+  data{商品详情}
+
+Element #3
+Bind method: bindtap Function call: topMenuItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: topMenuItemClick}
+  #attribute{class: menuItem {{topMenuIndex==1?'select':''}}}
+  #attribute{data-index: 1}
+  data{购买须知}
+
+Element #4
+Bind method: bindclose Function call: hideActivityBuy
+#element{activitybuy} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindclose: hideActivityBuy}
+  #attribute{bindpushpaybtnclick: pushPayBtnClick}
+  #attribute{wx:if: {{showBuyFlag}}}
+
+Element #5
+Bind method: bindpushpaybtnclick Function call: pushPayBtnClick
+#element{activitybuy} {depth: 2}
+  #attribute{activityinfo: {{activityInfo}}}
+  #attribute{bindclose: hideActivityBuy}
+  #attribute{bindpushpaybtnclick: pushPayBtnClick}
+  #attribute{wx:if: {{showBuyFlag}}}
+
+
+pages/sharedPartner/commManage/commManage
+
+Element #0
+Bind method: bindtap Function call: txBtnClick
+#element{button} {depth: 5}
+  #attribute{bindtap: txBtnClick}
+  #attribute{class: btn-tx}
+  data{提现}
+
+Element #1
+Bind method: bindtap Function call: dateItemClick
+#element{view} {depth: 3}
+  #attribute{bindtap: dateItemClick}
+  #attribute{class: dateItem {{dateType==item.key?'select':''}}}
+  #attribute{data-item: {{item}}}
+  #attribute{wx:for: {{dateTypeList}}}
+  scriptdata{item.text}
+  data{
+        }
+
+
+pages/sharedPartner/commWithdrawal/commWithdrawal
+
+Element #0
+Bind method: bindinput Function call: inputValue
+#element{input} {depth: 4}
+  #attribute{bindinput: inputValue}
+  #attribute{placeholder: 请填写提现金额}
+  #attribute{type: digit}
+
+Element #1
+Bind method: bindtap Function call: submitBtnClick
+#element{button} {depth: 2}
+  #attribute{bindtap: submitBtnClick}
+  #attribute{class: btn-submit}
+  data{立即提现}
+
+
+pages/test
+
+
