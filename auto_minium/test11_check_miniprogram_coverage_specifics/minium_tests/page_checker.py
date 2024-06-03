@@ -15,7 +15,7 @@ class PageChecker(base_taint.BaseTaint):
         
         self.open_route('/' + PAGE)
     
-    def not_very_working_test_enter_page(self):
+    def skip_test_enter_page(self):
         PAGE = 'pages/bill/apply/apply'
         self.open_route('/' + PAGE)
         form_ele = self.page.get_element('form')
@@ -23,23 +23,33 @@ class PageChecker(base_taint.BaseTaint):
         print(form_ele.outer_wxml)
         print(form_ele.attribute('bindsubmit'))
         print(form_ele.styles('bindsubmit'))
-        form_submit_result = self.hook_wx_methods_with_formelement_binds(form_ele, 'string', ['chooseInvoice', 'getUserInfo'], is_form=True)
-        json_data =[{'page': PAGE,
-                      'method': "bindsubmit",
-                      'callback results': form_submit_result}]
-        JSON_DIR = '/home/bella-xia/auto-testing/data/_auxiliary_data/wxad2e9789b5076244/page_checker.json'
-        with open(JSON_DIR, 'w', encoding='utf-8') as file:
-            json.dump(json_data, file, indent=4)
+        #form_submit_result = self.hook_wx_methods_with_formelement_binds(form_ele, 'string', ['chooseInvoice', 'getUserInfo'], is_form=True)
+        #json_data =[{'page': PAGE,
+        #              'method': "bindsubmit",
+         #             'callback results': form_submit_result}]
+        #JSON_DIR = '/home/bella-xia/auto-testing/data/_auxiliary_data/wxad2e9789b5076244/page_checker.json'
+        # with open(JSON_DIR, 'w', encoding='utf-8') as file:
+        #    json.dump(json_data, file, indent=4)
 
-    def failed_test_enter_page_hooking_select(self):
+    def still_partial_failed_test_enter_page_hooking_select(self):
         PAGE = 'pages/bill/apply/apply'
         self.open_route('/' + PAGE)
         tapable_ele = self.page.get_element('.choose-invoice')
-        tap_bool, tap_result = self.hook_wx_methods_with_element_tap(tapable_ele, ['chooseInvoice', 'chooseInvoiceTitle', 'getUserInfo', 'request'])
+        tap_result = self.hook_wx_methods_with_element_tap(tapable_ele, ['chooseInvoice', 'chooseInvoiceTitle', 'getUserInfo', 'request'])
         json_data =[{'page': PAGE,
                       'method': "tap",
-                      'is called': tap_bool,
                       'callback results': tap_result}]
+        JSON_DIR = '/home/bella-xia/auto-testing/data/_auxiliary_data/wxad2e9789b5076244/page_checker.json'
+        with open(JSON_DIR, 'a', encoding='utf-8') as file:
+            json.dump(json_data, file, indent=4)
+    
+    def test_user_page(self):
+        PAGE =  "pages/binding-phone/binding-phone"
+        self.open_route('/' + PAGE)
+        return_args = self.hook_wx_methods_with_page_defined_method_call(['getUserInfo', 'request', 'chooseInvoice', 'saveImageToPhotosAlbum'], 'onLoad', {})
+        json_data =[{'page': PAGE,
+                      'method': "onLoad",
+                      'callback results': return_args}]
         JSON_DIR = '/home/bella-xia/auto-testing/data/_auxiliary_data/wxad2e9789b5076244/page_checker.json'
         with open(JSON_DIR, 'a', encoding='utf-8') as file:
             json.dump(json_data, file, indent=4)
