@@ -42,11 +42,14 @@ int main(int, char **)
         std::cerr << "Error: " << e.what() << std::endl;
     }
 
-    // for (const std::filesystem::path &miniprogram_name : miniprogram_list)
-    std::cout << "there are a total of " << miniprogram_list.size() << "miniprograms" << std::endl;
+    const int idx = 19;
 
-    std::filesystem::path first_miniprogram_path = miniprogram_list[3];
-    std::cout << "surveying miniprogram " << first_miniprogram_path.string() << std::endl;
+    // for (const std::filesystem::path &miniprogram_name : miniprogram_list)
+    std::cout << "this is #" << idx << " out of the " << miniprogram_list.size() << " miniprograms" << std::endl;
+
+    std::filesystem::path first_miniprogram_path = miniprogram_list[idx];
+    std::cout << "surveying miniprogram " << first_miniprogram_path.string() << std::endl
+              << std::endl;
     std::filesystem::path first_miniprogram_app_json_path = first_miniprogram_path / static_cast<std::filesystem::path>("app.json");
     // std::cout << first_miniprogram_app_json_path.string() << std::endl;
 

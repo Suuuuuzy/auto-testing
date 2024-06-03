@@ -4,7 +4,7 @@ surveying miniprogram /home/bella-xia/auto-testing/data/0_passing_groundtruth/wx
 pages/index/index
 
 Element #0
-Bind method: bindmyevent Function call: lanmuEvent
+ Function call: lanmuEvent
 #element{wst-lanmu} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: lanmuEvent}
@@ -20,7 +20,7 @@ Bind method: bindmyevent Function call: lanmuEvent
   #attribute{wx:elif: {{item.show=='lanmu'}}}
 
 Element #1
-Bind method: bindmyevent Function call: imgEvent
+ Function call: imgEvent
 #element{wst-img} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: imgEvent}
@@ -37,7 +37,7 @@ Bind method: bindmyevent Function call: imgEvent
   #attribute{wx:elif: {{item.show=='img'}}}
 
 Element #2
-Bind method: bindmyevent Function call: imgsEvent
+ Function call: imgsEvent
 #element{wst-imgs} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: imgsEvent}
@@ -59,7 +59,7 @@ Bind method: bindmyevent Function call: imgsEvent
   #attribute{wx:elif: {{item.show=='imgs'}}}
 
 Element #3
-Bind method: bindmyevent Function call: shangpinEvent
+ Function call: shangpinEvent
 #element{wst-shangpin} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: shangpinEvent}
@@ -85,7 +85,7 @@ Bind method: bindmyevent Function call: shangpinEvent
   #attribute{wx:elif: {{item.show=='shangpin'}}}
 
 Element #4
-Bind method: bindmyevent Function call: txtEvent
+ Function call: txtEvent
 #element{wst-txt} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: txtEvent}
@@ -99,7 +99,7 @@ Bind method: bindmyevent Function call: txtEvent
   #attribute{wx:elif: {{item.show=='text'}}}
 
 Element #5
-Bind method: bindmyevent Function call: txtsEvent
+ Function call: txtsEvent
 #element{wst-txts} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: txtsEvent}
@@ -115,7 +115,7 @@ pages/ProductType/ProductType
 pages/PTProductList/PTProductList
 
 Element #0
-Bind method: bindscrolltolower Function call: GetNextPage
+ Function call: GetNextPage
 #element{scroll-view} {depth: 1}
   #attribute{bindscrolltolower: GetNextPage}
   #attribute{class: scroll-view1}
@@ -141,7 +141,7 @@ Bind method: bindpause Function call: VideoPause
   #attribute{src: {{proInfo.VideoUrl}}}
 
 Element #1
-Bind method: bindplay Function call: VideoPlay
+ Function call: VideoPlay
 #element{video} {depth: 3}
   #attribute{autoplay: {{proInfo.VideoAutoPlay}}}
   #attribute{bindpause: VideoPause}
@@ -167,7 +167,7 @@ Bind method: bindpause Function call: VideoPause
   #attribute{wx:if: {{proInfo.VideoPosition==1&&proInfo.VideoUrl}}}
 
 Element #3
-Bind method: bindplay Function call: VideoPlay
+ Function call: VideoPlay
 #element{video} {depth: 3}
   #attribute{autoplay: {{proInfo.VideoAutoPlay}}}
   #attribute{bindpause: VideoPause}
@@ -195,7 +195,7 @@ Bind method: bindpause Function call: VideoPause
   #attribute{wx:if: {{proInfo.VideoPosition==2&&proInfo.VideoUrl}}}
 
 Element #5
-Bind method: bindplay Function call: VideoPlay
+ Function call: VideoPlay
 #element{video} {depth: 3}
   #attribute{autoplay: {{proInfo.VideoAutoPlay}}}
   #attribute{bindpause: VideoPause}
@@ -209,7 +209,7 @@ Bind method: bindplay Function call: VideoPlay
   #attribute{wx:if: {{proInfo.VideoPosition==2&&proInfo.VideoUrl}}}
 
 Element #6
-Bind method: bindtap Function call: preViewImg
+ Function call: preViewImg
 #element{image} {depth: 8}
   #attribute{bindtap: preViewImg}
   #attribute{class: marg-rlau zh-img2}
@@ -218,7 +218,7 @@ Bind method: bindtap Function call: preViewImg
   #attribute{src: {{itemImg.img}}}
 
 Element #7
-Bind method: bindtap Function call: SubNum
+ Function call: SubNum
 #element{view} {depth: 7}
   #attribute{bindtap: SubNum}
   #attribute{class: jiajian bord-r1 bord-c flex flex-r}
@@ -237,7 +237,7 @@ Bind method: bindinput Function call: bindAmount
   #attribute{value: {{AmountValue}}}
 
 Element #9
-Bind method: bindtap Function call: AddNum
+ Function call: AddNum
 #element{view} {depth: 7}
   #attribute{bindtap: AddNum}
   #attribute{class: jiajian bord-l1 bord-c flex flex-r}
@@ -248,7 +248,7 @@ Bind method: bindtap Function call: AddNum
       #attribute{class: icon in-block iconfont icon-plus tx-14 tx-999}
 
 Element #10
-Bind method: bindtap Function call: SubOrder
+ Function call: SubOrder
 #element{text} {depth: 3}
   #attribute{bindtap: SubOrder}
   #attribute{class: flex-1 }
@@ -257,7 +257,7 @@ Bind method: bindtap Function call: SubOrder
   data{确定}
 
 Element #11
-Bind method: bindtap Function call: AddCar
+ Function call: AddCar
 #element{text} {depth: 3}
   #attribute{bindtap: AddCar}
   #attribute{class: w50e bg-ffb}
@@ -265,7 +265,7 @@ Bind method: bindtap Function call: AddCar
   data{加入购物车}
 
 Element #12
-Bind method: bindtap Function call: GoBuy
+ Function call: GoBuy
 #element{text} {depth: 3}
   #attribute{bindtap: GoBuy}
   #attribute{class: w50e }
@@ -286,7 +286,7 @@ Bind method: bindgetuserinfo Function call: bindgetuserinfo
 pages/ShoppingCart/ShoppingCart
 
 Element #0
-Bind method: bindchange Function call: checkboxChange
+ Function call: checkboxChange
 #element{checkbox-group} {depth: 3}
   #attribute{bindchange: checkboxChange}
   #element{view} {depth: 4}
@@ -402,7 +402,7 @@ Bind method: bindlongtap Function call: bindDelete
             #attribute{class: fl icon in-block iconfont icon-plus tx-14 tx-999 lh-1}
 
 Element #2
-Bind method: bindtap Function call: SubNum
+ Function call: SubNum
 #element{view} {depth: 9}
   #attribute{bindtap: SubNum}
   #attribute{class: jiajian}
@@ -411,7 +411,7 @@ Bind method: bindtap Function call: SubNum
     #attribute{class: fl icon in-block iconfont icon-minus tx-14 tx-999 lh-1}
 
 Element #3
-Bind method: bindtap Function call: AddNum
+ Function call: AddNum
 #element{view} {depth: 9}
   #attribute{bindtap: AddNum}
   #attribute{class: jiajian}
@@ -420,7 +420,7 @@ Bind method: bindtap Function call: AddNum
     #attribute{class: fl icon in-block iconfont icon-plus tx-14 tx-999 lh-1}
 
 Element #4
-Bind method: bindtap Function call: allCheckboxChange
+ Function call: allCheckboxChange
 #element{checkbox} {depth: 3}
   #attribute{bindtap: allCheckboxChange}
   #attribute{checked: {{isCheckedAll}}}
@@ -428,7 +428,7 @@ Bind method: bindtap Function call: allCheckboxChange
   #attribute{color: #e60012}
 
 Element #5
-Bind method: bindtap Function call: tohome
+ Function call: tohome
 #element{view} {depth: 2}
   #attribute{bindtap: tohome}
   #attribute{class: marg-t16 padd-816 w50e box tx-16 tx-c tx-fff lh-1 radi-5}
@@ -438,7 +438,7 @@ Bind method: bindtap Function call: tohome
   #element{wst-lucency-forms} {depth: 3}
 
 Element #6
-Bind method: bindtap Function call: SubNum
+ Function call: SubNum
 #element{view} {depth: 6}
   #attribute{bindtap: SubNum}
   #attribute{class: jiajian1 flex flex-r bord-r1 bord-c}
@@ -459,7 +459,7 @@ Bind method: bindinput Function call: bindKeyInput
   #attribute{value: {{Numvalue}}}
 
 Element #8
-Bind method: bindtap Function call: AddNum
+ Function call: AddNum
 #element{view} {depth: 6}
   #attribute{bindtap: AddNum}
   #attribute{class: jiajian1 flex flex-r bord-l1 bord-c}
@@ -806,7 +806,7 @@ Bind method: bindreset Function call: formReset
       data{提交订单}
 
 Element #1
-Bind method: bindsubmit Function call: formSubmit
+ Function call: formSubmit
 #element{form} {depth: 1}
   #attribute{bindreset: formReset}
   #attribute{bindsubmit: formSubmit}
@@ -1139,7 +1139,7 @@ Bind method: bindsubmit Function call: formSubmit
       data{提交订单}
 
 Element #2
-Bind method: bindtap Function call: btnAddressSelect
+ Function call: btnAddressSelect
 #element{view} {depth: 4}
   #attribute{bindtap: btnAddressSelect}
   #attribute{class: padd-tb16 flex flex-r bg-fff bord-b1 bord-c}
@@ -1166,7 +1166,7 @@ Bind method: bindtap Function call: btnAddressSelect
     #attribute{class: marg-l8 iconfont icon-more tx-16 tx-999 lh-1}
 
 Element #3
-Bind method: bindtap Function call: bindWXAddress
+ Function call: bindWXAddress
 #element{view} {depth: 4}
   #attribute{bindtap: bindWXAddress}
   #attribute{class: h48 flex flex-r}
@@ -1182,7 +1182,7 @@ Bind method: bindtap Function call: bindWXAddress
     #attribute{class: marg-l8 iconfont icon-more tx-16 tx-999 lh-1}
 
 Element #4
-Bind method: bindchange Function call: bindDateChange
+ Function call: bindDateChange
 #element{picker} {depth: 6}
   #attribute{bindchange: bindDateChange}
   #attribute{class: flex-1}
@@ -1194,7 +1194,7 @@ Bind method: bindchange Function call: bindDateChange
     scriptdata{date}
 
 Element #5
-Bind method: bindchange Function call: bindTimeChange
+ Function call: bindTimeChange
 #element{picker} {depth: 6}
   #attribute{bindchange: bindTimeChange}
   #attribute{class: flex-1}
@@ -1214,7 +1214,7 @@ Bind method: bindblur Function call: bindRemark
   #attribute{placeholder: 对本次交易的说明(选填)}
 
 Element #7
-Bind method: bindchange Function call: cbkBalanceChange
+ Function call: cbkBalanceChange
 #element{checkbox-group} {depth: 3}
   #attribute{bindchange: cbkBalanceChange}
   #attribute{class: marg-t8 padd-rl16 tx-14 tx-333 lh-1 bg-fff end-nav-b}
@@ -1234,7 +1234,7 @@ Bind method: bindchange Function call: cbkBalanceChange
       #attribute{value: 1}
 
 Element #8
-Bind method: bindchange Function call: cbkDeductibleChange
+ Function call: cbkDeductibleChange
 #element{checkbox-group} {depth: 3}
   #attribute{bindchange: cbkDeductibleChange}
   #attribute{class: marg-t8 padd-rl16 tx-14 tx-333 lh-1 bg-fff end-nav-b}
@@ -1268,7 +1268,7 @@ Bind method: bindchange Function call: cbkDeductibleChange
       #attribute{value: {{DeductibleMoney}}}
 
 Element #9
-Bind method: bindchange Function call: bindPayChange
+ Function call: bindPayChange
 #element{radio-group} {depth: 3}
   #attribute{bindchange: bindPayChange}
   #attribute{class: marg-t6 padd-rl16 tx-14 tx-333 lh-1 bg-fff end-nav-b}
@@ -1417,7 +1417,7 @@ Bind method: bindreset Function call: formReset
       data{保存}
 
 Element #1
-Bind method: bindsubmit Function call: formSubmit
+ Function call: formSubmit
 #element{form} {depth: 1}
   #attribute{bindreset: formReset}
   #attribute{bindsubmit: formSubmit}
@@ -1535,7 +1535,7 @@ Bind method: bindsubmit Function call: formSubmit
       data{保存}
 
 Element #2
-Bind method: bindchange Function call: bindPickerChange
+ Function call: bindPickerChange
 #element{picker} {depth: 5}
   #attribute{bindchange: bindPickerChange}
   #attribute{class: w33e h100e}
@@ -1548,7 +1548,7 @@ Bind method: bindchange Function call: bindPickerChange
           }
 
 Element #3
-Bind method: bindchange Function call: bindPickerChange1
+ Function call: bindPickerChange1
 #element{picker} {depth: 5}
   #attribute{bindchange: bindPickerChange1}
   #attribute{class: w33e h100e}
@@ -1561,7 +1561,7 @@ Bind method: bindchange Function call: bindPickerChange1
           }
 
 Element #4
-Bind method: bindchange Function call: bindPickerChange2
+ Function call: bindPickerChange2
 #element{picker} {depth: 5}
   #attribute{bindchange: bindPickerChange2}
   #attribute{class: w33e h100e}
@@ -1598,7 +1598,7 @@ Bind method: bindgetuserinfo Function call: bindgetuserinfo
 pages/AddressList/AddressList
 
 Element #0
-Bind method: bindchange Function call: radioChange
+ Function call: radioChange
 #element{radio-group} {depth: 4}
   #attribute{bindchange: radioChange}
   #attribute{data-id: {{item.AddressId}}}
@@ -1616,7 +1616,7 @@ Bind method: bindchange Function call: radioChange
 pages/CouponsList/CouponsList
 
 Element #0
-Bind method: bindtap Function call: bindCoupon
+ Function call: bindCoupon
 #element{view} {depth: 2}
   #attribute{bindtap: bindCoupon}
   #attribute{class: marg-b8 flex flex-r pos-r}
@@ -1660,7 +1660,7 @@ Bind method: bindtap Function call: bindCoupon
   #element{wst-lucency-forms} {depth: 3}
 
 Element #1
-Bind method: bindtap Function call: btnUseCoupon
+ Function call: btnUseCoupon
 #element{view} {depth: 3}
   #attribute{bindtap: btnUseCoupon}
   #attribute{class: pos-r}
@@ -1691,7 +1691,7 @@ Bind method: bindgetuserinfo Function call: bindgetuserinfo
   data{获取头像}
 
 Element #1
-Bind method: bindtap Function call: OrderUrlCallBack
+ Function call: OrderUrlCallBack
 #element{view} {depth: 3}
   #attribute{bindtap: OrderUrlCallBack}
   #attribute{class: padd-rl16 h48 bg-fff bord-b1 bord-c flex flex-r pos-r}
@@ -1708,7 +1708,7 @@ Bind method: bindtap Function call: OrderUrlCallBack
   #element{wst-lucency-forms} {depth: 4}
 
 Element #2
-Bind method: bindtap Function call: OrderUrlCallBack
+ Function call: OrderUrlCallBack
 #element{view} {depth: 4}
   #attribute{bindtap: OrderUrlCallBack}
   #attribute{class: fl w20e bg-fff flex flex-c pos-r}
@@ -1730,7 +1730,7 @@ Bind method: bindtap Function call: OrderUrlCallBack
   #element{wst-lucency-forms} {depth: 5}
 
 Element #3
-Bind method: bindtap Function call: UrlCallBack
+ Function call: UrlCallBack
 #element{view} {depth: 3}
   #attribute{bindtap: UrlCallBack}
   #attribute{class: h48 bg-fff flex flex-r pos-r}
@@ -1833,7 +1833,7 @@ Bind method: bindreset Function call: formReset
     data{完善资料}
 
 Element #1
-Bind method: bindsubmit Function call: formSubmit
+ Function call: formSubmit
 #element{form} {depth: 1}
   #attribute{bindreset: formReset}
   #attribute{bindsubmit: formSubmit}
@@ -1922,7 +1922,7 @@ Bind method: bindgetuserinfo Function call: bindgetuserinfo
 pages/OrderList/OrderList
 
 Element #0
-Bind method: bindtap Function call: swichNav
+ Function call: swichNav
 #element{text} {depth: 2}
   #attribute{bindtap: swichNav}
   #attribute{class: padd-tb16 w20e {{currentTab==0?'bord-b3 ':''}}}
@@ -1931,7 +1931,7 @@ Bind method: bindtap Function call: swichNav
   data{全部}
 
 Element #1
-Bind method: bindtap Function call: swichNav
+ Function call: swichNav
 #element{text} {depth: 2}
   #attribute{bindtap: swichNav}
   #attribute{class: padd-tb16 w20e {{currentTab==1?'bord-b3 ':''}}}
@@ -1940,7 +1940,7 @@ Bind method: bindtap Function call: swichNav
   data{待付款}
 
 Element #2
-Bind method: bindtap Function call: swichNav
+ Function call: swichNav
 #element{text} {depth: 2}
   #attribute{bindtap: swichNav}
   #attribute{class: padd-tb16 w20e {{currentTab==4?'bord-b3 ':''}}}
@@ -1949,7 +1949,7 @@ Bind method: bindtap Function call: swichNav
   data{待发货}
 
 Element #3
-Bind method: bindtap Function call: swichNav
+ Function call: swichNav
 #element{text} {depth: 2}
   #attribute{bindtap: swichNav}
   #attribute{class: padd-tb16 w20e {{currentTab==2?'bord-b3 ':''}}}
@@ -1958,7 +1958,7 @@ Bind method: bindtap Function call: swichNav
   data{待收货}
 
 Element #4
-Bind method: bindtap Function call: swichNav
+ Function call: swichNav
 #element{text} {depth: 2}
   #attribute{bindtap: swichNav}
   #attribute{class: padd-tb16 w20e {{currentTab==3?'bord-b3 ':''}}}
@@ -1967,7 +1967,7 @@ Bind method: bindtap Function call: swichNav
   data{待评价}
 
 Element #5
-Bind method: bindtap Function call: ShowDetails
+ Function call: ShowDetails
 #element{view} {depth: 2}
   #attribute{bindtap: ShowDetails}
   #attribute{class: pos-r}
@@ -2025,7 +2025,7 @@ Bind method: bindtap Function call: ShowDetails
   #element{wst-lucency-forms} {depth: 3}
 
 Element #6
-Bind method: bindtap Function call: quxiao
+ Function call: quxiao
 #element{button} {depth: 3}
   #attribute{bindtap: quxiao}
   #attribute{class: marg-l8}
@@ -2038,7 +2038,7 @@ Bind method: bindtap Function call: quxiao
   data{取消订单}
 
 Element #7
-Bind method: bindtap Function call: shouhuo
+ Function call: shouhuo
 #element{button} {depth: 3}
   #attribute{bindtap: shouhuo}
   #attribute{class: marg-l8}
@@ -2051,7 +2051,7 @@ Bind method: bindtap Function call: shouhuo
   data{确认收货}
 
 Element #8
-Bind method: bindtap Function call: shanchu
+ Function call: shanchu
 #element{button} {depth: 3}
   #attribute{bindtap: shanchu}
   #attribute{class: marg-l8}
@@ -2083,21 +2083,21 @@ Bind method: bindgetuserinfo Function call: bindgetuserinfo
     #attribute{class: tx-24 iconfont icon-erweima}
 
 Element #1
-Bind method: bindtap Function call: CopyOrderNo
+ Function call: CopyOrderNo
 #element{text} {depth: 3}
   #attribute{bindtap: CopyOrderNo}
   #attribute{class: pos-a block padd-rl8 tx-11 tx-666 lh-2 bord-a1 bord-c radi-3 fuzhi}
   data{复制单号}
 
 Element #2
-Bind method: bindtap Function call: CopyWaybillNum
+ Function call: CopyWaybillNum
 #element{text} {depth: 4}
   #attribute{bindtap: CopyWaybillNum}
   #attribute{class: pos-a block padd-rl8 tx-11 tx-666 lh-2 bord-a1 bord-c radi-3 fuzhi}
   data{复制单号}
 
 Element #3
-Bind method: bindtap Function call: site
+ Function call: site
 #element{view} {depth: 4}
   #attribute{bindtap: site}
   #attribute{class: padd-t16 tx-13 tx-333 lh-1 flex flex-r bg-fff}
@@ -2113,7 +2113,7 @@ Bind method: bindtap Function call: site
     #attribute{class: iconfont icon-more tx-16 tx-999}
 
 Element #4
-Bind method: bindtap Function call: ShowProductDetails
+ Function call: ShowProductDetails
 #element{view} {depth: 3}
   #attribute{bindtap: ShowProductDetails}
   #attribute{class: padd-a16 tx-13 bord-b1 bord-c flex flex-r pos-r}
@@ -2148,7 +2148,7 @@ Bind method: bindtap Function call: ShowProductDetails
   #element{wst-lucency-forms} {depth: 4}
 
 Element #5
-Bind method: bindtap Function call: quxiao
+ Function call: quxiao
 #element{button} {depth: 2}
   #attribute{bindtap: quxiao}
   #attribute{class: marg-l16}
@@ -2161,7 +2161,7 @@ Bind method: bindtap Function call: quxiao
   data{取消订单}
 
 Element #6
-Bind method: bindtap Function call: refund
+ Function call: refund
 #element{button} {depth: 2}
   #attribute{bindtap: refund}
   #attribute{class: marg-l16}
@@ -2174,7 +2174,7 @@ Bind method: bindtap Function call: refund
   data{我要退款}
 
 Element #7
-Bind method: bindtap Function call: shouhuo
+ Function call: shouhuo
 #element{button} {depth: 2}
   #attribute{bindtap: shouhuo}
   #attribute{class: marg-l16}
@@ -2190,7 +2190,7 @@ Bind method: bindtap Function call: shouhuo
 pages/OrderTrace/OrderTrace
 
 Element #0
-Bind method: bindtap Function call: includePoints
+ Function call: includePoints
 #element{button} {depth: 2}
   #attribute{bindtap: includePoints}
   #attribute{type: primary}
@@ -2206,7 +2206,7 @@ pages/MyTeamAccountCountInfo/MyTeamAccountCountInfo
 pages/MyTeamAccountInfo/MyTeamAccountInfo
 
 Element #0
-Bind method: bindtap Function call: swichNav
+ Function call: swichNav
 #element{text} {depth: 2}
   #attribute{bindtap: swichNav}
   #attribute{class: padd-tb16 w25e {{currentTab==3?'bord-b3 ':''}}}
@@ -2215,7 +2215,7 @@ Bind method: bindtap Function call: swichNav
   data{全部}
 
 Element #1
-Bind method: bindtap Function call: swichNav
+ Function call: swichNav
 #element{text} {depth: 2}
   #attribute{bindtap: swichNav}
   #attribute{class: padd-tb16 w25e {{currentTab==0?'bord-b3 ':''}}}
@@ -2224,7 +2224,7 @@ Bind method: bindtap Function call: swichNav
   data{普通会员}
 
 Element #2
-Bind method: bindtap Function call: swichNav
+ Function call: swichNav
 #element{text} {depth: 2}
   #attribute{bindtap: swichNav}
   #attribute{class: padd-tb16 w25e {{currentTab==1?'bord-b3 ':''}}}
@@ -2233,7 +2233,7 @@ Bind method: bindtap Function call: swichNav
   scriptdata{AgentRoleName!=''?AgentRoleName:'金牌用户'}
 
 Element #3
-Bind method: bindtap Function call: swichNav
+ Function call: swichNav
 #element{text} {depth: 2}
   #attribute{bindtap: swichNav}
   #attribute{class: padd-tb16 w25e {{currentTab==2?'bord-b3 ':''}}}
@@ -2248,7 +2248,7 @@ pages/SalesOrderList/SalesOrderList
 pages/MyTeamAccountList/MyTeamAccountList
 
 Element #0
-Bind method: bindtap Function call: swichNav
+ Function call: swichNav
 #element{text} {depth: 2}
   #attribute{bindtap: swichNav}
   #attribute{class: padd-tb16 w25e {{currentTab==3?'bord-b3 ':''}}}
@@ -2257,7 +2257,7 @@ Bind method: bindtap Function call: swichNav
   data{全部}
 
 Element #1
-Bind method: bindtap Function call: swichNav
+ Function call: swichNav
 #element{text} {depth: 2}
   #attribute{bindtap: swichNav}
   #attribute{class: padd-tb16 w25e {{currentTab==0?'bord-b3 ':''}}}
@@ -2266,7 +2266,7 @@ Bind method: bindtap Function call: swichNav
   data{普通会员}
 
 Element #2
-Bind method: bindtap Function call: swichNav
+ Function call: swichNav
 #element{text} {depth: 2}
   #attribute{bindtap: swichNav}
   #attribute{class: padd-tb16 w25e {{currentTab==1?'bord-b3 ':''}}}
@@ -2275,7 +2275,7 @@ Bind method: bindtap Function call: swichNav
   scriptdata{AgentRoleName!=''?AgentRoleName:'金牌用户'}
 
 Element #3
-Bind method: bindtap Function call: swichNav
+ Function call: swichNav
 #element{text} {depth: 2}
   #attribute{bindtap: swichNav}
   #attribute{class: padd-tb16 w25e {{currentTab==2?'bord-b3 ':''}}}
@@ -2287,7 +2287,7 @@ Bind method: bindtap Function call: swichNav
 pages/MyCoupons/MyCoupons
 
 Element #0
-Bind method: bindtap Function call: swichNav
+ Function call: swichNav
 #element{text} {depth: 2}
   #attribute{bindtap: swichNav}
   #attribute{class: w50e padd-ja16 {{currentTab==0?'bord-b3':''}}}
@@ -2296,7 +2296,7 @@ Bind method: bindtap Function call: swichNav
   data{未使用}
 
 Element #1
-Bind method: bindtap Function call: swichNav
+ Function call: swichNav
 #element{text} {depth: 2}
   #attribute{bindtap: swichNav}
   #attribute{class: w50e padd-ja16 {{currentTab==1?'bord-b3':''}}}
@@ -2305,7 +2305,7 @@ Bind method: bindtap Function call: swichNav
   data{已使用}
 
 Element #2
-Bind method: bindtap Function call: swichNav
+ Function call: swichNav
 #element{text} {depth: 2}
   #attribute{bindtap: swichNav}
   #attribute{class: w50e padd-ja16 {{currentTab==2?'bord-b3':''}}}
@@ -2314,7 +2314,7 @@ Bind method: bindtap Function call: swichNav
   data{已过期}
 
 Element #3
-Bind method: bindscrolltolower Function call: GetNextPage
+ Function call: GetNextPage
 #element{scroll-view} {depth: 1}
   #attribute{bindscrolltolower: GetNextPage}
   #attribute{class: scroll-view1 {{IsShowCouponAdd?'scroll-view2':''}}}
@@ -2472,7 +2472,7 @@ Bind method: bindscrolltolower Function call: GetNextPage
       #attribute{class: flex-1}
 
 Element #4
-Bind method: bindtap Function call: btnVerificationCoupon
+ Function call: btnVerificationCoupon
 #element{button} {depth: 7}
   #attribute{bindtap: btnVerificationCoupon}
   #attribute{class: marg-l8}
@@ -2486,7 +2486,7 @@ Bind method: bindtap Function call: btnVerificationCoupon
     #attribute{class: tx-24 tx-fff iconfont icon-erweima}
 
 Element #5
-Bind method: bindtap Function call: btnUseCoupon
+ Function call: btnUseCoupon
 #element{view} {depth: 5}
   #attribute{bindtap: btnUseCoupon}
   #attribute{class: pos-r}
@@ -2528,7 +2528,7 @@ Bind method: bindinput Function call: bindCodeValue
 pages/MyScore/MyScore
 
 Element #0
-Bind method: bindtap Function call: UrlCallBack
+ Function call: UrlCallBack
 #element{view} {depth: 2}
   #attribute{bindtap: UrlCallBack}
   #attribute{class: flex flex-r h48 bg-fff bord-b1 bord-c pos-r}
@@ -2546,7 +2546,7 @@ Bind method: bindtap Function call: UrlCallBack
 pages/MyScoreDetail/MyScoreDetail
 
 Element #0
-Bind method: bindscrolltolower Function call: GetNextPage
+ Function call: GetNextPage
 #element{scroll-view} {depth: 1}
   #attribute{bindscrolltolower: GetNextPage}
   #attribute{class: scroll-view1}
@@ -2574,7 +2574,7 @@ Bind method: bindscrolltolower Function call: GetNextPage
           scriptdata{Unit}
 
 Element #1
-Bind method: bindtap Function call: duihuanshangpin
+ Function call: duihuanshangpin
 #element{view} {depth: 1}
   #attribute{bindtap: duihuanshangpin}
   #attribute{class: pos-f bl0 block w100e box padd-a16 tx-16 tx-fff tx-c lh-1 pos-r}
@@ -2587,7 +2587,7 @@ Bind method: bindtap Function call: duihuanshangpin
 pages/ExchangeOrderList/ExchangeOrderList
 
 Element #0
-Bind method: bindtap Function call: swichNav
+ Function call: swichNav
 #element{view} {depth: 2}
   #attribute{bindtap: swichNav}
   #attribute{class: padd-tb16 w50e {{currentTab==0?'bord-b3':''}}}
@@ -2596,7 +2596,7 @@ Bind method: bindtap Function call: swichNav
   data{全部订单}
 
 Element #1
-Bind method: bindtap Function call: swichNav
+ Function call: swichNav
 #element{view} {depth: 2}
   #attribute{bindtap: swichNav}
   #attribute{class: padd-tb16 w50e {{currentTab==1?'bord-b3':''}}}
@@ -2605,7 +2605,7 @@ Bind method: bindtap Function call: swichNav
   data{待收货}
 
 Element #2
-Bind method: bindtap Function call: quxiao
+ Function call: quxiao
 #element{button} {depth: 3}
   #attribute{bindtap: quxiao}
   #attribute{class: marg-r16}
@@ -2617,7 +2617,7 @@ Bind method: bindtap Function call: quxiao
   data{取消订单}
 
 Element #3
-Bind method: bindtap Function call: shouhuo
+ Function call: shouhuo
 #element{button} {depth: 3}
   #attribute{bindtap: shouhuo}
   #attribute{class: marg-r16 pos-r}
@@ -2638,7 +2638,7 @@ pages/MyCommission/MyCommission
 pages/AccountGetAmountList/AccountGetAmountList
 
 Element #0
-Bind method: bindtap Function call: tixian
+ Function call: tixian
 #element{view} {depth: 1}
   #attribute{bindtap: tixian}
   #attribute{class: pos-f bl0 block w100e box padd-ja16 tx-16 tx-fff tx-c lh-1 pos-r}
@@ -2651,7 +2651,7 @@ Bind method: bindtap Function call: tixian
 pages/ExchangeProductDetail/ExchangeProductDetail
 
 Element #0
-Bind method: bindtap Function call: SubNum
+ Function call: SubNum
 #element{view} {depth: 5}
   #attribute{bindtap: SubNum}
   #attribute{class: jiajian bord-r1 bord-c flex flex-r}
@@ -2670,7 +2670,7 @@ Bind method: bindinput Function call: bindAmount
   #attribute{value: {{AmountValue}}}
 
 Element #2
-Bind method: bindtap Function call: AddNum
+ Function call: AddNum
 #element{view} {depth: 5}
   #attribute{bindtap: AddNum}
   #attribute{class: jiajian bord-l1 bord-c flex flex-r}
@@ -2705,7 +2705,7 @@ Bind method: bindconfirm Function call: modalChange2
     data{加入购物车成功！}
 
 Element #5
-Bind method: bindtap Function call: modalTap2
+ Function call: modalTap2
 #element{view} {depth: 3}
   #attribute{bindtap: modalTap2}
   #attribute{class: h100e w50e bg-ffb flex flex-r pos-r}
@@ -2715,7 +2715,7 @@ Bind method: bindtap Function call: modalTap2
   #element{wst-lucency-forms} {depth: 4}
 
 Element #6
-Bind method: bindtap Function call: lijigoumai
+ Function call: lijigoumai
 #element{view} {depth: 3}
   #attribute{bindtap: lijigoumai}
   #attribute{class: h100e w50e flex flex-r pos-r}
@@ -2962,7 +2962,7 @@ Bind method: bindreset Function call: formReset
       data{确认兑换}
 
 Element #1
-Bind method: bindsubmit Function call: formSubmit
+ Function call: formSubmit
 #element{form} {depth: 1}
   #attribute{bindreset: formReset}
   #attribute{bindsubmit: formSubmit}
@@ -3195,7 +3195,7 @@ Bind method: bindsubmit Function call: formSubmit
       data{确认兑换}
 
 Element #2
-Bind method: bindtap Function call: btnAddressSelect
+ Function call: btnAddressSelect
 #element{view} {depth: 4}
   #attribute{bindtap: btnAddressSelect}
   #attribute{class: padd-tb16 flex flex-r bg-fff bord-b1 bord-c}
@@ -3222,7 +3222,7 @@ Bind method: bindtap Function call: btnAddressSelect
     #attribute{class: marg-l8 iconfont icon-more tx-16 tx-999 lh-1}
 
 Element #3
-Bind method: bindtap Function call: bindWXAddress
+ Function call: bindWXAddress
 #element{view} {depth: 4}
   #attribute{bindtap: bindWXAddress}
   #attribute{class: h48 flex flex-r}
@@ -3238,7 +3238,7 @@ Bind method: bindtap Function call: bindWXAddress
     #attribute{class: marg-l8 iconfont icon-more tx-16 tx-999 lh-1}
 
 Element #4
-Bind method: bindchange Function call: bindDateChange
+ Function call: bindDateChange
 #element{picker} {depth: 6}
   #attribute{bindchange: bindDateChange}
   #attribute{class: flex-1}
@@ -3250,7 +3250,7 @@ Bind method: bindchange Function call: bindDateChange
     scriptdata{date}
 
 Element #5
-Bind method: bindchange Function call: bindTimeChange
+ Function call: bindTimeChange
 #element{picker} {depth: 6}
   #attribute{bindchange: bindTimeChange}
   #attribute{class: flex-1}
@@ -3270,7 +3270,7 @@ Bind method: bindblur Function call: bindRemark
   #attribute{placeholder: 对本次交易的说明(选填)}
 
 Element #7
-Bind method: bindchange Function call: bindPayChange
+ Function call: bindPayChange
 #element{radio-group} {depth: 3}
   #attribute{bindchange: bindPayChange}
   #attribute{class: marg-t6 padd-rl16 tx-14 tx-333 lh-1 bg-fff end-nav-b}
@@ -3301,7 +3301,7 @@ Bind method: bindgetuserinfo Function call: bindgetuserinfo
 pages/ExchangeShoppingCart/ExchangeShoppingCart
 
 Element #0
-Bind method: bindchange Function call: checkboxChange
+ Function call: checkboxChange
 #element{checkbox-group} {depth: 3}
   #attribute{bindchange: checkboxChange}
   #element{view} {depth: 4}
@@ -3417,7 +3417,7 @@ Bind method: bindlongtap Function call: bindDelete
               #attribute{class: icon in-block iconfont icon-plus tx-14 tx-999 lh-1}
 
 Element #2
-Bind method: bindtap Function call: SubNum
+ Function call: SubNum
 #element{view} {depth: 9}
   #attribute{bindtap: SubNum}
   #attribute{class: jiajian bord-r1 bord-c flex flex-r}
@@ -3428,7 +3428,7 @@ Bind method: bindtap Function call: SubNum
       #attribute{class: icon in-block iconfont icon-minus tx-14 tx-999 lh-1}
 
 Element #3
-Bind method: bindtap Function call: AddNum
+ Function call: AddNum
 #element{view} {depth: 9}
   #attribute{bindtap: AddNum}
   #attribute{class: jiajian bord-l1 bord-c flex flex-r}
@@ -3439,7 +3439,7 @@ Bind method: bindtap Function call: AddNum
       #attribute{class: icon in-block iconfont icon-plus tx-14 tx-999 lh-1}
 
 Element #4
-Bind method: bindtap Function call: allCheckboxChange
+ Function call: allCheckboxChange
 #element{checkbox} {depth: 3}
   #attribute{bindtap: allCheckboxChange}
   #attribute{checked: {{isCheckedAll}}}
@@ -3447,7 +3447,7 @@ Bind method: bindtap Function call: allCheckboxChange
   #attribute{color: #e60012}
 
 Element #5
-Bind method: bindtap Function call: SubNum
+ Function call: SubNum
 #element{view} {depth: 6}
   #attribute{bindtap: SubNum}
   #attribute{class: jiajian1 flex flex-r bord-r1 bord-c}
@@ -3468,7 +3468,7 @@ Bind method: bindinput Function call: bindKeyInput
   #attribute{value: {{Numvalue}}}
 
 Element #7
-Bind method: bindtap Function call: AddNum
+ Function call: AddNum
 #element{view} {depth: 6}
   #attribute{bindtap: AddNum}
   #attribute{class: jiajian1 flex flex-r bord-l1 bord-c}
@@ -3482,7 +3482,7 @@ Bind method: bindtap Function call: AddNum
 pages/ExchangeOrderInfo/ExchangeOrderInfo
 
 Element #0
-Bind method: bindtap Function call: quxiao
+ Function call: quxiao
 #element{button} {depth: 2}
   #attribute{bindtap: quxiao}
   #attribute{class: marg-l16}
@@ -3495,7 +3495,7 @@ Bind method: bindtap Function call: quxiao
   data{取消订单}
 
 Element #1
-Bind method: bindtap Function call: shouhuo
+ Function call: shouhuo
 #element{button} {depth: 2}
   #attribute{bindtap: shouhuo}
   #attribute{class: marg-l16}
@@ -3511,7 +3511,7 @@ Bind method: bindtap Function call: shouhuo
 pages/AccountGetAmount/AccountGetAmount
 
 Element #0
-Bind method: bindsubmit Function call: formSubmit
+ Function call: formSubmit
 #element{form} {depth: 1}
   #attribute{bindsubmit: formSubmit}
   #attribute{reportsubmit: true}
@@ -3571,7 +3571,7 @@ Bind method: bindsubmit Function call: formSubmit
     data{申请提现}
 
 Element #1
-Bind method: bindchange Function call: bindbanktypeChange
+ Function call: bindbanktypeChange
 #element{picker} {depth: 3}
   #attribute{bindchange: bindbanktypeChange}
   #attribute{class: flex-1}
@@ -3602,7 +3602,7 @@ pages/ProductList/ProductList
 pages/MyShare/MyShare
 
 Element #0
-Bind method: bindtap Function call: saveToPhoto
+ Function call: saveToPhoto
 #element{button} {depth: 3}
   #attribute{bindtap: saveToPhoto}
   #attribute{style: background-color:{{mainColor}};}
@@ -3626,7 +3626,7 @@ pages/Payskip/Payskip
 pages/NewsList/NewsList
 
 Element #0
-Bind method: bindtap Function call: windowsCallBack
+ Function call: windowsCallBack
 #element{image} {depth: 3}
   #attribute{bindtap: windowsCallBack}
   #attribute{class: slide-image}
@@ -3794,7 +3794,7 @@ Bind method: bindreset Function call: formReset
     data{提交评论}
 
 Element #1
-Bind method: bindsubmit Function call: formSubmit
+ Function call: formSubmit
 #element{form} {depth: 1}
   #attribute{bindreset: formReset}
   #attribute{bindsubmit: formSubmit}
@@ -3944,7 +3944,7 @@ Bind method: bindsubmit Function call: formSubmit
     data{提交评论}
 
 Element #2
-Bind method: bindtap Function call: starTap
+ Function call: starTap
 #element{span} {depth: 7}
   #attribute{bindtap: starTap}
   #attribute{class: icon iconfont icon-star tx-24}
@@ -3953,7 +3953,7 @@ Bind method: bindtap Function call: starTap
   #attribute{data-star: on1}
 
 Element #3
-Bind method: bindtap Function call: starTap
+ Function call: starTap
 #element{span} {depth: 7}
   #attribute{bindtap: starTap}
   #attribute{class: icon iconfont icon-star tx-24}
@@ -3962,7 +3962,7 @@ Bind method: bindtap Function call: starTap
   #attribute{data-star: on2}
 
 Element #4
-Bind method: bindtap Function call: starTap
+ Function call: starTap
 #element{span} {depth: 7}
   #attribute{bindtap: starTap}
   #attribute{class: icon iconfont icon-star tx-24}
@@ -3971,7 +3971,7 @@ Bind method: bindtap Function call: starTap
   #attribute{data-star: on3}
 
 Element #5
-Bind method: bindtap Function call: starTap
+ Function call: starTap
 #element{span} {depth: 7}
   #attribute{bindtap: starTap}
   #attribute{class: icon iconfont icon-star tx-24}
@@ -3980,7 +3980,7 @@ Bind method: bindtap Function call: starTap
   #attribute{data-star: on4}
 
 Element #6
-Bind method: bindtap Function call: starTap
+ Function call: starTap
 #element{span} {depth: 7}
   #attribute{bindtap: starTap}
   #attribute{class: icon iconfont icon-star tx-24}
@@ -3989,7 +3989,7 @@ Bind method: bindtap Function call: starTap
   #attribute{data-star: on5}
 
 Element #7
-Bind method: bindtap Function call: starTap
+ Function call: starTap
 #element{span} {depth: 8}
   #attribute{bindtap: starTap}
   #attribute{class: icon iconfont icon-star-on tx-24 bg-fff}
@@ -3998,7 +3998,7 @@ Bind method: bindtap Function call: starTap
   #attribute{data-star: on1}
 
 Element #8
-Bind method: bindtap Function call: starTap
+ Function call: starTap
 #element{span} {depth: 8}
   #attribute{bindtap: starTap}
   #attribute{class: icon iconfont icon-star-on tx-24 bg-fff}
@@ -4007,7 +4007,7 @@ Bind method: bindtap Function call: starTap
   #attribute{data-star: on2}
 
 Element #9
-Bind method: bindtap Function call: starTap
+ Function call: starTap
 #element{span} {depth: 8}
   #attribute{bindtap: starTap}
   #attribute{class: icon iconfont icon-star-on tx-24 bg-fff}
@@ -4016,7 +4016,7 @@ Bind method: bindtap Function call: starTap
   #attribute{data-star: on3}
 
 Element #10
-Bind method: bindtap Function call: starTap
+ Function call: starTap
 #element{span} {depth: 8}
   #attribute{bindtap: starTap}
   #attribute{class: icon iconfont icon-star-on tx-24 bg-fff}
@@ -4025,7 +4025,7 @@ Bind method: bindtap Function call: starTap
   #attribute{data-star: on4}
 
 Element #11
-Bind method: bindtap Function call: starTap
+ Function call: starTap
 #element{span} {depth: 8}
   #attribute{bindtap: starTap}
   #attribute{class: icon iconfont icon-star-on tx-24 bg-fff}
@@ -4047,7 +4047,7 @@ Bind method: bindgetuserinfo Function call: bindgetuserinfo
 pages/MyFavorites/MyFavorites
 
 Element #0
-Bind method: bindtap Function call: deleteFavorite
+ Function call: deleteFavorite
 #element{view} {depth: 5}
   #attribute{bindtap: deleteFavorite}
   #attribute{class: flex flex-r marg-r16 tx-999}
@@ -4061,7 +4061,7 @@ Bind method: bindtap Function call: deleteFavorite
 pages/MyComment/MyComment
 
 Element #0
-Bind method: bindtap Function call: preViewImg
+ Function call: preViewImg
 #element{image} {depth: 5}
   #attribute{bindtap: preViewImg}
   #attribute{class: marg-rlau zh-img2}
@@ -4073,7 +4073,7 @@ Bind method: bindtap Function call: preViewImg
 pages/NewsListColumn/NewsListColumn
 
 Element #0
-Bind method: bindtap Function call: windowsCallBack
+ Function call: windowsCallBack
 #element{image} {depth: 3}
   #attribute{bindtap: windowsCallBack}
   #attribute{class: slide-image}
@@ -4297,7 +4297,7 @@ Bind method: bindreset Function call: formReset
       scriptdata{info.btnName}
 
 Element #1
-Bind method: bindsubmit Function call: formSubmit
+ Function call: formSubmit
 #element{form} {depth: 2}
   #attribute{bindreset: formReset}
   #attribute{bindsubmit: formSubmit}
@@ -4509,7 +4509,7 @@ Bind method: bindsubmit Function call: formSubmit
       scriptdata{info.btnName}
 
 Element #2
-Bind method: bindchange Function call: bindDateChange
+ Function call: bindDateChange
 #element{picker} {depth: 5}
   #attribute{bindchange: bindDateChange}
   #attribute{class: flex-1}
@@ -4525,7 +4525,7 @@ Bind method: bindchange Function call: bindDateChange
           }
 
 Element #3
-Bind method: bindchange Function call: bindTimeChange
+ Function call: bindTimeChange
 #element{picker} {depth: 5}
   #attribute{bindchange: bindTimeChange}
   #attribute{class: flex-1}
@@ -4549,7 +4549,7 @@ Bind method: bindinput Function call: bindSettingInput
   #attribute{placeholder: {{item.defaultValue}}}
 
 Element #5
-Bind method: bindchange Function call: bindPickerChange
+ Function call: bindPickerChange
 #element{picker} {depth: 5}
   #attribute{bindchange: bindPickerChange}
   #attribute{class: flex-1}
@@ -4563,7 +4563,7 @@ Bind method: bindchange Function call: bindPickerChange
           }
 
 Element #6
-Bind method: bindchange Function call: checkboxChange
+ Function call: checkboxChange
 #element{checkbox-group} {depth: 5}
   #attribute{bindchange: checkboxChange}
   #attribute{class: marg-t13 checkbox}
@@ -4580,7 +4580,7 @@ Bind method: bindchange Function call: checkboxChange
       scriptdata{valueItem.value}
 
 Element #7
-Bind method: bindchange Function call: radioChange
+ Function call: radioChange
 #element{radio-group} {depth: 5}
   #attribute{bindchange: radioChange}
   #attribute{class: marg-t13 checkbox}
@@ -4597,7 +4597,7 @@ Bind method: bindchange Function call: radioChange
       scriptdata{valueItem.value}
 
 Element #8
-Bind method: bindtap Function call: btnCustomerForm
+ Function call: btnCustomerForm
 #element{button} {depth: 4}
   #attribute{bindtap: btnCustomerForm}
   #attribute{class: w50e h100e tx-16 lh-48 bord-0}
@@ -4619,7 +4619,7 @@ Bind method: bindgetuserinfo Function call: bindgetuserinfo
 pages/customerformList/customerformList
 
 Element #0
-Bind method: bindtap Function call: quxiao
+ Function call: quxiao
 #element{button} {depth: 3}
   #attribute{bindtap: quxiao}
   #attribute{data-id: {{item.orderId}}}
@@ -4636,7 +4636,7 @@ pages/customerformDetails/customerformDetails
 pages/Course_Clist/Course_Clist
 
 Element #0
-Bind method: bindscrolltolower Function call: GetNextPage
+ Function call: GetNextPage
 #element{scroll-view} {depth: 1}
   #attribute{bindscrolltolower: GetNextPage}
   #attribute{class: {{CTList.length>0?'scroll-view1':'scroll-view2'}}}
@@ -4692,7 +4692,7 @@ Bind method: bindscrolltolower Function call: GetNextPage
 pages/Course_List/Course_List
 
 Element #0
-Bind method: bindscrolltolower Function call: GetNextPage
+ Function call: GetNextPage
 #element{scroll-view} {depth: 1}
   #attribute{bindscrolltolower: GetNextPage}
   #attribute{class: {{CTList.length>0?'scroll-view1':'scroll-view2'}}}
@@ -4745,7 +4745,7 @@ Bind method: bindscrolltolower Function call: GetNextPage
 pages/Course_Detail/Course_Detail
 
 Element #0
-Bind method: bindended Function call: palyended
+ Function call: palyended
 #element{video} {depth: 2}
   #attribute{bindended: palyended}
   #attribute{bindplay: videoplay}
@@ -4759,7 +4759,7 @@ Bind method: bindended Function call: palyended
   #attribute{src: {{dataUrl}}}
 
 Element #1
-Bind method: bindplay Function call: videoplay
+ Function call: videoplay
 #element{video} {depth: 2}
   #attribute{bindended: palyended}
   #attribute{bindplay: videoplay}
@@ -4787,7 +4787,7 @@ Bind method: bindtimeupdate Function call: vedioTimeUpdate
   #attribute{src: {{dataUrl}}}
 
 Element #3
-Bind method: bindtap Function call: noHasPlay
+ Function call: noHasPlay
 #element{view} {depth: 2}
   #attribute{bindtap: noHasPlay}
   #attribute{class: pos-a tl0 wh100e z999 bg-000 flex flex-r}
@@ -4838,7 +4838,7 @@ Bind method: bindgetuserinfo Function call: bindgetuserinfo
 pages/Course_Category/Course_Category
 
 Element #0
-Bind method: bindtap Function call: searchProduct
+ Function call: searchProduct
 #element{view} {depth: 3}
   #attribute{bindtap: searchProduct}
   #attribute{class: seek-icon flex flex-r}
@@ -4873,7 +4873,7 @@ pages/Course_History/Course_History
 pages/Course_Mine/Course_Mine
 
 Element #0
-Bind method: bindtap Function call: deleteMine
+ Function call: deleteMine
 #element{span} {depth: 6}
   #attribute{bindtap: deleteMine}
   #attribute{class: iconfont icon-delete tx-16 tx-999 lh-1}
@@ -4886,7 +4886,7 @@ pages/Course_Reserve/Course_Reserve
 pages/Course_Favorites/Course_Favorites
 
 Element #0
-Bind method: bindtap Function call: deleteFavorite
+ Function call: deleteFavorite
 #element{span} {depth: 6}
   #attribute{bindtap: deleteFavorite}
   #attribute{class: iconfont icon-delete tx-16 tx-999 lh-1}
@@ -4912,7 +4912,7 @@ Bind method: bindinput Function call: bindSearchValue
   #attribute{placeholder: 请输入门店名称}
 
 Element #2
-Bind method: bindtap Function call: searchProduct
+ Function call: searchProduct
 #element{view} {depth: 3}
   #attribute{bindtap: searchProduct}
   #attribute{class: wh30 flex flex-r}
@@ -4925,7 +4925,7 @@ Bind method: bindtap Function call: searchProduct
       #attribute{type: search}
 
 Element #3
-Bind method: bindscrolltolower Function call: GetNextPage
+ Function call: GetNextPage
 #element{scroll-view} {depth: 1}
   #attribute{bindscrolltolower: GetNextPage}
   #attribute{class: scroll-view1}
@@ -4985,7 +4985,7 @@ Bind method: bindscrolltolower Function call: GetNextPage
 pages/CouponCenter/CouponCenter
 
 Element #0
-Bind method: bindtap Function call: btnReceiveCoupon
+ Function call: btnReceiveCoupon
 #element{view} {depth: 3}
   #attribute{bindtap: btnReceiveCoupon}
   #attribute{class: pos-r}
@@ -5008,7 +5008,7 @@ Bind method: bindtap Function call: btnReceiveCoupon
 pages/CouponCenterList/CouponCenterList
 
 Element #0
-Bind method: bindtap Function call: btnReceiveCoupon
+ Function call: btnReceiveCoupon
 #element{view} {depth: 3}
   #attribute{bindtap: btnReceiveCoupon}
   #attribute{class: pos-r}
@@ -5037,7 +5037,7 @@ pages/ProductTypeList/ProductTypeList
 pages/Group_List/Group_List
 
 Element #0
-Bind method: bindscrolltolower Function call: GetNextPage
+ Function call: GetNextPage
 #element{scroll-view} {depth: 1}
   #attribute{bindscrolltolower: GetNextPage}
   #attribute{class: jd100 t49}
@@ -5115,7 +5115,7 @@ Bind method: bindpause Function call: VideoPause
   #attribute{src: {{proInfo.VideoUrl}}}
 
 Element #1
-Bind method: bindplay Function call: VideoPlay
+ Function call: VideoPlay
 #element{video} {depth: 3}
   #attribute{autoplay: {{proInfo.VideoAutoPlay}}}
   #attribute{bindpause: VideoPause}
@@ -5141,7 +5141,7 @@ Bind method: bindpause Function call: VideoPause
   #attribute{wx:if: {{proInfo.VideoPosition==1&&proInfo.VideoUrl}}}
 
 Element #3
-Bind method: bindplay Function call: VideoPlay
+ Function call: VideoPlay
 #element{video} {depth: 2}
   #attribute{autoplay: {{proInfo.VideoAutoPlay}}}
   #attribute{bindpause: VideoPause}
@@ -5169,7 +5169,7 @@ Bind method: bindpause Function call: VideoPause
   #attribute{wx:if: {{proInfo.VideoPosition==2&&proInfo.VideoUrl}}}
 
 Element #5
-Bind method: bindplay Function call: VideoPlay
+ Function call: VideoPlay
 #element{video} {depth: 2}
   #attribute{autoplay: {{proInfo.VideoAutoPlay}}}
   #attribute{bindpause: VideoPause}
@@ -5183,7 +5183,7 @@ Bind method: bindplay Function call: VideoPlay
   #attribute{wx:if: {{proInfo.VideoPosition==2&&proInfo.VideoUrl}}}
 
 Element #6
-Bind method: bindtap Function call: SubNum
+ Function call: SubNum
 #element{view} {depth: 7}
   #attribute{bindtap: SubNum}
   #attribute{class: jiajian bord-r1 bord-c flex flex-r}
@@ -5202,7 +5202,7 @@ Bind method: bindinput Function call: bindAmount
   #attribute{value: {{AmountValue}}}
 
 Element #8
-Bind method: bindtap Function call: AddNum
+ Function call: AddNum
 #element{view} {depth: 7}
   #attribute{bindtap: AddNum}
   #attribute{class: jiajian bord-l1 bord-c flex flex-r}
@@ -5213,7 +5213,7 @@ Bind method: bindtap Function call: AddNum
       #attribute{class: icon in-block iconfont icon-plus tx-14 tx-999 lh-1}
 
 Element #9
-Bind method: bindtap Function call: GoBuy
+ Function call: GoBuy
 #element{view} {depth: 3}
   #attribute{bindtap: GoBuy}
   #attribute{class: flex-1 }
@@ -5233,14 +5233,14 @@ Bind method: bindgetuserinfo Function call: bindgetuserinfo
 pages/Group_GroupDetail/Group_GroupDetail
 
 Element #0
-Bind method: bindtap Function call: OpenGroup
+ Function call: OpenGroup
 #element{text} {depth: 3}
   #attribute{bindtap: OpenGroup}
   #attribute{class: block marg-t16 h48 box tx-16 tx-fff tx-c lh-48 bg-1e9 radi-5}
   data{再次一键开团}
 
 Element #1
-Bind method: bindtap Function call: GoBackHome
+ Function call: GoBackHome
 #element{view} {depth: 3}
   #attribute{bindtap: GoBackHome}
   #attribute{class: marg-t16 h48 box tx-16 tx-fff tx-c lh-48  radi-5}
@@ -5248,7 +5248,7 @@ Bind method: bindtap Function call: GoBackHome
   data{返回首页}
 
 Element #2
-Bind method: bindtap Function call: SubNum
+ Function call: SubNum
 #element{view} {depth: 7}
   #attribute{bindtap: SubNum}
   #attribute{class: jiajian bord-r1 bord-c flex flex-r}
@@ -5267,7 +5267,7 @@ Bind method: bindinput Function call: bindAmount
   #attribute{value: {{AmountValue}}}
 
 Element #4
-Bind method: bindtap Function call: AddNum
+ Function call: AddNum
 #element{view} {depth: 7}
   #attribute{bindtap: AddNum}
   #attribute{class: jiajian bord-l1 bord-c flex flex-r}
@@ -5278,7 +5278,7 @@ Bind method: bindtap Function call: AddNum
       #attribute{class: icon in-block iconfont icon-plus tx-14 tx-999 lh-1}
 
 Element #5
-Bind method: bindtap Function call: GoBuy
+ Function call: GoBuy
 #element{view} {depth: 3}
   #attribute{bindtap: GoBuy}
   #attribute{class: flex-1 }
@@ -5537,7 +5537,7 @@ Bind method: bindreset Function call: formReset
       data{提交订单}
 
 Element #1
-Bind method: bindsubmit Function call: formSubmit
+ Function call: formSubmit
 #element{form} {depth: 1}
   #attribute{bindreset: formReset}
   #attribute{bindsubmit: formSubmit}
@@ -5785,7 +5785,7 @@ Bind method: bindsubmit Function call: formSubmit
       data{提交订单}
 
 Element #2
-Bind method: bindtap Function call: btnAddressSelect
+ Function call: btnAddressSelect
 #element{view} {depth: 4}
   #attribute{bindtap: btnAddressSelect}
   #attribute{class: padd-tb16 flex flex-r bg-fff bord-b1 bord-c}
@@ -5812,7 +5812,7 @@ Bind method: bindtap Function call: btnAddressSelect
     #attribute{class: marg-l8 iconfont icon-more tx-16 tx-999 lh-1}
 
 Element #3
-Bind method: bindtap Function call: bindWXAddress
+ Function call: bindWXAddress
 #element{view} {depth: 4}
   #attribute{bindtap: bindWXAddress}
   #attribute{class: h48 flex flex-r}
@@ -5828,7 +5828,7 @@ Bind method: bindtap Function call: bindWXAddress
     #attribute{class: marg-l8 iconfont icon-more tx-16 tx-999 lh-1}
 
 Element #4
-Bind method: bindchange Function call: bindDateChange
+ Function call: bindDateChange
 #element{picker} {depth: 6}
   #attribute{bindchange: bindDateChange}
   #attribute{class: flex-1}
@@ -5840,7 +5840,7 @@ Bind method: bindchange Function call: bindDateChange
     scriptdata{date}
 
 Element #5
-Bind method: bindchange Function call: bindTimeChange
+ Function call: bindTimeChange
 #element{picker} {depth: 6}
   #attribute{bindchange: bindTimeChange}
   #attribute{class: flex-1}
@@ -5860,7 +5860,7 @@ Bind method: bindblur Function call: bindRemark
   #attribute{placeholder: 对本次交易的说明(选填)}
 
 Element #7
-Bind method: bindchange Function call: cbkBalanceChange
+ Function call: cbkBalanceChange
 #element{checkbox-group} {depth: 3}
   #attribute{bindchange: cbkBalanceChange}
   #attribute{class: marg-t8 padd-rl16 tx-14 tx-333 lh-1 bg-fff end-nav-b}
@@ -5880,7 +5880,7 @@ Bind method: bindchange Function call: cbkBalanceChange
       #attribute{value: 1}
 
 Element #8
-Bind method: bindchange Function call: bindPayChange
+ Function call: bindPayChange
 #element{radio-group} {depth: 3}
   #attribute{bindchange: bindPayChange}
   #attribute{class: marg-t6 padd-rl16 tx-14 tx-333 lh-1 bg-fff end-nav-b}
@@ -5911,7 +5911,7 @@ Bind method: bindgetuserinfo Function call: bindgetuserinfo
 pages/Group_OrderList/Group_OrderList
 
 Element #0
-Bind method: bindtap Function call: swichNav
+ Function call: swichNav
 #element{text} {depth: 2}
   #attribute{bindtap: swichNav}
   #attribute{class: padd-tb16 w25e {{item.open?'bord-b3':''}}}
@@ -5921,7 +5921,7 @@ Bind method: bindtap Function call: swichNav
   scriptdata{item.text}
 
 Element #1
-Bind method: bindscrolltolower Function call: GetNextPage
+ Function call: GetNextPage
 #element{scroll-view} {depth: 1}
   #attribute{bindscrolltolower: GetNextPage}
   #attribute{class: scroll-view1}
@@ -5993,7 +5993,7 @@ Bind method: bindscrolltolower Function call: GetNextPage
 pages/SecKill_List/SecKill_List
 
 Element #0
-Bind method: bindscrolltolower Function call: GetNextPage
+ Function call: GetNextPage
 #element{scroll-view} {depth: 1}
   #attribute{bindscrolltolower: GetNextPage}
   #attribute{class: scroll-view1}
@@ -6095,7 +6095,7 @@ Bind method: bindscrolltolower Function call: GetNextPage
       data{没有更多了}
 
 Element #1
-Bind method: bindtap Function call: GoBuy
+ Function call: GoBuy
 #element{view} {depth: 7}
   #attribute{bindtap: GoBuy}
   #attribute{class: padd-58 tx-13 tx-fff lh-1 radi-3 pos-r}
@@ -6122,7 +6122,7 @@ Bind method: bindpause Function call: VideoPause
   #attribute{src: {{proInfo.VideoUrl}}}
 
 Element #1
-Bind method: bindplay Function call: VideoPlay
+ Function call: VideoPlay
 #element{video} {depth: 3}
   #attribute{autoplay: {{proInfo.VideoAutoPlay}}}
   #attribute{bindpause: VideoPause}
@@ -6148,7 +6148,7 @@ Bind method: bindpause Function call: VideoPause
   #attribute{wx:if: {{proInfo.VideoPosition==1&&proInfo.VideoUrl}}}
 
 Element #3
-Bind method: bindplay Function call: VideoPlay
+ Function call: VideoPlay
 #element{video} {depth: 2}
   #attribute{autoplay: {{proInfo.VideoAutoPlay}}}
   #attribute{bindpause: VideoPause}
@@ -6176,7 +6176,7 @@ Bind method: bindpause Function call: VideoPause
   #attribute{wx:if: {{proInfo.VideoPosition==2&&proInfo.VideoUrl}}}
 
 Element #5
-Bind method: bindplay Function call: VideoPlay
+ Function call: VideoPlay
 #element{video} {depth: 2}
   #attribute{autoplay: {{proInfo.VideoAutoPlay}}}
   #attribute{bindpause: VideoPause}
@@ -6190,7 +6190,7 @@ Bind method: bindplay Function call: VideoPlay
   #attribute{wx:if: {{proInfo.VideoPosition==2&&proInfo.VideoUrl}}}
 
 Element #6
-Bind method: bindtap Function call: SubNum
+ Function call: SubNum
 #element{view} {depth: 7}
   #attribute{bindtap: SubNum}
   #attribute{class: jiajian bord-r1 bord-c flex flex-r}
@@ -6209,7 +6209,7 @@ Bind method: bindinput Function call: bindAmount
   #attribute{value: {{AmountValue}}}
 
 Element #8
-Bind method: bindtap Function call: AddNum
+ Function call: AddNum
 #element{view} {depth: 7}
   #attribute{bindtap: AddNum}
   #attribute{class: jiajian bord-l1 bord-c flex flex-r}
@@ -6220,7 +6220,7 @@ Bind method: bindtap Function call: AddNum
       #attribute{class: icon in-block iconfont icon-plus tx-14 tx-999 lh-1}
 
 Element #9
-Bind method: bindtap Function call: SubOrder
+ Function call: SubOrder
 #element{text} {depth: 3}
   #attribute{bindtap: SubOrder}
   #attribute{class: flex-1 }
@@ -6229,7 +6229,7 @@ Bind method: bindtap Function call: SubOrder
   data{确定}
 
 Element #10
-Bind method: bindtap Function call: AddCar
+ Function call: AddCar
 #element{text} {depth: 3}
   #attribute{bindtap: AddCar}
   #attribute{class: w50e bg-ffb}
@@ -6237,7 +6237,7 @@ Bind method: bindtap Function call: AddCar
   data{加入购物车}
 
 Element #11
-Bind method: bindtap Function call: GoBuy
+ Function call: GoBuy
 #element{text} {depth: 3}
   #attribute{bindtap: GoBuy}
   #attribute{class: w50e }
@@ -6327,7 +6327,7 @@ Bind method: bindreset Function call: formReset
       data{提交}
 
 Element #1
-Bind method: bindsubmit Function call: formSubmit
+ Function call: formSubmit
 #element{form} {depth: 4}
   #attribute{bindreset: formReset}
   #attribute{bindsubmit: formSubmit}
@@ -6410,7 +6410,7 @@ Bind method: bindgetuserinfo Function call: bindgetuserinfo
 pages/MyPrizes/MyPrizes
 
 Element #0
-Bind method: bindtap Function call: GoStep1
+ Function call: GoStep1
 #element{text} {depth: 5}
   #attribute{bindtap: GoStep1}
   #attribute{class: marg-l8 padd-ja48 m-w3em tx-13 tx-c lh-1 bord-a1 radi-3 tx-fff  }
@@ -6489,7 +6489,7 @@ Bind method: bindreset Function call: formReset
       data{提交}
 
 Element #2
-Bind method: bindsubmit Function call: formSubmit
+ Function call: formSubmit
 #element{form} {depth: 4}
   #attribute{bindreset: formReset}
   #attribute{bindsubmit: formSubmit}
@@ -6599,7 +6599,7 @@ Bind method: bindreset Function call: formReset
     data{确定}
 
 Element #1
-Bind method: bindsubmit Function call: formSubmit
+ Function call: formSubmit
 #element{form} {depth: 2}
   #attribute{bindreset: formReset}
   #attribute{bindsubmit: formSubmit}
@@ -6862,7 +6862,7 @@ Bind method: bindreset Function call: formReset
       scriptdata{info.btnName}
 
 Element #1
-Bind method: bindsubmit Function call: formSubmit
+ Function call: formSubmit
 #element{form} {depth: 2}
   #attribute{bindreset: formReset}
   #attribute{bindsubmit: formSubmit}
@@ -7075,7 +7075,7 @@ Bind method: bindsubmit Function call: formSubmit
       scriptdata{info.btnName}
 
 Element #2
-Bind method: bindchange Function call: bindDateChange
+ Function call: bindDateChange
 #element{picker} {depth: 5}
   #attribute{bindchange: bindDateChange}
   #attribute{class: flex-1}
@@ -7091,7 +7091,7 @@ Bind method: bindchange Function call: bindDateChange
           }
 
 Element #3
-Bind method: bindchange Function call: bindTimeChange
+ Function call: bindTimeChange
 #element{picker} {depth: 5}
   #attribute{bindchange: bindTimeChange}
   #attribute{class: flex-1}
@@ -7115,7 +7115,7 @@ Bind method: bindinput Function call: bindSettingInput
   #attribute{placeholder: {{item.defaultValue}}}
 
 Element #5
-Bind method: bindchange Function call: bindPickerChange
+ Function call: bindPickerChange
 #element{picker} {depth: 5}
   #attribute{bindchange: bindPickerChange}
   #attribute{class: flex-1}
@@ -7129,7 +7129,7 @@ Bind method: bindchange Function call: bindPickerChange
           }
 
 Element #6
-Bind method: bindchange Function call: checkboxChange
+ Function call: checkboxChange
 #element{checkbox-group} {depth: 5}
   #attribute{bindchange: checkboxChange}
   #attribute{class: marg-t13 checkbox}
@@ -7146,7 +7146,7 @@ Bind method: bindchange Function call: checkboxChange
       scriptdata{valueItem.value}
 
 Element #7
-Bind method: bindchange Function call: radioChange
+ Function call: radioChange
 #element{radio-group} {depth: 5}
   #attribute{bindchange: radioChange}
   #attribute{class: marg-t13 checkbox}
@@ -7163,7 +7163,7 @@ Bind method: bindchange Function call: radioChange
       scriptdata{valueItem.value}
 
 Element #8
-Bind method: bindtap Function call: btnCustomerForm
+ Function call: btnCustomerForm
 #element{button} {depth: 4}
   #attribute{bindtap: btnCustomerForm}
   #attribute{class: w50e h100e tx-16 lh-48 bord-0}
@@ -7189,7 +7189,7 @@ pages/WebViewPage/WebViewPage
 pages/virrualCurrencys/virrualCurrencys
 
 Element #0
-Bind method: bindtap Function call: UrlCallBack
+ Function call: UrlCallBack
 #element{view} {depth: 2}
   #attribute{bindtap: UrlCallBack}
   #attribute{class: flex flex-r h48 bg-fff bord-b1 bord-c pos-r}
@@ -7275,7 +7275,7 @@ Bind method: bindreset Function call: formReset
     #element{wst-copyright} {depth: 3}
 
 Element #1
-Bind method: bindsubmit Function call: formSubmit
+ Function call: formSubmit
 #element{form} {depth: 1}
   #attribute{bindreset: formReset}
   #attribute{bindsubmit: formSubmit}
@@ -7388,7 +7388,7 @@ Bind method: bindreset Function call: formReset
     #element{wst-copyright} {depth: 3}
 
 Element #1
-Bind method: bindsubmit Function call: formSubmit
+ Function call: formSubmit
 #element{form} {depth: 1}
   #attribute{bindreset: formReset}
   #attribute{bindsubmit: formSubmit}
@@ -7443,7 +7443,7 @@ Bind method: bindinput Function call: bindSearchValue
   #attribute{placeholder: 请输入门店名称}
 
 Element #2
-Bind method: bindtap Function call: searchProduct
+ Function call: searchProduct
 #element{view} {depth: 3}
   #attribute{bindtap: searchProduct}
   #attribute{class: wh30 flex flex-r}
@@ -7456,7 +7456,7 @@ Bind method: bindtap Function call: searchProduct
       #attribute{type: search}
 
 Element #3
-Bind method: bindscrolltolower Function call: GetNextPage
+ Function call: GetNextPage
 #element{scroll-view} {depth: 1}
   #attribute{bindscrolltolower: GetNextPage}
   #attribute{class: scroll-view1}
@@ -7510,7 +7510,7 @@ Bind method: bindscrolltolower Function call: GetNextPage
 pages/Course_CategoryByID/Course_CategoryByID
 
 Element #0
-Bind method: bindtap Function call: searchProduct
+ Function call: searchProduct
 #element{view} {depth: 3}
   #attribute{bindtap: searchProduct}
   #attribute{class: seek-icon flex flex-r}
@@ -7545,7 +7545,7 @@ pages/customerformDetailList/customerformDetailList
 pages/Page1/Page1
 
 Element #0
-Bind method: bindmyevent Function call: lanmuEvent
+ Function call: lanmuEvent
 #element{wst-lanmu} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: lanmuEvent}
@@ -7561,7 +7561,7 @@ Bind method: bindmyevent Function call: lanmuEvent
   #attribute{wx:elif: {{item.show=='lanmu'}}}
 
 Element #1
-Bind method: bindmyevent Function call: imgEvent
+ Function call: imgEvent
 #element{wst-img} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: imgEvent}
@@ -7578,7 +7578,7 @@ Bind method: bindmyevent Function call: imgEvent
   #attribute{wx:elif: {{item.show=='img'}}}
 
 Element #2
-Bind method: bindmyevent Function call: imgsEvent
+ Function call: imgsEvent
 #element{wst-imgs} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: imgsEvent}
@@ -7600,7 +7600,7 @@ Bind method: bindmyevent Function call: imgsEvent
   #attribute{wx:elif: {{item.show=='imgs'}}}
 
 Element #3
-Bind method: bindmyevent Function call: shangpinEvent
+ Function call: shangpinEvent
 #element{wst-shangpin} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: shangpinEvent}
@@ -7626,7 +7626,7 @@ Bind method: bindmyevent Function call: shangpinEvent
   #attribute{wx:elif: {{item.show=='shangpin'}}}
 
 Element #4
-Bind method: bindmyevent Function call: txtEvent
+ Function call: txtEvent
 #element{wst-txt} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: txtEvent}
@@ -7640,7 +7640,7 @@ Bind method: bindmyevent Function call: txtEvent
   #attribute{wx:elif: {{item.show=='text'}}}
 
 Element #5
-Bind method: bindmyevent Function call: txtsEvent
+ Function call: txtsEvent
 #element{wst-txts} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: txtsEvent}
@@ -7653,7 +7653,7 @@ Bind method: bindmyevent Function call: txtsEvent
 pages/Page2/Page2
 
 Element #0
-Bind method: bindmyevent Function call: lanmuEvent
+ Function call: lanmuEvent
 #element{wst-lanmu} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: lanmuEvent}
@@ -7669,7 +7669,7 @@ Bind method: bindmyevent Function call: lanmuEvent
   #attribute{wx:elif: {{item.show=='lanmu'}}}
 
 Element #1
-Bind method: bindmyevent Function call: imgEvent
+ Function call: imgEvent
 #element{wst-img} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: imgEvent}
@@ -7686,7 +7686,7 @@ Bind method: bindmyevent Function call: imgEvent
   #attribute{wx:elif: {{item.show=='img'}}}
 
 Element #2
-Bind method: bindmyevent Function call: imgsEvent
+ Function call: imgsEvent
 #element{wst-imgs} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: imgsEvent}
@@ -7708,7 +7708,7 @@ Bind method: bindmyevent Function call: imgsEvent
   #attribute{wx:elif: {{item.show=='imgs'}}}
 
 Element #3
-Bind method: bindmyevent Function call: shangpinEvent
+ Function call: shangpinEvent
 #element{wst-shangpin} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: shangpinEvent}
@@ -7734,7 +7734,7 @@ Bind method: bindmyevent Function call: shangpinEvent
   #attribute{wx:elif: {{item.show=='shangpin'}}}
 
 Element #4
-Bind method: bindmyevent Function call: txtEvent
+ Function call: txtEvent
 #element{wst-txt} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: txtEvent}
@@ -7748,7 +7748,7 @@ Bind method: bindmyevent Function call: txtEvent
   #attribute{wx:elif: {{item.show=='text'}}}
 
 Element #5
-Bind method: bindmyevent Function call: txtsEvent
+ Function call: txtsEvent
 #element{wst-txts} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: txtsEvent}
@@ -7761,7 +7761,7 @@ Bind method: bindmyevent Function call: txtsEvent
 pages/Page3/Page3
 
 Element #0
-Bind method: bindmyevent Function call: lanmuEvent
+ Function call: lanmuEvent
 #element{wst-lanmu} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: lanmuEvent}
@@ -7777,7 +7777,7 @@ Bind method: bindmyevent Function call: lanmuEvent
   #attribute{wx:elif: {{item.show=='lanmu'}}}
 
 Element #1
-Bind method: bindmyevent Function call: imgEvent
+ Function call: imgEvent
 #element{wst-img} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: imgEvent}
@@ -7794,7 +7794,7 @@ Bind method: bindmyevent Function call: imgEvent
   #attribute{wx:elif: {{item.show=='img'}}}
 
 Element #2
-Bind method: bindmyevent Function call: imgsEvent
+ Function call: imgsEvent
 #element{wst-imgs} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: imgsEvent}
@@ -7816,7 +7816,7 @@ Bind method: bindmyevent Function call: imgsEvent
   #attribute{wx:elif: {{item.show=='imgs'}}}
 
 Element #3
-Bind method: bindmyevent Function call: shangpinEvent
+ Function call: shangpinEvent
 #element{wst-shangpin} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: shangpinEvent}
@@ -7842,7 +7842,7 @@ Bind method: bindmyevent Function call: shangpinEvent
   #attribute{wx:elif: {{item.show=='shangpin'}}}
 
 Element #4
-Bind method: bindmyevent Function call: txtEvent
+ Function call: txtEvent
 #element{wst-txt} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: txtEvent}
@@ -7856,7 +7856,7 @@ Bind method: bindmyevent Function call: txtEvent
   #attribute{wx:elif: {{item.show=='text'}}}
 
 Element #5
-Bind method: bindmyevent Function call: txtsEvent
+ Function call: txtsEvent
 #element{wst-txts} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: txtsEvent}
@@ -7869,7 +7869,7 @@ Bind method: bindmyevent Function call: txtsEvent
 pages/Page4/Page4
 
 Element #0
-Bind method: bindmyevent Function call: lanmuEvent
+ Function call: lanmuEvent
 #element{wst-lanmu} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: lanmuEvent}
@@ -7885,7 +7885,7 @@ Bind method: bindmyevent Function call: lanmuEvent
   #attribute{wx:elif: {{item.show=='lanmu'}}}
 
 Element #1
-Bind method: bindmyevent Function call: imgEvent
+ Function call: imgEvent
 #element{wst-img} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: imgEvent}
@@ -7902,7 +7902,7 @@ Bind method: bindmyevent Function call: imgEvent
   #attribute{wx:elif: {{item.show=='img'}}}
 
 Element #2
-Bind method: bindmyevent Function call: imgsEvent
+ Function call: imgsEvent
 #element{wst-imgs} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: imgsEvent}
@@ -7924,7 +7924,7 @@ Bind method: bindmyevent Function call: imgsEvent
   #attribute{wx:elif: {{item.show=='imgs'}}}
 
 Element #3
-Bind method: bindmyevent Function call: shangpinEvent
+ Function call: shangpinEvent
 #element{wst-shangpin} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: shangpinEvent}
@@ -7950,7 +7950,7 @@ Bind method: bindmyevent Function call: shangpinEvent
   #attribute{wx:elif: {{item.show=='shangpin'}}}
 
 Element #4
-Bind method: bindmyevent Function call: txtEvent
+ Function call: txtEvent
 #element{wst-txt} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: txtEvent}
@@ -7964,7 +7964,7 @@ Bind method: bindmyevent Function call: txtEvent
   #attribute{wx:elif: {{item.show=='text'}}}
 
 Element #5
-Bind method: bindmyevent Function call: txtsEvent
+ Function call: txtsEvent
 #element{wst-txts} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: txtsEvent}
@@ -7977,7 +7977,7 @@ Bind method: bindmyevent Function call: txtsEvent
 pages/PageInfo/PageInfo
 
 Element #0
-Bind method: bindmyevent Function call: lanmuEvent
+ Function call: lanmuEvent
 #element{wst-lanmu} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: lanmuEvent}
@@ -7993,7 +7993,7 @@ Bind method: bindmyevent Function call: lanmuEvent
   #attribute{wx:elif: {{item.show=='lanmu'}}}
 
 Element #1
-Bind method: bindmyevent Function call: imgEvent
+ Function call: imgEvent
 #element{wst-img} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: imgEvent}
@@ -8010,7 +8010,7 @@ Bind method: bindmyevent Function call: imgEvent
   #attribute{wx:elif: {{item.show=='img'}}}
 
 Element #2
-Bind method: bindmyevent Function call: imgsEvent
+ Function call: imgsEvent
 #element{wst-imgs} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: imgsEvent}
@@ -8032,7 +8032,7 @@ Bind method: bindmyevent Function call: imgsEvent
   #attribute{wx:elif: {{item.show=='imgs'}}}
 
 Element #3
-Bind method: bindmyevent Function call: shangpinEvent
+ Function call: shangpinEvent
 #element{wst-shangpin} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: shangpinEvent}
@@ -8058,7 +8058,7 @@ Bind method: bindmyevent Function call: shangpinEvent
   #attribute{wx:elif: {{item.show=='shangpin'}}}
 
 Element #4
-Bind method: bindmyevent Function call: txtEvent
+ Function call: txtEvent
 #element{wst-txt} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: txtEvent}
@@ -8072,7 +8072,7 @@ Bind method: bindmyevent Function call: txtEvent
   #attribute{wx:elif: {{item.show=='text'}}}
 
 Element #5
-Bind method: bindmyevent Function call: txtsEvent
+ Function call: txtsEvent
 #element{wst-txts} {depth: 4}
   #attribute{bg: {{item.svalData.bg}}}
   #attribute{bindmyevent: txtsEvent}
@@ -8088,7 +8088,7 @@ pages/PromotionCode/PromotionCode
 pages/Group_Lists/Group_Lists
 
 Element #0
-Bind method: bindscrolltolower Function call: GetNextPage
+ Function call: GetNextPage
 #element{scroll-view} {depth: 1}
   #attribute{bindscrolltolower: GetNextPage}
   #attribute{class: jd100 t49}
@@ -8223,7 +8223,7 @@ Bind method: bindreset Function call: formReset
       data{提交}
 
 Element #1
-Bind method: bindsubmit Function call: formSubmit
+ Function call: formSubmit
 #element{form} {depth: 4}
   #attribute{bindreset: formReset}
   #attribute{bindsubmit: formSubmit}
@@ -8337,7 +8337,7 @@ Bind method: bindgetuserinfo Function call: bindgetuserinfo
   data{生成推广海报}
 
 Element #3
-Bind method: bindtap Function call: submitOrder
+ Function call: submitOrder
 #element{text} {depth: 3}
   #attribute{bindtap: submitOrder}
   #attribute{class: flex-1 }
@@ -8396,7 +8396,7 @@ Bind method: bindreset Function call: formReset
   #element{wst-copyright} {depth: 2}
 
 Element #1
-Bind method: bindsubmit Function call: formSubmit
+ Function call: formSubmit
 #element{form} {depth: 1}
   #attribute{bindreset: formReset}
   #attribute{bindsubmit: formSubmit}
@@ -8455,7 +8455,7 @@ pages/MyCutPrice/MyCutPrice
 pages/SetWithdraw/SetWithdraw
 
 Element #0
-Bind method: bindtap Function call: swichNav
+ Function call: swichNav
 #element{text} {depth: 2}
   #attribute{bindtap: swichNav}
   #attribute{class: padd-tb16 w50e {{currentTab==0?'bord-b3 ':''}}}
@@ -8464,7 +8464,7 @@ Bind method: bindtap Function call: swichNav
   data{支付宝}
 
 Element #1
-Bind method: bindtap Function call: swichNav
+ Function call: swichNav
 #element{text} {depth: 2}
   #attribute{bindtap: swichNav}
   #attribute{class: padd-tb16 w50e {{currentTab==1?'bord-b3 ':''}}}
@@ -8587,7 +8587,7 @@ Bind method: bindreset Function call: formReset
     data{完善账户}
 
 Element #3
-Bind method: bindsubmit Function call: formSubmit
+ Function call: formSubmit
 #element{form} {depth: 1}
   #attribute{bindreset: formReset}
   #attribute{bindsubmit: formSubmit}
@@ -8701,7 +8701,7 @@ Bind method: bindsubmit Function call: formSubmit
     data{完善账户}
 
 Element #4
-Bind method: bindchange Function call: bindPickerChange2
+ Function call: bindPickerChange2
 #element{picker} {depth: 4}
   #attribute{bindchange: bindPickerChange2}
   #attribute{range: {{arrayBank}}}
@@ -8716,7 +8716,7 @@ Bind method: bindchange Function call: bindPickerChange2
       scriptdata{arrayBank[indexBank]}
 
 Element #5
-Bind method: bindchange Function call: bindPickerChange
+ Function call: bindPickerChange
 #element{picker} {depth: 6}
   #attribute{bindchange: bindPickerChange}
   #attribute{class: w33e h100e}
@@ -8729,7 +8729,7 @@ Bind method: bindchange Function call: bindPickerChange
             }
 
 Element #6
-Bind method: bindchange Function call: bindPickerChange1
+ Function call: bindPickerChange1
 #element{picker} {depth: 6}
   #attribute{bindchange: bindPickerChange1}
   #attribute{class: w33e h100e}
@@ -8759,7 +8759,7 @@ pages/StoreDetails/StoreDetails
 pages/VerificationInfo/VerificationInfo
 
 Element #0
-Bind method: bindtap Function call: ShowProductDetails
+ Function call: ShowProductDetails
 #element{view} {depth: 3}
   #attribute{bindtap: ShowProductDetails}
   #attribute{class: padd-a16 tx-13 bord-b1 bord-c flex flex-r}
@@ -8792,7 +8792,7 @@ Bind method: bindtap Function call: ShowProductDetails
         scriptdata{item.amount}
 
 Element #1
-Bind method: bindtap Function call: Verifier
+ Function call: Verifier
 #element{text} {depth: 3}
   #attribute{bindtap: Verifier}
   #attribute{class: block w100e box padd-ja16 tx-16 tx-fff tx-c lh-1}
@@ -8801,7 +8801,7 @@ Bind method: bindtap Function call: Verifier
   data{核销订单}
 
 Element #2
-Bind method: bindtap Function call: PartialVerifier
+ Function call: PartialVerifier
 #element{text} {depth: 3}
   #attribute{bindtap: PartialVerifier}
   #attribute{class: marg-t8 block w100e box padd-ja16 tx-16 tx-fff tx-c lh-1}
@@ -8810,7 +8810,7 @@ Bind method: bindtap Function call: PartialVerifier
   data{核销部分商品}
 
 Element #3
-Bind method: bindchange Function call: checkboxChange
+ Function call: checkboxChange
 #element{checkbox-group} {depth: 3}
   #attribute{bindchange: checkboxChange}
   #element{view} {depth: 4}
@@ -8842,7 +8842,7 @@ Bind method: bindchange Function call: checkboxChange
         #attribute{class: pos-a iconfont icon-yihexiao hexiao}
 
 Element #4
-Bind method: bindtap Function call: confirmPartialVerifier
+ Function call: confirmPartialVerifier
 #element{text} {depth: 3}
   #attribute{bindtap: confirmPartialVerifier}
   #attribute{class: block w100e box padd-ja16 tx-16 tx-fff tx-c lh-1}
@@ -8850,7 +8850,7 @@ Bind method: bindtap Function call: confirmPartialVerifier
   data{确定核销该部分订单}
 
 Element #5
-Bind method: bindtap Function call: getreturn
+ Function call: getreturn
 #element{text} {depth: 3}
   #attribute{bindtap: getreturn}
   #attribute{class: marg-t8 block w100e box padd-ja16 tx-16 tx-fff tx-c lh-1}
@@ -8864,7 +8864,7 @@ pages/VerificationCoupon/VerificationCoupon
 pages/VerificationCouponInfo/VerificationCouponInfo
 
 Element #0
-Bind method: bindtap Function call: Verifier
+ Function call: Verifier
 #element{text} {depth: 1}
   #attribute{bindtap: Verifier}
   #attribute{class: pos-f bl0 block w100e box padd-ja16 tx-16 tx-fff tx-c lh-1}
@@ -8876,7 +8876,7 @@ Bind method: bindtap Function call: Verifier
 pages/MyShareCode/MyShareCode
 
 Element #0
-Bind method: bindtap Function call: saveToPhoto
+ Function call: saveToPhoto
 #element{button} {depth: 2}
   #attribute{bindtap: saveToPhoto}
   #attribute{class: marg-t16 w580}
@@ -8995,7 +8995,7 @@ Bind method: bindreset Function call: formReset
     data{申请我的小程序}
 
 Element #1
-Bind method: bindsubmit Function call: formSubmit
+ Function call: formSubmit
 #element{form} {depth: 1}
   #attribute{bindreset: formReset}
   #attribute{bindsubmit: formSubmit}
@@ -9092,7 +9092,7 @@ Bind method: bindsubmit Function call: formSubmit
     data{申请我的小程序}
 
 Element #2
-Bind method: bindchange Function call: bindPickerChange
+ Function call: bindPickerChange
 #element{picker} {depth: 6}
   #attribute{bindchange: bindPickerChange}
   #attribute{class: w33e h100e}
@@ -9105,7 +9105,7 @@ Bind method: bindchange Function call: bindPickerChange
           }
 
 Element #3
-Bind method: bindchange Function call: bindPickerChange1
+ Function call: bindPickerChange1
 #element{picker} {depth: 6}
   #attribute{bindchange: bindPickerChange1}
   #attribute{class: w33e h100e}
@@ -9118,7 +9118,7 @@ Bind method: bindchange Function call: bindPickerChange1
           }
 
 Element #4
-Bind method: bindchange Function call: bindPickerChange2
+ Function call: bindPickerChange2
 #element{picker} {depth: 6}
   #attribute{bindchange: bindPickerChange2}
   #attribute{class: w33e h100e}
