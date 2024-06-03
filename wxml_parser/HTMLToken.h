@@ -17,6 +17,9 @@
 #define ERROREOUS_END_TAG() \
     throw std::runtime_error("Erroreous end tag.");
 
+#define OUT_OF_INDEX() \
+    throw std::runtime_error("Iterable out of index.");
+
 #define ENUMERATE_COMPONENTS                         \
     __ENUMERATE_COMPONENT(cover_image)               \
     __ENUMERATE_COMPONENT(cover_view)                \

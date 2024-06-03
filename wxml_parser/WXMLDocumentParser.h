@@ -19,6 +19,7 @@ namespace Web
         void run(bool print_ast_flag = false);
         void print_tokens();
         void get_all_bind_elements() { print_bind_elements(m_root, &m_bind_storage, true); }
+        std::string args_for_bind_element(size_t idx);
 
     private:
         RootNode *m_root;

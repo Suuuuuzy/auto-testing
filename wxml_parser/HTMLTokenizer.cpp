@@ -1,7 +1,7 @@
 #include "HTMLTokenizer.h"
 
 // #define TOKENIZER_DEBUG_STATES
-#define TOKENIZER_DEBUG_TAGS
+// #define TOKENIZER_DEBUG_TAGS
 
 #define __ENUMERATE_TOKENIZER_STATE(x) \
     case State::x:                     \
@@ -78,18 +78,6 @@ namespace Web
     {
         for (;;)
         {
-            /*
-#ifdef TOKENIZER_DEBUG_STATES
-            if (!m_current_input_character.has_value())
-            {
-                std::cout << "current token EOF" << std::endl;
-            }
-            else
-            {
-                std::cout << "current token " << char32ToString(m_current_input_character.value()) << std::endl;
-            }
-#endif
-*/
             switch (m_state)
             {
                 BEGIN_STATE(Data)
@@ -257,18 +245,7 @@ namespace Web
                 {
                     ON_WHITESPACE
                     {
-
-                        // if (m_current_token.is_tag())
-                        //{
                         GOTO_WITH_SWITCH(BeforeAttributeName);
-                        /*
-                   }
-                   else
-                   {
-
-                   m_current_token.m_type = HTMLToken::Type::Character;
-                   GOTO_WITH_SWITCH(Data);
-                   } */
                     }
                     ON(GREATER_THAN)
                     {
@@ -282,6 +259,19 @@ namespace Web
                             m_current_token.m_type = HTMLToken::Type::Character;
                         }
                         return emit_current_token();
+                    }
+                    ON(LESS_THAN)
+                    {
+                        if (!m_current_token.is_tag())
+                        {
+                            RECONSUME_IN(Data);
+                            std::stringstream ss;
+                            ss << (m_current_token.m_type == HTMLToken::Type::StartTag ? "<" : "</")
+                               << m_current_token.m_tag.tag_name;
+                            m_current_token.m_comment_or_character.data.append(ss.str());
+                            m_current_token.m_type = HTMLToken::Type::Character;
+                            return emit_current_token();
+                        }
                     }
                     ON_ASCII_ALPHA
                     {
@@ -2076,12 +2066,8 @@ namespace Web
         for (size_t i = 0; i < string_lit.length(); ++i)
         {
             auto codepoint = peek_codepoint(i);
-            // std::cout << "Peek codepoint " << char32ToString(codepoint.value()) << " expected as " << string_lit[i] << "\n"
-            // << std::endl;
             if (!codepoint.has_value())
                 return false;
-
-            // FIXME: this should be more unicode-aware
 
             if (case_insensitive && codepoint.value() != static_cast<char32_t>(string_lit[i]))
                 return false;
