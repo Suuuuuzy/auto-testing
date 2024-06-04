@@ -1,11 +1,13 @@
 import re, os
 
-def find_wxml_files(directory, wxml_files):
+def find_and_format_wxml_files(directory):
     for root, dirs, files in os.walk(directory):
         for file in files:
             if file.endswith('.wxml'):
-                wxml_files.append(os.path.join(root, file))
-    return wxml_files
+                file_path = (os.path.join(root, file))
+                format_wxml_style_attribute(file_path)
+                # wxml_files.append(os.path.join(root, file))
+    # return wxml_files
 
 def format_wxml_style_attribute(file_path):
     try:
@@ -29,8 +31,8 @@ def format_wxml_style_attribute(file_path):
         # output_string = 'wx:key="index"'
 
         # Regular expression pattern to match wx:key="{{index}}"
-        pattern = r'wx:key\s*=\s*{{(.*?)}}'
-
+        pattern = r'wx:key="\{\{(.*)\}\}"'
+        
         # Replace the matched pattern with wx:key="index"
         content = re.sub(pattern, r'wx:key="\1"', content)
 
