@@ -1,0 +1,2933 @@
+this is #6 out of the 19 miniprograms
+surveying miniprogram /home/bella-xia/auto-testing/data/0_passing_groundtruth/wx83a1f19d142cbfb8
+
+pages/workMainpage/workMainpage
+
+Element #0
+Bind method: bindtap Function call: Changeclik
+#element{view} {depth: 2}
+  #attribute{bindtap: Changeclik}
+  #attribute{style: display:flex;width:40%;justify-content:center;height:{{navHeight}}px;}
+  #element{text} {depth: 3}
+    #attribute{class: textlineShenlue}
+    #attribute{style: display:block;color:white;font-size:36rpx;margin-top:{{statusHeight}}px;line-height:44px;}
+    scriptdata{shopData.ShopName?shopData.ShopName:'未选择门店'}
+
+Element #1
+Bind method: bindchange Function call: tagIndexChange
+#element{swiper} {depth: 1}
+  #attribute{bindchange: tagIndexChange}
+  #attribute{current: {{tabbarIndex}}}
+  #attribute{duration: {{10}}}
+  #attribute{indicatordots: {{false}}}
+  #attribute{interval: {{false}}}
+  #attribute{style: width:100%;height:{{myHeightsize}}px;}
+  #element{swiper-item} {depth: 2}
+    #element{view} {depth: 3}
+      #attribute{class: main_list_box}
+      #element{view} {depth: 4}
+        #attribute{bindtap: adddJumpClik}
+        #attribute{data-tag: {{index}}}
+        #attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;width:100%;height:100rpx;background-color:white;border-bottom:2rpxsolid#f3f3f3;align-items:center;position:relative;}
+        #attribute{wx:for: {{arrJiejing}}}
+        #attribute{wx:key: keys}
+        #element{image} {depth: 5}
+          #attribute{src: {{item.image}}}
+          #attribute{style: display:flex;width:80rpx;margin-left:20rpx;width:80rpx;height:80rpx;}
+        #element{view} {depth: 5}
+          #attribute{style: display:flex;width:80%;height:100rpx;flex-direction:column;flex-wrap:nowrap;justify-content:center;margin-left:20rpx;}
+          #element{text} {depth: 6}
+            #attribute{style: display:flex;font-size:32rpx;color:rgb(58,58,58);}
+            scriptdata{item.title}
+          #element{text} {depth: 6}
+            #attribute{style: display:flex;font-size:26rpx;color:rgb(198,198,198);}
+            scriptdata{item.subtitle}
+        #element{button} {depth: 5}
+          #attribute{bindcontact: handleContact}
+          #attribute{class: buttontype}
+          #attribute{opentype: contact}
+          #attribute{style: height:100%;}
+  #element{swiper-item} {depth: 2}
+    #element{scroll-view} {depth: 3}
+      #attribute{scrolly: true}
+      #attribute{style: width:100%;height:{{myHeightsize}}px;}
+      #element{view} {depth: 4}
+        #attribute{class: main_list_box}
+        #attribute{style: height:auto;align-items:center;}
+        #element{view} {depth: 5}
+          #attribute{class: list_box}
+          #attribute{style: width:{{listItemWidth}}px;}
+          #attribute{wx:for: {{listArray}}}
+          #attribute{wx:for-index: index1}
+          #attribute{wx:for-item: item1}
+          #attribute{wx:key: key}
+          #element{view} {depth: 6}
+            #attribute{class: listbox_titleV}
+            scriptdata{item1.navbarname}
+          #element{view} {depth: 6}
+            #attribute{class: list_boxItem}
+            #attribute{style: margin-top:5rpx;}
+            #element{view} {depth: 7}
+              #attribute{bindtap: PostManager}
+              #attribute{class: box_item}
+              #attribute{data-items: {{item2}}}
+              #attribute{style: margin-left:1.5%;position:relative;}
+              #attribute{wx:for: {{item1.workarr}}}
+              #attribute{wx:for-index: index2}
+              #attribute{wx:for-item: item2}
+              #attribute{wx:key: keys}
+              #element{image} {depth: 8}
+                #attribute{src: {{item2.img}}}
+                #attribute{style: display:flex;width:70rpx;height:70rpx;border-radius:35rpx;border:2rpxsolid#f3f3f3;}
+                #attribute{wx:if: {{item1.id=='6010dc6d7ae6e009'}}}
+              #element{block} {depth: 8}
+                #attribute{wx:else: }
+                #element{image} {depth: 9}
+                  #attribute{src: {{item2.img}}}
+                  #attribute{style: display:flex;width:70rpx;height:70rpx;border-radius:10rpx;border:2rpxsolid#f3f3f3;}
+                #element{text} {depth: 9}
+                  #attribute{style: position:absolute;height:30rpx;padding:0rpx5rpx;top:-10rpx;right:5rpx;border-radius:20rpx;background-color:red;color:white;font-size:20rpx;}
+                  #attribute{wx:if: {{item2.auditnum>0}}}
+                  scriptdata{item2.auditnum}
+              #element{text} {depth: 8}
+                #attribute{style: display:flex;height:40rpx;margin-top:5rpx;width:100%;justify-content:center;font-size:22rpx;color:rgb(102,102,102);}
+                scriptdata{item2.modelname}
+      #element{view} {depth: 4}
+        #attribute{class: main_list_box}
+        #attribute{style: height:auto;align-items:center;}
+        #element{image} {depth: 5}
+          #attribute{bindtap: jumpWeb}
+          #attribute{mode: widthFix}
+          #attribute{src: {{bottomUrl.img}}}
+          #attribute{style: width:{{listItemWidth}}px;margin-top:20rpx;}
+      #element{view} {depth: 4}
+        #attribute{style: display:flex;width:100%;height:140rpx;}
+  #element{swiper-item} {depth: 2}
+    #element{view} {depth: 3}
+      #attribute{class: my_infoView}
+      #attribute{style: height:{{myHeightsize}}px;}
+      #element{block} {depth: 4}
+        #attribute{wx:if: {{islogin}}}
+        #element{view} {depth: 5}
+          #attribute{class: infoView_Top}
+          #element{view} {depth: 6}
+            #attribute{class: infoView_CenterView}
+            #element{view} {depth: 7}
+              #attribute{class: item_CenterView}
+              #attribute{style: margin-top:20rpx;height:200rpx;}
+              #element{view} {depth: 8}
+                #attribute{style: display:flex;flex-direction:column;flex-wrap:nowrap;width:60%;margin-left:20rpx;}
+                #element{text} {depth: 9}
+                  #attribute{class: textlineShenlue}
+                  #attribute{style: display:block;font-size:36rpx;color:white;max-width:100%;margin-top:20rpx;}
+                  scriptdata{UserName}
+                #element{text} {depth: 9}
+                  #attribute{class: textlineShenlue}
+                  #attribute{style: display:block;font-size:26rpx;color:rgba(255,255,255,0.7);height:40rpx;max-width:100%;margin-top:30rpx;}
+                  scriptdata{shopData.MerchantName}
+                #element{text} {depth: 9}
+                  #attribute{class: textlineShenlue}
+                  #attribute{style: display:block;font-size:26rpx;color:rgba(255,255,255,0.7);height:40rpx;max-width:100%;margin-top:0rpx;}
+                  scriptdata{shopData.DepartName?shopData.DepartName:'无部门'}
+                  data{-}
+                  scriptdata{shopData.FirstName?shopData.FirstName:'无角色'}
+              #element{image} {depth: 8}
+                #attribute{bindtap: touImageClik}
+                #attribute{mode: aspectFill}
+                #attribute{src: {{headUrl?headUrl:'/images/icon_user_default@2x.png'}}}
+                #attribute{style: width:160rpx;height:160rpx;margin-right:20rpx;border-radius:80rpx;border:2rpxsolid#42bfa7;}
+            #element{view} {depth: 7}
+              #attribute{class: item_CenterView}
+              #attribute{style: margin-top:40rpx;height:120rpx;}
+              #element{view} {depth: 8}
+                #attribute{style: display:flex;flex-direction:column;flex-wrap:nowrap;width:60%;margin-left:20rpx;margin-bottom:20rpx;}
+                #element{text} {depth: 9}
+                  #attribute{bindtap: Changeclik}
+                  #attribute{class: textlineShenlue}
+                  #attribute{style: display:block;font-size:26rpx;color:rgba(255,255,255,0.8);height:40rpx;border-radius:20rpx;border:2rpxsolidwhite;width:auto;width:140rpx;text-align:center;}
+                  data{切换门店}
+                #element{text} {depth: 9}
+                  #attribute{class: textlineShenlue}
+                  #attribute{style: display:block;font-size:26rpx;color:rgba(255,255,255,0.7);height:40rpx;max-width:100%;margin-top:10rpx;}
+                  scriptdata{shopData.ShopName?shopData.ShopName:'点击切换'}
+                  data{
+                  >}
+              #element{image} {depth: 8}
+                #attribute{mode: aspectFill}
+                #attribute{src: /images/myicon_Ercode@3x.png}
+                #attribute{style: width:60rpx;height:60rpx;margin-right:20rpx;border:2rpxsolid#42bfa7;}
+        #element{view} {depth: 5}
+          #attribute{class: list_boxItem}
+          #attribute{style: background-color:white;width:100%;}
+          #element{view} {depth: 6}
+            #attribute{class: box_item}
+            #attribute{style: margin-left:1.5%;position:relative;}
+            #attribute{wx:for: {{ItemArray}}}
+            #attribute{wx:for-index: index2}
+            #attribute{wx:for-item: item2}
+            #attribute{wx:key: keys}
+            #element{image} {depth: 7}
+              #attribute{bindtap: PostMyPerson}
+              #attribute{data-items: {{item2}}}
+              #attribute{src: {{item2.img}}}
+              #attribute{style: display:flex;width:70rpx;height:70rpx;border-radius:10rpx;border:2rpxsolid#f3f3f3;}
+            #element{text} {depth: 7}
+              #attribute{style: display:flex;height:40rpx;margin-top:5rpx;width:100%;justify-content:center;font-size:22rpx;color:rgb(102,102,102);}
+              scriptdata{item2.title}
+      #element{view} {depth: 4}
+        #attribute{style: display:flex;width:100%;height:180rpx;background-color:white;justify-content:center;align-items:center;}
+        #attribute{wx:else: }
+        #element{text} {depth: 5}
+          #attribute{bindtap: loginclik}
+          #attribute{style: display:flex;font-size:30rpx;color:white;width:80%;height:100rpx;background:linear-gradient(toright,#42bfa7,#39a3c6);border-radius:10rpx;justify-content:center;align-items:center;}
+          data{您还未登录，点击登录}
+
+Element #2
+Bind method: bindtap Function call: adddJumpClik
+#element{view} {depth: 4}
+  #attribute{bindtap: adddJumpClik}
+  #attribute{data-tag: {{index}}}
+  #attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;width:100%;height:100rpx;background-color:white;border-bottom:2rpxsolid#f3f3f3;align-items:center;position:relative;}
+  #attribute{wx:for: {{arrJiejing}}}
+  #attribute{wx:key: keys}
+  #element{image} {depth: 5}
+    #attribute{src: {{item.image}}}
+    #attribute{style: display:flex;width:80rpx;margin-left:20rpx;width:80rpx;height:80rpx;}
+  #element{view} {depth: 5}
+    #attribute{style: display:flex;width:80%;height:100rpx;flex-direction:column;flex-wrap:nowrap;justify-content:center;margin-left:20rpx;}
+    #element{text} {depth: 6}
+      #attribute{style: display:flex;font-size:32rpx;color:rgb(58,58,58);}
+      scriptdata{item.title}
+    #element{text} {depth: 6}
+      #attribute{style: display:flex;font-size:26rpx;color:rgb(198,198,198);}
+      scriptdata{item.subtitle}
+  #element{button} {depth: 5}
+    #attribute{bindcontact: handleContact}
+    #attribute{class: buttontype}
+    #attribute{opentype: contact}
+    #attribute{style: height:100%;}
+
+Element #3
+Bind method: bindcontact Function call: handleContact
+#element{button} {depth: 5}
+  #attribute{bindcontact: handleContact}
+  #attribute{class: buttontype}
+  #attribute{opentype: contact}
+  #attribute{style: height:100%;}
+
+Element #4
+Bind method: bindtap Function call: PostManager
+#element{view} {depth: 7}
+  #attribute{bindtap: PostManager}
+  #attribute{class: box_item}
+  #attribute{data-items: {{item2}}}
+  #attribute{style: margin-left:1.5%;position:relative;}
+  #attribute{wx:for: {{item1.workarr}}}
+  #attribute{wx:for-index: index2}
+  #attribute{wx:for-item: item2}
+  #attribute{wx:key: keys}
+  #element{image} {depth: 8}
+    #attribute{src: {{item2.img}}}
+    #attribute{style: display:flex;width:70rpx;height:70rpx;border-radius:35rpx;border:2rpxsolid#f3f3f3;}
+    #attribute{wx:if: {{item1.id=='6010dc6d7ae6e009'}}}
+  #element{block} {depth: 8}
+    #attribute{wx:else: }
+    #element{image} {depth: 9}
+      #attribute{src: {{item2.img}}}
+      #attribute{style: display:flex;width:70rpx;height:70rpx;border-radius:10rpx;border:2rpxsolid#f3f3f3;}
+    #element{text} {depth: 9}
+      #attribute{style: position:absolute;height:30rpx;padding:0rpx5rpx;top:-10rpx;right:5rpx;border-radius:20rpx;background-color:red;color:white;font-size:20rpx;}
+      #attribute{wx:if: {{item2.auditnum>0}}}
+      scriptdata{item2.auditnum}
+  #element{text} {depth: 8}
+    #attribute{style: display:flex;height:40rpx;margin-top:5rpx;width:100%;justify-content:center;font-size:22rpx;color:rgb(102,102,102);}
+    scriptdata{item2.modelname}
+
+Element #5
+Bind method: bindtap Function call: jumpWeb
+#element{image} {depth: 5}
+  #attribute{bindtap: jumpWeb}
+  #attribute{mode: widthFix}
+  #attribute{src: {{bottomUrl.img}}}
+  #attribute{style: width:{{listItemWidth}}px;margin-top:20rpx;}
+
+Element #6
+Bind method: bindtap Function call: touImageClik
+#element{image} {depth: 8}
+  #attribute{bindtap: touImageClik}
+  #attribute{mode: aspectFill}
+  #attribute{src: {{headUrl?headUrl:'/images/icon_user_default@2x.png'}}}
+  #attribute{style: width:160rpx;height:160rpx;margin-right:20rpx;border-radius:80rpx;border:2rpxsolid#42bfa7;}
+
+Element #7
+Bind method: bindtap Function call: Changeclik
+#element{text} {depth: 9}
+  #attribute{bindtap: Changeclik}
+  #attribute{class: textlineShenlue}
+  #attribute{style: display:block;font-size:26rpx;color:rgba(255,255,255,0.8);height:40rpx;border-radius:20rpx;border:2rpxsolidwhite;width:auto;width:140rpx;text-align:center;}
+  data{切换门店}
+
+Element #8
+Bind method: bindtap Function call: PostMyPerson
+#element{image} {depth: 7}
+  #attribute{bindtap: PostMyPerson}
+  #attribute{data-items: {{item2}}}
+  #attribute{src: {{item2.img}}}
+  #attribute{style: display:flex;width:70rpx;height:70rpx;border-radius:10rpx;border:2rpxsolid#f3f3f3;}
+
+Element #9
+Bind method: bindtap Function call: loginclik
+#element{text} {depth: 5}
+  #attribute{bindtap: loginclik}
+  #attribute{style: display:flex;font-size:30rpx;color:white;width:80%;height:100rpx;background:linear-gradient(toright,#42bfa7,#39a3c6);border-radius:10rpx;justify-content:center;align-items:center;}
+  data{您还未登录，点击登录}
+
+Element #10
+Bind method: bindtap Function call: tabbarClik
+#element{view} {depth: 2}
+  #attribute{bindtap: tabbarClik}
+  #attribute{class: bottom_tabbar}
+  #attribute{data-tag: 0}
+  #attribute{style: width:100rpx;margin-top:{{needAdapt?5:0}}rpx;}
+  #element{block} {depth: 3}
+    #attribute{wx:if: {{tabbarIndex==0}}}
+    #element{image} {depth: 4}
+      #attribute{class: tabbar_item_image}
+      #attribute{src: /images/Tabbar_Jiejing_Selected@3x.png}
+    #element{text} {depth: 4}
+      #attribute{class: tabbar_item_text text_selected}
+      data{捷径}
+  #element{image} {depth: 3}
+    #attribute{class: tabbar_item_image}
+    #attribute{src: /images/Tabbar_jiejing_sel@2x.png}
+    #attribute{style: width:60rpx;height:60rpx;}
+    #attribute{wx:else: }
+
+Element #11
+Bind method: bindtap Function call: tabbarClik
+#element{view} {depth: 2}
+  #attribute{bindtap: tabbarClik}
+  #attribute{class: bottom_tabbar}
+  #attribute{data-tag: 1}
+  #attribute{style: width:100rpx;margin-top:{{needAdapt?5:0}}rpx;}
+  #element{image} {depth: 3}
+    #attribute{class: tabbar_item_image}
+    #attribute{src: {{tabbarIndex==1?'/images/Tabbar_Work_Selected@2x.png':'/images/Tabbar_Work_unSelected@2x.png'}}}
+  #element{text} {depth: 3}
+    #attribute{class: tabbar_item_text {{tabbarIndex==1?'text_selected':'text_unselect'}}}
+    data{工作}
+
+Element #12
+Bind method: bindtap Function call: tabbarClik
+#element{view} {depth: 2}
+  #attribute{bindtap: tabbarClik}
+  #attribute{class: bottom_tabbar}
+  #attribute{data-tag: 2}
+  #attribute{style: width:100rpx;margin-top:{{needAdapt?5:0}}rpx;}
+  #element{image} {depth: 3}
+    #attribute{class: tabbar_item_image}
+    #attribute{src: {{tabbarIndex==2?'/images/Tabbar_Myself_Selected@2x.png':'/images/Tabbar_Myself_unSelected@2x.png'}}}
+  #element{text} {depth: 3}
+    #attribute{class: tabbar_item_text {{tabbarIndex==2?'text_selected':'text_unselect'}}}
+    data{我的}
+
+Element #13
+Bind method: bindtap Function call: tapClik
+#element{view} {depth: 2}
+  #attribute{bindtap: tapClik}
+  #attribute{class: bottom_HideView}
+
+Element #14
+Bind method: bindtap Function call: SelectShop
+#element{view} {depth: 3}
+  #attribute{bindtap: SelectShop}
+  #attribute{data-dic: {{item}}}
+  #attribute{data-tag: {{index}}}
+  #attribute{style: display:block;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);}
+  #attribute{wx:for: {{shopArr}}}
+  #attribute{wx:key: key}
+  #element{text} {depth: 4}
+    #attribute{class: textlineShenlue}
+    #attribute{style: display:block;padding-left:20rpx;padding-right:20rpx;height:80rpx;line-height:80rpx;}
+    scriptdata{item.ShopName}
+    data{（}
+    scriptdata{item.MerchantName}
+    data{）}
+
+Element #15
+Bind method: bindtap Function call: tapAuthClik
+#element{view} {depth: 2}
+  #attribute{bindtap: tapAuthClik}
+  #attribute{catchtouchmove: true}
+  #attribute{class: bottom_HideView}
+
+Element #16
+Bind method: bindgetphonenumber Function call: getPhoneNumberMember
+#element{button} {depth: 3}
+  #attribute{bindgetphonenumber: getPhoneNumberMember}
+  #attribute{class: button_type}
+  #attribute{opentype: getPhoneNumber}
+  #attribute{style: background-color:#29c3ce;margin-top:40rpx;color:white;}
+  #attribute{type: default}
+  data{授 权}
+
+Element #17
+Bind method: bindtap Function call: tapAuthClik
+#element{button} {depth: 3}
+  #attribute{bindtap: tapAuthClik}
+  #attribute{class: button_type}
+  #attribute{style: background-color:#ec8114;margin-top:20rpx;color:white;}
+  #attribute{type: default}
+  data{取 消}
+
+
+pages/opendocument/opendocument
+
+Element #0
+Bind method: bindtap Function call: OpenDocumentClik
+#element{view} {depth: 2}
+  #attribute{bindtap: OpenDocumentClik}
+  #attribute{style: display:flex;width:60%;height:80rpx;background-color:#268de8;border-radius:20rpx;justify-content:center;align-items:center;color:white;}
+  data{打开文件}
+
+
+pages/myPersonDetail/myPersonDetail
+
+Element #0
+Bind method: bindtap Function call: bindChooseAvatar
+#element{image} {depth: 3}
+  #attribute{bindtap: bindChooseAvatar}
+  #attribute{src: {{imageHeadUrl?imageHeadUrl:'/images/icon_user_default@2x.png'}}}
+  #attribute{style: display:flex;width:80rpx;height:80rpx;margin-right:20rpx;border-radius:40rpx;}
+
+Element #1
+Bind method: bindinput Function call: inputName
+#element{input} {depth: 3}
+  #attribute{bindinput: inputName}
+  #attribute{maxlength: 16}
+  #attribute{placeholder: 请输入姓名}
+  #attribute{placeholderstyle: font-size:28rpx;color:rgb(201,201,201);}
+  #attribute{style: width:50%;height:60rpx;margin-right:20rpx;font-size:28rpx;color:rgb(102,102,102);text-align:right;}
+  #attribute{type: text}
+  #attribute{value: {{nickName}}}
+
+Element #2
+Bind method: bindtap Function call: cureClik
+#element{view} {depth: 2}
+  #attribute{bindtap: cureClik}
+  #attribute{class: items_type}
+  #attribute{style: margin-left:10%;width:80%;justify-content:center;margin-top:40rpx;background-color:#1c96fc;border-radius:40rpx;}
+  #element{text} {depth: 3}
+    #attribute{style: font-size:28rpx;color:white;}
+    data{保存信息}
+
+
+pages/jiejingMessage/jiejingMessage
+
+
+pages/payplatform/payplatform
+
+Element #0
+Bind method: bindtap Function call: payWayChange
+#element{view} {depth: 3}
+  #attribute{bindtap: payWayChange}
+  #attribute{class: item_content}
+  #attribute{data-tag: 0}
+  #element{view} {depth: 4}
+    #attribute{class: item_image_text}
+    #attribute{style: margin-top:20rpx;margin-bottom:20rpx;}
+    #element{image} {depth: 5}
+      #attribute{src: /images/icon_image_wxpay@3x.png}
+      #attribute{style: display:flex;width:60rpx;height:60rpx;margin-left:20rpx;}
+    #element{text} {depth: 5}
+      #attribute{style: margin-left:20rpx;font-size:30rpx;color:rgb(58,58,58);line-height:60rpx;height:60rpx;}
+      data{微信}
+  #element{view} {depth: 4}
+    #attribute{style: display:flex;width:30%;align-items:center;flex-direction:row-reverse;flex-wrap:nowrap;}
+    #element{image} {depth: 5}
+      #attribute{src: {{payWay==0?'/images/icon_shopcar_gou@2x.png':'/images/icon_shopcar_ungou@2x.png'}}}
+      #attribute{style: display:flex;width:50rpx;height:50rpx;margin-right:20rpx;}
+
+Element #1
+Bind method: bindtap Function call: bindOperate1
+#element{view} {depth: 1}
+  #attribute{bindtap: bindOperate1}
+  #attribute{class: bottom-operate}
+  data{确定支付}
+
+Element #2
+Bind method: bindtap Function call: hidePayLayer
+#element{view} {depth: 2}
+  #attribute{bindtap: hidePayLayer}
+  #attribute{class: bg_layer}
+
+Element #3
+Bind method: bindinput Function call: inputPwd
+#element{input} {depth: 3}
+  #attribute{bindinput: inputPwd}
+  #attribute{class: input_control}
+  #attribute{focus: {{payFocus}}}
+  #attribute{maxlength: 6}
+  #attribute{type: number}
+
+Element #4
+Bind method: bindtap Function call: 
+#element{view} {depth: 2}
+  #attribute{bindtap: }
+  #attribute{class: hideImage_bg}
+
+Element #5
+Bind method: bindlongpress Function call: saveImg
+#element{view} {depth: 2}
+  #attribute{bindlongpress: saveImg}
+  #attribute{data-url: {{zfbImage}}}
+  #attribute{style: display:flex;flex-direction:column;flex-wrap:nowrap;background-color:white;width:80%;height:auto;border-radius:10rpx;position:fixed;align-items:center;padding-bottom:40rpx;padding-top:20rpx;}
+  #element{text} {depth: 3}
+    #attribute{style: display:flex;height:100rpx;font-size:30rpx;font-weight:500;justify-content:center;align-items:center;}
+    data{支付宝支付}
+  #element{image} {depth: 3}
+    #attribute{catchtap: chaClik}
+    #attribute{src: /images/icon_close_Pay@2x.png}
+    #attribute{style: display:flex;width:60rpx;height:60rpx;position:absolute;right:10rpx;top:10rpx;}
+  #element{image} {depth: 3}
+    #attribute{src: {{zfbImage?zfbImage:''}}}
+    #attribute{style: display:flex;margin-top:10rpx;margin-bottom:10rpx;width:400rpx;height:400rpx;background-color:#f3f3f3;}
+  #element{text} {depth: 3}
+    #attribute{style: display:flex;font-size:24rpx;rgb(58.58.58);margin-top:10rpx;}
+    data{请截屏或长按图片保存，然后打开}
+  #element{text} {depth: 3}
+    #attribute{style: display:flex;font-size:24rpx;rgb(58.58.58);margin-top:10rpx;}
+    data{支付宝App • 扫一扫 • 相册}
+  #element{text} {depth: 3}
+    #attribute{style: display:flex;font-size:24rpx;rgb(58.58.58);margin-top:10rpx;}
+    data{识别二维码}
+
+
+pages/customerManage/customerDetail/customerDetail
+
+
+pages/customerManage/customerList/customerList
+
+Element #0
+Bind method: bindtap Function call: itemOptionClik
+#element{view} {depth: 3}
+  #attribute{bindtap: itemOptionClik}
+  #attribute{class: item_scroller_top}
+  #attribute{data-tag: 0}
+  #element{text} {depth: 4}
+    #attribute{class: textlineShenlue}
+    #attribute{style: font-size:28rpx;color:#29c3ce}
+    #attribute{wx:if: {{sortindex==0}}}
+    scriptdata{arrShopArrData[shopIndex].ShopName}
+  #element{text} {depth: 4}
+    #attribute{class: textlineShenlue}
+    #attribute{style: font-size:28rpx;color:rgb(102,102,102);}
+    #attribute{wx:else: }
+    scriptdata{arrShopArrData[shopIndex].ShopName}
+  #element{image} {depth: 4}
+    #attribute{src: {{sortindex==0?'/images/cus_jiaoUp@2x.png':'/images/cus_jiaoDown@2x.png'}}}
+    #attribute{style: width:30rpx;height:30rpx;margin-left:10rpx;}
+
+Element #1
+Bind method: bindtap Function call: itemOptionClik
+#element{view} {depth: 3}
+  #attribute{bindtap: itemOptionClik}
+  #attribute{class: item_scroller_top}
+  #attribute{data-tag: 1}
+  #element{text} {depth: 4}
+    #attribute{style: font-size:28rpx;color:#29c3ce;}
+    #attribute{wx:if: {{sortindex==1}}}
+    data{智能排序}
+  #element{text} {depth: 4}
+    #attribute{style: font-size:28rpx;color:rgb(102,102,102);}
+    #attribute{wx:else: }
+    data{智能排序}
+  #element{image} {depth: 4}
+    #attribute{src: {{sortindex==1?'/images/cus_jiaoUp@2x.png':'/images/cus_jiaoDown@2x.png'}}}
+    #attribute{style: width:30rpx;height:30rpx;margin-left:10rpx;}
+
+Element #2
+Bind method: bindtap Function call: itemOptionClik
+#element{view} {depth: 3}
+  #attribute{bindtap: itemOptionClik}
+  #attribute{class: item_scroller_top}
+  #attribute{data-tag: 2}
+  #element{text} {depth: 4}
+    #attribute{style: font-size:28rpx;color:#29c3ce;}
+    #attribute{wx:if: {{sortindex==2}}}
+    data{筛 选}
+  #element{text} {depth: 4}
+    #attribute{style: font-size:28rpx;color:rgb(102,102,102);}
+    #attribute{wx:else: }
+    data{筛 选}
+  #element{image} {depth: 4}
+    #attribute{src: {{sortindex==2?'/images/cus_jiaoUp@2x.png':'/images/cus_jiaoDown@2x.png'}}}
+    #attribute{style: width:30rpx;height:30rpx;margin-left:10rpx;}
+
+Element #3
+Bind method: bindrefresherrefresh Function call: onPullDownRefresh
+#element{scroll-view} {depth: 2}
+  #attribute{bindrefresherrefresh: onPullDownRefresh}
+  #attribute{bindscrolltolower: onReachBottom}
+  #attribute{class: scroller_view}
+  #attribute{refresherbackground: #f3f3f3}
+  #attribute{refresherenabled: true}
+  #attribute{refreshertriggered: {{loading}}}
+  #attribute{scrolly: true}
+  #attribute{style: {{heightBottom}}px;}
+  #element{block} {depth: 3}
+    #attribute{wx:for: {{dataArray}}}
+    #attribute{wx:key: key}
+    #element{view} {depth: 4}
+      #attribute{class: scroller_TopView}
+      #attribute{style: height:120rpx;background-color:#f3f3f3;justify-content:space-between;align-items:center;}
+      #element{view} {depth: 5}
+        #attribute{style: display:flex;flex-direction:column;flex-wrap:nowrap;width:50%;height:100%;}
+        #element{picker} {depth: 6}
+          #attribute{bindchange: selectDataTime}
+          #attribute{end: {{endTime}}}
+          #attribute{fields: month}
+          #attribute{headertext: 选择时间}
+          #attribute{mode: date}
+          #attribute{start: {{startTime}}}
+          #attribute{value: {{currentTime1}}}
+          #element{view} {depth: 7}
+            #attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;height:50rpx;margin-top:10rpx;align-items:center;}
+            #element{text} {depth: 8}
+              #attribute{style: display:flex;margin-left:20rpx;font-size:30rpx;color:rgb(102,102,102);}
+              scriptdata{item.CreateTime}
+            #element{image} {depth: 8}
+              #attribute{src: /images/icon_image_go.png}
+              #attribute{style: display:flex;margin-left:10rpx;width:50rpx;height:50rpx;}
+        #element{view} {depth: 6}
+          #attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;height:50rpx;margin-top:0rpx;align-items:center;}
+          #element{text} {depth: 7}
+            #attribute{style: display:flex;margin-left:20rpx;font-size:30rpx;color:rgb(198,198,198);}
+            data{新建现有会员}
+            scriptdata{item.Count}
+            data{人}
+      #element{view} {depth: 5}
+        #attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;width:40%;height:100%;align-items:center;justify-content:flex-end;}
+        #element{view} {depth: 6}
+          #attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;height:50rpx;margin-top:0rpx;align-items:center;}
+    #element{view} {depth: 4}
+      #attribute{class: item_ViewS}
+      #attribute{wx:for: {{item.ClientData}}}
+      #attribute{wx:for-item: item1}
+      #attribute{wx:key: key1}
+      #element{image} {depth: 5}
+        #attribute{mode: aspectFill}
+        #attribute{src: {{item1.Link?item1.Link:'https://java.4006337366.com/jiejing/images/javaImage/icon_boy@3x.png'}}}
+        #attribute{style: display:flex;width:100rpx;height:100rpx;background-color:#f3f3f3;border-radius:50rpx;margin-left:20rpx;margin-top:20rpx;}
+        #attribute{wx:if: {{item1.Sex==0}}}
+      #element{image} {depth: 5}
+        #attribute{mode: aspectFill}
+        #attribute{src: {{item1.Link?item1.Link:'https://java.4006337366.com/jiejing/images/javaImage/icon_girl@3x.png'}}}
+        #attribute{style: display:flex;width:100rpx;height:100rpx;background-color:#f3f3f3;border-radius:50rpx;margin-left:20rpx;margin-top:20rpx;}
+        #attribute{wx:else: }
+      #element{view} {depth: 5}
+        #attribute{style: display:flex;flex-direction:column;flex-wrap:nowrap;margin-top:20rpx;margin-left:20rpx;width:{{widthItem}}px;height:200rpx;background-color:white;}
+        #element{view} {depth: 6}
+          #attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;width:100%;height:80rpx;background-color:width;justify-content:space-between;align-items:center;}
+          #element{view} {depth: 7}
+            #attribute{style: display:flex;width:70%;height:100%;flex-direction:row;flex-wrap:nowrap;align-items:center;}
+            #element{text} {depth: 8}
+              #attribute{style: display:flex;font-size:32rpx;width:auto;rgb(58,58,58);}
+              scriptdata{item1.Name}
+            #element{image} {depth: 8}
+              #attribute{src: {{item1.Sex==0?'https://java.4006337366.com/jiejing/images/javaImage/Referrer_Man@2x.png':'https://java.4006337366.com/jiejing/images/javaImage/Referrer_Feman@2x.png'}}}
+              #attribute{style: display:flex;width:30rpx;height:30rpx;margin-left:10rpx;}
+          #element{view} {depth: 7}
+            #attribute{style: display:flex;width:30%;height:100%;justify-content:flex-end;align-items:center;}
+            #element{image} {depth: 8}
+              #attribute{src: https://java.4006337366.com/jiejing/images/javaImage/phone_icon.png}
+              #attribute{style: display:flex;width:40rpx;height:40rpx;margin-right:20rpx;}
+        #element{view} {depth: 6}
+          #attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;width:100%;height:60rpx;background-color:width;justify-content:space-between;align-items:center;background-color:white;}
+          #element{text} {depth: 7}
+            #attribute{class: textlineShenlue}
+            #attribute{style: display:block;width:50%;font-size:24rpx;color:rgb(158,158,158);}
+            data{会员来源：}
+            scriptdata{item1.CustomerSource}
+          #element{text} {depth: 7}
+            #attribute{class: textlineShenlue}
+            #attribute{style: display:block;width:50%;font-size:24rpx;color:rgb(158,158,158);}
+            data{销售人员：}
+            scriptdata{item1.ConsultantName}
+        #element{view} {depth: 6}
+          #attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;width:100%;height:60rpx;background-color:width;justify-content:space-between;align-items:center;background-color:white;}
+          #element{text} {depth: 7}
+            #attribute{class: textlineShenlue}
+            #attribute{style: display:block;width:50%;font-size:24rpx;color:rgb(158,158,158);}
+            data{最近消费：}
+            scriptdata{item1.CreateTime}
+          #element{text} {depth: 7}
+            #attribute{class: textlineShenlue}
+            #attribute{style: display:block;width:50%;font-size:24rpx;color:rgb(158,158,158);}
+            data{最近跟进：}
+            scriptdata{item1.FollowTime}
+
+Element #4
+Bind method: bindscrolltolower Function call: onReachBottom
+#element{scroll-view} {depth: 2}
+  #attribute{bindrefresherrefresh: onPullDownRefresh}
+  #attribute{bindscrolltolower: onReachBottom}
+  #attribute{class: scroller_view}
+  #attribute{refresherbackground: #f3f3f3}
+  #attribute{refresherenabled: true}
+  #attribute{refreshertriggered: {{loading}}}
+  #attribute{scrolly: true}
+  #attribute{style: {{heightBottom}}px;}
+  #element{block} {depth: 3}
+    #attribute{wx:for: {{dataArray}}}
+    #attribute{wx:key: key}
+    #element{view} {depth: 4}
+      #attribute{class: scroller_TopView}
+      #attribute{style: height:120rpx;background-color:#f3f3f3;justify-content:space-between;align-items:center;}
+      #element{view} {depth: 5}
+        #attribute{style: display:flex;flex-direction:column;flex-wrap:nowrap;width:50%;height:100%;}
+        #element{picker} {depth: 6}
+          #attribute{bindchange: selectDataTime}
+          #attribute{end: {{endTime}}}
+          #attribute{fields: month}
+          #attribute{headertext: 选择时间}
+          #attribute{mode: date}
+          #attribute{start: {{startTime}}}
+          #attribute{value: {{currentTime1}}}
+          #element{view} {depth: 7}
+            #attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;height:50rpx;margin-top:10rpx;align-items:center;}
+            #element{text} {depth: 8}
+              #attribute{style: display:flex;margin-left:20rpx;font-size:30rpx;color:rgb(102,102,102);}
+              scriptdata{item.CreateTime}
+            #element{image} {depth: 8}
+              #attribute{src: /images/icon_image_go.png}
+              #attribute{style: display:flex;margin-left:10rpx;width:50rpx;height:50rpx;}
+        #element{view} {depth: 6}
+          #attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;height:50rpx;margin-top:0rpx;align-items:center;}
+          #element{text} {depth: 7}
+            #attribute{style: display:flex;margin-left:20rpx;font-size:30rpx;color:rgb(198,198,198);}
+            data{新建现有会员}
+            scriptdata{item.Count}
+            data{人}
+      #element{view} {depth: 5}
+        #attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;width:40%;height:100%;align-items:center;justify-content:flex-end;}
+        #element{view} {depth: 6}
+          #attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;height:50rpx;margin-top:0rpx;align-items:center;}
+    #element{view} {depth: 4}
+      #attribute{class: item_ViewS}
+      #attribute{wx:for: {{item.ClientData}}}
+      #attribute{wx:for-item: item1}
+      #attribute{wx:key: key1}
+      #element{image} {depth: 5}
+        #attribute{mode: aspectFill}
+        #attribute{src: {{item1.Link?item1.Link:'https://java.4006337366.com/jiejing/images/javaImage/icon_boy@3x.png'}}}
+        #attribute{style: display:flex;width:100rpx;height:100rpx;background-color:#f3f3f3;border-radius:50rpx;margin-left:20rpx;margin-top:20rpx;}
+        #attribute{wx:if: {{item1.Sex==0}}}
+      #element{image} {depth: 5}
+        #attribute{mode: aspectFill}
+        #attribute{src: {{item1.Link?item1.Link:'https://java.4006337366.com/jiejing/images/javaImage/icon_girl@3x.png'}}}
+        #attribute{style: display:flex;width:100rpx;height:100rpx;background-color:#f3f3f3;border-radius:50rpx;margin-left:20rpx;margin-top:20rpx;}
+        #attribute{wx:else: }
+      #element{view} {depth: 5}
+        #attribute{style: display:flex;flex-direction:column;flex-wrap:nowrap;margin-top:20rpx;margin-left:20rpx;width:{{widthItem}}px;height:200rpx;background-color:white;}
+        #element{view} {depth: 6}
+          #attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;width:100%;height:80rpx;background-color:width;justify-content:space-between;align-items:center;}
+          #element{view} {depth: 7}
+            #attribute{style: display:flex;width:70%;height:100%;flex-direction:row;flex-wrap:nowrap;align-items:center;}
+            #element{text} {depth: 8}
+              #attribute{style: display:flex;font-size:32rpx;width:auto;rgb(58,58,58);}
+              scriptdata{item1.Name}
+            #element{image} {depth: 8}
+              #attribute{src: {{item1.Sex==0?'https://java.4006337366.com/jiejing/images/javaImage/Referrer_Man@2x.png':'https://java.4006337366.com/jiejing/images/javaImage/Referrer_Feman@2x.png'}}}
+              #attribute{style: display:flex;width:30rpx;height:30rpx;margin-left:10rpx;}
+          #element{view} {depth: 7}
+            #attribute{style: display:flex;width:30%;height:100%;justify-content:flex-end;align-items:center;}
+            #element{image} {depth: 8}
+              #attribute{src: https://java.4006337366.com/jiejing/images/javaImage/phone_icon.png}
+              #attribute{style: display:flex;width:40rpx;height:40rpx;margin-right:20rpx;}
+        #element{view} {depth: 6}
+          #attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;width:100%;height:60rpx;background-color:width;justify-content:space-between;align-items:center;background-color:white;}
+          #element{text} {depth: 7}
+            #attribute{class: textlineShenlue}
+            #attribute{style: display:block;width:50%;font-size:24rpx;color:rgb(158,158,158);}
+            data{会员来源：}
+            scriptdata{item1.CustomerSource}
+          #element{text} {depth: 7}
+            #attribute{class: textlineShenlue}
+            #attribute{style: display:block;width:50%;font-size:24rpx;color:rgb(158,158,158);}
+            data{销售人员：}
+            scriptdata{item1.ConsultantName}
+        #element{view} {depth: 6}
+          #attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;width:100%;height:60rpx;background-color:width;justify-content:space-between;align-items:center;background-color:white;}
+          #element{text} {depth: 7}
+            #attribute{class: textlineShenlue}
+            #attribute{style: display:block;width:50%;font-size:24rpx;color:rgb(158,158,158);}
+            data{最近消费：}
+            scriptdata{item1.CreateTime}
+          #element{text} {depth: 7}
+            #attribute{class: textlineShenlue}
+            #attribute{style: display:block;width:50%;font-size:24rpx;color:rgb(158,158,158);}
+            data{最近跟进：}
+            scriptdata{item1.FollowTime}
+
+Element #5
+Bind method: bindchange Function call: selectDataTime
+#element{picker} {depth: 6}
+  #attribute{bindchange: selectDataTime}
+  #attribute{end: {{endTime}}}
+  #attribute{fields: month}
+  #attribute{headertext: 选择时间}
+  #attribute{mode: date}
+  #attribute{start: {{startTime}}}
+  #attribute{value: {{currentTime1}}}
+  #element{view} {depth: 7}
+    #attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;height:50rpx;margin-top:10rpx;align-items:center;}
+    #element{text} {depth: 8}
+      #attribute{style: display:flex;margin-left:20rpx;font-size:30rpx;color:rgb(102,102,102);}
+      scriptdata{item.CreateTime}
+    #element{image} {depth: 8}
+      #attribute{src: /images/icon_image_go.png}
+      #attribute{style: display:flex;margin-left:10rpx;width:50rpx;height:50rpx;}
+
+Element #6
+Bind method: bindtap Function call: SortSelectShop
+#element{view} {depth: 3}
+  #attribute{bindtap: SortSelectShop}
+  #attribute{class: sortItem-view}
+  #attribute{data-index: {{index}}}
+  #attribute{data-items: {{item}}}
+  #attribute{wx:for: {{arrShopArrData}}}
+  #attribute{wx:key: key}
+  #element{text} {depth: 4}
+    #attribute{style: margin-left:20rpx;font-size:26rpx;color:{{shopIndex==index?'#29c3ce':'rgb(102,102,102)'}};}
+    scriptdata{item.ShopName}
+
+Element #7
+Bind method: bindtap Function call: LeftItemClik
+#element{view} {depth: 5}
+  #attribute{bindtap: LeftItemClik}
+  #attribute{class: sortItem-view}
+  #attribute{data-tags: {{index}}}
+  #attribute{wx:for: {{customerTypeArr}}}
+  #attribute{wx:key: key}
+  #element{text} {depth: 6}
+    #attribute{style: margin-left:20rpx;font-size:26rpx;color:#29c3ce;}
+    #attribute{wx:if: {{customerTypeIndex==index}}}
+    scriptdata{item.name}
+  #element{text} {depth: 6}
+    #attribute{style: margin-left:20rpx;font-size:26rpx;color:rgb(102,102,102);}
+    #attribute{wx:else: }
+    scriptdata{item.name}
+
+
+pages/work/work
+
+Element #0
+Bind method: bindtap Function call: btnClik
+#element{view} {depth: 2}
+  #attribute{bindtap: btnClik}
+  #attribute{class: mainview_itemV}
+  #attribute{data-tag: 1}
+  #element{image} {depth: 3}
+    #attribute{class: mainview_itemV_image}
+    #attribute{src: /images/icon_zhi.png}
+  #element{text} {depth: 3}
+    #attribute{class: mainview_itemV_text}
+    data{我执行的任务}
+
+Element #1
+Bind method: bindtap Function call: btnClik
+#element{view} {depth: 2}
+  #attribute{bindtap: btnClik}
+  #attribute{class: mainview_itemV}
+  #attribute{data-tag: 2}
+  #element{image} {depth: 3}
+    #attribute{class: mainview_itemV_image}
+    #attribute{src: /images/icon_send.png}
+  #element{text} {depth: 3}
+    #attribute{class: mainview_itemV_text}
+    data{我发起的任务}
+
+Element #2
+Bind method: bindtap Function call: btnClik
+#element{view} {depth: 2}
+  #attribute{bindtap: btnClik}
+  #attribute{class: mainview_itemV}
+  #attribute{data-tag: 3}
+  #element{image} {depth: 3}
+    #attribute{class: mainview_itemV_image}
+    #attribute{src: /images/icon_yu.png}
+  #element{text} {depth: 3}
+    #attribute{class: mainview_itemV_text}
+    data{与我相关的任务}
+
+Element #3
+Bind method: bindtap Function call: btnClik
+#element{view} {depth: 2}
+  #attribute{bindtap: btnClik}
+  #attribute{class: mainview_itemV}
+  #attribute{data-tag: 4}
+  #element{image} {depth: 3}
+    #attribute{class: mainview_itemV_image}
+    #attribute{src: /images/icon_ri.png}
+  #element{text} {depth: 3}
+    #attribute{class: mainview_itemV_text}
+    data{我的工作日志}
+
+Element #4
+Bind method: bindtap Function call: AddClik
+#element{image} {depth: 2}
+  #attribute{bindtap: AddClik}
+  #attribute{class: add-wrap-image }
+  #attribute{src: /images/icon_add_task@2x.png}
+
+
+pages/customerManage/customerManage
+
+Element #0
+Bind method: bindtap Function call: Btnclik
+#element{view} {depth: 2}
+  #attribute{bindtap: Btnclik}
+  #attribute{class: item_View}
+  #attribute{data-tag: 1}
+  #attribute{style: justify-content:space-between;margin-left:5%;margin-top:40rpx;height:250rpx;border-radius:20rpx;background-color:rgb(248,253,253);border:2rpxsolidrgb(234,234,234);}
+  #element{image} {depth: 3}
+    #attribute{src: https://java.4006337366.com/jiejing/images/javaImage/icon_dailishang@2x.png}
+    #attribute{style: display:flex;margin-top:30rpx;height:220rpx;width:187rpx;margin-left:60rpx;}
+  #element{view} {depth: 3}
+    #attribute{class: item_CenterView}
+    #attribute{style: align-items:flex-start;width:{{widthItem}}px;}
+    #element{text} {depth: 4}
+      #attribute{style: display:flex;margin-left:20rpx;;height:60rpx;font-size:40rpx;color:#237df6;}
+      data{Existing}
+    #element{text} {depth: 4}
+      #attribute{style: display:flex;margin-left:20rpx;height:60rpx;font-size:36rpx;color:rgb(31,55,90);}
+      data{现有会员}
+  #element{view} {depth: 3}
+    #attribute{class: item_CenterView}
+    #attribute{style: width:120rpx;align-items:flex-end;}
+    #element{image} {depth: 4}
+      #attribute{src: /images/icon_image_go.png}
+      #attribute{style: display:flex;width:70rpx;height:70rpx;margin-right:20rpx;}
+
+Element #1
+Bind method: bindtap Function call: Btnclik
+#element{view} {depth: 2}
+  #attribute{bindtap: Btnclik}
+  #attribute{class: item_View}
+  #attribute{data-tag: 2}
+  #attribute{style: justify-content:space-between;margin-left:5%;margin-top:40rpx;height:250rpx;border-radius:20rpx;background-color:rgb(248,253,253);border:2rpxsolidrgb(234,234,234);}
+  #element{image} {depth: 3}
+    #attribute{src: https://java.4006337366.com/jiejing/images/javaImage/icon_zhinnegshi@2x.png}
+    #attribute{style: display:flex;margin-top:30rpx;height:220rpx;width:187rpx;margin-left:60rpx;}
+  #element{view} {depth: 3}
+    #attribute{class: item_CenterView}
+    #attribute{style: align-items:flex-start;width:{{widthItem}}px;}
+    #element{text} {depth: 4}
+      #attribute{style: display:flex;margin-left:20rpx;;height:60rpx;font-size:40rpx;color:#237df6;}
+      data{Potential}
+    #element{text} {depth: 4}
+      #attribute{style: display:flex;margin-left:20rpx;height:60rpx;font-size:36rpx;color:rgb(31,55,90);}
+      data{潜在客户}
+  #element{view} {depth: 3}
+    #attribute{class: item_CenterView}
+    #attribute{style: width:120rpx;align-items:flex-end;}
+    #element{image} {depth: 4}
+      #attribute{src: /images/icon_image_go.png}
+      #attribute{style: display:flex;width:70rpx;height:70rpx;margin-right:20rpx;}
+
+
+pages/work/myTable/myTable
+
+Element #0
+Bind method: bindscroll Function call: scrollerCLik2
+#element{scroll-view} {depth: 3}
+  #attribute{bindscroll: scrollerCLik2}
+  #attribute{bounces: false}
+  #attribute{class: leftView_list1}
+  #attribute{enhanced: true}
+  #attribute{scrollx: true}
+  #attribute{showscrollbar: false}
+  #attribute{style: width:{{centerwidth}}px;}
+  #element{view} {depth: 4}
+    #attribute{class: CenterView_item}
+    #attribute{style: width:{{centerwidth}}px;}
+    #attribute{wx:for: {{30}}}
+    #attribute{wx:key: key1}
+    #element{view} {depth: 5}
+      #attribute{style: display:inline-block;white-space:nowrap;width:100%;height:100%;background-color:yellow;}
+      #element{view} {depth: 6}
+        #attribute{class: CenterView_item_Row}
+        #attribute{wx:for: {{20}}}
+        #attribute{wx:key: key2}
+        #element{text} {depth: 7}
+          #attribute{style: width:100rpx;height:70rpx;font-size:28rpx;background-color:red;line-height:70rpx;}
+          scriptdata{index}
+
+
+pages/login/login
+
+Element #0
+Bind method: bindtap Function call: chaclik
+#element{image} {depth: 3}
+  #attribute{bindtap: chaclik}
+  #attribute{class: main_left_go}
+  #attribute{src: /images/icon_back_go@2x.png}
+  #attribute{style: margin-top:-{{imageTopHeight}}px;}
+
+Element #1
+Bind method: bindinput Function call: AccountChange
+#element{input} {depth: 3}
+  #attribute{bindinput: AccountChange}
+  #attribute{class: input_text}
+  #attribute{placeholder: 请输入账号}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+  #attribute{style: margin-left:20rpx;width:{{inputWidth}}px;}
+  #attribute{value: {{AccountText}}}
+
+Element #2
+Bind method: bindinput Function call: PassWordChange
+#element{input} {depth: 3}
+  #attribute{bindinput: PassWordChange}
+  #attribute{class: input_text}
+  #attribute{password: {{IsPassword}}}
+  #attribute{placeholder: 请输入密码}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+  #attribute{style: margin-left:20rpx;width:{{inputWidth1}}px;}
+
+Element #3
+Bind method: bindtap Function call: ChangeClik
+#element{image} {depth: 3}
+  #attribute{bindtap: ChangeClik}
+  #attribute{class: input_view_image}
+  #attribute{src: {{IsPassword?'/images/PassWord_shut@2x.png':'/images/PassWord_open@2x.png'}}}
+
+Element #4
+Bind method: bindtap Function call: loginClik
+#element{view} {depth: 2}
+  #attribute{bindtap: loginClik}
+  #attribute{class: btn_view_Login}
+  #element{text} {depth: 3}
+    #attribute{style: display:flex;color:white;font-size:30rpx;}
+    data{登 录}
+
+Element #5
+Bind method: bindgetphonenumber Function call: getPhoneNumberMember
+#element{button} {depth: 2}
+  #attribute{bindgetphonenumber: getPhoneNumberMember}
+  #attribute{class: btn_view_NoLogin}
+  #attribute{opentype: getPhoneNumber}
+  #element{text} {depth: 3}
+    #attribute{style: display:flex;color:white;font-size:30rpx;}
+    data{免密登录}
+
+Element #6
+Bind method: bindtap Function call: tapClik
+#element{view} {depth: 2}
+  #attribute{bindtap: tapClik}
+  #attribute{class: bottom_HideView}
+
+Element #7
+Bind method: bindtap Function call: SelectShop
+#element{view} {depth: 3}
+  #attribute{bindtap: SelectShop}
+  #attribute{data-dic: {{item}}}
+  #attribute{data-tag: {{index}}}
+  #attribute{style: display:block;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);}
+  #attribute{wx:for: {{shopArr}}}
+  #attribute{wx:key: key}
+  #element{text} {depth: 4}
+    #attribute{class: textlineShenlue}
+    #attribute{style: display:block;padding-left:20rpx;padding-right:20rpx;height:80rpx;line-height:80rpx;}
+    scriptdata{item.ShopName}
+    data{（}
+    scriptdata{item.MerchantName}
+    data{）}
+
+
+pages/index/index
+
+Element #0
+Bind method: bindgetuserinfo Function call: getUserInfo
+#element{button} {depth: 3}
+  #attribute{bindgetuserinfo: getUserInfo}
+  #attribute{opentype: getUserInfo}
+  #attribute{wx:if: {{!hasUserInfo&&canIUse}}}
+  data{获取头像昵称 }
+
+Element #1
+Bind method: bindtap Function call: bindViewTap
+#element{image} {depth: 4}
+  #attribute{bindtap: bindViewTap}
+  #attribute{class: userinfo-avatar}
+  #attribute{mode: cover}
+  #attribute{src: {{userInfo.avatarUrl}}}
+
+
+pages/logs/logs
+
+
+pages/myLog/myLog
+
+Element #0
+Bind method: bindtap Function call: itemClik
+#element{view} {depth: 4}
+  #attribute{bindtap: itemClik}
+  #attribute{class: item_page_Content}
+  #attribute{data-dic: {{item1}}}
+  #attribute{style: border-bottom:2rpxsolid#f2f2f2;}
+  #attribute{wx:for: {{item.log}}}
+  #attribute{wx:for-item: item1}
+  #attribute{wx:key: key}
+  #element{view} {depth: 5}
+    #attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;width:90%;height:120rpx;margin-top:20rpx;}
+    #element{image} {depth: 6}
+      #attribute{src: {{HeadImage?HeadImage:'/images/img_avatar_default@2x.png'}}}
+      #attribute{style: display:flex;width:100rpx;height:100rpx;margin-left:20rpx;margin-top:10rpx;background-color:#f3f3f3;border-radius:50rpx;}
+    #element{view} {depth: 6}
+      #attribute{style: display:flex;margin-left:20rpx;flex-wrap:nowrap;flex-direction:column;height:120rpx;}
+      #element{text} {depth: 7}
+        #attribute{style: display:flex;height:80rpx;font-size:34rpx;rgb(58,58,58);align-items:center;}
+        scriptdata{item1.workName}
+      #element{text} {depth: 7}
+        #attribute{style: display:flex;height:40rpx;font-size:24rpx;color:rgb(201,201,201);}
+        scriptdata{item1.createTime}
+  #element{view} {depth: 5}
+    #attribute{style: display:flex;flex-direction:column;flex-wrap:nowrap;width:{{textWidth}}px;height:auto;margin-left:140rpx;overflow:hidden;background-color:white;}
+    #element{text} {depth: 6}
+      #attribute{style: display:block;font-size:28rpx;color:rgb(102,102,102);word-break:break-all;padding-top:10rpx;}
+      scriptdata{item1.content}
+    #element{view} {depth: 6}
+      #attribute{style: display:flex;width:100%;height:40rpx;background-color:white;}
+
+Element #1
+Bind method: bindtap Function call: SendClik
+#element{view} {depth: 1}
+  #attribute{bindtap: SendClik}
+  #attribute{class: btn_bottom}
+  #element{text} {depth: 2}
+    #attribute{style: font-size:30rpx;color:white;}
+    data{添加日志}
+
+
+pages/work/task/task
+
+Element #0
+Bind method: bindtap Function call: itemclik
+#element{text} {depth: 4}
+  #attribute{bindtap: itemclik}
+  #attribute{class: Main_Top_itemV_text {{flagIndex==index?'itemV_Selected':'itemV_UnSelected'}}}
+  #attribute{data-tag: {{index}}}
+  #attribute{style: {{index==3?'border-right:0rpxsolid#2e94f3;':'border-right:2rpxsolid#2e94f3;'}}}
+  #attribute{wx:for: {{datamodel}}}
+  #attribute{wx:key: keys}
+  scriptdata{item}
+
+Element #1
+Bind method: bindscrolltolower Function call: onReachBottom
+#element{scroll-view} {depth: 2}
+  #attribute{bindscrolltolower: onReachBottom}
+  #attribute{bindscrolltoupper: onPullDownRefresh}
+  #attribute{lowerthreshold: 50px}
+  #attribute{scrolly: true}
+  #attribute{style: display:flex;height:{{ScrollerHeight}}px;wdith:100%;background-color:#f3f3f3;}
+  #attribute{upperthreshold: 50px}
+  #attribute{wx:if: {{flagIndex==0}}}
+  #element{block} {depth: 3}
+    #attribute{wx:for: {{dataArray}}}
+    #attribute{wx:key: key}
+    #element{view} {depth: 4}
+      #attribute{bindtap: TaskDetail}
+      #attribute{class: itemV_Model}
+      #attribute{data-item: {{item}}}
+      #attribute{data-tag: 1}
+      #element{view} {depth: 5}
+        #attribute{class: itemV_Model_item}
+        #attribute{style: margin-top:20rpx;height:70rpx;color:rgb(58,58,58);}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}
+          #attribute{wx:if: {{item.Priority==0}}}
+          data{优先级：}
+          #element{text} {depth: 7}
+            #attribute{style: color:#fc1424;}
+            data{1}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}
+          #attribute{wx:elif: {{item.Priority==1}}}
+          data{优先级：}
+          #element{text} {depth: 7}
+            #attribute{style: color:#fc5f2f;}
+            data{2}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}
+          #attribute{wx:elif: {{item.Priority==2}}}
+          data{优先级：}
+          #element{text} {depth: 7}
+            #attribute{style: color:#368cfb;}
+            data{3}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}
+          #attribute{wx:elif: {{item.Priority==3}}}
+          data{优先级：}
+          #element{text} {depth: 7}
+            #attribute{style: color:#7530fd;}
+            data{4}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}
+          #attribute{wx:elif: {{item.Priority==3}}}
+          data{优先级：}
+          #element{text} {depth: 7}
+            #attribute{style: color:#2cc7ab;}
+            data{5}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:flex;width:50%;height:100%;}
+          data{工作类型：}
+          scriptdata{item.TypeName}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:block;width:16.66%;height:100%;color:#ec2628;text-align:right;padding-right:20rpx;}
+          #attribute{wx:if: {{item.Status==0}}}
+          data{未开始}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:block;width:16.66%;height:100%;color:color:#2884fe;text-align:right;padding-right:20rpx;}
+          #attribute{wx:if: {{item.Status==1}}}
+          data{进行中}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:block;width:16.66%;height:100%;color:color:#1ab133;text-align:right;padding-right:20rpx;}
+          #attribute{wx:if: {{item.Status==2}}}
+          data{已完成}
+      #element{view} {depth: 5}
+        #attribute{class: itemV_Model_item}
+        #attribute{style: height:60rpx;color:rgb(58,58,58);}
+        #element{text} {depth: 6}
+          #attribute{class: textlineShenlue}
+          #attribute{style: overflow:hidden;font-size:28rpx;display:block;width:90%;height:100%;padding-left:20rpx;}
+          data{工作计划/事务：}
+          scriptdata{item.WorkName}
+      #element{view} {depth: 5}
+        #attribute{class: itemV_Model_item}
+        #attribute{style: height:60rpx;color:rgb(58,58,58);}
+        #attribute{wx:if: {{item.Status>=0}}}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}
+          data{发布日期：}
+          scriptdata{item.CreateTime}
+      #element{view} {depth: 5}
+        #attribute{class: itemV_Model_item}
+        #attribute{style: height:60rpx;color:rgb(58,58,58);}
+        #attribute{wx:if: {{item.Status>=1}}}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}
+          data{开始日期：}
+          scriptdata{item.StartTime?item.StartTime:''}
+      #element{view} {depth: 5}
+        #attribute{class: itemV_Model_item}
+        #attribute{style: height:60rpx;color:rgb(58,58,58);}
+        #attribute{wx:if: {{item.Status>=2}}}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}
+          data{完成日期：}
+          scriptdata{item.EndTime?item.EndTime:''}
+      #element{view} {depth: 5}
+        #attribute{class: itemV_Model_item}
+        #attribute{style: height:80rpx;color:rgb(58,58,58);}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:flex;width:60%;height:100%;padding-left:20rpx;}
+          data{执行人：}
+          scriptdata{item.UserName?item.UserName:''}
+        #element{view} {depth: 6}
+          #attribute{style: font-size:28rpx;display:block;width:30%;height:100%;text-align:right;padding-right:20rpx;flex-direction:row-reverse;flex-wrap:nowrap;}
+          #attribute{wx:if: {{item.UserId==currentPeopleID&&item.Status<2}}}
+          #element{text} {depth: 7}
+            #attribute{catchtap: SuccessClik}
+            #attribute{catchtouchmove: true}
+            #attribute{data-index: 100}
+            #attribute{data-item: {{item}}}
+            #attribute{style: display:width:auto;padding:10rpx;height:60rpx;background-color:#28921f;font-size:28rpx;color:white;}
+            data{确定完成}
+    #element{view} {depth: 4}
+      #attribute{bindtap: MoreClik}
+      #attribute{data-dic: {{item}}}
+      #attribute{style: display:flex;width:100%;height:40rpx;border-top:2rpxsolid#f3f3f3;border-bottom:8rpxsolid#f3f3f3;justify-content:center;align-items:center;background-color:white}
+      #element{image} {depth: 5}
+        #attribute{src: /images/icon_Select_down@3x.png}
+        #attribute{style: display:flex;width:30rpx;height:30rpx}
+  #element{view} {depth: 3}
+    #attribute{style: display:flex;width:100%;height:200rpx;background-color:#f3f3f3;}
+
+Element #2
+Bind method: bindscrolltoupper Function call: onPullDownRefresh
+#element{scroll-view} {depth: 2}
+  #attribute{bindscrolltolower: onReachBottom}
+  #attribute{bindscrolltoupper: onPullDownRefresh}
+  #attribute{lowerthreshold: 50px}
+  #attribute{scrolly: true}
+  #attribute{style: display:flex;height:{{ScrollerHeight}}px;wdith:100%;background-color:#f3f3f3;}
+  #attribute{upperthreshold: 50px}
+  #attribute{wx:if: {{flagIndex==0}}}
+  #element{block} {depth: 3}
+    #attribute{wx:for: {{dataArray}}}
+    #attribute{wx:key: key}
+    #element{view} {depth: 4}
+      #attribute{bindtap: TaskDetail}
+      #attribute{class: itemV_Model}
+      #attribute{data-item: {{item}}}
+      #attribute{data-tag: 1}
+      #element{view} {depth: 5}
+        #attribute{class: itemV_Model_item}
+        #attribute{style: margin-top:20rpx;height:70rpx;color:rgb(58,58,58);}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}
+          #attribute{wx:if: {{item.Priority==0}}}
+          data{优先级：}
+          #element{text} {depth: 7}
+            #attribute{style: color:#fc1424;}
+            data{1}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}
+          #attribute{wx:elif: {{item.Priority==1}}}
+          data{优先级：}
+          #element{text} {depth: 7}
+            #attribute{style: color:#fc5f2f;}
+            data{2}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}
+          #attribute{wx:elif: {{item.Priority==2}}}
+          data{优先级：}
+          #element{text} {depth: 7}
+            #attribute{style: color:#368cfb;}
+            data{3}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}
+          #attribute{wx:elif: {{item.Priority==3}}}
+          data{优先级：}
+          #element{text} {depth: 7}
+            #attribute{style: color:#7530fd;}
+            data{4}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}
+          #attribute{wx:elif: {{item.Priority==3}}}
+          data{优先级：}
+          #element{text} {depth: 7}
+            #attribute{style: color:#2cc7ab;}
+            data{5}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:flex;width:50%;height:100%;}
+          data{工作类型：}
+          scriptdata{item.TypeName}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:block;width:16.66%;height:100%;color:#ec2628;text-align:right;padding-right:20rpx;}
+          #attribute{wx:if: {{item.Status==0}}}
+          data{未开始}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:block;width:16.66%;height:100%;color:color:#2884fe;text-align:right;padding-right:20rpx;}
+          #attribute{wx:if: {{item.Status==1}}}
+          data{进行中}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:block;width:16.66%;height:100%;color:color:#1ab133;text-align:right;padding-right:20rpx;}
+          #attribute{wx:if: {{item.Status==2}}}
+          data{已完成}
+      #element{view} {depth: 5}
+        #attribute{class: itemV_Model_item}
+        #attribute{style: height:60rpx;color:rgb(58,58,58);}
+        #element{text} {depth: 6}
+          #attribute{class: textlineShenlue}
+          #attribute{style: overflow:hidden;font-size:28rpx;display:block;width:90%;height:100%;padding-left:20rpx;}
+          data{工作计划/事务：}
+          scriptdata{item.WorkName}
+      #element{view} {depth: 5}
+        #attribute{class: itemV_Model_item}
+        #attribute{style: height:60rpx;color:rgb(58,58,58);}
+        #attribute{wx:if: {{item.Status>=0}}}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}
+          data{发布日期：}
+          scriptdata{item.CreateTime}
+      #element{view} {depth: 5}
+        #attribute{class: itemV_Model_item}
+        #attribute{style: height:60rpx;color:rgb(58,58,58);}
+        #attribute{wx:if: {{item.Status>=1}}}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}
+          data{开始日期：}
+          scriptdata{item.StartTime?item.StartTime:''}
+      #element{view} {depth: 5}
+        #attribute{class: itemV_Model_item}
+        #attribute{style: height:60rpx;color:rgb(58,58,58);}
+        #attribute{wx:if: {{item.Status>=2}}}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}
+          data{完成日期：}
+          scriptdata{item.EndTime?item.EndTime:''}
+      #element{view} {depth: 5}
+        #attribute{class: itemV_Model_item}
+        #attribute{style: height:80rpx;color:rgb(58,58,58);}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:flex;width:60%;height:100%;padding-left:20rpx;}
+          data{执行人：}
+          scriptdata{item.UserName?item.UserName:''}
+        #element{view} {depth: 6}
+          #attribute{style: font-size:28rpx;display:block;width:30%;height:100%;text-align:right;padding-right:20rpx;flex-direction:row-reverse;flex-wrap:nowrap;}
+          #attribute{wx:if: {{item.UserId==currentPeopleID&&item.Status<2}}}
+          #element{text} {depth: 7}
+            #attribute{catchtap: SuccessClik}
+            #attribute{catchtouchmove: true}
+            #attribute{data-index: 100}
+            #attribute{data-item: {{item}}}
+            #attribute{style: display:width:auto;padding:10rpx;height:60rpx;background-color:#28921f;font-size:28rpx;color:white;}
+            data{确定完成}
+    #element{view} {depth: 4}
+      #attribute{bindtap: MoreClik}
+      #attribute{data-dic: {{item}}}
+      #attribute{style: display:flex;width:100%;height:40rpx;border-top:2rpxsolid#f3f3f3;border-bottom:8rpxsolid#f3f3f3;justify-content:center;align-items:center;background-color:white}
+      #element{image} {depth: 5}
+        #attribute{src: /images/icon_Select_down@3x.png}
+        #attribute{style: display:flex;width:30rpx;height:30rpx}
+  #element{view} {depth: 3}
+    #attribute{style: display:flex;width:100%;height:200rpx;background-color:#f3f3f3;}
+
+Element #3
+Bind method: bindtap Function call: TaskDetail
+#element{view} {depth: 4}
+  #attribute{bindtap: TaskDetail}
+  #attribute{class: itemV_Model}
+  #attribute{data-item: {{item}}}
+  #attribute{data-tag: 1}
+  #element{view} {depth: 5}
+    #attribute{class: itemV_Model_item}
+    #attribute{style: margin-top:20rpx;height:70rpx;color:rgb(58,58,58);}
+    #element{text} {depth: 6}
+      #attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}
+      #attribute{wx:if: {{item.Priority==0}}}
+      data{优先级：}
+      #element{text} {depth: 7}
+        #attribute{style: color:#fc1424;}
+        data{1}
+    #element{text} {depth: 6}
+      #attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}
+      #attribute{wx:elif: {{item.Priority==1}}}
+      data{优先级：}
+      #element{text} {depth: 7}
+        #attribute{style: color:#fc5f2f;}
+        data{2}
+    #element{text} {depth: 6}
+      #attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}
+      #attribute{wx:elif: {{item.Priority==2}}}
+      data{优先级：}
+      #element{text} {depth: 7}
+        #attribute{style: color:#368cfb;}
+        data{3}
+    #element{text} {depth: 6}
+      #attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}
+      #attribute{wx:elif: {{item.Priority==3}}}
+      data{优先级：}
+      #element{text} {depth: 7}
+        #attribute{style: color:#7530fd;}
+        data{4}
+    #element{text} {depth: 6}
+      #attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}
+      #attribute{wx:elif: {{item.Priority==3}}}
+      data{优先级：}
+      #element{text} {depth: 7}
+        #attribute{style: color:#2cc7ab;}
+        data{5}
+    #element{text} {depth: 6}
+      #attribute{style: font-size:28rpx;display:flex;width:50%;height:100%;}
+      data{工作类型：}
+      scriptdata{item.TypeName}
+    #element{text} {depth: 6}
+      #attribute{style: font-size:28rpx;display:block;width:16.66%;height:100%;color:#ec2628;text-align:right;padding-right:20rpx;}
+      #attribute{wx:if: {{item.Status==0}}}
+      data{未开始}
+    #element{text} {depth: 6}
+      #attribute{style: font-size:28rpx;display:block;width:16.66%;height:100%;color:color:#2884fe;text-align:right;padding-right:20rpx;}
+      #attribute{wx:if: {{item.Status==1}}}
+      data{进行中}
+    #element{text} {depth: 6}
+      #attribute{style: font-size:28rpx;display:block;width:16.66%;height:100%;color:color:#1ab133;text-align:right;padding-right:20rpx;}
+      #attribute{wx:if: {{item.Status==2}}}
+      data{已完成}
+  #element{view} {depth: 5}
+    #attribute{class: itemV_Model_item}
+    #attribute{style: height:60rpx;color:rgb(58,58,58);}
+    #element{text} {depth: 6}
+      #attribute{class: textlineShenlue}
+      #attribute{style: overflow:hidden;font-size:28rpx;display:block;width:90%;height:100%;padding-left:20rpx;}
+      data{工作计划/事务：}
+      scriptdata{item.WorkName}
+  #element{view} {depth: 5}
+    #attribute{class: itemV_Model_item}
+    #attribute{style: height:60rpx;color:rgb(58,58,58);}
+    #attribute{wx:if: {{item.Status>=0}}}
+    #element{text} {depth: 6}
+      #attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}
+      data{发布日期：}
+      scriptdata{item.CreateTime}
+  #element{view} {depth: 5}
+    #attribute{class: itemV_Model_item}
+    #attribute{style: height:60rpx;color:rgb(58,58,58);}
+    #attribute{wx:if: {{item.Status>=1}}}
+    #element{text} {depth: 6}
+      #attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}
+      data{开始日期：}
+      scriptdata{item.StartTime?item.StartTime:''}
+  #element{view} {depth: 5}
+    #attribute{class: itemV_Model_item}
+    #attribute{style: height:60rpx;color:rgb(58,58,58);}
+    #attribute{wx:if: {{item.Status>=2}}}
+    #element{text} {depth: 6}
+      #attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}
+      data{完成日期：}
+      scriptdata{item.EndTime?item.EndTime:''}
+  #element{view} {depth: 5}
+    #attribute{class: itemV_Model_item}
+    #attribute{style: height:80rpx;color:rgb(58,58,58);}
+    #element{text} {depth: 6}
+      #attribute{style: font-size:28rpx;display:flex;width:60%;height:100%;padding-left:20rpx;}
+      data{执行人：}
+      scriptdata{item.UserName?item.UserName:''}
+    #element{view} {depth: 6}
+      #attribute{style: font-size:28rpx;display:block;width:30%;height:100%;text-align:right;padding-right:20rpx;flex-direction:row-reverse;flex-wrap:nowrap;}
+      #attribute{wx:if: {{item.UserId==currentPeopleID&&item.Status<2}}}
+      #element{text} {depth: 7}
+        #attribute{catchtap: SuccessClik}
+        #attribute{catchtouchmove: true}
+        #attribute{data-index: 100}
+        #attribute{data-item: {{item}}}
+        #attribute{style: display:width:auto;padding:10rpx;height:60rpx;background-color:#28921f;font-size:28rpx;color:white;}
+        data{确定完成}
+
+Element #4
+Bind method: bindtap Function call: MoreClik
+#element{view} {depth: 4}
+  #attribute{bindtap: MoreClik}
+  #attribute{data-dic: {{item}}}
+  #attribute{style: display:flex;width:100%;height:40rpx;border-top:2rpxsolid#f3f3f3;border-bottom:8rpxsolid#f3f3f3;justify-content:center;align-items:center;background-color:white}
+  #element{image} {depth: 5}
+    #attribute{src: /images/icon_Select_down@3x.png}
+    #attribute{style: display:flex;width:30rpx;height:30rpx}
+
+Element #5
+Bind method: bindscrolltolower Function call: onReachBottom
+#element{scroll-view} {depth: 2}
+  #attribute{bindscrolltolower: onReachBottom}
+  #attribute{bindscrolltoupper: onPullDownRefresh}
+  #attribute{lowerthreshold: 50px}
+  #attribute{scrolly: true}
+  #attribute{style: display:flex;height:{{ScrollerHeight}}px;wdith:100%;background-color:#f3f3f3;}
+  #attribute{upperthreshold: 50px}
+  #attribute{wx:if: {{flagIndex==1}}}
+  #element{block} {depth: 3}
+    #attribute{wx:for: {{dataSendArray}}}
+    #attribute{wx:key: key}
+    #element{view} {depth: 4}
+      #attribute{bindtap: TaskDetail}
+      #attribute{class: itemV_Model}
+      #attribute{data-item: {{item}}}
+      #attribute{data-tag: 2}
+      #element{view} {depth: 5}
+        #attribute{class: itemV_Model_item}
+        #attribute{style: margin-top:20rpx;height:70rpx;color:rgb(58,58,58);}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:flex;width:45%;height:100%;padding-left:20rpx;}
+          data{工作类型：}
+          scriptdata{item.TypeName}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:block;width:55%;height:100%;color:rgb(201,201,201);text-align:right;padding-right:20rpx;}
+          #attribute{wx:if: {{item.Status==0}}}
+          data{发起人：}
+          scriptdata{item.ExtendField3}
+          data{ | }
+          #element{text} {depth: 7}
+            #attribute{style: color:#ec2628;}
+            data{未开始}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:block;width:55%;height:100%;color:rgb(201,201,201);text-align:right;padding-right:20rpx;}
+          #attribute{wx:elif: {{item.Status==1}}}
+          data{发起人：}
+          scriptdata{item.ExtendField3}
+          data{ | }
+          #element{text} {depth: 7}
+            #attribute{style: color:#2884fe;}
+            data{进行中}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:block;width:55%;height:100%;color:rgb(201,201,201);text-align:right;padding-right:20rpx;}
+          #attribute{wx:elif: {{item.Status==2}}}
+          data{发起人：}
+          scriptdata{item.ExtendField3}
+          data{ | }
+          #element{text} {depth: 7}
+            #attribute{style: color:#1ab133;}
+            data{已完成}
+      #element{view} {depth: 5}
+        #attribute{class: itemV_Model_item}
+        #attribute{style: height:60rpx;color:rgb(58,58,58);}
+        #element{text} {depth: 6}
+          #attribute{class: textlineShenlue}
+          #attribute{style: overflow:hidden;font-size:28rpx;display:block;width:90%;height:100%;padding-left:20rpx;}
+          data{工作计划/事务：}
+          scriptdata{item.WorkName}
+      #element{block} {depth: 5}
+        #attribute{wx:if: {{item.Status>=0}}}
+        #element{view} {depth: 6}
+          #attribute{class: itemV_Model_item}
+          #attribute{style: height:60rpx;color:rgb(58,58,58);}
+          #element{text} {depth: 7}
+            #attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}
+            data{发布日期：}
+            scriptdata{item.CreateTime}
+        #element{view} {depth: 6}
+          #attribute{class: itemV_Model_item}
+          #attribute{style: height:60rpx;color:rgb(58,58,58);}
+          #element{text} {depth: 7}
+            #attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}
+            data{计划完成日期：}
+            scriptdata{item.ExpectedTime?item.ExpectedTime:''}
+      #element{view} {depth: 5}
+        #attribute{class: itemV_Model_item}
+        #attribute{style: height:60rpx;color:rgb(58,58,58);}
+        #attribute{wx:if: {{item.Status>=1}}}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}
+          data{开始日期：}
+          scriptdata{item.StartTime?item.StartTime:''}
+      #element{view} {depth: 5}
+        #attribute{class: itemV_Model_item}
+        #attribute{style: height:60rpx;color:rgb(58,58,58);}
+        #attribute{wx:if: {{item.Status>=2}}}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}
+          data{完成日期：}
+          scriptdata{item.EndTime?item.EndTime:''}
+      #element{view} {depth: 5}
+        #attribute{class: itemV_Model_item}
+        #attribute{style: height:auto;padding-top:10rpx;padding-bottom:10rpx;color:rgb(58,58,58);}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:flex;width:60%;height:100%;padding-left:20rpx;}
+          data{执行人：}
+          scriptdata{item.userNameList?item.userNameList:''}
+        #element{view} {depth: 6}
+          #attribute{style: font-size:28rpx;display:block;width:30%;height:100%;text-align:right;padding-right:20rpx;flex-direction:row-reverse;flex-wrap:nowrap;}
+          #attribute{wx:if: {{item.ExtendField2==currentPeopleID&&item.Status<2}}}
+          #element{text} {depth: 7}
+            #attribute{catchtap: SuccessClik}
+            #attribute{catchtouchmove: true}
+            #attribute{data-index: 101}
+            #attribute{data-item: {{item}}}
+            #attribute{style: display:width:auto;padding:10rpx;height:60rpx;background-color:#309afe;font-size:28rpx;color:white;}
+            data{确定完成}
+    #element{view} {depth: 4}
+      #attribute{bindtap: MoreClik}
+      #attribute{data-dic: {{item}}}
+      #attribute{style: display:flex;width:100%;height:40rpx;border-top:2rpxsolid#f3f3f3;border-bottom:8rpxsolid#f3f3f3;justify-content:center;align-items:center;background-color:white}
+      #element{image} {depth: 5}
+        #attribute{src: /images/icon_Select_down@3x.png}
+        #attribute{style: display:flex;width:30rpx;height:30rpx}
+  #element{view} {depth: 3}
+    #attribute{style: display:flex;width:100%;height:100rpx;background-color:#f3f3f3;}
+
+Element #6
+Bind method: bindscrolltoupper Function call: onPullDownRefresh
+#element{scroll-view} {depth: 2}
+  #attribute{bindscrolltolower: onReachBottom}
+  #attribute{bindscrolltoupper: onPullDownRefresh}
+  #attribute{lowerthreshold: 50px}
+  #attribute{scrolly: true}
+  #attribute{style: display:flex;height:{{ScrollerHeight}}px;wdith:100%;background-color:#f3f3f3;}
+  #attribute{upperthreshold: 50px}
+  #attribute{wx:if: {{flagIndex==1}}}
+  #element{block} {depth: 3}
+    #attribute{wx:for: {{dataSendArray}}}
+    #attribute{wx:key: key}
+    #element{view} {depth: 4}
+      #attribute{bindtap: TaskDetail}
+      #attribute{class: itemV_Model}
+      #attribute{data-item: {{item}}}
+      #attribute{data-tag: 2}
+      #element{view} {depth: 5}
+        #attribute{class: itemV_Model_item}
+        #attribute{style: margin-top:20rpx;height:70rpx;color:rgb(58,58,58);}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:flex;width:45%;height:100%;padding-left:20rpx;}
+          data{工作类型：}
+          scriptdata{item.TypeName}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:block;width:55%;height:100%;color:rgb(201,201,201);text-align:right;padding-right:20rpx;}
+          #attribute{wx:if: {{item.Status==0}}}
+          data{发起人：}
+          scriptdata{item.ExtendField3}
+          data{ | }
+          #element{text} {depth: 7}
+            #attribute{style: color:#ec2628;}
+            data{未开始}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:block;width:55%;height:100%;color:rgb(201,201,201);text-align:right;padding-right:20rpx;}
+          #attribute{wx:elif: {{item.Status==1}}}
+          data{发起人：}
+          scriptdata{item.ExtendField3}
+          data{ | }
+          #element{text} {depth: 7}
+            #attribute{style: color:#2884fe;}
+            data{进行中}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:block;width:55%;height:100%;color:rgb(201,201,201);text-align:right;padding-right:20rpx;}
+          #attribute{wx:elif: {{item.Status==2}}}
+          data{发起人：}
+          scriptdata{item.ExtendField3}
+          data{ | }
+          #element{text} {depth: 7}
+            #attribute{style: color:#1ab133;}
+            data{已完成}
+      #element{view} {depth: 5}
+        #attribute{class: itemV_Model_item}
+        #attribute{style: height:60rpx;color:rgb(58,58,58);}
+        #element{text} {depth: 6}
+          #attribute{class: textlineShenlue}
+          #attribute{style: overflow:hidden;font-size:28rpx;display:block;width:90%;height:100%;padding-left:20rpx;}
+          data{工作计划/事务：}
+          scriptdata{item.WorkName}
+      #element{block} {depth: 5}
+        #attribute{wx:if: {{item.Status>=0}}}
+        #element{view} {depth: 6}
+          #attribute{class: itemV_Model_item}
+          #attribute{style: height:60rpx;color:rgb(58,58,58);}
+          #element{text} {depth: 7}
+            #attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}
+            data{发布日期：}
+            scriptdata{item.CreateTime}
+        #element{view} {depth: 6}
+          #attribute{class: itemV_Model_item}
+          #attribute{style: height:60rpx;color:rgb(58,58,58);}
+          #element{text} {depth: 7}
+            #attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}
+            data{计划完成日期：}
+            scriptdata{item.ExpectedTime?item.ExpectedTime:''}
+      #element{view} {depth: 5}
+        #attribute{class: itemV_Model_item}
+        #attribute{style: height:60rpx;color:rgb(58,58,58);}
+        #attribute{wx:if: {{item.Status>=1}}}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}
+          data{开始日期：}
+          scriptdata{item.StartTime?item.StartTime:''}
+      #element{view} {depth: 5}
+        #attribute{class: itemV_Model_item}
+        #attribute{style: height:60rpx;color:rgb(58,58,58);}
+        #attribute{wx:if: {{item.Status>=2}}}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}
+          data{完成日期：}
+          scriptdata{item.EndTime?item.EndTime:''}
+      #element{view} {depth: 5}
+        #attribute{class: itemV_Model_item}
+        #attribute{style: height:auto;padding-top:10rpx;padding-bottom:10rpx;color:rgb(58,58,58);}
+        #element{text} {depth: 6}
+          #attribute{style: font-size:28rpx;display:flex;width:60%;height:100%;padding-left:20rpx;}
+          data{执行人：}
+          scriptdata{item.userNameList?item.userNameList:''}
+        #element{view} {depth: 6}
+          #attribute{style: font-size:28rpx;display:block;width:30%;height:100%;text-align:right;padding-right:20rpx;flex-direction:row-reverse;flex-wrap:nowrap;}
+          #attribute{wx:if: {{item.ExtendField2==currentPeopleID&&item.Status<2}}}
+          #element{text} {depth: 7}
+            #attribute{catchtap: SuccessClik}
+            #attribute{catchtouchmove: true}
+            #attribute{data-index: 101}
+            #attribute{data-item: {{item}}}
+            #attribute{style: display:width:auto;padding:10rpx;height:60rpx;background-color:#309afe;font-size:28rpx;color:white;}
+            data{确定完成}
+    #element{view} {depth: 4}
+      #attribute{bindtap: MoreClik}
+      #attribute{data-dic: {{item}}}
+      #attribute{style: display:flex;width:100%;height:40rpx;border-top:2rpxsolid#f3f3f3;border-bottom:8rpxsolid#f3f3f3;justify-content:center;align-items:center;background-color:white}
+      #element{image} {depth: 5}
+        #attribute{src: /images/icon_Select_down@3x.png}
+        #attribute{style: display:flex;width:30rpx;height:30rpx}
+  #element{view} {depth: 3}
+    #attribute{style: display:flex;width:100%;height:100rpx;background-color:#f3f3f3;}
+
+Element #7
+Bind method: bindtap Function call: TaskDetail
+#element{view} {depth: 4}
+  #attribute{bindtap: TaskDetail}
+  #attribute{class: itemV_Model}
+  #attribute{data-item: {{item}}}
+  #attribute{data-tag: 2}
+  #element{view} {depth: 5}
+    #attribute{class: itemV_Model_item}
+    #attribute{style: margin-top:20rpx;height:70rpx;color:rgb(58,58,58);}
+    #element{text} {depth: 6}
+      #attribute{style: font-size:28rpx;display:flex;width:45%;height:100%;padding-left:20rpx;}
+      data{工作类型：}
+      scriptdata{item.TypeName}
+    #element{text} {depth: 6}
+      #attribute{style: font-size:28rpx;display:block;width:55%;height:100%;color:rgb(201,201,201);text-align:right;padding-right:20rpx;}
+      #attribute{wx:if: {{item.Status==0}}}
+      data{发起人：}
+      scriptdata{item.ExtendField3}
+      data{ | }
+      #element{text} {depth: 7}
+        #attribute{style: color:#ec2628;}
+        data{未开始}
+    #element{text} {depth: 6}
+      #attribute{style: font-size:28rpx;display:block;width:55%;height:100%;color:rgb(201,201,201);text-align:right;padding-right:20rpx;}
+      #attribute{wx:elif: {{item.Status==1}}}
+      data{发起人：}
+      scriptdata{item.ExtendField3}
+      data{ | }
+      #element{text} {depth: 7}
+        #attribute{style: color:#2884fe;}
+        data{进行中}
+    #element{text} {depth: 6}
+      #attribute{style: font-size:28rpx;display:block;width:55%;height:100%;color:rgb(201,201,201);text-align:right;padding-right:20rpx;}
+      #attribute{wx:elif: {{item.Status==2}}}
+      data{发起人：}
+      scriptdata{item.ExtendField3}
+      data{ | }
+      #element{text} {depth: 7}
+        #attribute{style: color:#1ab133;}
+        data{已完成}
+  #element{view} {depth: 5}
+    #attribute{class: itemV_Model_item}
+    #attribute{style: height:60rpx;color:rgb(58,58,58);}
+    #element{text} {depth: 6}
+      #attribute{class: textlineShenlue}
+      #attribute{style: overflow:hidden;font-size:28rpx;display:block;width:90%;height:100%;padding-left:20rpx;}
+      data{工作计划/事务：}
+      scriptdata{item.WorkName}
+  #element{block} {depth: 5}
+    #attribute{wx:if: {{item.Status>=0}}}
+    #element{view} {depth: 6}
+      #attribute{class: itemV_Model_item}
+      #attribute{style: height:60rpx;color:rgb(58,58,58);}
+      #element{text} {depth: 7}
+        #attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}
+        data{发布日期：}
+        scriptdata{item.CreateTime}
+    #element{view} {depth: 6}
+      #attribute{class: itemV_Model_item}
+      #attribute{style: height:60rpx;color:rgb(58,58,58);}
+      #element{text} {depth: 7}
+        #attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}
+        data{计划完成日期：}
+        scriptdata{item.ExpectedTime?item.ExpectedTime:''}
+  #element{view} {depth: 5}
+    #attribute{class: itemV_Model_item}
+    #attribute{style: height:60rpx;color:rgb(58,58,58);}
+    #attribute{wx:if: {{item.Status>=1}}}
+    #element{text} {depth: 6}
+      #attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}
+      data{开始日期：}
+      scriptdata{item.StartTime?item.StartTime:''}
+  #element{view} {depth: 5}
+    #attribute{class: itemV_Model_item}
+    #attribute{style: height:60rpx;color:rgb(58,58,58);}
+    #attribute{wx:if: {{item.Status>=2}}}
+    #element{text} {depth: 6}
+      #attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}
+      data{完成日期：}
+      scriptdata{item.EndTime?item.EndTime:''}
+  #element{view} {depth: 5}
+    #attribute{class: itemV_Model_item}
+    #attribute{style: height:auto;padding-top:10rpx;padding-bottom:10rpx;color:rgb(58,58,58);}
+    #element{text} {depth: 6}
+      #attribute{style: font-size:28rpx;display:flex;width:60%;height:100%;padding-left:20rpx;}
+      data{执行人：}
+      scriptdata{item.userNameList?item.userNameList:''}
+    #element{view} {depth: 6}
+      #attribute{style: font-size:28rpx;display:block;width:30%;height:100%;text-align:right;padding-right:20rpx;flex-direction:row-reverse;flex-wrap:nowrap;}
+      #attribute{wx:if: {{item.ExtendField2==currentPeopleID&&item.Status<2}}}
+      #element{text} {depth: 7}
+        #attribute{catchtap: SuccessClik}
+        #attribute{catchtouchmove: true}
+        #attribute{data-index: 101}
+        #attribute{data-item: {{item}}}
+        #attribute{style: display:width:auto;padding:10rpx;height:60rpx;background-color:#309afe;font-size:28rpx;color:white;}
+        data{确定完成}
+
+Element #8
+Bind method: bindtap Function call: MoreClik
+#element{view} {depth: 4}
+  #attribute{bindtap: MoreClik}
+  #attribute{data-dic: {{item}}}
+  #attribute{style: display:flex;width:100%;height:40rpx;border-top:2rpxsolid#f3f3f3;border-bottom:8rpxsolid#f3f3f3;justify-content:center;align-items:center;background-color:white}
+  #element{image} {depth: 5}
+    #attribute{src: /images/icon_Select_down@3x.png}
+    #attribute{style: display:flex;width:30rpx;height:30rpx}
+
+Element #9
+Bind method: bindtap Function call: selectTimeClik
+#element{view} {depth: 5}
+  #attribute{bindtap: selectTimeClik}
+  #attribute{class: {{index==timeIndex?'item_selected':'item_unselect'}}}
+  #attribute{data-index: {{index}}}
+  #attribute{style: display:flex;width:25%;height:75rpx;justify-content:center;align-items:center;}
+  #attribute{wx:for: {{dateArray}}}
+  #attribute{wx:key: key}
+  #element{text} {depth: 6}
+    #attribute{class: textForTwoline}
+    #attribute{style: display:block;width:100%;height:60rpx;margin-top:0rpx;border-right:2rpxsolidrgb(201,201,201);line-height:30rpx;font-size:25rpx;text-align:center;}
+    scriptdata{item.time}
+
+Element #10
+Bind method: bindchange Function call: bindDateChange
+#element{picker} {depth: 4}
+  #attribute{bindchange: bindDateChange}
+  #attribute{end: 2099-01-01}
+  #attribute{mode: date}
+  #attribute{start: 2000-01-01}
+  #attribute{value: {{taskdate}}}
+  #element{image} {depth: 5}
+    #attribute{src: /images/icon_rili@2x.png}
+    #attribute{style: display:flex;width:34rpx;height:37rpx;margin-left:20rpx;}
+
+Element #11
+Bind method: bindtap Function call: AddSendTaskClik
+#element{image} {depth: 8}
+  #attribute{bindtap: AddSendTaskClik}
+  #attribute{src: /images/icon_add_task@2x.png}
+  #attribute{style: display:flex;width:40rpx;height:40rpx;}
+  #attribute{wx:if: {{index1==0}}}
+
+Element #12
+Bind method: bindtap Function call: selectTimeClik
+#element{view} {depth: 5}
+  #attribute{bindtap: selectTimeClik}
+  #attribute{class: {{index==timeIndex?'item_selected':'item_unselect'}}}
+  #attribute{data-index: {{index}}}
+  #attribute{style: display:flex;width:25%;height:75rpx;justify-content:center;align-items:center;}
+  #attribute{wx:for: {{dateArray}}}
+  #attribute{wx:key: key}
+  #element{text} {depth: 6}
+    #attribute{class: textForTwoline}
+    #attribute{style: display:block;width:100%;height:60rpx;margin-top:0rpx;border-right:2rpxsolidrgb(201,201,201);line-height:30rpx;font-size:25rpx;text-align:center;}
+    scriptdata{item.time}
+
+Element #13
+Bind method: bindchange Function call: bindDateChange
+#element{picker} {depth: 4}
+  #attribute{bindchange: bindDateChange}
+  #attribute{end: 2099-01-01}
+  #attribute{mode: date}
+  #attribute{start: 2000-01-01}
+  #attribute{value: {{taskdate}}}
+  #element{image} {depth: 5}
+    #attribute{src: /images/icon_rili@2x.png}
+    #attribute{style: display:flex;width:34rpx;height:37rpx;margin-left:20rpx;}
+
+Element #14
+Bind method: bindtap Function call: AddLogclik
+#element{image} {depth: 8}
+  #attribute{bindtap: AddLogclik}
+  #attribute{src: /images/icon_add_task@2x.png}
+  #attribute{style: display:flex;width:40rpx;height:40rpx;}
+  #attribute{wx:if: {{index1==0&&item.UserId==currentPeopleID}}}
+
+Element #15
+Bind method: bindtap Function call: hideSort
+#element{view} {depth: 3}
+  #attribute{bindtap: hideSort}
+  #attribute{class: bottom_HideView}
+
+Element #16
+Bind method: bindtap Function call: SumitOrResetclik
+#element{text} {depth: 4}
+  #attribute{bindtap: SumitOrResetclik}
+  #attribute{data-tag: 1}
+  #attribute{style: display:flex;width:20%;height:100rpx;color:rgb(203,203,203);font-size:30rpx;align-items:center;justify-content:center;}
+  data{重置}
+
+Element #17
+Bind method: bindtap Function call: SumitOrResetclik
+#element{text} {depth: 4}
+  #attribute{bindtap: SumitOrResetclik}
+  #attribute{data-tag: 2}
+  #attribute{style: display:flex;width:20%;height:100rpx;color:#2b84ff;font-size:30rpx;align-items:center;justify-content:center;}
+  data{确定}
+
+Element #18
+Bind method: bindtap Function call: sort_Typeclik
+#element{view} {depth: 5}
+  #attribute{bindtap: sort_Typeclik}
+  #attribute{class: bottomV_items}
+  #attribute{data-tag: 0}
+  #attribute{style: background-color:{{sort_flag==0?'#f3f3f3':'white'}}}
+  data{任务状态}
+
+Element #19
+Bind method: bindtap Function call: sort_Typeclik
+#element{view} {depth: 5}
+  #attribute{bindtap: sort_Typeclik}
+  #attribute{class: bottomV_items}
+  #attribute{data-tag: 1}
+  #attribute{style: background-color:{{sort_flag==1?'#f3f3f3':'white'}}}
+  data{工作类型}
+
+Element #20
+Bind method: bindtap Function call: sort_IndexClik
+#element{view} {depth: 7}
+  #attribute{bindtap: sort_IndexClik}
+  #attribute{class: bottomV_items}
+  #attribute{data-index: {{index}}}
+  #attribute{data-tag: 2}
+  #attribute{style: background-color:{{sort_flagindex==index?'#f3f3f3':'white'}}}
+  #attribute{wx:for: {{taskStatusArr}}}
+  #attribute{wx:key: key}
+  scriptdata{item}
+
+Element #21
+Bind method: bindtap Function call: sort_IndexClik
+#element{view} {depth: 7}
+  #attribute{bindtap: sort_IndexClik}
+  #attribute{class: bottomV_items}
+  #attribute{data-index: {{index}}}
+  #attribute{data-tag: 2}
+  #attribute{style: background-color:{{sort_flagindex==index?'#f3f3f3':'white'}}}
+  #attribute{wx:for: {{workStatusArr}}}
+  #attribute{wx:key: key}
+  scriptdata{item.typeName}
+
+Element #22
+Bind method: bindtap Function call: sortClik
+#element{view} {depth: 3}
+  #attribute{bindtap: sortClik}
+  #attribute{class: bottomV_Sel_imageV}
+  #attribute{data-tag: 0}
+  #element{image} {depth: 4}
+    #attribute{src: /images/icon_image_saixuan@3x.png}
+    #attribute{style: display:flex;width:40rpx;height:40rpx;}
+  #element{text} {depth: 4}
+    #attribute{class: bottomV_Sel_imageV_title}
+    data{筛选}
+
+Element #23
+Bind method: bindtap Function call: sortClik
+#element{view} {depth: 3}
+  #attribute{bindtap: sortClik}
+  #attribute{class: bottomV_Sel_imageV}
+  #attribute{data-tag: 1}
+  #element{image} {depth: 4}
+    #attribute{src: {{sortIndex==1?'/images/icon_gzzz_up@3x.png':'/images/icon_gzzz_down@3x.png'}}}
+    #attribute{style: display:flex;width:40rpx;height:40rpx;}
+  #element{text} {depth: 4}
+    #attribute{class: {{sortIndex==1?'bottomV_Sel_imageV_title':'bottomV_Sel_imageV_title unsel_imageV_color'}}}
+    scriptdata{Order_priority==0?'优先级↓':'优先级↑'}
+
+Element #24
+Bind method: bindtap Function call: sortClik
+#element{view} {depth: 3}
+  #attribute{bindtap: sortClik}
+  #attribute{class: bottomV_Sel_imageV}
+  #attribute{data-tag: 2}
+  #element{image} {depth: 4}
+    #attribute{src: {{sortIndex==2?'/images/icon_gzzx_timeup@3x.png':'/images/icon_gzzx_timedown@3x.png'}}}
+    #attribute{style: display:flex;width:40rpx;height:40rpx;}
+  #element{text} {depth: 4}
+    #attribute{class: {{sortIndex==2?'bottomV_Sel_imageV_title':'bottomV_Sel_imageV_title unsel_imageV_color'}}}
+    scriptdata{Order_publish==0?'发布日期↓':'发布日期↑'}
+
+Element #25
+Bind method: bindtap Function call: sortClik
+#element{view} {depth: 3}
+  #attribute{bindtap: sortClik}
+  #attribute{class: bottomV_Sel_imageV}
+  #attribute{data-tag: 3}
+  #element{image} {depth: 4}
+    #attribute{src: {{sortIndex==3?'/images/icon_gzzx_timeup@3x.png':'/images/icon_gzzx_timedown@3x.png'}}}
+    #attribute{style: display:flex;width:40rpx;height:40rpx;}
+  #element{text} {depth: 4}
+    #attribute{class: {{sortIndex==3?'bottomV_Sel_imageV_title':'bottomV_Sel_imageV_title unsel_imageV_color'}}}
+    scriptdata{Order_start==0?'开始日期↓':'开始日期↑'}
+
+Element #26
+Bind method: bindtap Function call: tapClik
+#element{view} {depth: 2}
+  #attribute{bindtap: tapClik}
+  #attribute{class: bottom_HideView}
+
+Element #27
+Bind method: bindtap Function call: tapClik
+#element{image} {depth: 4}
+  #attribute{bindtap: tapClik}
+  #attribute{src: /images/icon_cha@2x.png}
+  #attribute{style: display:flex;margin-right:20rpx;width:40rpx;height:40rpx;}
+
+Element #28
+Bind method: bindtap Function call: SelectPeople
+#element{view} {depth: 4}
+  #attribute{bindtap: SelectPeople}
+  #attribute{data-dic: {{detailCurrent}}}
+  #attribute{data-flag: 2}
+  #attribute{style: display:block;width:20%;margin-right:20rpx;color:#3691f3;font-size:28rpx;flex-wrap:nowrap;flex-direction:row-reverse;}
+  #element{text} {depth: 5}
+    data{选择人员}
+
+Element #29
+Bind method: bindtap Function call: tapClik1
+#element{view} {depth: 2}
+  #attribute{bindtap: tapClik1}
+  #attribute{class: bottom_HideView}
+
+Element #30
+Bind method: bindtap Function call: tapClik1
+#element{image} {depth: 4}
+  #attribute{bindtap: tapClik1}
+  #attribute{src: /images/icon_cha@2x.png}
+  #attribute{style: display:flex;margin-right:20rpx;width:40rpx;height:40rpx;}
+
+Element #31
+Bind method: bindinput Function call: ChangeDetailText
+#element{textarea} {depth: 4}
+  #attribute{bindinput: ChangeDetailText}
+  #attribute{maxlength: -1}
+  #attribute{placeholder: 请输入文字}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(158,158,158);}
+  #attribute{style: width:90%;height:300rpx;font-size:30rpx;margin:10rpx;}
+
+Element #32
+Bind method: bindtap Function call: sumitClik
+#element{text} {depth: 5}
+  #attribute{bindtap: sumitClik}
+  #attribute{style: display:block;width:120rpx;height:100%;font-size:26rpx;background-color:#319afe;text-align:center;line-height:60rpx;border-radius:10rpx;}
+  data{确定}
+
+Element #33
+Bind method: bindtap Function call: tapClik1
+#element{text} {depth: 5}
+  #attribute{bindtap: tapClik1}
+  #attribute{style: display:block;width:120rpx;height:100%;font-size:26rpx;background-color:#c1c1c1;text-align:center;line-height:60rpx;border-radius:10rpx;}
+  data{取消}
+
+
+pages/work/addtask/addtask
+
+Element #0
+Bind method: bindinput Function call: ChangeClik
+#element{input} {depth: 3}
+  #attribute{bindinput: ChangeClik}
+  #attribute{data-tag: 0}
+  #attribute{hidden: {{isHideType==1?true:false}}}
+  #attribute{placeholder: 请输入任务标题}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+  #attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);}
+  #attribute{value: 工作计划}
+
+Element #1
+Bind method: bindinput Function call: ChangeClik
+#element{input} {depth: 3}
+  #attribute{bindinput: ChangeClik}
+  #attribute{data-tag: 1}
+  #attribute{hidden: {{isHideType==1?true:false}}}
+  #attribute{placeholder: 请输入计划/事务}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+  #attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);}
+  #attribute{value: }
+
+Element #2
+Bind method: bindtap Function call: tapClik
+#element{input} {depth: 3}
+  #attribute{bindtap: tapClik}
+  #attribute{data-type: 0}
+  #attribute{disabled: false}
+  #attribute{placeholder: 请选择工作类型}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+  #attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}
+  #attribute{value: {{selectWorkType.typeName?selectWorkType.typeName:''}}}
+
+Element #3
+Bind method: bindinput Function call: ChangeDetailText
+#element{textarea} {depth: 4}
+  #attribute{bindinput: ChangeDetailText}
+  #attribute{hidden: {{isHideType==1?true:false}}}
+  #attribute{maxlength: -1}
+  #attribute{placeholder: 请输入文字}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(158,158,158);}
+  #attribute{style: width:90%;height:200rpx;font-size:30rpx;margin:10rpx;}
+
+Element #4
+Bind method: bindtap Function call: tapClik
+#element{input} {depth: 3}
+  #attribute{bindtap: tapClik}
+  #attribute{data-type: 2}
+  #attribute{disabled: false}
+  #attribute{placeholder: 请选择人员}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+  #attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}
+  #attribute{value: {{sendUser}}}
+
+Element #5
+Bind method: bindtap Function call: tapClik
+#element{input} {depth: 3}
+  #attribute{bindtap: tapClik}
+  #attribute{data-type: 1}
+  #attribute{disabled: false}
+  #attribute{placeholder: 请选择等级}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+  #attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}
+  #attribute{value: {{selectLeveData.name?selectLeveData.name:''}}}
+
+Element #6
+Bind method: bindchange Function call: changeDateTime1
+#element{picker} {depth: 3}
+  #attribute{bindchange: changeDateTime1}
+  #attribute{bindcolumnchange: changeDateTimeColumn1}
+  #attribute{class: width:55%;}
+  #attribute{mode: multiSelector}
+  #attribute{range: {{dateTimeArray1}}}
+  #attribute{value: {{dateTime1}}}
+  #element{input} {depth: 4}
+    #attribute{disabled: false}
+    #attribute{placeholder: 请选择日期}
+    #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+    #attribute{style: display:block;width:100%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}
+    #attribute{value: {{buildTime}}}
+
+Element #7
+Bind method: bindcolumnchange Function call: changeDateTimeColumn1
+#element{picker} {depth: 3}
+  #attribute{bindchange: changeDateTime1}
+  #attribute{bindcolumnchange: changeDateTimeColumn1}
+  #attribute{class: width:55%;}
+  #attribute{mode: multiSelector}
+  #attribute{range: {{dateTimeArray1}}}
+  #attribute{value: {{dateTime1}}}
+  #element{input} {depth: 4}
+    #attribute{disabled: false}
+    #attribute{placeholder: 请选择日期}
+    #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+    #attribute{style: display:block;width:100%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}
+    #attribute{value: {{buildTime}}}
+
+Element #8
+Bind method: bindtap Function call: tapClik
+#element{input} {depth: 3}
+  #attribute{bindtap: tapClik}
+  #attribute{data-type: 3}
+  #attribute{disabled: false}
+  #attribute{placeholder: 请选择人员}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+  #attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}
+  #attribute{value: {{xiezhuStr}}}
+
+Element #9
+Bind method: bindtap Function call: tapClik
+#element{input} {depth: 3}
+  #attribute{bindtap: tapClik}
+  #attribute{data-type: 4}
+  #attribute{disabled: false}
+  #attribute{placeholder: 请选择人员}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+  #attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}
+  #attribute{value: {{jianduStr}}}
+
+Element #10
+Bind method: bindtap Function call: tapClik
+#element{input} {depth: 3}
+  #attribute{bindtap: tapClik}
+  #attribute{data-type: 5}
+  #attribute{disabled: false}
+  #attribute{placeholder: 请选择人员}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+  #attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}
+  #attribute{value: {{zhixingStr}}}
+
+Element #11
+Bind method: bindtap Function call: SendClik
+#element{view} {depth: 1}
+  #attribute{bindtap: SendClik}
+  #attribute{class: btn_bottom}
+  #element{text} {depth: 2}
+    #attribute{style: font-size:30rpx;color:white;}
+    data{发  布}
+
+Element #12
+Bind method: bindtap Function call: hideClik
+#element{view} {depth: 2}
+  #attribute{bindtap: hideClik}
+  #attribute{class: bottom_HideView}
+
+Element #13
+Bind method: bindtap Function call: optionClik
+#element{view} {depth: 4}
+  #attribute{bindtap: optionClik}
+  #attribute{data-dic: {{item}}}
+  #attribute{data-tag: {{index}}}
+  #attribute{style: display:flex;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);justify-content:center;}
+  #attribute{wx:for: {{TypeArray}}}
+  #attribute{wx:key: key}
+  #element{text} {depth: 5}
+    #attribute{style: display:flex;height:80rpx;line-height:80rpx;}
+    scriptdata{item.typeName}
+
+Element #14
+Bind method: bindtap Function call: optionClik
+#element{view} {depth: 4}
+  #attribute{bindtap: optionClik}
+  #attribute{data-dic: {{item}}}
+  #attribute{data-tag: {{index}}}
+  #attribute{style: display:flex;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);justify-content:center;}
+  #attribute{wx:for: {{LeveArray}}}
+  #attribute{wx:key: key}
+  #element{text} {depth: 5}
+    #attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#fc1424;}
+    #attribute{wx:if: {{index==0}}}
+    scriptdata{item.name}
+  #element{text} {depth: 5}
+    #attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#fc5f2f;}
+    #attribute{wx:elif: {{index==1}}}
+    scriptdata{item.name}
+  #element{text} {depth: 5}
+    #attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#368cfb;}
+    #attribute{wx:elif: {{index==2}}}
+    scriptdata{item.name}
+  #element{text} {depth: 5}
+    #attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#7530fd;}
+    #attribute{wx:elif: {{index==3}}}
+    scriptdata{item.name}
+  #element{text} {depth: 5}
+    #attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#2cc7ab;}
+    #attribute{wx:elif: {{index==4}}}
+    scriptdata{item.name}
+
+
+pages/work/addPeople/addPeople
+
+Element #0
+Bind method: bindtap Function call: clikItem
+#element{view} {depth: 3}
+  #attribute{bindtap: clikItem}
+  #attribute{data-a: {{index1}}}
+  #attribute{data-item: {{item1}}}
+  #attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;height:80rpx;font-size:28rpx;color:rgb(58,58,58);width:100%;align-items:center;}
+  #element{text} {depth: 4}
+    #attribute{class: textlineShenlue}
+    #attribute{style: margin-left:20rpx;display:block;line-height:80rpx;}
+    scriptdata{item1.NavName}
+
+Element #1
+Bind method: bindtap Function call: clikItem1
+#element{view} {depth: 5}
+  #attribute{bindtap: clikItem1}
+  #attribute{data-a: {{index1}}}
+  #attribute{data-b: {{index2}}}
+  #attribute{data-item: {{item2}}}
+  #attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;height:80rpx;font-size:28rpx;color:rgb(58,58,58);width:100%;align-items:center;}
+  #element{text} {depth: 6}
+    #attribute{class: textlineShenlue}
+    #attribute{style: margin-left:40rpx;display:block;line-height:80rpx;margin-left:}
+    scriptdata{item2.NavName}
+
+Element #2
+Bind method: bindtap Function call: clikItem2
+#element{view} {depth: 7}
+  #attribute{bindtap: clikItem2}
+  #attribute{data-a: {{index1}}}
+  #attribute{data-b: {{index2}}}
+  #attribute{data-c: {{index3}}}
+  #attribute{data-item: {{item3}}}
+  #attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;height:80rpx;font-size:28rpx;color:rgb(58,58,58);width:100%;align-items:center;}
+  #element{view} {depth: 8}
+    #attribute{catchtap: ImageSelClik}
+    #attribute{data-a: {{index1}}}
+    #attribute{data-b: {{index2}}}
+    #attribute{data-c: {{index3}}}
+    #attribute{data-item: {{item3}}}
+    #attribute{hoverstoppropagation: true}
+    #attribute{style: display:flex;margin-left:120rpx;width:40rpx;height:40rpx;}
+    #element{image} {depth: 9}
+      #attribute{src: {{item3.child.length<=0?'':'/images/icon_Peo_select@2x.png'}}}
+      #attribute{style: display:flex;width:40rpx;height:40rpx;}
+      #attribute{wx:if: {{item3.isSel==1}}}
+    #element{image} {depth: 9}
+      #attribute{src: {{item3.child.length<=0?'':'/images/icon_Peo_unselect@2x.png'}}}
+      #attribute{style: display:flex;width:40rpx;height:40rpx;}
+      #attribute{wx:else: }
+  #element{text} {depth: 8}
+    #attribute{class: textlineShenlue}
+    #attribute{style: margin-left:20rpx;display:block;line-height:80rpx;margin-left:}
+    scriptdata{item3.NavName}
+
+Element #3
+Bind method: bindtap Function call: clikItem3
+#element{view} {depth: 9}
+  #attribute{bindtap: clikItem3}
+  #attribute{data-a: {{index1}}}
+  #attribute{data-b: {{index2}}}
+  #attribute{data-c: {{index3}}}
+  #attribute{data-d: {{index4}}}
+  #attribute{data-item: {{item4}}}
+  #attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;height:80rpx;font-size:28rpx;color:rgb(58,58,58);width:100%;align-items:center;}
+  #element{image} {depth: 10}
+    #attribute{src: {{item4.isSel==1?'/images/icon_Peo_select@2x.png':'/images/icon_Peo_unselect@2x.png'}}}
+    #attribute{style: display:flex;margin-left:160rpx;width:40rpx;height:40rpx;}
+  #element{text} {depth: 10}
+    #attribute{class: textlineShenlue}
+    #attribute{style: margin-left:20rpx;display:block;line-height:80rpx;margin-left:}
+    scriptdata{item4.NavName}
+
+Element #4
+Bind method: bindtap Function call: sumit_Btn_select
+#element{view} {depth: 1}
+  #attribute{bindtap: sumit_Btn_select}
+  #attribute{class: btn_bottom}
+  #element{text} {depth: 2}
+    #attribute{style: font-size:30rpx;color:white;}
+    data{确定选择}
+
+
+pages/work/taskDetail/taskDetail
+
+Element #0
+Bind method: bindinput Function call: ChangeClik
+#element{input} {depth: 3}
+  #attribute{bindinput: ChangeClik}
+  #attribute{data-tag: 0}
+  #attribute{hidden: {{isHideType==1?true:false}}}
+  #attribute{placeholder: 请输入任务标题}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+  #attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);}
+  #attribute{value: {{title}}}
+
+Element #1
+Bind method: bindinput Function call: ChangeClik
+#element{input} {depth: 3}
+  #attribute{bindinput: ChangeClik}
+  #attribute{data-tag: 1}
+  #attribute{hidden: {{isHideType==1?true:false}}}
+  #attribute{placeholder: 请输入计划/事务}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+  #attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);}
+  #attribute{value: {{subtitle}}}
+
+Element #2
+Bind method: bindtap Function call: tapClik
+#element{input} {depth: 3}
+  #attribute{bindtap: tapClik}
+  #attribute{data-type: 0}
+  #attribute{disabled: false}
+  #attribute{placeholder: 请选择工作类型}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+  #attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}
+  #attribute{value: {{selectWorkType.typeName?selectWorkType.typeName:''}}}
+
+Element #3
+Bind method: bindinput Function call: ChangeDetailText
+#element{textarea} {depth: 4}
+  #attribute{bindinput: ChangeDetailText}
+  #attribute{hidden: {{isHideType==1?true:false}}}
+  #attribute{maxlength: -1}
+  #attribute{placeholder: 请输入文字}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(158,158,158);}
+  #attribute{style: width:90%;height:200rpx;font-size:30rpx;margin:10rpx;}
+  #attribute{value: {{textDetail}}}
+
+Element #4
+Bind method: bindtap Function call: tapClik
+#element{input} {depth: 3}
+  #attribute{bindtap: tapClik}
+  #attribute{data-type: 2}
+  #attribute{disabled: false}
+  #attribute{placeholder: 请选择人员}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+  #attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}
+  #attribute{value: {{sendUser}}}
+
+Element #5
+Bind method: bindtap Function call: tapClik
+#element{input} {depth: 3}
+  #attribute{bindtap: tapClik}
+  #attribute{data-type: 1}
+  #attribute{disabled: false}
+  #attribute{placeholder: 请选择等级}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+  #attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}
+  #attribute{value: {{selectLeveData.name?selectLeveData.name:''}}}
+
+Element #6
+Bind method: bindchange Function call: changeDateTime1
+#element{picker} {depth: 3}
+  #attribute{bindchange: changeDateTime1}
+  #attribute{bindcolumnchange: changeDateTimeColumn1}
+  #attribute{class: width:55%;}
+  #attribute{mode: multiSelector}
+  #attribute{range: {{dateTimeArray1}}}
+  #attribute{value: {{dateTime1}}}
+  #element{input} {depth: 4}
+    #attribute{disabled: false}
+    #attribute{placeholder: 请选择日期}
+    #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+    #attribute{style: display:block;width:100%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}
+    #attribute{value: {{expectedTime}}}
+
+Element #7
+Bind method: bindcolumnchange Function call: changeDateTimeColumn1
+#element{picker} {depth: 3}
+  #attribute{bindchange: changeDateTime1}
+  #attribute{bindcolumnchange: changeDateTimeColumn1}
+  #attribute{class: width:55%;}
+  #attribute{mode: multiSelector}
+  #attribute{range: {{dateTimeArray1}}}
+  #attribute{value: {{dateTime1}}}
+  #element{input} {depth: 4}
+    #attribute{disabled: false}
+    #attribute{placeholder: 请选择日期}
+    #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+    #attribute{style: display:block;width:100%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}
+    #attribute{value: {{expectedTime}}}
+
+Element #8
+Bind method: bindinput Function call: itemdetail
+#element{textarea} {depth: 5}
+  #attribute{bindinput: itemdetail}
+  #attribute{data-index: {{index}}}
+  #attribute{data-inx: 3}
+  #attribute{disabled: {{currentPeopleId==item.userId?false:true}}}
+  #attribute{maxlength: -1}
+  #attribute{placeholder: 请输入文字}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(158,158,158);}
+  #attribute{style: width:90%;height:200rpx;font-size:30rpx;margin:10rpx;}
+  #attribute{value: {{item.workProblem?item.workProblem:''}}}
+
+Element #9
+Bind method: bindtap Function call: tapClik
+#element{input} {depth: 4}
+  #attribute{bindtap: tapClik}
+  #attribute{data-inx: {{index}}}
+  #attribute{data-item: {{item}}}
+  #attribute{data-type: 11}
+  #attribute{disabled: false}
+  #attribute{placeholder: 请选择等级}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+  #attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}
+  #attribute{value: {{item.priorityName?item.priorityName:''}}}
+
+Element #10
+Bind method: bindtap Function call: tapClik
+#element{input} {depth: 4}
+  #attribute{bindtap: tapClik}
+  #attribute{data-inx: {{index}}}
+  #attribute{data-item: {{item}}}
+  #attribute{data-type: 12}
+  #attribute{disabled: false}
+  #attribute{placeholder: 请选择任务状态}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+  #attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}
+  #attribute{value: 未开始}
+  #attribute{wx:if: {{item.status==0}}}
+
+Element #11
+Bind method: bindtap Function call: tapClik
+#element{input} {depth: 4}
+  #attribute{bindtap: tapClik}
+  #attribute{data-inx: {{index}}}
+  #attribute{data-item: {{item}}}
+  #attribute{data-type: 12}
+  #attribute{disabled: false}
+  #attribute{placeholder: 请选择任务状态}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+  #attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}
+  #attribute{value: 进行中}
+  #attribute{wx:if: {{item.status==1}}}
+
+Element #12
+Bind method: bindtap Function call: tapClik
+#element{input} {depth: 4}
+  #attribute{bindtap: tapClik}
+  #attribute{data-inx: {{index}}}
+  #attribute{data-item: {{item}}}
+  #attribute{data-type: 12}
+  #attribute{disabled: false}
+  #attribute{placeholder: 请选择任务状态}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+  #attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}
+  #attribute{value: 已完成}
+  #attribute{wx:if: {{item.status==2}}}
+
+Element #13
+Bind method: bindtap Function call: tapClik
+#element{view} {depth: 5}
+  #attribute{bindtap: tapClik}
+  #attribute{data-inx: {{index}}}
+  #attribute{data-type: 13}
+  #attribute{style: display:flex;width:140rpx;height:60rpx;margin-right:20rpx;margin-top:10rpx;background-color:#0ed2e7;border-radius:10rpx;flex-wrap:nowrap;flex-direction:row;align-items:center;justify-content:center;}
+  #attribute{wx:if: {{currentPeopleId==item.userId}}}
+  #element{text} {depth: 6}
+    #attribute{style: display:flex;color:white;font-size:26rpx;padding:10rpx;line-height:60rpx;}
+    data{确定开始}
+
+Element #14
+Bind method: bindinput Function call: changeTimeClik
+#element{input} {depth: 4}
+  #attribute{bindinput: changeTimeClik}
+  #attribute{data-index: {{index}}}
+  #attribute{disabled: {{currentPeopleId==item.userId?false:true}}}
+  #attribute{placeholder: 请输入分钟}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+  #attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}
+  #attribute{value: {{item.proposedTime?item.proposedTime:''}}}
+
+Element #15
+Bind method: bindtap Function call: tapClik
+#element{view} {depth: 5}
+  #attribute{bindtap: tapClik}
+  #attribute{data-inx: {{index}}}
+  #attribute{data-type: 14}
+  #attribute{style: display:flex;width:140rpx;height:60rpx;margin-right:20rpx;margin-top:10rpx;background-color:#7bbc3c;border-radius:10rpx;flex-wrap:nowrap;flex-direction:row;align-items:center;justify-content:center;}
+  #attribute{wx:if: {{currentPeopleId==item.userId}}}
+  #element{text} {depth: 6}
+    #attribute{style: display:flex;color:white;font-size:26rpx;padding:10rpx;line-height:60rpx;}
+    data{确定完成}
+
+Element #16
+Bind method: bindtap Function call: tapClik
+#element{view} {depth: 4}
+  #attribute{bindtap: tapClik}
+  #attribute{data-inx: {{index}}}
+  #attribute{data-type: 15}
+  #attribute{style: display:flex;width:160rpx;height:60rpx;margin-right:20rpx;margin-top:10rpx;background-color:#3691f3;border-radius:10rpx;flex-wrap:nowrap;flex-direction:row;align-items:center;justify-content:center;}
+  #attribute{wx:if: {{currentPeopleId==item.userId}}}
+  #element{text} {depth: 5}
+    #attribute{style: display:flex;color:white;font-size:26rpx;padding:10rpx;line-height:60rpx;}
+    data{选择人员}
+
+Element #17
+Bind method: bindtap Function call: tapClik
+#element{view} {depth: 4}
+  #attribute{bindtap: tapClik}
+  #attribute{data-inx: {{index}}}
+  #attribute{data-type: 16}
+  #attribute{style: display:flex;width:160rpx;height:60rpx;margin-right:20rpx;margin-top:10rpx;background-color:#3691f3;border-radius:10rpx;flex-wrap:nowrap;flex-direction:row;align-items:center;justify-content:center;}
+  #attribute{wx:if: {{currentPeopleId==item.userId}}}
+  #element{text} {depth: 5}
+    #attribute{style: display:flex;color:white;font-size:26rpx;padding:10rpx;line-height:60rpx;}
+    data{转交分配}
+
+Element #18
+Bind method: bindinput Function call: itemdetail
+#element{textarea} {depth: 5}
+  #attribute{bindinput: itemdetail}
+  #attribute{data-index: {{index}}}
+  #attribute{data-inx: 1}
+  #attribute{disabled: {{currentPeopleId==item.userId?false:true}}}
+  #attribute{maxlength: -1}
+  #attribute{placeholder: 请输入文字}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(158,158,158);}
+  #attribute{style: width:90%;height:200rpx;font-size:30rpx;margin:10rpx;}
+  #attribute{value: {{item.workProblem?item.workProblem:''}}}
+
+Element #19
+Bind method: bindtap Function call: tapClik
+#element{view} {depth: 4}
+  #attribute{bindtap: tapClik}
+  #attribute{data-inx: {{index}}}
+  #attribute{data-type: 17}
+  #attribute{style: display:flex;width:160rpx;height:60rpx;margin-right:20rpx;margin-top:10rpx;background-color:#3691f3;border-radius:10rpx;flex-wrap:nowrap;flex-direction:row;align-items:center;justify-content:center;}
+  #attribute{wx:if: {{currentPeopleId==item.userId}}}
+  #element{text} {depth: 5}
+    #attribute{style: display:flex;color:white;font-size:26rpx;padding:10rpx;line-height:60rpx;}
+    data{转交分配}
+
+Element #20
+Bind method: bindinput Function call: itemdetail
+#element{textarea} {depth: 5}
+  #attribute{bindinput: itemdetail}
+  #attribute{data-index: {{index}}}
+  #attribute{data-inx: 2}
+  #attribute{disabled: {{currentPeopleId==item.userId?false:true}}}
+  #attribute{maxlength: -1}
+  #attribute{placeholder: 请输入文字}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(158,158,158);}
+  #attribute{style: width:90%;height:200rpx;font-size:30rpx;margin:10rpx;}
+  #attribute{value: {{item.workProblem?item.workProblem:''}}}
+
+Element #21
+Bind method: bindtap Function call: SendClik
+#element{view} {depth: 1}
+  #attribute{bindtap: SendClik}
+  #attribute{class: btn_bottom}
+  #element{text} {depth: 2}
+    #attribute{style: font-size:30rpx;color:white;}
+    data{修  改}
+
+Element #22
+Bind method: bindtap Function call: hideClik
+#element{view} {depth: 2}
+  #attribute{bindtap: hideClik}
+  #attribute{class: bottom_HideView}
+
+Element #23
+Bind method: bindtap Function call: optionClik
+#element{view} {depth: 4}
+  #attribute{bindtap: optionClik}
+  #attribute{data-dic: {{item}}}
+  #attribute{data-tag: {{index}}}
+  #attribute{style: display:flex;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);justify-content:center;}
+  #attribute{wx:for: {{TypeArray}}}
+  #attribute{wx:key: key}
+  #element{text} {depth: 5}
+    #attribute{style: display:flex;height:80rpx;line-height:80rpx;}
+    scriptdata{item.typeName}
+
+Element #24
+Bind method: bindtap Function call: optionClik
+#element{view} {depth: 4}
+  #attribute{bindtap: optionClik}
+  #attribute{data-dic: {{item}}}
+  #attribute{data-tag: {{index}}}
+  #attribute{style: display:flex;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);justify-content:center;}
+  #attribute{wx:for: {{LeveArray}}}
+  #attribute{wx:key: key}
+  #element{text} {depth: 5}
+    #attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#fc1424;}
+    #attribute{wx:if: {{index==0}}}
+    scriptdata{item.name}
+  #element{text} {depth: 5}
+    #attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#fc5f2f;}
+    #attribute{wx:elif: {{index==1}}}
+    scriptdata{item.name}
+  #element{text} {depth: 5}
+    #attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#368cfb;}
+    #attribute{wx:elif: {{index==2}}}
+    scriptdata{item.name}
+  #element{text} {depth: 5}
+    #attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#7530fd;}
+    #attribute{wx:elif: {{index==3}}}
+    scriptdata{item.name}
+  #element{text} {depth: 5}
+    #attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#2cc7ab;}
+    #attribute{wx:elif: {{index==4}}}
+    scriptdata{item.name}
+
+Element #25
+Bind method: bindtap Function call: optionClik
+#element{view} {depth: 4}
+  #attribute{bindtap: optionClik}
+  #attribute{data-dic: {{item}}}
+  #attribute{data-tag: {{index}}}
+  #attribute{style: display:flex;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);justify-content:center;}
+  #attribute{wx:for: {{LeveArray}}}
+  #attribute{wx:key: key}
+  #element{text} {depth: 5}
+    #attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#fc1424;}
+    #attribute{wx:if: {{index==0}}}
+    scriptdata{item.name}
+  #element{text} {depth: 5}
+    #attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#fc5f2f;}
+    #attribute{wx:elif: {{index==1}}}
+    scriptdata{item.name}
+  #element{text} {depth: 5}
+    #attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#368cfb;}
+    #attribute{wx:elif: {{index==2}}}
+    scriptdata{item.name}
+  #element{text} {depth: 5}
+    #attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#7530fd;}
+    #attribute{wx:elif: {{index==3}}}
+    scriptdata{item.name}
+  #element{text} {depth: 5}
+    #attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#2cc7ab;}
+    #attribute{wx:elif: {{index==4}}}
+    scriptdata{item.name}
+
+Element #26
+Bind method: bindtap Function call: optionClik
+#element{view} {depth: 4}
+  #attribute{bindtap: optionClik}
+  #attribute{data-dic: {{item}}}
+  #attribute{data-tag: {{index}}}
+  #attribute{style: display:flex;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);justify-content:center;}
+  #attribute{wx:for: {{StatusArray}}}
+  #attribute{wx:key: key}
+  #element{text} {depth: 5}
+    #attribute{style: display:flex;height:80rpx;line-height:80rpx;color:rgb(102,102,102);}
+    scriptdata{item}
+
+
+pages/myLog/addLog/addLog
+
+Element #0
+Bind method: bindtap Function call: tapClik
+#element{input} {depth: 3}
+  #attribute{bindtap: tapClik}
+  #attribute{data-type: 0}
+  #attribute{disabled: false}
+  #attribute{placeholder: 请选择任务}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+  #attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}
+  #attribute{value: {{selectItem.workName?selectItem.workName:''}}}
+
+Element #1
+Bind method: bindchange Function call: changeDateTime1
+#element{picker} {depth: 3}
+  #attribute{bindchange: changeDateTime1}
+  #attribute{bindcolumnchange: changeDateTimeColumn1}
+  #attribute{class: width:55%;}
+  #attribute{mode: multiSelector}
+  #attribute{range: {{dateTimeArray1}}}
+  #attribute{value: {{dateTime1}}}
+  #element{input} {depth: 4}
+    #attribute{disabled: false}
+    #attribute{placeholder: 请选择日期}
+    #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+    #attribute{style: display:block;width:100%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}
+    #attribute{value: {{dateTimeArray1[0][ dateTime1[0] ]}}-{{dateTimeArray1[1][ dateTime1[1] ]}}-{{dateTimeArray1[2][ dateTime1[2] ]}} {{dateTimeArray1[3][ dateTime1[3] ]}}:{{dateTimeArray1[4][ dateTime1[4] ]}}}
+
+Element #2
+Bind method: bindcolumnchange Function call: changeDateTimeColumn1
+#element{picker} {depth: 3}
+  #attribute{bindchange: changeDateTime1}
+  #attribute{bindcolumnchange: changeDateTimeColumn1}
+  #attribute{class: width:55%;}
+  #attribute{mode: multiSelector}
+  #attribute{range: {{dateTimeArray1}}}
+  #attribute{value: {{dateTime1}}}
+  #element{input} {depth: 4}
+    #attribute{disabled: false}
+    #attribute{placeholder: 请选择日期}
+    #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+    #attribute{style: display:block;width:100%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}
+    #attribute{value: {{dateTimeArray1[0][ dateTime1[0] ]}}-{{dateTimeArray1[1][ dateTime1[1] ]}}-{{dateTimeArray1[2][ dateTime1[2] ]}} {{dateTimeArray1[3][ dateTime1[3] ]}}:{{dateTimeArray1[4][ dateTime1[4] ]}}}
+
+Element #3
+Bind method: bindinput Function call: ChangeDetailText
+#element{textarea} {depth: 4}
+  #attribute{bindinput: ChangeDetailText}
+  #attribute{hidden: {{isHideType==1?true:false}}}
+  #attribute{maxlength: -1}
+  #attribute{placeholder: 请输入文字}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(158,158,158);}
+  #attribute{style: width:90%;height:200rpx;font-size:30rpx;margin:10rpx;}
+
+Element #4
+Bind method: bindtap Function call: SendClik
+#element{view} {depth: 1}
+  #attribute{bindtap: SendClik}
+  #attribute{class: btn_bottom}
+  #element{text} {depth: 2}
+    #attribute{style: font-size:30rpx;color:white;}
+    data{发布日志}
+
+Element #5
+Bind method: bindtap Function call: hideClik
+#element{view} {depth: 2}
+  #attribute{bindtap: hideClik}
+  #attribute{class: bottom_HideView}
+
+Element #6
+Bind method: bindtap Function call: optionClik
+#element{view} {depth: 3}
+  #attribute{bindtap: optionClik}
+  #attribute{data-dic: {{item}}}
+  #attribute{data-tag: {{index}}}
+  #attribute{style: display:flex;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);justify-content:center;}
+  #attribute{wx:for: {{dataArray}}}
+  #attribute{wx:key: key}
+  #element{text} {depth: 4}
+    #attribute{style: display:flex;height:80rpx;line-height:80rpx;}
+    scriptdata{item.workName}
+
+
+pages/work/taskSuccess/taskSuccess
+
+Element #0
+Bind method: bindtap Function call: PostCommandClik
+#element{view} {depth: 5}
+  #attribute{bindtap: PostCommandClik}
+  #attribute{data-dic: {{mainData}}}
+  #attribute{style: display:flex;flex-wrap:nowrap;flex-direction:row;height:50rpx;justify-content:center;align-items:center;}
+  #element{text} {depth: 6}
+    #attribute{style: display:flex;font-size:26rpx;height:50rpx;line-height:50rpx;color:blue;text-decoration:underline;}
+    data{传达/备案}
+
+Element #1
+Bind method: bindconfirm Function call: BaobeiClik
+#element{textarea} {depth: 6}
+  #attribute{bindconfirm: BaobeiClik}
+  #attribute{data-item: {{item}}}
+  #attribute{maxlength: -1}
+  #attribute{placeholder: 请输入}
+  #attribute{style: width:100%;height:120rpx;}
+
+
+pages/myLog/editeLog/editeLog
+
+Element #0
+Bind method: bindtap Function call: tapClik
+#element{input} {depth: 3}
+  #attribute{bindtap: tapClik}
+  #attribute{data-type: 0}
+  #attribute{disabled: false}
+  #attribute{placeholder: 请选择任务}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}
+  #attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}
+  #attribute{value: {{selectItem.workName?selectItem.workName:''}}}
+
+Element #1
+Bind method: bindinput Function call: ChangeDetailText
+#element{textarea} {depth: 4}
+  #attribute{bindinput: ChangeDetailText}
+  #attribute{hidden: {{isHideType==1?true:false}}}
+  #attribute{maxlength: -1}
+  #attribute{placeholder: 请输入文字}
+  #attribute{placeholderstyle: font-size:30rpx;color:rgb(158,158,158);}
+  #attribute{style: width:90%;height:200rpx;font-size:30rpx;margin:10rpx;}
+  #attribute{value: {{detailtextChange}}}
+
+Element #2
+Bind method: bindtap Function call: SendClik
+#element{text} {depth: 2}
+  #attribute{bindtap: SendClik}
+  #attribute{class: btn_botttom_view}
+  #attribute{data-tag: 1}
+  #attribute{style: font-size:30rpx;color:white;background-color:rgb(243,54,54);}
+  data{删除日志}
+
+Element #3
+Bind method: bindtap Function call: SendClik
+#element{text} {depth: 2}
+  #attribute{bindtap: SendClik}
+  #attribute{class: btn_botttom_view}
+  #attribute{data-tag: 2}
+  #attribute{style: font-size:30rpx;color:white;background-color:rgb(54,167,243);}
+  data{修改日志}
+
+Element #4
+Bind method: bindtap Function call: hideClik
+#element{view} {depth: 2}
+  #attribute{bindtap: hideClik}
+  #attribute{class: bottom_HideView}
+
+Element #5
+Bind method: bindtap Function call: optionClik
+#element{view} {depth: 3}
+  #attribute{bindtap: optionClik}
+  #attribute{data-dic: {{item}}}
+  #attribute{data-tag: {{index}}}
+  #attribute{style: display:flex;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);justify-content:center;}
+  #attribute{wx:for: {{dataArray}}}
+  #attribute{wx:key: key}
+  #element{text} {depth: 4}
+    #attribute{style: display:flex;height:80rpx;line-height:80rpx;}
+    scriptdata{item.workName}
+
+
+pages/workMainpage/workWebPage/workWebPage
+
+Element #0
+Bind method: bindload Function call: tapClick
+#element{web-view} {depth: 1}
+  #attribute{bindload: tapClick}
+  #attribute{bindmessage: postOrderBy}
+  #attribute{src: {{currentUrl}}}
+
+Element #1
+Bind method: bindmessage Function call: postOrderBy
+#element{web-view} {depth: 1}
+  #attribute{bindload: tapClick}
+  #attribute{bindmessage: postOrderBy}
+  #attribute{src: {{currentUrl}}}
+
+
+pages/locationSel/locationSel
+
+
+pages/successStatus/successStatus
+
+

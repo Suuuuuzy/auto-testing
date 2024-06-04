@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "name": "WSL",
+            "intelliSenseMode": "clang-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "includePath": [
+                "${workspaceRoot}",
+                "/home/bella-xia/vcpkg/installed/x64-linux/include"
+            ],
+            "defines": [
+                "__linux__",
+                "__x86_64__",
+                "_GNU_SOURCE"
+            ],
+            "browse": {
+                "path": [
+                    "${workspaceRoot}",
+                    "/home/bella-xia/vcpkg/installed/x64-linux/include"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
+        }
+    ],
+    "version": 4
+}
