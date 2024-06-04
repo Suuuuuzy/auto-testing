@@ -42,7 +42,7 @@ def format_wxs_style_attribute(file_path):
     except Exception as e:
         print(f"An error occurred: {e}")
 
-def find_wxs_files(directory):
+def find_and_format_wxs_files(directory):
     for root, dirs, files in os.walk(directory):
       for file in files:
             if file=="bem.wxs":

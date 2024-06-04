@@ -6,6 +6,7 @@ logger = logging.getLogger(__name__)
 import json
 import platform
 from pathlib import Path
+import sys
 
 logging.basicConfig(
     filename='unpack_with_unveil.log',
@@ -50,9 +51,9 @@ def decompile_wxapkg_with_unveilr(wxapkg, output_path=None):
         raise UnsupportedOSException("Unsupported OS: {} {}".format(system, machine))
     
     if output_path is not None:
-        cmdline = [decompiler_tool, wxapkg, '-o', output_path, '-f']
+        cmdline = [decompiler_tool, wxapkg, '-o', output_path, '-f', '--clear-output']
     else:
-        cmdline = [decompiler_tool, wxapkg, '-f']
+        cmdline = [decompiler_tool, wxapkg, '-f', '--clear-output']
 
     try:
         out = subprocess.check_output(cmdline)
@@ -65,6 +66,6 @@ def decompile_wxapkg_with_unveilr(wxapkg, output_path=None):
 
     
 if __name__ == '__main__':
-    wxapkg_path = ''
-    output_path = ''
+    wxapkg_path = sys.argv[1]
+    output_path = wxapkg_path.replace(".wxapkg", "")
     decompile_wxapkg_with_unveilr(wxapkg_path, output_path)
