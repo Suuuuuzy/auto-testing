@@ -11,7 +11,6 @@ class BaseCase(minium.MiniTest):
         This function overrides the initiation.
         It is currently used to add an additional command which enables the console log to be recorded.
         """
-        print("BaseClass __init__ called")
         super().__init__(*args, **kwargs)
 
     def open_route(self, route: str) -> None:
