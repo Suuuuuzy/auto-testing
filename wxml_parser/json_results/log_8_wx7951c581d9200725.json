@@ -1,143 +1,134 @@
-[
-  {
-    "component_list": [
-      {
-        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: start}  \n#attribute{class: custom-button}  \n#element{image} {depth: 5}  \n#attribute{src: /skin/images/icon_start_button.png}    \n",
-        "attributes": {
-          "bindtap": "start",
-          "class": "custom-button"
-        },
-        "bind_method": "bindtap",
-        "data": [],
-        "function_call": "start",
-        "scriptdata": []
-      }
+{
+    "pages/index/index": [
+        {
+            "ast": "#element{view} {depth: 4}\n#attribute{bindtap: start}  \n#attribute{class: custom-button}  \n#element{image} {depth: 5}  \n#attribute{src: /skin/images/icon_start_button.png}    \n",
+            "attributes": {
+                "bindtap": "start",
+                "class": "custom-button"
+            },
+            "bind_method": "bindtap",
+            "data": [],
+            "function_call": "start",
+            "scriptdata": []
+        }
     ],
-    "page_name": "pages/index/index"
-  },
-  {
-    "component_list": [
-      {
-        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: opencamera}  \n#attribute{class: custom-button}  \n#element{image} {depth: 6}  \n#attribute{src: /skin/images/open-camera.png}    \n",
-        "attributes": {
-          "bindtap": "opencamera",
-          "class": "custom-button"
+    "pages/make/index": [
+        {
+            "ast": "#element{view} {depth: 5}\n#attribute{bindtap: opencamera}  \n#attribute{class: custom-button}  \n#element{image} {depth: 6}  \n#attribute{src: /skin/images/open-camera.png}    \n",
+            "attributes": {
+                "bindtap": "opencamera",
+                "class": "custom-button"
+            },
+            "bind_method": "bindtap",
+            "data": [],
+            "function_call": "opencamera",
+            "scriptdata": []
         },
-        "bind_method": "bindtap",
-        "data": [],
-        "function_call": "opencamera",
-        "scriptdata": []
-      },
-      {
-        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: openalbum}  \n#attribute{class: custom-button}  \n#element{image} {depth: 6}  \n#attribute{src: /skin/images/open-album.png}    \n",
-        "attributes": {
-          "bindtap": "openalbum",
-          "class": "custom-button"
+        {
+            "ast": "#element{view} {depth: 5}\n#attribute{bindtap: openalbum}  \n#attribute{class: custom-button}  \n#element{image} {depth: 6}  \n#attribute{src: /skin/images/open-album.png}    \n",
+            "attributes": {
+                "bindtap": "openalbum",
+                "class": "custom-button"
+            },
+            "bind_method": "bindtap",
+            "data": [],
+            "function_call": "openalbum",
+            "scriptdata": []
         },
-        "bind_method": "bindtap",
-        "data": [],
-        "function_call": "openalbum",
-        "scriptdata": []
-      },
-      {
-        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: {{gotobtn}}}  \n#attribute{class: custom-button custom-button2}  \ndata{免费查看颜值评分\r\n                }  \n",
-        "attributes": {
-          "bindtap": "{{gotobtn}}",
-          "class": "custom-button custom-button2"
-        },
-        "bind_method": "bindtap",
-        "data": ["免费查看颜值评分\r\n                "],
-        "function_call": "{{gotobtn}}",
-        "scriptdata": []
-      }
+        {
+            "ast": "#element{view} {depth: 5}\n#attribute{bindtap: {{gotobtn}}}  \n#attribute{class: custom-button custom-button2}  \ndata{免费查看颜值评分\r\n                }  \n",
+            "attributes": {
+                "bindtap": "{{gotobtn}}",
+                "class": "custom-button custom-button2"
+            },
+            "bind_method": "bindtap",
+            "data": [
+                "免费查看颜值评分\r\n                "
+            ],
+            "function_call": "{{gotobtn}}",
+            "scriptdata": []
+        }
     ],
-    "page_name": "pages/make/index"
-  },
-  {
-    "component_list": [
-      {
-        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: make_save}  \n#attribute{class: custom-button}  \n#element{image} {depth: 5}  \n#attribute{src: /skin/images/icon_save.png}    \n",
-        "attributes": {
-          "bindtap": "make_save",
-          "class": "custom-button"
-        },
-        "bind_method": "bindtap",
-        "data": [],
-        "function_call": "make_save",
-        "scriptdata": []
-      },
-      {
-        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: modal_click_hidden}  \n#attribute{class: cancel}  \ndata{取消}  \n",
-        "attributes": {
-          "bindtap": "modal_click_hidden",
-          "class": "cancel"
-        },
-        "bind_method": "bindtap",
-        "data": ["取消"],
-        "function_call": "modal_click_hidden",
-        "scriptdata": []
-      },
-      {
-        "ast": "#element{button} {depth: 4}\n#attribute{bindtap: getUserProfile}  \n#attribute{class: confirm}  \ndata{确定}  \n",
-        "attributes": {
-          "bindtap": "getUserProfile",
-          "class": "confirm"
-        },
-        "bind_method": "bindtap",
-        "data": ["确定"],
-        "function_call": "getUserProfile",
-        "scriptdata": []
-      }
+    "pages/more/index": [
+        {
+            "ast": "#element{view} {depth: 2}\n#attribute{bindtap: goto_newxcx}  \n#attribute{class: box clearfix}  \n#attribute{data-appid: {{item.appid}}}  \n#attribute{data-path: {{item.path}}}  \n#attribute{wx:for: {{xcxlist}}}  \n#attribute{wx:key: unique}  \n#element{view} {depth: 3}  \n#attribute{class: img}    \n#element{image} {depth: 4}    \n#attribute{src: {{item.litpic}}}      \n#element{view} {depth: 3}  \n#attribute{class: text}    \n#element{view} {depth: 4}    \n#attribute{class: h3}      \nscriptdata{item.title}      \n#element{view} {depth: 4}    \n#attribute{class: p}      \nscriptdata{item.description}      \n#element{view} {depth: 3}  \n#attribute{class: btn}    \ndata{打开}    \n",
+            "attributes": {
+                "bindtap": "goto_newxcx",
+                "class": "box clearfix",
+                "data-appid": "{{item.appid}}",
+                "data-path": "{{item.path}}",
+                "wx:for": "{{xcxlist}}",
+                "wx:key": "unique"
+            },
+            "bind_method": "bindtap",
+            "data": [],
+            "function_call": "goto_newxcx",
+            "scriptdata": []
+        }
     ],
-    "page_name": "pages/share/index"
-  },
-  {
-    "component_list": [
-      {
-        "ast": "#element{image} {depth: 5}\n#attribute{bindtap: rank_del}  \n#attribute{src: /skin/images/icon_del.png}  \n#attribute{wx:if: {{userid==item.userid}}}  \n",
-        "attributes": {
-          "bindtap": "rank_del",
-          "src": "/skin/images/icon_del.png",
-          "wx:if": "{{userid==item.userid}}"
+    "pages/rank/index": [
+        {
+            "ast": "#element{image} {depth: 5}\n#attribute{bindtap: rank_del}  \n#attribute{src: /skin/images/icon_del.png}  \n#attribute{wx:if: {{userid==item.userid}}}  \n",
+            "attributes": {
+                "bindtap": "rank_del",
+                "src": "/skin/images/icon_del.png",
+                "wx:if": "{{userid==item.userid}}"
+            },
+            "bind_method": "bindtap",
+            "data": [],
+            "function_call": "rank_del",
+            "scriptdata": []
         },
-        "bind_method": "bindtap",
-        "data": [],
-        "function_call": "rank_del",
-        "scriptdata": []
-      },
-      {
-        "ast": "#element{image} {depth: 5}\n#attribute{bindtap: previewImage}  \n#attribute{data-src: {{item.image}}}  \n#attribute{src: {{item.image}}}  \n",
-        "attributes": {
-          "bindtap": "previewImage",
-          "data-src": "{{item.image}}",
-          "src": "{{item.image}}"
-        },
-        "bind_method": "bindtap",
-        "data": [],
-        "function_call": "previewImage",
-        "scriptdata": []
-      }
+        {
+            "ast": "#element{image} {depth: 5}\n#attribute{bindtap: previewImage}  \n#attribute{data-src: {{item.image}}}  \n#attribute{src: {{item.image}}}  \n",
+            "attributes": {
+                "bindtap": "previewImage",
+                "data-src": "{{item.image}}",
+                "src": "{{item.image}}"
+            },
+            "bind_method": "bindtap",
+            "data": [],
+            "function_call": "previewImage",
+            "scriptdata": []
+        }
     ],
-    "page_name": "pages/rank/index"
-  },
-  {
-    "component_list": [
-      {
-        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: goto_newxcx}  \n#attribute{class: box clearfix}  \n#attribute{data-appid: {{item.appid}}}  \n#attribute{data-path: {{item.path}}}  \n#attribute{wx:for: {{xcxlist}}}  \n#attribute{wx:key: unique}  \n#element{view} {depth: 3}  \n#attribute{class: img}    \n#element{image} {depth: 4}    \n#attribute{src: {{item.litpic}}}      \n#element{view} {depth: 3}  \n#attribute{class: text}    \n#element{view} {depth: 4}    \n#attribute{class: h3}      \nscriptdata{item.title}      \n#element{view} {depth: 4}    \n#attribute{class: p}      \nscriptdata{item.description}      \n#element{view} {depth: 3}  \n#attribute{class: btn}    \ndata{打开}    \n",
-        "attributes": {
-          "bindtap": "goto_newxcx",
-          "class": "box clearfix",
-          "data-appid": "{{item.appid}}",
-          "data-path": "{{item.path}}",
-          "wx:for": "{{xcxlist}}",
-          "wx:key": "unique"
+    "pages/share/index": [
+        {
+            "ast": "#element{view} {depth: 4}\n#attribute{bindtap: make_save}  \n#attribute{class: custom-button}  \n#element{image} {depth: 5}  \n#attribute{src: /skin/images/icon_save.png}    \n",
+            "attributes": {
+                "bindtap": "make_save",
+                "class": "custom-button"
+            },
+            "bind_method": "bindtap",
+            "data": [],
+            "function_call": "make_save",
+            "scriptdata": []
         },
-        "bind_method": "bindtap",
-        "data": [],
-        "function_call": "goto_newxcx",
-        "scriptdata": []
-      }
-    ],
-    "page_name": "pages/more/index"
-  }
-]
+        {
+            "ast": "#element{view} {depth: 4}\n#attribute{bindtap: modal_click_hidden}  \n#attribute{class: cancel}  \ndata{取消}  \n",
+            "attributes": {
+                "bindtap": "modal_click_hidden",
+                "class": "cancel"
+            },
+            "bind_method": "bindtap",
+            "data": [
+                "取消"
+            ],
+            "function_call": "modal_click_hidden",
+            "scriptdata": []
+        },
+        {
+            "ast": "#element{button} {depth: 4}\n#attribute{bindtap: getUserProfile}  \n#attribute{class: confirm}  \ndata{确定}  \n",
+            "attributes": {
+                "bindtap": "getUserProfile",
+                "class": "confirm"
+            },
+            "bind_method": "bindtap",
+            "data": [
+                "确定"
+            ],
+            "function_call": "getUserProfile",
+            "scriptdata": []
+        }
+    ]
+}

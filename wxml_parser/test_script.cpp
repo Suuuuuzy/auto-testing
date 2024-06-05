@@ -67,7 +67,7 @@ int main(int argc, char **argv)
     std::vector<std::string> path_list = get_json_info(first_miniprogram_app_json_path);
 
 #ifdef PARSER_JSON_MODE
-    nlohmann::json miniprogram_json = nlohmann::json::array();
+    nlohmann::json miniprogram_json;
 #endif
 
     for (const std::string &page_path : path_list)
@@ -75,11 +75,6 @@ int main(int argc, char **argv)
 
 #ifdef PARSER_PRINT_MODE
         std::cout << page_path << std::endl;
-#endif
-
-#ifdef PARSER_JSON_MODE
-        nlohmann::json page_json;
-        page_json["page_name"] = page_path;
 #endif
 
         std::filesystem::path access_page = first_miniprogram_path / static_cast<std::filesystem::path>(page_path + ".wxml");
@@ -114,7 +109,7 @@ int main(int argc, char **argv)
 #endif
 
 #ifdef PARSER_JSON_MODE
-            page_json["component_list"] = parser.get_all_bind_elements();
+            miniprogram_json[page_path] = parser.get_all_bind_elements();
 #endif
         }
         catch (const std::runtime_error &e)
@@ -129,10 +124,6 @@ int main(int argc, char **argv)
 #ifdef PARSER_PRINT_MODE
         std::cout << std::endl
                   << std::endl;
-#endif
-
-#ifdef PARSER_JSON_MODE
-        miniprogram_json.push_back(page_json);
 #endif
 
         file.close();
