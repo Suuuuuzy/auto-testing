@@ -1,0 +1,2077 @@
+[
+  {
+    "component_list": [],
+    "page_name": "pages/scanCode/index"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/consumers/consumers"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: swichBig}  \n#attribute{class: shop-header}  \n#element{view} {depth: 4}  \n#attribute{class: shop-header-list {{bigTab==1?'active':''}}}    \n#attribute{data-current: 1}    \ndata{全部商品}    \n#element{view} {depth: 4}  \n#attribute{class: shop-header-list {{bigTab==2?'active':''}}}    \n#attribute{data-current: 2}    \ndata{首页精选}    \n#element{view} {depth: 4}  \n#attribute{class: shop-header_img_list}    \n#element{view} {depth: 5}    \n#attribute{bindtap: handleSearch}      \n#attribute{style: margin-right:20rpx}      \n#element{image} {depth: 6}      \n#attribute{class: shop-header_img}        \n#attribute{src: ../../images/home_search.png}        \n#element{view} {depth: 5}    \n#attribute{class: divLine}      \n#element{view} {depth: 5}    \n#attribute{bindtap: handleShop}      \n#attribute{style: margin-left:20rpx}      \n#element{image} {depth: 6}      \n#attribute{class: shop-header_img}        \n#attribute{src: ../../images/home_car.png}        \n",
+        "attributes": {
+          "bindtap": "swichBig",
+          "class": "shop-header"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "swichBig",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: handleSearch}  \n#attribute{style: margin-right:20rpx}  \n#element{image} {depth: 6}  \n#attribute{class: shop-header_img}    \n#attribute{src: ../../images/home_search.png}    \n",
+        "attributes": {
+          "bindtap": "handleSearch",
+          "style": "margin-right:20rpx"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "handleSearch",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: handleShop}  \n#attribute{style: margin-left:20rpx}  \n#element{image} {depth: 6}  \n#attribute{class: shop-header_img}    \n#attribute{src: ../../images/home_car.png}    \n",
+        "attributes": {
+          "bindtap": "handleShop",
+          "style": "margin-left:20rpx"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "handleShop",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: swichNav}  \n#attribute{class: content-top}  \n#element{view} {depth: 4}  \n#attribute{class: top-tab-list {{currentTab==1?'active':''}}}    \n#attribute{data-current: 1}    \ndata{综合}    \n#element{view} {depth: 4}  \n#attribute{class: top-tab-list {{currentTab==2?'active':''}}}    \n#attribute{data-current: 2}    \ndata{销量}    \n#element{view} {depth: 4}  \n#attribute{class: top-tab-list {{currentTab==3?'active':''}}}    \n#attribute{data-current: 3}    \ndata{上新}    \n#element{view} {depth: 4}  \n#attribute{class: top-tab-list}    \n#attribute{data-current: 4}    \n#attribute{data-price: 0}    \n#attribute{wx:if: {{isShowPrice=='0'}}}    \ndata{价格}    \n#element{image} {depth: 5}    \n#attribute{src: /images/icon_arrow_huise.png}      \n#element{view} {depth: 4}  \n#attribute{class: top-tab-list {{currentTab==5?'active':''}}}    \n#attribute{data-current: 5}    \n#attribute{data-price: 1}    \n#attribute{wx:elif: {{isShowPrice=='1'}}}    \ndata{价格}    \n#element{image} {depth: 5}    \n#attribute{src: /images/icon_arrow_high@2x.png}      \n#element{view} {depth: 4}  \n#attribute{class: top-tab-list {{currentTab==4?'active':''}}}    \n#attribute{data-current: 4}    \n#attribute{data-price: 2}    \n#attribute{wx:elif: {{isShowPrice=='2'}}}    \ndata{价格}    \n#element{image} {depth: 5}    \n#attribute{src: /images/icon_arrow_low@2x.png}      \n#element{view} {depth: 4}  \n#attribute{class: top-tab-list}    \n#attribute{data-current: 4}    \n#attribute{data-price: 0}    \n#attribute{wx:else: }    \ndata{价格}    \n#element{image} {depth: 5}    \n#attribute{src: /images/icon_arrow_huise.png}      \n",
+        "attributes": {
+          "bindtap": "swichNav",
+          "class": "content-top"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "swichNav",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 5}\n#attribute{bindtap: handleSearch}  \n#attribute{disabled: true}  \n#attribute{placeholder: 输入关键字搜索商品}  \n#attribute{placeholderstyle: color:#efc77d;}  \n#attribute{type: text}  \n",
+        "attributes": {
+          "bindtap": "handleSearch",
+          "disabled": "true",
+          "placeholder": "输入关键字搜索商品",
+          "placeholderstyle": "color:#efc77d;",
+          "type": "text"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "handleSearch",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindtap: handleSearch}  \n#attribute{disabled: true}  \n#attribute{placeholder: 搜索}  \n#attribute{placeholderstyle: color:#fff;}  \n#attribute{type: text}  \n",
+        "attributes": {
+          "bindtap": "handleSearch",
+          "disabled": "true",
+          "placeholder": "搜索",
+          "placeholderstyle": "color:#fff;",
+          "type": "text"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "handleSearch",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 6}\n#attribute{bindtap: handleSearch}  \n#attribute{disabled: true}  \n#attribute{placeholder: 输入关键字搜索商品}  \n#attribute{placeholderstyle: color:#765b9e;}  \n#attribute{type: text}  \n",
+        "attributes": {
+          "bindtap": "handleSearch",
+          "disabled": "true",
+          "placeholder": "输入关键字搜索商品",
+          "placeholderstyle": "color:#765b9e;",
+          "type": "text"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "handleSearch",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{scroll-view} {depth: 6}\n#attribute{bindscroll: getleft}  \n#attribute{class: scroll_tabw5}  \n#attribute{wx:if: {{slideShow==true}}}  \n#element{view} {depth: 7}  \n#attribute{class: class-tab5}    \n#attribute{wx:if: {{index<5}}}    \n#attribute{wx:for: {{sortList}}}    \n#attribute{wx:key: index}    \n#element{navigator} {depth: 8}    \n#attribute{class: search-tab-item}      \n#attribute{hoverclass: none}      \n#attribute{url: /pages/shopIndex/more/more?ckId={{item.url}}&name={{item.activityName}}}      \n#element{image} {depth: 9}      \n#attribute{src: {{rootPath+item.imgPath}}}        \n#element{view} {depth: 9}      \n#attribute{class: item-title}        \nscriptdata{item.activityName}        \n",
+        "attributes": {
+          "bindscroll": "getleft",
+          "class": "scroll_tabw5",
+          "wx:if": "{{slideShow==true}}"
+        },
+        "bind_method": "bindscroll",
+        "data": [],
+        "function_call": "getleft",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: swichTab}  \n#attribute{class: all-left}  \n#attribute{data-current: 1}  \n#element{image} {depth: 4}  \n#attribute{class: all-ad5-img}    \n#attribute{src: ../../images/all_normal.png}    \n#element{view} {depth: 4}  \n#attribute{class: all-left-text}    \nscriptdata{smalltypeName}    \n",
+        "attributes": {
+          "bindtap": "swichTab",
+          "class": "all-left",
+          "data-current": "1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "swichTab",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: swichTab}  \n#attribute{class: all-left}  \n#attribute{data-current: 2}  \n#element{image} {depth: 4}  \n#attribute{class: all-ad5-img}    \n#attribute{src: ../../images/all_normal.png}    \n#element{view} {depth: 4}  \n#attribute{class: all-left-text}    \nscriptdata{bigtypeName}    \n",
+        "attributes": {
+          "bindtap": "swichTab",
+          "class": "all-left",
+          "data-current": "2"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "swichTab",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/shopIndex/shopIndex"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/index/index"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{button} {depth: 2}\n#attribute{bindgetphonenumber: getPhoneNumber}  \n#attribute{class: Sure}  \n#attribute{opentype: getPhoneNumber}  \n#attribute{type: primary}  \ndata{确定}  \n",
+        "attributes": {
+          "bindgetphonenumber": "getPhoneNumber",
+          "class": "Sure",
+          "opentype": "getPhoneNumber",
+          "type": "primary"
+        },
+        "bind_method": "bindgetphonenumber",
+        "data": ["确定"],
+        "function_call": "getPhoneNumber",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: toIndexPage}  \n#attribute{hoverclass: none}  \n#element{button} {depth: 3}  \n#attribute{bindtap: toIndexPage}    \n#attribute{class: Cancel}    \n#attribute{type: default}    \ndata{拒绝}    \n",
+        "attributes": {
+          "bindtap": "toIndexPage",
+          "hoverclass": "none"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toIndexPage",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindtap: toIndexPage}  \n#attribute{class: Cancel}  \n#attribute{type: default}  \ndata{拒绝}  \n",
+        "attributes": {
+          "bindtap": "toIndexPage",
+          "class": "Cancel",
+          "type": "default"
+        },
+        "bind_method": "bindtap",
+        "data": ["拒绝"],
+        "function_call": "toIndexPage",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/login/login"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{scroll-view} {depth: 2}\n#attribute{bindrefresherrefresh: onRefresh}  \n#attribute{class: scroll-view-contem}  \n#attribute{hidden: {{msg.listShopCar.length==0}}}  \n#attribute{refresherenabled: true}  \n#attribute{refreshertriggered: {{refreshLoading}}}  \n#attribute{scrolly: true}  \n#element{view} {depth: 3}  \n#attribute{class: shopping-list}    \n#attribute{wx:for: {{msg.listShopCar}}}    \n#attribute{wx:for-index: indexS}    \n#attribute{wx:for-item: shop}    \n#attribute{wx:key: indexS}    \n#element{view} {depth: 4}    \n#attribute{class: shopping-list-item}      \n#element{view} {depth: 5}      \n#attribute{class: shop-name}        \n#element{label} {depth: 6}        \n#attribute{class: checkbox}          \n#element{checkbox} {depth: 7}          \n#attribute{catchtap: shopCheck}            \n#attribute{checked: {{shop.isCheck}}}            \n#attribute{data-indexs: {{indexS}}}            \n#attribute{value: cb}            \nscriptdata{shop.warehouseName}        \ndata{\r\n      }        \n#element{view} {depth: 5}      \n#attribute{bindtap: toProduct}        \n#attribute{class: product-list}        \n#attribute{data-productid: {{goods.productId}}}        \n#attribute{data-sellerid: {{goods.sellerId}}}        \n#attribute{wx:for: {{shop.shopCarModels}}}        \n#attribute{wx:for-index: indexG}        \n#attribute{wx:for-item: goods}        \n#attribute{wx:key: indexG}        \n#element{label} {depth: 6}        \n#attribute{class: checkbox}          \n#element{checkbox} {depth: 7}          \n#attribute{catchtap: goodsCheck}            \n#attribute{checked: {{goods.isCheck}}}            \n#attribute{data-indexg: {{indexG}}}            \n#attribute{data-indexs: {{indexS}}}            \n#attribute{value: cb}            \n#element{view} {depth: 6}        \n#attribute{class: product-cover-wrap}          \n#element{imageview} {depth: 7}          \n#attribute{class: product-cover-img}            \n#attribute{srcurl: {{rootPath+goods.productImg}}}            \n#element{view} {depth: 6}        \n#attribute{class: product-info}          \n#element{view} {depth: 7}          \n#attribute{class: product-title}            \n#element{view} {depth: 8}            \n#attribute{class: product-label}              \n#attribute{wx:if: {{goods.labelImg}}}              \n#element{image} {depth: 9}              \n#attribute{src: {{rootPath+goods.labelImg}}}                \n#element{view} {depth: 8}            \n#attribute{class: product-label}              \n#attribute{wx:for: {{goods.labelList}}}              \n#attribute{wx:for-item: label}              \n#attribute{wx:key: index}              \n#element{image} {depth: 9}              \n#attribute{src: {{rootPath+label.labelImg}}}                \nscriptdata{goods.productName}            \ndata{\r\n            }            \n#element{view} {depth: 7}          \n#attribute{class: product-save}            \n#attribute{wx:if: {{goods.saveAmt>0}}}            \ndata{省￥}            \nscriptdata{filter.price(goods.saveAmt)}            \n#element{view} {depth: 7}          \n#attribute{class: product-price}            \ndata{￥}            \nscriptdata{filter.price(goods.price)}            \n#element{view} {depth: 7}          \n#attribute{class: product-amount}            \n#element{button} {depth: 8}            \n#attribute{catchtap: ReduceNum}              \n#attribute{class: reduce-btn btn}              \n#attribute{data-indexg: {{indexG}}}              \n#attribute{data-indexs: {{indexS}}}              \n#attribute{data-quantity: {{goods.quantity}}}              \n#attribute{data-shoppingcarid: {{goods.productId}}}              \ndata{-}              \n#element{input} {depth: 8}            \n#attribute{class: amount-input}              \n#attribute{cursor: -1}              \n#attribute{selectionend: -1}              \n#attribute{selectionstart: -1}              \n#attribute{type: number}              \n#attribute{value: {{goods.quantity}}}              \n#element{button} {depth: 8}            \n#attribute{catchtap: AddNum}              \n#attribute{class: add-btn btn}              \n#attribute{data-indexg: {{indexG}}}              \n#attribute{data-indexs: {{indexS}}}              \n#attribute{data-quantity: {{goods.quantity}}}              \n#attribute{data-shoppingcarid: {{goods.productId}}}              \ndata{+}              \n#element{view} {depth: 7}          \n#attribute{class: product-delete}            \n#element{image} {depth: 8}            \n#attribute{catchtap: deleteGoods}              \n#attribute{class: product-delete-img}              \n#attribute{data-indexg: {{indexG}}}              \n#attribute{data-indexs: {{indexS}}}              \n#attribute{data-shoppingcarid: {{goods.shoppingCarId}}}              \n#attribute{src: ../../images/shop_sc.png}              \n#element{view} {depth: 5}      \n#attribute{class: page-section tabbar-section}        \n#element{view} {depth: 6}        \n#attribute{class: tab-left}          \n#element{view} {depth: 7}          \n#attribute{class: tab-left-amount}            \n#element{text} {depth: 8}            \n#attribute{style: font-size:24rpx;color:#999;}              \ndata{不含运费}              \ndata{总计：￥}            \nscriptdata{filter.price(shop.totalAmount)}            \ndata{\r\n            }            \n#element{view} {depth: 7}          \n#attribute{class: tab-left-freight}            \n#attribute{style: color:#e59a67;font-size:24rpx;}            \n#attribute{wx:if: {{totalDiscount>0}}}            \ndata{省￥}            \nscriptdata{filter.price(shop.totalDiscount)}            \n#element{view} {depth: 6}        \n#attribute{bindtap: goSubmitOrder}          \n#attribute{class: tab-right}          \n#attribute{data-list: {{shop.shopCarModels}}}          \n#attribute{data-sellerid: {{msg.sellerId}}}          \n#attribute{data-text: {{shop.totalAmount}}}          \n#attribute{hoverclass: none}          \n#attribute{wx:if: {{!requesting}}}          \n#element{view} {depth: 7}          \n#attribute{class: tab-right-btn}            \ndata{结 算}            \n#element{view} {depth: 6}        \n#attribute{class: tab-right}          \n#attribute{data-list: {{shop.shopCarModels}}}          \n#attribute{data-sellerid: {{msg.sellerId}}}          \n#attribute{data-text: {{shop.totalAmount}}}          \n#attribute{hoverclass: none}          \n#attribute{wx:else: }          \n#element{view} {depth: 7}          \n#attribute{class: tab-right-btn}            \ndata{结 算}            \n",
+        "attributes": {
+          "bindrefresherrefresh": "onRefresh",
+          "class": "scroll-view-contem",
+          "hidden": "{{msg.listShopCar.length==0}}",
+          "refresherenabled": "true",
+          "refreshertriggered": "{{refreshLoading}}",
+          "scrolly": "true"
+        },
+        "bind_method": "bindrefresherrefresh",
+        "data": [],
+        "function_call": "onRefresh",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: toProduct}  \n#attribute{class: product-list}  \n#attribute{data-productid: {{goods.productId}}}  \n#attribute{data-sellerid: {{goods.sellerId}}}  \n#attribute{wx:for: {{shop.shopCarModels}}}  \n#attribute{wx:for-index: indexG}  \n#attribute{wx:for-item: goods}  \n#attribute{wx:key: indexG}  \n#element{label} {depth: 6}  \n#attribute{class: checkbox}    \n#element{checkbox} {depth: 7}    \n#attribute{catchtap: goodsCheck}      \n#attribute{checked: {{goods.isCheck}}}      \n#attribute{data-indexg: {{indexG}}}      \n#attribute{data-indexs: {{indexS}}}      \n#attribute{value: cb}      \n#element{view} {depth: 6}  \n#attribute{class: product-cover-wrap}    \n#element{imageview} {depth: 7}    \n#attribute{class: product-cover-img}      \n#attribute{srcurl: {{rootPath+goods.productImg}}}      \n#element{view} {depth: 6}  \n#attribute{class: product-info}    \n#element{view} {depth: 7}    \n#attribute{class: product-title}      \n#element{view} {depth: 8}      \n#attribute{class: product-label}        \n#attribute{wx:if: {{goods.labelImg}}}        \n#element{image} {depth: 9}        \n#attribute{src: {{rootPath+goods.labelImg}}}          \n#element{view} {depth: 8}      \n#attribute{class: product-label}        \n#attribute{wx:for: {{goods.labelList}}}        \n#attribute{wx:for-item: label}        \n#attribute{wx:key: index}        \n#element{image} {depth: 9}        \n#attribute{src: {{rootPath+label.labelImg}}}          \nscriptdata{goods.productName}      \ndata{\r\n            }      \n#element{view} {depth: 7}    \n#attribute{class: product-save}      \n#attribute{wx:if: {{goods.saveAmt>0}}}      \ndata{省￥}      \nscriptdata{filter.price(goods.saveAmt)}      \n#element{view} {depth: 7}    \n#attribute{class: product-price}      \ndata{￥}      \nscriptdata{filter.price(goods.price)}      \n#element{view} {depth: 7}    \n#attribute{class: product-amount}      \n#element{button} {depth: 8}      \n#attribute{catchtap: ReduceNum}        \n#attribute{class: reduce-btn btn}        \n#attribute{data-indexg: {{indexG}}}        \n#attribute{data-indexs: {{indexS}}}        \n#attribute{data-quantity: {{goods.quantity}}}        \n#attribute{data-shoppingcarid: {{goods.productId}}}        \ndata{-}        \n#element{input} {depth: 8}      \n#attribute{class: amount-input}        \n#attribute{cursor: -1}        \n#attribute{selectionend: -1}        \n#attribute{selectionstart: -1}        \n#attribute{type: number}        \n#attribute{value: {{goods.quantity}}}        \n#element{button} {depth: 8}      \n#attribute{catchtap: AddNum}        \n#attribute{class: add-btn btn}        \n#attribute{data-indexg: {{indexG}}}        \n#attribute{data-indexs: {{indexS}}}        \n#attribute{data-quantity: {{goods.quantity}}}        \n#attribute{data-shoppingcarid: {{goods.productId}}}        \ndata{+}        \n#element{view} {depth: 7}    \n#attribute{class: product-delete}      \n#element{image} {depth: 8}      \n#attribute{catchtap: deleteGoods}        \n#attribute{class: product-delete-img}        \n#attribute{data-indexg: {{indexG}}}        \n#attribute{data-indexs: {{indexS}}}        \n#attribute{data-shoppingcarid: {{goods.shoppingCarId}}}        \n#attribute{src: ../../images/shop_sc.png}        \n",
+        "attributes": {
+          "bindtap": "toProduct",
+          "class": "product-list",
+          "data-productid": "{{goods.productId}}",
+          "data-sellerid": "{{goods.sellerId}}",
+          "wx:for": "{{shop.shopCarModels}}",
+          "wx:for-index": "indexG",
+          "wx:for-item": "goods",
+          "wx:key": "indexG"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toProduct",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 6}\n#attribute{bindtap: goSubmitOrder}  \n#attribute{class: tab-right}  \n#attribute{data-list: {{shop.shopCarModels}}}  \n#attribute{data-sellerid: {{msg.sellerId}}}  \n#attribute{data-text: {{shop.totalAmount}}}  \n#attribute{hoverclass: none}  \n#attribute{wx:if: {{!requesting}}}  \n#element{view} {depth: 7}  \n#attribute{class: tab-right-btn}    \ndata{结 算}    \n",
+        "attributes": {
+          "bindtap": "goSubmitOrder",
+          "class": "tab-right",
+          "data-list": "{{shop.shopCarModels}}",
+          "data-sellerid": "{{msg.sellerId}}",
+          "data-text": "{{shop.totalAmount}}",
+          "hoverclass": "none",
+          "wx:if": "{{!requesting}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "goSubmitOrder",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: toIndexPage}  \n#attribute{class: to-index-btn}  \ndata{去逛逛\r\n    }  \n",
+        "attributes": {
+          "bindtap": "toIndexPage",
+          "class": "to-index-btn"
+        },
+        "bind_method": "bindtap",
+        "data": ["去逛逛\r\n    "],
+        "function_call": "toIndexPage",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 2}\n#attribute{bindtap: getUserProfile}  \n#attribute{class: to-index-btn}  \n#attribute{type: warn}  \ndata{点击登录}  \n",
+        "attributes": {
+          "bindtap": "getUserProfile",
+          "class": "to-index-btn",
+          "type": "warn"
+        },
+        "bind_method": "bindtap",
+        "data": ["点击登录"],
+        "function_call": "getUserProfile",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/shopCar/index"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: checkAddr}  \n#attribute{class: page-section address-section}  \n#attribute{wx:if: {{msg.addrInfo.name}}}  \n#element{view} {depth: 3}  \n#attribute{class: address-info}    \n#element{view} {depth: 4}    \n#attribute{class: address-item address-name}      \n#element{text} {depth: 5}      \n#attribute{class: address-text}        \nscriptdata{msg.addrInfo.name}        \n#element{view} {depth: 4}    \n#attribute{class: address-item address-phone}      \n#element{text} {depth: 5}      \n#attribute{class: address-text}        \nscriptdata{msg.addrInfo.mobile}        \n#element{view} {depth: 3}  \n#attribute{class: address-area}    \n#element{view} {depth: 4}    \n#attribute{class: address-label}      \n#attribute{wx:if: {{msg.addrInfo.isCommon==0}}}      \ndata{默认}      \n#element{view} {depth: 4}    \n#attribute{class: address-site}      \nscriptdata{msg.addrInfo.addr}      \n",
+        "attributes": {
+          "bindtap": "checkAddr",
+          "class": "page-section address-section",
+          "wx:if": "{{msg.addrInfo.name}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "checkAddr",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: checkAddr}  \n#attribute{class: page-section address-section flex flex-align-center flex-pack-center}  \n#attribute{wx:else: }  \n#element{image} {depth: 3}  \n#attribute{class: no-address}    \n#attribute{src: ../../images/address.png}    \ndata{填写我的收获地址\r\n  }  \n",
+        "attributes": {
+          "bindtap": "checkAddr",
+          "class": "page-section address-section flex flex-align-center flex-pack-center",
+          "wx:else": ""
+        },
+        "bind_method": "bindtap",
+        "data": ["填写我的收获地址\r\n  "],
+        "function_call": "checkAddr",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 4}\n#attribute{bindblur: textareaChange}  \n#attribute{class: message-input flex-1}  \n#attribute{data-index: {{indexS}}}  \n#attribute{maxlength: 30}  \n#attribute{placeholder: 给商家留言 (30字以内)}  \n#attribute{value: {{msg.orderInfo.productOrderList[indexS].buyerNote}}}  \n",
+        "attributes": {
+          "bindblur": "textareaChange",
+          "class": "message-input flex-1",
+          "data-index": "{{indexS}}",
+          "maxlength": "30",
+          "placeholder": "给商家留言 (30字以内)",
+          "value": "{{msg.orderInfo.productOrderList[indexS].buyerNote}}"
+        },
+        "bind_method": "bindblur",
+        "data": [],
+        "function_call": "textareaChange",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 4}\n#attribute{bindblur: productChange}  \n#attribute{class: message-input flex-1}  \n#attribute{maxlength: 30}  \n#attribute{placeholder: 给商家留言 (30字以内)}  \n#attribute{value: {{buyerNote}}}  \n",
+        "attributes": {
+          "bindblur": "productChange",
+          "class": "message-input flex-1",
+          "maxlength": "30",
+          "placeholder": "给商家留言 (30字以内)",
+          "value": "{{buyerNote}}"
+        },
+        "bind_method": "bindblur",
+        "data": [],
+        "function_call": "productChange",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: toCoupon}  \n#attribute{class: coupon}  \n#attribute{wx:if: {{vsuId.vsuId}}}  \n#element{text} {depth: 5}  \n#attribute{class: coupon-text}    \ndata{优惠券： }    \n#element{text} {depth: 6}    \n#attribute{class: text-red}      \ndata{已选}      \nscriptdata{vsuId.couponNum}      \ndata{张}      \n#element{text} {depth: 5}  \n#attribute{class: coupon-text text-red}    \ndata{-￥}    \nscriptdata{filter.price(vsuId.vPrice)}    \n",
+        "attributes": {
+          "bindtap": "toCoupon",
+          "class": "coupon",
+          "wx:if": "{{vsuId.vsuId}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toCoupon",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: toCoupon}  \n#attribute{class: coupon}  \n#attribute{wx:else: }  \n#element{text} {depth: 5}  \n#attribute{class: coupon-text}    \ndata{优惠券： }    \n#element{text} {depth: 6}    \n#attribute{class: text-red}      \ndata{请选择}      \n",
+        "attributes": {
+          "bindtap": "toCoupon",
+          "class": "coupon",
+          "wx:else": ""
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toCoupon",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{checkbox} {depth: 5}\n#attribute{bindtap: useJlishopBp}  \n#attribute{checked: {{useBean}}}  \n#attribute{value: cb}  \n",
+        "attributes": {
+          "bindtap": "useJlishopBp",
+          "checked": "{{useBean}}",
+          "value": "cb"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "useJlishopBp",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bind:tap: toPay}  \n#attribute{class: tab-right}  \n#attribute{hoverclass: none}  \n#attribute{wx:if: {{!requesting}}}  \n#element{view} {depth: 4}  \n#attribute{class: tab-right-btn}    \n#attribute{style: color:#fff;}    \ndata{去支付}    \n",
+        "attributes": {
+          "bind:tap": "toPay",
+          "class": "tab-right",
+          "hoverclass": "none",
+          "wx:if": "{{!requesting}}"
+        },
+        "bind_method": "bind:tap",
+        "data": [],
+        "function_call": "toPay",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: createOrder}  \n#attribute{class: tab-right}  \n#attribute{hoverclass: none}  \n#attribute{wx:if: {{!requesting}}}  \n#element{view} {depth: 4}  \n#attribute{class: tab-right-btn}    \n#attribute{style: color:#fff;}    \ndata{提交订单}    \n",
+        "attributes": {
+          "bindtap": "createOrder",
+          "class": "tab-right",
+          "hoverclass": "none",
+          "wx:if": "{{!requesting}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "createOrder",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/submitOrder/submitOrder"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{button} {depth: 4}\n#attribute{bindtap: getUserProfile}  \n#attribute{class: user-login}  \ndata{点击登录}  \n",
+        "attributes": {
+          "bindtap": "getUserProfile",
+          "class": "user-login"
+        },
+        "bind_method": "bindtap",
+        "data": ["点击登录"],
+        "function_call": "getUserProfile",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: btnAllorder}  \n#attribute{class: all-order}  \n#attribute{data-current: 1}  \n#element{view} {depth: 4}  \n#attribute{class: all-order-left}    \ndata{我的订单}    \n#element{view} {depth: 4}  \n#attribute{class: all-order-right}    \ndata{查看全部订单}    \n",
+        "attributes": {
+          "bindtap": "btnAllorder",
+          "class": "all-order",
+          "data-current": "1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "btnAllorder",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: btnAllorder}  \n#attribute{class: order-list-item flex-1}  \n#attribute{data-current: 2}  \n#element{image} {depth: 5}  \n#attribute{class: order-list-item-img}    \n#attribute{src: ../../images/icon_daifukan.png}    \n#element{text} {depth: 5}  \n#attribute{class: order-list-item-text}    \ndata{待付款}    \n#element{view} {depth: 5}  \n#attribute{class: reddot}    \n#attribute{wx:if: {{undata.payMentCount-undata.payMentSellerCount>0}}}    \nscriptdata{undata.payMentCount-undata.payMentSellerCount}    \n",
+        "attributes": {
+          "bindtap": "btnAllorder",
+          "class": "order-list-item flex-1",
+          "data-current": "2"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "btnAllorder",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: btnAllorder}  \n#attribute{class: order-list-item flex-1}  \n#attribute{data-current: 3}  \n#element{image} {depth: 5}  \n#attribute{class: order-list-item-img}    \n#attribute{src: ../../images/icon_daifahuo.png}    \n#element{text} {depth: 5}  \n#attribute{class: order-list-item-text}    \ndata{待发货}    \n#element{view} {depth: 5}  \n#attribute{class: reddot}    \n#attribute{wx:if: {{undata.deliveryCount-undata.deliverySellerCount>0}}}    \nscriptdata{undata.deliveryCount-undata.deliverySellerCount}    \n",
+        "attributes": {
+          "bindtap": "btnAllorder",
+          "class": "order-list-item flex-1",
+          "data-current": "3"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "btnAllorder",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: btnAllorder}  \n#attribute{class: order-list-item flex-1}  \n#attribute{data-current: 4}  \n#element{image} {depth: 5}  \n#attribute{class: order-list-item-img}    \n#attribute{src: ../../images/icon_daishouhuo.png}    \n#element{text} {depth: 5}  \n#attribute{class: order-list-item-text}    \ndata{待收货}    \n#element{view} {depth: 5}  \n#attribute{class: reddot}    \n#attribute{wx:if: {{undata.receiveCount-undata.receiveSellerCount>0}}}    \nscriptdata{undata.receiveCount-undata.receiveSellerCount}    \n",
+        "attributes": {
+          "bindtap": "btnAllorder",
+          "class": "order-list-item flex-1",
+          "data-current": "4"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "btnAllorder",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: btnAllorder}  \n#attribute{class: order-list-item flex-1}  \n#attribute{data-current: 5}  \n#element{image} {depth: 5}  \n#attribute{class: order-list-item-img}    \n#attribute{src: ../../images/icon_shouhou.png}    \n#element{text} {depth: 5}  \n#attribute{class: order-list-item-text}    \ndata{已退款}    \n#element{view} {depth: 5}  \n#attribute{class: reddot}    \n#attribute{wx:if: {{undata.rejectedCount>0}}}    \nscriptdata{undata.rejectedCount}    \n",
+        "attributes": {
+          "bindtap": "btnAllorder",
+          "class": "order-list-item flex-1",
+          "data-current": "5"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "btnAllorder",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: btnAllorder}  \n#attribute{class: order-list-item item}  \n#attribute{data-current: 6}  \n#element{image} {depth: 5}  \n#attribute{class: order-list-item-img}    \n#attribute{src: ../../images/icon_star.png}    \n#element{text} {depth: 5}  \n#attribute{class: order-list-item-text}    \ndata{收藏商品}    \n",
+        "attributes": {
+          "bindtap": "btnAllorder",
+          "class": "order-list-item item",
+          "data-current": "6"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "btnAllorder",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: btnAllorder}  \n#attribute{class: order-list-item item}  \n#attribute{data-current: 7}  \n#element{image} {depth: 5}  \n#attribute{class: order-list-item-img}    \n#attribute{src: ../../images/icon_heart.png}    \n#element{text} {depth: 5}  \n#attribute{class: order-list-item-text}    \ndata{关注店铺}    \n",
+        "attributes": {
+          "bindtap": "btnAllorder",
+          "class": "order-list-item item",
+          "data-current": "7"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "btnAllorder",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: btnAllorder}  \n#attribute{class: order-list-item item}  \n#attribute{data-current: 8}  \n#element{image} {depth: 5}  \n#attribute{class: order-list-item-img}    \n#attribute{src: ../../images/icon_address.png}    \n#element{text} {depth: 5}  \n#attribute{class: order-list-item}    \ndata{收货地址}    \n",
+        "attributes": {
+          "bindtap": "btnAllorder",
+          "class": "order-list-item item",
+          "data-current": "8"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "btnAllorder",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: btnAllorder}  \n#attribute{class: order-list-item item}  \n#attribute{data-current: 9}  \n#attribute{wx:if: {{salesSwitch==1}}}  \n#element{image} {depth: 5}  \n#attribute{class: order-list-item-img}    \n#attribute{src: ../../images/icon_shoppingGuide.png}    \n#element{text} {depth: 5}  \n#attribute{class: order-list-item}    \ndata{成为导购}    \n",
+        "attributes": {
+          "bindtap": "btnAllorder",
+          "class": "order-list-item item",
+          "data-current": "9",
+          "wx:if": "{{salesSwitch==1}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "btnAllorder",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/central/index"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: orderTap}  \n#attribute{class: tab-item flex-1}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{全部}    \n",
+        "attributes": {
+          "bindtap": "orderTap",
+          "class": "tab-item flex-1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "orderTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: dfkTap}  \n#attribute{class: tab-item flex-1 active}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{待付款}    \n",
+        "attributes": {
+          "bindtap": "dfkTap",
+          "class": "tab-item flex-1 active"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "dfkTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: dfhTap}  \n#attribute{class: tab-item flex-1}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{待发货}    \n",
+        "attributes": {
+          "bindtap": "dfhTap",
+          "class": "tab-item flex-1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "dfhTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: yfhTap}  \n#attribute{class: tab-item flex-1}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{待收货}    \n",
+        "attributes": {
+          "bindtap": "yfhTap",
+          "class": "tab-item flex-1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "yfhTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: yqxTap}  \n#attribute{class: tab-item flex-1}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{已取消}    \n",
+        "attributes": {
+          "bindtap": "yqxTap",
+          "class": "tab-item flex-1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "yqxTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: toShop}  \n#attribute{class: shop}  \n#attribute{data-sellerid: {{item.sellerId}}}  \n#attribute{data-userrole: {{item.userRole}}}  \n#element{text} {depth: 5}  \n#attribute{class: shop-name}    \nscriptdata{item.shopTitle}    \n#element{text} {depth: 5}  \n#attribute{class: order-type}    \ndata{待付款}    \n",
+        "attributes": {
+          "bindtap": "toShop",
+          "class": "shop",
+          "data-sellerid": "{{item.sellerId}}",
+          "data-userrole": "{{item.userRole}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toShop",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 5}\n#attribute{bindtap: getyqx}  \n#attribute{class: mini-btn}  \n#attribute{data-productorderid: {{item.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{取消订单}  \n",
+        "attributes": {
+          "bindtap": "getyqx",
+          "class": "mini-btn",
+          "data-productorderid": "{{item.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["取消订单"],
+        "function_call": "getyqx",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 5}\n#attribute{bindtap: goPay}  \n#attribute{class: mini-btn active}  \n#attribute{data-deliveryid: {{item.deliveryId}}}  \n#attribute{data-orderamt: {{item.orderAmt}}}  \n#attribute{data-ordertype: {{item.orderType}}}  \n#attribute{data-price: {{item.orderAmt}}}  \n#attribute{data-productorderid: {{item.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{去支付}  \n",
+        "attributes": {
+          "bindtap": "goPay",
+          "class": "mini-btn active",
+          "data-deliveryid": "{{item.deliveryId}}",
+          "data-orderamt": "{{item.orderAmt}}",
+          "data-ordertype": "{{item.orderType}}",
+          "data-price": "{{item.orderAmt}}",
+          "data-productorderid": "{{item.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["去支付"],
+        "function_call": "goPay",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/dfk/dfk"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: orderTap}  \n#attribute{class: tab-item flex-1}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{全部}    \n",
+        "attributes": {
+          "bindtap": "orderTap",
+          "class": "tab-item flex-1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "orderTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: dfkTap}  \n#attribute{class: tab-item flex-1}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{待付款}    \n",
+        "attributes": {
+          "bindtap": "dfkTap",
+          "class": "tab-item flex-1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "dfkTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: dfhTap}  \n#attribute{class: tab-item flex-1 active}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{待发货}    \n",
+        "attributes": {
+          "bindtap": "dfhTap",
+          "class": "tab-item flex-1 active"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "dfhTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: yfhTap}  \n#attribute{class: tab-item flex-1}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{待收货}    \n",
+        "attributes": {
+          "bindtap": "yfhTap",
+          "class": "tab-item flex-1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "yfhTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: yqxTap}  \n#attribute{class: tab-item flex-1}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{已取消}    \n",
+        "attributes": {
+          "bindtap": "yqxTap",
+          "class": "tab-item flex-1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "yqxTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: toShop}  \n#attribute{class: shop}  \n#attribute{data-sellerid: {{item.sellerId}}}  \n#attribute{data-userrole: {{item.userRole}}}  \n#element{text} {depth: 5}  \n#attribute{class: shop-name}    \nscriptdata{item.shopTitle}    \n#element{text} {depth: 5}  \n#attribute{class: order-type}    \ndata{等待商家发货}    \n",
+        "attributes": {
+          "bindtap": "toShop",
+          "class": "shop",
+          "data-sellerid": "{{item.sellerId}}",
+          "data-userrole": "{{item.userRole}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toShop",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 5}\n#attribute{bindtap: phone}  \n#attribute{class: mini-btn}  \n#attribute{data-mobile: {{item.sellerMobile}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{联系商家}  \n",
+        "attributes": {
+          "bindtap": "phone",
+          "class": "mini-btn",
+          "data-mobile": "{{item.sellerMobile}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["联系商家"],
+        "function_call": "phone",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 5}\n#attribute{bindtap: refund}  \n#attribute{class: mini-btn}  \n#attribute{data-productorderid: {{item.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{申请退款}  \n",
+        "attributes": {
+          "bindtap": "refund",
+          "class": "mini-btn",
+          "data-productorderid": "{{item.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["申请退款"],
+        "function_call": "refund",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/dfh/dfh"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: orderTap}  \n#attribute{class: tab-item flex-1}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{全部}    \n",
+        "attributes": {
+          "bindtap": "orderTap",
+          "class": "tab-item flex-1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "orderTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: dfkTap}  \n#attribute{class: tab-item flex-1}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{待付款}    \n",
+        "attributes": {
+          "bindtap": "dfkTap",
+          "class": "tab-item flex-1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "dfkTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: dfhTap}  \n#attribute{class: tab-item flex-1}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{待发货}    \n",
+        "attributes": {
+          "bindtap": "dfhTap",
+          "class": "tab-item flex-1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "dfhTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: yfhTap}  \n#attribute{class: tab-item flex-1 active}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{待收货}    \n",
+        "attributes": {
+          "bindtap": "yfhTap",
+          "class": "tab-item flex-1 active"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "yfhTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: yqxTap}  \n#attribute{class: tab-item flex-1}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{已取消}    \n",
+        "attributes": {
+          "bindtap": "yqxTap",
+          "class": "tab-item flex-1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "yqxTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: toShop}  \n#attribute{class: shop}  \n#attribute{data-sellerid: {{item.sellerId}}}  \n#attribute{data-userrole: {{item.userRole}}}  \n#element{text} {depth: 5}  \n#attribute{class: shop-name}    \nscriptdata{item.shopTitle}    \n#element{text} {depth: 5}  \n#attribute{class: order-type}    \ndata{待收货}    \n",
+        "attributes": {
+          "bindtap": "toShop",
+          "class": "shop",
+          "data-sellerid": "{{item.sellerId}}",
+          "data-userrole": "{{item.userRole}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toShop",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 5}\n#attribute{bindtap: phone}  \n#attribute{class: mini-btn}  \n#attribute{data-mobile: {{item.sellerMobile}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{联系商家}  \n",
+        "attributes": {
+          "bindtap": "phone",
+          "class": "mini-btn",
+          "data-mobile": "{{item.sellerMobile}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["联系商家"],
+        "function_call": "phone",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 5}\n#attribute{bindtap: logistics}  \n#attribute{class: mini-btn}  \n#attribute{data-productorderid: {{item.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{查看物流}  \n",
+        "attributes": {
+          "bindtap": "logistics",
+          "class": "mini-btn",
+          "data-productorderid": "{{item.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["查看物流"],
+        "function_call": "logistics",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 5}\n#attribute{bindtap: receipt}  \n#attribute{class: mini-btn active}  \n#attribute{data-index: {{index}}}  \n#attribute{data-productorderid: {{item.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{确认收货}  \n",
+        "attributes": {
+          "bindtap": "receipt",
+          "class": "mini-btn active",
+          "data-index": "{{index}}",
+          "data-productorderid": "{{item.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["确认收货"],
+        "function_call": "receipt",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/yfh/yfh"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: orderTap}  \n#attribute{class: tab-item flex-1}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{全部}    \n",
+        "attributes": {
+          "bindtap": "orderTap",
+          "class": "tab-item flex-1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "orderTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: dfkTap}  \n#attribute{class: tab-item flex-1}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{待付款}    \n",
+        "attributes": {
+          "bindtap": "dfkTap",
+          "class": "tab-item flex-1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "dfkTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: dfhTap}  \n#attribute{class: tab-item flex-1}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{待发货}    \n",
+        "attributes": {
+          "bindtap": "dfhTap",
+          "class": "tab-item flex-1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "dfhTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: yfhTap}  \n#attribute{class: tab-item flex-1}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{待收货}    \n",
+        "attributes": {
+          "bindtap": "yfhTap",
+          "class": "tab-item flex-1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "yfhTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: yqxTap}  \n#attribute{class: tab-item flex-1 active}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{已取消}    \n",
+        "attributes": {
+          "bindtap": "yqxTap",
+          "class": "tab-item flex-1 active"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "yqxTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: toShop}  \n#attribute{class: shop}  \n#attribute{data-sellerid: {{item.sellerId}}}  \n#attribute{data-userrole: {{item.userRole}}}  \n#element{text} {depth: 5}  \n#attribute{class: shop-name}    \nscriptdata{item.shopTitle}    \n#element{text} {depth: 5}  \n#attribute{class: order-type}    \n#attribute{wx:if: {{item.status==80}}}    \ndata{退货成功}    \n#element{text} {depth: 5}  \n#attribute{class: order-type}    \n#attribute{wx:if: {{item.status==90}}}    \ndata{交易取消}    \n#element{text} {depth: 5}  \n#attribute{class: order-type}    \n#attribute{wx:elif: {{item.status==91}}}    \ndata{商家取消订单}    \n#element{text} {depth: 5}  \n#attribute{class: order-type}    \n#attribute{wx:elif: {{item.status==92}}}    \ndata{买家申请退款}    \n#element{text} {depth: 5}  \n#attribute{class: order-type}    \n#attribute{wx:elif: {{item.status==93}}}    \ndata{系统退款}    \n",
+        "attributes": {
+          "bindtap": "toShop",
+          "class": "shop",
+          "data-sellerid": "{{item.sellerId}}",
+          "data-userrole": "{{item.userRole}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toShop",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 5}\n#attribute{bindtap: deleteOrder}  \n#attribute{class: mini-btn}  \n#attribute{data-index: {{index}}}  \n#attribute{data-productorderid: {{item.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{删除订单}  \n",
+        "attributes": {
+          "bindtap": "deleteOrder",
+          "class": "mini-btn",
+          "data-index": "{{index}}",
+          "data-productorderid": "{{item.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["删除订单"],
+        "function_call": "deleteOrder",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/yqx/yqx"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/tksh/tksh"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: toShop}  \n#attribute{class: shop}  \n#attribute{data-sellerid: {{msg.sellerId}}}  \n#attribute{data-userrole: {{msg.userRole}}}  \n#element{text} {depth: 4}  \n#attribute{class: shop-name}    \nscriptdata{msg.shopTitle}    \n",
+        "attributes": {
+          "bindtap": "toShop",
+          "class": "shop",
+          "data-sellerid": "{{msg.sellerId}}",
+          "data-userrole": "{{msg.userRole}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toShop",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: handleJump}  \n#attribute{class: product-list}  \n#attribute{data-url: /pages/productDetail/index?sellerId={{msg.sellerId}}&productId={{subItem.productId}}}  \n#attribute{hoverclass: none}  \n#attribute{wx:for: {{msg.bcpProductItems}}}  \n#attribute{wx:for-item: subItem}  \n#attribute{wx:key: index}  \n#element{view} {depth: 4}  \n#attribute{class: product-left}    \n#element{view} {depth: 5}    \n#attribute{class: product-cover}      \n#element{imageview} {depth: 6}      \n#attribute{class: product-cover-img}        \n#attribute{srcurl: {{subItem.imgPath}}}        \n#element{view} {depth: 5}    \n#attribute{class: product-content}      \n#element{view} {depth: 6}      \n#attribute{class: product-title}        \nscriptdata{subItem.name}        \n#element{view} {depth: 6}      \n#attribute{class: product-model}        \n#attribute{wx:if: {{subItem.specId!=null}}}        \ndata{规格：}        \nscriptdata{subItem.specDesc}        \n#element{view} {depth: 4}  \n#attribute{class: product-right}    \n#element{view} {depth: 5}    \n#attribute{class: product-price}      \ndata{￥}      \nscriptdata{subItem.orderPrice}      \n#element{view} {depth: 5}    \n#attribute{class: product-num}      \ndata{x}      \nscriptdata{subItem.quantity}      \n#element{block} {depth: 4}  \n#attribute{wx:if: {{(status=='30'||status=='94'||status=='95'||status=='96')&&msg.rejectedFlag=='2'}}}    \n#element{view} {depth: 5}    \n#attribute{catchtouchstart: request}      \n#attribute{class: btn}      \n#attribute{data-orderitemid: {{subItem.orderItemId}}}      \n#attribute{data-productorderid: {{subItem.productOrderId}}}      \n#attribute{data-rejectedflag: {{msg.rejectedFlag}}}      \n#attribute{data-rejectedstatus: {{subItem.rejectedStatus}}}      \n#attribute{wx:if: {{subItem.rejectedStatus==1}}}      \ndata{申请售后}      \n#element{view} {depth: 5}    \n#attribute{catchtouchstart: returnDetails}      \n#attribute{class: btn}      \n#attribute{data-rejectedflag: {{msg.rejectedFlag}}}      \n#attribute{data-rejectedid: {{subItem.rejectedId}}}      \n#attribute{data-rejectedstatus: {{subItem.rejectedStatus}}}      \n#attribute{wx:elif: {{subItem.rejectedStatus==10}}}      \ndata{退货中}      \n#element{view} {depth: 5}    \n#attribute{catchtouchstart: returnDetails}      \n#attribute{class: btn}      \n#attribute{data-rejectedflag: {{msg.rejectedFlag}}}      \n#attribute{data-rejectedid: {{subItem.rejectedId}}}      \n#attribute{data-rejectedstatus: {{subItem.rejectedStatus}}}      \n#attribute{wx:elif: {{subItem.rejectedStatus==11}}}      \ndata{退货中}      \n#element{view} {depth: 5}    \n#attribute{catchtouchstart: returnDetails}      \n#attribute{class: btn}      \n#attribute{data-rejectedflag: {{msg.rejectedFlag}}}      \n#attribute{data-rejectedid: {{subItem.rejectedId}}}      \n#attribute{data-rejectedstatus: {{subItem.rejectedStatus}}}      \n#attribute{wx:elif: {{subItem.rejectedStatus==12}}}      \ndata{退货中}      \n#element{view} {depth: 5}    \n#attribute{catchtouchstart: returnDetails}      \n#attribute{class: btn succes}      \n#attribute{data-rejectedflag: {{msg.rejectedFlag}}}      \n#attribute{data-rejectedid: {{subItem.rejectedId}}}      \n#attribute{data-rejectedstatus: {{subItem.rejectedStatus}}}      \n#attribute{wx:elif: {{subItem.rejectedStatus==20}}}      \ndata{退货成功}      \n#element{view} {depth: 5}    \n#attribute{catchtouchstart: returnDetails}      \n#attribute{class: btn}      \n#attribute{data-rejectedflag: {{msg.rejectedFlag}}}      \n#attribute{data-rejectedid: {{subItem.rejectedId}}}      \n#attribute{data-rejectedstatus: {{subItem.rejectedStatus}}}      \n#attribute{wx:elif: {{subItem.rejectedStatus==30}}}      \ndata{商家已拒绝}      \n#element{view} {depth: 5}    \n#attribute{catchtouchstart: returnDetails}      \n#attribute{class: btn}      \n#attribute{data-rejectedflag: {{msg.rejectedFlag}}}      \n#attribute{data-rejectedid: {{subItem.rejectedId}}}      \n#attribute{data-rejectedstatus: {{subItem.rejectedStatus}}}      \n#attribute{wx:elif: {{subItem.rejectedStatus==31}}}      \ndata{退货失败}      \n#element{view} {depth: 5}    \n#attribute{catchtouchstart: returnDetails}      \n#attribute{class: btn}      \n#attribute{data-rejectedflag: {{msg.rejectedFlag}}}      \n#attribute{data-rejectedid: {{subItem.rejectedId}}}      \n#attribute{data-rejectedstatus: {{subItem.rejectedStatus}}}      \n#attribute{wx:elif: {{subItem.rejectedStatus==40}}}      \ndata{售后中}      \n#element{view} {depth: 5}    \n#attribute{catchtouchstart: returnDetails}      \n#attribute{class: btn}      \n#attribute{data-rejectedid: {{subItem.rejectedId}}}      \n#attribute{data-rejectedstatus: {{subItem.rejectedStatus}}}      \n#attribute{wx:elif: {{subItem.rejectedStatus==50}}}      \ndata{退货成功}      \n#element{view} {depth: 5}    \n#attribute{catchtouchstart: returnDetails}      \n#attribute{class: btn}      \n#attribute{data-rejectedflag: {{msg.rejectedFlag}}}      \n#attribute{data-rejectedid: {{subItem.rejectedId}}}      \n#attribute{data-rejectedstatus: {{subItem.rejectedStatus}}}      \n#attribute{wx:elif: {{subItem.rejectedStatus==60}}}      \ndata{退货失败}      \n#element{view} {depth: 5}    \n#attribute{catchtouchstart: returnDetails}      \n#attribute{class: btn}      \n#attribute{data-rejectedflag: {{msg.rejectedFlag}}}      \n#attribute{data-rejectedid: {{subItem.rejectedId}}}      \n#attribute{data-rejectedstatus: {{subItem.rejectedStatus}}}      \n#attribute{wx:elif: {{subItem.rejectedStatus==70}}}      \ndata{介入中}      \n#element{view} {depth: 5}    \n#attribute{catchtouchstart: returnDetails}      \n#attribute{class: btn}      \n#attribute{data-rejectedflag: {{msg.rejectedFlag}}}      \n#attribute{data-rejectedid: {{subItem.rejectedId}}}      \n#attribute{data-rejectedstatus: {{subItem.rejectedStatus}}}      \n#attribute{wx:elif: {{subItem.rejectedStatus==80}}}      \ndata{退货成功}      \n#element{view} {depth: 5}    \n#attribute{catchtouchstart: returnDetails}      \n#attribute{class: btn}      \n#attribute{data-rejectedflag: {{msg.rejectedFlag}}}      \n#attribute{data-rejectedid: {{subItem.rejectedId}}}      \n#attribute{data-rejectedstatus: {{subItem.rejectedStatus}}}      \n#attribute{wx:elif: {{subItem.rejectedStatus==90}}}      \ndata{退货失败}      \n#element{block} {depth: 4}  \n#attribute{wx:elif: {{status=='40'}}}    \n#element{view} {depth: 5}    \n#attribute{catchtouchstart: returnDetails}      \n#attribute{class: btn}      \n#attribute{data-rejectedflag: {{msg.rejectedFlag}}}      \n#attribute{data-rejectedid: {{subItem.rejectedId}}}      \n#attribute{data-rejectedstatus: {{subItem.rejectedStatus}}}      \n#attribute{wx:if: {{subItem.rejectedStatus==20}}}      \ndata{退货成功}      \n#element{view} {depth: 5}    \n#attribute{catchtouchstart: returnDetails}      \n#attribute{class: btn}      \n#attribute{data-rejectedflag: {{msg.rejectedFlag}}}      \n#attribute{data-rejectedid: {{subItem.rejectedId}}}      \n#attribute{data-rejectedstatus: {{subItem.rejectedStatus}}}      \n#attribute{wx:elif: {{subItem.rejectedStatus==50}}}      \ndata{退货成功}      \n#element{view} {depth: 5}    \n#attribute{catchtouchstart: returnDetails}      \n#attribute{class: btn}      \n#attribute{data-rejectedflag: {{msg.rejectedFlag}}}      \n#attribute{data-rejectedid: {{subItem.rejectedId}}}      \n#attribute{data-rejectedstatus: {{subItem.rejectedStatus}}}      \n#attribute{wx:elif: {{subItem.rejectedStatus==80}}}      \ndata{退货成功}      \n#element{block} {depth: 4}  \n#attribute{wx:elif: {{status=='80'&&msg.rejectedFlag=='2'}}}    \n#element{view} {depth: 5}    \n#attribute{catchtouchstart: returnDetails}      \n#attribute{class: btn}      \n#attribute{data-rejectedflag: {{msg.rejectedFlag}}}      \n#attribute{data-rejectedid: {{subItem.rejectedId}}}      \n#attribute{data-rejectedstatus: {{subItem.rejectedStatus}}}      \n#attribute{wx:if: {{subItem.rejectedStatus==20}}}      \ndata{退货成功}      \n#element{view} {depth: 5}    \n#attribute{catchtouchstart: returnDetails}      \n#attribute{class: btn}      \n#attribute{data-rejectedflag: {{msg.rejectedFlag}}}      \n#attribute{data-rejectedid: {{subItem.rejectedId}}}      \n#attribute{data-rejectedstatus: {{subItem.rejectedStatus}}}      \n#attribute{wx:elif: {{subItem.rejectedStatus==50}}}      \ndata{退货成功}      \n#element{view} {depth: 5}    \n#attribute{catchtouchstart: returnDetails}      \n#attribute{class: btn}      \n#attribute{data-rejectedflag: {{msg.rejectedFlag}}}      \n#attribute{data-rejectedid: {{subItem.rejectedId}}}      \n#attribute{data-rejectedstatus: {{subItem.rejectedStatus}}}      \n#attribute{wx:elif: {{subItem.rejectedStatus==80}}}      \ndata{退货成功}      \n",
+        "attributes": {
+          "bindtap": "handleJump",
+          "class": "product-list",
+          "data-url": "/pages/productDetail/index?sellerId={{msg.sellerId}}&productId={{subItem.productId}}",
+          "hoverclass": "none",
+          "wx:for": "{{msg.bcpProductItems}}",
+          "wx:for-item": "subItem",
+          "wx:key": "index"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "handleJump",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindtap: getyqx}  \n#attribute{class: mini-btn}  \n#attribute{data-productorderid: {{msg.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{取消订单}  \n",
+        "attributes": {
+          "bindtap": "getyqx",
+          "class": "mini-btn",
+          "data-productorderid": "{{msg.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["取消订单"],
+        "function_call": "getyqx",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindtap: goPay}  \n#attribute{class: mini-btn active}  \n#attribute{data-deliveryid: {{msg.deliveryId}}}  \n#attribute{data-orderamt: {{msg.orderAmt}}}  \n#attribute{data-ordertype: {{msg.orderType}}}  \n#attribute{data-price: {{msg.orderAmt}}}  \n#attribute{data-productorderid: {{msg.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{去支付}  \n",
+        "attributes": {
+          "bindtap": "goPay",
+          "class": "mini-btn active",
+          "data-deliveryid": "{{msg.deliveryId}}",
+          "data-orderamt": "{{msg.orderAmt}}",
+          "data-ordertype": "{{msg.orderType}}",
+          "data-price": "{{msg.orderAmt}}",
+          "data-productorderid": "{{msg.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["去支付"],
+        "function_call": "goPay",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindtap: refund}  \n#attribute{class: mini-btn}  \n#attribute{data-productorderid: {{msg.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{申请退款}  \n",
+        "attributes": {
+          "bindtap": "refund",
+          "class": "mini-btn",
+          "data-productorderid": "{{msg.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["申请退款"],
+        "function_call": "refund",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindtap: logistics}  \n#attribute{class: mini-btn}  \n#attribute{data-productorderid: {{msg.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{查看物流}  \n",
+        "attributes": {
+          "bindtap": "logistics",
+          "class": "mini-btn",
+          "data-productorderid": "{{msg.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["查看物流"],
+        "function_call": "logistics",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindtap: receipt}  \n#attribute{class: mini-btn active}  \n#attribute{data-index: {{index}}}  \n#attribute{data-productorderid: {{msg.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{确认收货}  \n",
+        "attributes": {
+          "bindtap": "receipt",
+          "class": "mini-btn active",
+          "data-index": "{{index}}",
+          "data-productorderid": "{{msg.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["确认收货"],
+        "function_call": "receipt",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindtap: logistics}  \n#attribute{class: mini-btn}  \n#attribute{data-productorderid: {{msg.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{查看物流}  \n",
+        "attributes": {
+          "bindtap": "logistics",
+          "class": "mini-btn",
+          "data-productorderid": "{{msg.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["查看物流"],
+        "function_call": "logistics",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindtap: receipt}  \n#attribute{class: mini-btn active}  \n#attribute{data-index: {{index}}}  \n#attribute{data-productorderid: {{msg.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{确认收货}  \n",
+        "attributes": {
+          "bindtap": "receipt",
+          "class": "mini-btn active",
+          "data-index": "{{index}}",
+          "data-productorderid": "{{msg.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["确认收货"],
+        "function_call": "receipt",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindtap: deleteOrder}  \n#attribute{class: mini-btn}  \n#attribute{data-index: {{index}}}  \n#attribute{data-productorderid: {{msg.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{删除订单}  \n",
+        "attributes": {
+          "bindtap": "deleteOrder",
+          "class": "mini-btn",
+          "data-index": "{{index}}",
+          "data-productorderid": "{{msg.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["删除订单"],
+        "function_call": "deleteOrder",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindtap: logistics}  \n#attribute{class: mini-btn}  \n#attribute{data-productorderid: {{msg.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{查看物流}  \n",
+        "attributes": {
+          "bindtap": "logistics",
+          "class": "mini-btn",
+          "data-productorderid": "{{msg.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["查看物流"],
+        "function_call": "logistics",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindtap: deleteOrder}  \n#attribute{class: mini-btn}  \n#attribute{data-index: {{index}}}  \n#attribute{data-productorderid: {{msg.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{删除订单}  \n",
+        "attributes": {
+          "bindtap": "deleteOrder",
+          "class": "mini-btn",
+          "data-index": "{{index}}",
+          "data-productorderid": "{{msg.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["删除订单"],
+        "function_call": "deleteOrder",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindtap: deleteOrder}  \n#attribute{class: mini-btn}  \n#attribute{data-index: {{index}}}  \n#attribute{data-productorderid: {{msg.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{删除订单}  \n",
+        "attributes": {
+          "bindtap": "deleteOrder",
+          "class": "mini-btn",
+          "data-index": "{{index}}",
+          "data-productorderid": "{{msg.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["删除订单"],
+        "function_call": "deleteOrder",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/orderDetail/orderDetail"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: orderTap}  \n#attribute{class: tab-item flex-1 active}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{全部}    \n",
+        "attributes": {
+          "bindtap": "orderTap",
+          "class": "tab-item flex-1 active"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "orderTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: dfkTap}  \n#attribute{class: tab-item flex-1}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{待付款}    \n",
+        "attributes": {
+          "bindtap": "dfkTap",
+          "class": "tab-item flex-1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "dfkTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: dfhTap}  \n#attribute{class: tab-item flex-1}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{待发货}    \n",
+        "attributes": {
+          "bindtap": "dfhTap",
+          "class": "tab-item flex-1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "dfhTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: yfhTap}  \n#attribute{class: tab-item flex-1}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{待收货}    \n",
+        "attributes": {
+          "bindtap": "yfhTap",
+          "class": "tab-item flex-1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "yfhTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: yqxTap}  \n#attribute{class: tab-item flex-1 flex-pack-center}  \n#element{text} {depth: 4}  \n#attribute{class: tab-item-text}    \ndata{已取消}    \n",
+        "attributes": {
+          "bindtap": "yqxTap",
+          "class": "tab-item flex-1 flex-pack-center"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "yqxTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: toShop}  \n#attribute{class: shop}  \n#attribute{data-sellerid: {{item.sellerId}}}  \n#attribute{data-userrole: {{item.userRole}}}  \n#element{text} {depth: 5}  \n#attribute{class: shop-name}    \nscriptdata{item.shopTitle}    \n#element{text} {depth: 5}  \n#attribute{class: order-type}    \n#attribute{wx:if: {{item.status==10}}}    \ndata{待付款}    \n#element{text} {depth: 5}  \n#attribute{class: order-type}    \n#attribute{wx:elif: {{item.status==20}}}    \ndata{等待商家发货}    \n#element{text} {depth: 5}  \n#attribute{class: order-type}    \n#attribute{wx:elif: {{item.status==30}}}    \ndata{待收货}    \n#element{text} {depth: 5}  \n#attribute{class: order-type}    \n#attribute{style: color:#34902a;}    \n#attribute{wx:elif: {{item.status==40}}}    \ndata{交易成功}    \n#element{text} {depth: 5}  \n#attribute{class: order-type}    \n#attribute{wx:elif: {{item.status==80}}}    \ndata{退货成功}    \n#element{text} {depth: 5}  \n#attribute{class: order-type}    \n#attribute{wx:elif: {{item.status==90}}}    \ndata{交易取消}    \n#element{text} {depth: 5}  \n#attribute{class: order-type}    \n#attribute{wx:elif: {{item.status==91}}}    \ndata{商家取消订单}    \n#element{text} {depth: 5}  \n#attribute{class: order-type}    \n#attribute{wx:elif: {{item.status==92}}}    \ndata{买家申请退款}    \n#element{text} {depth: 5}  \n#attribute{class: order-type}    \n#attribute{wx:elif: {{item.status==93}}}    \ndata{系统退款}    \n#element{text} {depth: 5}  \n#attribute{class: order-type}    \n#attribute{wx:elif: {{item.status==94}}}    \ndata{退货中}    \n#element{text} {depth: 5}  \n#attribute{class: order-type}    \n#attribute{wx:elif: {{item.status==95}}}    \ndata{售后中}    \n#element{text} {depth: 5}  \n#attribute{class: order-type}    \n#attribute{wx:elif: {{item.status==96}}}    \ndata{介入中}    \n#element{text} {depth: 5}  \n#attribute{class: order-type}    \n#attribute{wx:elif: {{item.status==51}}}    \ndata{退款审核中}    \n#element{text} {depth: 5}  \n#attribute{class: order-type}    \n#attribute{wx:elif: {{item.status==52}}}    \ndata{退款处理中}    \n#element{text} {depth: 5}  \n#attribute{class: order-type}    \n#attribute{wx:elif: {{item.status==53}}}    \ndata{退款处理中}    \n",
+        "attributes": {
+          "bindtap": "toShop",
+          "class": "shop",
+          "data-sellerid": "{{item.sellerId}}",
+          "data-userrole": "{{item.userRole}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toShop",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 5}\n#attribute{bindtap: getyqx}  \n#attribute{class: mini-btn}  \n#attribute{data-productorderid: {{item.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{取消订单}  \n",
+        "attributes": {
+          "bindtap": "getyqx",
+          "class": "mini-btn",
+          "data-productorderid": "{{item.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["取消订单"],
+        "function_call": "getyqx",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 5}\n#attribute{bindtap: goPay}  \n#attribute{class: mini-btn active}  \n#attribute{data-deliveryid: {{item.deliveryId}}}  \n#attribute{data-orderamt: {{item.orderAmt}}}  \n#attribute{data-ordertype: {{item.orderType}}}  \n#attribute{data-price: {{item.orderAmt}}}  \n#attribute{data-productorderid: {{item.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{去支付}  \n",
+        "attributes": {
+          "bindtap": "goPay",
+          "class": "mini-btn active",
+          "data-deliveryid": "{{item.deliveryId}}",
+          "data-orderamt": "{{item.orderAmt}}",
+          "data-ordertype": "{{item.orderType}}",
+          "data-price": "{{item.orderAmt}}",
+          "data-productorderid": "{{item.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["去支付"],
+        "function_call": "goPay",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 5}\n#attribute{bindtap: phone}  \n#attribute{class: mini-btn}  \n#attribute{data-mobile: {{item.sellerMobile}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{联系商家}  \n",
+        "attributes": {
+          "bindtap": "phone",
+          "class": "mini-btn",
+          "data-mobile": "{{item.sellerMobile}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["联系商家"],
+        "function_call": "phone",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 5}\n#attribute{bindtap: refund}  \n#attribute{class: mini-btn}  \n#attribute{data-productorderid: {{item.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{申请退款}  \n",
+        "attributes": {
+          "bindtap": "refund",
+          "class": "mini-btn",
+          "data-productorderid": "{{item.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["申请退款"],
+        "function_call": "refund",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 5}\n#attribute{bindtap: phone}  \n#attribute{class: mini-btn}  \n#attribute{data-mobile: {{item.sellerMobile}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{联系商家}  \n",
+        "attributes": {
+          "bindtap": "phone",
+          "class": "mini-btn",
+          "data-mobile": "{{item.sellerMobile}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["联系商家"],
+        "function_call": "phone",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 5}\n#attribute{bindtap: logistics}  \n#attribute{class: mini-btn}  \n#attribute{data-productorderid: {{item.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{查看物流}  \n",
+        "attributes": {
+          "bindtap": "logistics",
+          "class": "mini-btn",
+          "data-productorderid": "{{item.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["查看物流"],
+        "function_call": "logistics",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 5}\n#attribute{bindtap: receipt}  \n#attribute{class: mini-btn active}  \n#attribute{data-index: {{index}}}  \n#attribute{data-productorderid: {{item.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{确认收货}  \n",
+        "attributes": {
+          "bindtap": "receipt",
+          "class": "mini-btn active",
+          "data-index": "{{index}}",
+          "data-productorderid": "{{item.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["确认收货"],
+        "function_call": "receipt",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 5}\n#attribute{bindtap: deleteOrder}  \n#attribute{class: mini-btn}  \n#attribute{data-index: {{index}}}  \n#attribute{data-productorderid: {{item.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{删除订单}  \n",
+        "attributes": {
+          "bindtap": "deleteOrder",
+          "class": "mini-btn",
+          "data-index": "{{index}}",
+          "data-productorderid": "{{item.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["删除订单"],
+        "function_call": "deleteOrder",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 5}\n#attribute{bindtap: logistics}  \n#attribute{class: mini-btn}  \n#attribute{data-productorderid: {{item.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{查看物流}  \n",
+        "attributes": {
+          "bindtap": "logistics",
+          "class": "mini-btn",
+          "data-productorderid": "{{item.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["查看物流"],
+        "function_call": "logistics",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 5}\n#attribute{bindtap: deleteOrder}  \n#attribute{class: mini-btn}  \n#attribute{data-index: {{index}}}  \n#attribute{data-productorderid: {{item.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{删除订单}  \n",
+        "attributes": {
+          "bindtap": "deleteOrder",
+          "class": "mini-btn",
+          "data-index": "{{index}}",
+          "data-productorderid": "{{item.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["删除订单"],
+        "function_call": "deleteOrder",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 5}\n#attribute{bindtap: deleteOrder}  \n#attribute{class: mini-btn}  \n#attribute{data-index: {{index}}}  \n#attribute{data-productorderid: {{item.productOrderId}}}  \n#attribute{hoverclass: none}  \n#attribute{size: mini}  \ndata{删除订单}  \n",
+        "attributes": {
+          "bindtap": "deleteOrder",
+          "class": "mini-btn",
+          "data-index": "{{index}}",
+          "data-productorderid": "{{item.productOrderId}}",
+          "hoverclass": "none",
+          "size": "mini"
+        },
+        "bind_method": "bindtap",
+        "data": ["删除订单"],
+        "function_call": "deleteOrder",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/order/order"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: chooseCoupon}  \n#attribute{class: coupon-item}  \n#attribute{data-index: {{index}}}  \n#element{view} {depth: 5}  \n#attribute{class: coupon-left-content}    \n#element{image} {depth: 6}    \n#attribute{class: coupon-item-cover}      \n#attribute{src: ../../images/yh_bg.png}      \n#attribute{wx:if: {{!item.isGray}}}      \n#element{image} {depth: 6}    \n#attribute{class: coupon-item-cover}      \n#attribute{src: ../../images/yh_bg_gray.png}      \n#attribute{wx:if: {{item.isGray}}}      \n#element{view} {depth: 6}    \n#attribute{class: coupon-item-content}      \n#element{view} {depth: 7}      \n#attribute{class: coupon-price}        \ndata{￥}        \n#element{text} {depth: 8}        \n#attribute{class: text-large}          \nscriptdata{item.amount/100}          \n#element{view} {depth: 7}      \n#attribute{class: coupon-desc}        \n#attribute{wx:if: {{item.fullCutAmount==0}}}        \ndata{无金额门槛}        \n#element{view} {depth: 7}      \n#attribute{class: coupon-desc}        \n#attribute{wx:else: }        \ndata{满}        \nscriptdata{item.fullCutAmount/100}        \ndata{元使用}        \n#element{view} {depth: 5}  \n#attribute{class: coupon-right-content}    \n#element{view} {depth: 6}    \n#attribute{class: coupon-title}      \n#element{text} {depth: 7}      \n#attribute{class: coupon-label coupon-label-D}        \n#attribute{wx:if: {{item.userType=='D'&&item.typeAttribute==='A'}}}        \ndata{店铺券}        \n#element{text} {depth: 7}      \n#attribute{class: coupon-label}        \n#attribute{wx:elif: {{item.userType=='D'&&item.typeAttribute==='S'}}}        \ndata{商品券}        \n#element{text} {depth: 7}      \n#attribute{class: coupon-label coupon-label-G}        \n#attribute{wx:elif: {{item.userType=='G'}}}        \ndata{官方券}        \nscriptdata{item.summary}      \ndata{\r\n          }      \n#element{view} {depth: 6}    \n#attribute{class: coupon-time}      \nscriptdata{item.startTime}      \ndata{-}      \nscriptdata{item.endTime}      \n#element{view} {depth: 5}  \n#attribute{bindtap: reseiveFun}    \n#attribute{class: coupon-che}    \n#attribute{data-idenity: {{item.identifier}}}    \n#element{checkbox} {depth: 6}    \n#attribute{checked: {{item.check}}}      \n",
+        "attributes": {
+          "bindtap": "chooseCoupon",
+          "class": "coupon-item",
+          "data-index": "{{index}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "chooseCoupon",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: reseiveFun}  \n#attribute{class: coupon-che}  \n#attribute{data-idenity: {{item.identifier}}}  \n#element{checkbox} {depth: 6}  \n#attribute{checked: {{item.check}}}    \n",
+        "attributes": {
+          "bindtap": "reseiveFun",
+          "class": "coupon-che",
+          "data-idenity": "{{item.identifier}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "reseiveFun",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: reseiveFun}  \n#attribute{class: coupon-go}  \n#attribute{data-idenity: {{item.identifier}}}  \ndata{点击领取}  \n",
+        "attributes": {
+          "bindtap": "reseiveFun",
+          "class": "coupon-go",
+          "data-idenity": "{{item.identifier}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["点击领取"],
+        "function_call": "reseiveFun",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/couponList/couponList"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindinput: name}  \n#attribute{class: section-input}  \n#attribute{placeholder: 请输入收货人姓名}  \n#attribute{value: {{name}}}  \n",
+        "attributes": {
+          "bindinput": "name",
+          "class": "section-input",
+          "placeholder": "请输入收货人姓名",
+          "value": "{{name}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "name",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindinput: mobile}  \n#attribute{class: section-input}  \n#attribute{maxlength: 11}  \n#attribute{placeholder: 请输入手机号码}  \n#attribute{type: number}  \n#attribute{value: {{mobile}}}  \n",
+        "attributes": {
+          "bindinput": "mobile",
+          "class": "section-input",
+          "maxlength": "11",
+          "placeholder": "请输入手机号码",
+          "type": "number",
+          "value": "{{mobile}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "mobile",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindinput: postCode}  \n#attribute{class: section-input}  \n#attribute{maxlength: 6}  \n#attribute{placeholder: 如您不清楚邮递区号,请填000000}  \n#attribute{type: number}  \n#attribute{value: {{postCode}}}  \n",
+        "attributes": {
+          "bindinput": "postCode",
+          "class": "section-input",
+          "maxlength": "6",
+          "placeholder": "如您不清楚邮递区号,请填000000",
+          "type": "number",
+          "value": "{{postCode}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "postCode",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{picker} {depth: 3}\n#attribute{bindchange: bindRegionChange}  \n#attribute{bindcolumnchange: bindRegionColumnChange}  \n#attribute{mode: multiSelector}  \n#attribute{range: {{multiArray}}}  \n#element{text} {depth: 4}  \n#attribute{wx:if: {{addressCity}}}    \nscriptdata{addressCity[0]}    \nscriptdata{addressCity[1]}    \nscriptdata{addressCity[2]}    \n#element{text} {depth: 4}  \n#attribute{class: {{selectProvinceId==''?'picker':'picker1'}}}    \n#attribute{wx:else: }    \nscriptdata{selectProvinceId==''?'选择收货地址':selectProvinceId+selectCityId+selectAreaId}    \n",
+        "attributes": {
+          "bindchange": "bindRegionChange",
+          "bindcolumnchange": "bindRegionColumnChange",
+          "mode": "multiSelector",
+          "range": "{{multiArray}}"
+        },
+        "bind_method": "bindchange",
+        "data": [],
+        "function_call": "bindRegionChange",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{picker} {depth: 3}\n#attribute{bindchange: bindRegionChange}  \n#attribute{bindcolumnchange: bindRegionColumnChange}  \n#attribute{mode: multiSelector}  \n#attribute{range: {{multiArray}}}  \n#element{text} {depth: 4}  \n#attribute{wx:if: {{addressCity}}}    \nscriptdata{addressCity[0]}    \nscriptdata{addressCity[1]}    \nscriptdata{addressCity[2]}    \n#element{text} {depth: 4}  \n#attribute{class: {{selectProvinceId==''?'picker':'picker1'}}}    \n#attribute{wx:else: }    \nscriptdata{selectProvinceId==''?'选择收货地址':selectProvinceId+selectCityId+selectAreaId}    \n",
+        "attributes": {
+          "bindchange": "bindRegionChange",
+          "bindcolumnchange": "bindRegionColumnChange",
+          "mode": "multiSelector",
+          "range": "{{multiArray}}"
+        },
+        "bind_method": "bindcolumnchange",
+        "data": [],
+        "function_call": "bindRegionColumnChange",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindinput: detailAddr}  \n#attribute{class: section-input}  \n#attribute{maxlength: 100}  \n#attribute{placeholder: 请输入详细地址}  \n#attribute{value: {{detailAddr}}}  \n",
+        "attributes": {
+          "bindinput": "detailAddr",
+          "class": "section-input",
+          "maxlength": "100",
+          "placeholder": "请输入详细地址",
+          "value": "{{detailAddr}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "detailAddr",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindinput: realName}  \n#attribute{class: section-input}  \n#attribute{placeholder: 请使用真实姓名}  \n#attribute{value: {{realName}}}  \n",
+        "attributes": {
+          "bindinput": "realName",
+          "class": "section-input",
+          "placeholder": "请使用真实姓名",
+          "value": "{{realName}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "realName",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindinput: idCardNo}  \n#attribute{class: section-input}  \n#attribute{placeholder: 请输入身份证号}  \n#attribute{type: idcard}  \n#attribute{value: {{idCardNo}}}  \n",
+        "attributes": {
+          "bindinput": "idCardNo",
+          "class": "section-input",
+          "placeholder": "请输入身份证号",
+          "type": "idcard",
+          "value": "{{idCardNo}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "idCardNo",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: moreData}  \n#attribute{class: section-more}  \n#attribute{wx:if: {{more}}}  \ndata{收起\r\n\t\t}  \n#element{image} {depth: 3}  \n#attribute{class: item-img-more}    \n#attribute{src: /images/arrow@4x.png}    \n",
+        "attributes": {
+          "bindtap": "moreData",
+          "class": "section-more",
+          "wx:if": "{{more}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["收起\r\n\t\t"],
+        "function_call": "moreData",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: moreData}  \n#attribute{class: section-more}  \n#attribute{wx:else: }  \ndata{更多\r\n\t\t}  \n#element{image} {depth: 3}  \n#attribute{class: item-img-more}    \n#attribute{src: /images/arrow@3x.png}    \n",
+        "attributes": {
+          "bindtap": "moreData",
+          "class": "section-more",
+          "wx:else": ""
+        },
+        "bind_method": "bindtap",
+        "data": ["更多\r\n\t\t"],
+        "function_call": "moreData",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 4}\n#attribute{bindinput: shipperName}  \n#attribute{class: section-input}  \n#attribute{placeholder: 可选填}  \n#attribute{value: {{shipperName}}}  \n",
+        "attributes": {
+          "bindinput": "shipperName",
+          "class": "section-input",
+          "placeholder": "可选填",
+          "value": "{{shipperName}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "shipperName",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 4}\n#attribute{bindinput: shipperMobile}  \n#attribute{class: section-input}  \n#attribute{maxlength: 11}  \n#attribute{placeholder: 可选填}  \n#attribute{type: number}  \n#attribute{value: {{shipperMobile}}}  \n",
+        "attributes": {
+          "bindinput": "shipperMobile",
+          "class": "section-input",
+          "maxlength": "11",
+          "placeholder": "可选填",
+          "type": "number",
+          "value": "{{shipperMobile}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "shipperMobile",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: deleteAddr}  \n#attribute{class: deleteAddr}  \n#attribute{hidden: {{isdeleteAddr}}}  \ndata{删除收货地址}  \n",
+        "attributes": {
+          "bindtap": "deleteAddr",
+          "class": "deleteAddr",
+          "hidden": "{{isdeleteAddr}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["删除收货地址"],
+        "function_call": "deleteAddr",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindtap: conserve}  \n#attribute{class: btn}  \ndata{保存}  \n",
+        "attributes": {
+          "bindtap": "conserve",
+          "class": "btn"
+        },
+        "bind_method": "bindtap",
+        "data": ["保存"],
+        "function_call": "conserve",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/newAddress/newAddress"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: goAddrdetail}  \n#attribute{class: page-section address-section {{item.isCommon==0?'active':''}} {{idx==0?'index':''}}}  \n#attribute{data-item: {{item}}}  \n#attribute{wx:for: {{msg}}}  \n#attribute{wx:for-index: idx}  \n#attribute{wx:key: shopingAddrId}  \n#element{view} {depth: 3}  \n#attribute{class: user-info}    \n#element{text} {depth: 4}    \n#attribute{class: user-name}      \nscriptdata{item.name}      \n#element{text} {depth: 4}    \n#attribute{class: user-phone}      \nscriptdata{item.mobile}      \n#element{view} {depth: 3}  \n#attribute{class: address}    \n#element{text} {depth: 4}    \n#attribute{class: address-flag}      \n#attribute{wx:if: {{item.isCommon==0}}}      \ndata{[默认]}      \nscriptdata{item.addr}    \ndata{\r\n    }    \n",
+        "attributes": {
+          "bindtap": "goAddrdetail",
+          "class": "page-section address-section {{item.isCommon==0?'active':''}} {{idx==0?'index':''}}",
+          "data-item": "{{item}}",
+          "wx:for": "{{msg}}",
+          "wx:for-index": "idx",
+          "wx:key": "shopingAddrId"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "goAddrdetail",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: goaddAddr}  \n#attribute{class: page-section btn-section}  \n#attribute{hoverclass: none}  \n#element{button} {depth: 3}  \n#attribute{class: btn-fixed}    \n#attribute{type: primary}    \ndata{+添加新地址}    \n",
+        "attributes": {
+          "bindtap": "goaddAddr",
+          "class": "page-section btn-section",
+          "hoverclass": "none"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "goaddAddr",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/address/address"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: toShop}  \n#attribute{class: shop-content flex-1}  \n#attribute{data-sellerid: {{shop.sellerId}}}  \n#attribute{data-userrole: {{shop.userRole}}}  \n#element{text} {depth: 5}  \n#attribute{class: shop-title}    \nscriptdata{shop.title}    \n#element{text} {depth: 5}  \n#attribute{class: greade}    \ndata{Lv.}    \nscriptdata{shop.greade}    \n#element{block} {depth: 5}  \n#attribute{wx:if: {{shop.greade<=5}}}    \n#element{image} {depth: 6}    \n#attribute{class: shop-item-star}      \n#attribute{src: ../../images/icon_stars.png}      \n#attribute{wx:for: {{shop.greade}}}      \n#attribute{wx:key: index}      \n#element{block} {depth: 5}  \n#attribute{wx:elif: {{shop.greade>5&&shop.greade<=15}}}    \n#element{image} {depth: 6}    \n#attribute{class: shop-item-star}      \n#attribute{src: ../../images/icon_moon.png}      \n#attribute{wx:for: {{(shop.greade-5)/2}}}      \n#attribute{wx:key: index}      \n#element{block} {depth: 5}  \n#attribute{wx:elif: {{shop.greade>15&&shop.greade<=40}}}    \n#element{image} {depth: 6}    \n#attribute{class: shop-item-star}      \n#attribute{src: ../../images/icon_ancrown.png}      \n#attribute{wx:for: {{(shop.greade-15)/5}}}      \n#attribute{wx:key: index}      \n#element{view} {depth: 5}  \n#attribute{class: shop-label}    \n#element{imageview} {depth: 6}    \n#attribute{class: shop-item-label}      \n#attribute{srcurl: {{msg.rootPath+label.shopLabelImg}}}      \n#attribute{wx:for: {{shop.shopLabelList}}}      \n#attribute{wx:for-index: labelS}      \n#attribute{wx:for-item: label}      \n#attribute{wx:key: {{labelS}}}      \n",
+        "attributes": {
+          "bindtap": "toShop",
+          "class": "shop-content flex-1",
+          "data-sellerid": "{{shop.sellerId}}",
+          "data-userrole": "{{shop.userRole}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toShop",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{text} {depth: 4}\n#attribute{bindtap: selectDelete}  \n#attribute{class: collect}  \n#attribute{data-sid: {{shop.id}}}  \n#attribute{data-sindex: {{indexS}}}  \ndata{已关注}  \n",
+        "attributes": {
+          "bindtap": "selectDelete",
+          "class": "collect",
+          "data-sid": "{{shop.id}}",
+          "data-sindex": "{{indexS}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["已关注"],
+        "function_call": "selectDelete",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: toProduct}  \n#attribute{class: item}  \n#attribute{data-productid: {{goods.productId}}}  \n#attribute{data-sellerid: {{shop.sellerId}}}  \n#attribute{wx:for: {{shop.newestProductList}}}  \n#attribute{wx:for-index: goodsIn}  \n#attribute{wx:for-item: goods}  \n#attribute{wx:key: goodsIn}  \n#element{imageview} {depth: 5}  \n#attribute{class: img}    \n#attribute{srcurl: {{msg.rootPath+goods.imgPath}}}    \n#element{text} {depth: 5}  \n#attribute{class: name}    \nscriptdata{goods.name}    \n",
+        "attributes": {
+          "bindtap": "toProduct",
+          "class": "item",
+          "data-productid": "{{goods.productId}}",
+          "data-sellerid": "{{shop.sellerId}}",
+          "wx:for": "{{shop.newestProductList}}",
+          "wx:for-index": "goodsIn",
+          "wx:for-item": "goods",
+          "wx:key": "goodsIn"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toProduct",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/collectShop/collectShop"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: toProduct}  \n#attribute{class: product-list}  \n#attribute{data-productid: {{item.productId}}}  \n#attribute{data-sellerid: {{item.sellerId}}}  \n#attribute{hidden: {{proList[0]==undefined}}}  \n#attribute{wx:for: {{proList}}}  \n#attribute{wx:key: index}  \n#element{view} {depth: 4}  \n#attribute{class: product-cover}    \n#element{imageview} {depth: 5}    \n#attribute{class: product-cover-img}      \n#attribute{srcurl: {{msg.rootPath+item.imgPath}}}      \n#element{view} {depth: 4}  \n#attribute{class: product-info}    \n#element{view} {depth: 5}    \n#attribute{class: product-title}      \n#element{view} {depth: 6}      \n#attribute{class: labelPic}        \n#attribute{wx:for: {{item.labelList}}}        \n#attribute{wx:for-item: label}        \n#attribute{wx:key: index}        \n#element{image} {depth: 7}        \n#attribute{src: {{item.rootPath+label.labelImg}}}          \nscriptdata{item.productName}      \ndata{\r\n          }      \n#element{view} {depth: 5}    \n#attribute{class: product-label}      \n#element{image} {depth: 6}      \n#attribute{class: product-areaImg}        \n#attribute{src: {{msg.rootPath+item.areaImg}}}        \nscriptdata{item.areaName}      \ndata{\r\n          }      \n#element{view} {depth: 5}    \n#attribute{class: product-attr}      \n#element{text} {depth: 6}      \n#attribute{class: product-price}        \ndata{￥}        \nscriptdata{filter.price(item.price)}        \n#element{image} {depth: 6}      \n#attribute{catchtap: deleteProduct}        \n#attribute{class: product-star}        \n#attribute{data-arrindex: {{index}}}        \n#attribute{data-productid: {{item.productId}}}        \n#attribute{data-sellerid: {{item.sellerId}}}        \n#attribute{src: ../../images/icon_quxiao.png}        \n",
+        "attributes": {
+          "bindtap": "toProduct",
+          "class": "product-list",
+          "data-productid": "{{item.productId}}",
+          "data-sellerid": "{{item.sellerId}}",
+          "hidden": "{{proList[0]==undefined}}",
+          "wx:for": "{{proList}}",
+          "wx:key": "index"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toProduct",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/collectProduct/collectProduct"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: toPay}  \n#attribute{class: pay-list-item}  \n#attribute{wx:if: {{!requesting}}}  \n#element{view} {depth: 4}  \n#attribute{class: pay-list-item-wrap}    \n#element{image} {depth: 5}    \n#attribute{class: pay-type-img}      \n#attribute{src: ../../images/icon_weixin.png}      \n#element{text} {depth: 5}    \n#attribute{class: pay-type-text}      \ndata{微信支付}      \n",
+        "attributes": {
+          "bindtap": "toPay",
+          "class": "pay-list-item",
+          "wx:if": "{{!requesting}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toPay",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: zeroPay}  \n#attribute{class: zeroPay}  \n#attribute{wx:if: {{!requesting}}}  \ndata{立即支付}  \n",
+        "attributes": {
+          "bindtap": "zeroPay",
+          "class": "zeroPay",
+          "wx:if": "{{!requesting}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["立即支付"],
+        "function_call": "zeroPay",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/payType/payType"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: handleShop}  \n#attribute{class: shop-car}  \n#attribute{url: /pages/shopCar/index}  \n#element{image} {depth: 4}  \n#attribute{class: shop-car-icon}    \n#attribute{src: ../../images/details_gouwuche.png}    \n",
+        "attributes": {
+          "bindtap": "handleShop",
+          "class": "shop-car",
+          "url": "/pages/shopCar/index"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "handleShop",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: handleShare}  \n#attribute{class: shop-share}  \n#element{image} {depth: 4}  \n#attribute{class: shop-share-icon}    \n#attribute{src: ../../images/details_share.png}    \n",
+        "attributes": {
+          "bindtap": "handleShare",
+          "class": "shop-share"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "handleShare",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: saveImg}  \n#attribute{class: baocun}  \n#attribute{wx:if: {{imagePath}}}  \ndata{保存相册}  \n",
+        "attributes": {
+          "bindtap": "saveImg",
+          "class": "baocun",
+          "wx:if": "{{imagePath}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["保存相册"],
+        "function_call": "saveImg",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: cancle}  \n#attribute{class: cancle}  \n#attribute{wx:if: {{imagePath}}}  \n#element{image} {depth: 4}  \n#attribute{class: cancle-icon}    \n#attribute{src: ../../images/close.png}    \n",
+        "attributes": {
+          "bindtap": "cancle",
+          "class": "cancle",
+          "wx:if": "{{imagePath}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "cancle",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: showCoupon}  \n#attribute{class: coupon-wrap-group}  \n#element{text} {depth: 5}  \n#attribute{class: coupon-wrap-btn}    \n",
+        "attributes": {
+          "bindtap": "showCoupon",
+          "class": "coupon-wrap-group"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "showCoupon",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: showServiceFun}  \n#attribute{class: coupon-wrap-group}  \n#element{text} {depth: 5}  \n#attribute{class: coupon-wrap-btn}    \n",
+        "attributes": {
+          "bindtap": "showServiceFun",
+          "class": "coupon-wrap-group"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "showServiceFun",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: selectShop}  \n#attribute{class: shop-info-btn}  \n#attribute{data-status: 1}  \n#attribute{hoverclass: none}  \n#attribute{style: color:#ff6662;}  \n#attribute{wx:if: {{msg.fav.shopStatus==1}}}  \ndata{已关注}  \n",
+        "attributes": {
+          "bindtap": "selectShop",
+          "class": "shop-info-btn",
+          "data-status": "1",
+          "hoverclass": "none",
+          "style": "color:#ff6662;",
+          "wx:if": "{{msg.fav.shopStatus==1}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["已关注"],
+        "function_call": "selectShop",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: selectShop}  \n#attribute{class: shop-info-btn}  \n#attribute{data-status: 0}  \n#attribute{hoverclass: none}  \n#attribute{wx:else: }  \ndata{关注店铺}  \n",
+        "attributes": {
+          "bindtap": "selectShop",
+          "class": "shop-info-btn",
+          "data-status": "0",
+          "hoverclass": "none",
+          "wx:else": ""
+        },
+        "bind_method": "bindtap",
+        "data": ["关注店铺"],
+        "function_call": "selectShop",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: toShop}  \n#attribute{class: shop-info-btn}  \n#attribute{hoverclass: none}  \ndata{进店逛逛}  \n",
+        "attributes": {
+          "bindtap": "toShop",
+          "class": "shop-info-btn",
+          "hoverclass": "none"
+        },
+        "bind_method": "bindtap",
+        "data": ["进店逛逛"],
+        "function_call": "toShop",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindcontact: handleContact}  \n#attribute{class: tabbar-list list-icon-wrap service-item}  \n#attribute{opentype: contact}  \n#element{image} {depth: 4}  \n#attribute{class: tabbar-list-icon}    \n#attribute{src: ../../images/details_top_zixun.png}    \n#element{text} {depth: 4}  \n#attribute{class: tabbar-list-text}    \ndata{客服}    \n",
+        "attributes": {
+          "bindcontact": "handleContact",
+          "class": "tabbar-list list-icon-wrap service-item",
+          "opentype": "contact"
+        },
+        "bind_method": "bindcontact",
+        "data": [],
+        "function_call": "handleContact",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: selectProduct}  \n#attribute{class: tabbar-list list-icon-wrap}  \n#attribute{data-status: {{msg.fav.productStatus}}}  \n#element{block} {depth: 4}  \n#attribute{wx:if: {{msg.fav.productStatus==0}}}    \n#element{image} {depth: 5}    \n#attribute{class: tabbar-list-icon}      \n#attribute{src: ../../images/icon_aixin.png}      \n#element{text} {depth: 5}    \n#attribute{class: tabbar-list-text}      \ndata{收藏}      \n#element{block} {depth: 4}  \n#attribute{wx:elif: {{msg.fav.productStatus==1}}}    \n#element{image} {depth: 5}    \n#attribute{class: tabbar-list-icon}      \n#attribute{src: ../../images/icon_aixin2.png}      \n#element{text} {depth: 5}    \n#attribute{class: tabbar-list-text}      \ndata{已收藏}      \n#element{block} {depth: 4}  \n#attribute{wx:else: }    \n#element{image} {depth: 5}    \n#attribute{class: tabbar-list-icon}      \n#attribute{src: ../../images/icon_aixin.png}      \n#element{text} {depth: 5}    \n#attribute{class: tabbar-list-text}      \ndata{收藏}      \n",
+        "attributes": {
+          "bindtap": "selectProduct",
+          "class": "tabbar-list list-icon-wrap",
+          "data-status": "{{msg.fav.productStatus}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "selectProduct",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: showModalFun}  \n#attribute{class: tabbar-list list-content-wrap}  \n#attribute{wx:if: {{msg.product.allowDistribution=='1'}}}  \n#element{text} {depth: 5}  \n#attribute{class: tabbar-list-text}    \ndata{自己买}    \n",
+        "attributes": {
+          "bindtap": "showModalFun",
+          "class": "tabbar-list list-content-wrap",
+          "wx:if": "{{msg.product.allowDistribution=='1'}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "showModalFun",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: showModalFun}  \n#attribute{class: tabbar-list list-content-wrap}  \n#attribute{data-type: car}  \n#attribute{wx:else: }  \n#element{text} {depth: 5}  \n#attribute{class: tabbar-list-text}    \ndata{加入购物车}    \n",
+        "attributes": {
+          "bindtap": "showModalFun",
+          "class": "tabbar-list list-content-wrap",
+          "data-type": "car",
+          "wx:else": ""
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "showModalFun",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: agent}  \n#attribute{class: tabbar-list list-content-wrap}  \n#attribute{wx:if: {{msg.product.allowDistribution=='1'}}}  \n#element{text} {depth: 5}  \n#attribute{class: tabbar-list-text}    \n#attribute{style: color:#fff;}    \ndata{我要代理}    \n",
+        "attributes": {
+          "bindtap": "agent",
+          "class": "tabbar-list list-content-wrap",
+          "wx:if": "{{msg.product.allowDistribution=='1'}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "agent",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: showModalFun}  \n#attribute{class: tabbar-list list-content-wrap list-red-wrap}  \n#attribute{data-type: buy}  \n#attribute{wx:if: {{!requesting}}}  \n#element{text} {depth: 6}  \n#attribute{class: tabbar-list-text}    \n#attribute{style: color:#eaeaea;{{msg.product.saveAmt>0?'display:inline-block;margin-top:10rpx;':''}}}    \ndata{立即购买}    \n#element{text} {depth: 6}  \n#attribute{class: tabbar-saveAmt}    \n#attribute{wx:if: {{msg.product.saveAmt>0}}}    \ndata{省￥}    \nscriptdata{filter.price(msg.product.saveAmt)}    \n",
+        "attributes": {
+          "bindtap": "showModalFun",
+          "class": "tabbar-list list-content-wrap list-red-wrap",
+          "data-type": "buy",
+          "wx:if": "{{!requesting}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "showModalFun",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: confirmBtn}  \n#attribute{class: modal-btn}  \n#attribute{wx:if: {{msg.product.allowDistribution!='1'}}}  \ndata{确定}  \n",
+        "attributes": {
+          "bindtap": "confirmBtn",
+          "class": "modal-btn",
+          "wx:if": "{{msg.product.allowDistribution!='1'}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["确定"],
+        "function_call": "confirmBtn",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: confirmBtn}  \n#attribute{class: tabbar-list list-content-wrap}  \n#attribute{data-type: car}  \n#element{text} {depth: 6}  \n#attribute{class: tabbar-list-text}    \ndata{加入购物车}    \n",
+        "attributes": {
+          "bindtap": "confirmBtn",
+          "class": "tabbar-list list-content-wrap",
+          "data-type": "car"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "confirmBtn",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: confirmBtn}  \n#attribute{class: tabbar-list list-content-wrap}  \n#attribute{data-type: buy}  \n#attribute{wx:if: {{!requesting}}}  \n#element{text} {depth: 6}  \n#attribute{class: tabbar-list-text}    \n#attribute{style: color:#fff;{{msg.product.saveAmt>0?'display:inline-block;margin-top:10rpx;':''}}}    \ndata{立即购买}    \n#element{text} {depth: 6}  \n#attribute{class: tabbar-saveAmt}    \n#attribute{wx:if: {{msg.product.saveAmt>0}}}    \ndata{省￥}    \nscriptdata{filter.price(msg.product.saveAmt)}    \n",
+        "attributes": {
+          "bindtap": "confirmBtn",
+          "class": "tabbar-list list-content-wrap",
+          "data-type": "buy",
+          "wx:if": "{{!requesting}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "confirmBtn",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 3}\n#attribute{binderror: imageError}  \n#attribute{src: {{spec.pic==''?'error':spec.pic}}}  \n",
+        "attributes": {
+          "binderror": "imageError",
+          "src": "{{spec.pic==''?'error':spec.pic}}"
+        },
+        "bind_method": "binderror",
+        "data": [],
+        "function_call": "imageError",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: hideCouponFun}  \n#attribute{class: couponList-receiveBtn}  \ndata{确定}  \n",
+        "attributes": {
+          "bindtap": "hideCouponFun",
+          "class": "couponList-receiveBtn"
+        },
+        "bind_method": "bindtap",
+        "data": ["确定"],
+        "function_call": "hideCouponFun",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: hideServiceFun}  \n#attribute{class: couponList-receiveBtn}  \ndata{确定}  \n",
+        "attributes": {
+          "bindtap": "hideServiceFun",
+          "class": "couponList-receiveBtn"
+        },
+        "bind_method": "bindtap",
+        "data": ["确定"],
+        "function_call": "hideServiceFun",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/productDetail/index"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/webview/webview"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/service/service"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 1}\n#attribute{bindtap: goBack}  \n#attribute{class: confirmBtn}  \ndata{确 定}  \n",
+        "attributes": {
+          "bindtap": "goBack",
+          "class": "confirmBtn"
+        },
+        "bind_method": "bindtap",
+        "data": ["确 定"],
+        "function_call": "goBack",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/useCoupon/useCoupon"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/logistics/logistics"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/blank/blank"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{input} {depth: 4}\n#attribute{bindconfirm: goLoadMore}  \n#attribute{bindinput: bindKeyInput}  \n#attribute{confirmtype: search}  \n#attribute{placeholder: 输入关键字搜索商品}  \n#attribute{type: text}  \n",
+        "attributes": {
+          "bindconfirm": "goLoadMore",
+          "bindinput": "bindKeyInput",
+          "confirmtype": "search",
+          "placeholder": "输入关键字搜索商品",
+          "type": "text"
+        },
+        "bind_method": "bindconfirm",
+        "data": [],
+        "function_call": "goLoadMore",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 4}\n#attribute{bindconfirm: goLoadMore}  \n#attribute{bindinput: bindKeyInput}  \n#attribute{confirmtype: search}  \n#attribute{placeholder: 输入关键字搜索商品}  \n#attribute{type: text}  \n",
+        "attributes": {
+          "bindconfirm": "goLoadMore",
+          "bindinput": "bindKeyInput",
+          "confirmtype": "search",
+          "placeholder": "输入关键字搜索商品",
+          "type": "text"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "bindKeyInput",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{span} {depth: 4}\n#attribute{bindtap: goLoadMore}  \n#attribute{class: confirm}  \n#attribute{wx:if: {{showConfirm}}}  \ndata{确认}  \n",
+        "attributes": {
+          "bindtap": "goLoadMore",
+          "class": "confirm",
+          "wx:if": "{{showConfirm}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["确认"],
+        "function_call": "goLoadMore",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{span} {depth: 4}\n#attribute{bindtap: goBack}  \n#attribute{wx:if: {{!showConfirm}}}  \ndata{取消}  \n",
+        "attributes": {
+          "bindtap": "goBack",
+          "wx:if": "{{!showConfirm}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["取消"],
+        "function_call": "goBack",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/shopIndex/search/search"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/shopIndex/shopActivity/shopActivity"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 1}\n#attribute{bindtap: swichNav}  \n#attribute{class: page-section index-top}  \n#element{view} {depth: 2}  \n#attribute{class: top-tab-list {{currentTab==1?'active':''}}}    \n#attribute{data-current: 1}    \ndata{综合}    \n#element{view} {depth: 2}  \n#attribute{class: top-tab-list {{currentTab==2?'active':''}}}    \n#attribute{data-current: 2}    \ndata{销量}    \n#element{view} {depth: 2}  \n#attribute{class: top-tab-list {{currentTab==3?'active':''}}}    \n#attribute{data-current: 3}    \ndata{上新}    \n#element{view} {depth: 2}  \n#attribute{class: top-tab-list}    \n#attribute{data-current: 4}    \n#attribute{data-price: 0}    \n#attribute{wx:if: {{isShowPrice=='0'}}}    \ndata{价格}    \n#element{image} {depth: 3}    \n#attribute{src: /images/icon_arrow_huise.png}      \n#element{view} {depth: 2}  \n#attribute{class: top-tab-list {{currentTab==5?'active':''}}}    \n#attribute{data-current: 5}    \n#attribute{data-price: 1}    \n#attribute{wx:if: {{isShowPrice=='1'}}}    \ndata{价格}    \n#element{image} {depth: 3}    \n#attribute{src: /images/icon_arrow_high@2x.png}      \n#element{view} {depth: 2}  \n#attribute{class: top-tab-list {{currentTab==4?'active':''}}}    \n#attribute{data-current: 4}    \n#attribute{data-price: 2}    \n#attribute{wx:if: {{isShowPrice=='2'}}}    \ndata{价格}    \n#element{image} {depth: 3}    \n#attribute{src: /images/icon_arrow_low@2x.png}      \n",
+        "attributes": {
+          "bindtap": "swichNav",
+          "class": "page-section index-top"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "swichNav",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/shopIndex/more/more"
+  }
+]

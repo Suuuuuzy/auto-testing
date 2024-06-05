@@ -1,0 +1,2246 @@
+[
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: Changeclik}  \n#attribute{style: display:flex;width:40%;justify-content:center;height:{{navHeight}}px;}  \n#element{text} {depth: 3}  \n#attribute{class: textlineShenlue}    \n#attribute{style: display:block;color:white;font-size:36rpx;margin-top:{{statusHeight}}px;line-height:44px;}    \nscriptdata{shopData.ShopName?shopData.ShopName:'未选择门店'}    \n",
+        "attributes": {
+          "bindtap": "Changeclik",
+          "style": "display:flex;width:40%;justify-content:center;height:{{navHeight}}px;"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "Changeclik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{swiper} {depth: 1}\n#attribute{bindchange: tagIndexChange}  \n#attribute{current: {{tabbarIndex}}}  \n#attribute{duration: {{10}}}  \n#attribute{indicatordots: {{false}}}  \n#attribute{interval: {{false}}}  \n#attribute{style: width:100%;height:{{myHeightsize}}px;}  \n#element{swiper-item} {depth: 2}  \n#element{view} {depth: 3}    \n#attribute{class: main_list_box}      \n#element{view} {depth: 4}      \n#attribute{bindtap: adddJumpClik}        \n#attribute{data-tag: {{index}}}        \n#attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;width:100%;height:100rpx;background-color:white;border-bottom:2rpxsolid#f3f3f3;align-items:center;position:relative;}        \n#attribute{wx:for: {{arrJiejing}}}        \n#attribute{wx:key: keys}        \n#element{image} {depth: 5}        \n#attribute{src: {{item.image}}}          \n#attribute{style: display:flex;width:80rpx;margin-left:20rpx;width:80rpx;height:80rpx;}          \n#element{view} {depth: 5}        \n#attribute{style: display:flex;width:80%;height:100rpx;flex-direction:column;flex-wrap:nowrap;justify-content:center;margin-left:20rpx;}          \n#element{text} {depth: 6}          \n#attribute{style: display:flex;font-size:32rpx;color:rgb(58,58,58);}            \nscriptdata{item.title}            \n#element{text} {depth: 6}          \n#attribute{style: display:flex;font-size:26rpx;color:rgb(198,198,198);}            \nscriptdata{item.subtitle}            \n#element{button} {depth: 5}        \n#attribute{bindcontact: handleContact}          \n#attribute{class: buttontype}          \n#attribute{opentype: contact}          \n#attribute{style: height:100%;}          \n#element{swiper-item} {depth: 2}  \n#element{scroll-view} {depth: 3}    \n#attribute{scrolly: true}      \n#attribute{style: width:100%;height:{{myHeightsize}}px;}      \n#element{view} {depth: 4}      \n#attribute{class: main_list_box}        \n#attribute{style: height:auto;align-items:center;}        \n#element{view} {depth: 5}        \n#attribute{class: list_box}          \n#attribute{style: width:{{listItemWidth}}px;}          \n#attribute{wx:for: {{listArray}}}          \n#attribute{wx:for-index: index1}          \n#attribute{wx:for-item: item1}          \n#attribute{wx:key: key}          \n#element{view} {depth: 6}          \n#attribute{class: listbox_titleV}            \nscriptdata{item1.navbarname}            \n#element{view} {depth: 6}          \n#attribute{class: list_boxItem}            \n#attribute{style: margin-top:5rpx;}            \n#element{view} {depth: 7}            \n#attribute{bindtap: PostManager}              \n#attribute{class: box_item}              \n#attribute{data-items: {{item2}}}              \n#attribute{style: margin-left:1.5%;position:relative;}              \n#attribute{wx:for: {{item1.workarr}}}              \n#attribute{wx:for-index: index2}              \n#attribute{wx:for-item: item2}              \n#attribute{wx:key: keys}              \n#element{image} {depth: 8}              \n#attribute{src: {{item2.img}}}                \n#attribute{style: display:flex;width:70rpx;height:70rpx;border-radius:35rpx;border:2rpxsolid#f3f3f3;}                \n#attribute{wx:if: {{item1.id=='6010dc6d7ae6e009'}}}                \n#element{block} {depth: 8}              \n#attribute{wx:else: }                \n#element{image} {depth: 9}                \n#attribute{src: {{item2.img}}}                  \n#attribute{style: display:flex;width:70rpx;height:70rpx;border-radius:10rpx;border:2rpxsolid#f3f3f3;}                  \n#element{text} {depth: 9}                \n#attribute{style: position:absolute;height:30rpx;padding:0rpx5rpx;top:-10rpx;right:5rpx;border-radius:20rpx;background-color:red;color:white;font-size:20rpx;}                  \n#attribute{wx:if: {{item2.auditnum>0}}}                  \nscriptdata{item2.auditnum}                  \n#element{text} {depth: 8}              \n#attribute{style: display:flex;height:40rpx;margin-top:5rpx;width:100%;justify-content:center;font-size:22rpx;color:rgb(102,102,102);}                \nscriptdata{item2.modelname}                \n#element{view} {depth: 4}      \n#attribute{class: main_list_box}        \n#attribute{style: height:auto;align-items:center;}        \n#element{image} {depth: 5}        \n#attribute{bindtap: jumpWeb}          \n#attribute{mode: widthFix}          \n#attribute{src: {{bottomUrl.img}}}          \n#attribute{style: width:{{listItemWidth}}px;margin-top:20rpx;}          \n#element{view} {depth: 4}      \n#attribute{style: display:flex;width:100%;height:140rpx;}        \n#element{swiper-item} {depth: 2}  \n#element{view} {depth: 3}    \n#attribute{class: my_infoView}      \n#attribute{style: height:{{myHeightsize}}px;}      \n#element{block} {depth: 4}      \n#attribute{wx:if: {{islogin}}}        \n#element{view} {depth: 5}        \n#attribute{class: infoView_Top}          \n#element{view} {depth: 6}          \n#attribute{class: infoView_CenterView}            \n#element{view} {depth: 7}            \n#attribute{class: item_CenterView}              \n#attribute{style: margin-top:20rpx;height:200rpx;}              \n#element{view} {depth: 8}              \n#attribute{style: display:flex;flex-direction:column;flex-wrap:nowrap;width:60%;margin-left:20rpx;}                \n#element{text} {depth: 9}                \n#attribute{class: textlineShenlue}                  \n#attribute{style: display:block;font-size:36rpx;color:white;max-width:100%;margin-top:20rpx;}                  \nscriptdata{UserName}                  \n#element{text} {depth: 9}                \n#attribute{class: textlineShenlue}                  \n#attribute{style: display:block;font-size:26rpx;color:rgba(255,255,255,0.7);height:40rpx;max-width:100%;margin-top:30rpx;}                  \nscriptdata{shopData.MerchantName}                  \n#element{text} {depth: 9}                \n#attribute{class: textlineShenlue}                  \n#attribute{style: display:block;font-size:26rpx;color:rgba(255,255,255,0.7);height:40rpx;max-width:100%;margin-top:0rpx;}                  \nscriptdata{shopData.DepartName?shopData.DepartName:'无部门'}                  \ndata{-}                  \nscriptdata{shopData.FirstName?shopData.FirstName:'无角色'}                  \n#element{image} {depth: 8}              \n#attribute{bindtap: touImageClik}                \n#attribute{mode: aspectFill}                \n#attribute{src: {{headUrl?headUrl:'/images/icon_user_default@2x.png'}}}                \n#attribute{style: width:160rpx;height:160rpx;margin-right:20rpx;border-radius:80rpx;border:2rpxsolid#42bfa7;}                \n#element{view} {depth: 7}            \n#attribute{class: item_CenterView}              \n#attribute{style: margin-top:40rpx;height:120rpx;}              \n#element{view} {depth: 8}              \n#attribute{style: display:flex;flex-direction:column;flex-wrap:nowrap;width:60%;margin-left:20rpx;margin-bottom:20rpx;}                \n#element{text} {depth: 9}                \n#attribute{bindtap: Changeclik}                  \n#attribute{class: textlineShenlue}                  \n#attribute{style: display:block;font-size:26rpx;color:rgba(255,255,255,0.8);height:40rpx;border-radius:20rpx;border:2rpxsolidwhite;width:auto;width:140rpx;text-align:center;}                  \ndata{切换门店}                  \n#element{text} {depth: 9}                \n#attribute{class: textlineShenlue}                  \n#attribute{style: display:block;font-size:26rpx;color:rgba(255,255,255,0.7);height:40rpx;max-width:100%;margin-top:10rpx;}                  \nscriptdata{shopData.ShopName?shopData.ShopName:'点击切换'}                  \ndata{\r\n                  >}                  \n#element{image} {depth: 8}              \n#attribute{mode: aspectFill}                \n#attribute{src: /images/myicon_Ercode@3x.png}                \n#attribute{style: width:60rpx;height:60rpx;margin-right:20rpx;border:2rpxsolid#42bfa7;}                \n#element{view} {depth: 5}        \n#attribute{class: list_boxItem}          \n#attribute{style: background-color:white;width:100%;}          \n#element{view} {depth: 6}          \n#attribute{class: box_item}            \n#attribute{style: margin-left:1.5%;position:relative;}            \n#attribute{wx:for: {{ItemArray}}}            \n#attribute{wx:for-index: index2}            \n#attribute{wx:for-item: item2}            \n#attribute{wx:key: keys}            \n#element{image} {depth: 7}            \n#attribute{bindtap: PostMyPerson}              \n#attribute{data-items: {{item2}}}              \n#attribute{src: {{item2.img}}}              \n#attribute{style: display:flex;width:70rpx;height:70rpx;border-radius:10rpx;border:2rpxsolid#f3f3f3;}              \n#element{text} {depth: 7}            \n#attribute{style: display:flex;height:40rpx;margin-top:5rpx;width:100%;justify-content:center;font-size:22rpx;color:rgb(102,102,102);}              \nscriptdata{item2.title}              \n#element{view} {depth: 4}      \n#attribute{style: display:flex;width:100%;height:180rpx;background-color:white;justify-content:center;align-items:center;}        \n#attribute{wx:else: }        \n#element{text} {depth: 5}        \n#attribute{bindtap: loginclik}          \n#attribute{style: display:flex;font-size:30rpx;color:white;width:80%;height:100rpx;background:linear-gradient(toright,#42bfa7,#39a3c6);border-radius:10rpx;justify-content:center;align-items:center;}          \ndata{您还未登录，点击登录}          \n",
+        "attributes": {
+          "bindchange": "tagIndexChange",
+          "current": "{{tabbarIndex}}",
+          "duration": "{{10}}",
+          "indicatordots": "{{false}}",
+          "interval": "{{false}}",
+          "style": "width:100%;height:{{myHeightsize}}px;"
+        },
+        "bind_method": "bindchange",
+        "data": [],
+        "function_call": "tagIndexChange",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: adddJumpClik}  \n#attribute{data-tag: {{index}}}  \n#attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;width:100%;height:100rpx;background-color:white;border-bottom:2rpxsolid#f3f3f3;align-items:center;position:relative;}  \n#attribute{wx:for: {{arrJiejing}}}  \n#attribute{wx:key: keys}  \n#element{image} {depth: 5}  \n#attribute{src: {{item.image}}}    \n#attribute{style: display:flex;width:80rpx;margin-left:20rpx;width:80rpx;height:80rpx;}    \n#element{view} {depth: 5}  \n#attribute{style: display:flex;width:80%;height:100rpx;flex-direction:column;flex-wrap:nowrap;justify-content:center;margin-left:20rpx;}    \n#element{text} {depth: 6}    \n#attribute{style: display:flex;font-size:32rpx;color:rgb(58,58,58);}      \nscriptdata{item.title}      \n#element{text} {depth: 6}    \n#attribute{style: display:flex;font-size:26rpx;color:rgb(198,198,198);}      \nscriptdata{item.subtitle}      \n#element{button} {depth: 5}  \n#attribute{bindcontact: handleContact}    \n#attribute{class: buttontype}    \n#attribute{opentype: contact}    \n#attribute{style: height:100%;}    \n",
+        "attributes": {
+          "bindtap": "adddJumpClik",
+          "data-tag": "{{index}}",
+          "style": "display:flex;flex-direction:row;flex-wrap:nowrap;width:100%;height:100rpx;background-color:white;border-bottom:2rpxsolid#f3f3f3;align-items:center;position:relative;",
+          "wx:for": "{{arrJiejing}}",
+          "wx:key": "keys"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "adddJumpClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 5}\n#attribute{bindcontact: handleContact}  \n#attribute{class: buttontype}  \n#attribute{opentype: contact}  \n#attribute{style: height:100%;}  \n",
+        "attributes": {
+          "bindcontact": "handleContact",
+          "class": "buttontype",
+          "opentype": "contact",
+          "style": "height:100%;"
+        },
+        "bind_method": "bindcontact",
+        "data": [],
+        "function_call": "handleContact",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 7}\n#attribute{bindtap: PostManager}  \n#attribute{class: box_item}  \n#attribute{data-items: {{item2}}}  \n#attribute{style: margin-left:1.5%;position:relative;}  \n#attribute{wx:for: {{item1.workarr}}}  \n#attribute{wx:for-index: index2}  \n#attribute{wx:for-item: item2}  \n#attribute{wx:key: keys}  \n#element{image} {depth: 8}  \n#attribute{src: {{item2.img}}}    \n#attribute{style: display:flex;width:70rpx;height:70rpx;border-radius:35rpx;border:2rpxsolid#f3f3f3;}    \n#attribute{wx:if: {{item1.id=='6010dc6d7ae6e009'}}}    \n#element{block} {depth: 8}  \n#attribute{wx:else: }    \n#element{image} {depth: 9}    \n#attribute{src: {{item2.img}}}      \n#attribute{style: display:flex;width:70rpx;height:70rpx;border-radius:10rpx;border:2rpxsolid#f3f3f3;}      \n#element{text} {depth: 9}    \n#attribute{style: position:absolute;height:30rpx;padding:0rpx5rpx;top:-10rpx;right:5rpx;border-radius:20rpx;background-color:red;color:white;font-size:20rpx;}      \n#attribute{wx:if: {{item2.auditnum>0}}}      \nscriptdata{item2.auditnum}      \n#element{text} {depth: 8}  \n#attribute{style: display:flex;height:40rpx;margin-top:5rpx;width:100%;justify-content:center;font-size:22rpx;color:rgb(102,102,102);}    \nscriptdata{item2.modelname}    \n",
+        "attributes": {
+          "bindtap": "PostManager",
+          "class": "box_item",
+          "data-items": "{{item2}}",
+          "style": "margin-left:1.5%;position:relative;",
+          "wx:for": "{{item1.workarr}}",
+          "wx:for-index": "index2",
+          "wx:for-item": "item2",
+          "wx:key": "keys"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "PostManager",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 5}\n#attribute{bindtap: jumpWeb}  \n#attribute{mode: widthFix}  \n#attribute{src: {{bottomUrl.img}}}  \n#attribute{style: width:{{listItemWidth}}px;margin-top:20rpx;}  \n",
+        "attributes": {
+          "bindtap": "jumpWeb",
+          "mode": "widthFix",
+          "src": "{{bottomUrl.img}}",
+          "style": "width:{{listItemWidth}}px;margin-top:20rpx;"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "jumpWeb",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 8}\n#attribute{bindtap: touImageClik}  \n#attribute{mode: aspectFill}  \n#attribute{src: {{headUrl?headUrl:'/images/icon_user_default@2x.png'}}}  \n#attribute{style: width:160rpx;height:160rpx;margin-right:20rpx;border-radius:80rpx;border:2rpxsolid#42bfa7;}  \n",
+        "attributes": {
+          "bindtap": "touImageClik",
+          "mode": "aspectFill",
+          "src": "{{headUrl?headUrl:'/images/icon_user_default@2x.png'}}",
+          "style": "width:160rpx;height:160rpx;margin-right:20rpx;border-radius:80rpx;border:2rpxsolid#42bfa7;"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "touImageClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{text} {depth: 9}\n#attribute{bindtap: Changeclik}  \n#attribute{class: textlineShenlue}  \n#attribute{style: display:block;font-size:26rpx;color:rgba(255,255,255,0.8);height:40rpx;border-radius:20rpx;border:2rpxsolidwhite;width:auto;width:140rpx;text-align:center;}  \ndata{切换门店}  \n",
+        "attributes": {
+          "bindtap": "Changeclik",
+          "class": "textlineShenlue",
+          "style": "display:block;font-size:26rpx;color:rgba(255,255,255,0.8);height:40rpx;border-radius:20rpx;border:2rpxsolidwhite;width:auto;width:140rpx;text-align:center;"
+        },
+        "bind_method": "bindtap",
+        "data": ["切换门店"],
+        "function_call": "Changeclik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 7}\n#attribute{bindtap: PostMyPerson}  \n#attribute{data-items: {{item2}}}  \n#attribute{src: {{item2.img}}}  \n#attribute{style: display:flex;width:70rpx;height:70rpx;border-radius:10rpx;border:2rpxsolid#f3f3f3;}  \n",
+        "attributes": {
+          "bindtap": "PostMyPerson",
+          "data-items": "{{item2}}",
+          "src": "{{item2.img}}",
+          "style": "display:flex;width:70rpx;height:70rpx;border-radius:10rpx;border:2rpxsolid#f3f3f3;"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "PostMyPerson",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{text} {depth: 5}\n#attribute{bindtap: loginclik}  \n#attribute{style: display:flex;font-size:30rpx;color:white;width:80%;height:100rpx;background:linear-gradient(toright,#42bfa7,#39a3c6);border-radius:10rpx;justify-content:center;align-items:center;}  \ndata{您还未登录，点击登录}  \n",
+        "attributes": {
+          "bindtap": "loginclik",
+          "style": "display:flex;font-size:30rpx;color:white;width:80%;height:100rpx;background:linear-gradient(toright,#42bfa7,#39a3c6);border-radius:10rpx;justify-content:center;align-items:center;"
+        },
+        "bind_method": "bindtap",
+        "data": ["您还未登录，点击登录"],
+        "function_call": "loginclik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: tabbarClik}  \n#attribute{class: bottom_tabbar}  \n#attribute{data-tag: 0}  \n#attribute{style: width:100rpx;margin-top:{{needAdapt?5:0}}rpx;}  \n#element{block} {depth: 3}  \n#attribute{wx:if: {{tabbarIndex==0}}}    \n#element{image} {depth: 4}    \n#attribute{class: tabbar_item_image}      \n#attribute{src: /images/Tabbar_Jiejing_Selected@3x.png}      \n#element{text} {depth: 4}    \n#attribute{class: tabbar_item_text text_selected}      \ndata{捷径}      \n#element{image} {depth: 3}  \n#attribute{class: tabbar_item_image}    \n#attribute{src: /images/Tabbar_jiejing_sel@2x.png}    \n#attribute{style: width:60rpx;height:60rpx;}    \n#attribute{wx:else: }    \n",
+        "attributes": {
+          "bindtap": "tabbarClik",
+          "class": "bottom_tabbar",
+          "data-tag": "0",
+          "style": "width:100rpx;margin-top:{{needAdapt?5:0}}rpx;"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tabbarClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: tabbarClik}  \n#attribute{class: bottom_tabbar}  \n#attribute{data-tag: 1}  \n#attribute{style: width:100rpx;margin-top:{{needAdapt?5:0}}rpx;}  \n#element{image} {depth: 3}  \n#attribute{class: tabbar_item_image}    \n#attribute{src: {{tabbarIndex==1?'/images/Tabbar_Work_Selected@2x.png':'/images/Tabbar_Work_unSelected@2x.png'}}}    \n#element{text} {depth: 3}  \n#attribute{class: tabbar_item_text {{tabbarIndex==1?'text_selected':'text_unselect'}}}    \ndata{工作}    \n",
+        "attributes": {
+          "bindtap": "tabbarClik",
+          "class": "bottom_tabbar",
+          "data-tag": "1",
+          "style": "width:100rpx;margin-top:{{needAdapt?5:0}}rpx;"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tabbarClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: tabbarClik}  \n#attribute{class: bottom_tabbar}  \n#attribute{data-tag: 2}  \n#attribute{style: width:100rpx;margin-top:{{needAdapt?5:0}}rpx;}  \n#element{image} {depth: 3}  \n#attribute{class: tabbar_item_image}    \n#attribute{src: {{tabbarIndex==2?'/images/Tabbar_Myself_Selected@2x.png':'/images/Tabbar_Myself_unSelected@2x.png'}}}    \n#element{text} {depth: 3}  \n#attribute{class: tabbar_item_text {{tabbarIndex==2?'text_selected':'text_unselect'}}}    \ndata{我的}    \n",
+        "attributes": {
+          "bindtap": "tabbarClik",
+          "class": "bottom_tabbar",
+          "data-tag": "2",
+          "style": "width:100rpx;margin-top:{{needAdapt?5:0}}rpx;"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tabbarClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: tapClik}  \n#attribute{class: bottom_HideView}  \n",
+        "attributes": {
+          "bindtap": "tapClik",
+          "class": "bottom_HideView"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: SelectShop}  \n#attribute{data-dic: {{item}}}  \n#attribute{data-tag: {{index}}}  \n#attribute{style: display:block;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);}  \n#attribute{wx:for: {{shopArr}}}  \n#attribute{wx:key: key}  \n#element{text} {depth: 4}  \n#attribute{class: textlineShenlue}    \n#attribute{style: display:block;padding-left:20rpx;padding-right:20rpx;height:80rpx;line-height:80rpx;}    \nscriptdata{item.ShopName}    \ndata{（}    \nscriptdata{item.MerchantName}    \ndata{）}    \n",
+        "attributes": {
+          "bindtap": "SelectShop",
+          "data-dic": "{{item}}",
+          "data-tag": "{{index}}",
+          "style": "display:block;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);",
+          "wx:for": "{{shopArr}}",
+          "wx:key": "key"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "SelectShop",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: tapAuthClik}  \n#attribute{catchtouchmove: true}  \n#attribute{class: bottom_HideView}  \n",
+        "attributes": {
+          "bindtap": "tapAuthClik",
+          "catchtouchmove": "true",
+          "class": "bottom_HideView"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapAuthClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindgetphonenumber: getPhoneNumberMember}  \n#attribute{class: button_type}  \n#attribute{opentype: getPhoneNumber}  \n#attribute{style: background-color:#29c3ce;margin-top:40rpx;color:white;}  \n#attribute{type: default}  \ndata{授 权}  \n",
+        "attributes": {
+          "bindgetphonenumber": "getPhoneNumberMember",
+          "class": "button_type",
+          "opentype": "getPhoneNumber",
+          "style": "background-color:#29c3ce;margin-top:40rpx;color:white;",
+          "type": "default"
+        },
+        "bind_method": "bindgetphonenumber",
+        "data": ["授 权"],
+        "function_call": "getPhoneNumberMember",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindtap: tapAuthClik}  \n#attribute{class: button_type}  \n#attribute{style: background-color:#ec8114;margin-top:20rpx;color:white;}  \n#attribute{type: default}  \ndata{取 消}  \n",
+        "attributes": {
+          "bindtap": "tapAuthClik",
+          "class": "button_type",
+          "style": "background-color:#ec8114;margin-top:20rpx;color:white;",
+          "type": "default"
+        },
+        "bind_method": "bindtap",
+        "data": ["取 消"],
+        "function_call": "tapAuthClik",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/workMainpage/workMainpage"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: OpenDocumentClik}  \n#attribute{style: display:flex;width:60%;height:80rpx;background-color:#268de8;border-radius:20rpx;justify-content:center;align-items:center;color:white;}  \ndata{打开文件}  \n",
+        "attributes": {
+          "bindtap": "OpenDocumentClik",
+          "style": "display:flex;width:60%;height:80rpx;background-color:#268de8;border-radius:20rpx;justify-content:center;align-items:center;color:white;"
+        },
+        "bind_method": "bindtap",
+        "data": ["打开文件"],
+        "function_call": "OpenDocumentClik",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/opendocument/opendocument"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{image} {depth: 3}\n#attribute{bindtap: bindChooseAvatar}  \n#attribute{src: {{imageHeadUrl?imageHeadUrl:'/images/icon_user_default@2x.png'}}}  \n#attribute{style: display:flex;width:80rpx;height:80rpx;margin-right:20rpx;border-radius:40rpx;}  \n",
+        "attributes": {
+          "bindtap": "bindChooseAvatar",
+          "src": "{{imageHeadUrl?imageHeadUrl:'/images/icon_user_default@2x.png'}}",
+          "style": "display:flex;width:80rpx;height:80rpx;margin-right:20rpx;border-radius:40rpx;"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "bindChooseAvatar",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindinput: inputName}  \n#attribute{maxlength: 16}  \n#attribute{placeholder: 请输入姓名}  \n#attribute{placeholderstyle: font-size:28rpx;color:rgb(201,201,201);}  \n#attribute{style: width:50%;height:60rpx;margin-right:20rpx;font-size:28rpx;color:rgb(102,102,102);text-align:right;}  \n#attribute{type: text}  \n#attribute{value: {{nickName}}}  \n",
+        "attributes": {
+          "bindinput": "inputName",
+          "maxlength": "16",
+          "placeholder": "请输入姓名",
+          "placeholderstyle": "font-size:28rpx;color:rgb(201,201,201);",
+          "style": "width:50%;height:60rpx;margin-right:20rpx;font-size:28rpx;color:rgb(102,102,102);text-align:right;",
+          "type": "text",
+          "value": "{{nickName}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "inputName",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: cureClik}  \n#attribute{class: items_type}  \n#attribute{style: margin-left:10%;width:80%;justify-content:center;margin-top:40rpx;background-color:#1c96fc;border-radius:40rpx;}  \n#element{text} {depth: 3}  \n#attribute{style: font-size:28rpx;color:white;}    \ndata{保存信息}    \n",
+        "attributes": {
+          "bindtap": "cureClik",
+          "class": "items_type",
+          "style": "margin-left:10%;width:80%;justify-content:center;margin-top:40rpx;background-color:#1c96fc;border-radius:40rpx;"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "cureClik",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/myPersonDetail/myPersonDetail"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/jiejingMessage/jiejingMessage"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: payWayChange}  \n#attribute{class: item_content}  \n#attribute{data-tag: 0}  \n#element{view} {depth: 4}  \n#attribute{class: item_image_text}    \n#attribute{style: margin-top:20rpx;margin-bottom:20rpx;}    \n#element{image} {depth: 5}    \n#attribute{src: /images/icon_image_wxpay@3x.png}      \n#attribute{style: display:flex;width:60rpx;height:60rpx;margin-left:20rpx;}      \n#element{text} {depth: 5}    \n#attribute{style: margin-left:20rpx;font-size:30rpx;color:rgb(58,58,58);line-height:60rpx;height:60rpx;}      \ndata{微信}      \n#element{view} {depth: 4}  \n#attribute{style: display:flex;width:30%;align-items:center;flex-direction:row-reverse;flex-wrap:nowrap;}    \n#element{image} {depth: 5}    \n#attribute{src: {{payWay==0?'/images/icon_shopcar_gou@2x.png':'/images/icon_shopcar_ungou@2x.png'}}}      \n#attribute{style: display:flex;width:50rpx;height:50rpx;margin-right:20rpx;}      \n",
+        "attributes": {
+          "bindtap": "payWayChange",
+          "class": "item_content",
+          "data-tag": "0"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "payWayChange",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 1}\n#attribute{bindtap: bindOperate1}  \n#attribute{class: bottom-operate}  \ndata{确定支付}  \n",
+        "attributes": {
+          "bindtap": "bindOperate1",
+          "class": "bottom-operate"
+        },
+        "bind_method": "bindtap",
+        "data": ["确定支付"],
+        "function_call": "bindOperate1",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: hidePayLayer}  \n#attribute{class: bg_layer}  \n",
+        "attributes": {
+          "bindtap": "hidePayLayer",
+          "class": "bg_layer"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "hidePayLayer",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindinput: inputPwd}  \n#attribute{class: input_control}  \n#attribute{focus: {{payFocus}}}  \n#attribute{maxlength: 6}  \n#attribute{type: number}  \n",
+        "attributes": {
+          "bindinput": "inputPwd",
+          "class": "input_control",
+          "focus": "{{payFocus}}",
+          "maxlength": "6",
+          "type": "number"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "inputPwd",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: }  \n#attribute{class: hideImage_bg}  \n",
+        "attributes": {
+          "bindtap": "",
+          "class": "hideImage_bg"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindlongpress: saveImg}  \n#attribute{data-url: {{zfbImage}}}  \n#attribute{style: display:flex;flex-direction:column;flex-wrap:nowrap;background-color:white;width:80%;height:auto;border-radius:10rpx;position:fixed;align-items:center;padding-bottom:40rpx;padding-top:20rpx;}  \n#element{text} {depth: 3}  \n#attribute{style: display:flex;height:100rpx;font-size:30rpx;font-weight:500;justify-content:center;align-items:center;}    \ndata{支付宝支付}    \n#element{image} {depth: 3}  \n#attribute{catchtap: chaClik}    \n#attribute{src: /images/icon_close_Pay@2x.png}    \n#attribute{style: display:flex;width:60rpx;height:60rpx;position:absolute;right:10rpx;top:10rpx;}    \n#element{image} {depth: 3}  \n#attribute{src: {{zfbImage?zfbImage:''}}}    \n#attribute{style: display:flex;margin-top:10rpx;margin-bottom:10rpx;width:400rpx;height:400rpx;background-color:#f3f3f3;}    \n#element{text} {depth: 3}  \n#attribute{style: display:flex;font-size:24rpx;rgb(58.58.58);margin-top:10rpx;}    \ndata{请截屏或长按图片保存，然后打开}    \n#element{text} {depth: 3}  \n#attribute{style: display:flex;font-size:24rpx;rgb(58.58.58);margin-top:10rpx;}    \ndata{支付宝App • 扫一扫 • 相册}    \n#element{text} {depth: 3}  \n#attribute{style: display:flex;font-size:24rpx;rgb(58.58.58);margin-top:10rpx;}    \ndata{识别二维码}    \n",
+        "attributes": {
+          "bindlongpress": "saveImg",
+          "data-url": "{{zfbImage}}",
+          "style": "display:flex;flex-direction:column;flex-wrap:nowrap;background-color:white;width:80%;height:auto;border-radius:10rpx;position:fixed;align-items:center;padding-bottom:40rpx;padding-top:20rpx;"
+        },
+        "bind_method": "bindlongpress",
+        "data": [],
+        "function_call": "saveImg",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/payplatform/payplatform"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/customerManage/customerDetail/customerDetail"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: itemOptionClik}  \n#attribute{class: item_scroller_top}  \n#attribute{data-tag: 0}  \n#element{text} {depth: 4}  \n#attribute{class: textlineShenlue}    \n#attribute{style: font-size:28rpx;color:#29c3ce}    \n#attribute{wx:if: {{sortindex==0}}}    \nscriptdata{arrShopArrData[shopIndex].ShopName}    \n#element{text} {depth: 4}  \n#attribute{class: textlineShenlue}    \n#attribute{style: font-size:28rpx;color:rgb(102,102,102);}    \n#attribute{wx:else: }    \nscriptdata{arrShopArrData[shopIndex].ShopName}    \n#element{image} {depth: 4}  \n#attribute{src: {{sortindex==0?'/images/cus_jiaoUp@2x.png':'/images/cus_jiaoDown@2x.png'}}}    \n#attribute{style: width:30rpx;height:30rpx;margin-left:10rpx;}    \n",
+        "attributes": {
+          "bindtap": "itemOptionClik",
+          "class": "item_scroller_top",
+          "data-tag": "0"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "itemOptionClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: itemOptionClik}  \n#attribute{class: item_scroller_top}  \n#attribute{data-tag: 1}  \n#element{text} {depth: 4}  \n#attribute{style: font-size:28rpx;color:#29c3ce;}    \n#attribute{wx:if: {{sortindex==1}}}    \ndata{智能排序}    \n#element{text} {depth: 4}  \n#attribute{style: font-size:28rpx;color:rgb(102,102,102);}    \n#attribute{wx:else: }    \ndata{智能排序}    \n#element{image} {depth: 4}  \n#attribute{src: {{sortindex==1?'/images/cus_jiaoUp@2x.png':'/images/cus_jiaoDown@2x.png'}}}    \n#attribute{style: width:30rpx;height:30rpx;margin-left:10rpx;}    \n",
+        "attributes": {
+          "bindtap": "itemOptionClik",
+          "class": "item_scroller_top",
+          "data-tag": "1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "itemOptionClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: itemOptionClik}  \n#attribute{class: item_scroller_top}  \n#attribute{data-tag: 2}  \n#element{text} {depth: 4}  \n#attribute{style: font-size:28rpx;color:#29c3ce;}    \n#attribute{wx:if: {{sortindex==2}}}    \ndata{筛 选}    \n#element{text} {depth: 4}  \n#attribute{style: font-size:28rpx;color:rgb(102,102,102);}    \n#attribute{wx:else: }    \ndata{筛 选}    \n#element{image} {depth: 4}  \n#attribute{src: {{sortindex==2?'/images/cus_jiaoUp@2x.png':'/images/cus_jiaoDown@2x.png'}}}    \n#attribute{style: width:30rpx;height:30rpx;margin-left:10rpx;}    \n",
+        "attributes": {
+          "bindtap": "itemOptionClik",
+          "class": "item_scroller_top",
+          "data-tag": "2"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "itemOptionClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{scroll-view} {depth: 2}\n#attribute{bindrefresherrefresh: onPullDownRefresh}  \n#attribute{bindscrolltolower: onReachBottom}  \n#attribute{class: scroller_view}  \n#attribute{refresherbackground: #f3f3f3}  \n#attribute{refresherenabled: true}  \n#attribute{refreshertriggered: {{loading}}}  \n#attribute{scrolly: true}  \n#attribute{style: {{heightBottom}}px;}  \n#element{block} {depth: 3}  \n#attribute{wx:for: {{dataArray}}}    \n#attribute{wx:key: key}    \n#element{view} {depth: 4}    \n#attribute{class: scroller_TopView}      \n#attribute{style: height:120rpx;background-color:#f3f3f3;justify-content:space-between;align-items:center;}      \n#element{view} {depth: 5}      \n#attribute{style: display:flex;flex-direction:column;flex-wrap:nowrap;width:50%;height:100%;}        \n#element{picker} {depth: 6}        \n#attribute{bindchange: selectDataTime}          \n#attribute{end: {{endTime}}}          \n#attribute{fields: month}          \n#attribute{headertext: 选择时间}          \n#attribute{mode: date}          \n#attribute{start: {{startTime}}}          \n#attribute{value: {{currentTime1}}}          \n#element{view} {depth: 7}          \n#attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;height:50rpx;margin-top:10rpx;align-items:center;}            \n#element{text} {depth: 8}            \n#attribute{style: display:flex;margin-left:20rpx;font-size:30rpx;color:rgb(102,102,102);}              \nscriptdata{item.CreateTime}              \n#element{image} {depth: 8}            \n#attribute{src: /images/icon_image_go.png}              \n#attribute{style: display:flex;margin-left:10rpx;width:50rpx;height:50rpx;}              \n#element{view} {depth: 6}        \n#attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;height:50rpx;margin-top:0rpx;align-items:center;}          \n#element{text} {depth: 7}          \n#attribute{style: display:flex;margin-left:20rpx;font-size:30rpx;color:rgb(198,198,198);}            \ndata{新建现有会员}            \nscriptdata{item.Count}            \ndata{人}            \n#element{view} {depth: 5}      \n#attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;width:40%;height:100%;align-items:center;justify-content:flex-end;}        \n#element{view} {depth: 6}        \n#attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;height:50rpx;margin-top:0rpx;align-items:center;}          \n#element{view} {depth: 4}    \n#attribute{class: item_ViewS}      \n#attribute{wx:for: {{item.ClientData}}}      \n#attribute{wx:for-item: item1}      \n#attribute{wx:key: key1}      \n#element{image} {depth: 5}      \n#attribute{mode: aspectFill}        \n#attribute{src: {{item1.Link?item1.Link:'https://java.4006337366.com/jiejing/images/javaImage/icon_boy@3x.png'}}}        \n#attribute{style: display:flex;width:100rpx;height:100rpx;background-color:#f3f3f3;border-radius:50rpx;margin-left:20rpx;margin-top:20rpx;}        \n#attribute{wx:if: {{item1.Sex==0}}}        \n#element{image} {depth: 5}      \n#attribute{mode: aspectFill}        \n#attribute{src: {{item1.Link?item1.Link:'https://java.4006337366.com/jiejing/images/javaImage/icon_girl@3x.png'}}}        \n#attribute{style: display:flex;width:100rpx;height:100rpx;background-color:#f3f3f3;border-radius:50rpx;margin-left:20rpx;margin-top:20rpx;}        \n#attribute{wx:else: }        \n#element{view} {depth: 5}      \n#attribute{style: display:flex;flex-direction:column;flex-wrap:nowrap;margin-top:20rpx;margin-left:20rpx;width:{{widthItem}}px;height:200rpx;background-color:white;}        \n#element{view} {depth: 6}        \n#attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;width:100%;height:80rpx;background-color:width;justify-content:space-between;align-items:center;}          \n#element{view} {depth: 7}          \n#attribute{style: display:flex;width:70%;height:100%;flex-direction:row;flex-wrap:nowrap;align-items:center;}            \n#element{text} {depth: 8}            \n#attribute{style: display:flex;font-size:32rpx;width:auto;rgb(58,58,58);}              \nscriptdata{item1.Name}              \n#element{image} {depth: 8}            \n#attribute{src: {{item1.Sex==0?'https://java.4006337366.com/jiejing/images/javaImage/Referrer_Man@2x.png':'https://java.4006337366.com/jiejing/images/javaImage/Referrer_Feman@2x.png'}}}              \n#attribute{style: display:flex;width:30rpx;height:30rpx;margin-left:10rpx;}              \n#element{view} {depth: 7}          \n#attribute{style: display:flex;width:30%;height:100%;justify-content:flex-end;align-items:center;}            \n#element{image} {depth: 8}            \n#attribute{src: https://java.4006337366.com/jiejing/images/javaImage/phone_icon.png}              \n#attribute{style: display:flex;width:40rpx;height:40rpx;margin-right:20rpx;}              \n#element{view} {depth: 6}        \n#attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;width:100%;height:60rpx;background-color:width;justify-content:space-between;align-items:center;background-color:white;}          \n#element{text} {depth: 7}          \n#attribute{class: textlineShenlue}            \n#attribute{style: display:block;width:50%;font-size:24rpx;color:rgb(158,158,158);}            \ndata{会员来源：}            \nscriptdata{item1.CustomerSource}            \n#element{text} {depth: 7}          \n#attribute{class: textlineShenlue}            \n#attribute{style: display:block;width:50%;font-size:24rpx;color:rgb(158,158,158);}            \ndata{销售人员：}            \nscriptdata{item1.ConsultantName}            \n#element{view} {depth: 6}        \n#attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;width:100%;height:60rpx;background-color:width;justify-content:space-between;align-items:center;background-color:white;}          \n#element{text} {depth: 7}          \n#attribute{class: textlineShenlue}            \n#attribute{style: display:block;width:50%;font-size:24rpx;color:rgb(158,158,158);}            \ndata{最近消费：}            \nscriptdata{item1.CreateTime}            \n#element{text} {depth: 7}          \n#attribute{class: textlineShenlue}            \n#attribute{style: display:block;width:50%;font-size:24rpx;color:rgb(158,158,158);}            \ndata{最近跟进：}            \nscriptdata{item1.FollowTime}            \n",
+        "attributes": {
+          "bindrefresherrefresh": "onPullDownRefresh",
+          "bindscrolltolower": "onReachBottom",
+          "class": "scroller_view",
+          "refresherbackground": "#f3f3f3",
+          "refresherenabled": "true",
+          "refreshertriggered": "{{loading}}",
+          "scrolly": "true",
+          "style": "{{heightBottom}}px;"
+        },
+        "bind_method": "bindrefresherrefresh",
+        "data": [],
+        "function_call": "onPullDownRefresh",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{scroll-view} {depth: 2}\n#attribute{bindrefresherrefresh: onPullDownRefresh}  \n#attribute{bindscrolltolower: onReachBottom}  \n#attribute{class: scroller_view}  \n#attribute{refresherbackground: #f3f3f3}  \n#attribute{refresherenabled: true}  \n#attribute{refreshertriggered: {{loading}}}  \n#attribute{scrolly: true}  \n#attribute{style: {{heightBottom}}px;}  \n#element{block} {depth: 3}  \n#attribute{wx:for: {{dataArray}}}    \n#attribute{wx:key: key}    \n#element{view} {depth: 4}    \n#attribute{class: scroller_TopView}      \n#attribute{style: height:120rpx;background-color:#f3f3f3;justify-content:space-between;align-items:center;}      \n#element{view} {depth: 5}      \n#attribute{style: display:flex;flex-direction:column;flex-wrap:nowrap;width:50%;height:100%;}        \n#element{picker} {depth: 6}        \n#attribute{bindchange: selectDataTime}          \n#attribute{end: {{endTime}}}          \n#attribute{fields: month}          \n#attribute{headertext: 选择时间}          \n#attribute{mode: date}          \n#attribute{start: {{startTime}}}          \n#attribute{value: {{currentTime1}}}          \n#element{view} {depth: 7}          \n#attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;height:50rpx;margin-top:10rpx;align-items:center;}            \n#element{text} {depth: 8}            \n#attribute{style: display:flex;margin-left:20rpx;font-size:30rpx;color:rgb(102,102,102);}              \nscriptdata{item.CreateTime}              \n#element{image} {depth: 8}            \n#attribute{src: /images/icon_image_go.png}              \n#attribute{style: display:flex;margin-left:10rpx;width:50rpx;height:50rpx;}              \n#element{view} {depth: 6}        \n#attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;height:50rpx;margin-top:0rpx;align-items:center;}          \n#element{text} {depth: 7}          \n#attribute{style: display:flex;margin-left:20rpx;font-size:30rpx;color:rgb(198,198,198);}            \ndata{新建现有会员}            \nscriptdata{item.Count}            \ndata{人}            \n#element{view} {depth: 5}      \n#attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;width:40%;height:100%;align-items:center;justify-content:flex-end;}        \n#element{view} {depth: 6}        \n#attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;height:50rpx;margin-top:0rpx;align-items:center;}          \n#element{view} {depth: 4}    \n#attribute{class: item_ViewS}      \n#attribute{wx:for: {{item.ClientData}}}      \n#attribute{wx:for-item: item1}      \n#attribute{wx:key: key1}      \n#element{image} {depth: 5}      \n#attribute{mode: aspectFill}        \n#attribute{src: {{item1.Link?item1.Link:'https://java.4006337366.com/jiejing/images/javaImage/icon_boy@3x.png'}}}        \n#attribute{style: display:flex;width:100rpx;height:100rpx;background-color:#f3f3f3;border-radius:50rpx;margin-left:20rpx;margin-top:20rpx;}        \n#attribute{wx:if: {{item1.Sex==0}}}        \n#element{image} {depth: 5}      \n#attribute{mode: aspectFill}        \n#attribute{src: {{item1.Link?item1.Link:'https://java.4006337366.com/jiejing/images/javaImage/icon_girl@3x.png'}}}        \n#attribute{style: display:flex;width:100rpx;height:100rpx;background-color:#f3f3f3;border-radius:50rpx;margin-left:20rpx;margin-top:20rpx;}        \n#attribute{wx:else: }        \n#element{view} {depth: 5}      \n#attribute{style: display:flex;flex-direction:column;flex-wrap:nowrap;margin-top:20rpx;margin-left:20rpx;width:{{widthItem}}px;height:200rpx;background-color:white;}        \n#element{view} {depth: 6}        \n#attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;width:100%;height:80rpx;background-color:width;justify-content:space-between;align-items:center;}          \n#element{view} {depth: 7}          \n#attribute{style: display:flex;width:70%;height:100%;flex-direction:row;flex-wrap:nowrap;align-items:center;}            \n#element{text} {depth: 8}            \n#attribute{style: display:flex;font-size:32rpx;width:auto;rgb(58,58,58);}              \nscriptdata{item1.Name}              \n#element{image} {depth: 8}            \n#attribute{src: {{item1.Sex==0?'https://java.4006337366.com/jiejing/images/javaImage/Referrer_Man@2x.png':'https://java.4006337366.com/jiejing/images/javaImage/Referrer_Feman@2x.png'}}}              \n#attribute{style: display:flex;width:30rpx;height:30rpx;margin-left:10rpx;}              \n#element{view} {depth: 7}          \n#attribute{style: display:flex;width:30%;height:100%;justify-content:flex-end;align-items:center;}            \n#element{image} {depth: 8}            \n#attribute{src: https://java.4006337366.com/jiejing/images/javaImage/phone_icon.png}              \n#attribute{style: display:flex;width:40rpx;height:40rpx;margin-right:20rpx;}              \n#element{view} {depth: 6}        \n#attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;width:100%;height:60rpx;background-color:width;justify-content:space-between;align-items:center;background-color:white;}          \n#element{text} {depth: 7}          \n#attribute{class: textlineShenlue}            \n#attribute{style: display:block;width:50%;font-size:24rpx;color:rgb(158,158,158);}            \ndata{会员来源：}            \nscriptdata{item1.CustomerSource}            \n#element{text} {depth: 7}          \n#attribute{class: textlineShenlue}            \n#attribute{style: display:block;width:50%;font-size:24rpx;color:rgb(158,158,158);}            \ndata{销售人员：}            \nscriptdata{item1.ConsultantName}            \n#element{view} {depth: 6}        \n#attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;width:100%;height:60rpx;background-color:width;justify-content:space-between;align-items:center;background-color:white;}          \n#element{text} {depth: 7}          \n#attribute{class: textlineShenlue}            \n#attribute{style: display:block;width:50%;font-size:24rpx;color:rgb(158,158,158);}            \ndata{最近消费：}            \nscriptdata{item1.CreateTime}            \n#element{text} {depth: 7}          \n#attribute{class: textlineShenlue}            \n#attribute{style: display:block;width:50%;font-size:24rpx;color:rgb(158,158,158);}            \ndata{最近跟进：}            \nscriptdata{item1.FollowTime}            \n",
+        "attributes": {
+          "bindrefresherrefresh": "onPullDownRefresh",
+          "bindscrolltolower": "onReachBottom",
+          "class": "scroller_view",
+          "refresherbackground": "#f3f3f3",
+          "refresherenabled": "true",
+          "refreshertriggered": "{{loading}}",
+          "scrolly": "true",
+          "style": "{{heightBottom}}px;"
+        },
+        "bind_method": "bindscrolltolower",
+        "data": [],
+        "function_call": "onReachBottom",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{picker} {depth: 6}\n#attribute{bindchange: selectDataTime}  \n#attribute{end: {{endTime}}}  \n#attribute{fields: month}  \n#attribute{headertext: 选择时间}  \n#attribute{mode: date}  \n#attribute{start: {{startTime}}}  \n#attribute{value: {{currentTime1}}}  \n#element{view} {depth: 7}  \n#attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;height:50rpx;margin-top:10rpx;align-items:center;}    \n#element{text} {depth: 8}    \n#attribute{style: display:flex;margin-left:20rpx;font-size:30rpx;color:rgb(102,102,102);}      \nscriptdata{item.CreateTime}      \n#element{image} {depth: 8}    \n#attribute{src: /images/icon_image_go.png}      \n#attribute{style: display:flex;margin-left:10rpx;width:50rpx;height:50rpx;}      \n",
+        "attributes": {
+          "bindchange": "selectDataTime",
+          "end": "{{endTime}}",
+          "fields": "month",
+          "headertext": "选择时间",
+          "mode": "date",
+          "start": "{{startTime}}",
+          "value": "{{currentTime1}}"
+        },
+        "bind_method": "bindchange",
+        "data": [],
+        "function_call": "selectDataTime",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: SortSelectShop}  \n#attribute{class: sortItem-view}  \n#attribute{data-index: {{index}}}  \n#attribute{data-items: {{item}}}  \n#attribute{wx:for: {{arrShopArrData}}}  \n#attribute{wx:key: key}  \n#element{text} {depth: 4}  \n#attribute{style: margin-left:20rpx;font-size:26rpx;color:{{shopIndex==index?'#29c3ce':'rgb(102,102,102)'}};}    \nscriptdata{item.ShopName}    \n",
+        "attributes": {
+          "bindtap": "SortSelectShop",
+          "class": "sortItem-view",
+          "data-index": "{{index}}",
+          "data-items": "{{item}}",
+          "wx:for": "{{arrShopArrData}}",
+          "wx:key": "key"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "SortSelectShop",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: LeftItemClik}  \n#attribute{class: sortItem-view}  \n#attribute{data-tags: {{index}}}  \n#attribute{wx:for: {{customerTypeArr}}}  \n#attribute{wx:key: key}  \n#element{text} {depth: 6}  \n#attribute{style: margin-left:20rpx;font-size:26rpx;color:#29c3ce;}    \n#attribute{wx:if: {{customerTypeIndex==index}}}    \nscriptdata{item.name}    \n#element{text} {depth: 6}  \n#attribute{style: margin-left:20rpx;font-size:26rpx;color:rgb(102,102,102);}    \n#attribute{wx:else: }    \nscriptdata{item.name}    \n",
+        "attributes": {
+          "bindtap": "LeftItemClik",
+          "class": "sortItem-view",
+          "data-tags": "{{index}}",
+          "wx:for": "{{customerTypeArr}}",
+          "wx:key": "key"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "LeftItemClik",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/customerManage/customerList/customerList"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: btnClik}  \n#attribute{class: mainview_itemV}  \n#attribute{data-tag: 1}  \n#element{image} {depth: 3}  \n#attribute{class: mainview_itemV_image}    \n#attribute{src: /images/icon_zhi.png}    \n#element{text} {depth: 3}  \n#attribute{class: mainview_itemV_text}    \ndata{我执行的任务}    \n",
+        "attributes": {
+          "bindtap": "btnClik",
+          "class": "mainview_itemV",
+          "data-tag": "1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "btnClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: btnClik}  \n#attribute{class: mainview_itemV}  \n#attribute{data-tag: 2}  \n#element{image} {depth: 3}  \n#attribute{class: mainview_itemV_image}    \n#attribute{src: /images/icon_send.png}    \n#element{text} {depth: 3}  \n#attribute{class: mainview_itemV_text}    \ndata{我发起的任务}    \n",
+        "attributes": {
+          "bindtap": "btnClik",
+          "class": "mainview_itemV",
+          "data-tag": "2"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "btnClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: btnClik}  \n#attribute{class: mainview_itemV}  \n#attribute{data-tag: 3}  \n#element{image} {depth: 3}  \n#attribute{class: mainview_itemV_image}    \n#attribute{src: /images/icon_yu.png}    \n#element{text} {depth: 3}  \n#attribute{class: mainview_itemV_text}    \ndata{与我相关的任务}    \n",
+        "attributes": {
+          "bindtap": "btnClik",
+          "class": "mainview_itemV",
+          "data-tag": "3"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "btnClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: btnClik}  \n#attribute{class: mainview_itemV}  \n#attribute{data-tag: 4}  \n#element{image} {depth: 3}  \n#attribute{class: mainview_itemV_image}    \n#attribute{src: /images/icon_ri.png}    \n#element{text} {depth: 3}  \n#attribute{class: mainview_itemV_text}    \ndata{我的工作日志}    \n",
+        "attributes": {
+          "bindtap": "btnClik",
+          "class": "mainview_itemV",
+          "data-tag": "4"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "btnClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 2}\n#attribute{bindtap: AddClik}  \n#attribute{class: add-wrap-image }  \n#attribute{src: /images/icon_add_task@2x.png}  \n",
+        "attributes": {
+          "bindtap": "AddClik",
+          "class": "add-wrap-image ",
+          "src": "/images/icon_add_task@2x.png"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "AddClik",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/work/work"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: Btnclik}  \n#attribute{class: item_View}  \n#attribute{data-tag: 1}  \n#attribute{style: justify-content:space-between;margin-left:5%;margin-top:40rpx;height:250rpx;border-radius:20rpx;background-color:rgb(248,253,253);border:2rpxsolidrgb(234,234,234);}  \n#element{image} {depth: 3}  \n#attribute{src: https://java.4006337366.com/jiejing/images/javaImage/icon_dailishang@2x.png}    \n#attribute{style: display:flex;margin-top:30rpx;height:220rpx;width:187rpx;margin-left:60rpx;}    \n#element{view} {depth: 3}  \n#attribute{class: item_CenterView}    \n#attribute{style: align-items:flex-start;width:{{widthItem}}px;}    \n#element{text} {depth: 4}    \n#attribute{style: display:flex;margin-left:20rpx;;height:60rpx;font-size:40rpx;color:#237df6;}      \ndata{Existing}      \n#element{text} {depth: 4}    \n#attribute{style: display:flex;margin-left:20rpx;height:60rpx;font-size:36rpx;color:rgb(31,55,90);}      \ndata{现有会员}      \n#element{view} {depth: 3}  \n#attribute{class: item_CenterView}    \n#attribute{style: width:120rpx;align-items:flex-end;}    \n#element{image} {depth: 4}    \n#attribute{src: /images/icon_image_go.png}      \n#attribute{style: display:flex;width:70rpx;height:70rpx;margin-right:20rpx;}      \n",
+        "attributes": {
+          "bindtap": "Btnclik",
+          "class": "item_View",
+          "data-tag": "1",
+          "style": "justify-content:space-between;margin-left:5%;margin-top:40rpx;height:250rpx;border-radius:20rpx;background-color:rgb(248,253,253);border:2rpxsolidrgb(234,234,234);"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "Btnclik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: Btnclik}  \n#attribute{class: item_View}  \n#attribute{data-tag: 2}  \n#attribute{style: justify-content:space-between;margin-left:5%;margin-top:40rpx;height:250rpx;border-radius:20rpx;background-color:rgb(248,253,253);border:2rpxsolidrgb(234,234,234);}  \n#element{image} {depth: 3}  \n#attribute{src: https://java.4006337366.com/jiejing/images/javaImage/icon_zhinnegshi@2x.png}    \n#attribute{style: display:flex;margin-top:30rpx;height:220rpx;width:187rpx;margin-left:60rpx;}    \n#element{view} {depth: 3}  \n#attribute{class: item_CenterView}    \n#attribute{style: align-items:flex-start;width:{{widthItem}}px;}    \n#element{text} {depth: 4}    \n#attribute{style: display:flex;margin-left:20rpx;;height:60rpx;font-size:40rpx;color:#237df6;}      \ndata{Potential}      \n#element{text} {depth: 4}    \n#attribute{style: display:flex;margin-left:20rpx;height:60rpx;font-size:36rpx;color:rgb(31,55,90);}      \ndata{潜在客户}      \n#element{view} {depth: 3}  \n#attribute{class: item_CenterView}    \n#attribute{style: width:120rpx;align-items:flex-end;}    \n#element{image} {depth: 4}    \n#attribute{src: /images/icon_image_go.png}      \n#attribute{style: display:flex;width:70rpx;height:70rpx;margin-right:20rpx;}      \n",
+        "attributes": {
+          "bindtap": "Btnclik",
+          "class": "item_View",
+          "data-tag": "2",
+          "style": "justify-content:space-between;margin-left:5%;margin-top:40rpx;height:250rpx;border-radius:20rpx;background-color:rgb(248,253,253);border:2rpxsolidrgb(234,234,234);"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "Btnclik",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/customerManage/customerManage"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{scroll-view} {depth: 3}\n#attribute{bindscroll: scrollerCLik2}  \n#attribute{bounces: false}  \n#attribute{class: leftView_list1}  \n#attribute{enhanced: true}  \n#attribute{scrollx: true}  \n#attribute{showscrollbar: false}  \n#attribute{style: width:{{centerwidth}}px;}  \n#element{view} {depth: 4}  \n#attribute{class: CenterView_item}    \n#attribute{style: width:{{centerwidth}}px;}    \n#attribute{wx:for: {{30}}}    \n#attribute{wx:key: key1}    \n#element{view} {depth: 5}    \n#attribute{style: display:inline-block;white-space:nowrap;width:100%;height:100%;background-color:yellow;}      \n#element{view} {depth: 6}      \n#attribute{class: CenterView_item_Row}        \n#attribute{wx:for: {{20}}}        \n#attribute{wx:key: key2}        \n#element{text} {depth: 7}        \n#attribute{style: width:100rpx;height:70rpx;font-size:28rpx;background-color:red;line-height:70rpx;}          \nscriptdata{index}          \n",
+        "attributes": {
+          "bindscroll": "scrollerCLik2",
+          "bounces": "false",
+          "class": "leftView_list1",
+          "enhanced": "true",
+          "scrollx": "true",
+          "showscrollbar": "false",
+          "style": "width:{{centerwidth}}px;"
+        },
+        "bind_method": "bindscroll",
+        "data": [],
+        "function_call": "scrollerCLik2",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/work/myTable/myTable"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{image} {depth: 3}\n#attribute{bindtap: chaclik}  \n#attribute{class: main_left_go}  \n#attribute{src: /images/icon_back_go@2x.png}  \n#attribute{style: margin-top:-{{imageTopHeight}}px;}  \n",
+        "attributes": {
+          "bindtap": "chaclik",
+          "class": "main_left_go",
+          "src": "/images/icon_back_go@2x.png",
+          "style": "margin-top:-{{imageTopHeight}}px;"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "chaclik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindinput: AccountChange}  \n#attribute{class: input_text}  \n#attribute{placeholder: 请输入账号}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}  \n#attribute{style: margin-left:20rpx;width:{{inputWidth}}px;}  \n#attribute{value: {{AccountText}}}  \n",
+        "attributes": {
+          "bindinput": "AccountChange",
+          "class": "input_text",
+          "placeholder": "请输入账号",
+          "placeholderstyle": "font-size:30rpx;color:rgb(201,201,201);",
+          "style": "margin-left:20rpx;width:{{inputWidth}}px;",
+          "value": "{{AccountText}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "AccountChange",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindinput: PassWordChange}  \n#attribute{class: input_text}  \n#attribute{password: {{IsPassword}}}  \n#attribute{placeholder: 请输入密码}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}  \n#attribute{style: margin-left:20rpx;width:{{inputWidth1}}px;}  \n",
+        "attributes": {
+          "bindinput": "PassWordChange",
+          "class": "input_text",
+          "password": "{{IsPassword}}",
+          "placeholder": "请输入密码",
+          "placeholderstyle": "font-size:30rpx;color:rgb(201,201,201);",
+          "style": "margin-left:20rpx;width:{{inputWidth1}}px;"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "PassWordChange",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 3}\n#attribute{bindtap: ChangeClik}  \n#attribute{class: input_view_image}  \n#attribute{src: {{IsPassword?'/images/PassWord_shut@2x.png':'/images/PassWord_open@2x.png'}}}  \n",
+        "attributes": {
+          "bindtap": "ChangeClik",
+          "class": "input_view_image",
+          "src": "{{IsPassword?'/images/PassWord_shut@2x.png':'/images/PassWord_open@2x.png'}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "ChangeClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: loginClik}  \n#attribute{class: btn_view_Login}  \n#element{text} {depth: 3}  \n#attribute{style: display:flex;color:white;font-size:30rpx;}    \ndata{登 录}    \n",
+        "attributes": {
+          "bindtap": "loginClik",
+          "class": "btn_view_Login"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "loginClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 2}\n#attribute{bindgetphonenumber: getPhoneNumberMember}  \n#attribute{class: btn_view_NoLogin}  \n#attribute{opentype: getPhoneNumber}  \n#element{text} {depth: 3}  \n#attribute{style: display:flex;color:white;font-size:30rpx;}    \ndata{免密登录}    \n",
+        "attributes": {
+          "bindgetphonenumber": "getPhoneNumberMember",
+          "class": "btn_view_NoLogin",
+          "opentype": "getPhoneNumber"
+        },
+        "bind_method": "bindgetphonenumber",
+        "data": [],
+        "function_call": "getPhoneNumberMember",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: tapClik}  \n#attribute{class: bottom_HideView}  \n",
+        "attributes": {
+          "bindtap": "tapClik",
+          "class": "bottom_HideView"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: SelectShop}  \n#attribute{data-dic: {{item}}}  \n#attribute{data-tag: {{index}}}  \n#attribute{style: display:block;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);}  \n#attribute{wx:for: {{shopArr}}}  \n#attribute{wx:key: key}  \n#element{text} {depth: 4}  \n#attribute{class: textlineShenlue}    \n#attribute{style: display:block;padding-left:20rpx;padding-right:20rpx;height:80rpx;line-height:80rpx;}    \nscriptdata{item.ShopName}    \ndata{（}    \nscriptdata{item.MerchantName}    \ndata{）}    \n",
+        "attributes": {
+          "bindtap": "SelectShop",
+          "data-dic": "{{item}}",
+          "data-tag": "{{index}}",
+          "style": "display:block;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);",
+          "wx:for": "{{shopArr}}",
+          "wx:key": "key"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "SelectShop",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/login/login"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindgetuserinfo: getUserInfo}  \n#attribute{opentype: getUserInfo}  \n#attribute{wx:if: {{!hasUserInfo&&canIUse}}}  \ndata{获取头像昵称 }  \n",
+        "attributes": {
+          "bindgetuserinfo": "getUserInfo",
+          "opentype": "getUserInfo",
+          "wx:if": "{{!hasUserInfo&&canIUse}}"
+        },
+        "bind_method": "bindgetuserinfo",
+        "data": ["获取头像昵称 "],
+        "function_call": "getUserInfo",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 4}\n#attribute{bindtap: bindViewTap}  \n#attribute{class: userinfo-avatar}  \n#attribute{mode: cover}  \n#attribute{src: {{userInfo.avatarUrl}}}  \n",
+        "attributes": {
+          "bindtap": "bindViewTap",
+          "class": "userinfo-avatar",
+          "mode": "cover",
+          "src": "{{userInfo.avatarUrl}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "bindViewTap",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/index/index"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/logs/logs"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: itemClik}  \n#attribute{class: item_page_Content}  \n#attribute{data-dic: {{item1}}}  \n#attribute{style: border-bottom:2rpxsolid#f2f2f2;}  \n#attribute{wx:for: {{item.log}}}  \n#attribute{wx:for-item: item1}  \n#attribute{wx:key: key}  \n#element{view} {depth: 5}  \n#attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;width:90%;height:120rpx;margin-top:20rpx;}    \n#element{image} {depth: 6}    \n#attribute{src: {{HeadImage?HeadImage:'/images/img_avatar_default@2x.png'}}}      \n#attribute{style: display:flex;width:100rpx;height:100rpx;margin-left:20rpx;margin-top:10rpx;background-color:#f3f3f3;border-radius:50rpx;}      \n#element{view} {depth: 6}    \n#attribute{style: display:flex;margin-left:20rpx;flex-wrap:nowrap;flex-direction:column;height:120rpx;}      \n#element{text} {depth: 7}      \n#attribute{style: display:flex;height:80rpx;font-size:34rpx;rgb(58,58,58);align-items:center;}        \nscriptdata{item1.workName}        \n#element{text} {depth: 7}      \n#attribute{style: display:flex;height:40rpx;font-size:24rpx;color:rgb(201,201,201);}        \nscriptdata{item1.createTime}        \n#element{view} {depth: 5}  \n#attribute{style: display:flex;flex-direction:column;flex-wrap:nowrap;width:{{textWidth}}px;height:auto;margin-left:140rpx;overflow:hidden;background-color:white;}    \n#element{text} {depth: 6}    \n#attribute{style: display:block;font-size:28rpx;color:rgb(102,102,102);word-break:break-all;padding-top:10rpx;}      \nscriptdata{item1.content}      \n#element{view} {depth: 6}    \n#attribute{style: display:flex;width:100%;height:40rpx;background-color:white;}      \n",
+        "attributes": {
+          "bindtap": "itemClik",
+          "class": "item_page_Content",
+          "data-dic": "{{item1}}",
+          "style": "border-bottom:2rpxsolid#f2f2f2;",
+          "wx:for": "{{item.log}}",
+          "wx:for-item": "item1",
+          "wx:key": "key"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "itemClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 1}\n#attribute{bindtap: SendClik}  \n#attribute{class: btn_bottom}  \n#element{text} {depth: 2}  \n#attribute{style: font-size:30rpx;color:white;}    \ndata{添加日志}    \n",
+        "attributes": {
+          "bindtap": "SendClik",
+          "class": "btn_bottom"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "SendClik",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/myLog/myLog"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{text} {depth: 4}\n#attribute{bindtap: itemclik}  \n#attribute{class: Main_Top_itemV_text {{flagIndex==index?'itemV_Selected':'itemV_UnSelected'}}}  \n#attribute{data-tag: {{index}}}  \n#attribute{style: {{index==3?'border-right:0rpxsolid#2e94f3;':'border-right:2rpxsolid#2e94f3;'}}}  \n#attribute{wx:for: {{datamodel}}}  \n#attribute{wx:key: keys}  \nscriptdata{item}  \n",
+        "attributes": {
+          "bindtap": "itemclik",
+          "class": "Main_Top_itemV_text {{flagIndex==index?'itemV_Selected':'itemV_UnSelected'}}",
+          "data-tag": "{{index}}",
+          "style": "{{index==3?'border-right:0rpxsolid#2e94f3;':'border-right:2rpxsolid#2e94f3;'}}",
+          "wx:for": "{{datamodel}}",
+          "wx:key": "keys"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "itemclik",
+        "scriptdata": ["item"]
+      },
+      {
+        "ast": "#element{scroll-view} {depth: 2}\n#attribute{bindscrolltolower: onReachBottom}  \n#attribute{bindscrolltoupper: onPullDownRefresh}  \n#attribute{lowerthreshold: 50px}  \n#attribute{scrolly: true}  \n#attribute{style: display:flex;height:{{ScrollerHeight}}px;wdith:100%;background-color:#f3f3f3;}  \n#attribute{upperthreshold: 50px}  \n#attribute{wx:if: {{flagIndex==0}}}  \n#element{block} {depth: 3}  \n#attribute{wx:for: {{dataArray}}}    \n#attribute{wx:key: key}    \n#element{view} {depth: 4}    \n#attribute{bindtap: TaskDetail}      \n#attribute{class: itemV_Model}      \n#attribute{data-item: {{item}}}      \n#attribute{data-tag: 1}      \n#element{view} {depth: 5}      \n#attribute{class: itemV_Model_item}        \n#attribute{style: margin-top:20rpx;height:70rpx;color:rgb(58,58,58);}        \n#element{text} {depth: 6}        \n#attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}          \n#attribute{wx:if: {{item.Priority==0}}}          \ndata{优先级：}          \n#element{text} {depth: 7}          \n#attribute{style: color:#fc1424;}            \ndata{1}            \n#element{text} {depth: 6}        \n#attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}          \n#attribute{wx:elif: {{item.Priority==1}}}          \ndata{优先级：}          \n#element{text} {depth: 7}          \n#attribute{style: color:#fc5f2f;}            \ndata{2}            \n#element{text} {depth: 6}        \n#attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}          \n#attribute{wx:elif: {{item.Priority==2}}}          \ndata{优先级：}          \n#element{text} {depth: 7}          \n#attribute{style: color:#368cfb;}            \ndata{3}            \n#element{text} {depth: 6}        \n#attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}          \n#attribute{wx:elif: {{item.Priority==3}}}          \ndata{优先级：}          \n#element{text} {depth: 7}          \n#attribute{style: color:#7530fd;}            \ndata{4}            \n#element{text} {depth: 6}        \n#attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}          \n#attribute{wx:elif: {{item.Priority==3}}}          \ndata{优先级：}          \n#element{text} {depth: 7}          \n#attribute{style: color:#2cc7ab;}            \ndata{5}            \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:flex;width:50%;height:100%;}          \ndata{工作类型：}          \nscriptdata{item.TypeName}          \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:block;width:16.66%;height:100%;color:#ec2628;text-align:right;padding-right:20rpx;}          \n#attribute{wx:if: {{item.Status==0}}}          \ndata{未开始}          \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:block;width:16.66%;height:100%;color:color:#2884fe;text-align:right;padding-right:20rpx;}          \n#attribute{wx:if: {{item.Status==1}}}          \ndata{进行中}          \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:block;width:16.66%;height:100%;color:color:#1ab133;text-align:right;padding-right:20rpx;}          \n#attribute{wx:if: {{item.Status==2}}}          \ndata{已完成}          \n#element{view} {depth: 5}      \n#attribute{class: itemV_Model_item}        \n#attribute{style: height:60rpx;color:rgb(58,58,58);}        \n#element{text} {depth: 6}        \n#attribute{class: textlineShenlue}          \n#attribute{style: overflow:hidden;font-size:28rpx;display:block;width:90%;height:100%;padding-left:20rpx;}          \ndata{工作计划/事务：}          \nscriptdata{item.WorkName}          \n#element{view} {depth: 5}      \n#attribute{class: itemV_Model_item}        \n#attribute{style: height:60rpx;color:rgb(58,58,58);}        \n#attribute{wx:if: {{item.Status>=0}}}        \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}          \ndata{发布日期：}          \nscriptdata{item.CreateTime}          \n#element{view} {depth: 5}      \n#attribute{class: itemV_Model_item}        \n#attribute{style: height:60rpx;color:rgb(58,58,58);}        \n#attribute{wx:if: {{item.Status>=1}}}        \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}          \ndata{开始日期：}          \nscriptdata{item.StartTime?item.StartTime:''}          \n#element{view} {depth: 5}      \n#attribute{class: itemV_Model_item}        \n#attribute{style: height:60rpx;color:rgb(58,58,58);}        \n#attribute{wx:if: {{item.Status>=2}}}        \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}          \ndata{完成日期：}          \nscriptdata{item.EndTime?item.EndTime:''}          \n#element{view} {depth: 5}      \n#attribute{class: itemV_Model_item}        \n#attribute{style: height:80rpx;color:rgb(58,58,58);}        \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:flex;width:60%;height:100%;padding-left:20rpx;}          \ndata{执行人：}          \nscriptdata{item.UserName?item.UserName:''}          \n#element{view} {depth: 6}        \n#attribute{style: font-size:28rpx;display:block;width:30%;height:100%;text-align:right;padding-right:20rpx;flex-direction:row-reverse;flex-wrap:nowrap;}          \n#attribute{wx:if: {{item.UserId==currentPeopleID&&item.Status<2}}}          \n#element{text} {depth: 7}          \n#attribute{catchtap: SuccessClik}            \n#attribute{catchtouchmove: true}            \n#attribute{data-index: 100}            \n#attribute{data-item: {{item}}}            \n#attribute{style: display:width:auto;padding:10rpx;height:60rpx;background-color:#28921f;font-size:28rpx;color:white;}            \ndata{确定完成}            \n#element{view} {depth: 4}    \n#attribute{bindtap: MoreClik}      \n#attribute{data-dic: {{item}}}      \n#attribute{style: display:flex;width:100%;height:40rpx;border-top:2rpxsolid#f3f3f3;border-bottom:8rpxsolid#f3f3f3;justify-content:center;align-items:center;background-color:white}      \n#element{image} {depth: 5}      \n#attribute{src: /images/icon_Select_down@3x.png}        \n#attribute{style: display:flex;width:30rpx;height:30rpx}        \n#element{view} {depth: 3}  \n#attribute{style: display:flex;width:100%;height:200rpx;background-color:#f3f3f3;}    \n",
+        "attributes": {
+          "bindscrolltolower": "onReachBottom",
+          "bindscrolltoupper": "onPullDownRefresh",
+          "lowerthreshold": "50px",
+          "scrolly": "true",
+          "style": "display:flex;height:{{ScrollerHeight}}px;wdith:100%;background-color:#f3f3f3;",
+          "upperthreshold": "50px",
+          "wx:if": "{{flagIndex==0}}"
+        },
+        "bind_method": "bindscrolltolower",
+        "data": [],
+        "function_call": "onReachBottom",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{scroll-view} {depth: 2}\n#attribute{bindscrolltolower: onReachBottom}  \n#attribute{bindscrolltoupper: onPullDownRefresh}  \n#attribute{lowerthreshold: 50px}  \n#attribute{scrolly: true}  \n#attribute{style: display:flex;height:{{ScrollerHeight}}px;wdith:100%;background-color:#f3f3f3;}  \n#attribute{upperthreshold: 50px}  \n#attribute{wx:if: {{flagIndex==0}}}  \n#element{block} {depth: 3}  \n#attribute{wx:for: {{dataArray}}}    \n#attribute{wx:key: key}    \n#element{view} {depth: 4}    \n#attribute{bindtap: TaskDetail}      \n#attribute{class: itemV_Model}      \n#attribute{data-item: {{item}}}      \n#attribute{data-tag: 1}      \n#element{view} {depth: 5}      \n#attribute{class: itemV_Model_item}        \n#attribute{style: margin-top:20rpx;height:70rpx;color:rgb(58,58,58);}        \n#element{text} {depth: 6}        \n#attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}          \n#attribute{wx:if: {{item.Priority==0}}}          \ndata{优先级：}          \n#element{text} {depth: 7}          \n#attribute{style: color:#fc1424;}            \ndata{1}            \n#element{text} {depth: 6}        \n#attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}          \n#attribute{wx:elif: {{item.Priority==1}}}          \ndata{优先级：}          \n#element{text} {depth: 7}          \n#attribute{style: color:#fc5f2f;}            \ndata{2}            \n#element{text} {depth: 6}        \n#attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}          \n#attribute{wx:elif: {{item.Priority==2}}}          \ndata{优先级：}          \n#element{text} {depth: 7}          \n#attribute{style: color:#368cfb;}            \ndata{3}            \n#element{text} {depth: 6}        \n#attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}          \n#attribute{wx:elif: {{item.Priority==3}}}          \ndata{优先级：}          \n#element{text} {depth: 7}          \n#attribute{style: color:#7530fd;}            \ndata{4}            \n#element{text} {depth: 6}        \n#attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}          \n#attribute{wx:elif: {{item.Priority==3}}}          \ndata{优先级：}          \n#element{text} {depth: 7}          \n#attribute{style: color:#2cc7ab;}            \ndata{5}            \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:flex;width:50%;height:100%;}          \ndata{工作类型：}          \nscriptdata{item.TypeName}          \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:block;width:16.66%;height:100%;color:#ec2628;text-align:right;padding-right:20rpx;}          \n#attribute{wx:if: {{item.Status==0}}}          \ndata{未开始}          \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:block;width:16.66%;height:100%;color:color:#2884fe;text-align:right;padding-right:20rpx;}          \n#attribute{wx:if: {{item.Status==1}}}          \ndata{进行中}          \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:block;width:16.66%;height:100%;color:color:#1ab133;text-align:right;padding-right:20rpx;}          \n#attribute{wx:if: {{item.Status==2}}}          \ndata{已完成}          \n#element{view} {depth: 5}      \n#attribute{class: itemV_Model_item}        \n#attribute{style: height:60rpx;color:rgb(58,58,58);}        \n#element{text} {depth: 6}        \n#attribute{class: textlineShenlue}          \n#attribute{style: overflow:hidden;font-size:28rpx;display:block;width:90%;height:100%;padding-left:20rpx;}          \ndata{工作计划/事务：}          \nscriptdata{item.WorkName}          \n#element{view} {depth: 5}      \n#attribute{class: itemV_Model_item}        \n#attribute{style: height:60rpx;color:rgb(58,58,58);}        \n#attribute{wx:if: {{item.Status>=0}}}        \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}          \ndata{发布日期：}          \nscriptdata{item.CreateTime}          \n#element{view} {depth: 5}      \n#attribute{class: itemV_Model_item}        \n#attribute{style: height:60rpx;color:rgb(58,58,58);}        \n#attribute{wx:if: {{item.Status>=1}}}        \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}          \ndata{开始日期：}          \nscriptdata{item.StartTime?item.StartTime:''}          \n#element{view} {depth: 5}      \n#attribute{class: itemV_Model_item}        \n#attribute{style: height:60rpx;color:rgb(58,58,58);}        \n#attribute{wx:if: {{item.Status>=2}}}        \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}          \ndata{完成日期：}          \nscriptdata{item.EndTime?item.EndTime:''}          \n#element{view} {depth: 5}      \n#attribute{class: itemV_Model_item}        \n#attribute{style: height:80rpx;color:rgb(58,58,58);}        \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:flex;width:60%;height:100%;padding-left:20rpx;}          \ndata{执行人：}          \nscriptdata{item.UserName?item.UserName:''}          \n#element{view} {depth: 6}        \n#attribute{style: font-size:28rpx;display:block;width:30%;height:100%;text-align:right;padding-right:20rpx;flex-direction:row-reverse;flex-wrap:nowrap;}          \n#attribute{wx:if: {{item.UserId==currentPeopleID&&item.Status<2}}}          \n#element{text} {depth: 7}          \n#attribute{catchtap: SuccessClik}            \n#attribute{catchtouchmove: true}            \n#attribute{data-index: 100}            \n#attribute{data-item: {{item}}}            \n#attribute{style: display:width:auto;padding:10rpx;height:60rpx;background-color:#28921f;font-size:28rpx;color:white;}            \ndata{确定完成}            \n#element{view} {depth: 4}    \n#attribute{bindtap: MoreClik}      \n#attribute{data-dic: {{item}}}      \n#attribute{style: display:flex;width:100%;height:40rpx;border-top:2rpxsolid#f3f3f3;border-bottom:8rpxsolid#f3f3f3;justify-content:center;align-items:center;background-color:white}      \n#element{image} {depth: 5}      \n#attribute{src: /images/icon_Select_down@3x.png}        \n#attribute{style: display:flex;width:30rpx;height:30rpx}        \n#element{view} {depth: 3}  \n#attribute{style: display:flex;width:100%;height:200rpx;background-color:#f3f3f3;}    \n",
+        "attributes": {
+          "bindscrolltolower": "onReachBottom",
+          "bindscrolltoupper": "onPullDownRefresh",
+          "lowerthreshold": "50px",
+          "scrolly": "true",
+          "style": "display:flex;height:{{ScrollerHeight}}px;wdith:100%;background-color:#f3f3f3;",
+          "upperthreshold": "50px",
+          "wx:if": "{{flagIndex==0}}"
+        },
+        "bind_method": "bindscrolltoupper",
+        "data": [],
+        "function_call": "onPullDownRefresh",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: TaskDetail}  \n#attribute{class: itemV_Model}  \n#attribute{data-item: {{item}}}  \n#attribute{data-tag: 1}  \n#element{view} {depth: 5}  \n#attribute{class: itemV_Model_item}    \n#attribute{style: margin-top:20rpx;height:70rpx;color:rgb(58,58,58);}    \n#element{text} {depth: 6}    \n#attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}      \n#attribute{wx:if: {{item.Priority==0}}}      \ndata{优先级：}      \n#element{text} {depth: 7}      \n#attribute{style: color:#fc1424;}        \ndata{1}        \n#element{text} {depth: 6}    \n#attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}      \n#attribute{wx:elif: {{item.Priority==1}}}      \ndata{优先级：}      \n#element{text} {depth: 7}      \n#attribute{style: color:#fc5f2f;}        \ndata{2}        \n#element{text} {depth: 6}    \n#attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}      \n#attribute{wx:elif: {{item.Priority==2}}}      \ndata{优先级：}      \n#element{text} {depth: 7}      \n#attribute{style: color:#368cfb;}        \ndata{3}        \n#element{text} {depth: 6}    \n#attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}      \n#attribute{wx:elif: {{item.Priority==3}}}      \ndata{优先级：}      \n#element{text} {depth: 7}      \n#attribute{style: color:#7530fd;}        \ndata{4}        \n#element{text} {depth: 6}    \n#attribute{style: font-size:30rpx;display:flex;width:33.3%;height:100%;padding-left:20rpx;}      \n#attribute{wx:elif: {{item.Priority==3}}}      \ndata{优先级：}      \n#element{text} {depth: 7}      \n#attribute{style: color:#2cc7ab;}        \ndata{5}        \n#element{text} {depth: 6}    \n#attribute{style: font-size:28rpx;display:flex;width:50%;height:100%;}      \ndata{工作类型：}      \nscriptdata{item.TypeName}      \n#element{text} {depth: 6}    \n#attribute{style: font-size:28rpx;display:block;width:16.66%;height:100%;color:#ec2628;text-align:right;padding-right:20rpx;}      \n#attribute{wx:if: {{item.Status==0}}}      \ndata{未开始}      \n#element{text} {depth: 6}    \n#attribute{style: font-size:28rpx;display:block;width:16.66%;height:100%;color:color:#2884fe;text-align:right;padding-right:20rpx;}      \n#attribute{wx:if: {{item.Status==1}}}      \ndata{进行中}      \n#element{text} {depth: 6}    \n#attribute{style: font-size:28rpx;display:block;width:16.66%;height:100%;color:color:#1ab133;text-align:right;padding-right:20rpx;}      \n#attribute{wx:if: {{item.Status==2}}}      \ndata{已完成}      \n#element{view} {depth: 5}  \n#attribute{class: itemV_Model_item}    \n#attribute{style: height:60rpx;color:rgb(58,58,58);}    \n#element{text} {depth: 6}    \n#attribute{class: textlineShenlue}      \n#attribute{style: overflow:hidden;font-size:28rpx;display:block;width:90%;height:100%;padding-left:20rpx;}      \ndata{工作计划/事务：}      \nscriptdata{item.WorkName}      \n#element{view} {depth: 5}  \n#attribute{class: itemV_Model_item}    \n#attribute{style: height:60rpx;color:rgb(58,58,58);}    \n#attribute{wx:if: {{item.Status>=0}}}    \n#element{text} {depth: 6}    \n#attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}      \ndata{发布日期：}      \nscriptdata{item.CreateTime}      \n#element{view} {depth: 5}  \n#attribute{class: itemV_Model_item}    \n#attribute{style: height:60rpx;color:rgb(58,58,58);}    \n#attribute{wx:if: {{item.Status>=1}}}    \n#element{text} {depth: 6}    \n#attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}      \ndata{开始日期：}      \nscriptdata{item.StartTime?item.StartTime:''}      \n#element{view} {depth: 5}  \n#attribute{class: itemV_Model_item}    \n#attribute{style: height:60rpx;color:rgb(58,58,58);}    \n#attribute{wx:if: {{item.Status>=2}}}    \n#element{text} {depth: 6}    \n#attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}      \ndata{完成日期：}      \nscriptdata{item.EndTime?item.EndTime:''}      \n#element{view} {depth: 5}  \n#attribute{class: itemV_Model_item}    \n#attribute{style: height:80rpx;color:rgb(58,58,58);}    \n#element{text} {depth: 6}    \n#attribute{style: font-size:28rpx;display:flex;width:60%;height:100%;padding-left:20rpx;}      \ndata{执行人：}      \nscriptdata{item.UserName?item.UserName:''}      \n#element{view} {depth: 6}    \n#attribute{style: font-size:28rpx;display:block;width:30%;height:100%;text-align:right;padding-right:20rpx;flex-direction:row-reverse;flex-wrap:nowrap;}      \n#attribute{wx:if: {{item.UserId==currentPeopleID&&item.Status<2}}}      \n#element{text} {depth: 7}      \n#attribute{catchtap: SuccessClik}        \n#attribute{catchtouchmove: true}        \n#attribute{data-index: 100}        \n#attribute{data-item: {{item}}}        \n#attribute{style: display:width:auto;padding:10rpx;height:60rpx;background-color:#28921f;font-size:28rpx;color:white;}        \ndata{确定完成}        \n",
+        "attributes": {
+          "bindtap": "TaskDetail",
+          "class": "itemV_Model",
+          "data-item": "{{item}}",
+          "data-tag": "1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "TaskDetail",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: MoreClik}  \n#attribute{data-dic: {{item}}}  \n#attribute{style: display:flex;width:100%;height:40rpx;border-top:2rpxsolid#f3f3f3;border-bottom:8rpxsolid#f3f3f3;justify-content:center;align-items:center;background-color:white}  \n#element{image} {depth: 5}  \n#attribute{src: /images/icon_Select_down@3x.png}    \n#attribute{style: display:flex;width:30rpx;height:30rpx}    \n",
+        "attributes": {
+          "bindtap": "MoreClik",
+          "data-dic": "{{item}}",
+          "style": "display:flex;width:100%;height:40rpx;border-top:2rpxsolid#f3f3f3;border-bottom:8rpxsolid#f3f3f3;justify-content:center;align-items:center;background-color:white"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "MoreClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{scroll-view} {depth: 2}\n#attribute{bindscrolltolower: onReachBottom}  \n#attribute{bindscrolltoupper: onPullDownRefresh}  \n#attribute{lowerthreshold: 50px}  \n#attribute{scrolly: true}  \n#attribute{style: display:flex;height:{{ScrollerHeight}}px;wdith:100%;background-color:#f3f3f3;}  \n#attribute{upperthreshold: 50px}  \n#attribute{wx:if: {{flagIndex==1}}}  \n#element{block} {depth: 3}  \n#attribute{wx:for: {{dataSendArray}}}    \n#attribute{wx:key: key}    \n#element{view} {depth: 4}    \n#attribute{bindtap: TaskDetail}      \n#attribute{class: itemV_Model}      \n#attribute{data-item: {{item}}}      \n#attribute{data-tag: 2}      \n#element{view} {depth: 5}      \n#attribute{class: itemV_Model_item}        \n#attribute{style: margin-top:20rpx;height:70rpx;color:rgb(58,58,58);}        \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:flex;width:45%;height:100%;padding-left:20rpx;}          \ndata{工作类型：}          \nscriptdata{item.TypeName}          \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:block;width:55%;height:100%;color:rgb(201,201,201);text-align:right;padding-right:20rpx;}          \n#attribute{wx:if: {{item.Status==0}}}          \ndata{发起人：}          \nscriptdata{item.ExtendField3}          \ndata{ | }          \n#element{text} {depth: 7}          \n#attribute{style: color:#ec2628;}            \ndata{未开始}            \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:block;width:55%;height:100%;color:rgb(201,201,201);text-align:right;padding-right:20rpx;}          \n#attribute{wx:elif: {{item.Status==1}}}          \ndata{发起人：}          \nscriptdata{item.ExtendField3}          \ndata{ | }          \n#element{text} {depth: 7}          \n#attribute{style: color:#2884fe;}            \ndata{进行中}            \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:block;width:55%;height:100%;color:rgb(201,201,201);text-align:right;padding-right:20rpx;}          \n#attribute{wx:elif: {{item.Status==2}}}          \ndata{发起人：}          \nscriptdata{item.ExtendField3}          \ndata{ | }          \n#element{text} {depth: 7}          \n#attribute{style: color:#1ab133;}            \ndata{已完成}            \n#element{view} {depth: 5}      \n#attribute{class: itemV_Model_item}        \n#attribute{style: height:60rpx;color:rgb(58,58,58);}        \n#element{text} {depth: 6}        \n#attribute{class: textlineShenlue}          \n#attribute{style: overflow:hidden;font-size:28rpx;display:block;width:90%;height:100%;padding-left:20rpx;}          \ndata{工作计划/事务：}          \nscriptdata{item.WorkName}          \n#element{block} {depth: 5}      \n#attribute{wx:if: {{item.Status>=0}}}        \n#element{view} {depth: 6}        \n#attribute{class: itemV_Model_item}          \n#attribute{style: height:60rpx;color:rgb(58,58,58);}          \n#element{text} {depth: 7}          \n#attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}            \ndata{发布日期：}            \nscriptdata{item.CreateTime}            \n#element{view} {depth: 6}        \n#attribute{class: itemV_Model_item}          \n#attribute{style: height:60rpx;color:rgb(58,58,58);}          \n#element{text} {depth: 7}          \n#attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}            \ndata{计划完成日期：}            \nscriptdata{item.ExpectedTime?item.ExpectedTime:''}            \n#element{view} {depth: 5}      \n#attribute{class: itemV_Model_item}        \n#attribute{style: height:60rpx;color:rgb(58,58,58);}        \n#attribute{wx:if: {{item.Status>=1}}}        \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}          \ndata{开始日期：}          \nscriptdata{item.StartTime?item.StartTime:''}          \n#element{view} {depth: 5}      \n#attribute{class: itemV_Model_item}        \n#attribute{style: height:60rpx;color:rgb(58,58,58);}        \n#attribute{wx:if: {{item.Status>=2}}}        \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}          \ndata{完成日期：}          \nscriptdata{item.EndTime?item.EndTime:''}          \n#element{view} {depth: 5}      \n#attribute{class: itemV_Model_item}        \n#attribute{style: height:auto;padding-top:10rpx;padding-bottom:10rpx;color:rgb(58,58,58);}        \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:flex;width:60%;height:100%;padding-left:20rpx;}          \ndata{执行人：}          \nscriptdata{item.userNameList?item.userNameList:''}          \n#element{view} {depth: 6}        \n#attribute{style: font-size:28rpx;display:block;width:30%;height:100%;text-align:right;padding-right:20rpx;flex-direction:row-reverse;flex-wrap:nowrap;}          \n#attribute{wx:if: {{item.ExtendField2==currentPeopleID&&item.Status<2}}}          \n#element{text} {depth: 7}          \n#attribute{catchtap: SuccessClik}            \n#attribute{catchtouchmove: true}            \n#attribute{data-index: 101}            \n#attribute{data-item: {{item}}}            \n#attribute{style: display:width:auto;padding:10rpx;height:60rpx;background-color:#309afe;font-size:28rpx;color:white;}            \ndata{确定完成}            \n#element{view} {depth: 4}    \n#attribute{bindtap: MoreClik}      \n#attribute{data-dic: {{item}}}      \n#attribute{style: display:flex;width:100%;height:40rpx;border-top:2rpxsolid#f3f3f3;border-bottom:8rpxsolid#f3f3f3;justify-content:center;align-items:center;background-color:white}      \n#element{image} {depth: 5}      \n#attribute{src: /images/icon_Select_down@3x.png}        \n#attribute{style: display:flex;width:30rpx;height:30rpx}        \n#element{view} {depth: 3}  \n#attribute{style: display:flex;width:100%;height:100rpx;background-color:#f3f3f3;}    \n",
+        "attributes": {
+          "bindscrolltolower": "onReachBottom",
+          "bindscrolltoupper": "onPullDownRefresh",
+          "lowerthreshold": "50px",
+          "scrolly": "true",
+          "style": "display:flex;height:{{ScrollerHeight}}px;wdith:100%;background-color:#f3f3f3;",
+          "upperthreshold": "50px",
+          "wx:if": "{{flagIndex==1}}"
+        },
+        "bind_method": "bindscrolltolower",
+        "data": [],
+        "function_call": "onReachBottom",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{scroll-view} {depth: 2}\n#attribute{bindscrolltolower: onReachBottom}  \n#attribute{bindscrolltoupper: onPullDownRefresh}  \n#attribute{lowerthreshold: 50px}  \n#attribute{scrolly: true}  \n#attribute{style: display:flex;height:{{ScrollerHeight}}px;wdith:100%;background-color:#f3f3f3;}  \n#attribute{upperthreshold: 50px}  \n#attribute{wx:if: {{flagIndex==1}}}  \n#element{block} {depth: 3}  \n#attribute{wx:for: {{dataSendArray}}}    \n#attribute{wx:key: key}    \n#element{view} {depth: 4}    \n#attribute{bindtap: TaskDetail}      \n#attribute{class: itemV_Model}      \n#attribute{data-item: {{item}}}      \n#attribute{data-tag: 2}      \n#element{view} {depth: 5}      \n#attribute{class: itemV_Model_item}        \n#attribute{style: margin-top:20rpx;height:70rpx;color:rgb(58,58,58);}        \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:flex;width:45%;height:100%;padding-left:20rpx;}          \ndata{工作类型：}          \nscriptdata{item.TypeName}          \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:block;width:55%;height:100%;color:rgb(201,201,201);text-align:right;padding-right:20rpx;}          \n#attribute{wx:if: {{item.Status==0}}}          \ndata{发起人：}          \nscriptdata{item.ExtendField3}          \ndata{ | }          \n#element{text} {depth: 7}          \n#attribute{style: color:#ec2628;}            \ndata{未开始}            \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:block;width:55%;height:100%;color:rgb(201,201,201);text-align:right;padding-right:20rpx;}          \n#attribute{wx:elif: {{item.Status==1}}}          \ndata{发起人：}          \nscriptdata{item.ExtendField3}          \ndata{ | }          \n#element{text} {depth: 7}          \n#attribute{style: color:#2884fe;}            \ndata{进行中}            \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:block;width:55%;height:100%;color:rgb(201,201,201);text-align:right;padding-right:20rpx;}          \n#attribute{wx:elif: {{item.Status==2}}}          \ndata{发起人：}          \nscriptdata{item.ExtendField3}          \ndata{ | }          \n#element{text} {depth: 7}          \n#attribute{style: color:#1ab133;}            \ndata{已完成}            \n#element{view} {depth: 5}      \n#attribute{class: itemV_Model_item}        \n#attribute{style: height:60rpx;color:rgb(58,58,58);}        \n#element{text} {depth: 6}        \n#attribute{class: textlineShenlue}          \n#attribute{style: overflow:hidden;font-size:28rpx;display:block;width:90%;height:100%;padding-left:20rpx;}          \ndata{工作计划/事务：}          \nscriptdata{item.WorkName}          \n#element{block} {depth: 5}      \n#attribute{wx:if: {{item.Status>=0}}}        \n#element{view} {depth: 6}        \n#attribute{class: itemV_Model_item}          \n#attribute{style: height:60rpx;color:rgb(58,58,58);}          \n#element{text} {depth: 7}          \n#attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}            \ndata{发布日期：}            \nscriptdata{item.CreateTime}            \n#element{view} {depth: 6}        \n#attribute{class: itemV_Model_item}          \n#attribute{style: height:60rpx;color:rgb(58,58,58);}          \n#element{text} {depth: 7}          \n#attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}            \ndata{计划完成日期：}            \nscriptdata{item.ExpectedTime?item.ExpectedTime:''}            \n#element{view} {depth: 5}      \n#attribute{class: itemV_Model_item}        \n#attribute{style: height:60rpx;color:rgb(58,58,58);}        \n#attribute{wx:if: {{item.Status>=1}}}        \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}          \ndata{开始日期：}          \nscriptdata{item.StartTime?item.StartTime:''}          \n#element{view} {depth: 5}      \n#attribute{class: itemV_Model_item}        \n#attribute{style: height:60rpx;color:rgb(58,58,58);}        \n#attribute{wx:if: {{item.Status>=2}}}        \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}          \ndata{完成日期：}          \nscriptdata{item.EndTime?item.EndTime:''}          \n#element{view} {depth: 5}      \n#attribute{class: itemV_Model_item}        \n#attribute{style: height:auto;padding-top:10rpx;padding-bottom:10rpx;color:rgb(58,58,58);}        \n#element{text} {depth: 6}        \n#attribute{style: font-size:28rpx;display:flex;width:60%;height:100%;padding-left:20rpx;}          \ndata{执行人：}          \nscriptdata{item.userNameList?item.userNameList:''}          \n#element{view} {depth: 6}        \n#attribute{style: font-size:28rpx;display:block;width:30%;height:100%;text-align:right;padding-right:20rpx;flex-direction:row-reverse;flex-wrap:nowrap;}          \n#attribute{wx:if: {{item.ExtendField2==currentPeopleID&&item.Status<2}}}          \n#element{text} {depth: 7}          \n#attribute{catchtap: SuccessClik}            \n#attribute{catchtouchmove: true}            \n#attribute{data-index: 101}            \n#attribute{data-item: {{item}}}            \n#attribute{style: display:width:auto;padding:10rpx;height:60rpx;background-color:#309afe;font-size:28rpx;color:white;}            \ndata{确定完成}            \n#element{view} {depth: 4}    \n#attribute{bindtap: MoreClik}      \n#attribute{data-dic: {{item}}}      \n#attribute{style: display:flex;width:100%;height:40rpx;border-top:2rpxsolid#f3f3f3;border-bottom:8rpxsolid#f3f3f3;justify-content:center;align-items:center;background-color:white}      \n#element{image} {depth: 5}      \n#attribute{src: /images/icon_Select_down@3x.png}        \n#attribute{style: display:flex;width:30rpx;height:30rpx}        \n#element{view} {depth: 3}  \n#attribute{style: display:flex;width:100%;height:100rpx;background-color:#f3f3f3;}    \n",
+        "attributes": {
+          "bindscrolltolower": "onReachBottom",
+          "bindscrolltoupper": "onPullDownRefresh",
+          "lowerthreshold": "50px",
+          "scrolly": "true",
+          "style": "display:flex;height:{{ScrollerHeight}}px;wdith:100%;background-color:#f3f3f3;",
+          "upperthreshold": "50px",
+          "wx:if": "{{flagIndex==1}}"
+        },
+        "bind_method": "bindscrolltoupper",
+        "data": [],
+        "function_call": "onPullDownRefresh",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: TaskDetail}  \n#attribute{class: itemV_Model}  \n#attribute{data-item: {{item}}}  \n#attribute{data-tag: 2}  \n#element{view} {depth: 5}  \n#attribute{class: itemV_Model_item}    \n#attribute{style: margin-top:20rpx;height:70rpx;color:rgb(58,58,58);}    \n#element{text} {depth: 6}    \n#attribute{style: font-size:28rpx;display:flex;width:45%;height:100%;padding-left:20rpx;}      \ndata{工作类型：}      \nscriptdata{item.TypeName}      \n#element{text} {depth: 6}    \n#attribute{style: font-size:28rpx;display:block;width:55%;height:100%;color:rgb(201,201,201);text-align:right;padding-right:20rpx;}      \n#attribute{wx:if: {{item.Status==0}}}      \ndata{发起人：}      \nscriptdata{item.ExtendField3}      \ndata{ | }      \n#element{text} {depth: 7}      \n#attribute{style: color:#ec2628;}        \ndata{未开始}        \n#element{text} {depth: 6}    \n#attribute{style: font-size:28rpx;display:block;width:55%;height:100%;color:rgb(201,201,201);text-align:right;padding-right:20rpx;}      \n#attribute{wx:elif: {{item.Status==1}}}      \ndata{发起人：}      \nscriptdata{item.ExtendField3}      \ndata{ | }      \n#element{text} {depth: 7}      \n#attribute{style: color:#2884fe;}        \ndata{进行中}        \n#element{text} {depth: 6}    \n#attribute{style: font-size:28rpx;display:block;width:55%;height:100%;color:rgb(201,201,201);text-align:right;padding-right:20rpx;}      \n#attribute{wx:elif: {{item.Status==2}}}      \ndata{发起人：}      \nscriptdata{item.ExtendField3}      \ndata{ | }      \n#element{text} {depth: 7}      \n#attribute{style: color:#1ab133;}        \ndata{已完成}        \n#element{view} {depth: 5}  \n#attribute{class: itemV_Model_item}    \n#attribute{style: height:60rpx;color:rgb(58,58,58);}    \n#element{text} {depth: 6}    \n#attribute{class: textlineShenlue}      \n#attribute{style: overflow:hidden;font-size:28rpx;display:block;width:90%;height:100%;padding-left:20rpx;}      \ndata{工作计划/事务：}      \nscriptdata{item.WorkName}      \n#element{block} {depth: 5}  \n#attribute{wx:if: {{item.Status>=0}}}    \n#element{view} {depth: 6}    \n#attribute{class: itemV_Model_item}      \n#attribute{style: height:60rpx;color:rgb(58,58,58);}      \n#element{text} {depth: 7}      \n#attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}        \ndata{发布日期：}        \nscriptdata{item.CreateTime}        \n#element{view} {depth: 6}    \n#attribute{class: itemV_Model_item}      \n#attribute{style: height:60rpx;color:rgb(58,58,58);}      \n#element{text} {depth: 7}      \n#attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}        \ndata{计划完成日期：}        \nscriptdata{item.ExpectedTime?item.ExpectedTime:''}        \n#element{view} {depth: 5}  \n#attribute{class: itemV_Model_item}    \n#attribute{style: height:60rpx;color:rgb(58,58,58);}    \n#attribute{wx:if: {{item.Status>=1}}}    \n#element{text} {depth: 6}    \n#attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}      \ndata{开始日期：}      \nscriptdata{item.StartTime?item.StartTime:''}      \n#element{view} {depth: 5}  \n#attribute{class: itemV_Model_item}    \n#attribute{style: height:60rpx;color:rgb(58,58,58);}    \n#attribute{wx:if: {{item.Status>=2}}}    \n#element{text} {depth: 6}    \n#attribute{style: font-size:28rpx;display:flex;width:90%;height:100%;padding-left:20rpx;}      \ndata{完成日期：}      \nscriptdata{item.EndTime?item.EndTime:''}      \n#element{view} {depth: 5}  \n#attribute{class: itemV_Model_item}    \n#attribute{style: height:auto;padding-top:10rpx;padding-bottom:10rpx;color:rgb(58,58,58);}    \n#element{text} {depth: 6}    \n#attribute{style: font-size:28rpx;display:flex;width:60%;height:100%;padding-left:20rpx;}      \ndata{执行人：}      \nscriptdata{item.userNameList?item.userNameList:''}      \n#element{view} {depth: 6}    \n#attribute{style: font-size:28rpx;display:block;width:30%;height:100%;text-align:right;padding-right:20rpx;flex-direction:row-reverse;flex-wrap:nowrap;}      \n#attribute{wx:if: {{item.ExtendField2==currentPeopleID&&item.Status<2}}}      \n#element{text} {depth: 7}      \n#attribute{catchtap: SuccessClik}        \n#attribute{catchtouchmove: true}        \n#attribute{data-index: 101}        \n#attribute{data-item: {{item}}}        \n#attribute{style: display:width:auto;padding:10rpx;height:60rpx;background-color:#309afe;font-size:28rpx;color:white;}        \ndata{确定完成}        \n",
+        "attributes": {
+          "bindtap": "TaskDetail",
+          "class": "itemV_Model",
+          "data-item": "{{item}}",
+          "data-tag": "2"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "TaskDetail",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: MoreClik}  \n#attribute{data-dic: {{item}}}  \n#attribute{style: display:flex;width:100%;height:40rpx;border-top:2rpxsolid#f3f3f3;border-bottom:8rpxsolid#f3f3f3;justify-content:center;align-items:center;background-color:white}  \n#element{image} {depth: 5}  \n#attribute{src: /images/icon_Select_down@3x.png}    \n#attribute{style: display:flex;width:30rpx;height:30rpx}    \n",
+        "attributes": {
+          "bindtap": "MoreClik",
+          "data-dic": "{{item}}",
+          "style": "display:flex;width:100%;height:40rpx;border-top:2rpxsolid#f3f3f3;border-bottom:8rpxsolid#f3f3f3;justify-content:center;align-items:center;background-color:white"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "MoreClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: selectTimeClik}  \n#attribute{class: {{index==timeIndex?'item_selected':'item_unselect'}}}  \n#attribute{data-index: {{index}}}  \n#attribute{style: display:flex;width:25%;height:75rpx;justify-content:center;align-items:center;}  \n#attribute{wx:for: {{dateArray}}}  \n#attribute{wx:key: key}  \n#element{text} {depth: 6}  \n#attribute{class: textForTwoline}    \n#attribute{style: display:block;width:100%;height:60rpx;margin-top:0rpx;border-right:2rpxsolidrgb(201,201,201);line-height:30rpx;font-size:25rpx;text-align:center;}    \nscriptdata{item.time}    \n",
+        "attributes": {
+          "bindtap": "selectTimeClik",
+          "class": "{{index==timeIndex?'item_selected':'item_unselect'}}",
+          "data-index": "{{index}}",
+          "style": "display:flex;width:25%;height:75rpx;justify-content:center;align-items:center;",
+          "wx:for": "{{dateArray}}",
+          "wx:key": "key"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "selectTimeClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{picker} {depth: 4}\n#attribute{bindchange: bindDateChange}  \n#attribute{end: 2099-01-01}  \n#attribute{mode: date}  \n#attribute{start: 2000-01-01}  \n#attribute{value: {{taskdate}}}  \n#element{image} {depth: 5}  \n#attribute{src: /images/icon_rili@2x.png}    \n#attribute{style: display:flex;width:34rpx;height:37rpx;margin-left:20rpx;}    \n",
+        "attributes": {
+          "bindchange": "bindDateChange",
+          "end": "2099-01-01",
+          "mode": "date",
+          "start": "2000-01-01",
+          "value": "{{taskdate}}"
+        },
+        "bind_method": "bindchange",
+        "data": [],
+        "function_call": "bindDateChange",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 8}\n#attribute{bindtap: AddSendTaskClik}  \n#attribute{src: /images/icon_add_task@2x.png}  \n#attribute{style: display:flex;width:40rpx;height:40rpx;}  \n#attribute{wx:if: {{index1==0}}}  \n",
+        "attributes": {
+          "bindtap": "AddSendTaskClik",
+          "src": "/images/icon_add_task@2x.png",
+          "style": "display:flex;width:40rpx;height:40rpx;",
+          "wx:if": "{{index1==0}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "AddSendTaskClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: selectTimeClik}  \n#attribute{class: {{index==timeIndex?'item_selected':'item_unselect'}}}  \n#attribute{data-index: {{index}}}  \n#attribute{style: display:flex;width:25%;height:75rpx;justify-content:center;align-items:center;}  \n#attribute{wx:for: {{dateArray}}}  \n#attribute{wx:key: key}  \n#element{text} {depth: 6}  \n#attribute{class: textForTwoline}    \n#attribute{style: display:block;width:100%;height:60rpx;margin-top:0rpx;border-right:2rpxsolidrgb(201,201,201);line-height:30rpx;font-size:25rpx;text-align:center;}    \nscriptdata{item.time}    \n",
+        "attributes": {
+          "bindtap": "selectTimeClik",
+          "class": "{{index==timeIndex?'item_selected':'item_unselect'}}",
+          "data-index": "{{index}}",
+          "style": "display:flex;width:25%;height:75rpx;justify-content:center;align-items:center;",
+          "wx:for": "{{dateArray}}",
+          "wx:key": "key"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "selectTimeClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{picker} {depth: 4}\n#attribute{bindchange: bindDateChange}  \n#attribute{end: 2099-01-01}  \n#attribute{mode: date}  \n#attribute{start: 2000-01-01}  \n#attribute{value: {{taskdate}}}  \n#element{image} {depth: 5}  \n#attribute{src: /images/icon_rili@2x.png}    \n#attribute{style: display:flex;width:34rpx;height:37rpx;margin-left:20rpx;}    \n",
+        "attributes": {
+          "bindchange": "bindDateChange",
+          "end": "2099-01-01",
+          "mode": "date",
+          "start": "2000-01-01",
+          "value": "{{taskdate}}"
+        },
+        "bind_method": "bindchange",
+        "data": [],
+        "function_call": "bindDateChange",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 8}\n#attribute{bindtap: AddLogclik}  \n#attribute{src: /images/icon_add_task@2x.png}  \n#attribute{style: display:flex;width:40rpx;height:40rpx;}  \n#attribute{wx:if: {{index1==0&&item.UserId==currentPeopleID}}}  \n",
+        "attributes": {
+          "bindtap": "AddLogclik",
+          "src": "/images/icon_add_task@2x.png",
+          "style": "display:flex;width:40rpx;height:40rpx;",
+          "wx:if": "{{index1==0&&item.UserId==currentPeopleID}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "AddLogclik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: hideSort}  \n#attribute{class: bottom_HideView}  \n",
+        "attributes": {
+          "bindtap": "hideSort",
+          "class": "bottom_HideView"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "hideSort",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{text} {depth: 4}\n#attribute{bindtap: SumitOrResetclik}  \n#attribute{data-tag: 1}  \n#attribute{style: display:flex;width:20%;height:100rpx;color:rgb(203,203,203);font-size:30rpx;align-items:center;justify-content:center;}  \ndata{重置}  \n",
+        "attributes": {
+          "bindtap": "SumitOrResetclik",
+          "data-tag": "1",
+          "style": "display:flex;width:20%;height:100rpx;color:rgb(203,203,203);font-size:30rpx;align-items:center;justify-content:center;"
+        },
+        "bind_method": "bindtap",
+        "data": ["重置"],
+        "function_call": "SumitOrResetclik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{text} {depth: 4}\n#attribute{bindtap: SumitOrResetclik}  \n#attribute{data-tag: 2}  \n#attribute{style: display:flex;width:20%;height:100rpx;color:#2b84ff;font-size:30rpx;align-items:center;justify-content:center;}  \ndata{确定}  \n",
+        "attributes": {
+          "bindtap": "SumitOrResetclik",
+          "data-tag": "2",
+          "style": "display:flex;width:20%;height:100rpx;color:#2b84ff;font-size:30rpx;align-items:center;justify-content:center;"
+        },
+        "bind_method": "bindtap",
+        "data": ["确定"],
+        "function_call": "SumitOrResetclik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: sort_Typeclik}  \n#attribute{class: bottomV_items}  \n#attribute{data-tag: 0}  \n#attribute{style: background-color:{{sort_flag==0?'#f3f3f3':'white'}}}  \ndata{任务状态}  \n",
+        "attributes": {
+          "bindtap": "sort_Typeclik",
+          "class": "bottomV_items",
+          "data-tag": "0",
+          "style": "background-color:{{sort_flag==0?'#f3f3f3':'white'}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["任务状态"],
+        "function_call": "sort_Typeclik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: sort_Typeclik}  \n#attribute{class: bottomV_items}  \n#attribute{data-tag: 1}  \n#attribute{style: background-color:{{sort_flag==1?'#f3f3f3':'white'}}}  \ndata{工作类型}  \n",
+        "attributes": {
+          "bindtap": "sort_Typeclik",
+          "class": "bottomV_items",
+          "data-tag": "1",
+          "style": "background-color:{{sort_flag==1?'#f3f3f3':'white'}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["工作类型"],
+        "function_call": "sort_Typeclik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 7}\n#attribute{bindtap: sort_IndexClik}  \n#attribute{class: bottomV_items}  \n#attribute{data-index: {{index}}}  \n#attribute{data-tag: 2}  \n#attribute{style: background-color:{{sort_flagindex==index?'#f3f3f3':'white'}}}  \n#attribute{wx:for: {{taskStatusArr}}}  \n#attribute{wx:key: key}  \nscriptdata{item}  \n",
+        "attributes": {
+          "bindtap": "sort_IndexClik",
+          "class": "bottomV_items",
+          "data-index": "{{index}}",
+          "data-tag": "2",
+          "style": "background-color:{{sort_flagindex==index?'#f3f3f3':'white'}}",
+          "wx:for": "{{taskStatusArr}}",
+          "wx:key": "key"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "sort_IndexClik",
+        "scriptdata": ["item"]
+      },
+      {
+        "ast": "#element{view} {depth: 7}\n#attribute{bindtap: sort_IndexClik}  \n#attribute{class: bottomV_items}  \n#attribute{data-index: {{index}}}  \n#attribute{data-tag: 2}  \n#attribute{style: background-color:{{sort_flagindex==index?'#f3f3f3':'white'}}}  \n#attribute{wx:for: {{workStatusArr}}}  \n#attribute{wx:key: key}  \nscriptdata{item.typeName}  \n",
+        "attributes": {
+          "bindtap": "sort_IndexClik",
+          "class": "bottomV_items",
+          "data-index": "{{index}}",
+          "data-tag": "2",
+          "style": "background-color:{{sort_flagindex==index?'#f3f3f3':'white'}}",
+          "wx:for": "{{workStatusArr}}",
+          "wx:key": "key"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "sort_IndexClik",
+        "scriptdata": ["item.typeName"]
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: sortClik}  \n#attribute{class: bottomV_Sel_imageV}  \n#attribute{data-tag: 0}  \n#element{image} {depth: 4}  \n#attribute{src: /images/icon_image_saixuan@3x.png}    \n#attribute{style: display:flex;width:40rpx;height:40rpx;}    \n#element{text} {depth: 4}  \n#attribute{class: bottomV_Sel_imageV_title}    \ndata{筛选}    \n",
+        "attributes": {
+          "bindtap": "sortClik",
+          "class": "bottomV_Sel_imageV",
+          "data-tag": "0"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "sortClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: sortClik}  \n#attribute{class: bottomV_Sel_imageV}  \n#attribute{data-tag: 1}  \n#element{image} {depth: 4}  \n#attribute{src: {{sortIndex==1?'/images/icon_gzzz_up@3x.png':'/images/icon_gzzz_down@3x.png'}}}    \n#attribute{style: display:flex;width:40rpx;height:40rpx;}    \n#element{text} {depth: 4}  \n#attribute{class: {{sortIndex==1?'bottomV_Sel_imageV_title':'bottomV_Sel_imageV_title unsel_imageV_color'}}}    \nscriptdata{Order_priority==0?'优先级↓':'优先级↑'}    \n",
+        "attributes": {
+          "bindtap": "sortClik",
+          "class": "bottomV_Sel_imageV",
+          "data-tag": "1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "sortClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: sortClik}  \n#attribute{class: bottomV_Sel_imageV}  \n#attribute{data-tag: 2}  \n#element{image} {depth: 4}  \n#attribute{src: {{sortIndex==2?'/images/icon_gzzx_timeup@3x.png':'/images/icon_gzzx_timedown@3x.png'}}}    \n#attribute{style: display:flex;width:40rpx;height:40rpx;}    \n#element{text} {depth: 4}  \n#attribute{class: {{sortIndex==2?'bottomV_Sel_imageV_title':'bottomV_Sel_imageV_title unsel_imageV_color'}}}    \nscriptdata{Order_publish==0?'发布日期↓':'发布日期↑'}    \n",
+        "attributes": {
+          "bindtap": "sortClik",
+          "class": "bottomV_Sel_imageV",
+          "data-tag": "2"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "sortClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: sortClik}  \n#attribute{class: bottomV_Sel_imageV}  \n#attribute{data-tag: 3}  \n#element{image} {depth: 4}  \n#attribute{src: {{sortIndex==3?'/images/icon_gzzx_timeup@3x.png':'/images/icon_gzzx_timedown@3x.png'}}}    \n#attribute{style: display:flex;width:40rpx;height:40rpx;}    \n#element{text} {depth: 4}  \n#attribute{class: {{sortIndex==3?'bottomV_Sel_imageV_title':'bottomV_Sel_imageV_title unsel_imageV_color'}}}    \nscriptdata{Order_start==0?'开始日期↓':'开始日期↑'}    \n",
+        "attributes": {
+          "bindtap": "sortClik",
+          "class": "bottomV_Sel_imageV",
+          "data-tag": "3"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "sortClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: tapClik}  \n#attribute{class: bottom_HideView}  \n",
+        "attributes": {
+          "bindtap": "tapClik",
+          "class": "bottom_HideView"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 4}\n#attribute{bindtap: tapClik}  \n#attribute{src: /images/icon_cha@2x.png}  \n#attribute{style: display:flex;margin-right:20rpx;width:40rpx;height:40rpx;}  \n",
+        "attributes": {
+          "bindtap": "tapClik",
+          "src": "/images/icon_cha@2x.png",
+          "style": "display:flex;margin-right:20rpx;width:40rpx;height:40rpx;"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: SelectPeople}  \n#attribute{data-dic: {{detailCurrent}}}  \n#attribute{data-flag: 2}  \n#attribute{style: display:block;width:20%;margin-right:20rpx;color:#3691f3;font-size:28rpx;flex-wrap:nowrap;flex-direction:row-reverse;}  \n#element{text} {depth: 5}  \ndata{选择人员}    \n",
+        "attributes": {
+          "bindtap": "SelectPeople",
+          "data-dic": "{{detailCurrent}}",
+          "data-flag": "2",
+          "style": "display:block;width:20%;margin-right:20rpx;color:#3691f3;font-size:28rpx;flex-wrap:nowrap;flex-direction:row-reverse;"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "SelectPeople",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: tapClik1}  \n#attribute{class: bottom_HideView}  \n",
+        "attributes": {
+          "bindtap": "tapClik1",
+          "class": "bottom_HideView"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik1",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 4}\n#attribute{bindtap: tapClik1}  \n#attribute{src: /images/icon_cha@2x.png}  \n#attribute{style: display:flex;margin-right:20rpx;width:40rpx;height:40rpx;}  \n",
+        "attributes": {
+          "bindtap": "tapClik1",
+          "src": "/images/icon_cha@2x.png",
+          "style": "display:flex;margin-right:20rpx;width:40rpx;height:40rpx;"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik1",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{textarea} {depth: 4}\n#attribute{bindinput: ChangeDetailText}  \n#attribute{maxlength: -1}  \n#attribute{placeholder: 请输入文字}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(158,158,158);}  \n#attribute{style: width:90%;height:300rpx;font-size:30rpx;margin:10rpx;}  \n",
+        "attributes": {
+          "bindinput": "ChangeDetailText",
+          "maxlength": "-1",
+          "placeholder": "请输入文字",
+          "placeholderstyle": "font-size:30rpx;color:rgb(158,158,158);",
+          "style": "width:90%;height:300rpx;font-size:30rpx;margin:10rpx;"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "ChangeDetailText",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{text} {depth: 5}\n#attribute{bindtap: sumitClik}  \n#attribute{style: display:block;width:120rpx;height:100%;font-size:26rpx;background-color:#319afe;text-align:center;line-height:60rpx;border-radius:10rpx;}  \ndata{确定}  \n",
+        "attributes": {
+          "bindtap": "sumitClik",
+          "style": "display:block;width:120rpx;height:100%;font-size:26rpx;background-color:#319afe;text-align:center;line-height:60rpx;border-radius:10rpx;"
+        },
+        "bind_method": "bindtap",
+        "data": ["确定"],
+        "function_call": "sumitClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{text} {depth: 5}\n#attribute{bindtap: tapClik1}  \n#attribute{style: display:block;width:120rpx;height:100%;font-size:26rpx;background-color:#c1c1c1;text-align:center;line-height:60rpx;border-radius:10rpx;}  \ndata{取消}  \n",
+        "attributes": {
+          "bindtap": "tapClik1",
+          "style": "display:block;width:120rpx;height:100%;font-size:26rpx;background-color:#c1c1c1;text-align:center;line-height:60rpx;border-radius:10rpx;"
+        },
+        "bind_method": "bindtap",
+        "data": ["取消"],
+        "function_call": "tapClik1",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/work/task/task"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindinput: ChangeClik}  \n#attribute{data-tag: 0}  \n#attribute{hidden: {{isHideType==1?true:false}}}  \n#attribute{placeholder: 请输入任务标题}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}  \n#attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);}  \n#attribute{value: 工作计划}  \n",
+        "attributes": {
+          "bindinput": "ChangeClik",
+          "data-tag": "0",
+          "hidden": "{{isHideType==1?true:false}}",
+          "placeholder": "请输入任务标题",
+          "placeholderstyle": "font-size:30rpx;color:rgb(201,201,201);",
+          "style": "display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);",
+          "value": "工作计划"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "ChangeClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindinput: ChangeClik}  \n#attribute{data-tag: 1}  \n#attribute{hidden: {{isHideType==1?true:false}}}  \n#attribute{placeholder: 请输入计划/事务}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}  \n#attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);}  \n#attribute{value: }  \n",
+        "attributes": {
+          "bindinput": "ChangeClik",
+          "data-tag": "1",
+          "hidden": "{{isHideType==1?true:false}}",
+          "placeholder": "请输入计划/事务",
+          "placeholderstyle": "font-size:30rpx;color:rgb(201,201,201);",
+          "style": "display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);",
+          "value": ""
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "ChangeClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindtap: tapClik}  \n#attribute{data-type: 0}  \n#attribute{disabled: false}  \n#attribute{placeholder: 请选择工作类型}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}  \n#attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}  \n#attribute{value: {{selectWorkType.typeName?selectWorkType.typeName:''}}}  \n",
+        "attributes": {
+          "bindtap": "tapClik",
+          "data-type": "0",
+          "disabled": "false",
+          "placeholder": "请选择工作类型",
+          "placeholderstyle": "font-size:30rpx;color:rgb(201,201,201);",
+          "style": "display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;",
+          "value": "{{selectWorkType.typeName?selectWorkType.typeName:''}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{textarea} {depth: 4}\n#attribute{bindinput: ChangeDetailText}  \n#attribute{hidden: {{isHideType==1?true:false}}}  \n#attribute{maxlength: -1}  \n#attribute{placeholder: 请输入文字}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(158,158,158);}  \n#attribute{style: width:90%;height:200rpx;font-size:30rpx;margin:10rpx;}  \n",
+        "attributes": {
+          "bindinput": "ChangeDetailText",
+          "hidden": "{{isHideType==1?true:false}}",
+          "maxlength": "-1",
+          "placeholder": "请输入文字",
+          "placeholderstyle": "font-size:30rpx;color:rgb(158,158,158);",
+          "style": "width:90%;height:200rpx;font-size:30rpx;margin:10rpx;"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "ChangeDetailText",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindtap: tapClik}  \n#attribute{data-type: 2}  \n#attribute{disabled: false}  \n#attribute{placeholder: 请选择人员}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}  \n#attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}  \n#attribute{value: {{sendUser}}}  \n",
+        "attributes": {
+          "bindtap": "tapClik",
+          "data-type": "2",
+          "disabled": "false",
+          "placeholder": "请选择人员",
+          "placeholderstyle": "font-size:30rpx;color:rgb(201,201,201);",
+          "style": "display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;",
+          "value": "{{sendUser}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindtap: tapClik}  \n#attribute{data-type: 1}  \n#attribute{disabled: false}  \n#attribute{placeholder: 请选择等级}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}  \n#attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}  \n#attribute{value: {{selectLeveData.name?selectLeveData.name:''}}}  \n",
+        "attributes": {
+          "bindtap": "tapClik",
+          "data-type": "1",
+          "disabled": "false",
+          "placeholder": "请选择等级",
+          "placeholderstyle": "font-size:30rpx;color:rgb(201,201,201);",
+          "style": "display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;",
+          "value": "{{selectLeveData.name?selectLeveData.name:''}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{picker} {depth: 3}\n#attribute{bindchange: changeDateTime1}  \n#attribute{bindcolumnchange: changeDateTimeColumn1}  \n#attribute{class: width:55%;}  \n#attribute{mode: multiSelector}  \n#attribute{range: {{dateTimeArray1}}}  \n#attribute{value: {{dateTime1}}}  \n#element{input} {depth: 4}  \n#attribute{disabled: false}    \n#attribute{placeholder: 请选择日期}    \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}    \n#attribute{style: display:block;width:100%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}    \n#attribute{value: {{buildTime}}}    \n",
+        "attributes": {
+          "bindchange": "changeDateTime1",
+          "bindcolumnchange": "changeDateTimeColumn1",
+          "class": "width:55%;",
+          "mode": "multiSelector",
+          "range": "{{dateTimeArray1}}",
+          "value": "{{dateTime1}}"
+        },
+        "bind_method": "bindchange",
+        "data": [],
+        "function_call": "changeDateTime1",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{picker} {depth: 3}\n#attribute{bindchange: changeDateTime1}  \n#attribute{bindcolumnchange: changeDateTimeColumn1}  \n#attribute{class: width:55%;}  \n#attribute{mode: multiSelector}  \n#attribute{range: {{dateTimeArray1}}}  \n#attribute{value: {{dateTime1}}}  \n#element{input} {depth: 4}  \n#attribute{disabled: false}    \n#attribute{placeholder: 请选择日期}    \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}    \n#attribute{style: display:block;width:100%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}    \n#attribute{value: {{buildTime}}}    \n",
+        "attributes": {
+          "bindchange": "changeDateTime1",
+          "bindcolumnchange": "changeDateTimeColumn1",
+          "class": "width:55%;",
+          "mode": "multiSelector",
+          "range": "{{dateTimeArray1}}",
+          "value": "{{dateTime1}}"
+        },
+        "bind_method": "bindcolumnchange",
+        "data": [],
+        "function_call": "changeDateTimeColumn1",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindtap: tapClik}  \n#attribute{data-type: 3}  \n#attribute{disabled: false}  \n#attribute{placeholder: 请选择人员}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}  \n#attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}  \n#attribute{value: {{xiezhuStr}}}  \n",
+        "attributes": {
+          "bindtap": "tapClik",
+          "data-type": "3",
+          "disabled": "false",
+          "placeholder": "请选择人员",
+          "placeholderstyle": "font-size:30rpx;color:rgb(201,201,201);",
+          "style": "display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;",
+          "value": "{{xiezhuStr}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindtap: tapClik}  \n#attribute{data-type: 4}  \n#attribute{disabled: false}  \n#attribute{placeholder: 请选择人员}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}  \n#attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}  \n#attribute{value: {{jianduStr}}}  \n",
+        "attributes": {
+          "bindtap": "tapClik",
+          "data-type": "4",
+          "disabled": "false",
+          "placeholder": "请选择人员",
+          "placeholderstyle": "font-size:30rpx;color:rgb(201,201,201);",
+          "style": "display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;",
+          "value": "{{jianduStr}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindtap: tapClik}  \n#attribute{data-type: 5}  \n#attribute{disabled: false}  \n#attribute{placeholder: 请选择人员}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}  \n#attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}  \n#attribute{value: {{zhixingStr}}}  \n",
+        "attributes": {
+          "bindtap": "tapClik",
+          "data-type": "5",
+          "disabled": "false",
+          "placeholder": "请选择人员",
+          "placeholderstyle": "font-size:30rpx;color:rgb(201,201,201);",
+          "style": "display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;",
+          "value": "{{zhixingStr}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 1}\n#attribute{bindtap: SendClik}  \n#attribute{class: btn_bottom}  \n#element{text} {depth: 2}  \n#attribute{style: font-size:30rpx;color:white;}    \ndata{发  布}    \n",
+        "attributes": {
+          "bindtap": "SendClik",
+          "class": "btn_bottom"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "SendClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: hideClik}  \n#attribute{class: bottom_HideView}  \n",
+        "attributes": {
+          "bindtap": "hideClik",
+          "class": "bottom_HideView"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "hideClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: optionClik}  \n#attribute{data-dic: {{item}}}  \n#attribute{data-tag: {{index}}}  \n#attribute{style: display:flex;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);justify-content:center;}  \n#attribute{wx:for: {{TypeArray}}}  \n#attribute{wx:key: key}  \n#element{text} {depth: 5}  \n#attribute{style: display:flex;height:80rpx;line-height:80rpx;}    \nscriptdata{item.typeName}    \n",
+        "attributes": {
+          "bindtap": "optionClik",
+          "data-dic": "{{item}}",
+          "data-tag": "{{index}}",
+          "style": "display:flex;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);justify-content:center;",
+          "wx:for": "{{TypeArray}}",
+          "wx:key": "key"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "optionClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: optionClik}  \n#attribute{data-dic: {{item}}}  \n#attribute{data-tag: {{index}}}  \n#attribute{style: display:flex;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);justify-content:center;}  \n#attribute{wx:for: {{LeveArray}}}  \n#attribute{wx:key: key}  \n#element{text} {depth: 5}  \n#attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#fc1424;}    \n#attribute{wx:if: {{index==0}}}    \nscriptdata{item.name}    \n#element{text} {depth: 5}  \n#attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#fc5f2f;}    \n#attribute{wx:elif: {{index==1}}}    \nscriptdata{item.name}    \n#element{text} {depth: 5}  \n#attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#368cfb;}    \n#attribute{wx:elif: {{index==2}}}    \nscriptdata{item.name}    \n#element{text} {depth: 5}  \n#attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#7530fd;}    \n#attribute{wx:elif: {{index==3}}}    \nscriptdata{item.name}    \n#element{text} {depth: 5}  \n#attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#2cc7ab;}    \n#attribute{wx:elif: {{index==4}}}    \nscriptdata{item.name}    \n",
+        "attributes": {
+          "bindtap": "optionClik",
+          "data-dic": "{{item}}",
+          "data-tag": "{{index}}",
+          "style": "display:flex;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);justify-content:center;",
+          "wx:for": "{{LeveArray}}",
+          "wx:key": "key"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "optionClik",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/work/addtask/addtask"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: clikItem}  \n#attribute{data-a: {{index1}}}  \n#attribute{data-item: {{item1}}}  \n#attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;height:80rpx;font-size:28rpx;color:rgb(58,58,58);width:100%;align-items:center;}  \n#element{text} {depth: 4}  \n#attribute{class: textlineShenlue}    \n#attribute{style: margin-left:20rpx;display:block;line-height:80rpx;}    \nscriptdata{item1.NavName}    \n",
+        "attributes": {
+          "bindtap": "clikItem",
+          "data-a": "{{index1}}",
+          "data-item": "{{item1}}",
+          "style": "display:flex;flex-direction:row;flex-wrap:nowrap;height:80rpx;font-size:28rpx;color:rgb(58,58,58);width:100%;align-items:center;"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "clikItem",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: clikItem1}  \n#attribute{data-a: {{index1}}}  \n#attribute{data-b: {{index2}}}  \n#attribute{data-item: {{item2}}}  \n#attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;height:80rpx;font-size:28rpx;color:rgb(58,58,58);width:100%;align-items:center;}  \n#element{text} {depth: 6}  \n#attribute{class: textlineShenlue}    \n#attribute{style: margin-left:40rpx;display:block;line-height:80rpx;margin-left:}    \nscriptdata{item2.NavName}    \n",
+        "attributes": {
+          "bindtap": "clikItem1",
+          "data-a": "{{index1}}",
+          "data-b": "{{index2}}",
+          "data-item": "{{item2}}",
+          "style": "display:flex;flex-direction:row;flex-wrap:nowrap;height:80rpx;font-size:28rpx;color:rgb(58,58,58);width:100%;align-items:center;"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "clikItem1",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 7}\n#attribute{bindtap: clikItem2}  \n#attribute{data-a: {{index1}}}  \n#attribute{data-b: {{index2}}}  \n#attribute{data-c: {{index3}}}  \n#attribute{data-item: {{item3}}}  \n#attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;height:80rpx;font-size:28rpx;color:rgb(58,58,58);width:100%;align-items:center;}  \n#element{view} {depth: 8}  \n#attribute{catchtap: ImageSelClik}    \n#attribute{data-a: {{index1}}}    \n#attribute{data-b: {{index2}}}    \n#attribute{data-c: {{index3}}}    \n#attribute{data-item: {{item3}}}    \n#attribute{hoverstoppropagation: true}    \n#attribute{style: display:flex;margin-left:120rpx;width:40rpx;height:40rpx;}    \n#element{image} {depth: 9}    \n#attribute{src: {{item3.child.length<=0?'':'/images/icon_Peo_select@2x.png'}}}      \n#attribute{style: display:flex;width:40rpx;height:40rpx;}      \n#attribute{wx:if: {{item3.isSel==1}}}      \n#element{image} {depth: 9}    \n#attribute{src: {{item3.child.length<=0?'':'/images/icon_Peo_unselect@2x.png'}}}      \n#attribute{style: display:flex;width:40rpx;height:40rpx;}      \n#attribute{wx:else: }      \n#element{text} {depth: 8}  \n#attribute{class: textlineShenlue}    \n#attribute{style: margin-left:20rpx;display:block;line-height:80rpx;margin-left:}    \nscriptdata{item3.NavName}    \n",
+        "attributes": {
+          "bindtap": "clikItem2",
+          "data-a": "{{index1}}",
+          "data-b": "{{index2}}",
+          "data-c": "{{index3}}",
+          "data-item": "{{item3}}",
+          "style": "display:flex;flex-direction:row;flex-wrap:nowrap;height:80rpx;font-size:28rpx;color:rgb(58,58,58);width:100%;align-items:center;"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "clikItem2",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 9}\n#attribute{bindtap: clikItem3}  \n#attribute{data-a: {{index1}}}  \n#attribute{data-b: {{index2}}}  \n#attribute{data-c: {{index3}}}  \n#attribute{data-d: {{index4}}}  \n#attribute{data-item: {{item4}}}  \n#attribute{style: display:flex;flex-direction:row;flex-wrap:nowrap;height:80rpx;font-size:28rpx;color:rgb(58,58,58);width:100%;align-items:center;}  \n#element{image} {depth: 10}  \n#attribute{src: {{item4.isSel==1?'/images/icon_Peo_select@2x.png':'/images/icon_Peo_unselect@2x.png'}}}    \n#attribute{style: display:flex;margin-left:160rpx;width:40rpx;height:40rpx;}    \n#element{text} {depth: 10}  \n#attribute{class: textlineShenlue}    \n#attribute{style: margin-left:20rpx;display:block;line-height:80rpx;margin-left:}    \nscriptdata{item4.NavName}    \n",
+        "attributes": {
+          "bindtap": "clikItem3",
+          "data-a": "{{index1}}",
+          "data-b": "{{index2}}",
+          "data-c": "{{index3}}",
+          "data-d": "{{index4}}",
+          "data-item": "{{item4}}",
+          "style": "display:flex;flex-direction:row;flex-wrap:nowrap;height:80rpx;font-size:28rpx;color:rgb(58,58,58);width:100%;align-items:center;"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "clikItem3",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 1}\n#attribute{bindtap: sumit_Btn_select}  \n#attribute{class: btn_bottom}  \n#element{text} {depth: 2}  \n#attribute{style: font-size:30rpx;color:white;}    \ndata{确定选择}    \n",
+        "attributes": {
+          "bindtap": "sumit_Btn_select",
+          "class": "btn_bottom"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "sumit_Btn_select",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/work/addPeople/addPeople"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindinput: ChangeClik}  \n#attribute{data-tag: 0}  \n#attribute{hidden: {{isHideType==1?true:false}}}  \n#attribute{placeholder: 请输入任务标题}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}  \n#attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);}  \n#attribute{value: {{title}}}  \n",
+        "attributes": {
+          "bindinput": "ChangeClik",
+          "data-tag": "0",
+          "hidden": "{{isHideType==1?true:false}}",
+          "placeholder": "请输入任务标题",
+          "placeholderstyle": "font-size:30rpx;color:rgb(201,201,201);",
+          "style": "display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);",
+          "value": "{{title}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "ChangeClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindinput: ChangeClik}  \n#attribute{data-tag: 1}  \n#attribute{hidden: {{isHideType==1?true:false}}}  \n#attribute{placeholder: 请输入计划/事务}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}  \n#attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);}  \n#attribute{value: {{subtitle}}}  \n",
+        "attributes": {
+          "bindinput": "ChangeClik",
+          "data-tag": "1",
+          "hidden": "{{isHideType==1?true:false}}",
+          "placeholder": "请输入计划/事务",
+          "placeholderstyle": "font-size:30rpx;color:rgb(201,201,201);",
+          "style": "display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);",
+          "value": "{{subtitle}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "ChangeClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindtap: tapClik}  \n#attribute{data-type: 0}  \n#attribute{disabled: false}  \n#attribute{placeholder: 请选择工作类型}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}  \n#attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}  \n#attribute{value: {{selectWorkType.typeName?selectWorkType.typeName:''}}}  \n",
+        "attributes": {
+          "bindtap": "tapClik",
+          "data-type": "0",
+          "disabled": "false",
+          "placeholder": "请选择工作类型",
+          "placeholderstyle": "font-size:30rpx;color:rgb(201,201,201);",
+          "style": "display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;",
+          "value": "{{selectWorkType.typeName?selectWorkType.typeName:''}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{textarea} {depth: 4}\n#attribute{bindinput: ChangeDetailText}  \n#attribute{hidden: {{isHideType==1?true:false}}}  \n#attribute{maxlength: -1}  \n#attribute{placeholder: 请输入文字}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(158,158,158);}  \n#attribute{style: width:90%;height:200rpx;font-size:30rpx;margin:10rpx;}  \n#attribute{value: {{textDetail}}}  \n",
+        "attributes": {
+          "bindinput": "ChangeDetailText",
+          "hidden": "{{isHideType==1?true:false}}",
+          "maxlength": "-1",
+          "placeholder": "请输入文字",
+          "placeholderstyle": "font-size:30rpx;color:rgb(158,158,158);",
+          "style": "width:90%;height:200rpx;font-size:30rpx;margin:10rpx;",
+          "value": "{{textDetail}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "ChangeDetailText",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindtap: tapClik}  \n#attribute{data-type: 2}  \n#attribute{disabled: false}  \n#attribute{placeholder: 请选择人员}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}  \n#attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}  \n#attribute{value: {{sendUser}}}  \n",
+        "attributes": {
+          "bindtap": "tapClik",
+          "data-type": "2",
+          "disabled": "false",
+          "placeholder": "请选择人员",
+          "placeholderstyle": "font-size:30rpx;color:rgb(201,201,201);",
+          "style": "display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;",
+          "value": "{{sendUser}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindtap: tapClik}  \n#attribute{data-type: 1}  \n#attribute{disabled: false}  \n#attribute{placeholder: 请选择等级}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}  \n#attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}  \n#attribute{value: {{selectLeveData.name?selectLeveData.name:''}}}  \n",
+        "attributes": {
+          "bindtap": "tapClik",
+          "data-type": "1",
+          "disabled": "false",
+          "placeholder": "请选择等级",
+          "placeholderstyle": "font-size:30rpx;color:rgb(201,201,201);",
+          "style": "display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;",
+          "value": "{{selectLeveData.name?selectLeveData.name:''}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{picker} {depth: 3}\n#attribute{bindchange: changeDateTime1}  \n#attribute{bindcolumnchange: changeDateTimeColumn1}  \n#attribute{class: width:55%;}  \n#attribute{mode: multiSelector}  \n#attribute{range: {{dateTimeArray1}}}  \n#attribute{value: {{dateTime1}}}  \n#element{input} {depth: 4}  \n#attribute{disabled: false}    \n#attribute{placeholder: 请选择日期}    \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}    \n#attribute{style: display:block;width:100%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}    \n#attribute{value: {{expectedTime}}}    \n",
+        "attributes": {
+          "bindchange": "changeDateTime1",
+          "bindcolumnchange": "changeDateTimeColumn1",
+          "class": "width:55%;",
+          "mode": "multiSelector",
+          "range": "{{dateTimeArray1}}",
+          "value": "{{dateTime1}}"
+        },
+        "bind_method": "bindchange",
+        "data": [],
+        "function_call": "changeDateTime1",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{picker} {depth: 3}\n#attribute{bindchange: changeDateTime1}  \n#attribute{bindcolumnchange: changeDateTimeColumn1}  \n#attribute{class: width:55%;}  \n#attribute{mode: multiSelector}  \n#attribute{range: {{dateTimeArray1}}}  \n#attribute{value: {{dateTime1}}}  \n#element{input} {depth: 4}  \n#attribute{disabled: false}    \n#attribute{placeholder: 请选择日期}    \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}    \n#attribute{style: display:block;width:100%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}    \n#attribute{value: {{expectedTime}}}    \n",
+        "attributes": {
+          "bindchange": "changeDateTime1",
+          "bindcolumnchange": "changeDateTimeColumn1",
+          "class": "width:55%;",
+          "mode": "multiSelector",
+          "range": "{{dateTimeArray1}}",
+          "value": "{{dateTime1}}"
+        },
+        "bind_method": "bindcolumnchange",
+        "data": [],
+        "function_call": "changeDateTimeColumn1",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{textarea} {depth: 5}\n#attribute{bindinput: itemdetail}  \n#attribute{data-index: {{index}}}  \n#attribute{data-inx: 3}  \n#attribute{disabled: {{currentPeopleId==item.userId?false:true}}}  \n#attribute{maxlength: -1}  \n#attribute{placeholder: 请输入文字}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(158,158,158);}  \n#attribute{style: width:90%;height:200rpx;font-size:30rpx;margin:10rpx;}  \n#attribute{value: {{item.workProblem?item.workProblem:''}}}  \n",
+        "attributes": {
+          "bindinput": "itemdetail",
+          "data-index": "{{index}}",
+          "data-inx": "3",
+          "disabled": "{{currentPeopleId==item.userId?false:true}}",
+          "maxlength": "-1",
+          "placeholder": "请输入文字",
+          "placeholderstyle": "font-size:30rpx;color:rgb(158,158,158);",
+          "style": "width:90%;height:200rpx;font-size:30rpx;margin:10rpx;",
+          "value": "{{item.workProblem?item.workProblem:''}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "itemdetail",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 4}\n#attribute{bindtap: tapClik}  \n#attribute{data-inx: {{index}}}  \n#attribute{data-item: {{item}}}  \n#attribute{data-type: 11}  \n#attribute{disabled: false}  \n#attribute{placeholder: 请选择等级}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}  \n#attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}  \n#attribute{value: {{item.priorityName?item.priorityName:''}}}  \n",
+        "attributes": {
+          "bindtap": "tapClik",
+          "data-inx": "{{index}}",
+          "data-item": "{{item}}",
+          "data-type": "11",
+          "disabled": "false",
+          "placeholder": "请选择等级",
+          "placeholderstyle": "font-size:30rpx;color:rgb(201,201,201);",
+          "style": "display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;",
+          "value": "{{item.priorityName?item.priorityName:''}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 4}\n#attribute{bindtap: tapClik}  \n#attribute{data-inx: {{index}}}  \n#attribute{data-item: {{item}}}  \n#attribute{data-type: 12}  \n#attribute{disabled: false}  \n#attribute{placeholder: 请选择任务状态}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}  \n#attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}  \n#attribute{value: 未开始}  \n#attribute{wx:if: {{item.status==0}}}  \n",
+        "attributes": {
+          "bindtap": "tapClik",
+          "data-inx": "{{index}}",
+          "data-item": "{{item}}",
+          "data-type": "12",
+          "disabled": "false",
+          "placeholder": "请选择任务状态",
+          "placeholderstyle": "font-size:30rpx;color:rgb(201,201,201);",
+          "style": "display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;",
+          "value": "未开始",
+          "wx:if": "{{item.status==0}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 4}\n#attribute{bindtap: tapClik}  \n#attribute{data-inx: {{index}}}  \n#attribute{data-item: {{item}}}  \n#attribute{data-type: 12}  \n#attribute{disabled: false}  \n#attribute{placeholder: 请选择任务状态}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}  \n#attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}  \n#attribute{value: 进行中}  \n#attribute{wx:if: {{item.status==1}}}  \n",
+        "attributes": {
+          "bindtap": "tapClik",
+          "data-inx": "{{index}}",
+          "data-item": "{{item}}",
+          "data-type": "12",
+          "disabled": "false",
+          "placeholder": "请选择任务状态",
+          "placeholderstyle": "font-size:30rpx;color:rgb(201,201,201);",
+          "style": "display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;",
+          "value": "进行中",
+          "wx:if": "{{item.status==1}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 4}\n#attribute{bindtap: tapClik}  \n#attribute{data-inx: {{index}}}  \n#attribute{data-item: {{item}}}  \n#attribute{data-type: 12}  \n#attribute{disabled: false}  \n#attribute{placeholder: 请选择任务状态}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}  \n#attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}  \n#attribute{value: 已完成}  \n#attribute{wx:if: {{item.status==2}}}  \n",
+        "attributes": {
+          "bindtap": "tapClik",
+          "data-inx": "{{index}}",
+          "data-item": "{{item}}",
+          "data-type": "12",
+          "disabled": "false",
+          "placeholder": "请选择任务状态",
+          "placeholderstyle": "font-size:30rpx;color:rgb(201,201,201);",
+          "style": "display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;",
+          "value": "已完成",
+          "wx:if": "{{item.status==2}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: tapClik}  \n#attribute{data-inx: {{index}}}  \n#attribute{data-type: 13}  \n#attribute{style: display:flex;width:140rpx;height:60rpx;margin-right:20rpx;margin-top:10rpx;background-color:#0ed2e7;border-radius:10rpx;flex-wrap:nowrap;flex-direction:row;align-items:center;justify-content:center;}  \n#attribute{wx:if: {{currentPeopleId==item.userId}}}  \n#element{text} {depth: 6}  \n#attribute{style: display:flex;color:white;font-size:26rpx;padding:10rpx;line-height:60rpx;}    \ndata{确定开始}    \n",
+        "attributes": {
+          "bindtap": "tapClik",
+          "data-inx": "{{index}}",
+          "data-type": "13",
+          "style": "display:flex;width:140rpx;height:60rpx;margin-right:20rpx;margin-top:10rpx;background-color:#0ed2e7;border-radius:10rpx;flex-wrap:nowrap;flex-direction:row;align-items:center;justify-content:center;",
+          "wx:if": "{{currentPeopleId==item.userId}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 4}\n#attribute{bindinput: changeTimeClik}  \n#attribute{data-index: {{index}}}  \n#attribute{disabled: {{currentPeopleId==item.userId?false:true}}}  \n#attribute{placeholder: 请输入分钟}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}  \n#attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}  \n#attribute{value: {{item.proposedTime?item.proposedTime:''}}}  \n",
+        "attributes": {
+          "bindinput": "changeTimeClik",
+          "data-index": "{{index}}",
+          "disabled": "{{currentPeopleId==item.userId?false:true}}",
+          "placeholder": "请输入分钟",
+          "placeholderstyle": "font-size:30rpx;color:rgb(201,201,201);",
+          "style": "display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;",
+          "value": "{{item.proposedTime?item.proposedTime:''}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "changeTimeClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: tapClik}  \n#attribute{data-inx: {{index}}}  \n#attribute{data-type: 14}  \n#attribute{style: display:flex;width:140rpx;height:60rpx;margin-right:20rpx;margin-top:10rpx;background-color:#7bbc3c;border-radius:10rpx;flex-wrap:nowrap;flex-direction:row;align-items:center;justify-content:center;}  \n#attribute{wx:if: {{currentPeopleId==item.userId}}}  \n#element{text} {depth: 6}  \n#attribute{style: display:flex;color:white;font-size:26rpx;padding:10rpx;line-height:60rpx;}    \ndata{确定完成}    \n",
+        "attributes": {
+          "bindtap": "tapClik",
+          "data-inx": "{{index}}",
+          "data-type": "14",
+          "style": "display:flex;width:140rpx;height:60rpx;margin-right:20rpx;margin-top:10rpx;background-color:#7bbc3c;border-radius:10rpx;flex-wrap:nowrap;flex-direction:row;align-items:center;justify-content:center;",
+          "wx:if": "{{currentPeopleId==item.userId}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: tapClik}  \n#attribute{data-inx: {{index}}}  \n#attribute{data-type: 15}  \n#attribute{style: display:flex;width:160rpx;height:60rpx;margin-right:20rpx;margin-top:10rpx;background-color:#3691f3;border-radius:10rpx;flex-wrap:nowrap;flex-direction:row;align-items:center;justify-content:center;}  \n#attribute{wx:if: {{currentPeopleId==item.userId}}}  \n#element{text} {depth: 5}  \n#attribute{style: display:flex;color:white;font-size:26rpx;padding:10rpx;line-height:60rpx;}    \ndata{选择人员}    \n",
+        "attributes": {
+          "bindtap": "tapClik",
+          "data-inx": "{{index}}",
+          "data-type": "15",
+          "style": "display:flex;width:160rpx;height:60rpx;margin-right:20rpx;margin-top:10rpx;background-color:#3691f3;border-radius:10rpx;flex-wrap:nowrap;flex-direction:row;align-items:center;justify-content:center;",
+          "wx:if": "{{currentPeopleId==item.userId}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: tapClik}  \n#attribute{data-inx: {{index}}}  \n#attribute{data-type: 16}  \n#attribute{style: display:flex;width:160rpx;height:60rpx;margin-right:20rpx;margin-top:10rpx;background-color:#3691f3;border-radius:10rpx;flex-wrap:nowrap;flex-direction:row;align-items:center;justify-content:center;}  \n#attribute{wx:if: {{currentPeopleId==item.userId}}}  \n#element{text} {depth: 5}  \n#attribute{style: display:flex;color:white;font-size:26rpx;padding:10rpx;line-height:60rpx;}    \ndata{转交分配}    \n",
+        "attributes": {
+          "bindtap": "tapClik",
+          "data-inx": "{{index}}",
+          "data-type": "16",
+          "style": "display:flex;width:160rpx;height:60rpx;margin-right:20rpx;margin-top:10rpx;background-color:#3691f3;border-radius:10rpx;flex-wrap:nowrap;flex-direction:row;align-items:center;justify-content:center;",
+          "wx:if": "{{currentPeopleId==item.userId}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{textarea} {depth: 5}\n#attribute{bindinput: itemdetail}  \n#attribute{data-index: {{index}}}  \n#attribute{data-inx: 1}  \n#attribute{disabled: {{currentPeopleId==item.userId?false:true}}}  \n#attribute{maxlength: -1}  \n#attribute{placeholder: 请输入文字}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(158,158,158);}  \n#attribute{style: width:90%;height:200rpx;font-size:30rpx;margin:10rpx;}  \n#attribute{value: {{item.workProblem?item.workProblem:''}}}  \n",
+        "attributes": {
+          "bindinput": "itemdetail",
+          "data-index": "{{index}}",
+          "data-inx": "1",
+          "disabled": "{{currentPeopleId==item.userId?false:true}}",
+          "maxlength": "-1",
+          "placeholder": "请输入文字",
+          "placeholderstyle": "font-size:30rpx;color:rgb(158,158,158);",
+          "style": "width:90%;height:200rpx;font-size:30rpx;margin:10rpx;",
+          "value": "{{item.workProblem?item.workProblem:''}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "itemdetail",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: tapClik}  \n#attribute{data-inx: {{index}}}  \n#attribute{data-type: 17}  \n#attribute{style: display:flex;width:160rpx;height:60rpx;margin-right:20rpx;margin-top:10rpx;background-color:#3691f3;border-radius:10rpx;flex-wrap:nowrap;flex-direction:row;align-items:center;justify-content:center;}  \n#attribute{wx:if: {{currentPeopleId==item.userId}}}  \n#element{text} {depth: 5}  \n#attribute{style: display:flex;color:white;font-size:26rpx;padding:10rpx;line-height:60rpx;}    \ndata{转交分配}    \n",
+        "attributes": {
+          "bindtap": "tapClik",
+          "data-inx": "{{index}}",
+          "data-type": "17",
+          "style": "display:flex;width:160rpx;height:60rpx;margin-right:20rpx;margin-top:10rpx;background-color:#3691f3;border-radius:10rpx;flex-wrap:nowrap;flex-direction:row;align-items:center;justify-content:center;",
+          "wx:if": "{{currentPeopleId==item.userId}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{textarea} {depth: 5}\n#attribute{bindinput: itemdetail}  \n#attribute{data-index: {{index}}}  \n#attribute{data-inx: 2}  \n#attribute{disabled: {{currentPeopleId==item.userId?false:true}}}  \n#attribute{maxlength: -1}  \n#attribute{placeholder: 请输入文字}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(158,158,158);}  \n#attribute{style: width:90%;height:200rpx;font-size:30rpx;margin:10rpx;}  \n#attribute{value: {{item.workProblem?item.workProblem:''}}}  \n",
+        "attributes": {
+          "bindinput": "itemdetail",
+          "data-index": "{{index}}",
+          "data-inx": "2",
+          "disabled": "{{currentPeopleId==item.userId?false:true}}",
+          "maxlength": "-1",
+          "placeholder": "请输入文字",
+          "placeholderstyle": "font-size:30rpx;color:rgb(158,158,158);",
+          "style": "width:90%;height:200rpx;font-size:30rpx;margin:10rpx;",
+          "value": "{{item.workProblem?item.workProblem:''}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "itemdetail",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 1}\n#attribute{bindtap: SendClik}  \n#attribute{class: btn_bottom}  \n#element{text} {depth: 2}  \n#attribute{style: font-size:30rpx;color:white;}    \ndata{修  改}    \n",
+        "attributes": {
+          "bindtap": "SendClik",
+          "class": "btn_bottom"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "SendClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: hideClik}  \n#attribute{class: bottom_HideView}  \n",
+        "attributes": {
+          "bindtap": "hideClik",
+          "class": "bottom_HideView"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "hideClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: optionClik}  \n#attribute{data-dic: {{item}}}  \n#attribute{data-tag: {{index}}}  \n#attribute{style: display:flex;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);justify-content:center;}  \n#attribute{wx:for: {{TypeArray}}}  \n#attribute{wx:key: key}  \n#element{text} {depth: 5}  \n#attribute{style: display:flex;height:80rpx;line-height:80rpx;}    \nscriptdata{item.typeName}    \n",
+        "attributes": {
+          "bindtap": "optionClik",
+          "data-dic": "{{item}}",
+          "data-tag": "{{index}}",
+          "style": "display:flex;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);justify-content:center;",
+          "wx:for": "{{TypeArray}}",
+          "wx:key": "key"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "optionClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: optionClik}  \n#attribute{data-dic: {{item}}}  \n#attribute{data-tag: {{index}}}  \n#attribute{style: display:flex;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);justify-content:center;}  \n#attribute{wx:for: {{LeveArray}}}  \n#attribute{wx:key: key}  \n#element{text} {depth: 5}  \n#attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#fc1424;}    \n#attribute{wx:if: {{index==0}}}    \nscriptdata{item.name}    \n#element{text} {depth: 5}  \n#attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#fc5f2f;}    \n#attribute{wx:elif: {{index==1}}}    \nscriptdata{item.name}    \n#element{text} {depth: 5}  \n#attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#368cfb;}    \n#attribute{wx:elif: {{index==2}}}    \nscriptdata{item.name}    \n#element{text} {depth: 5}  \n#attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#7530fd;}    \n#attribute{wx:elif: {{index==3}}}    \nscriptdata{item.name}    \n#element{text} {depth: 5}  \n#attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#2cc7ab;}    \n#attribute{wx:elif: {{index==4}}}    \nscriptdata{item.name}    \n",
+        "attributes": {
+          "bindtap": "optionClik",
+          "data-dic": "{{item}}",
+          "data-tag": "{{index}}",
+          "style": "display:flex;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);justify-content:center;",
+          "wx:for": "{{LeveArray}}",
+          "wx:key": "key"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "optionClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: optionClik}  \n#attribute{data-dic: {{item}}}  \n#attribute{data-tag: {{index}}}  \n#attribute{style: display:flex;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);justify-content:center;}  \n#attribute{wx:for: {{LeveArray}}}  \n#attribute{wx:key: key}  \n#element{text} {depth: 5}  \n#attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#fc1424;}    \n#attribute{wx:if: {{index==0}}}    \nscriptdata{item.name}    \n#element{text} {depth: 5}  \n#attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#fc5f2f;}    \n#attribute{wx:elif: {{index==1}}}    \nscriptdata{item.name}    \n#element{text} {depth: 5}  \n#attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#368cfb;}    \n#attribute{wx:elif: {{index==2}}}    \nscriptdata{item.name}    \n#element{text} {depth: 5}  \n#attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#7530fd;}    \n#attribute{wx:elif: {{index==3}}}    \nscriptdata{item.name}    \n#element{text} {depth: 5}  \n#attribute{style: display:flex;height:80rpx;line-height:80rpx;color:#2cc7ab;}    \n#attribute{wx:elif: {{index==4}}}    \nscriptdata{item.name}    \n",
+        "attributes": {
+          "bindtap": "optionClik",
+          "data-dic": "{{item}}",
+          "data-tag": "{{index}}",
+          "style": "display:flex;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);justify-content:center;",
+          "wx:for": "{{LeveArray}}",
+          "wx:key": "key"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "optionClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: optionClik}  \n#attribute{data-dic: {{item}}}  \n#attribute{data-tag: {{index}}}  \n#attribute{style: display:flex;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);justify-content:center;}  \n#attribute{wx:for: {{StatusArray}}}  \n#attribute{wx:key: key}  \n#element{text} {depth: 5}  \n#attribute{style: display:flex;height:80rpx;line-height:80rpx;color:rgb(102,102,102);}    \nscriptdata{item}    \n",
+        "attributes": {
+          "bindtap": "optionClik",
+          "data-dic": "{{item}}",
+          "data-tag": "{{index}}",
+          "style": "display:flex;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);justify-content:center;",
+          "wx:for": "{{StatusArray}}",
+          "wx:key": "key"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "optionClik",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/work/taskDetail/taskDetail"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindtap: tapClik}  \n#attribute{data-type: 0}  \n#attribute{disabled: false}  \n#attribute{placeholder: 请选择任务}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}  \n#attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}  \n#attribute{value: {{selectItem.workName?selectItem.workName:''}}}  \n",
+        "attributes": {
+          "bindtap": "tapClik",
+          "data-type": "0",
+          "disabled": "false",
+          "placeholder": "请选择任务",
+          "placeholderstyle": "font-size:30rpx;color:rgb(201,201,201);",
+          "style": "display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;",
+          "value": "{{selectItem.workName?selectItem.workName:''}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{picker} {depth: 3}\n#attribute{bindchange: changeDateTime1}  \n#attribute{bindcolumnchange: changeDateTimeColumn1}  \n#attribute{class: width:55%;}  \n#attribute{mode: multiSelector}  \n#attribute{range: {{dateTimeArray1}}}  \n#attribute{value: {{dateTime1}}}  \n#element{input} {depth: 4}  \n#attribute{disabled: false}    \n#attribute{placeholder: 请选择日期}    \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}    \n#attribute{style: display:block;width:100%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}    \n#attribute{value: {{dateTimeArray1[0][ dateTime1[0] ]}}-{{dateTimeArray1[1][ dateTime1[1] ]}}-{{dateTimeArray1[2][ dateTime1[2] ]}} {{dateTimeArray1[3][ dateTime1[3] ]}}:{{dateTimeArray1[4][ dateTime1[4] ]}}}    \n",
+        "attributes": {
+          "bindchange": "changeDateTime1",
+          "bindcolumnchange": "changeDateTimeColumn1",
+          "class": "width:55%;",
+          "mode": "multiSelector",
+          "range": "{{dateTimeArray1}}",
+          "value": "{{dateTime1}}"
+        },
+        "bind_method": "bindchange",
+        "data": [],
+        "function_call": "changeDateTime1",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{picker} {depth: 3}\n#attribute{bindchange: changeDateTime1}  \n#attribute{bindcolumnchange: changeDateTimeColumn1}  \n#attribute{class: width:55%;}  \n#attribute{mode: multiSelector}  \n#attribute{range: {{dateTimeArray1}}}  \n#attribute{value: {{dateTime1}}}  \n#element{input} {depth: 4}  \n#attribute{disabled: false}    \n#attribute{placeholder: 请选择日期}    \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}    \n#attribute{style: display:block;width:100%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}    \n#attribute{value: {{dateTimeArray1[0][ dateTime1[0] ]}}-{{dateTimeArray1[1][ dateTime1[1] ]}}-{{dateTimeArray1[2][ dateTime1[2] ]}} {{dateTimeArray1[3][ dateTime1[3] ]}}:{{dateTimeArray1[4][ dateTime1[4] ]}}}    \n",
+        "attributes": {
+          "bindchange": "changeDateTime1",
+          "bindcolumnchange": "changeDateTimeColumn1",
+          "class": "width:55%;",
+          "mode": "multiSelector",
+          "range": "{{dateTimeArray1}}",
+          "value": "{{dateTime1}}"
+        },
+        "bind_method": "bindcolumnchange",
+        "data": [],
+        "function_call": "changeDateTimeColumn1",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{textarea} {depth: 4}\n#attribute{bindinput: ChangeDetailText}  \n#attribute{hidden: {{isHideType==1?true:false}}}  \n#attribute{maxlength: -1}  \n#attribute{placeholder: 请输入文字}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(158,158,158);}  \n#attribute{style: width:90%;height:200rpx;font-size:30rpx;margin:10rpx;}  \n",
+        "attributes": {
+          "bindinput": "ChangeDetailText",
+          "hidden": "{{isHideType==1?true:false}}",
+          "maxlength": "-1",
+          "placeholder": "请输入文字",
+          "placeholderstyle": "font-size:30rpx;color:rgb(158,158,158);",
+          "style": "width:90%;height:200rpx;font-size:30rpx;margin:10rpx;"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "ChangeDetailText",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 1}\n#attribute{bindtap: SendClik}  \n#attribute{class: btn_bottom}  \n#element{text} {depth: 2}  \n#attribute{style: font-size:30rpx;color:white;}    \ndata{发布日志}    \n",
+        "attributes": {
+          "bindtap": "SendClik",
+          "class": "btn_bottom"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "SendClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: hideClik}  \n#attribute{class: bottom_HideView}  \n",
+        "attributes": {
+          "bindtap": "hideClik",
+          "class": "bottom_HideView"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "hideClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: optionClik}  \n#attribute{data-dic: {{item}}}  \n#attribute{data-tag: {{index}}}  \n#attribute{style: display:flex;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);justify-content:center;}  \n#attribute{wx:for: {{dataArray}}}  \n#attribute{wx:key: key}  \n#element{text} {depth: 4}  \n#attribute{style: display:flex;height:80rpx;line-height:80rpx;}    \nscriptdata{item.workName}    \n",
+        "attributes": {
+          "bindtap": "optionClik",
+          "data-dic": "{{item}}",
+          "data-tag": "{{index}}",
+          "style": "display:flex;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);justify-content:center;",
+          "wx:for": "{{dataArray}}",
+          "wx:key": "key"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "optionClik",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/myLog/addLog/addLog"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: PostCommandClik}  \n#attribute{data-dic: {{mainData}}}  \n#attribute{style: display:flex;flex-wrap:nowrap;flex-direction:row;height:50rpx;justify-content:center;align-items:center;}  \n#element{text} {depth: 6}  \n#attribute{style: display:flex;font-size:26rpx;height:50rpx;line-height:50rpx;color:blue;text-decoration:underline;}    \ndata{传达/备案}    \n",
+        "attributes": {
+          "bindtap": "PostCommandClik",
+          "data-dic": "{{mainData}}",
+          "style": "display:flex;flex-wrap:nowrap;flex-direction:row;height:50rpx;justify-content:center;align-items:center;"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "PostCommandClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{textarea} {depth: 6}\n#attribute{bindconfirm: BaobeiClik}  \n#attribute{data-item: {{item}}}  \n#attribute{maxlength: -1}  \n#attribute{placeholder: 请输入}  \n#attribute{style: width:100%;height:120rpx;}  \n",
+        "attributes": {
+          "bindconfirm": "BaobeiClik",
+          "data-item": "{{item}}",
+          "maxlength": "-1",
+          "placeholder": "请输入",
+          "style": "width:100%;height:120rpx;"
+        },
+        "bind_method": "bindconfirm",
+        "data": [],
+        "function_call": "BaobeiClik",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/work/taskSuccess/taskSuccess"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindtap: tapClik}  \n#attribute{data-type: 0}  \n#attribute{disabled: false}  \n#attribute{placeholder: 请选择任务}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(201,201,201);}  \n#attribute{style: display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;}  \n#attribute{value: {{selectItem.workName?selectItem.workName:''}}}  \n",
+        "attributes": {
+          "bindtap": "tapClik",
+          "data-type": "0",
+          "disabled": "false",
+          "placeholder": "请选择任务",
+          "placeholderstyle": "font-size:30rpx;color:rgb(201,201,201);",
+          "style": "display:flex;width:55%;height:80rpx;margin-left:20rpx;line-height:80rpx;font-size:30rpx;color:rgb(102,102,102);background-color:white;",
+          "value": "{{selectItem.workName?selectItem.workName:''}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tapClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{textarea} {depth: 4}\n#attribute{bindinput: ChangeDetailText}  \n#attribute{hidden: {{isHideType==1?true:false}}}  \n#attribute{maxlength: -1}  \n#attribute{placeholder: 请输入文字}  \n#attribute{placeholderstyle: font-size:30rpx;color:rgb(158,158,158);}  \n#attribute{style: width:90%;height:200rpx;font-size:30rpx;margin:10rpx;}  \n#attribute{value: {{detailtextChange}}}  \n",
+        "attributes": {
+          "bindinput": "ChangeDetailText",
+          "hidden": "{{isHideType==1?true:false}}",
+          "maxlength": "-1",
+          "placeholder": "请输入文字",
+          "placeholderstyle": "font-size:30rpx;color:rgb(158,158,158);",
+          "style": "width:90%;height:200rpx;font-size:30rpx;margin:10rpx;",
+          "value": "{{detailtextChange}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "ChangeDetailText",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{text} {depth: 2}\n#attribute{bindtap: SendClik}  \n#attribute{class: btn_botttom_view}  \n#attribute{data-tag: 1}  \n#attribute{style: font-size:30rpx;color:white;background-color:rgb(243,54,54);}  \ndata{删除日志}  \n",
+        "attributes": {
+          "bindtap": "SendClik",
+          "class": "btn_botttom_view",
+          "data-tag": "1",
+          "style": "font-size:30rpx;color:white;background-color:rgb(243,54,54);"
+        },
+        "bind_method": "bindtap",
+        "data": ["删除日志"],
+        "function_call": "SendClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{text} {depth: 2}\n#attribute{bindtap: SendClik}  \n#attribute{class: btn_botttom_view}  \n#attribute{data-tag: 2}  \n#attribute{style: font-size:30rpx;color:white;background-color:rgb(54,167,243);}  \ndata{修改日志}  \n",
+        "attributes": {
+          "bindtap": "SendClik",
+          "class": "btn_botttom_view",
+          "data-tag": "2",
+          "style": "font-size:30rpx;color:white;background-color:rgb(54,167,243);"
+        },
+        "bind_method": "bindtap",
+        "data": ["修改日志"],
+        "function_call": "SendClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: hideClik}  \n#attribute{class: bottom_HideView}  \n",
+        "attributes": {
+          "bindtap": "hideClik",
+          "class": "bottom_HideView"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "hideClik",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: optionClik}  \n#attribute{data-dic: {{item}}}  \n#attribute{data-tag: {{index}}}  \n#attribute{style: display:flex;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);justify-content:center;}  \n#attribute{wx:for: {{dataArray}}}  \n#attribute{wx:key: key}  \n#element{text} {depth: 4}  \n#attribute{style: display:flex;height:80rpx;line-height:80rpx;}    \nscriptdata{item.workName}    \n",
+        "attributes": {
+          "bindtap": "optionClik",
+          "data-dic": "{{item}}",
+          "data-tag": "{{index}}",
+          "style": "display:flex;width:100%;height:80rpx;border-bottom:2rpxridge#f3f3f3;font-size:28rpx;color:rgb(102,102,102);justify-content:center;",
+          "wx:for": "{{dataArray}}",
+          "wx:key": "key"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "optionClik",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/myLog/editeLog/editeLog"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{web-view} {depth: 1}\n#attribute{bindload: tapClick}  \n#attribute{bindmessage: postOrderBy}  \n#attribute{src: {{currentUrl}}}  \n",
+        "attributes": {
+          "bindload": "tapClick",
+          "bindmessage": "postOrderBy",
+          "src": "{{currentUrl}}"
+        },
+        "bind_method": "bindload",
+        "data": [],
+        "function_call": "tapClick",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{web-view} {depth: 1}\n#attribute{bindload: tapClick}  \n#attribute{bindmessage: postOrderBy}  \n#attribute{src: {{currentUrl}}}  \n",
+        "attributes": {
+          "bindload": "tapClick",
+          "bindmessage": "postOrderBy",
+          "src": "{{currentUrl}}"
+        },
+        "bind_method": "bindmessage",
+        "data": [],
+        "function_call": "postOrderBy",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/workMainpage/workWebPage/workWebPage"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/locationSel/locationSel"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/successStatus/successStatus"
+  }
+]

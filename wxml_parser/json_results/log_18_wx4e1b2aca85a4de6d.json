@@ -1,0 +1,1889 @@
+[
+  {
+    "component_list": [
+      {
+        "ast": "#element{image} {depth: 5}\n#attribute{bindtap: adTap}  \n#attribute{class: banner}  \n#attribute{data-entity: {{item}}}  \n#attribute{lazyload: true}  \n#attribute{src: {{item.Picture}}}  \n",
+        "attributes": {
+          "bindtap": "adTap",
+          "class": "banner",
+          "data-entity": "{{item}}",
+          "lazyload": "true",
+          "src": "{{item.Picture}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "adTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 8}\n#attribute{bindtap: functionTap}  \n#attribute{data-entity: {{item}}}  \n#attribute{style: background:{{item.Style}}}  \n#element{i} {depth: 9}  \n#attribute{class: {{item.Icon}}}    \n",
+        "attributes": {
+          "bindtap": "functionTap",
+          "data-entity": "{{item}}",
+          "style": "background:{{item.Style}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "functionTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 8}\n#attribute{bindtap: functionTap}  \n#attribute{data-entity: {{item}}}  \n#attribute{style: background:{{item.Style}}}  \n#element{i} {depth: 9}  \n#attribute{class: {{item.Icon}}}    \n",
+        "attributes": {
+          "bindtap": "functionTap",
+          "data-entity": "{{item}}",
+          "style": "background:{{item.Style}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "functionTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: toGroupBuy}  \n#attribute{class: share-seckill}  \n#attribute{data-entity: {{item}}}  \n#attribute{data-index: {{index}}}  \n#attribute{data-status: {{item.Status}}}  \n#attribute{wx:for: {{groupBuyList}}}  \n#attribute{wx:key: Id}  \n#element{image} {depth: 5}  \n#attribute{lazyload: true}    \n#attribute{src: {{item.Picture}}}    \n#attribute{style: opacity:{{item.Status=='2'?0.5:1}}}    \n#element{view} {depth: 5}  \nscriptdata{item.ProductName}    \ndata{ }    \n#element{view} {depth: 5}  \n#attribute{class: act-btn}    \n#element{view} {depth: 6}    \n#attribute{style: background:{{item.Status=='2'?'gray':'#4fa1ff'}}}      \n#element{text} {depth: 7}      \n#attribute{style: font-weight:bold;font-size:30rpx;color:white}        \ndata{￥}        \nscriptdata{item.GroupBuyPrice}        \n#element{view} {depth: 7}      \n#attribute{class: act-go}        \n#element{text} {depth: 8}        \n#attribute{style: padding-right:2rpx;}          \nscriptdata{item.Status=='2'?'已完成':'去拼单'}          \n#element{i} {depth: 8}        \n#attribute{class: icon-goto}          \n#attribute{style: font-size:20rpx}          \n#element{view} {depth: 5}  \n#attribute{class: group-time}    \ndata{结束时间:}    \nscriptdata{item.EndTime}    \n",
+        "attributes": {
+          "bindtap": "toGroupBuy",
+          "class": "share-seckill",
+          "data-entity": "{{item}}",
+          "data-index": "{{index}}",
+          "data-status": "{{item.Status}}",
+          "wx:for": "{{groupBuyList}}",
+          "wx:key": "Id"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toGroupBuy",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: seckillTabChange}  \n#attribute{class: seckill-tabitem  {{seckillObj.Sel==killIndex?'selseckilltab':''}}}  \n#attribute{data-entity: {{seckillObj.SeckillTimeList[killIndex].SeckillProductList}}}  \n#attribute{data-index: {{killIndex}}}  \n#attribute{wx:for: {{seckillObj.SeckillTimeList}}}  \n#attribute{wx:for-index: killIndex}  \n#attribute{wx:for-item: seckill}  \n#attribute{wx:key: Id}  \n#element{view} {depth: 6}  \n#attribute{class: seckill-tabitem-time}    \nscriptdata{seckill.BeginTime}    \ndata{\r\n\t\t\t\t\t}    \n#element{view} {depth: 6}  \n#attribute{class: seckill-tabitem-text}    \nscriptdata{seckill.Status=='1'?'抢购中':'即将开始'}    \ndata{\r\n\t\t\t\t\t}    \n",
+        "attributes": {
+          "bindtap": "seckillTabChange",
+          "class": "seckill-tabitem  {{seckillObj.Sel==killIndex?'selseckilltab':''}}",
+          "data-entity": "{{seckillObj.SeckillTimeList[killIndex].SeckillProductList}}",
+          "data-index": "{{killIndex}}",
+          "wx:for": "{{seckillObj.SeckillTimeList}}",
+          "wx:for-index": "killIndex",
+          "wx:for-item": "seckill",
+          "wx:key": "Id"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "seckillTabChange",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: testTap}  \n#attribute{style: display:flex;align-items:center}  \n#element{text} {depth: 5}  \n#attribute{class: seckill-timecount-hinttext}    \nscriptdata{seckillObj.SeckillTimeList[seckillObj.Sel].Status=='1'?'距结束':'距开始'}    \n#element{view} {depth: 5}  \n#attribute{class: seckill-timecount-time}    \n#element{text} {depth: 6}    \n#attribute{class: seckill-timecount-timetext}      \nscriptdata{secKillTimeCount.showhour}      \n#element{text} {depth: 5}  \n#attribute{class: seckill-timecount-dot}    \ndata{:}    \n#element{view} {depth: 5}  \n#attribute{class: seckill-timecount-time}    \n#element{text} {depth: 6}    \n#attribute{class: seckill-timecount-timetext}      \nscriptdata{secKillTimeCount.showmin}      \n#element{text} {depth: 5}  \n#attribute{class: seckill-timecount-dot}    \ndata{:}    \n#element{view} {depth: 5}  \n#attribute{class: seckill-timecount-time}    \n#element{text} {depth: 6}    \n#attribute{class: seckill-timecount-timetext}      \nscriptdata{secKillTimeCount.showsec}      \n",
+        "attributes": {
+          "bindtap": "testTap",
+          "style": "display:flex;align-items:center"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "testTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: toSeckill}  \n#attribute{class: share-seckill}  \n#attribute{data-entity: {{item}}}  \n#attribute{data-index: {{index}}}  \n#attribute{data-status: {{seckillObj.SeckillTimeList[seckillObj.Sel].Status}}}  \n#attribute{wx:for: {{seckillObj.CurSeckillTime}}}  \n#attribute{wx:key: Id}  \n#element{image} {depth: 5}  \n#attribute{lazyload: true}    \n#attribute{src: {{item.Picture}}}    \n#attribute{style: opacity:{{item.myPc>=100?0.5:1}};}    \n#element{view} {depth: 5}  \nscriptdata{item.ProductName}    \ndata{ }    \n#element{view} {depth: 5}  \n#attribute{class: act-price}    \n#element{text} {depth: 6}    \n#attribute{style: font-weight:bold;color:red}      \ndata{￥}      \nscriptdata{item.GrabPrice}      \n#element{text} {depth: 6}    \n#attribute{style: text-decoration:line-through;font-size:23rpx;color:#999999;padding-left:20rpx;margin-top:5rpx}      \nscriptdata{item.SalePrice}      \n#element{view} {depth: 5}  \n#attribute{class: sale-schedule}    \n#attribute{wx:if: {{item.myPc<100&&item.myPc>=0}}}    \n#element{text} {depth: 6}    \ndata{已售}      \nscriptdata{item.myPc}      \ndata{%}      \n#element{view} {depth: 6}    \n#attribute{class: cur-pro}      \n#element{progress} {depth: 7}      \n#attribute{activecolor: #ffcf0e}        \n#attribute{percent: {{item.myPc}}}        \n#attribute{strokewidth: 6}        \n#element{view} {depth: 5}  \n#attribute{class: sale-finish}    \n#attribute{wx:if: {{item.myPc>=100}}}    \ndata{已完成100%\r\n\t\t\t\t\t}    \n",
+        "attributes": {
+          "bindtap": "toSeckill",
+          "class": "share-seckill",
+          "data-entity": "{{item}}",
+          "data-index": "{{index}}",
+          "data-status": "{{seckillObj.SeckillTimeList[seckillObj.Sel].Status}}",
+          "wx:for": "{{seckillObj.CurSeckillTime}}",
+          "wx:key": "Id"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toSeckill",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: toGrab}  \n#attribute{class: share-seckill}  \n#attribute{data-entity: {{item}}}  \n#attribute{wx:for: {{grabProduct}}}  \n#attribute{wx:key: Id}  \n#element{image} {depth: 5}  \n#attribute{lazyload: true}    \n#attribute{src: {{item.Picture}}}    \n#attribute{style: opacity:{{item.myPc>=100?0.5:1}};}    \n#element{view} {depth: 5}  \nscriptdata{item.ProductName}    \ndata{ }    \n#element{view} {depth: 5}  \n#attribute{class: act-price }    \n#element{text} {depth: 6}    \n#attribute{style: font-weight:bold;color:red}      \ndata{￥}      \nscriptdata{item.GrabPrice}      \n#element{text} {depth: 6}    \n#attribute{style: text-decoration:line-through;font-size:23rpx;color:#999999;padding-left:20rpx;margin-top:5rpx}      \nscriptdata{item.SalePrice}      \n#element{view} {depth: 5}  \n#attribute{class: sale-schedule}    \n#attribute{wx:if: {{item.myPc<100&&item.myPc>=0}}}    \n#element{text} {depth: 6}    \ndata{已售}      \nscriptdata{item.myPc}      \ndata{%}      \n#element{view} {depth: 6}    \n#attribute{class: cur-pro}      \n#element{progress} {depth: 7}      \n#attribute{activecolor: #ffcf0e}        \n#attribute{percent: {{item.myPc}}}        \n#attribute{strokewidth: 6}        \n#element{view} {depth: 5}  \n#attribute{class: sale-finish}    \n#attribute{wx:if: {{item.myPc>=100}}}    \ndata{已完成100%\r\n\t\t\t\t\t}    \n",
+        "attributes": {
+          "bindtap": "toGrab",
+          "class": "share-seckill",
+          "data-entity": "{{item}}",
+          "wx:for": "{{grabProduct}}",
+          "wx:key": "Id"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toGrab",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: toDiscount}  \n#attribute{class: share-seckill}  \n#attribute{data-entity: {{item}}}  \n#attribute{data-id: {{item.Id}}}  \n#attribute{wx:for: {{discountList}}}  \n#attribute{wx:key: Id}  \n#element{image} {depth: 5}  \n#attribute{lazyload: true}    \n#attribute{src: {{item.Picture}}}    \n#element{view} {depth: 5}  \nscriptdata{item.Name}    \n#element{view} {depth: 5}  \n#attribute{class: act-price }    \n#element{text} {depth: 6}    \n#attribute{style: font-weight:bold;color:red}      \ndata{￥}      \nscriptdata{item.DiscountPrice}      \n#element{text} {depth: 6}    \n#attribute{style: text-decoration:line-through;font-size:23rpx;color:#999999;padding-left:20rpx;margin-top:5rpx}      \nscriptdata{item.SalePrice}      \n",
+        "attributes": {
+          "bindtap": "toDiscount",
+          "class": "share-seckill",
+          "data-entity": "{{item}}",
+          "data-id": "{{item.Id}}",
+          "wx:for": "{{discountList}}",
+          "wx:key": "Id"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toDiscount",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 6}\n#attribute{bindtap: tabTap}  \n#attribute{class: tab-item}  \n#attribute{data-index: 0}  \n#element{text} {depth: 7}  \n#attribute{class: {{selTabIndex==0?'tab-selected':'tab-text'}}}    \ndata{综合排序}    \n",
+        "attributes": {
+          "bindtap": "tabTap",
+          "class": "tab-item",
+          "data-index": "0"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tabTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 6}\n#attribute{bindtap: tabTap}  \n#attribute{class: tab-item}  \n#attribute{data-index: 1}  \n#element{view} {depth: 7}  \n#attribute{class: tab-item-view}    \n#element{text} {depth: 8}    \n#attribute{class: {{selTabIndex==1?'tab-selected':'tab-text'}}}      \ndata{优惠热榜}      \n",
+        "attributes": {
+          "bindtap": "tabTap",
+          "class": "tab-item",
+          "data-index": "1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tabTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 6}\n#attribute{bindtap: grabTap}  \n#attribute{class: tab-item}  \n#attribute{data-index: 2}  \n#element{view} {depth: 7}  \n#attribute{class: tab-item-view}    \n#element{text} {depth: 8}    \n#attribute{class: tab-text}      \ndata{领券专区}      \n",
+        "attributes": {
+          "bindtap": "grabTap",
+          "class": "tab-item",
+          "data-index": "2"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "grabTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: toDetail}  \n#attribute{class: shops-List}  \n#attribute{data-entity: {{item}}}  \n#attribute{data-toid: {{item.Id}}}  \n#attribute{id: {{item.Id}}}  \n#attribute{style: {{item.Status=='2'||item.Status=='3'||item.Status=='4'||item.Status=='0'&&item.IsAcceptReserve!='1'||item.IsInDeliveryTime=='0'&&item.IsAllowSelfDelivery!='1'?'background-color:#f2f2f2;opacity:0.5;':''}}}  \n#attribute{wx:for: {{entityList}}}  \n#attribute{wx:key: Id}  \n#element{view} {depth: 5}  \n#attribute{class: shops-img}    \n#element{image} {depth: 6}    \n#attribute{lazyload: true}      \n#attribute{src: {{item.Picture}}}      \n#element{view} {depth: 6}    \n#attribute{class: isNew}      \n#attribute{wx:if: {{item.IsNew=='1'||selTabIndex==1}}}      \n#element{text} {depth: 7}      \n#attribute{class: isNew-txt}        \nscriptdata{selTabIndex==1?index+1:'新'}        \n#element{view} {depth: 6}    \n#attribute{class: {{item.Status=='1'||item.Status=='0'&&item.IsAcceptReserve=='1'?'':'shopStatus'}}}      \n#attribute{wx:if: {{item.IsInDeliveryTime=='1'}}}      \nscriptdata{item.Status=='1'||item.Status=='0'&&item.IsAcceptReserve=='1'?'':item.StatusText}      \n#element{view} {depth: 6}    \n#attribute{class: shopStatus}      \n#attribute{wx:if: {{item.Status=='1'&&item.IsInDeliveryTime=='0'&&item.IsAllowSelfDelivery!='1'}}}      \ndata{暂不配送}      \n#element{view} {depth: 5}  \n#attribute{class: shops-info}    \n#element{view} {depth: 6}    \n#attribute{class: shopsName}      \nscriptdata{item.Name}      \n#element{text} {depth: 7}      \n#attribute{style: padding:08rpx;border-radius:4rpx;font-size:20rpx;background-color:#f79439;color:#fff;margin-left:10rpx}        \n#attribute{wx:if: {{item.MemberLevel=='2'}}}        \ndata{会员}        \n#element{view} {depth: 6}    \n#element{view} {depth: 7}      \n#attribute{class: shops-reserve}        \n#attribute{wx:if: {{item.Status=='0'&&item.IsAcceptReserve=='1'}}}        \n#element{view} {depth: 8}        \n#attribute{style: background:#4fa1ff;color:white}          \ndata{接受预定}          \n#element{view} {depth: 8}        \n#attribute{style: color:#4fa1ff}          \ndata{营业后配送}          \n#element{view} {depth: 6}    \n#attribute{class: score}      \n#element{i} {depth: 7}      \n#attribute{class: icon-5xing}        \n#attribute{style: color:#FF7F00;margin-left:10rpx}        \n#element{view} {depth: 7}      \n#attribute{class: hotIndex}        \nscriptdata{item.HotIndex}        \ndata{分}        \n#element{view} {depth: 6}    \n#element{view} {depth: 7}      \n#attribute{class: delivery-conditions}        \n#element{view} {depth: 8}        \n#attribute{style: border-right:1rpxsolid#999;}          \ndata{起送￥}          \nscriptdata{item.MinDeliveryPrice!=null?item.MinDeliveryPrice:0}          \ndata{\r\n\t\t\t\t\t\t\t}          \n#element{view} {depth: 8}        \nscriptdata{item.DeliveryUnitPrice=='0'||!item.DeliveryUnitPrice?'免配送费':'配送￥'+item.DeliveryUnitPrice}          \n#element{view} {depth: 7}      \n#attribute{class: {{item.IsPtDelivery=='1'?'special-delivery':'shop-delivery'}}}        \nscriptdata{item.IsPtDelivery=='1'?item.IsInDeliveryTime=='1'?item.DeliveryDesc?item.DeliveryDesc:'平台专送':'暂不配送':'商户配送'}        \ndata{\r\n\t\t\t\t\t\t}        \n#element{view} {depth: 6}    \n#element{view} {depth: 7}      \n#attribute{style: color:#999}        \n#element{i} {depth: 8}        \n#attribute{class: icon-dianpu}          \n#attribute{style: margin:010rpx;}          \n#element{text} {depth: 8}        \nscriptdata{item.ShopTypeName?item.ShopTypeName:'汉堡'}          \n#element{view} {depth: 6}    \n#attribute{class: act-item}      \n#element{view} {depth: 7}      \n#element{view} {depth: 8}        \n#attribute{class: shopsAct}          \n#attribute{style: border:1rpxsolid#fcc;}          \n#attribute{wx:if: {{item.ActivityList.length>0}}}          \n#attribute{wx:for: {{item.ActivityList}}}          \n#attribute{wx:for-index: actIndex}          \n#attribute{wx:for-item: actItem}          \n#attribute{wx:key: Id}          \n#element{text} {depth: 9}          \n#attribute{style: color:{{actItem.BenefitType=='FullCut'?'#f30':'#009ad6'}}}            \nscriptdata{actItem.Name}            \n#element{view} {depth: 8}        \n#attribute{class: shopsAct}          \n#attribute{style: border:1rpxsolid#94d6da;color:#4fa1ff;}          \n#attribute{wx:if: {{item.IsAcceptReserve=='1'&&item.Status=='1'}}}          \ndata{支持预定}          \n#element{view} {depth: 8}        \n#attribute{class: shopsAct}          \n#attribute{style: border:1rpxsolid#8EE5EE;color:#05c0ab;}          \n#attribute{wx:if: {{item.IsSelfFetch=='1'&&item.Status=='1'}}}          \ndata{支持自取}          \n",
+        "attributes": {
+          "bindtap": "toDetail",
+          "class": "shops-List",
+          "data-entity": "{{item}}",
+          "data-toid": "{{item.Id}}",
+          "id": "{{item.Id}}",
+          "style": "{{item.Status=='2'||item.Status=='3'||item.Status=='4'||item.Status=='0'&&item.IsAcceptReserve!='1'||item.IsInDeliveryTime=='0'&&item.IsAllowSelfDelivery!='1'?'background-color:#f2f2f2;opacity:0.5;':''}}",
+          "wx:for": "{{entityList}}",
+          "wx:key": "Id"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toDetail",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: helpDocTap}  \n#attribute{class: load-fail-button}  \n#attribute{data-status: {{loadStatus}}}  \n#attribute{wx:if: {{loadStatus!='5'}}}  \n#element{text} {depth: 5}  \ndata{操作指引}    \n",
+        "attributes": {
+          "bindtap": "helpDocTap",
+          "class": "load-fail-button",
+          "data-status": "{{loadStatus}}",
+          "wx:if": "{{loadStatus!='5'}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "helpDocTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: demoTap}  \n#attribute{class: load-fail-button}  \n#attribute{wx:if: {{loadStatus=='5'}}}  \n#element{text} {depth: 5}  \ndata{体验专区}    \n",
+        "attributes": {
+          "bindtap": "demoTap",
+          "class": "load-fail-button",
+          "wx:if": "{{loadStatus=='5'}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "demoTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: reLocationTap}  \n#attribute{class: load-fail-button}  \n#element{text} {depth: 5}  \ndata{重新定位}    \n",
+        "attributes": {
+          "bindtap": "reLocationTap",
+          "class": "load-fail-button"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "reLocationTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{i} {depth: 4}\n#attribute{bindtap: closeCoupon}  \n#attribute{class: icon-x coupon-del}  \n",
+        "attributes": {
+          "bindtap": "closeCoupon",
+          "class": "icon-x coupon-del"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "closeCoupon",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: queryCoupon}  \n#attribute{class: coupon-receive}  \n#attribute{data-obj: {{item}}}  \ndata{去看看}  \n",
+        "attributes": {
+          "bindtap": "queryCoupon",
+          "class": "coupon-receive",
+          "data-obj": "{{item}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["去看看"],
+        "function_call": "queryCoupon",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 9}\n#attribute{bindtap: toUsedTap}  \n#attribute{class: toUsed}  \n#attribute{data-entity: {{item}}}  \n#attribute{wx:if: {{item.collectOrNot&&item.ShopName}}}  \ndata{立即使用}  \n",
+        "attributes": {
+          "bindtap": "toUsedTap",
+          "class": "toUsed",
+          "data-entity": "{{item}}",
+          "wx:if": "{{item.collectOrNot&&item.ShopName}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["立即使用"],
+        "function_call": "toUsedTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 9}\n#attribute{bindtap: receiveTap}  \n#attribute{class: used}  \n#attribute{data-index: {{index}}}  \n#attribute{wx:if: {{!item.collectOrNot}}}  \ndata{我要领取\r\n\t\t\t\t\t\t\t\t}  \n",
+        "attributes": {
+          "bindtap": "receiveTap",
+          "class": "used",
+          "data-index": "{{index}}",
+          "wx:if": "{{!item.collectOrNot}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["我要领取\r\n\t\t\t\t\t\t\t\t"],
+        "function_call": "receiveTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 7}\n#attribute{bindtap: showDetailListCoupon}  \n#attribute{class: det-more}  \n#attribute{data-index: {{index}}}  \n#element{text} {depth: 8}  \ndata{使用规则说明}    \n#element{i} {depth: 8}  \n#attribute{class: icon-goto}    \n",
+        "attributes": {
+          "bindtap": "showDetailListCoupon",
+          "class": "det-more",
+          "data-index": "{{index}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "showDetailListCoupon",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: noPickUpTap}  \n#attribute{class: no_pick_up}  \ndata{关闭}  \n",
+        "attributes": {
+          "bindtap": "noPickUpTap",
+          "class": "no_pick_up"
+        },
+        "bind_method": "bindtap",
+        "data": ["关闭"],
+        "function_call": "noPickUpTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: onekeyPickUpTap}  \n#attribute{class: onekey_pick_up}  \ndata{一键领取}  \n",
+        "attributes": {
+          "bindtap": "onekeyPickUpTap",
+          "class": "onekey_pick_up"
+        },
+        "bind_method": "bindtap",
+        "data": ["一键领取"],
+        "function_call": "onekeyPickUpTap",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/index/index"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{input} {depth: 4}\n#attribute{bindconfirm: searchTap}  \n#attribute{confirmtype: search}  \n#attribute{maxlength: 15}  \n#attribute{placeholder: 请输入商品名称}  \n#attribute{placeholderstyle: color:#d4d4d4;}  \n#attribute{type: text}  \n#attribute{value: {{searchKey}}}  \n",
+        "attributes": {
+          "bindconfirm": "searchTap",
+          "confirmtype": "search",
+          "maxlength": "15",
+          "placeholder": "请输入商品名称",
+          "placeholderstyle": "color:#d4d4d4;",
+          "type": "text",
+          "value": "{{searchKey}}"
+        },
+        "bind_method": "bindconfirm",
+        "data": [],
+        "function_call": "searchTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: closeKeyTap}  \n#attribute{class: delKey}  \n#element{i} {depth: 5}  \n#attribute{class: icon-x}    \n#attribute{data-index: {{index}}}    \n#attribute{style: font-size:12rpx;color:#fff}    \n",
+        "attributes": {
+          "bindtap": "closeKeyTap",
+          "class": "delKey"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "closeKeyTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{text} {depth: 3}\n#attribute{bindtap: cancelTap}  \ndata{返回}  \n",
+        "attributes": {
+          "bindtap": "cancelTap"
+        },
+        "bind_method": "bindtap",
+        "data": ["返回"],
+        "function_call": "cancelTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: hotWordTap}  \n#attribute{class: hotItem}  \n#attribute{data-text: {{item.Name}}}  \n#attribute{wx:for: {{hotWordList}}}  \n#attribute{wx:key: key}  \nscriptdata{item.Name}  \n",
+        "attributes": {
+          "bindtap": "hotWordTap",
+          "class": "hotItem",
+          "data-text": "{{item.Name}}",
+          "wx:for": "{{hotWordList}}",
+          "wx:key": "key"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "hotWordTap",
+        "scriptdata": ["item.Name"]
+      },
+      {
+        "ast": "#element{text} {depth: 5}\n#attribute{bindtap: historyWord}  \n#attribute{data-word: {{item}}}  \nscriptdata{item}  \n",
+        "attributes": {
+          "bindtap": "historyWord",
+          "data-word": "{{item}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "historyWord",
+        "scriptdata": ["item"]
+      },
+      {
+        "ast": "#element{i} {depth: 5}\n#attribute{bindtap: deleteTap}  \n#attribute{class: icon-x}  \n#attribute{data-index: {{index}}}  \n",
+        "attributes": {
+          "bindtap": "deleteTap",
+          "class": "icon-x",
+          "data-index": "{{index}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "deleteTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: clearTap}  \n#attribute{class: clearHistory}  \n#attribute{wx:if: {{history.length>0}}}  \n#element{text} {depth: 4}  \ndata{清空历史}    \n",
+        "attributes": {
+          "bindtap": "clearTap",
+          "class": "clearHistory",
+          "wx:if": "{{history.length>0}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "clearTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: toDetail}  \n#attribute{class: shops-List}  \n#attribute{data-entity: {{item}}}  \n#attribute{data-toid: {{item.Id}}}  \n#attribute{id: {{item.Id}}}  \n#attribute{wx:for: {{entityList}}}  \n#attribute{wx:key: Id}  \n#element{view} {depth: 4}  \n#attribute{class: shops-img}    \n#element{image} {depth: 5}    \n#attribute{lazyload: true}      \n#attribute{src: {{item.Picture}}}      \n#element{view} {depth: 5}    \n#attribute{class: isNew}      \n#attribute{wx:if: {{item.IsNew=='1'}}}      \n#element{text} {depth: 6}      \n#attribute{class: isNew-txt}        \ndata{新}        \n#element{view} {depth: 5}    \n#attribute{class: {{item.Status=='1'?'':'shopStatus'}}}      \nscriptdata{item.Status=='1'?'':item.StatusText}      \n#element{view} {depth: 5}    \n#attribute{class: shopStatus}      \n#attribute{wx:if: {{item.Status=='1'&&item.IsInDeliveryTime=='0'&&item.IsAllowSelfDelivery!='1'}}}      \ndata{暂不配送}      \n#element{view} {depth: 4}  \n#attribute{class: shops-info}    \n#element{view} {depth: 5}    \n#attribute{class: shopsName}      \nscriptdata{item.Name}      \n#element{view} {depth: 5}    \n#element{view} {depth: 6}      \n#attribute{class: shops-reserve}        \n#attribute{wx:if: {{item.Status=='0'&&item.IsAcceptReserve=='1'}}}        \n#element{view} {depth: 7}        \n#attribute{style: background:#4fa1ff;color:white}          \ndata{接受预定}          \n#element{view} {depth: 7}        \n#attribute{style: color:#4fa1ff}          \ndata{营业后配送}          \n#element{view} {depth: 5}    \n#attribute{class: score}      \n#element{i} {depth: 6}      \n#attribute{class: icon-5xing}        \n#attribute{style: color:#FF7F00;margin-left:10rpx}        \n#element{view} {depth: 6}      \n#attribute{class: hotIndex}        \nscriptdata{item.HotIndex}        \ndata{分}        \n#element{view} {depth: 5}    \n#element{view} {depth: 6}      \n#attribute{class: delivery-conditions}        \n#element{view} {depth: 7}        \n#attribute{style: border-right:1rpxsolid#999;}          \ndata{起送￥}          \nscriptdata{item.MinDeliveryPrice!=null?item.MinDeliveryPrice:0}          \n#element{view} {depth: 7}        \nscriptdata{item.DeliveryUnitPrice=='0'||!item.DeliveryUnitPrice?'免配送费':'配送￥'+item.DeliveryUnitPrice}          \n#element{view} {depth: 6}      \n#attribute{class: {{item.IsPtDelivery=='1'&&item.Status=='1'?item.IsInDeliveryTime=='1'?'special-delivery':item.IsAllowSelfDelivery!='1'?'noInspecial-delivery':'shop-delivery':'shop-delivery'}}}        \nscriptdata{item.IsPtDelivery=='1'&&item.Status=='1'?item.IsInDeliveryTime=='1'?item.DeliveryDesc?item.DeliveryDesc:'平台专送':item.IsAllowSelfDelivery!='1'?'暂不配送':'商户配送':'商户配送'}        \n#element{view} {depth: 5}    \n#element{view} {depth: 6}      \n#attribute{style: color:#999}        \n#element{i} {depth: 7}        \n#attribute{class: icon-dianpu}          \n#attribute{style: margin:010rpx;}          \n#element{text} {depth: 7}        \nscriptdata{!item.ShopTypeName?'汉堡':item.ShopTypeName}          \n#element{view} {depth: 5}    \n#attribute{class: act-item}      \n#element{view} {depth: 6}      \n#element{view} {depth: 7}        \n#attribute{class: shopsAct}          \n#attribute{style: border:1rpxsolid#fcc;}          \n#attribute{wx:if: {{item.ActivityList.length>0}}}          \n#attribute{wx:for: {{item.ActivityList}}}          \n#attribute{wx:for-index: actIndex}          \n#attribute{wx:for-item: actItem}          \n#attribute{wx:key: Id}          \n#element{text} {depth: 8}          \n#attribute{style: color:{{actItem.BenefitType=='FullCut'?'#f30':'#009ad6'}}}            \nscriptdata{actItem.Name}            \n#element{view} {depth: 7}        \n#attribute{class: shopsAct}          \n#attribute{style: border:1rpxsolid#94d6da;color:#4fa1ff;}          \n#attribute{wx:if: {{item.IsAcceptReserve=='1'&&item.Status=='1'}}}          \ndata{支持预定}          \n#element{view} {depth: 7}        \n#attribute{class: shopsAct}          \n#attribute{style: border:1rpxsolid#8EE5EE;color:#05c0ab;}          \n#attribute{wx:if: {{item.IsSelfFetch=='1'&&item.Status=='1'}}}          \ndata{支持自取}          \n#element{scroll-view} {depth: 5}    \n#attribute{class: promotion-scroll-x}      \n#attribute{wx:if: {{item.ProductList&&item.ProductList.length>0}}}      \n#element{view} {depth: 6}      \n#attribute{style: height:auto;diaplay:flex;flex-wrap:nowrap;}        \n#element{view} {depth: 7}        \n#attribute{catchtap: goProductTap}          \n#attribute{class: scroll-item}          \n#attribute{data-entity: {{liItem}}}          \n#attribute{wx:for: {{item.ProductList}}}          \n#attribute{wx:for-item: liItem}          \n#attribute{wx:key: key}          \n#element{image} {depth: 8}          \n#attribute{lazyload: true}            \n#attribute{src: {{liItem.Picture?liItem.Picture:''}}}            \n#element{view} {depth: 8}          \n#attribute{class: product-tex}            \n#element{text} {depth: 9}            \n#attribute{style: padding-left:10rpx;color:#666;}              \nscriptdata{liItem.Name?liItem.Name:'无商品名称'}              \n#element{view} {depth: 8}          \n#attribute{class: product-act}            \n#element{view} {depth: 9}            \n#attribute{class: product-sell}              \n#element{text} {depth: 10}              \n#attribute{class: price-icon}                \ndata{￥}                \n#element{text} {depth: 10}              \n#attribute{style: color:red;font-size:32rpx;font-weight:bold}                \nscriptdata{liItem.GrabPrice}                \n#element{text} {depth: 10}              \n#attribute{style: text-decoration:line-through;padding-left:12rpx;font-size:24rpx}                \n#attribute{wx:if: {{liItem.Discount>0&&liItem.Discount<1}}}                \n#element{text} {depth: 11}                \n#attribute{style: font-size:22rpx;}                  \ndata{￥}                  \nscriptdata{liItem.SalePrice}                \n",
+        "attributes": {
+          "bindtap": "toDetail",
+          "class": "shops-List",
+          "data-entity": "{{item}}",
+          "data-toid": "{{item.Id}}",
+          "id": "{{item.Id}}",
+          "wx:for": "{{entityList}}",
+          "wx:key": "Id"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toDetail",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/index/search"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: toSearch}  \n#attribute{class: input-wrap}  \n#element{icon} {depth: 4}  \n#attribute{size: 12}    \n#attribute{type: search}    \n#element{text} {depth: 4}  \n#attribute{class: tit}    \ndata{搜索商品名称}    \n",
+        "attributes": {
+          "bindtap": "toSearch",
+          "class": "input-wrap"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toSearch",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 4}\n#attribute{bindtap: bannerTap}  \n#attribute{class: slide-image}  \n#attribute{data-entity: {{item}}}  \n#attribute{src: {{item.Picture}}}  \n",
+        "attributes": {
+          "bindtap": "bannerTap",
+          "class": "slide-image",
+          "data-entity": "{{item}}",
+          "src": "{{item.Picture}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "bannerTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: takeoutTap}  \n#attribute{class: takeout}  \n#element{text} {depth: 4}  \ndata{点外卖}    \n#element{i} {depth: 4}  \n#attribute{class: icon-goto}    \n",
+        "attributes": {
+          "bindtap": "takeoutTap",
+          "class": "takeout"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "takeoutTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: makeCall}  \n#attribute{class: shopstatus normal}  \n#attribute{data-tel: {{curShop.TelephoneShow}}}  \n#element{i} {depth: 4}  \n#attribute{class: icon-dianhua2}    \n#attribute{style: margin-top:5rpx;}    \n#element{text} {depth: 4}  \nscriptdata{curShop.TelephoneShow}    \n",
+        "attributes": {
+          "bindtap": "makeCall",
+          "class": "shopstatus normal",
+          "data-tel": "{{curShop.TelephoneShow}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "makeCall",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: moreTap}  \n#attribute{class: tit-more}  \n#element{text} {depth: 4}  \ndata{更多}    \n#element{i} {depth: 4}  \n#attribute{class: icon-gengduo1}    \n",
+        "attributes": {
+          "bindtap": "moreTap",
+          "class": "tit-more"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "moreTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: secKillTabChange}  \n#attribute{class: seckill-tabitem  {{!curSecKillTime&&index==0||curSecKillTime&&curSecKillTime.BeginTime==item.BeginTime?'selseckilltab':''}}}  \n#attribute{data-entity: {{item}}}  \n#attribute{wx:for: {{secKillObj.SeckillTimeList}}}  \n#element{view} {depth: 5}  \n#attribute{class: seckill-tabitem-time}    \nscriptdata{item.BeginTime}    \ndata{\r\n         }    \n#element{view} {depth: 5}  \n#attribute{class: seckill-tabitem-text}    \nscriptdata{item.Status=='1'?'抢购中':'即将开始'}    \ndata{\r\n         }    \n",
+        "attributes": {
+          "bindtap": "secKillTabChange",
+          "class": "seckill-tabitem  {{!curSecKillTime&&index==0||curSecKillTime&&curSecKillTime.BeginTime==item.BeginTime?'selseckilltab':''}}",
+          "data-entity": "{{item}}",
+          "wx:for": "{{secKillObj.SeckillTimeList}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "secKillTabChange",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: testTap}  \n#attribute{style: display:flex;align-items:center}  \n#element{text} {depth: 4}  \n#attribute{class: seckill-timecount-hinttext}    \nscriptdata{curSecKillTime&&curSecKillTime.Status=='1'?'距结束':'距开始'}    \n#element{view} {depth: 4}  \n#attribute{class: seckill-timecount-time}    \n#element{text} {depth: 5}    \n#attribute{class: seckill-timecount-timetext}      \nscriptdata{secKillTimeCount.showhour}      \n#element{text} {depth: 4}  \n#attribute{class: seckill-timecount-dot}    \ndata{:}    \n#element{view} {depth: 4}  \n#attribute{class: seckill-timecount-time}    \n#element{text} {depth: 5}    \n#attribute{class: seckill-timecount-timetext}      \nscriptdata{secKillTimeCount.showmin}      \n#element{text} {depth: 4}  \n#attribute{class: seckill-timecount-dot}    \ndata{:}    \n#element{view} {depth: 4}  \n#attribute{class: seckill-timecount-time}    \n#element{text} {depth: 5}    \n#attribute{class: seckill-timecount-timetext}      \nscriptdata{secKillTimeCount.showsec}      \n",
+        "attributes": {
+          "bindtap": "testTap",
+          "style": "display:flex;align-items:center"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "testTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: toSeckill}  \n#attribute{class: seckill-pic}  \n#attribute{data-entity: {{item}}}  \n#attribute{data-index: {{index}}}  \n#attribute{data-status: {{curSecKillTime.Status}}}  \n#element{image} {depth: 6}  \n#attribute{src: {{item.Picture}}}    \n#element{text} {depth: 6}  \n#attribute{class: txt-over}    \n#attribute{wx:if: {{item.myPc>=100?true:false}}}    \ndata{已抢光}    \n",
+        "attributes": {
+          "bindtap": "toSeckill",
+          "class": "seckill-pic",
+          "data-entity": "{{item}}",
+          "data-index": "{{index}}",
+          "data-status": "{{curSecKillTime.Status}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toSeckill",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: toGrab}  \n#attribute{class: seckill-pic}  \n#attribute{data-entity: {{item}}}  \n#attribute{data-index: {{index}}}  \n#element{image} {depth: 5}  \n#attribute{src: {{item.Picture}}}    \n#element{text} {depth: 5}  \n#attribute{class: txt-over}    \n#attribute{wx:if: {{item.myPc==100?true:false}}}    \ndata{已抢光}    \n#element{text} {depth: 5}  \n#attribute{class: txt-limit}    \ndata{每次限购}    \nscriptdata{item.LimitCount}    \ndata{份}    \n",
+        "attributes": {
+          "bindtap": "toGrab",
+          "class": "seckill-pic",
+          "data-entity": "{{item}}",
+          "data-index": "{{index}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toGrab",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: toDetail}  \n#attribute{class: today-item}  \n#attribute{data-id: {{item.Id}}}  \n#attribute{wx:for: {{discountList}}}  \n#element{image} {depth: 6}  \n#attribute{class: today-img}    \n#attribute{src: {{item.Picture}}}    \n#element{view} {depth: 6}  \n#attribute{class: today-txt}    \nscriptdata{item.Name}    \n#element{view} {depth: 6}  \n#attribute{class: today-price}    \n#element{text} {depth: 7}    \n#attribute{class: today-price-now}      \ndata{￥}      \nscriptdata{item.DiscountPrice}      \n#element{text} {depth: 7}    \n#attribute{class: today-price-old}      \ndata{￥}      \nscriptdata{item.SalePrice}      \n",
+        "attributes": {
+          "bindtap": "toDetail",
+          "class": "today-item",
+          "data-id": "{{item.Id}}",
+          "wx:for": "{{discountList}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toDetail",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{text} {depth: 6}\n#attribute{bindtap: productTypeTabTap}  \n#attribute{class: {{selTabIndex==-1?'tab-selected':'tab-text'}}}  \n#attribute{data-tabindex: -1}  \ndata{全部}  \n",
+        "attributes": {
+          "bindtap": "productTypeTabTap",
+          "class": "{{selTabIndex==-1?'tab-selected':'tab-text'}}",
+          "data-tabindex": "-1"
+        },
+        "bind_method": "bindtap",
+        "data": ["全部"],
+        "function_call": "productTypeTabTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{text} {depth: 7}\n#attribute{bindtap: productTypeTabTap}  \n#attribute{class: {{selTabIndex==index?'tab-selected':'tab-text'}}}  \n#attribute{data-entity: {{item}}}  \n#attribute{data-tabindex: {{index}}}  \nscriptdata{item.Name}  \ndata{ }  \n",
+        "attributes": {
+          "bindtap": "productTypeTabTap",
+          "class": "{{selTabIndex==index?'tab-selected':'tab-text'}}",
+          "data-entity": "{{item}}",
+          "data-tabindex": "{{index}}"
+        },
+        "bind_method": "bindtap",
+        "data": [" "],
+        "function_call": "productTypeTabTap",
+        "scriptdata": ["item.Name"]
+      },
+      {
+        "ast": "#element{image} {depth: 5}\n#attribute{bindtap: toDetail}  \n#attribute{class: d-img}  \n#attribute{data-id: {{item.Id}}}  \n#attribute{mode: aspectFit}  \n#attribute{src: {{item.Picture?item.Picture:'../../resources/images/detail/noPic.jpg'}}}  \n",
+        "attributes": {
+          "bindtap": "toDetail",
+          "class": "d-img",
+          "data-id": "{{item.Id}}",
+          "mode": "aspectFit",
+          "src": "{{item.Picture?item.Picture:'../../resources/images/detail/noPic.jpg'}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toDetail",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 6}\n#attribute{bindtap: openSize}  \n#attribute{class: btn-sel}  \n#attribute{data-entity: {{item}}}  \n#attribute{wx:if: {{item.ProductSpecList&&item.ProductSpecList.length>0}}}  \n#element{text} {depth: 7}  \ndata{选规格}    \n",
+        "attributes": {
+          "bindtap": "openSize",
+          "class": "btn-sel",
+          "data-entity": "{{item}}",
+          "wx:if": "{{item.ProductSpecList&&item.ProductSpecList.length>0}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "openSize",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{i} {depth: 6}\n#attribute{bindtap: toCar}  \n#attribute{class: icon-gouwuche {{curShop.IsUseStock=='1'&&item.StockCount<=0?'noStock':''}}}  \n#attribute{data-obj: {{item}}}  \n#attribute{wx:if: {{!item.ProductSpecList||item.ProductSpecList.length<=0}}}  \n",
+        "attributes": {
+          "bindtap": "toCar",
+          "class": "icon-gouwuche {{curShop.IsUseStock=='1'&&item.StockCount<=0?'noStock':''}}",
+          "data-obj": "{{item}}",
+          "wx:if": "{{!item.ProductSpecList||item.ProductSpecList.length<=0}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toCar",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: navigatorTap}  \n#attribute{class: tabItem {{selNavitatorIndex==0?'navigator-selected':'navigator-text'}}}  \n#attribute{data-navigatorindex: 0}  \n#element{i} {depth: 3}  \n#attribute{class: icon-shouye}    \n#element{view} {depth: 3}  \ndata{首页}    \n",
+        "attributes": {
+          "bindtap": "navigatorTap",
+          "class": "tabItem {{selNavitatorIndex==0?'navigator-selected':'navigator-text'}}",
+          "data-navigatorindex": "0"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "navigatorTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: navigatorTap}  \n#attribute{class: tabItem {{selNavitatorIndex==1?'navigator-selected':'navigator-text'}}}  \n#attribute{data-navigatorindex: 1}  \n#element{i} {depth: 3}  \n#attribute{class: icon-fenlei}    \n#element{view} {depth: 3}  \ndata{分类}    \n",
+        "attributes": {
+          "bindtap": "navigatorTap",
+          "class": "tabItem {{selNavitatorIndex==1?'navigator-selected':'navigator-text'}}",
+          "data-navigatorindex": "1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "navigatorTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: navigatorTap}  \n#attribute{class: tabItem {{selNavitatorIndex==2?'navigator-selected':'navigator-text'}}}  \n#attribute{data-navigatorindex: 2}  \n#element{i} {depth: 3}  \n#attribute{class: icon-shopping-cart}    \n#element{view} {depth: 3}  \n#attribute{class: car-num}    \n#attribute{wx:if: {{carNum>0}}}    \nscriptdata{carNum}    \n#element{view} {depth: 3}  \ndata{购物车}    \n",
+        "attributes": {
+          "bindtap": "navigatorTap",
+          "class": "tabItem {{selNavitatorIndex==2?'navigator-selected':'navigator-text'}}",
+          "data-navigatorindex": "2"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "navigatorTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: navigatorTap}  \n#attribute{class: tabItem {{selNavitatorIndex==3?'navigator-selected':'navigator-text'}}}  \n#attribute{data-navigatorindex: 3}  \n#element{i} {depth: 3}  \n#attribute{class: icon-wode2}    \n#element{view} {depth: 3}  \ndata{我的}    \n",
+        "attributes": {
+          "bindtap": "navigatorTap",
+          "class": "tabItem {{selNavitatorIndex==3?'navigator-selected':'navigator-text'}}",
+          "data-navigatorindex": "3"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "navigatorTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{i} {depth: 3}\n#attribute{bindtap: closeCoupon}  \n#attribute{class: icon-x coupon-del}  \n",
+        "attributes": {
+          "bindtap": "closeCoupon",
+          "class": "icon-x coupon-del"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "closeCoupon",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: receiveCoupon}  \n#attribute{class: coupon-receive}  \n#attribute{data-obj: {{item}}}  \ndata{立即领取}  \n",
+        "attributes": {
+          "bindtap": "receiveCoupon",
+          "class": "coupon-receive",
+          "data-obj": "{{item}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["立即领取"],
+        "function_call": "receiveCoupon",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/shopIndex/shopIndex"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{image} {depth: 4}\n#attribute{bindtap: adTap}  \n#attribute{class: banner}  \n#attribute{data-entity: {{item}}}  \n#attribute{src: {{item.Picture}}}  \n",
+        "attributes": {
+          "bindtap": "adTap",
+          "class": "banner",
+          "data-entity": "{{item}}",
+          "src": "{{item.Picture}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "adTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: functionTap}  \n#attribute{class: item-bg}  \n#attribute{data-entity: {{item}}}  \n#attribute{style: background:{{item.Style}}}  \n#element{i} {depth: 5}  \n#attribute{class: {{item.Icon}}}    \n",
+        "attributes": {
+          "bindtap": "functionTap",
+          "class": "item-bg",
+          "data-entity": "{{item}}",
+          "style": "background:{{item.Style}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "functionTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: secKillTabChange}  \n#attribute{class: seckill-tabitem  {{!curSecKillTime&&index==0||curSecKillTime&&curSecKillTime.BeginTime==item.BeginTime?'selseckilltab':''}}}  \n#attribute{data-entity: {{item}}}  \n#attribute{wx:for: {{secKillObj.SeckillTimeList}}}  \n#element{view} {depth: 4}  \n#attribute{class: seckill-tabitem-time}    \nscriptdata{item.BeginTime}    \ndata{\r\n         }    \n#element{view} {depth: 4}  \n#attribute{class: seckill-tabitem-text}    \nscriptdata{item.Status=='1'?'抢购中':'即将开始'}    \ndata{\r\n         }    \n",
+        "attributes": {
+          "bindtap": "secKillTabChange",
+          "class": "seckill-tabitem  {{!curSecKillTime&&index==0||curSecKillTime&&curSecKillTime.BeginTime==item.BeginTime?'selseckilltab':''}}",
+          "data-entity": "{{item}}",
+          "wx:for": "{{secKillObj.SeckillTimeList}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "secKillTabChange",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: testTap}  \n#attribute{style: display:flex;align-items:center}  \n#element{text} {depth: 3}  \n#attribute{class: seckill-timecount-hinttext}    \nscriptdata{curSecKillTime&&curSecKillTime.Status=='1'?'距结束':'距开始'}    \n#element{view} {depth: 3}  \n#attribute{class: seckill-timecount-time}    \n#element{text} {depth: 4}    \n#attribute{class: seckill-timecount-timetext}      \nscriptdata{secKillTimeCount.showhour}      \n#element{text} {depth: 3}  \n#attribute{class: seckill-timecount-dot}    \ndata{:}    \n#element{view} {depth: 3}  \n#attribute{class: seckill-timecount-time}    \n#element{text} {depth: 4}    \n#attribute{class: seckill-timecount-timetext}      \nscriptdata{secKillTimeCount.showmin}      \n#element{text} {depth: 3}  \n#attribute{class: seckill-timecount-dot}    \ndata{:}    \n#element{view} {depth: 3}  \n#attribute{class: seckill-timecount-time}    \n#element{text} {depth: 4}    \n#attribute{class: seckill-timecount-timetext}      \nscriptdata{secKillTimeCount.showsec}      \n",
+        "attributes": {
+          "bindtap": "testTap",
+          "style": "display:flex;align-items:center"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "testTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: toSeckill}  \n#attribute{class: seckill-pic}  \n#attribute{data-entity: {{item}}}  \n#attribute{data-index: {{index}}}  \n#attribute{data-status: {{curSecKillTime.Status}}}  \n#attribute{wx:for: {{curSecKillTime.SeckillProductList}}}  \n#element{image} {depth: 4}  \n#attribute{src: {{item.Picture}}}    \n#element{text} {depth: 4}  \n#attribute{class: txt-over}    \n#attribute{wx:if: {{item.myPc>=100?true:false}}}    \ndata{已抢光}    \n#element{view} {depth: 4}  \n#attribute{class: tex-tex}    \n#element{text} {depth: 5}    \n#attribute{class: grab-name}      \nscriptdata{item.ProductName}      \n#element{view} {depth: 5}    \n#attribute{class: seckill-price}      \n#element{text} {depth: 6}      \n#attribute{class: now-price}        \ndata{￥}        \nscriptdata{item.GrabPrice}        \n#element{text} {depth: 6}      \n#attribute{class: old-price}        \ndata{￥}        \nscriptdata{item.SalePrice}        \n#element{view} {depth: 5}    \n#attribute{class: seckill-cur}      \n#element{text} {depth: 6}      \n#attribute{class: cur-txt}        \n#attribute{hidden: {{item.myPc>=100?false:true}}}        \ndata{已抢光100%}        \n#element{text} {depth: 6}      \n#attribute{class: cur-txt}        \n#attribute{hidden: {{item.myPc<100&&item.myPc>=0?false:true}}}        \ndata{已售}        \nscriptdata{item.myPc}        \ndata{%}        \n#element{view} {depth: 6}      \n#attribute{class: cur-pro}        \n#element{progress} {depth: 7}        \n#attribute{activecolor: #32eed9}          \n#attribute{percent: {{item.myPc}}}          \n#attribute{strokewidth: 6}          \n",
+        "attributes": {
+          "bindtap": "toSeckill",
+          "class": "seckill-pic",
+          "data-entity": "{{item}}",
+          "data-index": "{{index}}",
+          "data-status": "{{curSecKillTime.Status}}",
+          "wx:for": "{{curSecKillTime.SeckillProductList}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toSeckill",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: toDiscount}  \n#attribute{class: today-item}  \n#attribute{data-entity: {{item}}}  \n#attribute{data-id: {{item.Id}}}  \n#attribute{wx:for: {{discountList}}}  \n#element{image} {depth: 5}  \n#attribute{class: today-img}    \n#attribute{src: {{item.Picture}}}    \n#element{view} {depth: 5}  \n#attribute{class: today-txt}    \nscriptdata{item.Name}    \n#element{view} {depth: 5}  \n#attribute{class: today-price}    \n#element{text} {depth: 6}    \n#attribute{class: today-price-now}      \ndata{￥}      \nscriptdata{item.DiscountPrice}      \n#element{text} {depth: 6}    \n#attribute{class: today-price-old}      \ndata{￥}      \nscriptdata{item.SalePrice}      \n",
+        "attributes": {
+          "bindtap": "toDiscount",
+          "class": "today-item",
+          "data-entity": "{{item}}",
+          "data-id": "{{item.Id}}",
+          "wx:for": "{{discountList}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toDiscount",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{text} {depth: 5}\n#attribute{bindtap: tabTap}  \n#attribute{class: {{selTabIndex==0?'tab-selected':'tab-text'}}}  \n#attribute{data-index: 0}  \ndata{商家推荐}  \n",
+        "attributes": {
+          "bindtap": "tabTap",
+          "class": "{{selTabIndex==0?'tab-selected':'tab-text'}}",
+          "data-index": "0"
+        },
+        "bind_method": "bindtap",
+        "data": ["商家推荐"],
+        "function_call": "tabTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{text} {depth: 6}\n#attribute{bindtap: tabTap}  \n#attribute{class: {{selTabIndex==1?'tab-selected':'tab-text'}}}  \n#attribute{data-index: 1}  \ndata{优惠热榜 }  \n",
+        "attributes": {
+          "bindtap": "tabTap",
+          "class": "{{selTabIndex==1?'tab-selected':'tab-text'}}",
+          "data-index": "1"
+        },
+        "bind_method": "bindtap",
+        "data": ["优惠热榜 "],
+        "function_call": "tabTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{text} {depth: 4}\n#attribute{bindtap: selectSchoolTap}  \n#attribute{style: font-size:28rpx;color:#07cbad}  \ndata{我的位置:}  \nscriptdata{curDistrictName?curDistrictName:'未设置'}  \n",
+        "attributes": {
+          "bindtap": "selectSchoolTap",
+          "style": "font-size:28rpx;color:#07cbad"
+        },
+        "bind_method": "bindtap",
+        "data": ["我的位置:"],
+        "function_call": "selectSchoolTap",
+        "scriptdata": ["curDistrictName?curDistrictName:'未设置'"]
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: toDetail}  \n#attribute{class: shop}  \n#attribute{data-toid: {{item.Id}}}  \n#attribute{id: {{item.Id}}}  \n#element{view} {depth: 4}  \n#attribute{class: shop-img}    \n#element{image} {depth: 5}    \n#attribute{src: {{item.Picture}}}      \n#element{view} {depth: 5}    \n#attribute{class: isNew}      \n#attribute{wx:if: {{item.IsNew=='1'&&selTabIndex==0}}}      \n#element{text} {depth: 6}      \n#attribute{class: isNew-txt}        \ndata{新}        \n#element{view} {depth: 5}    \n#attribute{class: trapezoid}      \n#attribute{wx:if: {{item.IsNew!='1'&&item.MemberLevel==9}}}      \n#element{text} {depth: 6}      \n#attribute{class: trapezoid-txt}        \ndata{直 营 店}        \n#element{view} {depth: 5}    \n#attribute{class: isNew}      \n#attribute{wx:if: {{selTabIndex==1}}}      \n#element{text} {depth: 6}      \n#attribute{class: isNew-txt}        \nscriptdata{index+1}        \n#element{view} {depth: 5}    \n#attribute{class: up-note}      \n#attribute{wx:if: {{item.Status!='1'}}}      \nscriptdata{item.StatusText}      \n#element{view} {depth: 4}  \n#attribute{class: shop-detail}    \n#element{view} {depth: 5}    \n#attribute{class: shop-up}      \n#element{view} {depth: 6}      \n#attribute{class: member-wrap}        \n#element{i} {depth: 7}        \n#attribute{class: icon-v normal}          \n#attribute{wx:if: {{item.MemberLevel==1}}}          \n#element{i} {depth: 7}        \n#attribute{class: icon-v vip}          \n#attribute{wx:if: {{item.MemberLevel==2}}}          \n#element{text} {depth: 7}        \n#attribute{class: shop-name {{item.Status=='1'?'':'status'}}}          \nscriptdata{item.Name}          \n#element{view} {depth: 6}      \n#attribute{class: shop-bottom}        \n#element{view} {depth: 7}        \n#attribute{class: star}          \n#element{view} {depth: 8}          \n#attribute{class: star-bg}            \n#attribute{style: width:{{160/5*item.ShopStarNum}}rpx;}            \n#element{image} {depth: 8}          \n#attribute{src: ../../resources/images/star.png}            \n#element{view} {depth: 7}        \n#attribute{class: shop-sold}          \n#element{text} {depth: 8}          \ndata{月售}            \n#element{text} {depth: 8}          \n#attribute{style: margin:04rpx;}            \nscriptdata{item.MonthSalesNum}            \n#element{text} {depth: 8}          \ndata{单}            \n#element{view} {depth: 6}      \n#attribute{class: deli}        \n#element{text} {depth: 7}        \ndata{起送￥}          \nscriptdata{item.MinDeliveryPrice}          \ndata{/配送￥}          \nscriptdata{item.DeliveryUnitPrice}          \n",
+        "attributes": {
+          "bindtap": "toDetail",
+          "class": "shop",
+          "data-toid": "{{item.Id}}",
+          "id": "{{item.Id}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toDetail",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: seled}  \n#attribute{class: shop-down {{entityList[index].sel==index?'open':''}}}  \n#attribute{data-index: {{index}}}  \n#element{view} {depth: 4}  \n#attribute{class: shop-act}    \n#element{view} {depth: 5}    \n#attribute{class: shop-cut}      \n#attribute{wx:for: {{item.ActivityList}}}      \n#attribute{wx:for-index: actIndex}      \n#attribute{wx:for-item: actItem}      \n#attribute{wx:key: Id}      \n#element{text} {depth: 6}      \n#attribute{class: word}        \n#attribute{style: background:#fbb20e;}        \n#attribute{wx:if: {{actItem.BenefitType=='FullCut'}}}        \ndata{减}        \n#element{text} {depth: 6}      \n#attribute{class: word}        \n#attribute{style: background:#ff5d1c;}        \n#attribute{wx:if: {{actItem.BenefitType=='FirstCut'}}}        \ndata{新}        \n#element{text} {depth: 6}      \n#attribute{class: word}        \n#attribute{style: background:#ff2e4d;}        \n#attribute{wx:if: {{actItem.BenefitType=='FullSent'}}}        \ndata{送}        \n#element{text} {depth: 6}      \n#attribute{class: word}        \n#attribute{style: background:#fece46;}        \n#attribute{wx:if: {{actItem.BenefitType=='Coupon'}}}        \ndata{券}        \n#element{text} {depth: 6}      \n#attribute{class: word}        \n#attribute{style: background:#ff459f;}        \n#attribute{wx:if: {{actItem.BenefitType==''}}}        \ndata{特}        \n#element{text} {depth: 6}      \nscriptdata{actItem.Name}        \n#element{view} {depth: 4}  \n#attribute{class: shop-drop}    \n#element{text} {depth: 5}    \nscriptdata{item.ActivityList==null?'0':item.ActivityList.length}      \ndata{个活动}      \n#element{i} {depth: 5}    \n#attribute{class: {{item.sel==null?'icon-sanjiao-copy-copy-copy':'icon-angle-down1'}}}      \n#attribute{wx:if: {{item.ActivityList.length>4}}}      \n",
+        "attributes": {
+          "bindtap": "seled",
+          "class": "shop-down {{entityList[index].sel==index?'open':''}}",
+          "data-index": "{{index}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "seled",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{picker} {depth: 5}\n#attribute{bindchange: districtChange}  \n#attribute{data-entity: }  \n#attribute{name: districtId}  \n#attribute{range: {{districtList}}}  \n#attribute{rangekey: Name}  \n#attribute{value: {{curDistrictIndex}}}  \n#element{text} {depth: 6}  \nscriptdata{curDistrict}    \n#element{i} {depth: 6}  \n#attribute{class: icon-goto}    \n",
+        "attributes": {
+          "bindchange": "districtChange",
+          "data-entity": "",
+          "name": "districtId",
+          "range": "{{districtList}}",
+          "rangekey": "Name",
+          "value": "{{curDistrictIndex}}"
+        },
+        "bind_method": "bindchange",
+        "data": [],
+        "function_call": "districtChange",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{form} {depth: 3}\n#attribute{bindsubmit: selSchoolTap}  \n#attribute{reportsubmit: true}  \n#element{button} {depth: 4}  \n#attribute{class: tips-btn}    \n#attribute{formtype: submit}    \ndata{我选择好了}    \n",
+        "attributes": {
+          "bindsubmit": "selSchoolTap",
+          "reportsubmit": "true"
+        },
+        "bind_method": "bindsubmit",
+        "data": [],
+        "function_call": "selSchoolTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{i} {depth: 3}\n#attribute{bindtap: closeCoupon}  \n#attribute{class: icon-x coupon-del}  \n",
+        "attributes": {
+          "bindtap": "closeCoupon",
+          "class": "icon-x coupon-del"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "closeCoupon",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: queryCoupon}  \n#attribute{class: coupon-receive}  \n#attribute{data-obj: {{item}}}  \ndata{去看看}  \n",
+        "attributes": {
+          "bindtap": "queryCoupon",
+          "class": "coupon-receive",
+          "data-obj": "{{item}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["去看看"],
+        "function_call": "queryCoupon",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/home/home3"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: adClick}  \n#attribute{class: head-item {{index==0?'box0':''}} {{index==1?'box1':''}} {{index==2?'box2':''}}}  \n#attribute{data-entity: {{item}}}  \n#attribute{wx:for: {{menu}}}  \n#attribute{wx:key: Title}  \n#element{view} {depth: 4}  \n#attribute{class: item-tit}    \n#element{text} {depth: 5}    \n#attribute{class: item-big {{index==0?'cc0':''}} {{index==1?'cc1':''}} {{index==2?'cc2':''}} {{index==3?'cc3':''}}}      \nscriptdata{item.Title}      \n#element{text} {depth: 5}    \n#attribute{class: item-small}      \nscriptdata{item.Introduce}      \n#element{view} {depth: 4}  \n#attribute{class: item-pic}    \n#element{image} {depth: 5}    \n#attribute{src: {{item.Picture}}}      \n",
+        "attributes": {
+          "bindtap": "adClick",
+          "class": "head-item {{index==0?'box0':''}} {{index==1?'box1':''}} {{index==2?'box2':''}}",
+          "data-entity": "{{item}}",
+          "wx:for": "{{menu}}",
+          "wx:key": "Title"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "adClick",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{swiper-item} {depth: 3}\n#attribute{bindtap: swiperItemClick}  \n#attribute{data-entity: {{item}}}  \n#attribute{wx:for: {{swiperDisAdList}}}  \n#attribute{wx:key: Picture}  \n#element{image} {depth: 4}  \n#attribute{class: banner}    \n#attribute{src: {{item.Picture}}}    \n",
+        "attributes": {
+          "bindtap": "swiperItemClick",
+          "data-entity": "{{item}}",
+          "wx:for": "{{swiperDisAdList}}",
+          "wx:key": "Picture"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "swiperItemClick",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{text} {depth: 5}\n#attribute{bindtap: tabTap}  \n#attribute{class: {{selTabIndex==0?'tab-selected':'tab-text'}}}  \n#attribute{data-index: 0}  \ndata{限量抢购}  \n",
+        "attributes": {
+          "bindtap": "tabTap",
+          "class": "{{selTabIndex==0?'tab-selected':'tab-text'}}",
+          "data-index": "0"
+        },
+        "bind_method": "bindtap",
+        "data": ["限量抢购"],
+        "function_call": "tabTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{text} {depth: 6}\n#attribute{bindtap: tabTap}  \n#attribute{class: {{selTabIndex==1?'tab-selected':'tab-text'}}}  \n#attribute{data-index: 1}  \ndata{折扣专区 }  \n",
+        "attributes": {
+          "bindtap": "tabTap",
+          "class": "{{selTabIndex==1?'tab-selected':'tab-text'}}",
+          "data-index": "1"
+        },
+        "bind_method": "bindtap",
+        "data": ["折扣专区 "],
+        "function_call": "tabTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 4}\n#attribute{bindtap: toGrab}  \n#attribute{class: food}  \n#attribute{data-foodid: {{item.ProductId}}}  \n#attribute{data-grabid: {{item.Id}}}  \n#attribute{data-shopid: {{item.ShopId}}}  \n#attribute{src: {{item.Picture}}}  \n",
+        "attributes": {
+          "bindtap": "toGrab",
+          "class": "food",
+          "data-foodid": "{{item.ProductId}}",
+          "data-grabid": "{{item.Id}}",
+          "data-shopid": "{{item.ShopId}}",
+          "src": "{{item.Picture}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toGrab",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 4}\n#attribute{bindtap: toDiscount}  \n#attribute{class: food}  \n#attribute{data-foodid: {{item.Id}}}  \n#attribute{data-shopid: {{item.ShopId}}}  \n#attribute{src: {{item.Picture}}}  \n",
+        "attributes": {
+          "bindtap": "toDiscount",
+          "class": "food",
+          "data-foodid": "{{item.Id}}",
+          "data-shopid": "{{item.ShopId}}",
+          "src": "{{item.Picture}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toDiscount",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/discover/discover"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: tabTap}  \n#attribute{class: tab-item}  \n#attribute{data-index: 0}  \n#attribute{data-status: }  \n#element{text} {depth: 5}  \n#attribute{class: {{selTabIndex==0?'tab-selected':'tab-text'}}}    \ndata{全部}    \n",
+        "attributes": {
+          "bindtap": "tabTap",
+          "class": "tab-item",
+          "data-index": "0",
+          "data-status": ""
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tabTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: tabTap}  \n#attribute{class: tab-item}  \n#attribute{data-index: 1}  \n#attribute{data-status: WaitPay}  \n#element{text} {depth: 5}  \n#attribute{class: {{selTabIndex==1?'tab-selected':'tab-text'}}}    \ndata{待付款}    \n",
+        "attributes": {
+          "bindtap": "tabTap",
+          "class": "tab-item",
+          "data-index": "1",
+          "data-status": "WaitPay"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tabTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: tabTap}  \n#attribute{class: tab-item}  \n#attribute{data-index: 2}  \n#attribute{data-status: WaitDelivery}  \n#element{text} {depth: 5}  \n#attribute{class: {{selTabIndex==2?'tab-selected':'tab-text'}}}    \ndata{待发货}    \n",
+        "attributes": {
+          "bindtap": "tabTap",
+          "class": "tab-item",
+          "data-index": "2",
+          "data-status": "WaitDelivery"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tabTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: tabTap}  \n#attribute{class: tab-item}  \n#attribute{data-index: 3}  \n#attribute{data-status: WaitConfirm}  \n#element{text} {depth: 5}  \n#attribute{class: {{selTabIndex==3?'tab-selected':'tab-text'}}}    \ndata{待收货}    \n",
+        "attributes": {
+          "bindtap": "tabTap",
+          "class": "tab-item",
+          "data-index": "3",
+          "data-status": "WaitConfirm"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tabTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: tabTap}  \n#attribute{class: tab-item}  \n#attribute{data-index: 4}  \n#attribute{data-status: WaitEvaluate}  \n#element{text} {depth: 5}  \n#attribute{class: {{selTabIndex==4?'tab-selected':'tab-text'}}}    \ndata{退款/售后}    \n",
+        "attributes": {
+          "bindtap": "tabTap",
+          "class": "tab-item",
+          "data-index": "4",
+          "data-status": "WaitEvaluate"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tabTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 4}\n#attribute{bindtap: continuePay}  \n#attribute{class: orders-btn-pay}  \n#attribute{data-entity: {{item}}}  \n#attribute{disabled: {{!allowPay}}}  \n#attribute{id: {{item.Id}}}  \n#attribute{wx:if: {{item.OrderStatus=='WaitPay'&&item.leaveMins>0}}}  \ndata{去支付(剩余}  \nscriptdata{item.leaveMins}  \ndata{分钟)}  \n",
+        "attributes": {
+          "bindtap": "continuePay",
+          "class": "orders-btn-pay",
+          "data-entity": "{{item}}",
+          "disabled": "{{!allowPay}}",
+          "id": "{{item.Id}}",
+          "wx:if": "{{item.OrderStatus=='WaitPay'&&item.leaveMins>0}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["去支付(剩余", "分钟)"],
+        "function_call": "continuePay",
+        "scriptdata": ["item.leaveMins"]
+      },
+      {
+        "ast": "#element{button} {depth: 5}\n#attribute{bindtap: orderDetail}  \n#attribute{data-entity: {{item}}}  \n#attribute{id: {{item.Id}}}  \ndata{查看详情}  \n",
+        "attributes": {
+          "bindtap": "orderDetail",
+          "data-entity": "{{item}}",
+          "id": "{{item.Id}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["查看详情"],
+        "function_call": "orderDetail",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 5}\n#attribute{bindtap: orderClone}  \n#attribute{data-entity: {{item}}}  \n#attribute{id: {{item.Id}}}  \n#attribute{wx:if: {{item.OrderStatus!='InDelivery'&&item.OrderStatus!='FinishDelivery'}}}  \ndata{再来一单}  \n",
+        "attributes": {
+          "bindtap": "orderClone",
+          "data-entity": "{{item}}",
+          "id": "{{item.Id}}",
+          "wx:if": "{{item.OrderStatus!='InDelivery'&&item.OrderStatus!='FinishDelivery'}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["再来一单"],
+        "function_call": "orderClone",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 5}\n#attribute{bindtap: orderEvaluate}  \n#attribute{data-entity: {{item}}}  \n#attribute{wx:if: {{item.showEvaluate}}}  \ndata{我要评价}  \n",
+        "attributes": {
+          "bindtap": "orderEvaluate",
+          "data-entity": "{{item}}",
+          "wx:if": "{{item.showEvaluate}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["我要评价"],
+        "function_call": "orderEvaluate",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: coverTap}  \n#attribute{class: cover}  \n#attribute{hidden: {{cover}}}  \n",
+        "attributes": {
+          "bindtap": "coverTap",
+          "class": "cover",
+          "hidden": "{{cover}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "coverTap",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/order/order"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: loginTap}  \n#attribute{class: touxiang}  \n#element{image} {depth: 3}  \n#attribute{src: {{wxAvatarUrl}}}    \n",
+        "attributes": {
+          "bindtap": "loginTap",
+          "class": "touxiang"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "loginTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: historyTradeAreaTap}  \n#attribute{class: item}  \n#element{view} {depth: 3}  \n#element{view} {depth: 4}    \n#element{i} {depth: 5}      \n#attribute{class: icon-refresh03}        \n#attribute{style: color:#009ad6;font-size:34rpx}        \n#element{text} {depth: 4}    \ndata{历史位置}      \n#element{i} {depth: 3}  \n#attribute{class: icon-goto}    \n#attribute{style: color:gray}    \n",
+        "attributes": {
+          "bindtap": "historyTradeAreaTap",
+          "class": "item"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "historyTradeAreaTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: addressTap}  \n#attribute{class: item}  \n#element{view} {depth: 3}  \n#element{view} {depth: 4}    \n#element{i} {depth: 5}      \n#attribute{class: icon-shouhuodizhi1}        \n#attribute{style: color:#33ffff}        \n#element{text} {depth: 4}    \ndata{我的地址}      \n#element{i} {depth: 3}  \n#attribute{class: icon-goto}    \n#attribute{style: color:gray}    \n",
+        "attributes": {
+          "bindtap": "addressTap",
+          "class": "item"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "addressTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: registerRunTap}  \n#attribute{class: item}  \n#attribute{wx:if: {{isLegworkMan=='0'&&runSoftware}}}  \n#element{view} {depth: 3}  \n#element{view} {depth: 4}    \n#element{i} {depth: 5}      \n#attribute{class: icon-detailslikehandle}        \n#attribute{style: color:#54FF9F}        \n#element{text} {depth: 4}    \ndata{注册跑腿员}      \n#element{i} {depth: 3}  \n#attribute{class: icon-goto}    \n#attribute{style: color:gray}    \n",
+        "attributes": {
+          "bindtap": "registerRunTap",
+          "class": "item",
+          "wx:if": "{{isLegworkMan=='0'&&runSoftware}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "registerRunTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: runAdminTap}  \n#attribute{class: item}  \n#attribute{wx:if: {{isLegworkMan=='1'}}}  \n#element{view} {depth: 3}  \n#element{view} {depth: 4}    \n#element{i} {depth: 5}      \n#attribute{class: icon-detailslikehandle}        \n#attribute{style: color:#54FF9F}        \n#element{text} {depth: 4}    \ndata{跑腿管理}      \n#element{i} {depth: 3}  \n#attribute{class: icon-goto}    \n#attribute{style: color:gray}    \n",
+        "attributes": {
+          "bindtap": "runAdminTap",
+          "class": "item",
+          "wx:if": "{{isLegworkMan=='1'}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "runAdminTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: coupon}  \n#attribute{class: item}  \n#element{view} {depth: 3}  \n#element{view} {depth: 4}    \n#element{i} {depth: 5}      \n#attribute{class: icon-youhuiquan1}        \n#attribute{style: color:#ff3366;font-size:30rpx}        \n#element{text} {depth: 4}    \ndata{优惠券}      \n#element{i} {depth: 3}  \n#attribute{class: icon-goto}    \n#attribute{style: color:gray}    \n",
+        "attributes": {
+          "bindtap": "coupon",
+          "class": "item"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "coupon",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: shopCoupon}  \n#attribute{class: item}  \n#element{view} {depth: 3}  \n#element{view} {depth: 4}    \n#element{i} {depth: 5}      \n#attribute{class: icon-huodong}        \n#attribute{style: color:#54FF9F}        \n#element{text} {depth: 4}    \ndata{领券中心}      \n#element{i} {depth: 3}  \n#attribute{class: icon-goto}    \n#attribute{style: color:gray}    \n",
+        "attributes": {
+          "bindtap": "shopCoupon",
+          "class": "item"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "shopCoupon",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: vipCoupon}  \n#attribute{class: item}  \n#attribute{wx:if: {{curTradearea.IsVip&&curTradearea.IsVip=='1'}}}  \n#element{view} {depth: 3}  \n#element{view} {depth: 4}    \n#element{i} {depth: 5}      \n#attribute{class: icon-v3}        \n#attribute{style: color:#EE6363;font-size:30rpx}        \n#element{text} {depth: 4}    \ndata{会员中心}      \n#element{i} {depth: 3}  \n#attribute{class: icon-goto}    \n#attribute{style: color:gray}    \n",
+        "attributes": {
+          "bindtap": "vipCoupon",
+          "class": "item",
+          "wx:if": "{{curTradearea.IsVip&&curTradearea.IsVip=='1'}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "vipCoupon",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: teamunpackActivityTap}  \n#attribute{class: item}  \n#element{view} {depth: 3}  \n#element{view} {depth: 4}    \n#element{i} {depth: 5}      \n#attribute{class: icon-jifen}        \n#attribute{style: color:#FF6A6A}        \n#element{text} {depth: 4}    \ndata{组队活动}      \n#element{i} {depth: 3}  \n#attribute{class: icon-goto}    \n#attribute{style: color:gray}    \n",
+        "attributes": {
+          "bindtap": "teamunpackActivityTap",
+          "class": "item"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "teamunpackActivityTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: toCheckMyTaskTap}  \n#attribute{class: item}  \n#attribute{wx:if: {{isTask}}}  \n#element{view} {depth: 3}  \n#element{view} {depth: 4}    \n#element{i} {depth: 5}      \n#attribute{class: icon-orders}        \n#attribute{style: color:#836FFF}        \n#element{text} {depth: 4}    \ndata{拼单任务}      \n#element{i} {depth: 3}  \n#attribute{class: icon-goto}    \n#attribute{style: color:gray}    \n",
+        "attributes": {
+          "bindtap": "toCheckMyTaskTap",
+          "class": "item",
+          "wx:if": "{{isTask}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toCheckMyTaskTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: personalInfoTap}  \n#attribute{class: item}  \n#element{view} {depth: 3}  \n#element{view} {depth: 4}    \n#element{i} {depth: 5}      \n#attribute{class: icon-gerenshezhi}        \n#attribute{style: color:#EEAD0E}        \n#element{text} {depth: 4}    \ndata{个人设置}      \n#element{i} {depth: 3}  \n#attribute{class: icon-goto}    \n#attribute{style: color:gray}    \n",
+        "attributes": {
+          "bindtap": "personalInfoTap",
+          "class": "item"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "personalInfoTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: collect}  \n#attribute{class: item}  \n#element{view} {depth: 3}  \n#element{view} {depth: 4}    \n#element{i} {depth: 5}      \n#attribute{class: icon-detailslikehandle}        \n#attribute{style: color:#54FF9F}        \n#element{text} {depth: 4}    \ndata{关注店铺}      \n#element{i} {depth: 3}  \n#attribute{class: icon-goto}    \n#attribute{style: color:gray}    \n",
+        "attributes": {
+          "bindtap": "collect",
+          "class": "item"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "collect",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: bindService}  \n#attribute{class: item}  \n#element{view} {depth: 3}  \n#element{view} {depth: 4}    \n#element{i} {depth: 5}      \n#attribute{class: icon-kefu}        \n#attribute{style: color:#BFEFFF}        \n#element{text} {depth: 4}    \ndata{本地热线}      \n#element{view} {depth: 3}  \n#attribute{class: dd-phone}    \n#element{text} {depth: 4}    \n#attribute{style: padding-right:15rpx}      \nscriptdata{phone}      \n#element{i} {depth: 4}    \n#attribute{class: icon-goto}      \n#attribute{style: color:gray}      \n",
+        "attributes": {
+          "bindtap": "bindService",
+          "class": "item"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "bindService",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: aboutUs}  \n#attribute{class: item}  \n#element{view} {depth: 3}  \n#element{view} {depth: 4}    \n#element{i} {depth: 5}      \n#attribute{class: icon-guanyuwomen}        \n#attribute{style: color:#5CACEE}        \n#element{text} {depth: 4}    \ndata{关于我们}      \n#element{i} {depth: 3}  \n#attribute{class: icon-goto}    \n#attribute{style: color:gray}    \n",
+        "attributes": {
+          "bindtap": "aboutUs",
+          "class": "item"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "aboutUs",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: closeShowUserGrant}  \n#attribute{class: std-dialog-close}  \ndata{关闭\r\n\t\t\t}  \n",
+        "attributes": {
+          "bindtap": "closeShowUserGrant",
+          "class": "std-dialog-close"
+        },
+        "bind_method": "bindtap",
+        "data": ["关闭\r\n\t\t\t"],
+        "function_call": "closeShowUserGrant",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 4}\n#attribute{bindtap: getUserProfile}  \n#attribute{class: std-dialog-receive}  \ndata{我知道了}  \n",
+        "attributes": {
+          "bindtap": "getUserProfile",
+          "class": "std-dialog-receive"
+        },
+        "bind_method": "bindtap",
+        "data": ["我知道了"],
+        "function_call": "getUserProfile",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/my/my"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: functionTap}  \n#attribute{class: item-bg}  \n#attribute{data-entity: {{item}}}  \n#attribute{style: background:{{item.Style}}}  \n#element{i} {depth: 5}  \n#attribute{class: {{item.Icon}}}    \n",
+        "attributes": {
+          "bindtap": "functionTap",
+          "class": "item-bg",
+          "data-entity": "{{item}}",
+          "style": "background:{{item.Style}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "functionTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: functionTap}  \n#attribute{class: item-bg}  \n#attribute{data-entity: {{item}}}  \n#attribute{style: background:{{item.Style}}}  \n#element{i} {depth: 5}  \n#attribute{class: {{item.Icon}}}    \n",
+        "attributes": {
+          "bindtap": "functionTap",
+          "class": "item-bg",
+          "data-entity": "{{item}}",
+          "style": "background:{{item.Style}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "functionTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: secKillTabChange}  \n#attribute{class: seckill-tabitem  {{!curSecKillTime&&index==0||curSecKillTime&&curSecKillTime.BeginTime==item.BeginTime?'selseckilltab':''}}}  \n#attribute{data-entity: {{item}}}  \n#attribute{wx:for: {{secKillObj.SeckillTimeList}}}  \n#element{view} {depth: 4}  \n#attribute{class: seckill-tabitem-time}    \nscriptdata{item.BeginTime}    \ndata{\r\n\t\t\t}    \n#element{view} {depth: 4}  \n#attribute{class: seckill-tabitem-text}    \nscriptdata{item.Status=='1'?'抢购中':'即将开始'}    \ndata{\r\n\t\t\t}    \n",
+        "attributes": {
+          "bindtap": "secKillTabChange",
+          "class": "seckill-tabitem  {{!curSecKillTime&&index==0||curSecKillTime&&curSecKillTime.BeginTime==item.BeginTime?'selseckilltab':''}}",
+          "data-entity": "{{item}}",
+          "wx:for": "{{secKillObj.SeckillTimeList}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "secKillTabChange",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: testTap}  \n#attribute{style: display:flex;align-items:center}  \n#element{text} {depth: 3}  \n#attribute{class: seckill-timecount-hinttext}    \nscriptdata{curSecKillTime&&curSecKillTime.Status=='1'?'距结束':'距开始'}    \n#element{view} {depth: 3}  \n#attribute{class: seckill-timecount-time}    \n#element{text} {depth: 4}    \n#attribute{class: seckill-timecount-timetext}      \nscriptdata{secKillTimeCount.showhour}      \n#element{text} {depth: 3}  \n#attribute{class: seckill-timecount-dot}    \ndata{:}    \n#element{view} {depth: 3}  \n#attribute{class: seckill-timecount-time}    \n#element{text} {depth: 4}    \n#attribute{class: seckill-timecount-timetext}      \nscriptdata{secKillTimeCount.showmin}      \n#element{text} {depth: 3}  \n#attribute{class: seckill-timecount-dot}    \ndata{:}    \n#element{view} {depth: 3}  \n#attribute{class: seckill-timecount-time}    \n#element{text} {depth: 4}    \n#attribute{class: seckill-timecount-timetext}      \nscriptdata{secKillTimeCount.showsec}      \n",
+        "attributes": {
+          "bindtap": "testTap",
+          "style": "display:flex;align-items:center"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "testTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: toSeckill}  \n#attribute{class: seckill-pic}  \n#attribute{data-entity: {{item}}}  \n#attribute{data-index: {{index}}}  \n#attribute{data-status: {{curSecKillTime.Status}}}  \n#attribute{wx:for: {{curSecKillTime.SeckillProductList}}}  \n#element{image} {depth: 4}  \n#attribute{src: {{item.Picture}}}    \n#element{text} {depth: 4}  \n#attribute{class: txt-over}    \n#attribute{wx:if: {{item.myPc>=100?true:false}}}    \ndata{已抢光}    \n#element{view} {depth: 4}  \n#attribute{class: tex-tex}    \n#element{text} {depth: 5}    \n#attribute{class: grab-name}      \nscriptdata{item.ProductName}      \n#element{view} {depth: 5}    \n#attribute{class: seckill-price}      \n#element{text} {depth: 6}      \n#attribute{class: now-price}        \ndata{￥}        \nscriptdata{item.GrabPrice}        \n#element{text} {depth: 6}      \n#attribute{class: old-price}        \ndata{￥}        \nscriptdata{item.SalePrice}        \n#element{view} {depth: 5}    \n#attribute{class: seckill-cur}      \n#element{text} {depth: 6}      \n#attribute{class: cur-txt}        \n#attribute{hidden: {{item.myPc>=100?false:true}}}        \ndata{已抢光100%}        \n#element{text} {depth: 6}      \n#attribute{class: cur-txt}        \n#attribute{hidden: {{item.myPc<100&&item.myPc>=0?false:true}}}        \ndata{已售}        \nscriptdata{item.myPc}        \ndata{%}        \n#element{view} {depth: 6}      \n#attribute{class: cur-pro}        \n#element{progress} {depth: 7}        \n#attribute{activecolor: #32eed9}          \n#attribute{percent: {{item.myPc}}}          \n#attribute{strokewidth: 6}          \n",
+        "attributes": {
+          "bindtap": "toSeckill",
+          "class": "seckill-pic",
+          "data-entity": "{{item}}",
+          "data-index": "{{index}}",
+          "data-status": "{{curSecKillTime.Status}}",
+          "wx:for": "{{curSecKillTime.SeckillProductList}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toSeckill",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: toDiscount}  \n#attribute{class: today-item}  \n#attribute{data-entity: {{item}}}  \n#attribute{data-id: {{item.Id}}}  \n#attribute{wx:for: {{discountList}}}  \n#element{image} {depth: 5}  \n#attribute{class: today-img}    \n#attribute{src: {{item.Picture}}}    \n#element{view} {depth: 5}  \n#attribute{class: today-txt}    \nscriptdata{item.Name}    \n#element{view} {depth: 5}  \n#attribute{class: today-price}    \n#element{text} {depth: 6}    \n#attribute{class: today-price-now}      \ndata{￥}      \nscriptdata{item.DiscountPrice}      \n#element{text} {depth: 6}    \n#attribute{class: today-price-old}      \ndata{￥}      \nscriptdata{item.SalePrice}      \n",
+        "attributes": {
+          "bindtap": "toDiscount",
+          "class": "today-item",
+          "data-entity": "{{item}}",
+          "data-id": "{{item.Id}}",
+          "wx:for": "{{discountList}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toDiscount",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{text} {depth: 5}\n#attribute{bindtap: tabTap}  \n#attribute{class: {{selTabIndex==0?'tab-selected':'tab-text'}}}  \n#attribute{data-index: 0}  \ndata{推荐列表}  \n",
+        "attributes": {
+          "bindtap": "tabTap",
+          "class": "{{selTabIndex==0?'tab-selected':'tab-text'}}",
+          "data-index": "0"
+        },
+        "bind_method": "bindtap",
+        "data": ["推荐列表"],
+        "function_call": "tabTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: toLink}  \n#attribute{class: shop}  \n#attribute{data-entity: {{item}}}  \n#attribute{data-toid: {{item.Id}}}  \n#attribute{id: {{item.Id}}}  \n#attribute{style: margin-bottom:15rpx;}  \n#attribute{wx:for: {{homeLinkList}}}  \n#attribute{wx:key: Id}  \n#element{view} {depth: 3}  \n#attribute{class: shop-img}    \n#element{image} {depth: 4}    \n#attribute{src: {{item.Picture}}}      \n#element{view} {depth: 4}    \n#attribute{class: isNew}      \n#attribute{wx:if: {{item.IsNew=='1'}}}      \n#element{text} {depth: 5}      \n#attribute{class: isNew-txt}        \ndata{新}        \n#element{view} {depth: 3}  \n#attribute{class: shop-detail}    \n#element{view} {depth: 4}    \n#attribute{class: shop-up}      \n#element{view} {depth: 5}      \n#attribute{class: member-wrap}        \n#element{text} {depth: 6}        \n#attribute{class: shop-name}          \nscriptdata{item.Name}          \n#element{view} {depth: 5}      \n#attribute{class: deli}        \n#attribute{style: color:red;}        \n#attribute{wx:if: {{item.Signature}}}        \n#element{text} {depth: 6}        \nscriptdata{item.Signature}          \n#element{view} {depth: 5}      \n#attribute{class: deli}        \n#attribute{wx:if: {{item.Introduce}}}        \n#element{text} {depth: 6}        \nscriptdata{item.Introduce}          \n",
+        "attributes": {
+          "bindtap": "toLink",
+          "class": "shop",
+          "data-entity": "{{item}}",
+          "data-toid": "{{item.Id}}",
+          "id": "{{item.Id}}",
+          "style": "margin-bottom:15rpx;",
+          "wx:for": "{{homeLinkList}}",
+          "wx:key": "Id"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toLink",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: toDetail}  \n#attribute{class: shop}  \n#attribute{data-entity: {{item}}}  \n#attribute{data-toid: {{item.Id}}}  \n#attribute{id: {{item.Id}}}  \n#element{view} {depth: 4}  \n#attribute{class: shop-img}    \n#element{image} {depth: 5}    \n#attribute{src: {{item.Picture}}}      \n#element{view} {depth: 5}    \n#attribute{class: isNew}      \n#attribute{wx:if: {{item.IsNew=='1'&&selTabIndex==0}}}      \n#element{text} {depth: 6}      \n#attribute{class: isNew-txt}        \ndata{新}        \n#element{view} {depth: 5}    \n#attribute{class: trapezoid}      \n#attribute{wx:if: {{item.IsNew!='1'&&item.MemberLevel==9}}}      \n#element{text} {depth: 6}      \n#attribute{class: trapezoid-txt}        \ndata{直 营 店}        \n#element{view} {depth: 5}    \n#attribute{class: isNew}      \n#attribute{wx:if: {{selTabIndex==1}}}      \n#element{text} {depth: 6}      \n#attribute{class: isNew-txt}        \nscriptdata{index+1}        \n#element{view} {depth: 5}    \n#attribute{class: up-note}      \n#attribute{wx:if: {{item.Status!='1'}}}      \nscriptdata{item.StatusText}      \n#element{view} {depth: 4}  \n#attribute{class: shop-detail}    \n#element{view} {depth: 5}    \n#attribute{class: shop-up}      \n#element{view} {depth: 6}      \n#attribute{class: member-wrap}        \n#element{i} {depth: 7}        \n#attribute{class: icon-v normal}          \n#attribute{wx:if: {{item.MemberLevel==1}}}          \n#element{i} {depth: 7}        \n#attribute{class: icon-v vip}          \n#attribute{wx:if: {{item.MemberLevel==2}}}          \n#element{text} {depth: 7}        \n#attribute{class: shop-name {{item.Status=='1'?'':'status'}}}          \nscriptdata{item.Name}          \n#element{view} {depth: 6}      \n#attribute{class: shop-bottom}        \n#element{view} {depth: 7}        \n#attribute{class: star}          \n#element{view} {depth: 8}          \n#attribute{class: star-bg}            \n#attribute{style: width:{{160/5*item.ShopStarNum}}rpx;}            \n#element{image} {depth: 8}          \n#attribute{src: ../../resources/images/star.png}            \n#element{view} {depth: 7}        \n#attribute{class: shop-sold}          \n#element{text} {depth: 8}          \ndata{热销评分:}            \n#element{text} {depth: 8}          \n#attribute{style: margin:04rpx;}            \nscriptdata{item.HotIndex?item.HotIndex:'0'}            \n#element{view} {depth: 6}      \n#attribute{class: deli}        \n#element{text} {depth: 7}        \ndata{起送￥}          \nscriptdata{item.MinDeliveryPrice}          \ndata{/配送￥}          \nscriptdata{item.DeliveryUnitPrice}          \n",
+        "attributes": {
+          "bindtap": "toDetail",
+          "class": "shop",
+          "data-entity": "{{item}}",
+          "data-toid": "{{item.Id}}",
+          "id": "{{item.Id}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toDetail",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: seled}  \n#attribute{class: shop-down {{entityList[index].sel==index?'open':''}}}  \n#attribute{data-index: {{index}}}  \n#element{view} {depth: 4}  \n#attribute{class: shop-act}    \n#element{view} {depth: 5}    \n#attribute{class: shop-cut}      \n#attribute{wx:for: {{item.ActivityList}}}      \n#attribute{wx:for-index: actIndex}      \n#attribute{wx:for-item: actItem}      \n#attribute{wx:key: Id}      \n#element{text} {depth: 6}      \n#attribute{class: word}        \n#attribute{style: background:#fbb20e;}        \n#attribute{wx:if: {{actItem.BenefitType=='FullCut'}}}        \ndata{减}        \n#element{text} {depth: 6}      \n#attribute{class: word}        \n#attribute{style: background:#ff5d1c;}        \n#attribute{wx:if: {{actItem.BenefitType=='FirstCut'}}}        \ndata{新}        \n#element{text} {depth: 6}      \n#attribute{class: word}        \n#attribute{style: background:#ff2e4d;}        \n#attribute{wx:if: {{actItem.BenefitType=='FullSent'}}}        \ndata{送}        \n#element{text} {depth: 6}      \n#attribute{class: word}        \n#attribute{style: background:#fece46;}        \n#attribute{wx:if: {{actItem.BenefitType=='Coupon'}}}        \ndata{券}        \n#element{text} {depth: 6}      \n#attribute{class: word}        \n#attribute{style: background:#ff459f;}        \n#attribute{wx:if: {{actItem.BenefitType==''}}}        \ndata{特}        \n#element{text} {depth: 6}      \nscriptdata{actItem.Name}        \n#element{view} {depth: 4}  \n#attribute{class: shop-drop}    \n#element{text} {depth: 5}    \nscriptdata{item.ActivityList==null?'0':item.ActivityList.length}      \ndata{个活动}      \n#element{i} {depth: 5}    \n#attribute{class: {{item.sel==null?'icon-sanjiao-copy-copy-copy':'icon-angle-down1'}}}      \n#attribute{wx:if: {{item.ActivityList.length>4}}}      \n",
+        "attributes": {
+          "bindtap": "seled",
+          "class": "shop-down {{entityList[index].sel==index?'open':''}}",
+          "data-index": "{{index}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "seled",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: navigatorTap}  \n#attribute{class: tabItem {{selNavitatorIndex==0?'navigator-selected':'navigator-text'}}}  \n#attribute{data-navigatorindex: 0}  \n#element{i} {depth: 3}  \n#attribute{class: icon-shouye}    \n#element{view} {depth: 3}  \ndata{首页}    \n",
+        "attributes": {
+          "bindtap": "navigatorTap",
+          "class": "tabItem {{selNavitatorIndex==0?'navigator-selected':'navigator-text'}}",
+          "data-navigatorindex": "0"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "navigatorTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: navigatorTap}  \n#attribute{class: tabItem {{selNavitatorIndex==1?'navigator-selected':'navigator-text'}}}  \n#attribute{data-navigatorindex: 1}  \n#element{i} {depth: 3}  \n#attribute{class: icon-fenlei}    \n#element{view} {depth: 3}  \ndata{发现}    \n",
+        "attributes": {
+          "bindtap": "navigatorTap",
+          "class": "tabItem {{selNavitatorIndex==1?'navigator-selected':'navigator-text'}}",
+          "data-navigatorindex": "1"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "navigatorTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: navigatorTap}  \n#attribute{class: tabItem {{selNavitatorIndex==2?'navigator-selected':'navigator-text'}}}  \n#attribute{data-navigatorindex: 2}  \n#element{i} {depth: 3}  \n#attribute{class: icon-dingdan}    \n#element{view} {depth: 3}  \n#attribute{class: car-num}    \n#attribute{wx:if: {{carNum>0}}}    \nscriptdata{carNum}    \n#element{view} {depth: 3}  \ndata{订单}    \n",
+        "attributes": {
+          "bindtap": "navigatorTap",
+          "class": "tabItem {{selNavitatorIndex==2?'navigator-selected':'navigator-text'}}",
+          "data-navigatorindex": "2"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "navigatorTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: navigatorTap}  \n#attribute{class: tabItem {{selNavitatorIndex==3?'navigator-selected':'navigator-text'}}}  \n#attribute{data-navigatorindex: 3}  \n#element{i} {depth: 3}  \n#attribute{class: icon-wode2}    \n#element{view} {depth: 3}  \ndata{我的}    \n",
+        "attributes": {
+          "bindtap": "navigatorTap",
+          "class": "tabItem {{selNavitatorIndex==3?'navigator-selected':'navigator-text'}}",
+          "data-navigatorindex": "3"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "navigatorTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{i} {depth: 3}\n#attribute{bindtap: closeCoupon}  \n#attribute{class: icon-x coupon-del}  \n",
+        "attributes": {
+          "bindtap": "closeCoupon",
+          "class": "icon-x coupon-del"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "closeCoupon",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: queryCoupon}  \n#attribute{class: coupon-receive}  \n#attribute{data-obj: {{item}}}  \ndata{去看看}  \n",
+        "attributes": {
+          "bindtap": "queryCoupon",
+          "class": "coupon-receive",
+          "data-obj": "{{item}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["去看看"],
+        "function_call": "queryCoupon",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{i} {depth: 4}\n#attribute{bindtap: closeConcern}  \n#attribute{class: icon-x}  \n",
+        "attributes": {
+          "bindtap": "closeConcern",
+          "class": "icon-x"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "closeConcern",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindtap: contactTap}  \n#attribute{class: dialog-receive}  \n#attribute{opentype: contact}  \ndata{立即关注}  \n",
+        "attributes": {
+          "bindtap": "contactTap",
+          "class": "dialog-receive",
+          "opentype": "contact"
+        },
+        "bind_method": "bindtap",
+        "data": ["立即关注"],
+        "function_call": "contactTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindgetuserinfo: bindGetUserInfo}  \n#attribute{class: dialog-receive}  \n#attribute{opentype: getUserInfo}  \ndata{我知道了}  \n",
+        "attributes": {
+          "bindgetuserinfo": "bindGetUserInfo",
+          "class": "dialog-receive",
+          "opentype": "getUserInfo"
+        },
+        "bind_method": "bindgetuserinfo",
+        "data": ["我知道了"],
+        "function_call": "bindGetUserInfo",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/tradearea/tradearea"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: functionTap}  \n#attribute{class: item-bg}  \n#attribute{data-entity: {{item}}}  \n#attribute{style: background:{{item.Style}}}  \n#element{i} {depth: 5}  \n#attribute{class: {{item.Icon}}}    \n",
+        "attributes": {
+          "bindtap": "functionTap",
+          "class": "item-bg",
+          "data-entity": "{{item}}",
+          "style": "background:{{item.Style}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "functionTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: functionTap}  \n#attribute{class: item-bg}  \n#attribute{data-entity: {{item}}}  \n#attribute{style: background:{{item.Style}}}  \n#element{i} {depth: 5}  \n#attribute{class: {{item.Icon}}}    \n",
+        "attributes": {
+          "bindtap": "functionTap",
+          "class": "item-bg",
+          "data-entity": "{{item}}",
+          "style": "background:{{item.Style}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "functionTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{text} {depth: 5}\n#attribute{bindtap: tabTap}  \n#attribute{class: {{selTabIndex==0?'tab-selected':'tab-text'}}}  \n#attribute{data-index: 0}  \ndata{精选推荐}  \n",
+        "attributes": {
+          "bindtap": "tabTap",
+          "class": "{{selTabIndex==0?'tab-selected':'tab-text'}}",
+          "data-index": "0"
+        },
+        "bind_method": "bindtap",
+        "data": ["精选推荐"],
+        "function_call": "tabTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: publishTap}  \n#attribute{class: tab-item-right}  \n#element{i} {depth: 5}  \n#attribute{class: icon-jikediancanicon09}    \n#element{text} {depth: 5}  \ndata{我要发布}    \n",
+        "attributes": {
+          "bindtap": "publishTap",
+          "class": "tab-item-right"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "publishTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: toDetail}  \n#attribute{class: shop}  \n#attribute{data-toid: {{item.Id}}}  \n#attribute{id: {{item.Id}}}  \n#attribute{wx:for: {{entityList}}}  \n#attribute{wx:key: Id}  \n#element{view} {depth: 3}  \n#attribute{class: shop-img}    \n#element{image} {depth: 4}    \n#attribute{src: {{item.Picture}}}      \n#element{view} {depth: 3}  \n#attribute{class: shop-detail}    \n#element{view} {depth: 4}    \n#attribute{class: shop-up}      \n#element{view} {depth: 5}      \n#attribute{class: shop-bottom}        \n#element{view} {depth: 6}        \n#attribute{class: item-title}          \n#element{text} {depth: 7}          \nscriptdata{item.Title}            \n#element{view} {depth: 5}      \n#attribute{class: item-address}        \n#element{text} {depth: 6}        \nscriptdata{item.Address}          \n#element{view} {depth: 5}      \n#attribute{class: item-bottom}        \n#element{text} {depth: 6}        \n#attribute{class: item-price}          \nscriptdata{item.SalePrice}          \n#element{text} {depth: 6}        \n#attribute{class: item-date}          \nscriptdata{item.CreateDateText}          \n",
+        "attributes": {
+          "bindtap": "toDetail",
+          "class": "shop",
+          "data-toid": "{{item.Id}}",
+          "id": "{{item.Id}}",
+          "wx:for": "{{entityList}}",
+          "wx:key": "Id"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toDetail",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/secondhand/secondhand"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{input} {depth: 4}\n#attribute{bindinput: bindinput}  \n#attribute{data-field: Title}  \n#attribute{maxlength: 50}  \n#attribute{name: }  \n#attribute{placeholder: 必填,填写品牌型号更容易找到买家哦}  \n#attribute{type: text}  \n",
+        "attributes": {
+          "bindinput": "bindinput",
+          "data-field": "Title",
+          "maxlength": "50",
+          "name": "",
+          "placeholder": "必填,填写品牌型号更容易找到买家哦",
+          "type": "text"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "bindinput",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{picker} {depth: 4}\n#attribute{bindchange: secondhandTypeChange}  \n#attribute{range: {{secondhandTypeList}}}  \n#attribute{rangekey: Name}  \n#attribute{value: {{secondhandTypeIndex}}}  \n#element{text} {depth: 5}  \nscriptdata{secondhandTypeList[secondhandTypeIndex].Name}    \n",
+        "attributes": {
+          "bindchange": "secondhandTypeChange",
+          "range": "{{secondhandTypeList}}",
+          "rangekey": "Name",
+          "value": "{{secondhandTypeIndex}}"
+        },
+        "bind_method": "bindchange",
+        "data": [],
+        "function_call": "secondhandTypeChange",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{textarea} {depth: 4}\n#attribute{bindinput: bindinput}  \n#attribute{class: textarea}  \n#attribute{data-field: Content}  \n#attribute{placeholder: 请输入出售宝贝的详细描述...}  \n",
+        "attributes": {
+          "bindinput": "bindinput",
+          "class": "textarea",
+          "data-field": "Content",
+          "placeholder": "请输入出售宝贝的详细描述..."
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "bindinput",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 5}\n#attribute{bindtap: editImage}  \n#attribute{data-index: {{index}}}  \n#attribute{data-src: {{item}}}  \n#attribute{src: {{item}}}  \n#attribute{wx:for: {{attachment.TempFiles}}}  \n",
+        "attributes": {
+          "bindtap": "editImage",
+          "data-index": "{{index}}",
+          "data-src": "{{item}}",
+          "src": "{{item}}",
+          "wx:for": "{{attachment.TempFiles}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "editImage",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{i} {depth: 5}\n#attribute{bindtap: chooseImageTap}  \n#attribute{class: icon-tianjia}  \n",
+        "attributes": {
+          "bindtap": "chooseImageTap",
+          "class": "icon-tianjia"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "chooseImageTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 4}\n#attribute{bindinput: bindinput}  \n#attribute{data-field: Telephone}  \n#attribute{maxlength: 15}  \n#attribute{name: }  \n#attribute{placeholder: 必填，请输入联系电话}  \n#attribute{type: number}  \n",
+        "attributes": {
+          "bindinput": "bindinput",
+          "data-field": "Telephone",
+          "maxlength": "15",
+          "name": "",
+          "placeholder": "必填，请输入联系电话",
+          "type": "number"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "bindinput",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 4}\n#attribute{bindinput: bindinput}  \n#attribute{data-field: Linkman}  \n#attribute{maxlength: 15}  \n#attribute{name: }  \n#attribute{placeholder: 必填，请输入联系人}  \n#attribute{type: text}  \n",
+        "attributes": {
+          "bindinput": "bindinput",
+          "data-field": "Linkman",
+          "maxlength": "15",
+          "name": "",
+          "placeholder": "必填，请输入联系人",
+          "type": "text"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "bindinput",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 4}\n#attribute{bindinput: bindinput}  \n#attribute{data-field: Address}  \n#attribute{maxlength: 50}  \n#attribute{name: }  \n#attribute{placeholder: 必填，请输入宝贝地址}  \n#attribute{type: text}  \n",
+        "attributes": {
+          "bindinput": "bindinput",
+          "data-field": "Address",
+          "maxlength": "50",
+          "name": "",
+          "placeholder": "必填，请输入宝贝地址",
+          "type": "text"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "bindinput",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 4}\n#attribute{bindinput: bindinput}  \n#attribute{data-field: SalePrice}  \n#attribute{maxlength: 20}  \n#attribute{name: }  \n#attribute{placeholder: 必填，请输入宝贝价格}  \n#attribute{type: text}  \n",
+        "attributes": {
+          "bindinput": "bindinput",
+          "data-field": "SalePrice",
+          "maxlength": "20",
+          "name": "",
+          "placeholder": "必填，请输入宝贝价格",
+          "type": "text"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "bindinput",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: submit}  \n#attribute{class: btn {{allowSubmit?'':'gray'}}}  \ndata{提交发布}  \n",
+        "attributes": {
+          "bindtap": "submit",
+          "class": "btn {{allowSubmit?'':'gray'}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["提交发布"],
+        "function_call": "submit",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: toBack}  \n#attribute{class: btn-back}  \n#element{i} {depth: 4}  \n#attribute{class: icon-goto}    \n",
+        "attributes": {
+          "bindtap": "toBack",
+          "class": "btn-back"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toBack",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: delete}  \n#attribute{class: btn-del}  \n#element{i} {depth: 4}  \n#attribute{class: icon-laji}    \n",
+        "attributes": {
+          "bindtap": "delete",
+          "class": "btn-del"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "delete",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/secondhand/secondhandPublish"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{image} {depth: 4}\n#attribute{bindtap: priviewImage}  \n#attribute{class: slide-image}  \n#attribute{data-url: {{item.Picture}}}  \n#attribute{src: {{item.Picture}}}  \n",
+        "attributes": {
+          "bindtap": "priviewImage",
+          "class": "slide-image",
+          "data-url": "{{item.Picture}}",
+          "src": "{{item.Picture}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "priviewImage",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: deleteTap}  \n#attribute{class: addr-item delete}  \n#attribute{wx:if: {{isAdmin}}}  \n#element{i} {depth: 3}  \n#attribute{class: icon-delete}    \n#element{text} {depth: 3}  \ndata{删除信息}    \n",
+        "attributes": {
+          "bindtap": "deleteTap",
+          "class": "addr-item delete",
+          "wx:if": "{{isAdmin}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "deleteTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: toCall}  \n#attribute{class: btn-right}  \n#attribute{data-tel: {{detail.Telephone}}}  \n#element{i} {depth: 3}  \n#attribute{class: icon-dianhua}    \n#element{text} {depth: 3}  \ndata{拨打电话}    \n",
+        "attributes": {
+          "bindtap": "toCall",
+          "class": "btn-right",
+          "data-tel": "{{detail.Telephone}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toCall",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/secondhand/secondhandDetail"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{text} {depth: 5}\n#attribute{bindtap: tabTap}  \n#attribute{class: {{selTabIndex==0?'tab-selected':'tab-text'}}}  \n#attribute{data-index: 0}  \ndata{查询结果}  \n",
+        "attributes": {
+          "bindtap": "tabTap",
+          "class": "{{selTabIndex==0?'tab-selected':'tab-text'}}",
+          "data-index": "0"
+        },
+        "bind_method": "bindtap",
+        "data": ["查询结果"],
+        "function_call": "tabTap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: toDetail}  \n#attribute{class: shop}  \n#attribute{data-toid: {{item.Id}}}  \n#attribute{id: {{item.Id}}}  \n#attribute{wx:for: {{entityList}}}  \n#attribute{wx:key: Id}  \n#element{view} {depth: 3}  \n#attribute{class: shop-img}    \n#element{image} {depth: 4}    \n#attribute{src: {{item.Picture}}}      \n#element{view} {depth: 3}  \n#attribute{class: shop-detail}    \n#element{view} {depth: 4}    \n#attribute{class: shop-up}      \n#element{view} {depth: 5}      \n#attribute{class: shop-bottom}        \n#element{view} {depth: 6}        \n#attribute{class: item-title}          \n#element{text} {depth: 7}          \nscriptdata{item.Title}            \n#element{view} {depth: 5}      \n#attribute{class: item-address}        \n#element{text} {depth: 6}        \nscriptdata{item.Address}          \n#element{view} {depth: 5}      \n#attribute{class: item-bottom}        \n#element{text} {depth: 6}        \n#attribute{class: item-price}          \nscriptdata{item.SalePrice}          \n#element{text} {depth: 6}        \n#attribute{class: item-date}          \nscriptdata{item.CreateDateText}          \n",
+        "attributes": {
+          "bindtap": "toDetail",
+          "class": "shop",
+          "data-toid": "{{item.Id}}",
+          "id": "{{item.Id}}",
+          "wx:for": "{{entityList}}",
+          "wx:key": "Id"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "toDetail",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/secondhand/secondhandSearch"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/logs/logs"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{button} {depth: 4}\n#attribute{bindtap: comeback}  \n#attribute{type: primary}  \ndata{返回 }  \n",
+        "attributes": {
+          "bindtap": "comeback",
+          "type": "primary"
+        },
+        "bind_method": "bindtap",
+        "data": ["返回 "],
+        "function_call": "comeback",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{text} {depth: 3}\n#attribute{bindtap: }  \n#attribute{class: btn btn-link}  \ndata{报告问题}  \n",
+        "attributes": {
+          "bindtap": "",
+          "class": "btn btn-link"
+        },
+        "bind_method": "bindtap",
+        "data": ["报告问题"],
+        "function_call": "",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/common/error/error"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: onItemClick}  \n#attribute{class: libox}  \n#attribute{data-entity: {{entity}}}  \n#attribute{hover: true}  \n#attribute{hoverclass: bg-f5}  \n#attribute{wx:for: {{entityList}}}  \n#attribute{wx:for-item: entity}  \n#element{view} {depth: 3}  \n#attribute{class: li}    \n#element{radio} {depth: 4}    \n#attribute{checked: {{entity.checked}}}      \n#attribute{value: {{entity.value}}}      \n#element{i} {depth: 4}    \n#attribute{class: {{entity.iconcss}}}      \n#attribute{wx:if: {{entity.iconcss!=null}}}      \n#element{view} {depth: 4}    \n#attribute{class: content}      \n#element{text} {depth: 5}      \n#attribute{class: title}        \n#attribute{style: -webkit-line-clamp:1;}        \nscriptdata{entity.text}        \n",
+        "attributes": {
+          "bindtap": "onItemClick",
+          "class": "libox",
+          "data-entity": "{{entity}}",
+          "hover": "true",
+          "hoverclass": "bg-f5",
+          "wx:for": "{{entityList}}",
+          "wx:for-item": "entity"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "onItemClick",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: handler}  \n#attribute{class: btn}  \n#attribute{data-command: submit}  \n#element{text} {depth: 3}  \ndata{确定}    \nscriptdata{selectItems.length>0?'('+selectItems.length+')':''}    \n",
+        "attributes": {
+          "bindtap": "handler",
+          "class": "btn",
+          "data-command": "submit"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "handler",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "components/dsselectobj"
+  }
+]

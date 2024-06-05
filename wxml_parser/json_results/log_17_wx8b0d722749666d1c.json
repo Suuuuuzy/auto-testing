@@ -1,0 +1,1026 @@
+[
+  {
+    "component_list": [
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindgetphonenumber: getPhoneNumber1}  \n#attribute{class: indexbtn1}  \n#attribute{opentype: getPhoneNumber}  \n",
+        "attributes": {
+          "bindgetphonenumber": "getPhoneNumber1",
+          "class": "indexbtn1",
+          "opentype": "getPhoneNumber"
+        },
+        "bind_method": "bindgetphonenumber",
+        "data": [],
+        "function_call": "getPhoneNumber1",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindgetphonenumber: getPhoneNumber}  \n#attribute{class: indexbtn2}  \n#attribute{opentype: getPhoneNumber}  \n",
+        "attributes": {
+          "bindgetphonenumber": "getPhoneNumber",
+          "class": "indexbtn2",
+          "opentype": "getPhoneNumber"
+        },
+        "bind_method": "bindgetphonenumber",
+        "data": [],
+        "function_call": "getPhoneNumber",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/index/index"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{input} {depth: 7}\n#attribute{bindinput: schoolnameblur}  \n#attribute{bindkeyboardheightchange: getSchoolInfo}  \n#attribute{class: inputs}  \n#attribute{name: school}  \n#attribute{placeholder: 请输入您所在的学校}  \n#attribute{placeholderclass: phcolor2}  \n#attribute{value: {{schoolname}}}  \n",
+        "attributes": {
+          "bindinput": "schoolnameblur",
+          "bindkeyboardheightchange": "getSchoolInfo",
+          "class": "inputs",
+          "name": "school",
+          "placeholder": "请输入您所在的学校",
+          "placeholderclass": "phcolor2",
+          "value": "{{schoolname}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "schoolnameblur",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 7}\n#attribute{bindinput: schoolnameblur}  \n#attribute{bindkeyboardheightchange: getSchoolInfo}  \n#attribute{class: inputs}  \n#attribute{name: school}  \n#attribute{placeholder: 请输入您所在的学校}  \n#attribute{placeholderclass: phcolor2}  \n#attribute{value: {{schoolname}}}  \n",
+        "attributes": {
+          "bindinput": "schoolnameblur",
+          "bindkeyboardheightchange": "getSchoolInfo",
+          "class": "inputs",
+          "name": "school",
+          "placeholder": "请输入您所在的学校",
+          "placeholderclass": "phcolor2",
+          "value": "{{schoolname}}"
+        },
+        "bind_method": "bindkeyboardheightchange",
+        "data": [],
+        "function_call": "getSchoolInfo",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{picker} {depth: 7}\n#attribute{bindchange: bindMultiPickerChange}  \n#attribute{bindcolumnchange: bindMultiPickerColumnChange}  \n#attribute{bindtap: gradeDisppear}  \n#attribute{class: centers}  \n#attribute{mode: multiSelector}  \n#attribute{range: {{multiArray}}}  \n#attribute{style: width:100%;height:100%}  \n#attribute{value: {{multiIndex}}}  \n#element{view} {depth: 8}  \n#attribute{style: width:100%;height:100%}    \n#attribute{wx:if: {{gradeDisppear}}}    \n#element{text} {depth: 9}    \n#attribute{class: grade}      \ndata{请选择年级}      \n#element{view} {depth: 8}  \n#attribute{style: width:100%;height:100%}    \n#attribute{wx:else: }    \n#element{text} {depth: 9}    \n#attribute{class: grade}      \nscriptdata{multiArray[0][ multiIndex[0] ]}      \n",
+        "attributes": {
+          "bindchange": "bindMultiPickerChange",
+          "bindcolumnchange": "bindMultiPickerColumnChange",
+          "bindtap": "gradeDisppear",
+          "class": "centers",
+          "mode": "multiSelector",
+          "range": "{{multiArray}}",
+          "style": "width:100%;height:100%",
+          "value": "{{multiIndex}}"
+        },
+        "bind_method": "bindchange",
+        "data": [],
+        "function_call": "bindMultiPickerChange",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{picker} {depth: 7}\n#attribute{bindchange: bindMultiPickerChange}  \n#attribute{bindcolumnchange: bindMultiPickerColumnChange}  \n#attribute{bindtap: gradeDisppear}  \n#attribute{class: centers}  \n#attribute{mode: multiSelector}  \n#attribute{range: {{multiArray}}}  \n#attribute{style: width:100%;height:100%}  \n#attribute{value: {{multiIndex}}}  \n#element{view} {depth: 8}  \n#attribute{style: width:100%;height:100%}    \n#attribute{wx:if: {{gradeDisppear}}}    \n#element{text} {depth: 9}    \n#attribute{class: grade}      \ndata{请选择年级}      \n#element{view} {depth: 8}  \n#attribute{style: width:100%;height:100%}    \n#attribute{wx:else: }    \n#element{text} {depth: 9}    \n#attribute{class: grade}      \nscriptdata{multiArray[0][ multiIndex[0] ]}      \n",
+        "attributes": {
+          "bindchange": "bindMultiPickerChange",
+          "bindcolumnchange": "bindMultiPickerColumnChange",
+          "bindtap": "gradeDisppear",
+          "class": "centers",
+          "mode": "multiSelector",
+          "range": "{{multiArray}}",
+          "style": "width:100%;height:100%",
+          "value": "{{multiIndex}}"
+        },
+        "bind_method": "bindcolumnchange",
+        "data": [],
+        "function_call": "bindMultiPickerColumnChange",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{picker} {depth: 7}\n#attribute{bindchange: bindMultiPickerChange}  \n#attribute{bindcolumnchange: bindMultiPickerColumnChange}  \n#attribute{bindtap: gradeDisppear}  \n#attribute{class: centers}  \n#attribute{mode: multiSelector}  \n#attribute{range: {{multiArray}}}  \n#attribute{style: width:100%;height:100%}  \n#attribute{value: {{multiIndex}}}  \n#element{view} {depth: 8}  \n#attribute{style: width:100%;height:100%}    \n#attribute{wx:if: {{gradeDisppear}}}    \n#element{text} {depth: 9}    \n#attribute{class: grade}      \ndata{请选择年级}      \n#element{view} {depth: 8}  \n#attribute{style: width:100%;height:100%}    \n#attribute{wx:else: }    \n#element{text} {depth: 9}    \n#attribute{class: grade}      \nscriptdata{multiArray[0][ multiIndex[0] ]}      \n",
+        "attributes": {
+          "bindchange": "bindMultiPickerChange",
+          "bindcolumnchange": "bindMultiPickerColumnChange",
+          "bindtap": "gradeDisppear",
+          "class": "centers",
+          "mode": "multiSelector",
+          "range": "{{multiArray}}",
+          "style": "width:100%;height:100%",
+          "value": "{{multiIndex}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "gradeDisppear",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 7}\n#attribute{bindinput: classnameblur}  \n#attribute{class: inputs}  \n#attribute{name: school}  \n#attribute{placeholder: 请输入您的班级}  \n#attribute{placeholderclass: phcolor2}  \n#attribute{type: number}  \n#attribute{value: {{className}}}  \n",
+        "attributes": {
+          "bindinput": "classnameblur",
+          "class": "inputs",
+          "name": "school",
+          "placeholder": "请输入您的班级",
+          "placeholderclass": "phcolor2",
+          "type": "number",
+          "value": "{{className}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "classnameblur",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/classchoice/classchoice"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{input} {depth: 7}\n#attribute{bindinput: schoolnameblur}  \n#attribute{bindkeyboardheightchange: getSchoolInfo}  \n#attribute{class: inputs}  \n#attribute{name: school}  \n#attribute{placeholder: 请输入您所在的学校}  \n#attribute{placeholderclass: phcolor2}  \n#attribute{value: {{schoolname}}}  \n",
+        "attributes": {
+          "bindinput": "schoolnameblur",
+          "bindkeyboardheightchange": "getSchoolInfo",
+          "class": "inputs",
+          "name": "school",
+          "placeholder": "请输入您所在的学校",
+          "placeholderclass": "phcolor2",
+          "value": "{{schoolname}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "schoolnameblur",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 7}\n#attribute{bindinput: schoolnameblur}  \n#attribute{bindkeyboardheightchange: getSchoolInfo}  \n#attribute{class: inputs}  \n#attribute{name: school}  \n#attribute{placeholder: 请输入您所在的学校}  \n#attribute{placeholderclass: phcolor2}  \n#attribute{value: {{schoolname}}}  \n",
+        "attributes": {
+          "bindinput": "schoolnameblur",
+          "bindkeyboardheightchange": "getSchoolInfo",
+          "class": "inputs",
+          "name": "school",
+          "placeholder": "请输入您所在的学校",
+          "placeholderclass": "phcolor2",
+          "value": "{{schoolname}}"
+        },
+        "bind_method": "bindkeyboardheightchange",
+        "data": [],
+        "function_call": "getSchoolInfo",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{picker} {depth: 7}\n#attribute{bindchange: bindMultiPickerChange}  \n#attribute{bindcolumnchange: bindMultiPickerColumnChange}  \n#attribute{bindtap: gradeDisppear}  \n#attribute{class: centers}  \n#attribute{mode: multiSelector}  \n#attribute{range: {{multiArray}}}  \n#attribute{style: width:100%;height:100%}  \n#attribute{value: {{multiIndex}}}  \n#element{view} {depth: 8}  \n#attribute{style: width:100%;height:100%}    \n#attribute{wx:if: {{gradeDisppear}}}    \n#element{text} {depth: 9}    \n#attribute{class: grade}      \nscriptdata{gradename}      \n#element{view} {depth: 8}  \n#attribute{style: width:100%;height:100%}    \n#attribute{wx:else: }    \n#element{text} {depth: 9}    \n#attribute{class: grade}      \nscriptdata{multiArray[0][ multiIndex[0] ]}      \n",
+        "attributes": {
+          "bindchange": "bindMultiPickerChange",
+          "bindcolumnchange": "bindMultiPickerColumnChange",
+          "bindtap": "gradeDisppear",
+          "class": "centers",
+          "mode": "multiSelector",
+          "range": "{{multiArray}}",
+          "style": "width:100%;height:100%",
+          "value": "{{multiIndex}}"
+        },
+        "bind_method": "bindchange",
+        "data": [],
+        "function_call": "bindMultiPickerChange",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{picker} {depth: 7}\n#attribute{bindchange: bindMultiPickerChange}  \n#attribute{bindcolumnchange: bindMultiPickerColumnChange}  \n#attribute{bindtap: gradeDisppear}  \n#attribute{class: centers}  \n#attribute{mode: multiSelector}  \n#attribute{range: {{multiArray}}}  \n#attribute{style: width:100%;height:100%}  \n#attribute{value: {{multiIndex}}}  \n#element{view} {depth: 8}  \n#attribute{style: width:100%;height:100%}    \n#attribute{wx:if: {{gradeDisppear}}}    \n#element{text} {depth: 9}    \n#attribute{class: grade}      \nscriptdata{gradename}      \n#element{view} {depth: 8}  \n#attribute{style: width:100%;height:100%}    \n#attribute{wx:else: }    \n#element{text} {depth: 9}    \n#attribute{class: grade}      \nscriptdata{multiArray[0][ multiIndex[0] ]}      \n",
+        "attributes": {
+          "bindchange": "bindMultiPickerChange",
+          "bindcolumnchange": "bindMultiPickerColumnChange",
+          "bindtap": "gradeDisppear",
+          "class": "centers",
+          "mode": "multiSelector",
+          "range": "{{multiArray}}",
+          "style": "width:100%;height:100%",
+          "value": "{{multiIndex}}"
+        },
+        "bind_method": "bindcolumnchange",
+        "data": [],
+        "function_call": "bindMultiPickerColumnChange",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{picker} {depth: 7}\n#attribute{bindchange: bindMultiPickerChange}  \n#attribute{bindcolumnchange: bindMultiPickerColumnChange}  \n#attribute{bindtap: gradeDisppear}  \n#attribute{class: centers}  \n#attribute{mode: multiSelector}  \n#attribute{range: {{multiArray}}}  \n#attribute{style: width:100%;height:100%}  \n#attribute{value: {{multiIndex}}}  \n#element{view} {depth: 8}  \n#attribute{style: width:100%;height:100%}    \n#attribute{wx:if: {{gradeDisppear}}}    \n#element{text} {depth: 9}    \n#attribute{class: grade}      \nscriptdata{gradename}      \n#element{view} {depth: 8}  \n#attribute{style: width:100%;height:100%}    \n#attribute{wx:else: }    \n#element{text} {depth: 9}    \n#attribute{class: grade}      \nscriptdata{multiArray[0][ multiIndex[0] ]}      \n",
+        "attributes": {
+          "bindchange": "bindMultiPickerChange",
+          "bindcolumnchange": "bindMultiPickerColumnChange",
+          "bindtap": "gradeDisppear",
+          "class": "centers",
+          "mode": "multiSelector",
+          "range": "{{multiArray}}",
+          "style": "width:100%;height:100%",
+          "value": "{{multiIndex}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "gradeDisppear",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 7}\n#attribute{bindinput: classnameblur}  \n#attribute{class: inputs}  \n#attribute{name: school}  \n#attribute{placeholder: 请输入您的班级}  \n#attribute{placeholderclass: phcolor2}  \n#attribute{type: number}  \n#attribute{value: {{className}}}  \n",
+        "attributes": {
+          "bindinput": "classnameblur",
+          "class": "inputs",
+          "name": "school",
+          "placeholder": "请输入您的班级",
+          "placeholderclass": "phcolor2",
+          "type": "number",
+          "value": "{{className}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "classnameblur",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/editclass/editclass"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/isWare/isware"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{image} {depth: 4}\n#attribute{bindtap: btnSave}  \n#attribute{src: http://cdn.nine-stars.cn/data/static/images01/goahead.png}  \n#attribute{style: height:40px;width:40%}  \n",
+        "attributes": {
+          "bindtap": "btnSave",
+          "src": "http://cdn.nine-stars.cn/data/static/images01/goahead.png",
+          "style": "height:40px;width:40%"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "btnSave",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/faceenter/faceenter"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{back} {depth: 2}\n#attribute{bindtap: back}  \n",
+        "attributes": {
+          "bindtap": "back"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "back",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 6}\n#attribute{bindtap: share}  \n#attribute{class: cardbg4}  \n#element{image} {depth: 7}  \n#attribute{class: freeBtn}    \n#attribute{src: http://cdn.nine-stars.cn/data/static/images01/clickToView.png}    \n",
+        "attributes": {
+          "bindtap": "share",
+          "class": "cardbg4"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "share",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 3}\n#attribute{bindtap: askquestion}  \n#attribute{class: right}  \n#attribute{src: http://cdn.nine-stars.cn/data/static/images01/onlineConsultation.png}  \n",
+        "attributes": {
+          "bindtap": "askquestion",
+          "class": "right",
+          "src": "http://cdn.nine-stars.cn/data/static/images01/onlineConsultation.png"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "askquestion",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 3}\n#attribute{bindtap: colseHos}  \n#attribute{class: error}  \n#attribute{src: http://cdn.nine-stars.cn/data/static/images01/popupClose.png}  \n",
+        "attributes": {
+          "bindtap": "colseHos",
+          "class": "error",
+          "src": "http://cdn.nine-stars.cn/data/static/images01/popupClose.png"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "colseHos",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 4}\n#attribute{bindtap: colse}  \n#attribute{class: error}  \n#attribute{style: z-index:9999;background-color:transparent}  \n#element{image} {depth: 5}  \n#attribute{class: error}    \n#attribute{src: http://cdn.nine-stars.cn/data/static/images01/popupClose.png}    \n",
+        "attributes": {
+          "bindtap": "colse",
+          "class": "error",
+          "style": "z-index:9999;background-color:transparent"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "colse",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindtap: baocun}  \n#attribute{class: baocun}  \n#attribute{style: z-index:9999;background-color:transparent}  \n#element{image} {depth: 4}  \n#attribute{bindtap: baocun}    \n#attribute{class: baocun}    \n#attribute{src: http://cdn.nine-stars.cn/data/static/images01/popupSaveBtn.png}    \n",
+        "attributes": {
+          "bindtap": "baocun",
+          "class": "baocun",
+          "style": "z-index:9999;background-color:transparent"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "baocun",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 4}\n#attribute{bindtap: baocun}  \n#attribute{class: baocun}  \n#attribute{src: http://cdn.nine-stars.cn/data/static/images01/popupSaveBtn.png}  \n",
+        "attributes": {
+          "bindtap": "baocun",
+          "class": "baocun",
+          "src": "http://cdn.nine-stars.cn/data/static/images01/popupSaveBtn.png"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "baocun",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/result/result"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: share}  \n#attribute{class: cardbg4}  \n#element{image} {depth: 6}  \n#attribute{class: freeBtn}    \n#attribute{src: http://cdn.nine-stars.cn/data/static/images01/clickToView.png}    \n",
+        "attributes": {
+          "bindtap": "share",
+          "class": "cardbg4"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "share",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 3}\n#attribute{bindtap: askquestion}  \n#attribute{class: right}  \n#attribute{src: http://cdn.nine-stars.cn/data/static/images01/onlineConsultation.png}  \n",
+        "attributes": {
+          "bindtap": "askquestion",
+          "class": "right",
+          "src": "http://cdn.nine-stars.cn/data/static/images01/onlineConsultation.png"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "askquestion",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 3}\n#attribute{bindtap: colseHos}  \n#attribute{class: error}  \n#attribute{src: http://cdn.nine-stars.cn/data/static/images01/popupClose.png}  \n",
+        "attributes": {
+          "bindtap": "colseHos",
+          "class": "error",
+          "src": "http://cdn.nine-stars.cn/data/static/images01/popupClose.png"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "colseHos",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 4}\n#attribute{bindtap: colse}  \n#attribute{class: error}  \n#attribute{style: z-index:9999;background-color:transparent}  \n#element{image} {depth: 5}  \n#attribute{class: error}    \n#attribute{src: http://cdn.nine-stars.cn/data/static/images01/popupClose.png}    \n",
+        "attributes": {
+          "bindtap": "colse",
+          "class": "error",
+          "style": "z-index:9999;background-color:transparent"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "colse",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindtap: baocun}  \n#attribute{class: baocun}  \n#attribute{style: z-index:9999;background-color:transparent}  \n#element{image} {depth: 4}  \n#attribute{bindtap: baocun}    \n#attribute{class: baocun}    \n#attribute{src: http://cdn.nine-stars.cn/data/static/images01/popupSaveBtn.png}    \n",
+        "attributes": {
+          "bindtap": "baocun",
+          "class": "baocun",
+          "style": "z-index:9999;background-color:transparent"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "baocun",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 4}\n#attribute{bindtap: baocun}  \n#attribute{class: baocun}  \n#attribute{src: http://cdn.nine-stars.cn/data/static/images01/popupSaveBtn.png}  \n",
+        "attributes": {
+          "bindtap": "baocun",
+          "class": "baocun",
+          "src": "http://cdn.nine-stars.cn/data/static/images01/popupSaveBtn.png"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "baocun",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/result3/result3"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{input} {depth: 6}\n#attribute{bindinput: nameblur}  \n#attribute{class: inputs}  \n#attribute{name: name}  \n#attribute{placeholder: 请输入孩子的姓名}  \n#attribute{placeholderclass: inputStyle}  \n#attribute{value: {{username}}}  \n",
+        "attributes": {
+          "bindinput": "nameblur",
+          "class": "inputs",
+          "name": "name",
+          "placeholder": "请输入孩子的姓名",
+          "placeholderclass": "inputStyle",
+          "value": "{{username}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "nameblur",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 6}\n#attribute{bindinput: ageblur}  \n#attribute{class: inputs}  \n#attribute{name: age}  \n#attribute{placeholder: 请输入孩子的年龄/周岁}  \n#attribute{placeholderclass: inputStyle}  \n#attribute{type: number}  \n#attribute{value: {{userage}}}  \n",
+        "attributes": {
+          "bindinput": "ageblur",
+          "class": "inputs",
+          "name": "age",
+          "placeholder": "请输入孩子的年龄/周岁",
+          "placeholderclass": "inputStyle",
+          "type": "number",
+          "value": "{{userage}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "ageblur",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{my-component} {depth: 7}\n#attribute{bind:myevent: showClick}  \n#attribute{id: test}  \n#attribute{myproperty: example}  \n#attribute{style: line-height:75rpx;}  \n#attribute{wx:else: }  \n",
+        "attributes": {
+          "bind:myevent": "showClick",
+          "id": "test",
+          "myproperty": "example",
+          "style": "line-height:75rpx;",
+          "wx:else": ""
+        },
+        "bind_method": "bind:myevent",
+        "data": [],
+        "function_call": "showClick",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 3}\n#attribute{bindtap: btn}  \n#attribute{src: http://cdn.nine-stars.cn/data/static/images01/registerButton.png}  \n#attribute{style: height:40px;width:40%}  \n",
+        "attributes": {
+          "bindtap": "btn",
+          "src": "http://cdn.nine-stars.cn/data/static/images01/registerButton.png",
+          "style": "height:40px;width:40%"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "btn",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/userinfo1/userinfo1"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{image-cropper} {depth: 3}\n#attribute{angle: {{angle}}}  \n#attribute{bindimageload: loadimage}  \n#attribute{bindload: cropperload}  \n#attribute{bindtapcut: clickcut}  \n#attribute{disable_height: {{disable_height}}}  \n#attribute{disable_ratio: {{disable_ratio}}}  \n#attribute{disable_rotate: {{disable_rotate}}}  \n#attribute{disable_width: {{disable_width}}}  \n#attribute{height: {{height}}}  \n#attribute{id: image-cropper}  \n#attribute{imgsrc: {{src}}}  \n#attribute{limit_move: {{limit_move}}}  \n#attribute{max_height: {{max_height}}}  \n#attribute{max_width: {{max_width}}}  \n#attribute{width: {{width}}}  \n",
+        "attributes": {
+          "angle": "{{angle}}",
+          "bindimageload": "loadimage",
+          "bindload": "cropperload",
+          "bindtapcut": "clickcut",
+          "disable_height": "{{disable_height}}",
+          "disable_ratio": "{{disable_ratio}}",
+          "disable_rotate": "{{disable_rotate}}",
+          "disable_width": "{{disable_width}}",
+          "height": "{{height}}",
+          "id": "image-cropper",
+          "imgsrc": "{{src}}",
+          "limit_move": "{{limit_move}}",
+          "max_height": "{{max_height}}",
+          "max_width": "{{max_width}}",
+          "width": "{{width}}"
+        },
+        "bind_method": "bindimageload",
+        "data": [],
+        "function_call": "loadimage",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image-cropper} {depth: 3}\n#attribute{angle: {{angle}}}  \n#attribute{bindimageload: loadimage}  \n#attribute{bindload: cropperload}  \n#attribute{bindtapcut: clickcut}  \n#attribute{disable_height: {{disable_height}}}  \n#attribute{disable_ratio: {{disable_ratio}}}  \n#attribute{disable_rotate: {{disable_rotate}}}  \n#attribute{disable_width: {{disable_width}}}  \n#attribute{height: {{height}}}  \n#attribute{id: image-cropper}  \n#attribute{imgsrc: {{src}}}  \n#attribute{limit_move: {{limit_move}}}  \n#attribute{max_height: {{max_height}}}  \n#attribute{max_width: {{max_width}}}  \n#attribute{width: {{width}}}  \n",
+        "attributes": {
+          "angle": "{{angle}}",
+          "bindimageload": "loadimage",
+          "bindload": "cropperload",
+          "bindtapcut": "clickcut",
+          "disable_height": "{{disable_height}}",
+          "disable_ratio": "{{disable_ratio}}",
+          "disable_rotate": "{{disable_rotate}}",
+          "disable_width": "{{disable_width}}",
+          "height": "{{height}}",
+          "id": "image-cropper",
+          "imgsrc": "{{src}}",
+          "limit_move": "{{limit_move}}",
+          "max_height": "{{max_height}}",
+          "max_width": "{{max_width}}",
+          "width": "{{width}}"
+        },
+        "bind_method": "bindload",
+        "data": [],
+        "function_call": "cropperload",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image-cropper} {depth: 3}\n#attribute{angle: {{angle}}}  \n#attribute{bindimageload: loadimage}  \n#attribute{bindload: cropperload}  \n#attribute{bindtapcut: clickcut}  \n#attribute{disable_height: {{disable_height}}}  \n#attribute{disable_ratio: {{disable_ratio}}}  \n#attribute{disable_rotate: {{disable_rotate}}}  \n#attribute{disable_width: {{disable_width}}}  \n#attribute{height: {{height}}}  \n#attribute{id: image-cropper}  \n#attribute{imgsrc: {{src}}}  \n#attribute{limit_move: {{limit_move}}}  \n#attribute{max_height: {{max_height}}}  \n#attribute{max_width: {{max_width}}}  \n#attribute{width: {{width}}}  \n",
+        "attributes": {
+          "angle": "{{angle}}",
+          "bindimageload": "loadimage",
+          "bindload": "cropperload",
+          "bindtapcut": "clickcut",
+          "disable_height": "{{disable_height}}",
+          "disable_ratio": "{{disable_ratio}}",
+          "disable_rotate": "{{disable_rotate}}",
+          "disable_width": "{{disable_width}}",
+          "height": "{{height}}",
+          "id": "image-cropper",
+          "imgsrc": "{{src}}",
+          "limit_move": "{{limit_move}}",
+          "max_height": "{{max_height}}",
+          "max_width": "{{max_width}}",
+          "width": "{{width}}"
+        },
+        "bind_method": "bindtapcut",
+        "data": [],
+        "function_call": "clickcut",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/member/member"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: goToAnalysis}  \n#attribute{class: item}  \n#attribute{data-index: {{index}}}  \n#attribute{wx:for: {{list}}}  \n#attribute{wx:key: index}  \n#element{view} {depth: 5}  \n#attribute{class: listContainer}    \n#element{view} {depth: 6}    \n#element{image} {depth: 7}      \n#attribute{src: ../images/glasses.png}        \n#attribute{style: width:80rpx;height:80rpx}        \n#element{view} {depth: 6}    \n#attribute{class: centerContainer}      \n#element{text} {depth: 7}      \nscriptdata{item.user.nickname}        \n#element{text} {depth: 7}      \ndata{视力检查}        \n#element{text} {depth: 7}      \nscriptdata{tools.sub(item.checkTimeString)}        \n#element{view} {depth: 6}    \n#element{image} {depth: 7}      \n#attribute{src: ../images/jiantous2.png}        \n#attribute{style: width:60rpx;height:60rpx}        \n#element{view} {depth: 5}  \n#element{image} {depth: 6}    \n#attribute{src: ../images/dotted.png}      \n#attribute{style: width:100%;height:4rpx;margin-bottom:5rpx}      \n",
+        "attributes": {
+          "bindtap": "goToAnalysis",
+          "class": "item",
+          "data-index": "{{index}}",
+          "wx:for": "{{list}}",
+          "wx:key": "index"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "goToAnalysis",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{canvas} {depth: 4}\n#attribute{bindtouchend: touchEndHandler}  \n#attribute{bindtouchmove: moveHandler}  \n#attribute{bindtouchstart: touchHandler}  \n#attribute{canvasid: lineCanvas}  \n#attribute{class: canvas}  \n#attribute{disablescroll: true}  \n",
+        "attributes": {
+          "bindtouchend": "touchEndHandler",
+          "bindtouchmove": "moveHandler",
+          "bindtouchstart": "touchHandler",
+          "canvasid": "lineCanvas",
+          "class": "canvas",
+          "disablescroll": "true"
+        },
+        "bind_method": "bindtouchend",
+        "data": [],
+        "function_call": "touchEndHandler",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{canvas} {depth: 4}\n#attribute{bindtouchend: touchEndHandler}  \n#attribute{bindtouchmove: moveHandler}  \n#attribute{bindtouchstart: touchHandler}  \n#attribute{canvasid: lineCanvas}  \n#attribute{class: canvas}  \n#attribute{disablescroll: true}  \n",
+        "attributes": {
+          "bindtouchend": "touchEndHandler",
+          "bindtouchmove": "moveHandler",
+          "bindtouchstart": "touchHandler",
+          "canvasid": "lineCanvas",
+          "class": "canvas",
+          "disablescroll": "true"
+        },
+        "bind_method": "bindtouchmove",
+        "data": [],
+        "function_call": "moveHandler",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{canvas} {depth: 4}\n#attribute{bindtouchend: touchEndHandler}  \n#attribute{bindtouchmove: moveHandler}  \n#attribute{bindtouchstart: touchHandler}  \n#attribute{canvasid: lineCanvas}  \n#attribute{class: canvas}  \n#attribute{disablescroll: true}  \n",
+        "attributes": {
+          "bindtouchend": "touchEndHandler",
+          "bindtouchmove": "moveHandler",
+          "bindtouchstart": "touchHandler",
+          "canvasid": "lineCanvas",
+          "class": "canvas",
+          "disablescroll": "true"
+        },
+        "bind_method": "bindtouchstart",
+        "data": [],
+        "function_call": "touchHandler",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/mylist/mylist"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: btn}  \n#attribute{class: btn}  \ndata{教学模式}  \n",
+        "attributes": {
+          "bindtap": "btn",
+          "class": "btn"
+        },
+        "bind_method": "bindtap",
+        "data": ["教学模式"],
+        "function_call": "btn",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: orderbtn}  \n#attribute{class: btn_baground,{{class}}}  \n#attribute{style: width:120px;height:40px}  \n#element{text} {depth: 5}  \n#attribute{wx:if: {{disabled}}}    \ndata{进入教学模式}    \n#element{text} {depth: 5}  \n#attribute{wx:if: {{!disabled}}}    \ndata{倒计时(}    \nscriptdata{countDownNum}    \ndata{s)}    \n",
+        "attributes": {
+          "bindtap": "orderbtn",
+          "class": "btn_baground,{{class}}",
+          "style": "width:120px;height:40px"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "orderbtn",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: orderes}  \n#attribute{class: mybtn}  \ndata{跳过}  \n",
+        "attributes": {
+          "bindtap": "orderes",
+          "class": "mybtn"
+        },
+        "bind_method": "bindtap",
+        "data": ["跳过"],
+        "function_call": "orderes",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/success/success"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/share/share"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/checkuser/checkuser"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 6}\n#attribute{bindtap: changeDirection}  \n#attribute{data-direction: right}  \n#element{image} {depth: 7}  \n#attribute{src: http://cdn.nine-stars.cn/data/static/images/right.jpg}    \n#attribute{style: width:120px;height:120px}    \n",
+        "attributes": {
+          "bindtap": "changeDirection",
+          "data-direction": "right"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "changeDirection",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 6}\n#attribute{bindtap: changeDirection}  \n#attribute{data-direction: wrong}  \n#element{image} {depth: 7}  \n#attribute{src: http://cdn.nine-stars.cn/data/static/images/kanbuqing.png}    \n#attribute{style: width:120px;height:120px}    \n",
+        "attributes": {
+          "bindtap": "changeDirection",
+          "data-direction": "wrong"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "changeDirection",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/etext/etext"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 6}\n#attribute{bindtap: changeDirection}  \n#attribute{data-direction: right}  \n#element{image} {depth: 7}  \n#attribute{src: http://cdn.nine-stars.cn/data/static/images/right.jpg}    \n#attribute{style: width:120px;height:120px}    \n",
+        "attributes": {
+          "bindtap": "changeDirection",
+          "data-direction": "right"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "changeDirection",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 6}\n#attribute{bindtap: changeDirection}  \n#attribute{data-direction: wrong}  \n#element{image} {depth: 7}  \n#attribute{src: http://cdn.nine-stars.cn/data/static/images/wrong.jpg}    \n#attribute{style: width:120px;height:120px}    \n",
+        "attributes": {
+          "bindtap": "changeDirection",
+          "data-direction": "wrong"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "changeDirection",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/teach/teach"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: goToList1}  \n#attribute{data-name: pageShare}  \n#attribute{id: share}  \n#attribute{opentype: share}  \n#attribute{type: primary}  \n#element{image} {depth: 5}  \n#attribute{class: btnImg}    \n#attribute{src: http://cdn.nine-stars.cn/data/static/images01/againTestBtn.png}    \n",
+        "attributes": {
+          "bindtap": "goToList1",
+          "data-name": "pageShare",
+          "id": "share",
+          "opentype": "share",
+          "type": "primary"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "goToList1",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/result2/result2"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: btn}  \n#attribute{class: btn}  \ndata{OK\r\n }  \n",
+        "attributes": {
+          "bindtap": "btn",
+          "class": "btn"
+        },
+        "bind_method": "bindtap",
+        "data": ["OK\r\n "],
+        "function_call": "btn",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/eyetype/eyetype"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{input} {depth: 7}\n#attribute{bindinput: phoneInput}  \n#attribute{class: inputs}  \n#attribute{maxlength: 13}  \n#attribute{name: telephone}  \n#attribute{placeholder: 请输入手机号}  \n#attribute{placeholderclass: inputStyle}  \n#attribute{type: number}  \n",
+        "attributes": {
+          "bindinput": "phoneInput",
+          "class": "inputs",
+          "maxlength": "13",
+          "name": "telephone",
+          "placeholder": "请输入手机号",
+          "placeholderclass": "inputStyle",
+          "type": "number"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "phoneInput",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 7}\n#attribute{bindinput: verificationcodeInput}  \n#attribute{class: inputs2}  \n#attribute{placeholder: 请输入验证码}  \n#attribute{placeholderclass: inputStyle}  \n#attribute{type: number}  \n",
+        "attributes": {
+          "bindinput": "verificationcodeInput",
+          "class": "inputs2",
+          "placeholder": "请输入验证码",
+          "placeholderclass": "inputStyle",
+          "type": "number"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "verificationcodeInput",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 7}\n#attribute{bindtap: getVerificationCode}  \n#attribute{class: getCodeBtn}  \n#attribute{src: http://cdn.nine-stars.cn/data/static/images01/getcode.png}  \n#attribute{wx:if: {{!disabled}}}  \n",
+        "attributes": {
+          "bindtap": "getVerificationCode",
+          "class": "getCodeBtn",
+          "src": "http://cdn.nine-stars.cn/data/static/images01/getcode.png",
+          "wx:if": "{{!disabled}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "getVerificationCode",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/query/query"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{input} {depth: 7}\n#attribute{bindinput: phoneblur}  \n#attribute{class: inputs}  \n#attribute{name: telephone}  \n#attribute{placeholder: 请输入手机号}  \n#attribute{placeholderclass: inputStyle}  \n#attribute{type: number}  \n",
+        "attributes": {
+          "bindinput": "phoneblur",
+          "class": "inputs",
+          "name": "telephone",
+          "placeholder": "请输入手机号",
+          "placeholderclass": "inputStyle",
+          "type": "number"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "phoneblur",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 7}\n#attribute{bindinput: verificationcodeInput}  \n#attribute{class: inputs2}  \n#attribute{placeholder: 请输入验证码}  \n#attribute{placeholderclass: inputStyle}  \n#attribute{type: number}  \n",
+        "attributes": {
+          "bindinput": "verificationcodeInput",
+          "class": "inputs2",
+          "placeholder": "请输入验证码",
+          "placeholderclass": "inputStyle",
+          "type": "number"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "verificationcodeInput",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 7}\n#attribute{bindtap: getVerificationCode}  \n#attribute{class: getCodeBtn}  \n#attribute{src: http://cdn.nine-stars.cn/data/static/images01/getcode.png}  \n#attribute{wx:if: {{!disabled}}}  \n",
+        "attributes": {
+          "bindtap": "getVerificationCode",
+          "class": "getCodeBtn",
+          "src": "http://cdn.nine-stars.cn/data/static/images01/getcode.png",
+          "wx:if": "{{!disabled}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "getVerificationCode",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/userinfo/userinfo"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{button} {depth: 1}\n#attribute{bindtap: playsound}  \ndata{播放声音\r\n }  \n",
+        "attributes": {
+          "bindtap": "playsound"
+        },
+        "bind_method": "bindtap",
+        "data": ["播放声音\r\n "],
+        "function_call": "playsound",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 1}\n#attribute{bindtap: play}  \ndata{错误声音\r\n }  \n",
+        "attributes": {
+          "bindtap": "play"
+        },
+        "bind_method": "bindtap",
+        "data": ["错误声音\r\n "],
+        "function_call": "play",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/sounds/sounds"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/card/card"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/weburl1/weburl1"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{input} {depth: 6}\n#attribute{bindinput: phoneInput}  \n#attribute{class: input}  \n#attribute{maxlength: 13}  \n#attribute{name: phone}  \n#attribute{placeholder: 请输入手机号码}  \n#attribute{placeholderclass: phcolor}  \n#attribute{style: margin-left:20px;}  \n#attribute{type: number}  \n#attribute{value: {{phone}}}  \n",
+        "attributes": {
+          "bindinput": "phoneInput",
+          "class": "input",
+          "maxlength": "13",
+          "name": "phone",
+          "placeholder": "请输入手机号码",
+          "placeholderclass": "phcolor",
+          "style": "margin-left:20px;",
+          "type": "number",
+          "value": "{{phone}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "phoneInput",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 6}\n#attribute{bindinput: verificationcodeInput}  \n#attribute{name: code}  \n#attribute{placeholder: 请输入验证码}  \n#attribute{placeholderclass: phcolor}  \n#attribute{style: margin-left:20px}  \n#attribute{type: number}  \n",
+        "attributes": {
+          "bindinput": "verificationcodeInput",
+          "name": "code",
+          "placeholder": "请输入验证码",
+          "placeholderclass": "phcolor",
+          "style": "margin-left:20px",
+          "type": "number"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "verificationcodeInput",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: getVerificationCode}  \n#attribute{class: button }  \n#attribute{style: height:40px;display:flex;align-items:center;justify-content:center;}  \n#element{text} {depth: 6}  \n#attribute{wx:if: {{!disabled}}}    \ndata{获取验证码}    \n#element{text} {depth: 6}  \n#attribute{wx:if: {{disabled}}}    \ndata{验证码(}    \nscriptdata{countDownNum}    \ndata{s)}    \n",
+        "attributes": {
+          "bindtap": "getVerificationCode",
+          "class": "button ",
+          "style": "height:40px;display:flex;align-items:center;justify-content:center;"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "getVerificationCode",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 3}\n#attribute{bindtap: goToList}  \n#attribute{src: ../images/btn.png}  \n#attribute{style: height:40px;width:40%}  \n",
+        "attributes": {
+          "bindtap": "goToList",
+          "src": "../images/btn.png",
+          "style": "height:40px;width:40%"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "goToList",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/load/load"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: goToAnalysis}  \n#attribute{class: item}  \n#attribute{data-index: {{index}}}  \n#attribute{wx:for: {{list}}}  \n#attribute{wx:key: index}  \n#element{image} {depth: 4}  \n#attribute{src: https://assets.ieyecloud.com/vision/icon/e.png}    \n#element{view} {depth: 4}  \n#attribute{class: item-info}    \n#element{view} {depth: 5}    \n#attribute{class: item-name}      \nscriptdata{item.memberInfo.fullname}      \n#element{view} {depth: 5}    \n#attribute{class: item-check}      \nscriptdata{item.data.projectName}      \n#element{view} {depth: 5}    \n#attribute{class: item-date}      \nscriptdata{item.data.createDateTime}      \n#element{image} {depth: 4}  \n#attribute{class: left}    \n#attribute{src: ../images/left.png}    \n",
+        "attributes": {
+          "bindtap": "goToAnalysis",
+          "class": "item",
+          "data-index": "{{index}}",
+          "wx:for": "{{list}}",
+          "wx:key": "index"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "goToAnalysis",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/list/list"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/weburl/weburl"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/logs/logs"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{input} {depth: 6}\n#attribute{bindinput: nameblur}  \n#attribute{class: inputs}  \n#attribute{name: name}  \n#attribute{placeholder: 请输入孩子的姓名}  \n#attribute{placeholderclass: inputStyle}  \n#attribute{value: {{username}}}  \n",
+        "attributes": {
+          "bindinput": "nameblur",
+          "class": "inputs",
+          "name": "name",
+          "placeholder": "请输入孩子的姓名",
+          "placeholderclass": "inputStyle",
+          "value": "{{username}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "nameblur",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 6}\n#attribute{bindinput: ageblur}  \n#attribute{class: inputs}  \n#attribute{name: age}  \n#attribute{placeholder: 请输入孩子的年龄/周岁}  \n#attribute{placeholderclass: inputStyle}  \n#attribute{type: number}  \n#attribute{value: {{userage}}}  \n",
+        "attributes": {
+          "bindinput": "ageblur",
+          "class": "inputs",
+          "name": "age",
+          "placeholder": "请输入孩子的年龄/周岁",
+          "placeholderclass": "inputStyle",
+          "type": "number",
+          "value": "{{userage}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "ageblur",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 5}\n#attribute{bindtap: btn}  \n#attribute{src: ../images/editSave.png}  \n#attribute{style: height:80rpx;width:40%}  \n",
+        "attributes": {
+          "bindtap": "btn",
+          "src": "../images/editSave.png",
+          "style": "height:80rpx;width:40%"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "btn",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/edit/edit"
+  }
+]
