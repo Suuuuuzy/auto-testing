@@ -96,6 +96,34 @@ namespace Web
         }
     }
 
+    void get_ast(Node *node, std::stringstream *buffer, int depth)
+    {
+        if (!node)
+            return;
+
+        // std::stringstream print_str;
+        *(buffer) << node->to_string();
+        if (node->to_string()[0] == 'e')
+            *(buffer) << "\n";
+
+        // Print indentation
+        for (int i = 0; i < depth; ++i)
+        {
+            *(buffer) << "  ";
+        }
+        *(buffer) << "\n";
+
+        // std::cout << print_str.str() << std::endl;
+
+        // Recursively print each child
+        for (long unsigned int idx = 0; idx < node->get_num_children(); ++idx)
+        {
+            Node *child = node->get_children(idx);
+            if (child != nullptr)
+                get_ast(child, buffer, depth + 1);
+        }
+    }
+
     std::vector<std::tuple<std::string, bool>> segment_string(const std::string &text)
     {
         std::vector<std::tuple<std::string, bool>> segments;
@@ -156,4 +184,62 @@ namespace Web
             print_bind_elements(node->get_children(idx), storage, print_flag);
     }
 
+    void get_bind_element_json(Node *node, nlohmann::json *json_array)
+    {
+        if (node->get_num_bind() > 0)
+        {
+            assert(node->type() == NodeType::ELEMENT_NODE);
+            for (size_t idx = 0; idx < node->get_num_bind(); idx++)
+            {
+                std::tuple<std::string, std::string> bind_info = node->get_bind_info(idx);
+                nlohmann::json json_data;
+
+                json_data["bind_method"] = std::get<0>(bind_info);
+                json_data["function_call"] = std::get<1>(bind_info);
+
+                std::stringstream get_ast_buffer;
+                get_ast(node, &get_ast_buffer);
+                json_data["ast"] = get_ast_buffer.str();
+
+                nlohmann::json attribute_buf;
+
+                std::vector<std::string> data_buf;
+
+                std::vector<std::string> scriptdata_buf;
+
+                for (size_t idx = 0; idx < node->get_num_children(); idx++)
+                {
+                    Node *child_node = node->get_children(idx);
+                    if (child_node)
+                    {
+                        switch (child_node->type())
+                        {
+                        case (NodeType::ATTRIBUTE_NODE):
+                        {
+                            attribute_buf[child_node->get_name()] = child_node->get_auxiliary_data();
+                        }
+                        break;
+                        case (NodeType::DATA_NODE):
+                        {
+                            if (child_node->get_auxiliary_data() == "true")
+                                scriptdata_buf.push_back(child_node->get_name());
+                            else
+                                data_buf.push_back(child_node->get_name());
+                        }
+                        break;
+                        default:
+                            break;
+                        }
+                    }
+                }
+
+                json_data["attributes"] = attribute_buf;
+                json_data["data"] = data_buf;
+                json_data["scriptdata"] = scriptdata_buf;
+                json_array->push_back(json_data);
+            }
+        }
+        for (unsigned long int idx = 0; idx < node->get_num_children(); ++idx)
+            get_bind_element_json(node->get_children(idx), json_array);
+    }
 }

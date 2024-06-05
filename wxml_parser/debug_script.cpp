@@ -17,8 +17,8 @@ int main(int, char **)
     const std::filesystem::path ROOT_DIR = "/home/bella-xia/auto-testing/wxml_parser/sample_wxml";
 
     // std::filesystem::path miniprogram_path = "wxaf291362a455b5e1";
-    std::filesystem::path page_directory = "sample_01.wxml";
-    std::filesystem::path access_page = ROOT_DIR / page_directory;
+    std::string page_directory = "sample";
+    std::filesystem::path access_page = ROOT_DIR / static_cast<std::filesystem::path>(page_directory + ".wxml");
 
     std::ifstream file(access_page);
 
@@ -41,7 +41,7 @@ int main(int, char **)
     try
     {
         // Code that may throw an exception
-        Web::WXMLDocumentParser parser(u32_content);
+        Web::WXMLDocumentParser parser(page_directory, u32_content);
         parser.print_tokens();
     }
     catch (const std::runtime_error &e)

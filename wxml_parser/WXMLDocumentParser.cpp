@@ -3,12 +3,13 @@
 namespace Web
 {
 
-    WXMLDocumentParser::WXMLDocumentParser() : m_root(new RootNode()), m_stack_of_open_elements(std::stack<RootNode *>()),
-                                               m_bind_storage(std::vector<std::tuple<std::string, std::string, Node *>>())
+    WXMLDocumentParser::WXMLDocumentParser(const std::string &page_name) : m_pagename(page_name),
+                                                                           m_root(new RootNode()), m_stack_of_open_elements(std::stack<RootNode *>()),
+                                                                           m_bind_storage(std::vector<std::tuple<std::string, std::string, Node *>>())
     {
     }
 
-    WXMLDocumentParser::WXMLDocumentParser(const std::u32string &input) : WXMLDocumentParser()
+    WXMLDocumentParser::WXMLDocumentParser(const std::string &page_name, const std::u32string &input) : WXMLDocumentParser(page_name)
     {
         m_tokenizer.insert_input_text(input);
     }
@@ -98,6 +99,15 @@ namespace Web
             std::cout << " EMIT: " << token.to_string() << std::endl;
         } while (token.m_type != HTMLToken::Type::EndOfFile);
         m_tokenizer.restore();
+    }
+
+    nlohmann::json WXMLDocumentParser::get_all_bind_elements()
+    {
+        if (!m_ran_through)
+            run();
+        nlohmann::json bind_json_arr = nlohmann::json::array();
+        get_bind_element_json(m_root, &bind_json_arr);
+        return bind_json_arr;
     }
 
     std::string WXMLDocumentParser::args_for_bind_element(size_t idx)
