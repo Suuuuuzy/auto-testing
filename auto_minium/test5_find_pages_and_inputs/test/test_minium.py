@@ -3,7 +3,7 @@ import os
 
 class Minium_Query(BaseDef):
     def setUp(self):
-        appid = self.mini.project_path.split('/')[-1] + "_528"
+        appid = self.mini.project_path.split('/')[-1]
         # __setLog__('/home/suzy/temp/new_taint_log_file/'+appid)
         result = self.app.evaluate(
             "function(){args=arguments;__setLog__('/home/suzy/temp/new_taint_log_file/'+args[0])}",[appid], sync=True
