@@ -15,6 +15,8 @@ logging.basicConfig(
     datefmt='%Y-%m-%d %H:%M:%S',
 )
 
+appid_file = '/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w.json'
+
 # Decompile with unveilr
 class UnsupportedOSException(Exception):
     pass
@@ -96,7 +98,6 @@ def handle_wxapkgs_old(package_names):
     print("Total wxapkg number: "+ str(len(all_unpacked_packages)))
     logger.info("Total wxapkg number: "+ str(len(all_unpacked_packages)))
     
-    
     all_unpacked_packages = [i for i in all_unpacked_packages if not os.path.exists(output_dir + i)]
     print("Unpacked: "+  str(len(all_unpacked_packages)))
     logger.info("Unpacked: "+  str(len(all_unpacked_packages)))
@@ -111,10 +112,9 @@ def handle_wxapkgs_old(package_names):
             
 
 def main():
-    with open('/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w.json', 'r') as fp:
+    with open(appid_file, 'r') as fp:
         package_names = json.load(fp)
     print(len(package_names))
-
     # processes = 20
     processes = 20
     batch_size = (len(package_names) + processes - 1) // processes
@@ -125,7 +125,7 @@ def main():
 if __name__ == '__main__':
     # main()
     
-
-    with open('/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w.json', 'r') as fp:
+    
+    with open(appid_file, 'r') as fp:
         package_names = json.load(fp)
     handle_wxapkgs_old(package_names)
