@@ -51,6 +51,14 @@ def format_wxml_style_attribute(file_path):
         # Perform the substitution
         content = re.sub(pattern, replacement, content)
 
+        # <view class="box-center-des">{{'分享好友
+        #       领取'+(list.share||0)+'元券(满'+(list.share_full||0)+'立减)'}}</view>        
+        def remove_line_breaks_inside_quotes(match):
+            return re.sub(r"'[^']*'", lambda m: m.group(0).replace('\n', '').replace(' ', ''), match.group(0))
+
+        # Regular expression to find the {{}} blocks
+        content = re.sub(r"{{[^{}]*}}", remove_line_breaks_inside_quotes, content)
+        
         # Write the modified content back to the file
         with open(file_path, 'w', encoding='utf-8') as file:
             file.write(content)
@@ -61,5 +69,5 @@ def format_wxml_style_attribute(file_path):
 
 # Example usage
 if __name__ == '__main__':
-    WXML_FILE_PATH = '/media/data4/jianjia_data4/miniapp_data/WeMinT_dataset/groundtruth/miniprograms/wx4aab7ae2aacd0ea7/pages/index/index.wxml'
+    WXML_FILE_PATH = '/Users/jianjia/WeChatProjects/wxa1dcf85f43ea3263-pc/make_speed/other/activity/activity.wxml'
     format_wxml_style_attribute(WXML_FILE_PATH)
