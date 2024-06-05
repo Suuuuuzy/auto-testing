@@ -1,0 +1,901 @@
+[
+  {
+    "component_list": [
+      {
+        "ast": "#element{image} {depth: 3}\n#attribute{bindtap: imageClick}  \n#attribute{class: slide-image}  \n#attribute{data-index: {{index}}}  \n#attribute{src: {{item.coverImage}}}  \n#attribute{wx:if: {{hasUserInfo}}}  \n",
+        "attributes": {
+          "bindtap": "imageClick",
+          "class": "slide-image",
+          "data-index": "{{index}}",
+          "src": "{{item.coverImage}}",
+          "wx:if": "{{hasUserInfo}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "imageClick",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindgetuserinfo: getUserInfo}  \n#attribute{class: auth-btn}  \n#attribute{data-auth: true}  \n#attribute{opentype: getUserInfo}  \n#attribute{wx:else: }  \n#element{image} {depth: 4}  \n#attribute{class: slide-image}    \n#attribute{src: {{item.coverImage}}}    \n",
+        "attributes": {
+          "bindgetuserinfo": "getUserInfo",
+          "class": "auth-btn",
+          "data-auth": "true",
+          "opentype": "getUserInfo",
+          "wx:else": ""
+        },
+        "bind_method": "bindgetuserinfo",
+        "data": [],
+        "function_call": "getUserInfo",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 4}\n#attribute{binderror: imageError}  \n#attribute{class: venue-image}  \n#attribute{data-index: {{index}}}  \n#attribute{src: {{item.coverImage}}}  \n",
+        "attributes": {
+          "binderror": "imageError",
+          "class": "venue-image",
+          "data-index": "{{index}}",
+          "src": "{{item.coverImage}}"
+        },
+        "bind_method": "binderror",
+        "data": [],
+        "function_call": "imageError",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/index/index"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: jump_my}  \n#attribute{style: color:#ffffff;position:absolute;right:20rpx;bottom:10rpx;}  \n#attribute{wx:if: {{identified}}}  \ndata{体育消费券}  \n",
+        "attributes": {
+          "bindtap": "jump_my",
+          "style": "color:#ffffff;position:absolute;right:20rpx;bottom:10rpx;",
+          "wx:if": "{{identified}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["体育消费券"],
+        "function_call": "jump_my",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindgetuserinfo: getUserInfo}  \n#attribute{class: auth-btn}  \n#attribute{data-auth: true}  \n#attribute{data-idcard: {{idcard}}}  \n#attribute{data-name: {{name}}}  \n#attribute{opentype: getUserInfo}  \n#attribute{wx:else: }  \ndata{马上认证 >}  \n",
+        "attributes": {
+          "bindgetuserinfo": "getUserInfo",
+          "class": "auth-btn",
+          "data-auth": "true",
+          "data-idcard": "{{idcard}}",
+          "data-name": "{{name}}",
+          "opentype": "getUserInfo",
+          "wx:else": ""
+        },
+        "bind_method": "bindgetuserinfo",
+        "data": ["马上认证 >"],
+        "function_call": "getUserInfo",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 1}\n#attribute{bindtap: closeRule}  \n#attribute{catchtouchmove: justCatch}  \n#attribute{class: rule-back}  \n#attribute{style: width:{{windowWidth}}px;height:{{windowHeight}}px}  \n#attribute{wx:if: {{showRule}}}  \n#element{include} {depth: 2}  \n#attribute{src: ../rule.wxml}    \n",
+        "attributes": {
+          "bindtap": "closeRule",
+          "catchtouchmove": "justCatch",
+          "class": "rule-back",
+          "style": "width:{{windowWidth}}px;height:{{windowHeight}}px",
+          "wx:if": "{{showRule}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "closeRule",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: loadList}  \n#attribute{class: tab {{type=='1'?'selected':''}}}  \n#attribute{data-type: 1}  \ndata{冰雪}  \n",
+        "attributes": {
+          "bindtap": "loadList",
+          "class": "tab {{type=='1'?'selected':''}}",
+          "data-type": "1"
+        },
+        "bind_method": "bindtap",
+        "data": ["冰雪"],
+        "function_call": "loadList",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: loadList}  \n#attribute{class: tab {{type=='0'?'selected':''}}}  \n#attribute{data-type: 0}  \ndata{通用}  \n",
+        "attributes": {
+          "bindtap": "loadList",
+          "class": "tab {{type=='0'?'selected':''}}",
+          "data-type": "0"
+        },
+        "bind_method": "bindtap",
+        "data": ["通用"],
+        "function_call": "loadList",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: showRule}  \n#attribute{class: rule primary-color}  \ndata{查看规则}  \n",
+        "attributes": {
+          "bindtap": "showRule",
+          "class": "rule primary-color"
+        },
+        "bind_method": "bindtap",
+        "data": ["查看规则"],
+        "function_call": "showRule",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: collectCoupon}  \n#attribute{class: action collect-coupon primary-color-background}  \n#attribute{data-couponamount: {{item.couponPrice}}}  \n#attribute{data-couponcount: 1}  \n#attribute{data-couponid: {{item.couponId}}}  \n#attribute{wx:elif: {{isnew=='1'&&item.statu=='1'}}}  \ndata{立即领取\r\n\t\t\t}  \n",
+        "attributes": {
+          "bindtap": "collectCoupon",
+          "class": "action collect-coupon primary-color-background",
+          "data-couponamount": "{{item.couponPrice}}",
+          "data-couponcount": "1",
+          "data-couponid": "{{item.couponId}}",
+          "wx:elif": "{{isnew=='1'&&item.statu=='1'}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["立即领取\r\n\t\t\t"],
+        "function_call": "collectCoupon",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 4}\n#attribute{bindgetuserinfo: getUserInfo}  \n#attribute{class: action collect-coupon primary-color-background padding_one}  \n#attribute{data-couponamount: {{item.couponPrice}}}  \n#attribute{data-couponcount: 1}  \n#attribute{data-couponid: {{item.couponId}}}  \n#attribute{data-idcard: {{idcard}}}  \n#attribute{data-name: {{name}}}  \n#attribute{opentype: getUserInfo}  \n#attribute{wx:elif: {{isnew=='2'&&item.statu=='1'}}}  \ndata{立即领取}  \n",
+        "attributes": {
+          "bindgetuserinfo": "getUserInfo",
+          "class": "action collect-coupon primary-color-background padding_one",
+          "data-couponamount": "{{item.couponPrice}}",
+          "data-couponcount": "1",
+          "data-couponid": "{{item.couponId}}",
+          "data-idcard": "{{idcard}}",
+          "data-name": "{{name}}",
+          "opentype": "getUserInfo",
+          "wx:elif": "{{isnew=='2'&&item.statu=='1'}}"
+        },
+        "bind_method": "bindgetuserinfo",
+        "data": ["立即领取"],
+        "function_call": "getUserInfo",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 4}\n#attribute{bindgetuserinfo: getUserInfo}  \n#attribute{class: action collect-coupon primary-color-background padding_one}  \n#attribute{data-couponamount: {{item.couponPrice}}}  \n#attribute{data-couponcount: 1}  \n#attribute{data-couponid: {{item.couponId}}}  \n#attribute{data-idcard: {{idcard}}}  \n#attribute{data-name: {{name}}}  \n#attribute{opentype: getUserInfo}  \n#attribute{style: width:132rpx;height:54rpx;line-height:54rpx;}  \n#attribute{wx:elif: {{isnew=='0'&&item.statu=='1'}}}  \ndata{立即领取}  \n",
+        "attributes": {
+          "bindgetuserinfo": "getUserInfo",
+          "class": "action collect-coupon primary-color-background padding_one",
+          "data-couponamount": "{{item.couponPrice}}",
+          "data-couponcount": "1",
+          "data-couponid": "{{item.couponId}}",
+          "data-idcard": "{{idcard}}",
+          "data-name": "{{name}}",
+          "opentype": "getUserInfo",
+          "style": "width:132rpx;height:54rpx;line-height:54rpx;",
+          "wx:elif": "{{isnew=='0'&&item.statu=='1'}}"
+        },
+        "bind_method": "bindgetuserinfo",
+        "data": ["立即领取"],
+        "function_call": "getUserInfo",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/governmentCoupon/index/index"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/governmentCoupon/my/index"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/index/order/index"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: tabClick}  \n#attribute{class: weui-navbar__item {{activeIndex==index?'weui-bar__item_on':''}}}  \n#attribute{id: {{index}}}  \n#attribute{wx:for: {{tabs}}}  \n#attribute{wx:key: *this}  \n#element{view} {depth: 4}  \n#attribute{class: weui-navbar__title}    \nscriptdata{item}    \n",
+        "attributes": {
+          "bindtap": "tabClick",
+          "class": "weui-navbar__item {{activeIndex==index?'weui-bar__item_on':''}}",
+          "id": "{{index}}",
+          "wx:for": "{{tabs}}",
+          "wx:key": "*this"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "tabClick",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{form} {depth: 6}\n#attribute{bindsubmit: payOrder}  \n#attribute{wx:if: {{item.state=='TOPAY'}}}  \n#element{input} {depth: 7}  \n#attribute{hidden: true}    \n#attribute{name: uuid}    \n#attribute{value: {{item.uuid}}}    \n#element{button} {depth: 7}  \n#attribute{class: action primary-color}    \n#attribute{formtype: submit}    \ndata{付款}    \n",
+        "attributes": {
+          "bindsubmit": "payOrder",
+          "wx:if": "{{item.state=='TOPAY'}}"
+        },
+        "bind_method": "bindsubmit",
+        "data": [],
+        "function_call": "payOrder",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/productOrder/list/list"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: showSearchInput}  \n#attribute{class: search-inner}  \n#attribute{hidden: {{searchInputShowed}}}  \n#element{icon} {depth: 3}  \n#attribute{class: search-icon}    \n#attribute{size: 14}    \n#attribute{type: search}    \n#element{view} {depth: 3}  \n#attribute{style: color:#9b9b9b;}    \nscriptdata{searchInputValueTemp==''?'场馆/优惠券':searchInputValueTemp}    \n",
+        "attributes": {
+          "bindtap": "showSearchInput",
+          "class": "search-inner",
+          "hidden": "{{searchInputShowed}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "showSearchInput",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindconfirm: searchInputConfirm}  \n#attribute{bindinput: searchInputTyping}  \n#attribute{focus: {{searchInputShowed}}}  \n#attribute{placeholder: 场馆/优惠券}  \n#attribute{type: text}  \n#attribute{value: {{searchInputValue}}}  \n",
+        "attributes": {
+          "bindconfirm": "searchInputConfirm",
+          "bindinput": "searchInputTyping",
+          "focus": "{{searchInputShowed}}",
+          "placeholder": "场馆/优惠券",
+          "type": "text",
+          "value": "{{searchInputValue}}"
+        },
+        "bind_method": "bindconfirm",
+        "data": [],
+        "function_call": "searchInputConfirm",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 3}\n#attribute{bindconfirm: searchInputConfirm}  \n#attribute{bindinput: searchInputTyping}  \n#attribute{focus: {{searchInputShowed}}}  \n#attribute{placeholder: 场馆/优惠券}  \n#attribute{type: text}  \n#attribute{value: {{searchInputValue}}}  \n",
+        "attributes": {
+          "bindconfirm": "searchInputConfirm",
+          "bindinput": "searchInputTyping",
+          "focus": "{{searchInputShowed}}",
+          "placeholder": "场馆/优惠券",
+          "type": "text",
+          "value": "{{searchInputValue}}"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "searchInputTyping",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: clearSearchInput}  \n#attribute{class: clear-icon}  \n#attribute{wx:if: {{searchInputValue.length>0}}}  \n#element{icon} {depth: 4}  \n#attribute{size: 14}    \n#attribute{type: clear}    \n",
+        "attributes": {
+          "bindtap": "clearSearchInput",
+          "class": "clear-icon",
+          "wx:if": "{{searchInputValue.length>0}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "clearSearchInput",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: hideSearchInput}  \n#attribute{class: search-cancel}  \n#attribute{hidden: {{!searchInputShowed}}}  \ndata{取消}  \n",
+        "attributes": {
+          "bindtap": "hideSearchInput",
+          "class": "search-cancel",
+          "hidden": "{{!searchInputShowed}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["取消"],
+        "function_call": "hideSearchInput",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: selectGroup}  \n#attribute{class: filter-group}  \n#attribute{data-index: {{index}}}  \n#attribute{data-name: {{item.name}}}  \n#attribute{wx:for: {{filterList}}}  \n#attribute{wx:key: name}  \n#element{view} {depth: 4}  \n#attribute{class: filter-group-name {{selectFilterGroupName==item.name?'select':''}}}    \nscriptdata{item.selectName?item.selectName:item.name}    \n#element{image} {depth: 4}  \n#attribute{src: /image/down.png}    \n#attribute{wx:if: {{selectFilterGroupName!=item.name}}}    \n#element{image} {depth: 4}  \n#attribute{src: /image/up.png}    \n#attribute{wx:if: {{selectFilterGroupName==item.name}}}    \n",
+        "attributes": {
+          "bindtap": "selectGroup",
+          "class": "filter-group",
+          "data-index": "{{index}}",
+          "data-name": "{{item.name}}",
+          "wx:for": "{{filterList}}",
+          "wx:key": "name"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "selectGroup",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 1}\n#attribute{bindtap: closeFilter}  \n#attribute{class: filter-item-outer-back}  \n#attribute{wx:if: {{selectFilterGroupName!=''}}}  \n#element{view} {depth: 2}  \n#attribute{catchtap: stoptap}    \n#attribute{class: filter-item-outer}    \n#element{view} {depth: 3}    \n#attribute{bindtap: selectFilterItem}      \n#attribute{class: filter-item {{filterList[selectFilterGroupIndex].selectName?'':'select'}}}      \n#attribute{data-name: }      \n#attribute{data-uuid: }      \n#attribute{wx:if: {{selectFilterGroupIndex==0}}}      \ndata{全部}      \n#element{view} {depth: 3}    \n#attribute{bindtap: selectFilterItem}      \n#attribute{class: filter-item {{filterList[selectFilterGroupIndex].selectName==item.name?'select':''}}}      \n#attribute{data-name: {{item.name}}}      \n#attribute{data-uuid: {{item.uuid}}}      \n#attribute{wx:for: {{filterList[selectFilterGroupIndex].itemList}}}      \n#attribute{wx:key: uuid}      \n#element{view} {depth: 4}      \n#attribute{class: filter-item-name}        \nscriptdata{item.name}        \n",
+        "attributes": {
+          "bindtap": "closeFilter",
+          "class": "filter-item-outer-back",
+          "wx:if": "{{selectFilterGroupName!=''}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "closeFilter",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: selectFilterItem}  \n#attribute{class: filter-item {{filterList[selectFilterGroupIndex].selectName?'':'select'}}}  \n#attribute{data-name: }  \n#attribute{data-uuid: }  \n#attribute{wx:if: {{selectFilterGroupIndex==0}}}  \ndata{全部}  \n",
+        "attributes": {
+          "bindtap": "selectFilterItem",
+          "class": "filter-item {{filterList[selectFilterGroupIndex].selectName?'':'select'}}",
+          "data-name": "",
+          "data-uuid": "",
+          "wx:if": "{{selectFilterGroupIndex==0}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["全部"],
+        "function_call": "selectFilterItem",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: selectFilterItem}  \n#attribute{class: filter-item {{filterList[selectFilterGroupIndex].selectName==item.name?'select':''}}}  \n#attribute{data-name: {{item.name}}}  \n#attribute{data-uuid: {{item.uuid}}}  \n#attribute{wx:for: {{filterList[selectFilterGroupIndex].itemList}}}  \n#attribute{wx:key: uuid}  \n#element{view} {depth: 4}  \n#attribute{class: filter-item-name}    \nscriptdata{item.name}    \n",
+        "attributes": {
+          "bindtap": "selectFilterItem",
+          "class": "filter-item {{filterList[selectFilterGroupIndex].selectName==item.name?'select':''}}",
+          "data-name": "{{item.name}}",
+          "data-uuid": "{{item.uuid}}",
+          "wx:for": "{{filterList[selectFilterGroupIndex].itemList}}",
+          "wx:key": "uuid"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "selectFilterItem",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/venue/list/list"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{form} {depth: 1}\n#attribute{bindsubmit: submitOrder}  \n#element{view} {depth: 2}  \n#attribute{class: product-detail}    \n#element{image} {depth: 3}    \n#attribute{class: product-image}      \n#attribute{mode: aspectFill}      \n#attribute{src: {{coverImage}}}      \n#element{view} {depth: 3}    \n#attribute{class: product-title}      \nscriptdata{title}      \n#element{view} {depth: 3}    \n#attribute{class: product_right}      \n#element{view} {depth: 4}      \n#attribute{class: product-price}        \n#element{text} {depth: 5}        \n#attribute{class: dollar}          \ndata{¥}          \nscriptdata{price}        \n#element{view} {depth: 4}      \n#attribute{class: count-group}        \n#element{view} {depth: 5}        \n#attribute{bindtap: countMinus}          \n#attribute{class: count-minus primary-color}          \n#element{image} {depth: 6}          \n#attribute{src: /image/venue/jian.png}            \n#element{view} {depth: 5}        \n#attribute{class: count}          \nscriptdata{count}          \n#element{view} {depth: 5}        \n#attribute{bindtap: countPlus}          \n#attribute{class: count-plus primary-color}          \n#element{image} {depth: 6}          \n#attribute{src: /image/venue/jia.png}            \n#element{view} {depth: 4}      \n#attribute{class: product-time}        \n#attribute{wx:if: {{info.startTime||info.endTime}}}        \n#element{view} {depth: 5}        \n#attribute{class: nobr}          \ndata{有效期}          \n#element{view} {depth: 5}        \n#attribute{class: form-value}          \n#element{view} {depth: 6}          \n#attribute{wx:if: {{info.startTime}}}            \ndata{自 }            \nscriptdata{info.startTime}            \ndata{ 00:00 }            \n#element{view} {depth: 6}          \n#attribute{wx:if: {{info.endTime}}}            \ndata{至 }            \nscriptdata{info.endTime}            \ndata{ 24:00 止}            \n#element{view} {depth: 2}  \n#attribute{class: section}    \n#element{view} {depth: 3}    \n#attribute{bindtap: selectCoupon}      \n#attribute{class: form-pair}      \n#element{view} {depth: 4}      \n#attribute{class: font_bold}        \ndata{体育消费券}        \n#element{view} {depth: 4}      \n#attribute{class: coupon primary-color}        \n#attribute{wx:if: {{couponPrice>0}}}        \n#element{view} {depth: 5}        \ndata{-}          \nscriptdata{couponPrice}          \n#element{image} {depth: 5}        \n#attribute{class: arrow-right}          \n#attribute{src: /image/right.png}          \n#element{view} {depth: 4}      \n#attribute{class: coupon primary-color}        \n#attribute{wx:else: }        \n#element{view} {depth: 5}        \n#attribute{class: font_bold}          \nscriptdata{couponList.length>0?couponList.length+'张可用':'选择消费券'}          \n#element{image} {depth: 5}        \n#attribute{class: arrow-right}          \n#attribute{src: /image/right.png}          \n#element{view} {depth: 3}    \n#attribute{class: form-pair}      \n#element{view} {depth: 4}      \n#attribute{class: font_bold}        \ndata{订单总额}        \n#element{view} {depth: 4}      \n#attribute{class: primary-color font_bold}        \n#attribute{style: font-size:40rpx;}        \n#element{text} {depth: 5}        \n#attribute{class: znumber}          \ndata{共}          \nscriptdata{count}          \ndata{件}          \n#element{text} {depth: 5}        \n#attribute{class: dollar}          \ndata{¥}          \nscriptdata{totalPrice}        \n#element{view} {depth: 3}    \n#attribute{class: form-pair}      \n#attribute{wx:if: {{startTime&&startTime!='null'||endTime&&endTime!='null'}}}      \n#element{view} {depth: 4}      \n#attribute{class: nobr}        \ndata{有效期}        \n#element{view} {depth: 4}      \n#attribute{class: limit-time}        \n#element{text} {depth: 5}        \n#attribute{wx:if: {{startTime&&startTime!='null'}}}          \ndata{自 }          \nscriptdata{startTime}          \ndata{ 00:00}          \n#element{text} {depth: 5}        \n#attribute{wx:if: {{endTime&&endTime!='null'}}}          \ndata{至 }          \nscriptdata{endTime}          \ndata{ 24:00 止}          \n#element{view} {depth: 2}  \n#attribute{class: detail_ft}    \n#element{button} {depth: 3}    \n#attribute{class: detail_btn primary-color-background}      \n#attribute{formtype: {{submitType}}}      \n#attribute{wx:if: {{hasUserInfo}}}      \n#element{text} {depth: 4}      \n#attribute{class: dollar}        \ndata{¥}        \n#element{text} {depth: 4}      \n#attribute{class: order_price}        \nscriptdata{totalPrice}        \n#element{text} {depth: 4}      \n#attribute{class: order_pay}        \nscriptdata{productOrderUuid==''?'立即支付':'继续支付'}        \n#element{button} {depth: 3}    \n#attribute{bindgetuserinfo: getUserInfo}      \n#attribute{class: detail_btn primary-color-background}      \n#attribute{opentype: getUserInfo}      \n#attribute{wx:else: }      \ndata{¥ }      \nscriptdata{totalPrice}      \ndata{ 立即支付}      \n",
+        "attributes": {
+          "bindsubmit": "submitOrder"
+        },
+        "bind_method": "bindsubmit",
+        "data": [],
+        "function_call": "submitOrder",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: countMinus}  \n#attribute{class: count-minus primary-color}  \n#element{image} {depth: 6}  \n#attribute{src: /image/venue/jian.png}    \n",
+        "attributes": {
+          "bindtap": "countMinus",
+          "class": "count-minus primary-color"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "countMinus",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: countPlus}  \n#attribute{class: count-plus primary-color}  \n#element{image} {depth: 6}  \n#attribute{src: /image/venue/jia.png}    \n",
+        "attributes": {
+          "bindtap": "countPlus",
+          "class": "count-plus primary-color"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "countPlus",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: selectCoupon}  \n#attribute{class: form-pair}  \n#element{view} {depth: 4}  \n#attribute{class: font_bold}    \ndata{体育消费券}    \n#element{view} {depth: 4}  \n#attribute{class: coupon primary-color}    \n#attribute{wx:if: {{couponPrice>0}}}    \n#element{view} {depth: 5}    \ndata{-}      \nscriptdata{couponPrice}      \n#element{image} {depth: 5}    \n#attribute{class: arrow-right}      \n#attribute{src: /image/right.png}      \n#element{view} {depth: 4}  \n#attribute{class: coupon primary-color}    \n#attribute{wx:else: }    \n#element{view} {depth: 5}    \n#attribute{class: font_bold}      \nscriptdata{couponList.length>0?couponList.length+'张可用':'选择消费券'}      \n#element{image} {depth: 5}    \n#attribute{class: arrow-right}      \n#attribute{src: /image/right.png}      \n",
+        "attributes": {
+          "bindtap": "selectCoupon",
+          "class": "form-pair"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "selectCoupon",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindgetuserinfo: getUserInfo}  \n#attribute{class: detail_btn primary-color-background}  \n#attribute{opentype: getUserInfo}  \n#attribute{wx:else: }  \ndata{¥ }  \nscriptdata{totalPrice}  \ndata{ 立即支付}  \n",
+        "attributes": {
+          "bindgetuserinfo": "getUserInfo",
+          "class": "detail_btn primary-color-background",
+          "opentype": "getUserInfo",
+          "wx:else": ""
+        },
+        "bind_method": "bindgetuserinfo",
+        "data": ["¥ ", " 立即支付"],
+        "function_call": "getUserInfo",
+        "scriptdata": ["totalPrice"]
+      }
+    ],
+    "page_name": "pages/venue/orderProduct/orderProduct"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{image} {depth: 3}\n#attribute{bindtap: phoneCall}  \n#attribute{class: phone-icon}  \n#attribute{src: /image/venue/telephone.png}  \n",
+        "attributes": {
+          "bindtap": "phoneCall",
+          "class": "phone-icon",
+          "src": "/image/venue/telephone.png"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "phoneCall",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: phoneCall}  \n#attribute{class: phone}  \nscriptdata{venue.phone}  \n",
+        "attributes": {
+          "bindtap": "phoneCall",
+          "class": "phone"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "phoneCall",
+        "scriptdata": ["venue.phone"]
+      },
+      {
+        "ast": "#element{button} {depth: 3}\n#attribute{bindopensetting: openSettingCallBack}  \n#attribute{class: nav-link primary-color}  \n#attribute{opentype: openSetting}  \n#attribute{wx:if: {{!hasUserLocation}}}  \ndata{地图 >}  \n",
+        "attributes": {
+          "bindopensetting": "openSettingCallBack",
+          "class": "nav-link primary-color",
+          "opentype": "openSetting",
+          "wx:if": "{{!hasUserLocation}}"
+        },
+        "bind_method": "bindopensetting",
+        "data": ["地图 >"],
+        "function_call": "openSettingCallBack",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: openMap}  \n#attribute{class: nav-link primary-color}  \n#attribute{wx:if: {{hasUserLocation}}}  \ndata{地图 >}  \n",
+        "attributes": {
+          "bindtap": "openMap",
+          "class": "nav-link primary-color",
+          "wx:if": "{{hasUserLocation}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["地图 >"],
+        "function_call": "openMap",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 4}\n#attribute{bindgetuserinfo: getUserInfo}  \n#attribute{class: product-buy primary-color-background}  \n#attribute{data-idcard: {{idcard}}}  \n#attribute{data-name: {{name}}}  \n#attribute{data-url: ../orderProduct/orderProduct?coverImage={{item.coverImage}}&uuid={{item.uuid}}&price={{item.price}}&title={{item.title}}&venueUuid={{venue.uuid}}&startTime={{item.startTime}}&endTime={{item.endTime}}}  \n#attribute{opentype: getUserInfo}  \n#attribute{wx:if: {{isnew!=1}}}  \ndata{购买}  \n",
+        "attributes": {
+          "bindgetuserinfo": "getUserInfo",
+          "class": "product-buy primary-color-background",
+          "data-idcard": "{{idcard}}",
+          "data-name": "{{name}}",
+          "data-url": "../orderProduct/orderProduct?coverImage={{item.coverImage}}&uuid={{item.uuid}}&price={{item.price}}&title={{item.title}}&venueUuid={{venue.uuid}}&startTime={{item.startTime}}&endTime={{item.endTime}}",
+          "opentype": "getUserInfo",
+          "wx:if": "{{isnew!=1}}"
+        },
+        "bind_method": "bindgetuserinfo",
+        "data": ["购买"],
+        "function_call": "getUserInfo",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/venue/detail/detail"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: auth}  \n#attribute{class: action}  \ndata{授  权}  \n",
+        "attributes": {
+          "bindtap": "auth",
+          "class": "action"
+        },
+        "bind_method": "bindtap",
+        "data": ["授  权"],
+        "function_call": "auth",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/productOrder/code/code"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: couponClick}  \n#attribute{class: action primary-color}  \n#attribute{data-price: {{item.couponPrice}}}  \n#attribute{data-required: {{item.requiredPrice}}}  \n#attribute{data-uuid: {{item.uuid}}}  \n#attribute{data-winfo: {{item.wInfo}}}  \n#attribute{data-waresname: {{item.waresName}}}  \n#attribute{wx:if: {{item.isUse==1}}}  \ndata{使用\r\n\t\t\t\t}  \n",
+        "attributes": {
+          "bindtap": "couponClick",
+          "class": "action primary-color",
+          "data-price": "{{item.couponPrice}}",
+          "data-required": "{{item.requiredPrice}}",
+          "data-uuid": "{{item.uuid}}",
+          "data-waresname": "{{item.waresName}}",
+          "data-winfo": "{{item.wInfo}}",
+          "wx:if": "{{item.isUse==1}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["使用\r\n\t\t\t\t"],
+        "function_call": "couponClick",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 5}\n#attribute{bindtap: couponClick}  \n#attribute{class: action primary-color}  \n#attribute{data-price: {{item.couponPrice}}}  \n#attribute{data-required: {{item.requiredPrice}}}  \n#attribute{data-uuid: {{item.uuid}}}  \n#attribute{data-winfo: {{item.wInfo}}}  \n#attribute{data-waresname: {{item.waresName}}}  \n#attribute{wx:if: {{item.isUse==1}}}  \ndata{使用\r\n\t\t\t\t}  \n",
+        "attributes": {
+          "bindtap": "couponClick",
+          "class": "action primary-color",
+          "data-price": "{{item.couponPrice}}",
+          "data-required": "{{item.requiredPrice}}",
+          "data-uuid": "{{item.uuid}}",
+          "data-waresname": "{{item.waresName}}",
+          "data-winfo": "{{item.wInfo}}",
+          "wx:if": "{{item.isUse==1}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["使用\r\n\t\t\t\t"],
+        "function_call": "couponClick",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/venue/selectCoupon/selectCoupon"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{form} {depth: 1}\n#attribute{bindsubmit: submitAuth}  \n#attribute{class: auth}  \n#element{view} {depth: 2}  \n#attribute{class: weui-cells weui-cells_after-title}    \n#element{view} {depth: 3}    \n#attribute{class: weui-cell weui-cell_input}      \n#element{view} {depth: 4}      \n#attribute{class: weui-cell__hd}        \n#element{view} {depth: 5}        \n#attribute{class: weui-label}          \ndata{真实姓名}          \n#element{view} {depth: 4}      \n#attribute{class: weui-cell__bd}        \n#element{input} {depth: 5}        \n#attribute{class: weui-input}          \n#attribute{disabled: true}          \n#attribute{name: name}          \n#attribute{placeholder: 请输入您的真实姓名}          \n#attribute{type: text}          \n#attribute{value: {{name}}}          \n#attribute{wx:if: {{name!=''}}}          \n#element{input} {depth: 5}        \n#attribute{class: weui-input}          \n#attribute{name: name}          \n#attribute{placeholder: 请输入您的真实姓名}          \n#attribute{type: text}          \n#attribute{wx:else: }          \n#element{view} {depth: 3}    \n#attribute{class: weui-cell weui-cell_input}      \n#element{view} {depth: 4}      \n#attribute{class: weui-cell__hd}        \n#element{view} {depth: 5}        \n#attribute{class: weui-label}          \ndata{身份证号}          \n#element{view} {depth: 4}      \n#attribute{class: weui-cell__bd}        \n#element{input} {depth: 5}        \n#attribute{class: weui-input}          \n#attribute{disabled: true}          \n#attribute{name: cardNumber}          \n#attribute{placeholder: 请输入您的身份证号}          \n#attribute{type: idcard}          \n#attribute{value: {{idcard}}}          \n#attribute{wx:if: {{idcard!=''}}}          \n#element{input} {depth: 5}        \n#attribute{class: weui-input}          \n#attribute{name: cardNumber}          \n#attribute{placeholder: 请输入您的身份证号}          \n#attribute{type: idcard}          \n#attribute{wx:else: }          \n#element{view} {depth: 3}    \n#attribute{class: weui-cell weui-cell_input}      \n#element{view} {depth: 4}      \n#attribute{class: weui-cell__hd}        \n#element{view} {depth: 5}        \n#attribute{class: weui-label}          \ndata{手机号码}          \n#element{view} {depth: 4}      \n#attribute{class: weui-cell__bd}        \n#element{input} {depth: 5}        \n#attribute{bindinput: inputPhoneNum}          \n#attribute{class: weui-input}          \n#attribute{name: phone}          \n#attribute{placeholder: 请输入您的11位手机号码}          \n#attribute{type: number}          \n#element{view} {depth: 3}    \n#attribute{class: weui-cell weui-cell_input}      \n#element{view} {depth: 4}      \n#attribute{class: weui-cell__hd}        \n#element{view} {depth: 5}        \n#attribute{class: weui-label}          \ndata{验证号码}          \n#element{view} {depth: 4}      \n#attribute{class: weui-cell__bd}        \n#element{input} {depth: 5}        \n#attribute{class: weui-input}          \n#attribute{name: code}          \n#attribute{placeholder: 请注意查收验证码}          \n#attribute{type: number}          \n#element{view} {depth: 4}      \n#attribute{bindtap: beginSmsTimer}        \n#attribute{class: code-btn}        \n#attribute{wx:if: {{!smsBtnClicked}}}        \ndata{获取验证码}        \n#element{view} {depth: 4}      \n#attribute{class: code-btn}        \n#attribute{wx:if: {{smsBtnClicked}}}        \nscriptdata{smsTimerCount}        \ndata{s 后重试}        \n#element{view} {depth: 2}  \n#attribute{style: text-align:center;color:red;font-size:25rpx;margin-top:20rpx;}    \n#element{text} {depth: 3}    \n#attribute{bindtap: nocard}      \ndata{申请中国银行银行卡或信用卡，可享受更多优惠叠加}      \n#element{view} {depth: 2}  \n#attribute{style: padding:60rpx;background-color:#fff;}    \n#element{view} {depth: 2}  \n#attribute{class: detail-ft}    \n#element{button} {depth: 3}    \n#attribute{class: detail-btn primary-color-background}      \n#attribute{formtype: submit}      \ndata{去认证}      \n",
+        "attributes": {
+          "bindsubmit": "submitAuth",
+          "class": "auth"
+        },
+        "bind_method": "bindsubmit",
+        "data": [],
+        "function_call": "submitAuth",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 5}\n#attribute{bindinput: inputPhoneNum}  \n#attribute{class: weui-input}  \n#attribute{name: phone}  \n#attribute{placeholder: 请输入您的11位手机号码}  \n#attribute{type: number}  \n",
+        "attributes": {
+          "bindinput": "inputPhoneNum",
+          "class": "weui-input",
+          "name": "phone",
+          "placeholder": "请输入您的11位手机号码",
+          "type": "number"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "inputPhoneNum",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: beginSmsTimer}  \n#attribute{class: code-btn}  \n#attribute{wx:if: {{!smsBtnClicked}}}  \ndata{获取验证码}  \n",
+        "attributes": {
+          "bindtap": "beginSmsTimer",
+          "class": "code-btn",
+          "wx:if": "{{!smsBtnClicked}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["获取验证码"],
+        "function_call": "beginSmsTimer",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{text} {depth: 3}\n#attribute{bindtap: nocard}  \ndata{申请中国银行银行卡或信用卡，可享受更多优惠叠加}  \n",
+        "attributes": {
+          "bindtap": "nocard"
+        },
+        "bind_method": "bindtap",
+        "data": ["申请中国银行银行卡或信用卡，可享受更多优惠叠加"],
+        "function_call": "nocard",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/user/authentication/authentication"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/user/chinabank/index"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/user/opencard/link_one"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/user/opencard/link_two"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/productOrder/pay/pay"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/venue/map/map"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{image} {depth: 5}\n#attribute{bindtap: showImage}  \n#attribute{class: comment-image}  \n#attribute{data-commentindex: {{index}}}  \n#attribute{data-index: {{innerIndex}}}  \n#attribute{mode: aspectFill}  \n#attribute{src: {{innerItem.imageUrlTemp}}}  \n#attribute{wx:for: {{item.imageList}}}  \n#attribute{wx:for-index: innerIndex}  \n#attribute{wx:for-item: innerItem}  \n#attribute{wx:key: *this}  \n",
+        "attributes": {
+          "bindtap": "showImage",
+          "class": "comment-image",
+          "data-commentindex": "{{index}}",
+          "data-index": "{{innerIndex}}",
+          "mode": "aspectFill",
+          "src": "{{innerItem.imageUrlTemp}}",
+          "wx:for": "{{item.imageList}}",
+          "wx:for-index": "innerIndex",
+          "wx:for-item": "innerItem",
+          "wx:key": "*this"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "showImage",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 2}\n#attribute{bindgetuserinfo: getUserInfo}  \n#attribute{class: product-buy primary-color-background}  \n#attribute{data-idcard: {{idcard}}}  \n#attribute{data-name: {{name}}}  \n#attribute{data-url: ../orderProduct/orderProduct?coverImage={{product.coverImage}}&uuid={{product.uuid}}&price={{product.price}}&title={{product.title}}&venueUuid={{venueUuid}}&startTime={{product.startTime}}&endTime={{product.endTime}}}  \n#attribute{opentype: getUserInfo}  \n#attribute{wx:if: {{isnew!=1}}}  \ndata{立即购买}  \n",
+        "attributes": {
+          "bindgetuserinfo": "getUserInfo",
+          "class": "product-buy primary-color-background",
+          "data-idcard": "{{idcard}}",
+          "data-name": "{{name}}",
+          "data-url": "../orderProduct/orderProduct?coverImage={{product.coverImage}}&uuid={{product.uuid}}&price={{product.price}}&title={{product.title}}&venueUuid={{venueUuid}}&startTime={{product.startTime}}&endTime={{product.endTime}}",
+          "opentype": "getUserInfo",
+          "wx:if": "{{isnew!=1}}"
+        },
+        "bind_method": "bindgetuserinfo",
+        "data": ["立即购买"],
+        "function_call": "getUserInfo",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/venue/product/product"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{form} {depth: 1}\n#attribute{bindsubmit: submit}  \n#element{view} {depth: 2}  \n#attribute{class: rate-outer}    \n#element{view} {depth: 3}    \ndata{场馆评分}      \n#element{view} {depth: 3}    \n#attribute{bindtap: starClick}      \n#attribute{class: star-outer}      \n#attribute{data-number: {{item}}}      \n#attribute{wx:for: {{[1,2,3,4,5]}}}      \n#attribute{wx:key: *this}      \n#element{image} {depth: 4}      \n#attribute{class: star}        \n#attribute{src: /image/order/star.png}        \n#attribute{wx:if: {{startNumber>item-1}}}        \n#element{image} {depth: 4}      \n#attribute{class: star}        \n#attribute{src: /image/order/star_empty.png}        \n#attribute{wx:else: }        \n#element{view} {depth: 2}  \n#attribute{class: content}    \n#element{textarea} {depth: 3}    \n#attribute{name: content}      \n#attribute{placeholder: 写下你的想法吧ヽ(￣▽￣)ﾉ,大家都等着你的使用心得呢!}      \n#element{view} {depth: 3}    \n#attribute{class: image-list}      \n#element{view} {depth: 4}      \n#attribute{class: image-item}        \n#attribute{wx:for: {{imageUrlList}}}        \n#attribute{wx:key: *this}        \n#element{image} {depth: 5}        \n#attribute{class: item-image}          \n#attribute{mode: aspectFill}          \n#attribute{src: {{item}}}          \n#element{image} {depth: 5}        \n#attribute{bindtap: deleteImage}          \n#attribute{class: image-delete}          \n#attribute{data-index: {{index}}}          \n#attribute{src: /image/moment_image_delete.png}          \n#element{view} {depth: 4}      \n#attribute{bindtap: chooseImage}        \n#attribute{class: image-item}        \n#attribute{wx:if: {{imageUrlList.length<3}}}        \ndata{+ 图片\r\n            }        \n#element{button} {depth: 2}  \n#attribute{class: footer primary-color-background}    \n#attribute{formtype: submit}    \ndata{发布}    \n",
+        "attributes": {
+          "bindsubmit": "submit"
+        },
+        "bind_method": "bindsubmit",
+        "data": [],
+        "function_call": "submit",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: starClick}  \n#attribute{class: star-outer}  \n#attribute{data-number: {{item}}}  \n#attribute{wx:for: {{[1,2,3,4,5]}}}  \n#attribute{wx:key: *this}  \n#element{image} {depth: 4}  \n#attribute{class: star}    \n#attribute{src: /image/order/star.png}    \n#attribute{wx:if: {{startNumber>item-1}}}    \n#element{image} {depth: 4}  \n#attribute{class: star}    \n#attribute{src: /image/order/star_empty.png}    \n#attribute{wx:else: }    \n",
+        "attributes": {
+          "bindtap": "starClick",
+          "class": "star-outer",
+          "data-number": "{{item}}",
+          "wx:for": "{{[1,2,3,4,5]}}",
+          "wx:key": "*this"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "starClick",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{image} {depth: 5}\n#attribute{bindtap: deleteImage}  \n#attribute{class: image-delete}  \n#attribute{data-index: {{index}}}  \n#attribute{src: /image/moment_image_delete.png}  \n",
+        "attributes": {
+          "bindtap": "deleteImage",
+          "class": "image-delete",
+          "data-index": "{{index}}",
+          "src": "/image/moment_image_delete.png"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "deleteImage",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: chooseImage}  \n#attribute{class: image-item}  \n#attribute{wx:if: {{imageUrlList.length<3}}}  \ndata{+ 图片\r\n            }  \n",
+        "attributes": {
+          "bindtap": "chooseImage",
+          "class": "image-item",
+          "wx:if": "{{imageUrlList.length<3}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["+ 图片\r\n            "],
+        "function_call": "chooseImage",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/productOrder/comment/comment"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{view} {depth: 2}\n#attribute{bindtap: showRule}  \n#attribute{class: rule primary-color}  \ndata{消费券说明}  \n",
+        "attributes": {
+          "bindtap": "showRule",
+          "class": "rule primary-color"
+        },
+        "bind_method": "bindtap",
+        "data": ["消费券说明"],
+        "function_call": "showRule",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 1}\n#attribute{bindtap: closeRule}  \n#attribute{catchtouchmove: justCatch}  \n#attribute{class: rule-back}  \n#attribute{style: width:{{windowWidth}}px;height:{{windowHeight}}px}  \n#attribute{wx:if: {{showRule}}}  \n#element{include} {depth: 2}  \n#attribute{src: ../rule.wxml}    \n",
+        "attributes": {
+          "bindtap": "closeRule",
+          "catchtouchmove": "justCatch",
+          "class": "rule-back",
+          "style": "width:{{windowWidth}}px;height:{{windowHeight}}px",
+          "wx:if": "{{showRule}}"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "closeRule",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: collectCoupon}  \n#attribute{class: action primary-color}  \n#attribute{data-uuid: {{item.uuid}}}  \n#attribute{wx:if: {{hasUserInfo}}}  \ndata{领取\r\n         }  \n",
+        "attributes": {
+          "bindtap": "collectCoupon",
+          "class": "action primary-color",
+          "data-uuid": "{{item.uuid}}",
+          "wx:if": "{{hasUserInfo}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["领取\r\n         "],
+        "function_call": "collectCoupon",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{button} {depth: 4}\n#attribute{bindgetuserinfo: getUserInfo}  \n#attribute{class: action primary-color}  \n#attribute{data-uuid: {{item.uuid}}}  \n#attribute{opentype: getUserInfo}  \n#attribute{wx:else: }  \ndata{领取}  \n",
+        "attributes": {
+          "bindgetuserinfo": "getUserInfo",
+          "class": "action primary-color",
+          "data-uuid": "{{item.uuid}}",
+          "opentype": "getUserInfo",
+          "wx:else": ""
+        },
+        "bind_method": "bindgetuserinfo",
+        "data": ["领取"],
+        "function_call": "getUserInfo",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/governmentCoupon/collectCoupon/collectCoupon"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/productOrder/paySuccess/paySuccess"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{form} {depth: 1}\n#attribute{bindsubmit: submitAuth}  \n#attribute{class: auth}  \n#element{view} {depth: 2}  \n#attribute{class: wlt-weui-cell}    \n#element{view} {depth: 3}    \n#attribute{class: wlt-cell}      \n#element{view} {depth: 4}      \n#attribute{class: weui-cell__hd}        \n#element{image} {depth: 5}        \n#attribute{class: icon-img-phone}          \n#attribute{src: /image/Authentication/abnormalAuthentication_phone.jpg}          \n#element{view} {depth: 4}      \n#attribute{class: weui-cell__bd}        \n#element{input} {depth: 5}        \n#attribute{bindinput: phoneInput}          \n#attribute{class: weui-input}          \n#attribute{maxlength: 11}          \n#attribute{name: phone}          \n#attribute{placeholder: 请输入手机号}          \n#attribute{type: number}          \n#element{view} {depth: 3}    \n#attribute{class: wlt-cell-code-long}      \n#element{view} {depth: 4}      \n#attribute{class: wlt-cell-code}        \n#element{view} {depth: 5}        \n#attribute{class: weui-cell__hd}          \n#element{image} {depth: 6}          \n#attribute{class: icon-img-code}            \n#attribute{src: /image/Authentication/abnormalAuthentication_code.jpg}            \n#element{view} {depth: 5}        \n#attribute{class: weui-cell__bd}          \n#element{input} {depth: 6}          \n#attribute{bindinput: codeInput}            \n#attribute{bindtap: codeClick}            \n#attribute{class: weui-input}            \n#attribute{name: code}            \n#attribute{placeholder: 请输入手机验证码}            \n#attribute{type: number}            \n#element{view} {depth: 4}      \n#attribute{bindtap: beginSmsTimer}        \n#attribute{class: code-btn}        \n#attribute{wx:if: {{!smsBtnClicked}}}        \ndata{获取验证码}        \n#element{view} {depth: 4}      \n#attribute{class: code-btn}        \n#attribute{wx:if: {{smsBtnClicked}}}        \nscriptdata{smsTimerCount}        \ndata{s 后重试}        \n#element{view} {depth: 2}  \n#attribute{style: padding:60rpx}    \n#element{view} {depth: 2}  \n#attribute{class: detail-ft}    \n#element{button} {depth: 3}    \n#attribute{class: detail-btn primary-color-background}      \n#attribute{formtype: submit}      \ndata{提交验证}      \n",
+        "attributes": {
+          "bindsubmit": "submitAuth",
+          "class": "auth"
+        },
+        "bind_method": "bindsubmit",
+        "data": [],
+        "function_call": "submitAuth",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 5}\n#attribute{bindinput: phoneInput}  \n#attribute{class: weui-input}  \n#attribute{maxlength: 11}  \n#attribute{name: phone}  \n#attribute{placeholder: 请输入手机号}  \n#attribute{type: number}  \n",
+        "attributes": {
+          "bindinput": "phoneInput",
+          "class": "weui-input",
+          "maxlength": "11",
+          "name": "phone",
+          "placeholder": "请输入手机号",
+          "type": "number"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "phoneInput",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 6}\n#attribute{bindinput: codeInput}  \n#attribute{bindtap: codeClick}  \n#attribute{class: weui-input}  \n#attribute{name: code}  \n#attribute{placeholder: 请输入手机验证码}  \n#attribute{type: number}  \n",
+        "attributes": {
+          "bindinput": "codeInput",
+          "bindtap": "codeClick",
+          "class": "weui-input",
+          "name": "code",
+          "placeholder": "请输入手机验证码",
+          "type": "number"
+        },
+        "bind_method": "bindinput",
+        "data": [],
+        "function_call": "codeInput",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{input} {depth: 6}\n#attribute{bindinput: codeInput}  \n#attribute{bindtap: codeClick}  \n#attribute{class: weui-input}  \n#attribute{name: code}  \n#attribute{placeholder: 请输入手机验证码}  \n#attribute{type: number}  \n",
+        "attributes": {
+          "bindinput": "codeInput",
+          "bindtap": "codeClick",
+          "class": "weui-input",
+          "name": "code",
+          "placeholder": "请输入手机验证码",
+          "type": "number"
+        },
+        "bind_method": "bindtap",
+        "data": [],
+        "function_call": "codeClick",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 4}\n#attribute{bindtap: beginSmsTimer}  \n#attribute{class: code-btn}  \n#attribute{wx:if: {{!smsBtnClicked}}}  \ndata{获取验证码}  \n",
+        "attributes": {
+          "bindtap": "beginSmsTimer",
+          "class": "code-btn",
+          "wx:if": "{{!smsBtnClicked}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["获取验证码"],
+        "function_call": "beginSmsTimer",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/user/abnormalAuthentication/abnormalAuthentication"
+  },
+  {
+    "component_list": [
+      {
+        "ast": "#element{form} {depth: 3}\n#attribute{bindsubmit: cancelOrder}  \n#attribute{class: action-margin}  \n#element{input} {depth: 4}  \n#attribute{hidden: true}    \n#attribute{name: uuid}    \n#attribute{value: {{info.uuid}}}    \n#element{input} {depth: 4}  \n#attribute{hidden: true}    \n#attribute{name: index}    \n#attribute{value: {{index}}}    \n#element{button} {depth: 4}  \n#attribute{class: action}    \n#attribute{formtype: submit}    \ndata{取消订单}    \n",
+        "attributes": {
+          "bindsubmit": "cancelOrder",
+          "class": "action-margin"
+        },
+        "bind_method": "bindsubmit",
+        "data": [],
+        "function_call": "cancelOrder",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{form} {depth: 3}\n#attribute{bindsubmit: payOrder}  \n#element{input} {depth: 4}  \n#attribute{hidden: true}    \n#attribute{name: uuid}    \n#attribute{value: {{info.uuid}}}    \n#element{button} {depth: 4}  \n#attribute{class: action action-primary-border}    \n#attribute{formtype: submit}    \ndata{付款}    \n",
+        "attributes": {
+          "bindsubmit": "payOrder"
+        },
+        "bind_method": "bindsubmit",
+        "data": [],
+        "function_call": "payOrder",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{form} {depth: 3}\n#attribute{bindsubmit: refund}  \n#attribute{class: action-margin}  \n#element{input} {depth: 4}  \n#attribute{hidden: true}    \n#attribute{name: uuid}    \n#attribute{value: {{info.uuid}}}    \n#element{button} {depth: 4}  \n#attribute{class: action}    \n#attribute{formtype: submit}    \ndata{申请退款}    \n",
+        "attributes": {
+          "bindsubmit": "refund",
+          "class": "action-margin"
+        },
+        "bind_method": "bindsubmit",
+        "data": [],
+        "function_call": "refund",
+        "scriptdata": []
+      },
+      {
+        "ast": "#element{view} {depth: 3}\n#attribute{bindtap: auth}  \n#attribute{class: action action-margin}  \n#attribute{wx:if: {{showButton}}}  \ndata{授权}  \n",
+        "attributes": {
+          "bindtap": "auth",
+          "class": "action action-margin",
+          "wx:if": "{{showButton}}"
+        },
+        "bind_method": "bindtap",
+        "data": ["授权"],
+        "function_call": "auth",
+        "scriptdata": []
+      }
+    ],
+    "page_name": "pages/productOrder/detail/detail"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/list/list"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/productOrder/rotate/rotate"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/notice/notice"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/Activity/newactivity"
+  },
+  {
+    "component_list": [],
+    "page_name": "pages/Lottery/lottery"
+  }
+]
