@@ -3,14 +3,26 @@ import logging
 logger = logging.getLogger(__name__)
 
 def read_json_file(file_path):
+    """
+    Reads a JSON file and returns the parsed data.
+    
+    Parameters:
+    - file_path: str, path to the JSON file.
+    
+    Returns:
+    - data: dict or list, the parsed JSON data.
+    """
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
-            json_data = file.read()
-        return json.loads(json_data)
-    except:
-        logger.error(f"read json file: {file_path} error")
-        return None
-
+            data = json.load(file)
+        return data
+    except FileNotFoundError:
+        logger.error(f"Error: The file {file_path} does not exist.")
+    except json.JSONDecodeError:
+        logger.error(f"Error: The file {file_path} is not a valid JSON file.")
+    except Exception as e:
+        logger.error(f"An unexpected error occurred: {e}")
+        
 def write_json_file(file_path, json_data):
     with open(file_path, 'w', encoding='utf-8') as file:
         json.dump(json_data, file, indent=4)
@@ -58,26 +70,41 @@ def check_borderStyle(json_data):
     if json_data.get('tabBar') is not None:
         if json_data['tabBar'].get("borderStyle") is not None:
             color_str = json_data['tabBar']['borderStyle']
-            if color_str != "black" and color_str != "white":
-                return False
-    return True
+            if color_str not in ["black", "white"]:
+                json_data['tabBar']['borderStyle'] = 'white'
+
+def check_window_attrs(json_data):
+    if json_data.get('window') is not None:
+        if json_data['window'].get("onReachBottomDistance") is not None:
+            distance = json_data['window']['onReachBottomDistance']
+            json_data['window']['onReachBottomDistance'] = int(distance)
+        if json_data['window'].get("navigationBarTextStyle") is not None:
+            color = json_data['window']['navigationBarTextStyle']
+            if color not in ["black", "white"]:
+                json_data['window']['navigationBarTextStyle'] = "white"
+
+def check_attrs(json_data):
+    if json_data.get("navigationBarTextStyle") is not None:
+        color = json_data['navigationBarTextStyle']
+        if color not in ["black", "white"]:
+            json_data['navigationBarTextStyle'] = "white"
 
 def check_all_paths(MINIRPOGRAM_PATH, app_json_path=None):
-    APP_JSON_PATH = app_json_path if app_json_path else os.path.join(MINIRPOGRAM_PATH, 'app.json')
+    APP_JSON_PATH = os.path.join(MINIRPOGRAM_PATH, 'app.json')
     
     json_data = read_json_file(APP_JSON_PATH)
     if not json_data:
         return
     
-    if check_borderStyle(json_data) is False:
-        json_data['tabBar']['borderStyle'] = 'white'
-
+    check_borderStyle(json_data)
+    check_window_attrs(json_data)
+    
     all_subpackage_pages = process_subpackage_info(json_data['subPackages'], MINIRPOGRAM_PATH ) if json_data.get('subPackages') is not None else {'exist': [], 'miss': []}
     all_pages, all_plugins= process_page_info(json_data['pages'], MINIRPOGRAM_PATH )
 
-    print(f"In total, there are {len(all_pages['exist'])} complete pages and {len(all_pages['miss'])} missing pages")
-    print(f"there are {len(all_plugins['exist'])} complete plugin pages and {len(all_plugins['miss'])} missing plugin pages")
-    print(f"In total, there are {len(all_plugins['exist'])} complete sub-pages and {len(all_plugins['miss'])} missing sub-pages")
+    logger.info(f"In total, there are {len(all_pages['exist'])} complete pages and {len(all_pages['miss'])} missing pages")
+    logger.info(f"there are {len(all_plugins['exist'])} complete plugin pages and {len(all_plugins['miss'])} missing plugin pages")
+    logger.info(f"In total, there are {len(all_plugins['exist'])} complete sub-pages and {len(all_plugins['miss'])} missing sub-pages")
     if len(all_plugins['exist']) == 0:
         json_data.pop('plugins', None)
 
@@ -89,7 +116,9 @@ def check_all_paths(MINIRPOGRAM_PATH, app_json_path=None):
     for page in json_data['pages']:
         if page not in missed_page:
             modified_pages.append(page)
-        
+    
+    if modified_pages ==[]:
+        logger.info(f'Miniapp {MINIRPOGRAM_PATH} has no page after preprocessing')
     json_data['pages'] = modified_pages
     
     if len(all_subpackage_pages['exist'])== 0:

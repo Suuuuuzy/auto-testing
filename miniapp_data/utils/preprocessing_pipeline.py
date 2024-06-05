@@ -1,36 +1,36 @@
 import os
 from tqdm import tqdm
+import multiprocessing as mp
 import logging
 logger = logging.getLogger(__name__)
-from config import *
-from miniapp_data.utils.preprocess import preprocess
-
+from preprocess import preprocess
+logfileName = 'wxapkgs-42w-unpacked-preprocessing.log'
 logging.basicConfig(
-    filename='preprocessing.log',
+    filename= logfileName,
     level=logging.DEBUG,
     format='%(asctime)s.%(msecs)03d %(levelname)s %(module)s - %(funcName)s: %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S',
 )
 
-if __name__ == '__main__':
-    import platform
-    if platform.system()=="Linux": #Linux
-        ROOT = dataj_large_scale_wxapkg_unpacked_ROOT
-    else:
-        ROOT = mac_unpacked_wxapkg_ROOT
+def handle_packages(pkgs):
+    for pkg in tqdm(pkgs):
+        preprocess(pkg)
 
+
+if __name__ == '__main__':
     # logger.info('Started')
-    # ROOT_PATH = "/media/data4/jianjia_data4/miniapp_data/WeMinT_dataset/groundtruth/miniprograms"
-    # MINIRPOGRAM_NAME = "wx4b7fbaa1c41967fe"
+    ROOT = "/media/dataj/miniapp_data/wxapkgs-42w-unpacked"
     files = os.listdir(ROOT)
     files = [i for i in files if not i.startswith('.')]
-    if os.path.exists("preprocessing.log"):
-        with open ("preprocessing.log")as f:
+    if os.path.exists(logfileName):
+        with open (logfileName)as f:
             c = f.read()
-    files = [i for i in files if i not in c]   
-    logger.info(f'Start preprocessing {len(files)} packages')     
-    # files = ['wx940e8bc440dd2eb9', 'wx45cf09091aead547', 'wxad2e9789b5076244', 'wx8b0d722749666d1c', 'wx7dcf14c63c2e78da', 'wx93a380ad767c58ac', 'wx791f877ab36ea8b2', 'wxaf291362a455b5e1', 'wx7e20bfb214e0423f']
-    for file in tqdm(files):
-        preprocess(os.path.join(ROOT, file))
-        logger.info(f'{file} preprocessing finished')
-    # logger.info('Finished')
+    files = [os.path.join(ROOT, i) for i in files if i not in c]   
+    logger.info(f'Start preprocessing {len(files)} packages')    
+    package_names = files
+    processes = 128
+    batch_size = (len(package_names) + processes - 1) // processes
+    batched_package_names = [package_names[i:i+batch_size] for i in range(0, len(package_names), batch_size)]
+    with mp.Pool(processes=processes) as pool:
+        pool.map(handle_packages, batched_package_names)
+        
