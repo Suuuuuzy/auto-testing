@@ -1,13 +1,5 @@
 import re, os
 
-def find_and_format_wxml_files(directory):
-    for root, dirs, files in os.walk(directory):
-        for file in files:
-            if file.endswith('.wxml'):
-                file_path = (os.path.join(root, file))
-                format_wxml_style_attribute(file_path)
-                # wxml_files.append(os.path.join(root, file))
-    # return wxml_files
 
 def format_wxml_style_attribute(file_path):
     try:
@@ -39,15 +31,13 @@ def format_wxml_style_attribute(file_path):
         # Regular expression to match the pattern and remove unnecessary line breaks and spaces
         pattern = r"'\s*(.*?)\s*'"
         replacement = "'" + r'\1' + "'"
-
         # Perform the substitution
         content = re.sub(pattern, replacement, content)
+        # content = re.sub(r"(?<=')[^']*(?=')", lambda m: m.group(0).replace('\n', ''), content)
         
         pattern = r'(<[^>]*?)\s*(>)'
-
         # Replacement string
         replacement = r'\1\2'
-
         # Perform the substitution
         content = re.sub(pattern, replacement, content)
 
