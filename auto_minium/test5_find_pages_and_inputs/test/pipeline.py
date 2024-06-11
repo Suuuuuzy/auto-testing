@@ -28,7 +28,7 @@ def run_python_script(script_path):
 
 if __name__ == "__main__":
     tracemalloc.start()
-    project_path = "/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w-unpacked"
+    project_path = "/media/dataj/miniapp_data/wxapkgs-42w-unpacked"
     dev_tool_path = "/media/dataj/wechat-devtools-linux/wechat-web-devtools-linux-nodebug/bin/wechat-devtools-cli"
     script_path = '/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/test5_find_pages_and_inputs/test/main.py' 
     all_project_lists = [i for i in os.listdir(project_path) if not i.startswith('.')]
@@ -43,9 +43,10 @@ if __name__ == "__main__":
         input_data = {  
             "project_path": os.path.join(project_path, project),
             "dev_tool_path": dev_tool_path
+            # "test_port" add for parallel running?
             }
         generate_config(input_data)
         run_python_script(script_path)
     snapshot = tracemalloc.take_snapshot()
     top_stats = snapshot.statistics('lineno')
-    logger.info(f'\n Memory Allocation: {top_stats[:10]}')
+    logger.info(f'Memory Allocation: {top_stats[:10]}')

@@ -27,4 +27,3 @@ if __name__ == "__main__":
     logger_main.info(elapse_time)
     # cmd = "pkill -f nwjs"
     # subprocess.run(['pkill', '-f', 'nwjs'])
-    # print(result)

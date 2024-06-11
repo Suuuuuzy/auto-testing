@@ -51,9 +51,12 @@ def check_dirs(root_addr, dir_list):
 def process_subpackage_info(subpackage_data, root_dir):
     all_subpackage_pages_dir = []
     for item in subpackage_data:
-        root_dir = item['root']
-        pages_dir = item['pages']
-        all_subpackage_pages_dir.extend([os.path.join(root_dir, page_dir) for page_dir in pages_dir])
+        if 'root' in item and 'page' in item:
+            root_dir = item['root']
+            pages_dir = item['pages']
+            all_subpackage_pages_dir.extend([os.path.join(root_dir, page_dir) for page_dir in pages_dir])
+        else:
+            logger.error(f'Key not in subpackage in app.json in {root_dir}')
     return check_dirs(root_dir, all_subpackage_pages_dir)
 
 def process_page_info(pages_data, root_dir):
@@ -67,27 +70,37 @@ def process_page_info(pages_data, root_dir):
     return check_dirs(root_dir, all_pages_dir), check_dirs(root_dir, all_plugins_dir)
 
 def check_borderStyle(json_data):
-    if json_data.get('tabBar') is not None:
-        if json_data['tabBar'].get("borderStyle") is not None:
+    if 'tabBar' in json_data:
+        if "borderStyle" in json_data['tabBar']:
             color_str = json_data['tabBar']['borderStyle']
             if color_str not in ["black", "white"]:
                 json_data['tabBar']['borderStyle'] = 'white'
 
 def check_window_attrs(json_data):
-    if json_data.get('window') is not None:
-        if json_data['window'].get("onReachBottomDistance") is not None:
+    if "window" in json_data:
+        if "onReachBottomDistance" in json_data['window']:
             distance = json_data['window']['onReachBottomDistance']
+            distance = distance.replace("px", "")
             json_data['window']['onReachBottomDistance'] = int(distance)
-        if json_data['window'].get("navigationBarTextStyle") is not None:
+        if "navigationBarTextStyle" in json_data['window']:
             color = json_data['window']['navigationBarTextStyle']
             if color not in ["black", "white"]:
                 json_data['window']['navigationBarTextStyle'] = "white"
+        if "backgroundTextStyle" in json_data['window']:
+            color = json_data['window']['backgroundTextStyle']
+            if color not in ["dark", "light"]:
+                json_data['window']['backgroundTextStyle'] = "light"
+            
 
 def check_attrs(json_data):
-    if json_data.get("navigationBarTextStyle") is not None:
+    if "navigationBarTextStyle" in json_data:
         color = json_data['navigationBarTextStyle']
         if color not in ["black", "white"]:
             json_data['navigationBarTextStyle'] = "white"
+    if "backgroundTextStyle" in json_data:
+        color = json_data['backgroundTextStyle']
+        if color not in ["dark", "light"]:
+            json_data['backgroundTextStyle'] = "light"
 
 def check_all_paths(MINIRPOGRAM_PATH, app_json_path=None):
     APP_JSON_PATH = os.path.join(MINIRPOGRAM_PATH, 'app.json')

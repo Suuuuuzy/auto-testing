@@ -6,14 +6,15 @@ DECODED_LOG_PATH = "/home/suzy/temp/decoded_new_taint_log_file"
 def remove_and_decode():
     # remove empty logs
     logs = os.listdir(LOG_PATH)
+    decoded_logs = os.listdir(DECODED_LOG_PATH)
     for i in logs:
-        if os.path.getsize(os.path.join(LOG_PATH, i))==0:
+        if os.path.getsize(os.path.join(LOG_PATH, i))==0 or i in decoded_logs:
             os.remove(os.path.join(LOG_PATH, i))
     logs = os.listdir(LOG_PATH)
     print(len(logs))
     # decode
     result = subprocess.run('./check.sh')
-            # print(result)
+    # print(result)
 # check logs
 def check_TaintminiSinks():
     taintminiSinks = { "request":["url"], 
@@ -35,5 +36,5 @@ def check_TaintminiSinks():
                     print(key)
     
 if __name__ == "__main__":
-    # remove_and_decode()    
+    remove_and_decode()    
     # check_TaintminiSinks()
