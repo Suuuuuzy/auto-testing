@@ -9,8 +9,11 @@
 
 // #define PARSER_PRINT_MODE
 #define PARSER_JSON_MODE
+// #define PARSER_JSON_AST_MODE
+#define PARSER_JSON_ARG_MODE
 
-std::vector<std::string> get_json_info(std::string json_path)
+std::vector<std::string>
+get_json_info(std::string json_path)
 {
 
     std::ifstream json_file(json_path);
@@ -33,7 +36,7 @@ int main(int argc, char **argv)
         miniprogram_list;
 
     const std::filesystem::path ROOT_DIR = "/home/bella-xia/auto-testing/data/0_passing_groundtruth";
-    const std::filesystem::path JSON_DUMP_DIR = "/home/bella-xia/auto-testing/wxml_parser/results";
+    const std::filesystem::path JSON_DUMP_DIR = "/home/bella-xia/auto-testing/wxml_parser/alternative_trial_results";
 
     try
     {
@@ -62,7 +65,8 @@ int main(int argc, char **argv)
 #endif
 
     const std::filesystem::path first_miniprogram_app_json_path = static_cast<std::filesystem::path>(first_miniprogram_path) / static_cast<std::filesystem::path>("app.json");
-    // std::cout << first_miniprogram_app_json_path.string() << std::endl;
+    std::cout << "surveying miniprogram " << json_dump_dir_first_miniprogram.string() << std::endl;
+    std::cerr << "surveying miniprogram " << json_dump_dir_first_miniprogram.string() << std::endl;
 
     std::vector<std::string> path_list = get_json_info(first_miniprogram_app_json_path);
 
@@ -80,6 +84,8 @@ int main(int argc, char **argv)
         std::filesystem::path access_page = first_miniprogram_path / static_cast<std::filesystem::path>(page_path + ".wxml");
 
         // std::cout << access_page << std::endl;
+        std::cout << "surveying page " << page_path << std::endl;
+        std::cerr << "surveying page " << page_path << std::endl;
 
         std::ifstream file(access_page);
 
@@ -108,8 +114,11 @@ int main(int argc, char **argv)
             parser.print_all_bind_elements();
 #endif
 
-#ifdef PARSER_JSON_MODE
+#ifdef PARSER_JSON_AST_MODE
             miniprogram_json[page_path] = parser.get_all_bind_elements();
+#endif
+#ifdef PARSER_JSON_ARG_MODE
+            miniprogram_json[page_path] = parser.get_all_bind_element_args();
 #endif
         }
         catch (const std::runtime_error &e)

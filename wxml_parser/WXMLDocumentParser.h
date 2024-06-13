@@ -24,17 +24,20 @@ namespace Web
             if (!m_ran_through)
                 run();
 
-            print_bind_elements(m_root, &m_bind_storage, true);
+            print_bind_elements(m_root);
         }
         nlohmann::json get_all_bind_elements();
 
-        std::string args_for_bind_element(size_t idx);
+        nlohmann::json get_all_bind_element_args();
 
     private:
+        EventInstance args_for_bind_element(size_t idx);
+
         std::string m_pagename;
         RootNode *m_root;
         std::stack<RootNode *> m_stack_of_open_elements;
-        std::vector<std::tuple<std::string, std::string, Node *>> m_bind_storage;
+        std::vector<std::tuple<std::string, std::string, ElementWrapperNode *>> m_bind_storage;
+        std::vector<std::string> m_binding_events;
         HTMLTokenizer m_tokenizer;
         bool m_ran_through{false};
     };
