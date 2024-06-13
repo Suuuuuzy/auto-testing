@@ -5,12 +5,11 @@
 #include <sstream>
 #include <locale>
 #include <codecvt>
-#include <string>
 #include <stack>
 #include <regex>
-#include "nlohmann/json.hpp"
 
 #include "Node.h"
+#include "Event.h"
 
 #define TAB U'\u0009'
 #define BELL U'\u0007'
@@ -33,6 +32,13 @@
 #define QUESTION_MARK U'\u003F'
 
 #define RIGHT_SQUARE_BRACKET U'\u005D'
+
+#define END_OF_ELEMENT "<EndOfElement>\n"
+#define INTERGER_TYPE "<IntegerType>"
+#define FLOAT_TYPE "<FloatType>"
+#define BOOLEAN_TYPE "<BooleanType>"
+#define START_OF_ARR "<StartOfArray>"
+#define END_OF_ARR "<EndOfArray>"
 
 #define SWITCH_TO(new_state)          \
     will_switch_to(State::new_state); \
@@ -195,6 +201,7 @@
 namespace Web
 {
     // used to convert between char32_t and char
+    std::string replaceInvalidUtf8(const std::string &input);
     std::string utf32ToUtf8(const std::u32string &utf32Str);
     std::u32string utf8ToUtf32(const std::string &utf8Str);
     std::string char32ToString(char32_t ch);
@@ -204,12 +211,20 @@ namespace Web
     void print_ast(Node *node, int depth = 0);
     void get_ast(Node *node, std::stringstream *buffer, int depth = 0);
     void print_bind_elements(Node *node,
-                             std::vector<std::tuple<std::string, std::string, Node *>> *storage,
-                             bool print_flag = false);
+                             // std::vector<std::tuple<std::string, std::string, Node *>> *storage,
+                             int identifier = 0);
     void get_bind_element_json(Node *node, nlohmann::json *json_array);
 
     // used to split script data and non-script data
     std::vector<std::tuple<std::string, bool>> segment_string(const std::string &text);
+
+    std::string stripout_bubbling_event(const std::string &bind_name);
+    std::string convert_double_to_string(const double double_num);
+
+    std::string modify_attribute_name(const std::string &attribute_name);
+
+    void get_all_form_components(Node *root_node,
+                                 std::vector<std::tuple<std::string, std::string>> *data);
 }
 
 #endif // UTILS_H
