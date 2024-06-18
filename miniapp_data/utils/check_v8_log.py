@@ -3,7 +3,7 @@ import re
 import subprocess
 LOG_PATH = "/home/suzy/temp/new_taint_log_file"
 DECODED_LOG_PATH = "/home/suzy/temp/decoded_new_taint_log_file"
-def remove_and_decode():
+def remove_empty():
     # remove empty logs
     logs = os.listdir(LOG_PATH)
     decoded_logs = os.listdir(DECODED_LOG_PATH)
@@ -13,7 +13,7 @@ def remove_and_decode():
     logs = os.listdir(LOG_PATH)
     print(len(logs))
     # decode
-    result = subprocess.run('./check.sh')
+    # result = subprocess.run('./check.sh')
     # print(result)
 # check logs
 def check_TaintminiSinks():
@@ -23,18 +23,33 @@ def check_TaintminiSinks():
                         "sendSocketMessage":["data"],
                         "createUDPSocket":[]
                     }
-    logs = os.listdir(LOG_PATH)
+    sources = [
+        "inputBox",
+        "formSubmit",
+        "onLaunch",
+        "wechatAPI"
+    ]
+    source_prefix = "type = "
+    logs = os.listdir(DECODED_LOG_PATH)
+    data_flow_cnt = 0
     for file in logs:
         de = os.path.join(DECODED_LOG_PATH, file)
         if os.path.exists(de):
+            # try:
             with open(de) as f:
                 # print(file)
                 content = f.read()
             for key in taintminiSinks.keys():
                 if key in content:
-                    print(f"in file: {file}")
-                    print(key)
+                    for src in sources:
+                        if source_prefix+src in content:
+                            data_flow_cnt+=1
+                            print(f"in file: {file}")
+                            print(src, key)
+            
+    print(f"Num of miniapps: {len(logs)}")
+    print(f"Num of data flows: {data_flow_cnt}")
     
 if __name__ == "__main__":
-    remove_and_decode()    
+    remove_empty()    
     # check_TaintminiSinks()
