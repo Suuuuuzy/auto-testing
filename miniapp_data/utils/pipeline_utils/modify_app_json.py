@@ -106,9 +106,10 @@ def check_all_paths(MINIRPOGRAM_PATH, APP_JSON_PATH=None):
     
     check_borderStyle(json_data)
     check_window_attrs(json_data)
-    
-    process_subpackage_info(json_data['subPackages'], MINIRPOGRAM_PATH)
-    process_page_info(json_data['pages'], MINIRPOGRAM_PATH)
+    if 'subPackages' in json_data:
+        process_subpackage_info(json_data['subPackages'], MINIRPOGRAM_PATH)
+    if 'pages' in json_data:
+        process_page_info(json_data['pages'], MINIRPOGRAM_PATH)
     
     write_json_file(APP_JSON_PATH, json_data)
 

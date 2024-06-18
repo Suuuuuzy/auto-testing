@@ -67,5 +67,6 @@ def decompile_wxapkg_with_unveilr(wxapkg, output_path=None):
     
 if __name__ == '__main__':
     wxapkg_path = sys.argv[1]
-    output_path = wxapkg_path.replace(".wxapkg", "")
+    # output_path = wxapkg_path.replace(".wxapkg", "")
+    output_path = sys.argv[2]
     decompile_wxapkg_with_unveilr(wxapkg_path, output_path)
