@@ -164,24 +164,27 @@ def main():
     # Example usage:
     # logpath = "/home/suzy/temp/decoded_new_taint_log_file/test_parser"
     logpath = "/home/suzy/temp/decoded_new_taint_log_file/"
+    file = "wx70e4dfb6146026be-pc"
     for i in os.listdir(logpath):
-        with open(os.path.join(logpath, i)) as f:
-            json_string = f.read()
-        appid = i.split('_')[0]
-        # json_string = '(name = "John Doe", age = 30, is_student = false, courses = [( subject = "Math" ), ( subject = "Science") ])'
-        parser = CAPNPParser(json_string)
-        parsed_data = parser.parse()
+        if file in i:
+            with open(os.path.join(logpath, i)) as f:
+                json_string = f.read()
+            appid = i.split('_')[0]
+            # json_string = '(name = "John Doe", age = 30, is_student = false, courses = [( subject = "Math" ), ( subject = "Science") ])'
+            parser = CAPNPParser(json_string)
+            parsed_data = parser.parse()
 
-        for record in parsed_data:
-            for range in record['message']['jsSinkTainted']['taintSource']['ranges']:
-                source_type = range['type'] 
-                if source_type in ['sensWechatApi', 'formSubmit', 'inputBox', 'onLaunch']:
-                    print(appid)
-                    print(f'messageId: {record["messageId"]}')
-                    print(f'range: {range}')
-                    for content_log in record["message"]["jsSinkTainted"]["targetString"]["segments"]:
-                        print(f'content: {content_log["content"]}')
-                    print('\n')
+            for record in parsed_data:
+                for range in record['message']['jsSinkTainted']['taintSource']['ranges']:
+                    source_type = range['type'] 
+                    if source_type in ['sensWechatApi', 'formSubmit', 'inputBox']: #, 'onLaunch']:
+                        print(appid)
+                        print(f'messageId: {record["messageId"]}')
+                        print(f'range: {range}')
+                        for content_log in record["message"]["jsSinkTainted"]["targetString"]["segments"]:
+                            print(f'content: {content_log["content"]}')
+                            print(f'taint char: {content_log["content"][range["start"]]}')
+                        print('\n')
         
                 
 

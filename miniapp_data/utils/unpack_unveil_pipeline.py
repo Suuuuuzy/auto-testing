@@ -7,6 +7,7 @@ import json
 import platform
 from pathlib import Path
 import multiprocessing as mp
+import re
 
 logging.basicConfig(
     filename='unpack_with_unveil.log',
@@ -92,16 +93,24 @@ def handle_wxapkgs(wxapkgs):
                     logger.error(f'package {package} encountering error when trying to unpack: {str(e)}')
 
 def handle_wxapkgs_old(package_names):
-    output_dir = '/media/dataj/miniapp_data/wxapkgs-42w-unpacked/'
-    input_dir = "/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w"
     all_unpacked_packages= package_names
     print("Total wxapkg number: "+ str(len(all_unpacked_packages)))
     logger.info("Total wxapkg number: "+ str(len(all_unpacked_packages)))
     
-    all_unpacked_packages = [i for i in all_unpacked_packages if not os.path.exists(output_dir + i)]
-    print("Unpacked: "+  str(len(all_unpacked_packages)))
-    logger.info("Unpacked: "+  str(len(all_unpacked_packages)))
+    # all_unpacked_packages = [i for i in all_unpacked_packages if not os.path.exists(output_dir + i)]
     
+    with open('unpack_with_unveil.log') as f:
+        content = f.read()
+        # Define the regular expression pattern
+        pattern = r'wx[a-zA-Z0-9]{16}-pc'
+        # Find all matches in the sample text
+        matches = re.findall(pattern, content)
+        matches = set(matches)
+        
+    all_unpacked_packages = [i for i in all_unpacked_packages if i not in matches]
+    print("To be unpacked: "+  str(len(all_unpacked_packages)))
+    logger.info("To be unpacked: "+  str(len(all_unpacked_packages)))
+
     # all_unpacked_packages = all_unpacked_packages[:100]
     for package in tqdm(all_unpacked_packages):
         if not os.path.exists(os.path.join(output_dir, package)):

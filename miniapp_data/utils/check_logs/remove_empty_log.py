@@ -3,6 +3,7 @@ import re
 import subprocess
 LOG_PATH = "/home/suzy/temp/new_taint_log_file"
 DECODED_LOG_PATH = "/home/suzy/temp/decoded_new_taint_log_file"
+
 def remove_empty():
     # remove empty logs
     logs = os.listdir(LOG_PATH)
@@ -15,6 +16,7 @@ def remove_empty():
     # decode
     # result = subprocess.run('./check.sh')
     # print(result)
+
 # check logs
 def check_TaintminiSinks():
     taintminiSinks = { "request":["url"], 
