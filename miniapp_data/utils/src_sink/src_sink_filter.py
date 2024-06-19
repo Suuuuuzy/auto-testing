@@ -67,7 +67,7 @@ def find_js_files(wxapkgs):
 
 def main():
     unpacked_path = "/media/dataj/miniapp_data/wxapkgs-42w-unpacked"
-    filter_json = "src_sink/taintmini_src_sink_filtered.json"
+    filter_json = "./taintmini_src_sink_filtered.json"
 
     if os.path.exists(filter_json):
         with open(filter_json) as f:
