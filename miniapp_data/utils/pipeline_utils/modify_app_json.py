@@ -73,8 +73,10 @@ def check_window_attrs(json_data):
     if "window" in json_data:
         if "onReachBottomDistance" in json_data['window']:
             distance = json_data['window']['onReachBottomDistance']
-            distance = distance.replace("px", "")
-            json_data['window']['onReachBottomDistance'] = int(distance)
+            if isinstance(distance, str):
+                if "px" in distance:
+                    distance = distance.replace("px", "")
+                json_data['window']['onReachBottomDistance'] = int(distance)
         if "navigationBarTextStyle" in json_data['window']:
             color = json_data['window']['navigationBarTextStyle']
             if color not in ["black", "white"]:

@@ -1,9 +1,9 @@
-import os
+import os, re
 from tqdm import tqdm
 import multiprocessing as mp
 import logging
 logger = logging.getLogger(__name__)
-from preprocess import preprocess
+from single_preprocess import preprocess
 logfileName = 'wxapkgs-42w-unpacked-preprocessing.log'
 logging.basicConfig(
     filename= logfileName,
@@ -23,9 +23,14 @@ if __name__ == '__main__':
     files = os.listdir(ROOT)
     files = [i for i in files if not i.startswith('.')]
     if os.path.exists(logfileName):
-        with open (logfileName)as f:
-            c = f.read()
-    files = [os.path.join(ROOT, i) for i in files if i not in c]   
+        with open(logfileName) as f:
+            content = f.read()
+            # Define the regular expression pattern
+            pattern = r'wx[a-zA-Z0-9]{16}-pc'
+            # Find all matches in the sample text
+            matches = re.findall(pattern, content)
+            matches = set(matches)
+    files = [os.path.join(ROOT, i) for i in files if i not in matches]   
     logger.info(f'Start preprocessing {len(files)} packages')    
     package_names = files
     processes = 128
