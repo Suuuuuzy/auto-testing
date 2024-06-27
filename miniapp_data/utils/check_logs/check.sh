@@ -9,6 +9,6 @@ else
     for file in "$DIR"/*; 
     do
         $CMDA < "$file" > /home/suzy/temp/decoded_new_taint_log_file/${file##*/}
-        # rm "$file"
+        rm "$file"
     done
 fi

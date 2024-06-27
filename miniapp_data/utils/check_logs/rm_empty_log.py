@@ -4,7 +4,7 @@ import subprocess
 LOG_PATH = "/home/suzy/temp/new_taint_log_file"
 DECODED_LOG_PATH = "/home/suzy/temp/decoded_new_taint_log_file"
 
-def remove_empty():
+def remove_empty_and_decode():
     # remove empty logs
     logs = os.listdir(LOG_PATH)
     decoded_logs = os.listdir(DECODED_LOG_PATH)
@@ -14,8 +14,8 @@ def remove_empty():
     logs = os.listdir(LOG_PATH)
     print(len(logs))
     # decode
-    # result = subprocess.run('./check.sh')
-    # print(result)
+    result = subprocess.run('./check.sh')
+    print(result)
 
 # check logs
 def check_TaintminiSinks():
@@ -53,5 +53,5 @@ def check_TaintminiSinks():
     print(f"Num of data flows: {data_flow_cnt}")
     
 if __name__ == "__main__":
-    remove_empty()    
+    remove_empty_and_decode()    
     # check_TaintminiSinks()

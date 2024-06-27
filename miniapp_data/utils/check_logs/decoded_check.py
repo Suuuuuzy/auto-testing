@@ -1,7 +1,21 @@
 # this script checks the log after decoding
 # logpath: /home/suzy/temp/decoded_new_taint_log_file/
 
-import re, os
+import re, os, json
+from tqdm import tqdm
+
+import logging
+logger = logging.getLogger(__name__)
+
+logging.basicConfig(
+    filename='decoded_check.log',
+    level=logging.DEBUG,
+    format='%(asctime)s.%(msecs)03d %(levelname)s %(module)s - %(funcName)s: %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S',
+)
+
+
+
 class CAPNPParser:
     def __init__(self, json_string):
         self.json_string = json_string
@@ -161,31 +175,79 @@ class CAPNPParser:
             self.index += 1
 
 def main():
-    # Example usage:
-    # logpath = "/home/suzy/temp/decoded_new_taint_log_file/test_parser"
+    
+    with open('../check_wxpay_list.log') as f:
+        content = f.read()
+    # Define the regular expression pattern
+    pattern = r'wx[a-zA-Z0-9]{16}-pc'
+    # Find all matches in the sample text
+    matches = re.findall(pattern, content)
+    matches = set(matches)    
+    wxpay_list = matches
+    
+    pattern_strings = ["https://payapp.weixin.qq.com/", "https://pay.weixin.qq.com/"]
     logpath = "/home/suzy/temp/decoded_new_taint_log_file/"
-    file = "wx70e4dfb6146026be-pc"
-    for i in os.listdir(logpath):
-        if file in i:
-            with open(os.path.join(logpath, i)) as f:
-                json_string = f.read()
-            appid = i.split('_')[0]
-            # json_string = '(name = "John Doe", age = 30, is_student = false, courses = [( subject = "Math" ), ( subject = "Science") ])'
-            parser = CAPNPParser(json_string)
-            parsed_data = parser.parse()
-
-            for record in parsed_data:
-                for range in record['message']['jsSinkTainted']['taintSource']['ranges']:
-                    source_type = range['type'] 
-                    if source_type in ['sensWechatApi', 'formSubmit', 'inputBox']: #, 'onLaunch']:
-                        print(appid)
-                        print(f'messageId: {record["messageId"]}')
-                        print(f'range: {range}')
-                        for content_log in record["message"]["jsSinkTainted"]["targetString"]["segments"]:
-                            print(f'content: {content_log["content"]}')
-                            print(f'taint char: {content_log["content"][range["start"]]}')
-                        print('\n')
-        
+    logfileName = "decoded_check.log"
+    with open(logfileName) as f:
+        content = f.read()
+        # Define the regular expression pattern
+        pattern = r'wx[a-zA-Z0-9]{16}-pc'
+        # Find all matches in the sample text
+        matches = re.findall(pattern, content)
+        matches = set(matches)
+    appids = list(matches)
+    logs = []
+    for appid in appids:
+        logs.extend([i for i in os.listdir(logpath) if i.startswith(appid)])
+    diff_appids = []
+    paypattern_appids = set()
+    # source_type in ['sensWechatApi', 'formSubmit', 'inputBox', 'onLaunch']
+    # sink_type in ["request", "uploadFile", "navigateToMiniProgram", "sendSocketMessage", "createUDPSocket"]
+    # 4*5 it will make 20 items in dataflow_cnt
+    dataflow_cnt = {}
+    # logs = ["wx8f68418555b73c24-pc_28357_1718059684803_0"]
+    for i in tqdm(logs):
+        with open(os.path.join(logpath, i)) as f:
+            json_string = f.read()
+        appid = i.split('_')[0]
+        if appid not in wxpay_list:
+            diff_appids.append(appid)
+        logged = False
+        # json_string = '(name = "John Doe", age = 30, is_student = false, courses = [( subject = "Math" ), ( subject = "Science") ])'
+        parser = CAPNPParser(json_string)
+        parsed_data = parser.parse()
+        # one record is possbily several dataflows (several sources -> one sink)
+        for record in parsed_data:
+            for range in record['message']['jsSinkTainted']['taintSource']['ranges']:
+                source_type = range['type'] 
+                if source_type in ['sensWechatApi', 'formSubmit', 'inputBox']: #, 'onLaunch']:
+                    # if source_type not in dataflow_cnt:
+                    #     dataflow_cnt[source_type] = {}
+                    for content_log in record["message"]["jsSinkTainted"]["targetString"]["segments"]:
+                        # content_log["content"] is the final tainted string
+                        print(i)
+                        print(content_log["content"])
+                        suc = True
+                        for tmp in pattern_strings:
+                            if tmp in content_log["content"]:
+                                suc = False
+                        if not logged and suc:
+                            logger.info(appid)
+                            logged = True
+                        # content_list.append(content_log["content"])
+                            
+    # content_list = list(set(content_list))
+    # content_list.sort()
+    # with open('content.txt', 'w') as f:
+    #     json.dump(content_list, f, indent = 2)
+    # with open("not_wxpay_logs.txt", "w") as f:
+    #     json.dump(diff_appids, f, indent = 2)
+    # print(f'There are {len(paypattern_appids)} mini-apps with the pattern detected')
+    # print(f'The others are: {len(set(logs)-paypattern_appids)}')
+    # with open('real_pattern.txt', 'w') as f:
+    #     json.dump(list(set(logs)-paypattern_appids), f)
+    # print(len(diff_appids))
+    # print(len(logs))
                 
 
 if __name__ == "__main__":
