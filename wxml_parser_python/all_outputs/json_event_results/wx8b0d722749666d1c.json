@@ -1,0 +1,1081 @@
+{
+    "pages/index/index": {
+        "getPhoneNumber1": [
+            {
+                "m_details": {
+                    "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
+                },
+                "m_type": "getphonenumber"
+            }
+        ],
+        "getPhoneNumber": [
+            {
+                "m_details": {
+                    "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
+                },
+                "m_type": "getphonenumber"
+            }
+        ]
+    },
+    "pages/classchoice/classchoice": {
+        "closeChoice": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "choicePic": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "schoolnameblur": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "openChoice": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "choiceSchoolName": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "bindMultiPickerChange": [
+            {
+                "m_details": {
+                    "value": [
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                "m_type": "change"
+            }
+        ],
+        "bindMultiPickerColumnChange": [
+            {
+                "m_details": {
+                    "column": 0,
+                    "value": 0
+                },
+                "m_type": "columnchange"
+            }
+        ],
+        "gradeDisppear": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "classnameblur": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "btn": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "jumpBtn": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/editclass/editclass": {
+        "closeChoice": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "choicePic": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "schoolnameblur": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "openChoice": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "choiceSchoolName": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "bindMultiPickerChange": [
+            {
+                "m_details": {
+                    "value": [
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                "m_type": "change"
+            }
+        ],
+        "bindMultiPickerColumnChange": [
+            {
+                "m_details": {
+                    "column": 0,
+                    "value": 0
+                },
+                "m_type": "columnchange"
+            }
+        ],
+        "gradeDisppear": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "classnameblur": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "btn": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "jumpBtn": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/isWare/isware": {
+        "wear": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "nowear": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "wearcorner": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/faceenter/faceenter": {
+        "takePic": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "changeCamera": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "choicePic": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "btnSave": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/result/result": {
+        "back": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "formSubmit": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "showHos": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "share": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "askquestion": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "colseHos": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "jumpOtherHos": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "colse": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "baocun": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/result3/result3": {
+        "formSubmit": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "showHos": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "share": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "askquestion": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "colseHos": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "jumpOtherHos": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "colse": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "baocun": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/userinfo1/userinfo1": {
+        "sexChoice": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "wearChoice": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "nameblur": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "ageblur": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "btn": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/member/member": {
+        "submit": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "end": [
+            {
+                "m_details": {},
+                "m_type": "touchend"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchend"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchend"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchend"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchend"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchend"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchend"
+            }
+        ],
+        "top": [
+            {
+                "m_details": {},
+                "m_type": "touchstart"
+            }
+        ],
+        "bottom": [
+            {
+                "m_details": {},
+                "m_type": "touchstart"
+            }
+        ],
+        "left": [
+            {
+                "m_details": {},
+                "m_type": "touchstart"
+            }
+        ],
+        "right": [
+            {
+                "m_details": {},
+                "m_type": "touchstart"
+            }
+        ],
+        "enlarge": [
+            {
+                "m_details": {},
+                "m_type": "touchstart"
+            }
+        ],
+        "narrow": [
+            {
+                "m_details": {},
+                "m_type": "touchstart"
+            }
+        ],
+        "rotate": [
+            {
+                "m_details": {},
+                "m_type": "touchstart"
+            }
+        ],
+        "upload": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "choice": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "edit": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "userLogin": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "addNewUser": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/mylist/mylist": {
+        "changeType": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "goToAnalysis": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "touchEndHandler": [
+            {
+                "m_details": {},
+                "m_type": "touchend"
+            }
+        ],
+        "moveHandler": [
+            {
+                "m_details": {},
+                "m_type": "touchmove"
+            }
+        ],
+        "touchHandler": [
+            {
+                "m_details": {},
+                "m_type": "touchstart"
+            }
+        ]
+    },
+    "pages/success/success": {
+        "btn": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "orderbtn": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "orderes": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/share/share": {},
+    "pages/checkuser/checkuser": {
+        "choice": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "userLogin": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/etext/etext": {
+        "changeDirection": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/teach/teach": {
+        "changeDirection": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/result2/result2": {
+        "goToList1": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/eyetype/eyetype": {
+        "btn": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/query/query": {
+        "phoneInput": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "verificationcodeInput": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "getVerificationCode": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "goToList": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/userinfo/userinfo": {
+        "phoneblur": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "verificationcodeInput": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "getVerificationCode": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "btn": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/sounds/sounds": {
+        "playsound": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "play": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/card/card": {},
+    "pages/weburl1/weburl1": {},
+    "pages/load/load": {
+        "phoneInput": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "verificationcodeInput": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "getVerificationCode": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "goToList": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/list/list": {
+        "goToAnalysis": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/weburl/weburl": {},
+    "pages/logs/logs": {},
+    "pages/edit/edit": {
+        "closeChoice": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "sexChoice": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "nameblur": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "ageblur": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "btn": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    }
+}

@@ -1,0 +1,2151 @@
+{
+    "pages/welcome/welcome": {},
+    "pages/news/news": {
+        "todayPrize": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "advjump": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "getUserInfo": [
+            {
+                "m_details": {
+                    "encryptedData": "WHZ2K5YGIp9D5AjIMo9tz+H3G5NYWjLiKXvyKWCrY6lTykC26vO",
+                    "iv": "si5BVYyuykJtuA+8/RSRJg==",
+                    "errMsg": "getUserInfo:ok",
+                    "rawData": {
+                        "avatarUrl": "https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132",
+                        "city": "Chengdu",
+                        "gender": 0,
+                        "language": "English",
+                        "nickName": "NICKNAME"
+                    }
+                },
+                "m_type": "getuserinfo"
+            }
+        ]
+    },
+    "pages/index/index": {
+        "cropimg": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ],
+        "groupno": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "addCover": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ],
+        "config": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "addPrize": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "bindPickerChange": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "prizeInput": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "moneyInput": [
+            {
+                "m_details": {
+                    "value": "7.8",
+                    "cursor": 3,
+                    "keyCode": 56
+                },
+                "m_type": "input"
+            }
+        ],
+        "setReduce": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "setinput": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            },
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "setPlus": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "choicecourp": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "cardnameInput": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "cardnumInput": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "cardpassInput": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "againcard": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "delset": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "isShare": [
+            {
+                "m_details": {
+                    "valie": true
+                },
+                "m_type": "change"
+            }
+        ],
+        "command": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "switch1Change": [
+            {
+                "m_details": {
+                    "valie": true
+                },
+                "m_type": "change"
+            }
+        ],
+        "businessInput": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "ifshowArea": [
+            {
+                "m_details": {
+                    "cursor": 0,
+                    "value": ""
+                },
+                "m_type": "blur"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "jdexplain": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11
+                },
+                "m_type": "input"
+            }
+        ],
+        "explainChange": [
+            {
+                "m_details": {
+                    "value": 0
+                },
+                "m_type": "change"
+            }
+        ],
+        "cjexplain": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11
+                },
+                "m_type": "input"
+            }
+        ],
+        "addImg": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "copyJump": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "payswitch": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "copyInput": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            },
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "appidInput": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "appnameInput": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "srcInput": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "paramsInput": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "recommend": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "telInput": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "conditionChange": [
+            {
+                "m_details": {
+                    "value": 0
+                },
+                "m_type": "change"
+            }
+        ],
+        "numreduce": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "awardinput": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "numplus": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "changeDateTime1": [
+            {
+                "m_details": {
+                    "value": [
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                "m_type": "change"
+            }
+        ],
+        "changeDateTimeColumn1": [
+            {
+                "m_details": {
+                    "column": 0,
+                    "value": 0
+                },
+                "m_type": "columnchange"
+            }
+        ],
+        "submit": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ],
+        "advjump": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "choice": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "layerclose": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "confirm": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "getUserInfo": [
+            {
+                "m_details": {
+                    "encryptedData": "WHZ2K5YGIp9D5AjIMo9tz+H3G5NYWjLiKXvyKWCrY6lTykC26vO",
+                    "iv": "si5BVYyuykJtuA+8/RSRJg==",
+                    "errMsg": "getUserInfo:ok",
+                    "rawData": {
+                        "avatarUrl": "https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132",
+                        "city": "Chengdu",
+                        "gender": 0,
+                        "language": "English",
+                        "nickName": "NICKNAME"
+                    }
+                },
+                "m_type": "getuserinfo"
+            }
+        ]
+    },
+    "pages/history/history": {
+        "navSwitch": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "detail": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "advjump": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "weather/pages/index/index": {
+        "menuTab": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "donateTab": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "setMenuNatural": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "setAdd": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "weather/pages/add/add": {
+        "chinaTaped": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "weather/pages/logs/logs": {},
+    "weather/pages/payment/donate": {},
+    "pages/partake/partake": {
+        "copy": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "jump": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "seewinnlist": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "Invitation": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ],
+        "address": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "morecode": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "all": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "command": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "participate": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            },
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            },
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            },
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ],
+        "touchEnd": [
+            {
+                "m_details": {},
+                "m_type": "touchend"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchend"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchend"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchend"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchend"
+            }
+        ],
+        "touchMove": [
+            {
+                "m_details": {},
+                "m_type": "touchmove"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchmove"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchmove"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchmove"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchmove"
+            }
+        ],
+        "touchStart": [
+            {
+                "m_details": {},
+                "m_type": "touchstart"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchstart"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchstart"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchstart"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchstart"
+            }
+        ],
+        "my_code": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "groupBtn": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "goshare": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "more": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "showrelief": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "advjump": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "lottery": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ],
+        "goindex": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "gofabu": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "closerelief": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "cancelLayer": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "shareImg": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ],
+        "embed": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ],
+        "layerhidden": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "onPreviewQrc": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "voucher": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "popupadvjump": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "buy_good": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "getUserInfo": [
+            {
+                "m_details": {
+                    "encryptedData": "WHZ2K5YGIp9D5AjIMo9tz+H3G5NYWjLiKXvyKWCrY6lTykC26vO",
+                    "iv": "si5BVYyuykJtuA+8/RSRJg==",
+                    "errMsg": "getUserInfo:ok",
+                    "rawData": {
+                        "avatarUrl": "https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132",
+                        "city": "Chengdu",
+                        "gender": 0,
+                        "language": "English",
+                        "nickName": "NICKNAME"
+                    }
+                },
+                "m_type": "getuserinfo"
+            }
+        ],
+        "codelayerclose": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "succlayerhidd": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/address/address": {
+        "nameInput": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "telInput": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "wxInput": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "detailInput": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11
+                },
+                "m_type": "input"
+            }
+        ],
+        "submit": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ],
+        "hideCitySelected": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "cityCancel": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "citySure": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "cityChange": [
+            {
+                "m_details": {
+                    "value": []
+                },
+                "m_type": "change"
+            }
+        ]
+    },
+    "pages/problem/problem": {
+        "expandMenu": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "advjump": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/lottery/lottery": {},
+    "pages/questionList/questionList": {},
+    "pages/withdrawals/withdrawals": {
+        "moneyInput": [
+            {
+                "m_details": {
+                    "value": "7.8",
+                    "cursor": 3,
+                    "keyCode": 56
+                },
+                "m_type": "input"
+            }
+        ],
+        "allout": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "submit": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ],
+        "advjump": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/set/set": {
+        "close": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "setquest": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "submit": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ],
+        "stopRecord": [
+            {
+                "m_details": {},
+                "m_type": "touchend"
+            }
+        ],
+        "startRecord": [
+            {
+                "m_details": {},
+                "m_type": "touchstart"
+            }
+        ],
+        "playVoice": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/all/all": {
+        "more": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/share/share": {},
+    "pages/head/head": {
+        "pagegoback": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ]
+    },
+    "pages/shareImg/shareImg": {
+        "prese": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/embed/embed": {
+        "copy": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/my/my": {
+        "getUserInfo": [
+            {
+                "m_details": {
+                    "encryptedData": "WHZ2K5YGIp9D5AjIMo9tz+H3G5NYWjLiKXvyKWCrY6lTykC26vO",
+                    "iv": "si5BVYyuykJtuA+8/RSRJg==",
+                    "errMsg": "getUserInfo:ok",
+                    "rawData": {
+                        "avatarUrl": "https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132",
+                        "city": "Chengdu",
+                        "gender": 0,
+                        "language": "English",
+                        "nickName": "NICKNAME"
+                    }
+                },
+                "m_type": "getuserinfo"
+            }
+        ]
+    },
+    "pages/morexcq/morexcq": {
+        "jump": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/voucher/voucher": {
+        "navSwitch": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "detail": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "advjump": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/qrvoucher/qrvoucher": {
+        "onQrcStrBlur": [
+            {
+                "m_details": {
+                    "cursor": 0,
+                    "value": ""
+                },
+                "m_type": "blur"
+            }
+        ],
+        "onPreviewQrc": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/scanning/scanning": {
+        "submit": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ],
+        "onGenQrc": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "orderInput": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "writeOrder": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/partake1/partake": {
+        "jumpUp": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "jumpDown": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "copy": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "seewinnlist": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "Invitation": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ],
+        "morecode": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "address": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "more": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "participate": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ],
+        "touchEnd": [
+            {
+                "m_details": {},
+                "m_type": "touchend"
+            }
+        ],
+        "touchMove": [
+            {
+                "m_details": {},
+                "m_type": "touchmove"
+            }
+        ],
+        "touchStart": [
+            {
+                "m_details": {},
+                "m_type": "touchstart"
+            }
+        ],
+        "my_code": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "edit": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "lottery": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ],
+        "goindex": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "gofabu": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "mymin": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ],
+        "cancelLayer": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "shareImg": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ],
+        "embed": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ],
+        "succlayerhidd": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "codelayerclose": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "layerhidden": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "jump2": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "getUserInfo": [
+            {
+                "m_details": {
+                    "encryptedData": "WHZ2K5YGIp9D5AjIMo9tz+H3G5NYWjLiKXvyKWCrY6lTykC26vO",
+                    "iv": "si5BVYyuykJtuA+8/RSRJg==",
+                    "errMsg": "getUserInfo:ok",
+                    "rawData": {
+                        "avatarUrl": "https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132",
+                        "city": "Chengdu",
+                        "gender": 0,
+                        "language": "English",
+                        "nickName": "NICKNAME"
+                    }
+                },
+                "m_type": "getuserinfo"
+            }
+        ]
+    },
+    "pages/list1/list": {
+        "advjump": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "detail": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "loadMore": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "colose": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "more": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/my1/my": {
+        "advjump": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "getUserInfo": [
+            {
+                "m_details": {
+                    "encryptedData": "WHZ2K5YGIp9D5AjIMo9tz+H3G5NYWjLiKXvyKWCrY6lTykC26vO",
+                    "iv": "si5BVYyuykJtuA+8/RSRJg==",
+                    "errMsg": "getUserInfo:ok",
+                    "rawData": {
+                        "avatarUrl": "https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132",
+                        "city": "Chengdu",
+                        "gender": 0,
+                        "language": "English",
+                        "nickName": "NICKNAME"
+                    }
+                },
+                "m_type": "getuserinfo"
+            }
+        ]
+    },
+    "pages/myluch/myluch": {
+        "navSwitch": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "detail": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "advjump": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/mywinn/mywinn": {
+        "detail": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "advjump": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/winnlist/winnlist": {},
+    "pages/allcode/allcode": {},
+    "pages/mybuy/mybuy": {
+        "navSwitch": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "advjump": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    }
+}

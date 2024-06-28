@@ -4,6 +4,11 @@
 #include <cassert>
 #include "HTMLTokenizer.h"
 
+#define SET_DEFAUKT_CURRENTTARGET()                            \
+    EventTarget default_current_event_target;                  \
+    event_instance.m_current_target.has_current_target = true; \
+    event_instance.m_current_target.m_current_target_properties = default_current_event_target;
+
 namespace Web
 {
     class WXMLDocumentParser

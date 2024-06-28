@@ -135,12 +135,14 @@ namespace Web
             OUT_OF_INDEX();
         }
 
-        EventInstance event_instance;
-
         auto bind_info = m_bind_storage[idx];
         std::string bind_method = std::get<0>(bind_info);
         std::string function_call = std::get<1>(bind_info);
         ElementWrapperNode *ref_node = std::get<2>(bind_info);
+
+        EventInstance event_instance;
+        event_instance.m_type = bind_method.substr(4);
+        SET_DEFAUKT_CURRENTTARGET();
 
         // fill in event target.dataset and marks
         for (size_t idx = 0; idx < ref_node->get_num_children(); idx++)
@@ -171,23 +173,18 @@ namespace Web
 
             // fill in event tag name
             event_instance.m_target.m_tag_name = ref_node->get_name();
+
             // fill in event type
             event_instance.m_type = event_name;
-
-            // in all bubbling elements, it seems that target is default value (0s for both x and y)
-            // whereas current_target stores values relating to the object position.
-            // currently the component is assumed to just have both target and current_target of default values
-
-            EventTarget default_current_event_target;
-            event_instance.m_current_target.has_current_target = true;
-            event_instance.m_current_target.m_current_target_properties = default_current_event_target;
 
             // tap & longpress & touch start/move/end/cancel
             // has one touch and one changedtouch
             // first just use initialized value
 
-            if (event_name == "tap" || event_name == "longpress" || event_name == "longtap" ||
-                event_name == "touchstart" || event_name == "touchmove" || event_name == "touchend" || event_name == "touchcancel")
+            if (event_name == "tap" || event_name == "longpress" ||
+                event_name == "longtap" || event_name == "touchstart" ||
+                event_name == "touchmove" || event_name == "touchend" ||
+                event_name == "touchcancel")
             {
 
                 TouchObject touch, changed_touch;
@@ -251,16 +248,9 @@ namespace Web
             if (ref_node->get_name() == "button")
             {
 
-                // all have a current target value that seems to reflect the button position
-                // here we just use the default data
-                // here target and current target have the same value
-                EventTarget default_current_target;
-                event_instance.m_current_target.has_current_target = true;
-                event_instance.m_current_target.m_current_target_properties = default_current_target;
-                event_instance.m_target = event_instance.m_current_target.m_current_target_properties;
-
                 if (event_idx == prior_idx + 0)
                 {
+                    assert(bind_method == "bindgetuserinfo");
                     // "bindgetuserinfo"
                     // 用户点击该按钮时，会返回获取到的用户信息，
                     // 回调的detail数据与wx.getUserInfo返回的一致，open-type="getUserInfo"时有效
@@ -268,9 +258,6 @@ namespace Web
                     auto get_open_type = ref_node->get_attribute({"open-type", "openType", "opentype"});
                     assert(get_open_type.has_value());
                     assert(get_open_type.value() == "getUserInfo");
-
-                    // fill in type
-                    event_instance.m_type = "getuserinfo";
 
                     /*
                     for getuserinfo the detail is callback information of wx.getUserInfo
@@ -317,6 +304,7 @@ namespace Web
 
                 if (event_idx == prior_idx + 1)
                 {
+                    assert(bind_method == "bindgetphonenumber");
                     // "bindgetphonenumber"
 
                     // 手机号快速验证回调，open-type=getPhoneNumber时有效。
@@ -325,9 +313,6 @@ namespace Web
                     auto get_open_type = ref_node->get_attribute({"open-type", "openType", "opentype"});
                     assert(get_open_type.has_value());
                     assert(get_open_type.value() == "getPhoneNumber");
-
-                    // fill in type
-                    event_instance.m_type = "getphonenumber";
 
                     /*
                     an error occurs. likely due to information on this website:
@@ -343,15 +328,12 @@ namespace Web
 
                 if (event_idx == prior_idx + 2)
                 {
-
+                    assert(bind_method == "bindchooseavatar");
                     // "bindchooseavatar"
                     // 获取用户头像回调，open-type=chooseAvatar时有效
                     auto get_open_type = ref_node->get_attribute({"open-type", "openType", "opentype"});
                     assert(get_open_type.has_value());
                     assert(get_open_type.value() == "chooseAvatar");
-
-                    // fill in type
-                    event_instance.m_type = "chooseavatar";
 
                     /*
                     details only contains the chosen avatar's url
@@ -363,15 +345,12 @@ namespace Web
                 }
                 if (event_idx == prior_idx + 3)
                 {
+                    assert(bind_method == "bindopensetting");
                     // "bindopensetting"
                     // 在打开授权设置页后回调，open-type=openSetting时有效
                     auto get_open_type = ref_node->get_attribute({"open-type", "openType", "opentype"});
                     assert(get_open_type.has_value());
                     assert(get_open_type.value() == "openSetting");
-
-                    // fill in type
-                    event_instance.m_type = "opensetting";
-
                     /*
                       details include:
                       authSetting
@@ -398,6 +377,7 @@ namespace Web
                 }
                 if (event_idx == prior_idx + 4)
                 {
+                    assert(bind_method == "bindlaunchapp");
                     // "bindlaunchapp"
                     // 打开 APP 成功的回调，open-type=launchApp时有效
 
@@ -434,23 +414,16 @@ namespace Web
             {
 
                 // both current target and target seems to be default at 0
-                EventTarget default_current_event_target;
-                event_instance.m_current_target.has_current_target = true;
-                event_instance.m_current_target.m_current_target_properties = default_current_event_target;
 
                 if (event_idx <= prior_idx + 1)
                 {
+                    assert(bind_method == "binddragstart" || bind_method == "binddragging");
                     //  "binddragstart"
                     // 滑动开始事件 (同时开启 enhanced 属性后生效) detail { scrollTop, scrollLeft }
                     // "binddragging"
                     // 滑动事件 (同时开启 enhanced 属性后生效) detail { scrollTop, scrollLeft }
                     // all attributes are the same so placed together
                     assert(ref_node->has_attribute({"enhanced"}));
-
-                    // fill in type
-                    event_instance.m_type = (event_idx == prior_idx)
-                                                ? "dragstart"
-                                                : "dragging";
 
                     /*
                       details include:
@@ -464,12 +437,10 @@ namespace Web
                 }
                 if (event_idx == prior_idx + 2)
                 {
+                    assert(bind_method == "binddragend");
                     //"binddragend"
                     // 滑动结束事件 (同时开启 enhanced 属性后生效) detail { scrollTop, scrollLeft, velocity }
                     assert(ref_node->has_attribute({"enhanced"}));
-
-                    // fill in type
-                    event_instance.m_type = "dragend";
 
                     /*
                       details include:
@@ -489,14 +460,13 @@ namespace Web
                 }
                 if (event_idx <= prior_idx + 4)
                 {
+                    assert(bind_method == "bindscrolltoupper" ||
+                           bind_method == "bindscrolltolower");
                     //  "bindscrolltoupper"
                     // 滚动到顶部/左边时触发
 
                     //  "bindscrolltolower"
                     // 滚动到底部/右边时触发
-
-                    // fill in type
-                    event_instance.m_type = (event_idx == prior_idx + 3) ? "scrolltoupper" : "scrolltolower";
 
                     /*
                     detail includes:
@@ -511,14 +481,11 @@ namespace Web
                 }
                 if (event_idx == prior_idx + 5)
                 {
+                    assert(bind_method == "bindscroll");
                     // bindscroll
                     // 滚动时触发，
                     // event.detail = {scrollLeft, scrollTop, scrollHeight,
                     // scrollWidth, deltaX, deltaY}
-
-                    // fill in type
-                    event_instance.m_type = "scroll";
-
                     /*
                     details include :
                     deltaX: 0
@@ -588,6 +555,7 @@ namespace Web
         prior_idx += 7;
         if (event_idx < prior_idx + 1)
         {
+            assert(bind_method == "bindscale");
             //<movable - view>
             // "bindscale"
             // 缩放过程中触发的事件，
@@ -605,16 +573,10 @@ namespace Web
                 // use bindscale
                 assert(ref_node->has_attribute({"scale"}));
 
-                // fill in type
-                event_instance.m_type = "scale";
-
                 // currently unable to mimic the behavior on PC due to the inability
                 // to use both fingers.
 
                 // assume both currentTarget and target are present and default
-                EventTarget default_current_event_target;
-                event_instance.m_current_target.has_current_target = true;
-                event_instance.m_current_target.m_current_target_properties = default_current_event_target;
 
                 // the detail field is provided based on the documentation
                 event_instance.m_details["x"] = 0.0;
@@ -627,9 +589,9 @@ namespace Web
         prior_idx += 1;
         if (event_idx < prior_idx + 2)
         {
-            //<cover - image>
-            //"bindload",
-            //"binderror",
+            // <cover - image> & <image>
+            // "bindload",
+            // "binderror", --> also has audio, camera (camera is unimplemented because not yet found its trigger)
 
             /*
             覆盖在原生组件之上的图片视图。
@@ -637,7 +599,8 @@ namespace Web
             */
 
             // ensure that the element will be a cover-image element
-            if (ref_node->get_name() == "cover-image" || ref_node->get_name() == "image")
+            if (ref_node->get_name() == "cover-image" ||
+                ref_node->get_name() == "image")
             {
 
                 // assert there is a src attribute to provide image source
@@ -646,17 +609,12 @@ namespace Web
                 // both current target and target seems to be the same,
                 // referring to the cover image object
                 // here set them both to default
-                EventTarget default_current_event_target;
-                event_instance.m_current_target.has_current_target = true;
-                event_instance.m_current_target.m_current_target_properties = default_current_event_target;
 
                 if (event_idx == prior_idx)
                 {
+                    assert(bind_method == "bindload");
                     //"bindload"
                     // 图片加载成功时触发
-
-                    // fill in type
-                    event_instance.m_type = "load";
 
                     /*
                     detail include:
@@ -673,11 +631,10 @@ namespace Web
                 }
                 if (event_idx == prior_idx + 1)
                 {
+
+                    assert(bind_method == "binderror");
                     //"binderror"
                     // 图片加载失败时触发
-
-                    // fill in type
-                    event_instance.m_type = "error";
 
                     /*
                     detail include
@@ -692,16 +649,46 @@ namespace Web
                     return event_instance;
                 }
             }
+            if (ref_node->get_name() == "audio")
+            {
+                // only has binderror
+                // 当发生错误时触发 error 事件，
+                // detail = {errMsg:MediaError.code}
+                assert(bind_method == "binderror");
+
+                /*
+                detail includes:
+
+                an errMsg of the following possible classes
+
+                1	Access to the resource is forbidden by the user
+                2	Network error
+                3	Decoding error
+                4	Inappropriate resources
+
+                here we would use the 4th error:
+                errMsg: "MEDIA_ERR_SRC_NOT_SUPPORTED"
+                */
+
+                event_instance.m_details["errMsg"] = "MEDIA_ERR_SRC_NOT_SUPPORTED";
+                return event_instance;
+            }
             // some other custom class
             ASSERT_UNIMPLEMENTED();
         }
         prior_idx += 2;
-        if (event_idx < prior_idx + 1)
+        if (event_idx == prior_idx)
         {
+
+            assert(bind_method == "bindchange");
             /*
             bindchange has multiple possibilities, include but not limited to
             <movable - view>
             <checkbox - group>
+            <picker>
+            <picker-view>
+            <slider>
+            <swiper>
             */
             // "bindchange"
 
@@ -710,12 +697,6 @@ namespace Web
                 // 拖动过程中触发的事件，event.detail = {x, y, source}
 
                 // both current target and target seems to be default at 0
-                EventTarget default_current_event_target;
-                event_instance.m_current_target.has_current_target = true;
-                event_instance.m_current_target.m_current_target_properties = default_current_event_target;
-
-                // fill in type
-                event_instance.m_type = "change";
 
                 // detail include:
                 // {x: 0, y: -5.9, source: "out-of-bounds"}
@@ -759,12 +740,6 @@ namespace Web
                 // both current target and target seems to be the same,
                 // referring to the checkerbox group object
                 // here set them both to default
-                EventTarget default_current_event_target;
-                event_instance.m_current_target.has_current_target = true;
-                event_instance.m_current_target.m_current_target_properties = default_current_event_target;
-
-                // fill in type
-                event_instance.m_type = "change";
 
                 /*
                 to get the detail
@@ -793,6 +768,151 @@ namespace Web
                 // this will make sure that the detail_data contains all the check-able
                 // checkboxes
                 event_instance.m_details["value"] = detail_data;
+                return event_instance;
+            }
+
+            if (ref_node->get_name() == "picker")
+            {
+                // check the mode
+
+                // both current target and target seems to be the same,
+                // referring to the checkerbox group object
+                // here set them both to default
+
+                auto mode_attr = ref_node->get_attribute({"mode"});
+
+                // defalult mode attribute as "selector"
+                std::string mode_name = (mode_attr.has_value())
+                                            ? mode_attr.value()
+                                            : "selector";
+
+                if (mode_name == "selector")
+                {
+                    // detail for selector would be index of the current
+                    // selection. Here to ensure that the index does not
+                    // go out of range is value is chosen to be "0"
+                    event_instance.m_details["value"] = 0;
+                    return event_instance;
+                }
+                if (mode_name == "multiSelector")
+                {
+                    // not sure how to set the length of the multi-selector
+                    // so set default to 3. Can try to figure out more later
+
+                    event_instance.m_details["value"] = {0, 0, 0};
+                    return event_instance;
+                }
+                if (mode_name == "time")
+                {
+                    // seems to be a string of the time
+                    // do a default of 11:00
+
+                    std::string DEFAULT_TIME = "11:00";
+
+                    event_instance.m_details["value"] = DEFAULT_TIME;
+                    return event_instance;
+                }
+                if (mode_name == "date")
+                {
+
+                    // seems to be a string of date
+                    // do a default one of "2021-09-01"
+
+                    std::string DEFAULT_DATE = "2021-09-01";
+                    event_instance.m_details["value"] = DEFAULT_DATE;
+                    return event_instance;
+                }
+                if (mode_name == "region")
+                {
+                    // goes to use a default address that looks like:
+
+                    /*
+                    details:
+                    code: (3) ["440000", "440100", "440105"]
+                    postcode: "510220"
+                    value: (3) ["广东省", "广州市", "海珠区"]
+                    */
+
+                    event_instance.m_details["code"] = {"440000", "440100", "440105"};
+                    event_instance.m_details["postcode"] = "510220";
+                    event_instance.m_details["value"] = {"广东省",
+                                                         "广州市",
+                                                         "海珠区"};
+                    return event_instance;
+                }
+
+                ASSERT_UNIMPLEMENTED();
+            }
+            if (ref_node->get_name() == "picker-view")
+            {
+
+                // 滚动选择时触发change事件，event.detail = {value}；
+                // value为数组，表示 picker-view 内的
+                // picker-view-column 当前选择的是第几项（下标从 0 开始）
+
+                // it will return an array, whereas the number of item in the array
+                // depends on the current picker's column number.
+                // (should depend on how many picker-view-column are there)
+
+                int num_picker_column = ref_node->count_num_subelements("picker-view-column");
+                nlohmann::json j_arr = nlohmann::json::array();
+                for (int i = 0; i < num_picker_column; i++)
+                {
+                    j_arr.push_back(0);
+                }
+                event_instance.m_details["value"] = j_arr;
+                return event_instance;
+            }
+            if (ref_node->get_name() == "slider")
+            {
+                // <slider>
+                // bindchanging
+
+                // try getting max, min, step information for the slider
+
+                auto min_attr = ref_node->get_attribute({"min", "Min"});
+                auto max_attr = ref_node->get_attribute({"max", "Max"});
+                auto step_attr = ref_node->get_attribute({"step", "Step"});
+
+                int min_comp = (min_attr.has_value()) ? std::stoi(min_attr.value()) : 0;
+                int max_comp = (max_attr.has_value()) ? std::stoi(max_attr.value()) : 100;
+                int step_comp = (step_attr.has_value()) ? std::stoi(step_attr.value()) : 1;
+
+                int probable_mid_step = ((max_comp - min_comp) / 2) / step_comp;
+
+                event_instance.m_details["value"] = min_comp + probable_mid_step * step_comp;
+
+                // adding some auxiliary information for step choice
+                event_instance.m_details["min-range"] = min_comp;
+                event_instance.m_details["max-range"] = max_comp;
+                event_instance.m_details["step-range"] = step_comp;
+
+                return event_instance;
+            }
+
+            if (ref_node->get_name() == "swiper")
+            {
+                // current 改变时会触发 change 事件，
+                // event.detail = {current, source}
+
+                /*
+                detail includes
+
+                current: 1
+                currentItemId: ""
+                source: "touch"
+
+                source seems to be able to take on two modes:
+                'autoplay' || source == 'touch'
+                from source https://blog.csdn.net/qq_40047019/article/details/124713405
+
+                to mimic user interaction, source = 'touch' is used
+                */
+
+                event_instance.m_details["current"] = 0;
+                event_instance.m_details["currentItemId"] = "";
+                event_instance.m_details["source"] = "touch";
+
                 return event_instance;
             }
 
@@ -825,18 +945,14 @@ namespace Web
                 // target and current target seems to be the same, both referring
                 // to the component
                 // here set them both to default
-                EventTarget default_current_event_target;
-                event_instance.m_current_target.has_current_target = true;
-                event_instance.m_current_target.m_current_target_properties = default_current_event_target;
 
                 if (event_idx == prior_idx)
                 {
 
+                    assert(bind_method == "bindready");
+
                     // "bindready"
                     // 编辑器初始化完成时触发
-
-                    // fill in type
-                    event_instance.m_type = "ready";
 
                     // seems to be completely empty details,
                     // but seems to have a lot of default function class,
@@ -846,6 +962,8 @@ namespace Web
                 }
                 if (event_idx == prior_idx + 1)
                 {
+
+                    assert(bind_method == "bindstatuschange");
                     // "bindstatuschange"
                     // 通过 Context 方法改变编辑器内样式时触发，
                     // 返回选区已设置的样式
@@ -867,15 +985,17 @@ namespace Web
             // "bindsubmit"
             // "catchsubmit"
 
+            assert(bind_method == "bindreset" ||
+                   bind_method == "catchreset" ||
+                   bind_method == "bindsubmit" ||
+                   bind_method == "catchsubmit");
+
             if (ref_node->get_name() == "form")
             {
 
                 // target and current target seems to be the same, both referring
                 // to the component
                 // here set them both to default
-                EventTarget default_current_event_target;
-                event_instance.m_current_target.has_current_target = true;
-                event_instance.m_current_target.m_current_target_properties = default_current_event_target;
 
                 // "bindreset" / "catchreset"
                 // 表单重置时会触发 reset 事件
@@ -885,9 +1005,6 @@ namespace Web
                 // event.detail = {value : {'name': 'value'} , formId: ''}
 
                 // 两者的区别主要在于 bindsubmit detail 多出的 value class
-
-                // fill in type
-                event_instance.m_type = (event_idx <= prior_idx + 1) ? "reset" : "submit";
 
                 /*
                 detail.target looks like:
@@ -918,22 +1035,11 @@ namespace Web
 
                     // step 1: find all the components of this form
 
-                    std::vector<std::tuple<std::string, std::string>> form_components =
-                        std::vector<std::tuple<std::string, std::string>>();
+                    nlohmann::json form_components;
 
                     get_all_form_components(ref_node, &form_components);
 
-                    // step 2: iterate over all components to implement the value key
-
-                    nlohmann::json value;
-
-                    for (auto form_component_pair : form_components)
-                    {
-                        std::string comp_name = std::get<0>(form_component_pair);
-                        std::string comp_value = std::get<1>(form_component_pair);
-                        value[comp_name] = comp_value;
-                    }
-                    event_instance.m_details["value"] = value;
+                    event_instance.m_details["value"] = form_components;
                 }
                 return event_instance;
             }
@@ -950,21 +1056,21 @@ namespace Web
             "bindblur",
             "bindinput",
 
-            are applicable for both input and editor
+            are applicable for input, editor, and textarea
             */
 
             // target and current target seems to be the same, both referring
             // to the component
             // here set them both to default
-            EventTarget default_current_event_target;
-            event_instance.m_current_target.has_current_target = true;
-            event_instance.m_current_target.m_current_target_properties = default_current_event_target;
 
             if (ref_node->get_name() == "editor")
             {
 
                 if (event_idx <= prior_idx + 1)
                 {
+
+                    assert(bind_method == "bindfocus" ||
+                           bind_method == "bindblur");
                     // "bindfocus"
                     // 编辑器聚焦时触发，
 
@@ -972,11 +1078,6 @@ namespace Web
                     // 编辑器失去焦点时触发，
 
                     // event.detail 同为 {html, text, delta}
-
-                    // fill in type
-                    event_instance.m_type = (event_idx == prior_idx + 1)
-                                                ? "focus"
-                                                : "blur";
 
                     /*
                     the detail is given as:
@@ -1002,14 +1103,12 @@ namespace Web
                 }
                 if (event_idx == prior_idx + 2)
                 {
+                    assert(bind_method == "bindinput");
                     // "bindinput"
                     // 编辑器内容改变时触发，detail = {html, text, delta}
 
                     // similar to the two above but suppose some new
                     // text content is inserted
-
-                    // fill in type
-                    event_instance.m_type = "input";
 
                     /*
                     details include:
@@ -1032,15 +1131,14 @@ namespace Web
             }
             if (ref_node->get_name() == "input")
             {
+
                 if (event_idx == prior_idx)
                 {
+                    assert(bind_method == "bindfocus");
                     // bindfocus
                     // 输入框聚焦时触发，
                     // event.detail = { value, height }
                     // height 为键盘高度，在基础库 1.9.90 起支持
-
-                    // fill in type
-                    event_instance.m_type = "focus";
 
                     /*
                     detail of bindfocus include:
@@ -1053,12 +1151,10 @@ namespace Web
 
                 if (event_idx == prior_idx + 1)
                 {
+                    assert(bind_method == "bindblur");
                     // bindblur
                     // 输入框失去焦点时触发，
                     // event.detail = { value, encryptedValue, encryptError }
-
-                    // fill in the type
-                    event_instance.m_type = "blur";
 
                     /*
                     the detail specifics seems to be different from what is suggested
@@ -1074,14 +1170,12 @@ namespace Web
                 }
                 if (event_idx == prior_idx + 2)
                 {
+                    assert(bind_method == "bindinput");
                     // bindinput
                     // 键盘输入时触发，
                     // event.detail = {value, cursor, keyCode}，
                     // keyCode 为键值，2.1.0 起支持，
                     // 处理函数可以直接 return 一个字符串，将替换输入框的内容。
-
-                    // fill in type
-                    event_instance.m_type = "input";
 
                     /*
                     detail includes:
@@ -1095,9 +1189,538 @@ namespace Web
                     return event_instance;
                 }
             }
+
+            if (ref_node->get_name() == "textarea")
+            {
+
+                if (event_idx == prior_idx)
+                {
+                    assert(bind_method == "bindfocus");
+
+                    // 	输入框聚焦时触发，event.detail = { value, height }，
+                    // height 为键盘高度，在基础库 1.9.90 起支持
+
+                    /*
+                    detail of bindfocus include:
+                    {value: "", height: 0}
+                    */
+                    event_instance.m_details["value"] = "";
+                    event_instance.m_details["height"] = 0;
+                    return event_instance;
+                }
+                if (event_idx == prior_idx + 1)
+                {
+                    assert(bind_method == "bindblur");
+                    // 输入框失去焦点时触发，
+                    //  event.detail = {value, cursor}
+
+                    /*
+                    the detail specifics seems to be different from what is suggested
+                    instead has
+
+                    cursor: 0
+                    value: ""
+
+                    */
+                    event_instance.m_details["cursor"] = 0;
+                    event_instance.m_details["value"] = "";
+                    return event_instance;
+                }
+                if (event_idx == prior_idx + 2)
+                {
+                    assert(bind_method == "bindinput");
+                    // 当键盘输入时，触发 input 事件，
+                    // event.detail = {value, cursor, keyCode}，keyCode 为键值，
+                    // 目前工具还不支持返回keyCode参数。**bindinput
+                    // 处理函数的返回值并不会反映到 textarea 上**
+
+                    /*
+                    detail includes:
+
+                    {value: "hello world", cursor: 11}
+                    */
+
+                    event_instance.m_details["value"] = "hello world";
+                    event_instance.m_details["cursor"] = 11;
+                    return event_instance;
+                }
+            }
             ASSERT_UNIMPLEMENTED();
         }
         prior_idx += 3;
+        if (event_idx < prior_idx + 3)
+        {
+            // input
+            // "bindconfirm",
+            // "bindkeyboardheightchange",
+            // "bindnicknamereview",
+
+            // meanwhile textarea also has
+            // function bindconfirm and bindkeyboardheightchange
+
+            if (ref_node->get_name() == "input")
+            {
+
+                // target and current target seems to be the same, both referring
+                // to the component
+                // here set them both to default
+
+                if (event_idx == prior_idx)
+                {
+                    assert(bind_method == "bindconfirm");
+                    // "bindconfirm",
+                    // 点击完成按钮时触发，event.detail = { value }
+
+                    event_instance.m_details["value"] = "hello world!";
+                    return event_instance;
+                }
+
+                if (event_idx == prior_idx + 1)
+                {
+                    assert(bind_method == "bindkeyboardheightchange");
+                    // bindkeyboardheightchange
+                    // 键盘高度发生变化的时候触发此事件，
+                    // event.detail = {height: height, duration: duration}
+                    ASSERT_UNIMPLEMENTED();
+                }
+                if (event_idx == prior_idx + 2)
+                {
+                    assert(bind_method == "bindnicknamereview");
+                    // "bindnicknamereview",
+                    // 用户昵称审核完毕后触发，
+                    // 仅在 type 为 "nickname" 时有效，event.detail = { pass, timeout}
+                    auto check_nickname = ref_node->get_attribute({"type"});
+                    assert(check_nickname.has_value() && check_nickname.value() == "nickname");
+
+                    /*
+                    detail includes:
+                     {pass: true, timeout: false}
+                    */
+                    event_instance.m_details["pass"] = true;
+                    event_instance.m_details["timeout"] = false;
+                    return event_instance;
+                }
+            }
+
+            if (ref_node->get_name() == "textarea")
+            {
+
+                if (event_idx == prior_idx)
+                {
+                    assert(bind_method == "bindconfirm");
+                    // 点击完成时， 触发 confirm 事件，
+                    // event.detail = {value: value}
+                }
+
+                if (event_idx == prior_idx + 1)
+                {
+                    assert(bind_method == "bindkeyboardheightchange");
+                    // 键盘高度发生变化的时候触发此事件，
+                    // event.detail = {height: height, duration: duration}
+                }
+
+                ASSERT_UNIMPLEMENTED();
+            }
+            ASSERT_UNIMPLEMENTED();
+        }
+        prior_idx += 3;
+        if (event_idx < prior_idx + 2)
+        {
+
+            if (ref_node->get_name() == "picker")
+            {
+
+                //<picker>
+                // "bindcancel",
+                // "bindcolumnchange",  --> mode = multiSelector
+
+                /*
+                mode picker functions:
+
+                general: bindcancel
+
+                mode = selector: bindchange
+
+                mode = multiSelector: bindchange, bindcolumnchange
+
+                mode = time: bindchange
+
+                mode = date: bindchange
+
+                mode = region: bindchange
+                */
+
+                if (event_idx == prior_idx)
+                {
+                    assert(bind_method == "bindcancel");
+                    // "bindcancel"
+
+                    // details is given as an empty set, so just retunr
+                    return event_instance;
+                }
+
+                if (event_idx == prior_idx + 1)
+                {
+                    assert(bind_method == "bindcolumnchange");
+                    // "bindcolumnchange",  --> mode = multiSelector
+
+                    auto picker_mode = ref_node->get_attribute({"mode"});
+                    assert(picker_mode.has_value() && picker_mode.value() == "multiSelector");
+
+                    /*
+                    details include
+                    column: 0
+                    value: 1
+                    */
+                    event_instance.m_details["column"] = 0;
+                    event_instance.m_details["value"] = 0;
+                    return event_instance;
+                }
+            }
+            ASSERT_UNIMPLEMENTED();
+        }
+        prior_idx += 2;
+        if (event_idx < prior_idx + 1)
+        {
+            assert(bind_method == "bindpickstart" ||
+                   bind_method == "bindpickend");
+            //<picker - view>
+            // "bindpickstart",
+            // "bindpickend",
+
+            // both methods do not have any detail info
+
+            return event_instance;
+        }
+        prior_idx += 2;
+        if (event_idx == prior_idx)
+        {
+            // <slider>
+            // "bindchanging"
+
+            if (ref_node->get_name() == "slider")
+            {
+
+                assert(bind_method == "bindchanging");
+
+                // try getting max, min, step information for the slider
+
+                auto min_attr = ref_node->get_attribute({"min", "Min"});
+                auto max_attr = ref_node->get_attribute({"max", "Max"});
+                auto step_attr = ref_node->get_attribute({"step", "Step"});
+
+                int min_comp = (min_attr.has_value()) ? std::stoi(min_attr.value()) : 0;
+                int max_comp = (max_attr.has_value()) ? std::stoi(max_attr.value()) : 100;
+                int step_comp = (step_attr.has_value()) ? std::stoi(step_attr.value()) : 1;
+
+                int probable_mid_step = ((max_comp - min_comp) / 2) / step_comp;
+
+                event_instance.m_details["value"] = min_comp + probable_mid_step * step_comp;
+
+                // adding some auxiliary information for step choice
+                event_instance.m_details["min-range"] = min_comp;
+                event_instance.m_details["max-range"] = max_comp;
+                event_instance.m_details["step-range"] = step_comp;
+
+                return event_instance;
+            }
+            ASSERT_UNIMPLEMENTED();
+        }
+        prior_idx += 1;
+
+        if (event_idx == prior_idx)
+        {
+            assert(bind_method == "bindlinechange");
+
+            if (ref_node->get_name() == "textarea")
+            {
+                //<textarea>
+                // "bindlinechange",
+            }
+            ASSERT_UNIMPLEMENTED();
+        }
+        prior_idx += 1;
+
+        if (event_idx == prior_idx)
+        {
+            //<progress>
+            // "bindactiveend",
+            assert(bind_method == "bindactiveend");
+
+            if (ref_node->get_name() == "progress")
+            {
+
+                /*
+                detail takes the form of
+                {curPercent: 100}
+                */
+                event_instance.m_details["curPercent"] = 80;
+
+                return event_instance;
+            }
+            ASSERT_UNIMPLEMENTED();
+        }
+        prior_idx += 1;
+        if (event_idx < prior_idx + 2)
+        {
+            if (ref_node->get_name() == "swiper")
+            {
+                //<swiper>
+                //"bindtransition",
+                //"bindanimationfinish",
+
+                if (event_idx == prior_idx)
+                {
+                    assert(bind_method == "bindtransition");
+
+                    /*detail includes:
+                    {dx: 8, dy: 0}
+
+                    default both to 1
+                    */
+                    event_instance.m_details["dx"] = 1;
+                    event_instance.m_details["dy"] = 1;
+                    return event_instance;
+                }
+
+                if (event_idx == prior_idx + 1)
+                {
+                    assert(bind_method == "bindanimationfinish");
+
+                    /*
+                    detail include:
+
+                    current: 0
+                    currentItemId: ""
+                    source: "touch"
+
+                    identical to bindchange
+                    */
+                    event_instance.m_details["current"] = 0;
+                    event_instance.m_details["currentItemId"] = "";
+                    event_instance.m_details["source"] = "touch";
+                    return event_instance;
+                }
+            }
+            ASSERT_UNIMPLEMENTED();
+        }
+        prior_idx += 2;
+        if (event_idx < prior_idx + 3)
+        {
+            //<navigator> /<functional - page - navigator>
+            // "bindsuccess",
+            // "bindfail",
+            // "bindcomplete",
+
+            if (ref_node->get_name() == "navigator")
+            {
+
+                /*
+                找到当前navigator的open type：
+                open-type	string	navigate	否	跳转方式	1.0.0
+                合法值	说明	最低版本
+
+            navigate	对应 wx.navigateTo 或 wx.navigateToMiniProgram 的功能
+            redirect	对应 wx.redirectTo 的功能
+            switchTab	对应 wx.switchTab 的功能
+            reLaunch	对应 wx.reLaunch 的功能	1.1.0
+            navigateBack	对应 wx.navigateBack 或 wx.navigateBackMiniProgram （基础库 2.24.4 版本支持）的功能	1.1.0
+            exit
+                */
+
+                auto open_type_attr = ref_node->get_attribute({"open-type", "openType", "opentype"});
+
+                assert(open_type_attr.has_value());
+
+                std::string open_type_str = open_type_attr.value();
+
+                if (open_type_str == "navigate" || open_type_str == "redirect")
+                    open_type_str += "To"; // navigateTo; redirectTo
+
+                // For switchTab, reLaunch, navigateBack, exit, no change is needed.
+
+                if (event_idx == prior_idx)
+                {
+
+                    // 当target="miniProgram"
+                    // 且open-type="navigate/navigateBack"时有效时有效，
+                    // 跳转小程序成功
+
+                    assert(bind_method == "bindsuccess");
+
+                    /*
+                    detail includes
+
+                    {errMsg: "navigateTo:ok"
+                     eventChannel:
+                        listener: {}
+                    }
+                    */
+                    event_instance.m_details["errMesg"] = open_type_str + ":ok";
+
+                    nlohmann::json event_channel;
+                    event_channel["listener"] = {};
+
+                    event_instance.m_details["eventChannel"] = event_instance;
+                    return event_instance;
+                }
+
+                if (event_idx == prior_idx + 1)
+                {
+
+                    // 当target="miniProgram"
+                    // 且open-type="navigate/navigateBack"时有效时有效，
+                    // 跳转小程序失败
+
+                    assert(bind_method == "bindfail");
+
+                    /*
+                    detail includes:
+                    errMsg: "redirectTo:fail page xxxx is not found"
+                     */
+                    event_instance.m_details["errMsg"] = open_type_str + ":fail page xxxx is not found";
+                    return event_instance;
+                }
+
+                if (event_idx == prior_idx + 2)
+                {
+
+                    // 当target="miniProgram"
+                    // 且open-type="navigate/navigateBack"时有效时有效，
+                    // 跳转小程序完成
+
+                    assert(bind_method == "bindcomplete");
+
+                    /*
+                    the detail from complete can be either like success or fail
+                    here use the format for success
+                    */
+                    event_instance.m_details["errMesg"] = open_type_str + ":ok";
+
+                    nlohmann::json event_channel;
+                    event_channel["listener"] = {};
+
+                    event_instance.m_details["eventChannel"] = event_instance;
+                    return event_instance;
+                }
+            }
+            ASSERT_UNIMPLEMENTED();
+        }
+        prior_idx += 3;
+        if (event_idx < prior_idx + 4)
+        {
+
+            if (ref_node->get_name() == "audio")
+            {
+                //<audio>
+                // "bindplay",
+                // "bindpause",
+                // "bindtimeupdate",
+                // "bindended",
+
+                if (event_idx == prior_idx)
+                {
+                    // "bindplay",
+                    assert(bind_method == "bindplay");
+
+                    // detail is empty
+
+                    return event_instance;
+                }
+                if (event_idx == prior_idx + 1)
+                {
+                    // "bindpause",
+                    assert(bind_method == "bindpause");
+
+                    // detail is empty
+
+                    return event_instance;
+                }
+                if (event_idx == prior_idx + 2)
+                {
+                    // "bindtimeupdate",
+                    assert(bind_method == "bindtimeupdate");
+
+                    /*
+                    detail includes:
+                    currentTime: 4.167069
+                    duration: 203.075918
+                    */
+
+                    event_instance.m_details["currentTime"] = 2.0;
+                    event_instance.m_details["duration"] = 250.0;
+
+                    return event_instance;
+                }
+                if (event_idx == prior_idx + 3)
+                {
+                    // "bindended",
+                    assert(bind_method == "bindended");
+
+                    // detail is empty
+
+                    return event_instance;
+                }
+            }
+            ASSERT_UNIMPLEMENTED();
+        }
+        prior_idx += 4;
+        if (event_idx < prior_idx + 3)
+        {
+
+            if (ref_node->get_name() == "camera")
+            {
+                //<camera>
+                // "bindstop",
+                // "bindinitdone",
+                // "bindscancode",
+
+                if (event_idx == prior_idx)
+                {
+                    // "bindstop",
+                    // 摄像头在非正常终止时触发，如退出后台等情况
+
+                    ASSERT_UNIMPLEMENTED();
+                }
+
+                if (event_idx == prior_idx + 1)
+                {
+                    // "bindinitdone",
+                    // 相机初始化完成时触发，e.detail = {maxZoom}
+
+                    // detail: {maxZoom: 1}
+                    event_instance.m_details["maxZoom"] = 1;
+                    return event_instance;
+                }
+
+                if (event_idx == prior_idx + 2)
+                {
+                    // "bindscancode",
+                    // 在扫码识别成功时触发，
+                    // 仅在 mode="scanCode" 时生效
+
+                    auto mode_comp = ref_node->get_attribute({"mode"});
+                    assert(mode_comp.has_value() && mode_comp.value() == "scanCode");
+
+                    // 无法使用相机识别码，暂时没有implement
+                    ASSERT_UNIMPLEMENTED();
+                }
+            }
+            ASSERT_UNIMPLEMENTED();
+        }
+        prior_idx += 3;
+        if (event_idx < prior_idx + 8)
+        {
+            //<video>
+            // "bindfullscreenchange",
+            // "bindwaiting",
+            // "bindprogress",
+            // "bindloadedmetadata",
+            // "bindcontrolstoggle",
+            // "bindenterpictureinpicture",
+            //  "bindleavepictureinpicture",
+            // "bindseekcomplete",
+        }
 
         ASSERT_UNIMPLEMENTED();
     }

@@ -101,6 +101,7 @@ namespace Web
 
         bool has_end_tag() const;
         bool has_attribute(const std::vector<std::string> &attribute_names) const;
+        int count_num_subelements(const std::string &element_name) const;
         std::optional<std::string> get_attribute(const std::vector<std::string> &attribute_names) const;
     };
 

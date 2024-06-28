@@ -124,6 +124,19 @@ namespace Web
         return std::nullopt;
     }
 
+    int ElementWrapperNode::count_num_subelements(const std::string &element_name) const
+    {
+        int count = 0;
+        for (Node *m_child : m_children)
+        {
+            if (m_child->type() == NodeType::ATTRIBUTE_NODE && m_child->get_name() == element_name)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+
     ////////////////////////////////////////////////////////////////////////
     // AttributeNode implementation
     ////////////////////////////////////////////////////////////////////////

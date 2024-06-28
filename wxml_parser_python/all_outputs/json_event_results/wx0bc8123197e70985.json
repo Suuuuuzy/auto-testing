@@ -1,0 +1,720 @@
+{
+    "pages/index/index": {
+        "imageClick": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "getUserInfo": [
+            {
+                "m_details": {
+                    "encryptedData": "WHZ2K5YGIp9D5AjIMo9tz+H3G5NYWjLiKXvyKWCrY6lTykC26vO",
+                    "iv": "si5BVYyuykJtuA+8/RSRJg==",
+                    "errMsg": "getUserInfo:ok",
+                    "rawData": {
+                        "avatarUrl": "https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132",
+                        "city": "Chengdu",
+                        "gender": 0,
+                        "language": "English",
+                        "nickName": "NICKNAME"
+                    }
+                },
+                "m_type": "getuserinfo"
+            }
+        ],
+        "imageError": [
+            {
+                "m_details": {
+                    "errMsg": "GET {{item.coverImage}} 404 (Not Found)"
+                },
+                "m_type": "error"
+            }
+        ]
+    },
+    "pages/governmentCoupon/index/index": {
+        "jump_my": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "getUserInfo": [
+            {
+                "m_details": {
+                    "encryptedData": "WHZ2K5YGIp9D5AjIMo9tz+H3G5NYWjLiKXvyKWCrY6lTykC26vO",
+                    "iv": "si5BVYyuykJtuA+8/RSRJg==",
+                    "errMsg": "getUserInfo:ok",
+                    "rawData": {
+                        "avatarUrl": "https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132",
+                        "city": "Chengdu",
+                        "gender": 0,
+                        "language": "English",
+                        "nickName": "NICKNAME"
+                    }
+                },
+                "m_type": "getuserinfo"
+            },
+            {
+                "m_details": {
+                    "encryptedData": "WHZ2K5YGIp9D5AjIMo9tz+H3G5NYWjLiKXvyKWCrY6lTykC26vO",
+                    "iv": "si5BVYyuykJtuA+8/RSRJg==",
+                    "errMsg": "getUserInfo:ok",
+                    "rawData": {
+                        "avatarUrl": "https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132",
+                        "city": "Chengdu",
+                        "gender": 0,
+                        "language": "English",
+                        "nickName": "NICKNAME"
+                    }
+                },
+                "m_type": "getuserinfo"
+            },
+            {
+                "m_details": {
+                    "encryptedData": "WHZ2K5YGIp9D5AjIMo9tz+H3G5NYWjLiKXvyKWCrY6lTykC26vO",
+                    "iv": "si5BVYyuykJtuA+8/RSRJg==",
+                    "errMsg": "getUserInfo:ok",
+                    "rawData": {
+                        "avatarUrl": "https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132",
+                        "city": "Chengdu",
+                        "gender": 0,
+                        "language": "English",
+                        "nickName": "NICKNAME"
+                    }
+                },
+                "m_type": "getuserinfo"
+            }
+        ],
+        "closeRule": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "justCatch": [
+            {
+                "m_details": {},
+                "m_type": "touchmove"
+            }
+        ],
+        "loadList": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "showRule": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "collectCoupon": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/governmentCoupon/my/index": {},
+    "pages/index/order/index": {},
+    "pages/productOrder/list/list": {
+        "tabClick": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "payOrder": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {
+                        "uuid": "default input string. \n"
+                    }
+                },
+                "m_type": "submit"
+            }
+        ]
+    },
+    "pages/venue/list/list": {
+        "showSearchInput": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "searchInputConfirm": [
+            {
+                "m_details": {
+                    "value": "hello world!"
+                },
+                "m_type": "confirm"
+            }
+        ],
+        "searchInputTyping": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "clearSearchInput": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "hideSearchInput": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "selectGroup": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "closeFilter": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "stoptap": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "selectFilterItem": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/venue/orderProduct/orderProduct": {
+        "submitOrder": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ],
+        "countMinus": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "countPlus": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "selectCoupon": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "getUserInfo": [
+            {
+                "m_details": {
+                    "encryptedData": "WHZ2K5YGIp9D5AjIMo9tz+H3G5NYWjLiKXvyKWCrY6lTykC26vO",
+                    "iv": "si5BVYyuykJtuA+8/RSRJg==",
+                    "errMsg": "getUserInfo:ok",
+                    "rawData": {
+                        "avatarUrl": "https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132",
+                        "city": "Chengdu",
+                        "gender": 0,
+                        "language": "English",
+                        "nickName": "NICKNAME"
+                    }
+                },
+                "m_type": "getuserinfo"
+            }
+        ]
+    },
+    "pages/venue/detail/detail": {
+        "phoneCall": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "openSettingCallBack": [
+            {
+                "m_details": {
+                    "errMsg": "openSetting:ok",
+                    "authSetting": {
+                        "scope.userLocation": true,
+                        "scope.writePhotosAlbum": true
+                    }
+                },
+                "m_type": "opensetting"
+            }
+        ],
+        "openMap": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "stopTap": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "getUserInfo": [
+            {
+                "m_details": {
+                    "encryptedData": "WHZ2K5YGIp9D5AjIMo9tz+H3G5NYWjLiKXvyKWCrY6lTykC26vO",
+                    "iv": "si5BVYyuykJtuA+8/RSRJg==",
+                    "errMsg": "getUserInfo:ok",
+                    "rawData": {
+                        "avatarUrl": "https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132",
+                        "city": "Chengdu",
+                        "gender": 0,
+                        "language": "English",
+                        "nickName": "NICKNAME"
+                    }
+                },
+                "m_type": "getuserinfo"
+            }
+        ]
+    },
+    "pages/productOrder/code/code": {
+        "auth": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/venue/selectCoupon/selectCoupon": {
+        "couponClick": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/user/authentication/authentication": {
+        "submitAuth": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {
+                        "name": "default input string. \n",
+                        "cardNumber": "default input string. \n",
+                        "phone": "default input string. \n",
+                        "code": "default input string. \n"
+                    }
+                },
+                "m_type": "submit"
+            }
+        ],
+        "inputPhoneNum": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "beginSmsTimer": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "nocard": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/user/chinabank/index": {},
+    "pages/user/opencard/link_one": {},
+    "pages/user/opencard/link_two": {},
+    "pages/productOrder/pay/pay": {},
+    "pages/venue/map/map": {},
+    "pages/venue/product/product": {
+        "showImage": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "getUserInfo": [
+            {
+                "m_details": {
+                    "encryptedData": "WHZ2K5YGIp9D5AjIMo9tz+H3G5NYWjLiKXvyKWCrY6lTykC26vO",
+                    "iv": "si5BVYyuykJtuA+8/RSRJg==",
+                    "errMsg": "getUserInfo:ok",
+                    "rawData": {
+                        "avatarUrl": "https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132",
+                        "city": "Chengdu",
+                        "gender": 0,
+                        "language": "English",
+                        "nickName": "NICKNAME"
+                    }
+                },
+                "m_type": "getuserinfo"
+            }
+        ]
+    },
+    "pages/productOrder/comment/comment": {
+        "submit": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {
+                        "content": "default input string. \n"
+                    }
+                },
+                "m_type": "submit"
+            }
+        ],
+        "starClick": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "deleteImage": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "chooseImage": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/governmentCoupon/collectCoupon/collectCoupon": {
+        "showRule": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "closeRule": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "justCatch": [
+            {
+                "m_details": {},
+                "m_type": "touchmove"
+            }
+        ],
+        "collectCoupon": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "getUserInfo": [
+            {
+                "m_details": {
+                    "encryptedData": "WHZ2K5YGIp9D5AjIMo9tz+H3G5NYWjLiKXvyKWCrY6lTykC26vO",
+                    "iv": "si5BVYyuykJtuA+8/RSRJg==",
+                    "errMsg": "getUserInfo:ok",
+                    "rawData": {
+                        "avatarUrl": "https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132",
+                        "city": "Chengdu",
+                        "gender": 0,
+                        "language": "English",
+                        "nickName": "NICKNAME"
+                    }
+                },
+                "m_type": "getuserinfo"
+            }
+        ]
+    },
+    "pages/productOrder/paySuccess/paySuccess": {},
+    "pages/user/abnormalAuthentication/abnormalAuthentication": {
+        "submitAuth": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {
+                        "phone": "default input string. \n",
+                        "code": "default input string. \n"
+                    }
+                },
+                "m_type": "submit"
+            }
+        ],
+        "phoneInput": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "codeInput": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "codeClick": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "beginSmsTimer": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/productOrder/detail/detail": {
+        "cancelOrder": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {
+                        "uuid": "default input string. \n",
+                        "index": "default input string. \n"
+                    }
+                },
+                "m_type": "submit"
+            }
+        ],
+        "payOrder": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {
+                        "uuid": "default input string. \n"
+                    }
+                },
+                "m_type": "submit"
+            }
+        ],
+        "refund": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {
+                        "uuid": "default input string. \n"
+                    }
+                },
+                "m_type": "submit"
+            }
+        ],
+        "auth": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/list/list": {},
+    "pages/productOrder/rotate/rotate": {},
+    "pages/notice/notice": {},
+    "pages/Activity/newactivity": {},
+    "pages/Lottery/lottery": {}
+}
