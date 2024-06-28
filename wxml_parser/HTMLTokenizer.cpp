@@ -55,7 +55,7 @@ namespace Web
 
     std::optional<char32_t> HTMLTokenizer::peek_codepoint(size_t offset) const
     {
-        if (m_cursor >= m_input.length())
+        if (m_cursor + offset >= m_input.length())
             return std::nullopt;
         return m_input[m_cursor + offset];
     }

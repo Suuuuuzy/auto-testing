@@ -255,7 +255,8 @@ namespace Web
         "bindchooseavatar",
         "bindopensetting",
         "bindlaunchapp",
-        // "bindsubmit", 原来 bindsubmit在这里，但微信小程序的documentation上没有记载bindsubmit为button的binding function，应该是form的
+        // "bindsubmit", 原来 bindsubmit在这里，
+        // 但微信小程序的documentation上没有记载bindsubmit为button的binding function，应该是form的
         // details see https://developers.weixin.qq.com/miniprogram/dev/component/button.html
 
         //<scroll - view>
@@ -288,8 +289,10 @@ namespace Web
 
         /*
         bindchange has multiple possibilities, include but not limited to
-        <movable - view>
-        <checkbox - group>
+        <movable-view>
+        <checkbox-group>
+        <picker>
+        <slider>
         */
         "bindchange",
 
@@ -348,7 +351,8 @@ namespace Web
         "bindsuccess",
         "bindfail",
         "bindcomplete",
-        "bindcancel",
+        // "bindcancel",
+        //  written here but navigator does not have a bindcancel attribute
 
         //<audio>
         "bindplay",

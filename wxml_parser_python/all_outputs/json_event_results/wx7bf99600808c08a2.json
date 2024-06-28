@@ -1,0 +1,7350 @@
+{
+    "pages/index/index": {
+        "tplGoToPage": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "ckselectsp": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "formReset": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    }
+                },
+                "m_type": "reset"
+            }
+        ],
+        "formSubmit": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {
+                        "{{items.id}}": []
+                    }
+                },
+                "m_type": "submit"
+            }
+        ],
+        "bindDateChange": [
+            {
+                "m_details": {
+                    "value": "2021-09-01"
+                },
+                "m_type": "change"
+            }
+        ],
+        "delUploadImg": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "formUploadImage": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "goCutprice": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "getUserProfile": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "getUserInfo": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "collectfavour": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "tipoff": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "homeAdsError": [
+            {
+                "m_details": {
+                    "errMsg": "GET {{homeAds.ImageUrl}} 404 (Not Found)"
+                },
+                "m_type": "error"
+            }
+        ],
+        "imageLoad": [
+            {
+                "m_details": {
+                    "height": 0,
+                    "width": 0
+                },
+                "m_type": "load"
+            }
+        ],
+        "goHomeAds": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "AdsCloseHander": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "mskAdsError": [
+            {
+                "m_details": {
+                    "errMsg": "GET {{mskAds.ImageUrl}} 404 (Not Found)"
+                },
+                "m_type": "error"
+            }
+        ],
+        "goMskAdsUrl": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "closeMskAds": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/fansrank/fansrank": {
+        "{{isStart?'weekrank':''}}": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "{{isStart?'monthrank':''}}": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "{{isStart?'totalrank':''}}": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "clickrule": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "closemsk": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/DIYcontent/DIYcontent": {
+        "bindscroll": [
+            {
+                "m_details": {
+                    "deltaX": 0.0,
+                    "deltaY": 0.0,
+                    "scrollHeight": 0.0,
+                    "scrollLeft": 0.0,
+                    "scrollTop": 0.0,
+                    "scrollWidth": 0.0
+                },
+                "m_type": "scroll"
+            }
+        ],
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "scrollView": [
+            {
+                "m_details": {
+                    "direction": "top"
+                },
+                "m_type": "scrolltoupper"
+            }
+        ],
+        "searchinput": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "value": "hello world!"
+                },
+                "m_type": "confirm"
+            }
+        ],
+        "sousuobind": [
+            {
+                "m_details": {
+                    "cursor": 0,
+                    "value": ""
+                },
+                "m_type": "blur"
+            }
+        ],
+        "sousuovalue": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "tplGoToPage": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "callTel": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "formReset": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    }
+                },
+                "m_type": "reset"
+            }
+        ],
+        "formSubmit": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {
+                        "{{items.id}}": []
+                    }
+                },
+                "m_type": "submit"
+            }
+        ],
+        "bindDateChange": [
+            {
+                "m_details": {
+                    "value": "2021-09-01"
+                },
+                "m_type": "change"
+            }
+        ],
+        "delUploadImg": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "formUploadImage": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "moNitor": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "onGotUserInfo1": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "onGotUserInfo": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "onGotUserInfo2": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "returnTop": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/luckydraw/luckydraw": {
+        "onGotUserInfo": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "paging": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "goToPrize": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "cancelprize": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "nothing": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "fillprizeaddress": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "cancelshare": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "usingIntegral": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/smashgoldeneggs/smashgoldeneggs": {
+        "onGotUserInfo": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "cancelprize": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "nothing": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "fillprizeaddress": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "cancelshare": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "usingIntegral": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "ture": [
+            {
+                "m_details": {},
+                "m_type": "touchmove"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchmove"
+            }
+        ],
+        "onGotUserInfo13": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/fightgroupslist/fightgroupslist": {
+        "allOrders": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "toBePaid": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "scrolltoupper": [
+            {
+                "m_details": {
+                    "deltaX": 0.0,
+                    "deltaY": 0.0,
+                    "scrollHeight": 0.0,
+                    "scrollLeft": 0.0,
+                    "scrollTop": 0.0,
+                    "scrollWidth": 0.0
+                },
+                "m_type": "scroll"
+            }
+        ],
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "scrollbottomtwo": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "nav": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "returnTop": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "outnav": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/productdetail/productdetail": {
+        "bindchange": [
+            {
+                "m_details": {
+                    "current": 0,
+                    "currentItemId": "",
+                    "source": "touch"
+                },
+                "m_type": "change"
+            }
+        ],
+        "OriginalImage": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "shareBox": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "ckselectsp": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "close": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "onGotUserInfo212": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "onGotUserInfo12": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "lookall": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "ServiceStart": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "ImgTap": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "tabSwitch": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "PDCollection": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "onGotUserInfo21": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "goTabBar": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "onGotUserInfo22": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "closesp": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "true": [
+            {
+                "m_details": {},
+                "m_type": "touchmove"
+            }
+        ],
+        "selectsp": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "sub": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "writenum": [
+            {
+                "m_details": {
+                    "cursor": 0,
+                    "value": ""
+                },
+                "m_type": "blur"
+            }
+        ],
+        "inputNum": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "add": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "getPhoneNumberBuy": [
+            {
+                "m_details": {
+                    "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
+                },
+                "m_type": "getphonenumber"
+            },
+            {
+                "m_details": {
+                    "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
+                },
+                "m_type": "getphonenumber"
+            }
+        ],
+        "getPhoneNumberGrounp": [
+            {
+                "m_details": {
+                    "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
+                },
+                "m_type": "getphonenumber"
+            }
+        ],
+        "getPhoneNumberIBuy": [
+            {
+                "m_details": {
+                    "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
+                },
+                "m_type": "getphonenumber"
+            },
+            {
+                "m_details": {
+                    "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
+                },
+                "m_type": "getphonenumber"
+            },
+            {
+                "m_details": {
+                    "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
+                },
+                "m_type": "getphonenumber"
+            }
+        ],
+        "buynow": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "immediatelyOffered": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "ILObuynow": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "addCard": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/category/category": {
+        "ckCategoryitem": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "OverMove": [
+            {
+                "m_details": {},
+                "m_type": "touchend"
+            }
+        ],
+        "startMove": [
+            {
+                "m_details": {},
+                "m_type": "touchmove"
+            }
+        ],
+        "xindex": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "swiperTab": [
+            {
+                "m_details": {
+                    "current": 0,
+                    "currentItemId": "",
+                    "source": "touch"
+                },
+                "m_type": "change"
+            }
+        ],
+        "bindtoscroll": [
+            {
+                "m_details": {
+                    "deltaX": 0.0,
+                    "deltaY": 0.0,
+                    "scrollHeight": 0.0,
+                    "scrollLeft": 0.0,
+                    "scrollTop": 0.0,
+                    "scrollWidth": 0.0
+                },
+                "m_type": "scroll"
+            }
+        ],
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "ckselectsp": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/fightgroupsdetail/fightgroupsdetail": {
+        "scrolltoupper": [
+            {
+                "m_details": {
+                    "deltaX": 0.0,
+                    "deltaY": 0.0,
+                    "scrollHeight": 0.0,
+                    "scrollLeft": 0.0,
+                    "scrollTop": 0.0,
+                    "scrollWidth": 0.0
+                },
+                "m_type": "scroll"
+            }
+        ],
+        "fightPage": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "gotodetail": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "open": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "shareBox": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "goToUrl": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "immediatelyOffered": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "nav": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "returnTop": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "outnav": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "close": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "innertouch": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "closeImage": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/cart/cart": {
+        "bindscroll": [
+            {
+                "m_details": {
+                    "deltaX": 0.0,
+                    "deltaY": 0.0,
+                    "scrollHeight": 0.0,
+                    "scrollLeft": 0.0,
+                    "scrollTop": 0.0,
+                    "scrollWidth": 0.0
+                },
+                "m_type": "scroll"
+            }
+        ],
+        "fightPage": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "GetExtraProductEventRule": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "bindGive": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "removeend": [
+            {
+                "m_details": {},
+                "m_type": "touchend"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchend"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchend"
+            }
+        ],
+        "removeload": [
+            {
+                "m_details": {},
+                "m_type": "touchmove"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchmove"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchmove"
+            }
+        ],
+        "removestart": [
+            {
+                "m_details": {},
+                "m_type": "touchstart"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchstart"
+            },
+            {
+                "m_details": {},
+                "m_type": "touchstart"
+            }
+        ],
+        "ckitem": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "tiaozhuan": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "sub": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "writenum": [
+            {
+                "m_details": {
+                    "cursor": 0,
+                    "value": ""
+                },
+                "m_type": "blur"
+            },
+            {
+                "m_details": {
+                    "cursor": 0,
+                    "value": ""
+                },
+                "m_type": "blur"
+            },
+            {
+                "m_details": {
+                    "cursor": 0,
+                    "value": ""
+                },
+                "m_type": "blur"
+            },
+            {
+                "m_details": {
+                    "cursor": 0,
+                    "value": ""
+                },
+                "m_type": "blur"
+            },
+            {
+                "m_details": {
+                    "cursor": 0,
+                    "value": ""
+                },
+                "m_type": "blur"
+            },
+            {
+                "m_details": {
+                    "cursor": 0,
+                    "value": ""
+                },
+                "m_type": "blur"
+            }
+        ],
+        "add": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "delcart": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "gotoPro": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "toGather": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "ckall": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "delAll": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "onGotUserInfo": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "ckselectsp": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "returnTop": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/Flavorcho/Flavorcho": {
+        "inputRemark": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11
+                },
+                "m_type": "input"
+            }
+        ],
+        "condition": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "goback": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/Receivetails/Receivetails": {
+        "receivenowWeixin": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "receivenow": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "usenow": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "shareBox": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/orderlist/orderlist": {
+        "allOrders": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "toBePaid": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "receiptOfGoods": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "toBeEvaluated": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "orderaudit": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "navtor": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "cancelOrder": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "gotopay": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            },
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            },
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            },
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ],
+        "confirmReceipt": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/search/search": {
+        "search": [
+            {
+                "m_details": {
+                    "value": "hello world!"
+                },
+                "m_type": "confirm"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "startinput": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "backPage": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "removeCache": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "searchName": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/UserCenter/UserCenter": {
+        "goToAlerts": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "onGotUserInfo": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "goTabBar": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "cancel": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "getPhoneNumber": [
+            {
+                "m_details": {
+                    "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
+                },
+                "m_type": "getphonenumber"
+            }
+        ]
+    },
+    "pages/personaldata/personaldata": {
+        "inputReName": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "inputEmail": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "bindSexChange": [
+            {
+                "m_details": {
+                    "value": 0
+                },
+                "m_type": "change"
+            }
+        ],
+        "bindDateChange": [
+            {
+                "m_details": {
+                    "value": "2021-09-01"
+                },
+                "m_type": "change"
+            }
+        ],
+        "inputphone": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "inputcode": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "checkPhoneState": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "submitInfo": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/cashaccount/cashaccount": {
+        "getPhoneNumber": [
+            {
+                "m_details": {
+                    "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
+                },
+                "m_type": "getphonenumber"
+            },
+            {
+                "m_details": {
+                    "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
+                },
+                "m_type": "getphonenumber"
+            }
+        ],
+        "goto": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "drawCash": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/carDdetails/carDdetails": {
+        "Height": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "card_xinxi": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/endorsement/endorsement": {
+        "getPhoneNumber": [
+            {
+                "m_details": {
+                    "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
+                },
+                "m_type": "getphonenumber"
+            }
+        ],
+        "shareBox1": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "shareBoxOff": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "onGotUserInfo2": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "goTabBar": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "reachBottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ]
+    },
+    "pages/addresslist/addresslist": {
+        "touchE": [
+            {
+                "m_details": {},
+                "m_type": "touchend"
+            }
+        ],
+        "touchM": [
+            {
+                "m_details": {},
+                "m_type": "touchmove"
+            }
+        ],
+        "touchS": [
+            {
+                "m_details": {},
+                "m_type": "touchstart"
+            }
+        ],
+        "SelectAddress": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "EditAddress": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "DelAddress": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "AddAddress": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/addressmanage/addressmanage": {
+        "inputconsignee": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "inputphone": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "showbox": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "inputdetail": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "ckDefault": [
+            {
+                "m_details": {
+                    "valie": true
+                },
+                "m_type": "change"
+            }
+        ],
+        "closead": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "notap": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "bindChange": [
+            {
+                "m_details": {
+                    "value": []
+                },
+                "m_type": "change"
+            }
+        ],
+        "submitinfo": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/bindphone/bindphone": {
+        "inputphone": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "inputcode": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "sendmessage": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "submitdata": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/orderdetail/orderdetail": {
+        "scrolltoupper": [
+            {
+                "m_details": {
+                    "deltaX": 0.0,
+                    "deltaY": 0.0,
+                    "scrollHeight": 0.0,
+                    "scrollLeft": 0.0,
+                    "scrollTop": 0.0,
+                    "scrollWidth": 0.0
+                },
+                "m_type": "scroll"
+            }
+        ],
+        "fightPage": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "IsShowRPK": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "orderaudit": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "logisticsprogress": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "regionchange": [
+            {
+                "m_details": {
+                    "causedBy": "gesture",
+                    "type": "begin"
+                },
+                "m_type": "begin"
+            },
+            {
+                "m_details": {
+                    "causedBy": "gesture",
+                    "type": "begin"
+                },
+                "m_type": "begin"
+            }
+        ],
+        "calldelivery": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "call": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "copyordernum": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "callCellPhone": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "cancelOrder": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "gotopay": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            },
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            },
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ],
+        "shareBox": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "nav": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "returnTop": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "outnav": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/goodcollection/goodcollection": {
+        "goodsCollection": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "informationCollection": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "{{item.IsDelete==true?'tiaozhuan':'gotoProduct'}}": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "removeend": [
+            {
+                "m_details": {},
+                "m_type": "touchend"
+            }
+        ],
+        "removeload": [
+            {
+                "m_details": {},
+                "m_type": "touchmove"
+            }
+        ],
+        "removestart": [
+            {
+                "m_details": {},
+                "m_type": "touchstart"
+            }
+        ],
+        "cancelCollection": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "scrollbottom1": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "removeend1": [
+            {
+                "m_details": {},
+                "m_type": "touchend"
+            }
+        ],
+        "removeload1": [
+            {
+                "m_details": {},
+                "m_type": "touchmove"
+            }
+        ],
+        "removestart1": [
+            {
+                "m_details": {},
+                "m_type": "touchstart"
+            }
+        ],
+        "cancelCollection1": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/productlist/productlist": {
+        "determine": [
+            {
+                "m_details": {
+                    "value": "hello world!"
+                },
+                "m_type": "confirm"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "startinput": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "backPage": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "scrolltoupper": [
+            {
+                "m_details": {
+                    "deltaX": 0.0,
+                    "deltaY": 0.0,
+                    "scrollHeight": 0.0,
+                    "scrollLeft": 0.0,
+                    "scrollTop": 0.0,
+                    "scrollWidth": 0.0
+                },
+                "m_type": "scroll"
+            }
+        ],
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "sealnum": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "newpd": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "pdprice": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "screening": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "nav": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "viewType": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "returnTop": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "outnav": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "closeItem": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "addValueId": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "reset": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/logisticsprogress/logisticsprogress": {
+        "call": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/profitlist/profitlist": {
+        "earningsToday": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "nearlyAMonth": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "nearlyThreeMonths": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "allDay": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ]
+    },
+    "pages/fanslist/fanslist": {
+        "level1": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "level2": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ]
+    },
+    "pages/cashdetaillist/cashdetaillist": {
+        "allTypes": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "expenditure": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "income": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ]
+    },
+    "pages/applycash/applycash": {
+        "cutType": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "cutPayType": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "formSubmit": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {
+                        "money": "default input string. \n",
+                        "ali_account": "default input string. \n",
+                        "bank_name": "default input string. \n",
+                        "bank_num": "default input string. \n",
+                        "name": "default input string. \n",
+                        "phone": "default input string. \n"
+                    }
+                },
+                "m_type": "submit"
+            }
+        ],
+        "inputVerification": [
+            {
+                "m_details": {
+                    "value": "",
+                    "height": 0
+                },
+                "m_type": "focus"
+            },
+            {
+                "m_details": {
+                    "value": "",
+                    "height": 0
+                },
+                "m_type": "focus"
+            },
+            {
+                "m_details": {
+                    "value": "",
+                    "height": 0
+                },
+                "m_type": "focus"
+            },
+            {
+                "m_details": {
+                    "value": "",
+                    "height": 0
+                },
+                "m_type": "focus"
+            },
+            {
+                "m_details": {
+                    "value": "",
+                    "height": 0
+                },
+                "m_type": "focus"
+            },
+            {
+                "m_details": {
+                    "value": "",
+                    "height": 0
+                },
+                "m_type": "focus"
+            }
+        ]
+    },
+    "pages/fightgroupsorderlist/fightgroupsorderlist": {
+        "allOrders": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "toBePaid": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "receiptOfGoods": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "toBeEvaluated": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "gotopay": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/nearbylist/nearbylist": {
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "gotomap": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "call": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "handler": [
+            {
+                "m_details": {
+                    "errMsg": "openSetting:ok",
+                    "authSetting": {
+                        "scope.userLocation": true,
+                        "scope.writePhotosAlbum": true
+                    }
+                },
+                "m_type": "opensetting"
+            }
+        ]
+    },
+    "pages/usercoupon/usercoupon": {
+        "neverused": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "alreadyused": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "outdated": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "usenow": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "nav_mycou": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/couponsuitproduct/couponsuitproduct": {
+        "scrollView": [
+            {
+                "m_details": {
+                    "deltaX": 0.0,
+                    "deltaY": 0.0,
+                    "scrollHeight": 0.0,
+                    "scrollLeft": 0.0,
+                    "scrollTop": 0.0,
+                    "scrollWidth": 0.0
+                },
+                "m_type": "scroll"
+            }
+        ],
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "scrollTop": [
+            {
+                "m_details": {
+                    "direction": "top"
+                },
+                "m_type": "scrolltoupper"
+            }
+        ],
+        "viewType": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "retruntop": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/applycashdetail/applycashdetail": {
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ]
+    },
+    "pages/suitcouponlist/suitcouponlist": {
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "changecoupon": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "uesnothing": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/userfeedback/userfeedback": {
+        "select": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "bindTextAreaBlur": [
+            {
+                "m_details": {
+                    "cursor": 0,
+                    "value": ""
+                },
+                "m_type": "blur"
+            }
+        ],
+        "inputpostContent": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11
+                },
+                "m_type": "input"
+            }
+        ],
+        "previewImg": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "delImg": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "UploadImg": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "writephoneNum": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "getPhoneNumber": [
+            {
+                "m_details": {
+                    "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
+                },
+                "m_type": "getphonenumber"
+            }
+        ],
+        "clickReply": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "submitdata": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/PComment/PComment": {
+        "ServiceStart": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "inputOpinion": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11
+                },
+                "m_type": "input"
+            }
+        ],
+        "ImgTap": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "delImg": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "upImgs": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "submitComment": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/PCommentList/PCommentList": {
+        "picDetail": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "spcParam": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "packingList": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "scrollPage": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "ServiceStart": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "ImgTap": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/AboutMerchant/AboutMerchant": {
+        "call": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/favorable/favorable": {
+        "blur": [
+            {
+                "m_details": {
+                    "cursor": 0,
+                    "value": ""
+                },
+                "m_type": "blur"
+            }
+        ],
+        "inputnum": [
+            {
+                "m_details": {
+                    "value": "7.8",
+                    "cursor": 3,
+                    "keyCode": 56
+                },
+                "m_type": "input"
+            }
+        ],
+        "clearnum": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "checkboxChange": [
+            {
+                "m_details": {
+                    "value": []
+                },
+                "m_type": "change"
+            }
+        ],
+        "blur1": [
+            {
+                "m_details": {
+                    "cursor": 0,
+                    "value": ""
+                },
+                "m_type": "blur"
+            }
+        ],
+        "nodiscount": [
+            {
+                "m_details": {
+                    "value": "7.8",
+                    "cursor": 3,
+                    "keyCode": 56
+                },
+                "m_type": "input"
+            }
+        ],
+        "suitcouponlist": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "": [
+            {
+                "m_details": {
+                    "cursor": 0,
+                    "value": ""
+                },
+                "m_type": "blur"
+            }
+        ],
+        "setPoint": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "switchChange": [
+            {
+                "m_details": {
+                    "valie": true
+                },
+                "m_type": "change"
+            }
+        ],
+        "getUserInfo": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "paysubmit": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ]
+    },
+    "pages/favorableorderdetail/favorableorderdetail": {
+        "IsShowRPK": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "gotopay": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ],
+        "shareBox": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/favorablesuitcouponlist/favorablesuitcouponlist": {
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "changecoupon": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "uesnothing": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/member/member": {
+        "scrolltoupper": [
+            {
+                "m_details": {
+                    "deltaX": 0.0,
+                    "deltaY": 0.0,
+                    "scrollHeight": 0.0,
+                    "scrollLeft": 0.0,
+                    "scrollTop": 0.0,
+                    "scrollWidth": 0.0
+                },
+                "m_type": "scroll"
+            }
+        ],
+        "fightPage": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "open_card": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "cardvip": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "getPhoneNumber": [
+            {
+                "m_details": {
+                    "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
+                },
+                "m_type": "getphonenumber"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
+                },
+                "m_type": "getphonenumber"
+            }
+        ],
+        "cardDetail": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "ChangeMembertypeOne": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "ChangeMembertypeTwo": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "onGotUserInfo": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "hot_excha": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "onGotUserInfo3": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "onGotUserInfo1": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "outertouch": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "innertouch": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/growthValue/growthValue": {
+        "allOrders": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "toBePaid": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ]
+    },
+    "pages/integral/integral": {
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "toPoints": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "goToTabBar": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "navAnalysis": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "onGotUserInfo": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "click": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/takeOut/takeOut": {
+        "ckallPD6": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "{{item.UserShoppingCartCount<=0?'':'changeAmount'}}": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "bindblur": [
+            {
+                "m_details": {
+                    "cursor": 0,
+                    "value": ""
+                },
+                "m_type": "blur"
+            }
+        ],
+        "bindfocus": [
+            {
+                "m_details": {
+                    "value": "",
+                    "height": 0
+                },
+                "m_type": "focus"
+            }
+        ],
+        "changeAmount": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            },
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "{{item.UserShoppingCartCount>=9999?'':'changeAmount'}}": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "InitProduct": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "shoppingcarclicked": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "shoppingNocarclicked": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "delAll": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "{{item.Amount<=0?'':'changeAmount'}}": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "bindblur1": [
+            {
+                "m_details": {
+                    "cursor": 0,
+                    "value": ""
+                },
+                "m_type": "blur"
+            }
+        ],
+        "bindfocus1": [
+            {
+                "m_details": {
+                    "value": "",
+                    "height": 0
+                },
+                "m_type": "focus"
+            }
+        ],
+        "{{item.Amount>=9999?'':'changeAmount'}}": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "{{commonTPL.cartlist.WaiMaiTotal>0?'shoppingcarclicked':''}}": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "onGotUserInfo": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "closeaddcar": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "innertouch": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "selectsp1": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "bindblur2": [
+            {
+                "m_details": {
+                    "cursor": 0,
+                    "value": ""
+                },
+                "m_type": "blur"
+            }
+        ],
+        "bindfocus2": [
+            {
+                "m_details": {
+                    "value": "",
+                    "height": 0
+                },
+                "m_type": "focus"
+            }
+        ]
+    },
+    "pages/video/video": {},
+    "pages/drawnearbylist/drawnearbylist": {
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "selectAddress": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "call": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "gotomap": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "handler": [
+            {
+                "m_details": {
+                    "errMsg": "openSetting:ok",
+                    "authSetting": {
+                        "scope.userLocation": true,
+                        "scope.writePhotosAlbum": true
+                    }
+                },
+                "m_type": "opensetting"
+            }
+        ]
+    },
+    "pages/bargain/bargain": {
+        "fightPage": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "openTap": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "notifyMe": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "nav": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "returnTop": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "outnav": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "shareBox": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "shareBox1": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "getPhoneNumber": [
+            {
+                "m_details": {
+                    "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
+                },
+                "m_type": "getphonenumber"
+            }
+        ],
+        "goshop": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "onGotUserInfo44": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "back": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "rotate": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "onGotUserInfo66": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "close5": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "scrollbottom2": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ]
+    },
+    "pages/bargainlist/bargainlist": {
+        "allOrders": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "toBePaid": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "scrolltoupper": [
+            {
+                "m_details": {
+                    "deltaX": 0.0,
+                    "deltaY": 0.0,
+                    "scrollHeight": 0.0,
+                    "scrollLeft": 0.0,
+                    "scrollTop": 0.0,
+                    "scrollWidth": 0.0
+                },
+                "m_type": "scroll"
+            }
+        ],
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "scrollbottomtwo": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ]
+    },
+    "pages/bargainDetail/bargainDetail": {
+        "scrolltoupper": [
+            {
+                "m_details": {
+                    "deltaX": 0.0,
+                    "deltaY": 0.0,
+                    "scrollHeight": 0.0,
+                    "scrollLeft": 0.0,
+                    "scrollTop": 0.0,
+                    "scrollWidth": 0.0
+                },
+                "m_type": "scroll"
+            }
+        ],
+        "shareBox": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "ckselectsp": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "close": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "picDetail": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "spcParam": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "packingList": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "afterService": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "PDCollection": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "onGotUserInfo1": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "onGotUserInfo3": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "goTabBar": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "ckselectsp1": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "closesp": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "selectsp": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "sub": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "writenum": [
+            {
+                "m_details": {
+                    "cursor": 0,
+                    "value": ""
+                },
+                "m_type": "blur"
+            }
+        ],
+        "add": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "addCard": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "buynow": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "ILObuynow": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/mybargainlist/mybargainlist": {
+        "allOrders": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "toBePaid": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ]
+    },
+    "pages/orderFood/orderFood": {
+        "{{!loadNull?'ckallPD6':''}}": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "{{item.UserShoppingCartCount<=0?'':'changeAmount'}}": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "bindblur": [
+            {
+                "m_details": {
+                    "cursor": 0,
+                    "value": ""
+                },
+                "m_type": "blur"
+            }
+        ],
+        "bindfocus": [
+            {
+                "m_details": {
+                    "value": "",
+                    "height": 0
+                },
+                "m_type": "focus"
+            }
+        ],
+        "changeAmount": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            },
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "{{item.UserShoppingCartCount>=9999?'':'changeAmount'}}": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "InitProduct": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "shoppingcarclicked": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "shoppingNocarclicked": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "delAll": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "{{item.Amount<=0?'':'changeAmount'}}": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "bindblur1": [
+            {
+                "m_details": {
+                    "cursor": 0,
+                    "value": ""
+                },
+                "m_type": "blur"
+            }
+        ],
+        "bindfocus1": [
+            {
+                "m_details": {
+                    "value": "",
+                    "height": 0
+                },
+                "m_type": "focus"
+            }
+        ],
+        "{{item.Amount>=9999?'':'changeAmount'}}": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "{{commonTPL.cartlist.WaiMaiTotal>0?'shoppingcarclicked':''}}": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "getPhoneNumber": [
+            {
+                "m_details": {
+                    "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
+                },
+                "m_type": "getphonenumber"
+            }
+        ],
+        "submitorder": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "closeaddcar": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "innertouch": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "selectsp1": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "bindblur2": [
+            {
+                "m_details": {
+                    "cursor": 0,
+                    "value": ""
+                },
+                "m_type": "blur"
+            }
+        ],
+        "bindfocus2": [
+            {
+                "m_details": {
+                    "value": "",
+                    "height": 0
+                },
+                "m_type": "focus"
+            }
+        ]
+    },
+    "pages/orderTrue/orderTrue": {
+        "more": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "bindPickerChange": [
+            {
+                "m_details": {
+                    "value": 0
+                },
+                "m_type": "change"
+            }
+        ],
+        "select": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "submitorder": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ]
+    },
+    "pages/scan/scan": {},
+    "pages/remark/remark": {
+        "inputRemark": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11
+                },
+                "m_type": "input"
+            }
+        ],
+        "goback": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/orderMessage/orderMessage": {
+        "more": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "remark": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "goback": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "gobuy": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/orderPay/orderPay": {
+        "blur": [
+            {
+                "m_details": {
+                    "cursor": 0,
+                    "value": ""
+                },
+                "m_type": "blur"
+            },
+            {
+                "m_details": {
+                    "cursor": 0,
+                    "value": ""
+                },
+                "m_type": "blur"
+            }
+        ],
+        "inputnum": [
+            {
+                "m_details": {
+                    "value": "7.8",
+                    "cursor": 3,
+                    "keyCode": 56
+                },
+                "m_type": "input"
+            },
+            {
+                "m_details": {
+                    "value": "7.8",
+                    "cursor": 3,
+                    "keyCode": 56
+                },
+                "m_type": "input"
+            }
+        ],
+        "suitcouponlist": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "count": [
+            {
+                "m_details": {
+                    "value": "1234567890",
+                    "cursor": 10,
+                    "keyCode": 48
+                },
+                "m_type": "input"
+            }
+        ],
+        "switchChange": [
+            {
+                "m_details": {
+                    "valie": true
+                },
+                "m_type": "change"
+            }
+        ],
+        "paysubmit": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ]
+    },
+    "pages/orderMessageDetail/orderMessageDetail": {
+        "IsShowRPK": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "more": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "more1": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "remark": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "goback": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "gobuy": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "shareBox": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/QRcode/QRcode": {},
+    "pages/navigationpage/navigationpage": {
+        "tplGoToPage": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "callTel": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "formReset": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    }
+                },
+                "m_type": "reset"
+            }
+        ],
+        "formSubmit": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {
+                        "{{items.id}}": []
+                    }
+                },
+                "m_type": "submit"
+            }
+        ],
+        "bindDateChange": [
+            {
+                "m_details": {
+                    "value": "2021-09-01"
+                },
+                "m_type": "change"
+            }
+        ],
+        "delUploadImg": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "formUploadImage": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "goCutprice": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "getLoginUserInfo": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "getUserInfo": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/newsletter/newsletter": {
+        "classifyClick": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/SecondaryPage/SecondaryPage": {
+        "tplGoToPage": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "ckselectsp": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "formReset": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    }
+                },
+                "m_type": "reset"
+            }
+        ],
+        "formSubmit": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {
+                        "{{items.id}}": []
+                    }
+                },
+                "m_type": "submit"
+            }
+        ],
+        "bindDateChange": [
+            {
+                "m_details": {
+                    "value": "2021-09-01"
+                },
+                "m_type": "change"
+            }
+        ],
+        "delUploadImg": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "formUploadImage": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "goCutprice": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "getLoginUserInfo": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "getUserInfo": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/integralPage/integralPage": {
+        "skip": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "vipImg": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "onGotUserInfo1": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "onGotUserInfo": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "forTab": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "sizeTab": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "sizerCondition": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "confirm": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {
+                        "minNum": "default input string. \n",
+                        "maxNum": "default input string. \n"
+                    }
+                },
+                "m_type": "submit"
+            }
+        ],
+        "reset": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "details": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "outertouch": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "innertouch": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "nav": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "returnTop": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "outnav": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "onGotUserInfo9": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "click": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/publicQRcode/publicQRcode": {},
+    "pages/recharge/recharge": {
+        "choose": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "select": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "agreementContent": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "onGotUserInfo": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "ishinthide": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/cashbalance/cashbalance": {},
+    "pages/rechargeorderdetail/rechargeorderdetail": {
+        "goback": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/webpage/webpage": {},
+    "pages/redpacket/redpacket": {
+        "Using": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "lookMore": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/luckyfightgroupslist/luckyfightgroupslist": {
+        "allOrders": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "toBePaid": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "scrolltoupper": [
+            {
+                "m_details": {
+                    "deltaX": 0.0,
+                    "deltaY": 0.0,
+                    "scrollHeight": 0.0,
+                    "scrollLeft": 0.0,
+                    "scrollTop": 0.0,
+                    "scrollWidth": 0.0
+                },
+                "m_type": "scroll"
+            }
+        ],
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "scrollbottomtwo": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "nav": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "returnTop": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "outnav": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/greetingCard/greetingCard": {},
+    "pages/Popularitycharts/Popularitycharts": {
+        "gotohny": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "shareQRCode": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/receivecontent/receivecontent": {
+        "getPhoneNumberWeixin": [
+            {
+                "m_details": {
+                    "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
+                },
+                "m_type": "getphonenumber"
+            }
+        ],
+        "receivenowWeixin": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "getPhoneNumber": [
+            {
+                "m_details": {
+                    "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
+                },
+                "m_type": "getphonenumber"
+            }
+        ],
+        "receivenow": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "outertouch": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "innertouch": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "nav_mycou": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/Seconds/Seconds": {
+        "allOrders": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "toBePaid": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "scrollbottomtwo": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ]
+    },
+    "pages/moneyrule/moneyrule": {
+        "ShowPop": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "server/productdetail/productdetail": {
+        "bindchange": [
+            {
+                "m_details": {
+                    "current": 0,
+                    "currentItemId": "",
+                    "source": "touch"
+                },
+                "m_type": "change"
+            }
+        ],
+        "OriginalImage": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "shareBox": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "ckselectsp": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "setUserInfo": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "lookall": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "tabSwitch": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "ServiceStart": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "ImgTap": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "PDCollection": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "closesp": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "selectsp": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "sub": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "writenum": [
+            {
+                "m_details": {
+                    "cursor": 0,
+                    "value": ""
+                },
+                "m_type": "blur"
+            }
+        ],
+        "add": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "getPhoneNumber": [
+            {
+                "m_details": {
+                    "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
+                },
+                "m_type": "getphonenumber"
+            },
+            {
+                "m_details": {
+                    "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
+                },
+                "m_type": "getphonenumber"
+            },
+            {
+                "m_details": {
+                    "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
+                },
+                "m_type": "getphonenumber"
+            },
+            {
+                "m_details": {
+                    "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
+                },
+                "m_type": "getphonenumber"
+            }
+        ],
+        "seckill": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "setBargaining": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "immediatelyOpenGroup": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "asGetPhone": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "server/productList/productList": {
+        "scrolltoupper": [
+            {
+                "m_details": {
+                    "deltaX": 0.0,
+                    "deltaY": 0.0,
+                    "scrollHeight": 0.0,
+                    "scrollLeft": 0.0,
+                    "scrollTop": 0.0,
+                    "scrollWidth": 0.0
+                },
+                "m_type": "scroll"
+            }
+        ],
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "sealnum": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "newpd": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "pdprice": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "nav": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "viewType": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "returnTop": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "outnav": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "server/orderlist/orderlist": {
+        "allOrders": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "toBePaid": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "receiptOfGoods": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "toBeEvaluated": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "scrollbottom": [
+            {
+                "m_details": {
+                    "direction": "bottom"
+                },
+                "m_type": "scrolltolower"
+            }
+        ],
+        "orderaudit": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "gotopay": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {}
+                },
+                "m_type": "submit"
+            }
+        ],
+        "writeOrder": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "cancelOrder": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/invoiceSave/invoiceSave": {
+        "formReset": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    }
+                },
+                "m_type": "hreset"
+            }
+        ],
+        "formSubmit": [
+            {
+                "m_details": {
+                    "target": {
+                        "id": "",
+                        "offsetLeft": 0.0,
+                        "offsetTop": 0.0,
+                        "dataset": {}
+                    },
+                    "value": {
+                        "type": [],
+                        "title": "default input string. \n",
+                        "taxNumber": "default input string. \n",
+                        "switch": true,
+                        "companyAddress": "default input string. \n",
+                        "bankAccount": "default input string. \n",
+                        "email": "default input string. \n",
+                        "telephone": "default input string. \n"
+                    }
+                },
+                "m_type": "hsubmit"
+            }
+        ],
+        "bindinput": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            },
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            },
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "switch1Change": [
+            {
+                "m_details": {
+                    "valie": true
+                },
+                "m_type": "change"
+            },
+            {
+                "m_details": {
+                    "valie": true
+                },
+                "m_type": "change"
+            }
+        ],
+        "up": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "back": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/invoiceDetail/invoiceDetail": {
+        "Cancel": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    }
+}

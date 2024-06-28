@@ -379,7 +379,7 @@ namespace Web
 
     void recursive_all_subcomponents_search(
         Node *root_node, std::string sub_component_tag,
-        std::vector<std::string> *subcomponent_values)
+        nlohmann::json *subcomponent_values)
     {
         if (root_node->type() == NodeType::ELEMENT_NODE)
         {
@@ -406,7 +406,7 @@ namespace Web
     }
 
     void get_all_form_components(Node *root_node,
-                                 std::vector<std::tuple<std::string, std::string>> *data)
+                                 nlohmann::json *data)
     {
         assert(root_node->type() == NodeType::ELEMENT_NODE);
         for (size_t idx = 0; idx < root_node->get_num_children(); ++idx)
@@ -426,15 +426,14 @@ namespace Web
                 // out the input content
                 if (component_name.has_value())
                 {
+                    std::string component_name_val = component_name.value();
                     std::string component_tag = child_node->get_name();
-                    std::stringstream ss_data;
 
                     if (component_tag == "input")
                     {
                         // cannot estimate a good input default value,
                         // so a string constant "default input string \n" is provided
-                        ss_data << "input: " << "default input string. \n"
-                                << END_OF_ELEMENT;
+                        (*data)[component_name_val] = "default input string. \n";
                     }
                     else if (component_tag == "slider")
                     {
@@ -451,26 +450,26 @@ namespace Web
                         the max attribute has default value 100
                         the step attribute has default value 1
                         */
-                        std::string min_setting = (min_attribute.has_value())
-                                                      ? min_attribute.value()
-                                                      : "0";
-                        std::string max_setting = (max_attribute.has_value())
-                                                      ? max_attribute.value()
-                                                      : "100";
-                        std::string step_setting = (step_attribute.has_value())
-                                                       ? step_attribute.value()
-                                                       : "1";
+                        int min_setting = (min_attribute.has_value())
+                                              ? std::stoi(min_attribute.value())
+                                              : 0;
+                        int max_setting = (max_attribute.has_value())
+                                              ? std::stoi(max_attribute.value())
+                                              : 100;
+                        int step_setting = (step_attribute.has_value())
+                                               ? std::stoi(step_attribute.value())
+                                               : 1;
 
-                        ss_data << "slider: " << "min: " << min_setting << END_OF_ELEMENT
-                                << "max: " << max_setting << END_OF_ELEMENT
-                                << "step: " << step_setting << END_OF_ELEMENT
-                                << END_OF_ELEMENT;
+                        int mid_step = (max_setting - min_setting) / step_setting;
+
+                        (*data)[component_name_val] = min_setting + mid_step * step_setting;
                     }
                     else if (component_tag == "switch")
                     {
                         // since switch can only accept true or false
                         // no value is provided as it can be inferred
-                        ss_data << "switch: " << "any boolean value" << END_OF_ELEMENT;
+
+                        (*data)[component_name_val] = true;
                     }
                     else if (component_tag == "checkbox-group")
                     {
@@ -496,37 +495,25 @@ namespace Web
                         checkbox-group. To find all checkox components of the radio-group (or at least
                         one to put into the detail values), a recursive search might be necessary
                         */
-                        std::vector<std::string> all_checkbox_comp_values = std::vector<std::string>();
-                        recursive_all_subcomponents_search(child_node, "checkbox", &all_checkbox_comp_values);
+                        nlohmann::json checkbox_comps = nlohmann::json::array();
+                        recursive_all_subcomponents_search(child_node, "checkbox", &checkbox_comps);
 
-                        ss_data << "checkbox-group: " << START_OF_ARR;
-                        for (std::string checkbox_value : all_checkbox_comp_values)
-                        {
-                            ss_data << checkbox_value << END_OF_ELEMENT;
-                        }
-                        ss_data << END_OF_ARR << END_OF_ELEMENT;
+                        (*data)[component_name_val] = checkbox_comps;
                     }
                     else if (component_tag == "radio-group")
                     {
                         /*
                         similar to checkbox element
                         */
-                        std::vector<std::string> all_radio_comp_values = std::vector<std::string>();
-                        recursive_all_subcomponents_search(child_node, "radio", &all_radio_comp_values);
+                        nlohmann::json radio_comps = nlohmann::json::array();
+                        recursive_all_subcomponents_search(child_node, "radio", &radio_comps);
 
-                        ss_data << "radio-group: " << START_OF_ARR;
-                        for (std::string radio_value : all_radio_comp_values)
-                        {
-                            ss_data << radio_value << END_OF_ELEMENT;
-                        }
-                        ss_data << END_OF_ARR << END_OF_ELEMENT;
+                        (*data)[component_name_val] = radio_comps;
                     }
                     else
                     {
                         ASSERT_UNIMPLEMENTED();
                     }
-                    data->push_back(std::make_tuple(component_name.value(),
-                                                    ss_data.str()));
                     continue;
                 }
 

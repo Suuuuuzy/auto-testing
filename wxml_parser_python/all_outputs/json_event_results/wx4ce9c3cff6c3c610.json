@@ -1,0 +1,146 @@
+{
+    "pages/index/index": {
+        "getInputValue": [
+            {
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_type": "input"
+            }
+        ],
+        "handleSubtraction": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "clear": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "handleBtnClick": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/course/course": {
+        "addToMyapp": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/user/user": {
+        "bindGetUserInfo": [
+            {
+                "m_details": {
+                    "encryptedData": "WHZ2K5YGIp9D5AjIMo9tz+H3G5NYWjLiKXvyKWCrY6lTykC26vO",
+                    "iv": "si5BVYyuykJtuA+8/RSRJg==",
+                    "errMsg": "getUserInfo:ok",
+                    "rawData": {
+                        "avatarUrl": "https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132",
+                        "city": "Chengdu",
+                        "gender": 0,
+                        "language": "English",
+                        "nickName": "NICKNAME"
+                    }
+                },
+                "m_type": "getuserinfo"
+            }
+        ],
+        "alertMsg": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            },
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "addToMyapp": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "adTime": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ],
+        "hideImg": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    },
+    "pages/applet/applet": {
+        "goMore": [
+            {
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_type": "tap"
+            }
+        ]
+    }
+}

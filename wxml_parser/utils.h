@@ -224,7 +224,7 @@ namespace Web
     std::string modify_attribute_name(const std::string &attribute_name);
 
     void get_all_form_components(Node *root_node,
-                                 std::vector<std::tuple<std::string, std::string>> *data);
+                                 nlohmann::json *data);
 }
 
 #endif // UTILS_H
