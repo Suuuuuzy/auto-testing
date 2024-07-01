@@ -34,7 +34,7 @@ def modify_config_with_url(miniprogram_path):
             else:
                 config_json['appid'] = "wxc26bf025c84ef3b7"
         except Exception as e:
-            print(f'encountering exception when parsing config json file: {str(e)}')
+            # print(f'encountering exception when parsing config json file: {str(e)}')
             config_json = {
              "appid": "wxc26bf025c84ef3b7",
              "compileType": "miniprogram",
@@ -76,7 +76,7 @@ def modify_config_with_url(miniprogram_path):
             else:
                 private_config_json['setting']['urlCheck'] = False
         except Exception as e:
-            print(f'encountering exception when parsing private config json file: {str(e)}')
+            # print(f'encountering exception when parsing private config json file: {str(e)}')
             private_config_json = {
             "projectname": miniprogram_name,
             "setting": {

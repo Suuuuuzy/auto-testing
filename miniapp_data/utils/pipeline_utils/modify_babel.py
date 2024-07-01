@@ -25,6 +25,6 @@ module.exports = _typeof;
 def modify_babel_path(miniprogram_path):
     typeof_dir = os.path.join(miniprogram_path, '@babel/runtime/helpers/typeof.js')
     if (os.path.exists(typeof_dir) is True):
-        print('The miniprogram uses babel, modified typeof functionality')
+        # print('The miniprogram uses babel, modified typeof functionality')
         with open(typeof_dir, "w") as js_file:
             js_file.write(BABEL_TYPE_OF_SCRIPT)

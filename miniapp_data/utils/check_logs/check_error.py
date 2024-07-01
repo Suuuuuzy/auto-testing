@@ -45,7 +45,7 @@ error_appids = error_appids - wxpay_list
 error_appids = list(error_appids)
 print(f'Error appids except with wxpay patterns: {len(error_appids)}')
 with open("error_appids.txt", "w") as f:
-    json.dump(error_appids, f)
+    json.dump(error_appids, f, indent = 2)
     
    
         
