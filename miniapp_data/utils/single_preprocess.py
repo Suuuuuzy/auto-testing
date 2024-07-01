@@ -11,17 +11,17 @@ import sys
 def preprocess(MINIRPOGRAM_PATH):
     # MINIRPOGRAM_PATH = os.path.join(ROOT_PATH, MINIRPOGRAM_NAME)
 
-    print('Step 1: check config existence and modify config so that url can be processed unchecked\n')
+    # print('Step 1: check config existence and modify config so that url can be processed unchecked\n')
     modify_config_with_url(MINIRPOGRAM_PATH)
 
-    print('Step 2: Eliminate all missing pages\n')
+    # print('Step 2: Eliminate all missing pages\n')
     check_all_paths(MINIRPOGRAM_PATH)
 
-    print('Step 3: Walk through the directory and modify .wxml, bem.wxs, .js, .json files\n')
+    # print('Step 3: Walk through the directory and modify .wxml, bem.wxs, .js, .json files\n')
     # .wxml, bem.wxs, .js, .json
     find_and_format_files(MINIRPOGRAM_PATH)
 
-    print('Step 4: Modify @babel typeof definition\n')
+    # print('Step 4: Modify @babel typeof definition\n')
     modify_babel_path(MINIRPOGRAM_PATH)
     
     logger.info(f'{MINIRPOGRAM_PATH} preprocessing finished')

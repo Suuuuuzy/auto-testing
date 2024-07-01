@@ -71,8 +71,6 @@ output_dir = '/media/dataj/miniapp_data/wxapkgs-42w-unpacked/'
 input_dir = "/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w/"
     
 def handle_wxapkgs(wxapkgs):
-    with open('unpack_with_unveil.log') as f:
-        content = f.read()
     wxapkg_paths = [i for i in wxapkg_paths if not os.path.exists(output_dir + i)]
     
     for i in tqdm(wxapkg_paths):
@@ -94,20 +92,6 @@ def handle_wxapkgs(wxapkgs):
 
 def handle_wxapkgs_old(package_names):
     all_unpacked_packages= package_names
-    print("Total wxapkg number: "+ str(len(all_unpacked_packages)))
-    logger.info("Total wxapkg number: "+ str(len(all_unpacked_packages)))
-    
-    # all_unpacked_packages = [i for i in all_unpacked_packages if not os.path.exists(output_dir + i)]
-    
-    with open('unpack_with_unveil.log') as f:
-        content = f.read()
-        # Define the regular expression pattern
-        pattern = r'wx[a-zA-Z0-9]{16}-pc'
-        # Find all matches in the sample text
-        matches = re.findall(pattern, content)
-        matches = set(matches)
-        
-    all_unpacked_packages = [i for i in all_unpacked_packages if i not in matches]
     print("To be unpacked: "+  str(len(all_unpacked_packages)))
     logger.info("To be unpacked: "+  str(len(all_unpacked_packages)))
 
@@ -123,6 +107,13 @@ def handle_wxapkgs_old(package_names):
 def main():
     with open(appid_file, 'r') as fp:
         package_names = json.load(fp)
+    with open('unpack_with_unveil.log') as f:
+        content = f.read()
+        # Regular expression pattern to match and extract any string between the directory path and the .wxapkg extension
+        pattern = r"/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w/([^\.]+)\.wxapkg"
+        # Search for the pattern in the input string
+        matches = re.findall(pattern, content)
+    package_names = [i for i in package_names if i not in matches]
     print(len(package_names))
     # processes = 20
     processes = 20
@@ -134,7 +125,15 @@ def main():
 if __name__ == '__main__':
     # main()
     
-    
     with open(appid_file, 'r') as fp:
         package_names = json.load(fp)
+    with open('unpack_with_unveil.log') as f:
+        content = f.read()
+        # Regular expression pattern to match and extract any string between the directory path and the .wxapkg extension
+        pattern = r"/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w/([^\.]+)\.wxapkg"
+        # Search for the pattern in the input string
+        matches = re.findall(pattern, content)
+        matches = set(matches)
+    package_names = [i for i in package_names if i not in matches]
+    print(len(package_names))
     handle_wxapkgs_old(package_names)
