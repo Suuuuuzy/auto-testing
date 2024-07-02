@@ -22,6 +22,9 @@ class Node(ABC):
     def get_name(self) -> str:
         return self.m_name
     
+    def get_ancestry(self) -> str | None:
+        return None
+    
     def get_num_children(self) -> int:
         return len(self.m_children)
 
@@ -62,6 +65,7 @@ class RootNode(Node):
     def __init__(self):
         super().__init__()
         self.m_depth = 0
+        self.m_ancestry = ''
     
     def type(self) -> NodeType:
         return NodeType.ROOT_NODE
@@ -72,11 +76,19 @@ class RootNode(Node):
     def get_depth(self) -> int:
         return self.m_depth
     
+    def get_ancestry(self) -> str | None:
+        return self.m_ancestry
+    
     def add_root_child(self, child : Optional['RootNode']) -> None:
         return_val = super().add_child(child)
         assert(return_val is None)
         assert(child.type() == NodeType.ELEMENT_NODE)
         child.m_depth += 1
+                
+        if self.m_ancestry is None or self.m_ancestry == '':
+            child.m_ancestry = '/' + self.m_name if self.m_name != '' else ''
+        else:
+            child.m_ancestry = self.m_ancestry + '/' + self.m_name
 
 class ElementWrapperNode(RootNode):
     def __init__(self, tag_meta_info : Tuple[str, bool] | None):
@@ -104,6 +116,7 @@ class ElementWrapperNode(RootNode):
                 return (child.m_name, child.m_auxiliary_data)
             except ValueError:
                 return None
+                
         return None
     
     def has_end_tag(self) -> bool:

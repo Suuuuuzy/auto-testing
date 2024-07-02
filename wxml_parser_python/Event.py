@@ -65,6 +65,10 @@ class EventInstance:
 class SimplifiedEventInstance:
     m_details : Dict[str, any] = field(default_factory=dict)
     m_type : str = ""
+    m_tag_name : str = ""
+    m_xpath : str = ""
+    m_attributes : Dict[str, any] = field(default_factory=dict)
+    m_data : List[str] = field(default_factory=list)
 
 class EventInstanceEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -72,6 +76,6 @@ class EventInstanceEncoder(json.JSONEncoder):
         isinstance(obj, CanvasTouchObject) or isinstance(obj, m_Touches) or
         isinstance(obj, m_Canvas_Touches) or isinstance(obj, TouchEventProperties) or
         isinstance(obj, m_Current_Target) or isinstance(obj, m_Touch_Event) or
-        isinstance(obj, EventInstance)) or isinstance(obj, SimplifiedEventInstance):
+        isinstance(obj, EventInstance) or isinstance(obj, SimplifiedEventInstance)):
             return asdict(obj)  # Convert dataclass instance to dictionary
         return super().default(obj)
