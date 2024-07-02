@@ -138,13 +138,31 @@ class WXMLDocumentParser():
 
         for instance in self.m_bind_storage:
             function_call : str = instance[1]
-            tag_name : str = instance[2].get_name()
+            ref_node : NodeScript.ElementWrapperNode = instance[2]
+            tag_name : str = ref_node.get_name()
 
             try:
-                if get_full_info is True:
-                    current_event_instance : EventScript.EventInstance = self._args_for_bind_element(instance, True)
-                else:
-                    current_event_instance : EventScript.SimplifiedEventInstance = self._args_for_bind_element(instance, False)
+                current_event_instance : EventScript.EventInstance | EventScript.SimplifiedEventInstance = self._args_for_bind_element(instance, get_full_info)
+
+                if get_full_info is False:
+                    # get all attributes and data
+                    assert isinstance(current_event_instance, EventScript.SimplifiedEventInstance)
+                    current_event_instance.m_tag_name = tag_name
+                    x_path_val : str | None = ref_node.get_ancestry()
+                    current_event_instance.m_xpath = f'/{tag_name}' if x_path_val is None else x_path_val + f'/{tag_name}' 
+
+                    for idx in range(ref_node.get_num_children()):
+                        child_node : NodeScript.Node | None = ref_node.get_children(idx)
+
+                        if child_node is not None:
+                            if child_node.type() == NodeScript.NodeType.ATTRIBUTE_NODE:
+                                # this is an attribute, insert attribute name and value
+                                current_event_instance.m_attributes[child_node.get_name()] = child_node.get_auxiliary_data()
+                            elif child_node.type() == NodeScript.NodeType.DATA_NODE:
+                                # this is a data, make sure it is not script
+                                if child_node.get_auxiliary_data() == "False":
+                                    # meaning it is not script data
+                                    current_event_instance.m_data.append(child_node.get_name())
 
                 bind_arg_map.setdefault(function_call, [])
                 bind_arg_map[function_call].append(current_event_instance)
