@@ -8,14 +8,34 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "topMenuItemClick",
+                    "class": "menuItem {{topMenuIndex==0?'select':''}}",
+                    "data-index": "0"
+                },
+                "m_data": [
+                    "\u5546\u54c1\u8be6\u60c5"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "topMenuItemClick",
+                    "class": "menuItem {{topMenuIndex==1?'select':''}}",
+                    "data-index": "1"
+                },
+                "m_data": [
+                    "\u8d2d\u4e70\u987b\u77e5"
+                ]
             }
         ]
     },
@@ -26,14 +46,34 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "topMenuItemClick",
+                    "class": "menuItem {{topMenuIndex==0?'select':''}}",
+                    "data-index": "0"
+                },
+                "m_data": [
+                    "\u5546\u54c1\u8be6\u60c5"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "topMenuItemClick",
+                    "class": "menuItem {{topMenuIndex==1?'select':''}}",
+                    "data-index": "1"
+                },
+                "m_data": [
+                    "\u8d2d\u4e70\u987b\u77e5"
+                ]
             }
         ],
         "pushShopCart": [
@@ -42,7 +82,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "pushShopCart",
+                    "class": "shopCartItem notEmpty"
+                },
+                "m_data": []
             }
         ]
     },
@@ -53,14 +100,34 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "topMenuItemClick",
+                    "class": "menuItem {{topMenuIndex==0?'select':''}}",
+                    "data-index": "0"
+                },
+                "m_data": [
+                    "\u5546\u54c1\u8be6\u60c5"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "topMenuItemClick",
+                    "class": "menuItem {{topMenuIndex==1?'select':''}}",
+                    "data-index": "1"
+                },
+                "m_data": [
+                    "\u8d2d\u4e70\u987b\u77e5"
+                ]
             }
         ]
     },
@@ -71,7 +138,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "shopItemClick",
+                    "class": "shopItem",
+                    "data-index": "{{index}}",
+                    "wx:for": "{{shopList}}",
+                    "wx:key": "shopItem"
+                },
+                "m_data": []
             }
         ],
         "callTell": [
@@ -80,7 +157,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "catchtap": "callTell",
+                    "class": "btn-phone iconfont icon-phone Icon_Phone",
+                    "data-phone": "{{item.phone}}"
+                },
+                "m_data": []
             }
         ]
     },
@@ -91,14 +176,34 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "topMenuItemClick",
+                    "class": "menuItem {{topMenuIndex==0?'select':''}}",
+                    "data-index": "0"
+                },
+                "m_data": [
+                    "\u5546\u54c1\u8be6\u60c5"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "topMenuItemClick",
+                    "class": "menuItem {{topMenuIndex==1?'select':''}}",
+                    "data-index": "1"
+                },
+                "m_data": [
+                    "\u8d2d\u4e70\u987b\u77e5"
+                ]
             }
         ]
     },
@@ -108,7 +213,17 @@
                 "m_details": {
                     "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
                 },
-                "m_type": "getphonenumber"
+                "m_type": "getphonenumber",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindgetphonenumber": "getUserMobile",
+                    "class": "mobileBtn",
+                    "opentype": "getPhoneNumber"
+                },
+                "m_data": [
+                    "\u6388\u6743\u624b\u673a\u53f7\n        "
+                ]
             }
         ],
         "showTip": [
@@ -117,7 +232,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/button",
+                "m_attributes": {
+                    "bindtap": "showTip",
+                    "class": "btn-login",
+                    "wx:if": "{{!mobile}}"
+                },
+                "m_data": [
+                    "\u7acb\u5373\u767b\u5f55"
+                ]
             }
         ],
         "getUserInfoAuth": [
@@ -134,7 +259,18 @@
                         "nickName": "NICKNAME"
                     }
                 },
-                "m_type": "getuserinfo"
+                "m_type": "getuserinfo",
+                "m_tag_name": "button",
+                "m_xpath": "/view/button",
+                "m_attributes": {
+                    "bindgetuserinfo": "getUserInfoAuth",
+                    "class": "btn-login",
+                    "opentype": "getUserInfo",
+                    "wx:if": "{{mobile}}"
+                },
+                "m_data": [
+                    "\u7acb\u5373\u767b\u5f55"
+                ]
             }
         ],
         "close": [
@@ -143,7 +279,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/button",
+                "m_attributes": {
+                    "bindtap": "close",
+                    "class": "btn-back"
+                },
+                "m_data": [
+                    "\u6682\u4e0d\u767b\u5f55"
+                ]
             }
         ]
     },
@@ -154,7 +299,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "pushAddressPage",
+                    "class": "receiveInfoView",
+                    "wx:if": "{{orderPayActivityInfo.pickUpGoodsWay==2}}"
+                },
+                "m_data": []
             }
         ],
         "submitOrder": [
@@ -163,7 +316,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "submitOrder",
+                    "class": "btn-commit"
+                },
+                "m_data": []
             }
         ]
     },
@@ -174,7 +334,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "activityItemClick",
+                    "class": "activityItem",
+                    "data-item": "{{item}}",
+                    "wx:for": "{{dataList}}",
+                    "wx:key": "item"
+                },
+                "m_data": []
             }
         ]
     },
@@ -185,7 +355,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "activityItemClick",
+                    "class": "activityItem",
+                    "data-item": "{{item}}",
+                    "wx:for": "{{dataList}}",
+                    "wx:key": "item"
+                },
+                "m_data": []
             }
         ],
         "pushShopCart": [
@@ -194,7 +374,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "pushShopCart",
+                    "class": "shopCartItem notEmpty"
+                },
+                "m_data": []
             }
         ]
     },
@@ -205,7 +392,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "activityItemClick",
+                    "class": "seckillItem",
+                    "data-item": "{{item}}",
+                    "wx:for": "{{dataList}}",
+                    "wx:key": "seckillItem"
+                },
+                "m_data": []
             }
         ]
     },
@@ -216,7 +413,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "activityItemClick",
+                    "class": "vipCardItem",
+                    "data-item": "{{item}}",
+                    "wx:for": "{{dataList}}",
+                    "wx:key": "vipCardItem"
+                },
+                "m_data": []
             }
         ]
     },
@@ -227,7 +434,18 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "menuItemClick",
+                    "class": "menuItem {{curMenu.index==item.index?'select':''}}",
+                    "data-item": "{{item}}",
+                    "wx:for": "{{menuList}}"
+                },
+                "m_data": [
+                    "\n\n            "
+                ]
             }
         ],
         "orderItemClick": [
@@ -236,7 +454,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "orderItemClick",
+                    "class": "orderItem",
+                    "data-item": "{{item}}",
+                    "wx:for": "{{dataList}}",
+                    "wx:key": "orderItem"
+                },
+                "m_data": []
             }
         ]
     },
@@ -247,7 +475,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "copyBtnClick",
+                    "class": "btn-copy",
+                    "data-text": "{{orderInfo.delivery.expNo}}"
+                },
+                "m_data": [
+                    "\u590d\u5236"
+                ]
             }
         ],
         "pushActivityShot": [
@@ -256,7 +494,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "pushActivityShot",
+                    "class": "listItem"
+                },
+                "m_data": [
+                    "\u4ea4\u6613\u5feb\u7167\uff1a\n                "
+                ]
             }
         ],
         "shareBtnClick": [
@@ -265,7 +512,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "shareBtnClick",
+                    "class": "btn-initShareImg"
+                },
+                "m_data": [
+                    "\u751f\u6210\u6d77\u62a5"
+                ]
             }
         ]
     },
@@ -276,7 +532,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "activityItemClick",
+                    "class": "activityItem",
+                    "data-item": "{{item}}",
+                    "wx:for": "{{dataList}}",
+                    "wx:key": "seckillItem"
+                },
+                "m_data": []
             }
         ]
     },
@@ -287,7 +553,18 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "pushGroupDetail",
+                    "class": "groupItem",
+                    "data-item": "{{item}}",
+                    "wx:if": "{{activityInfo.gatherGroupFlag==1}}",
+                    "wx:for": "{{activityInfo.groupSaleList}}",
+                    "wx:key": "groupItem"
+                },
+                "m_data": []
             }
         ],
         "topMenuItemClick": [
@@ -296,14 +573,34 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "topMenuItemClick",
+                    "class": "menuItem {{topMenuIndex==0?'select':''}}",
+                    "data-index": "0"
+                },
+                "m_data": [
+                    "\u5546\u54c1\u8be6\u60c5"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "topMenuItemClick",
+                    "class": "menuItem {{topMenuIndex==1?'select':''}}",
+                    "data-index": "1"
+                },
+                "m_data": [
+                    "\u8d2d\u4e70\u987b\u77e5"
+                ]
             }
         ]
     },
@@ -314,7 +611,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "pushGroupBuyDetail",
+                    "class": "btn-buy btn-detail"
+                },
+                "m_data": [
+                    "\u5f00\u65b0\u56e2"
+                ]
             }
         ],
         "pushPayBtnClick": [
@@ -323,7 +629,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "pushPayBtnClick",
+                    "class": "btn-buy",
+                    "wx:if": "{{groupInfo.fullFlag||!groupInfo.joinFlag}}"
+                },
+                "m_data": []
             }
         ],
         "topMenuItemClick": [
@@ -332,14 +646,34 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "topMenuItemClick",
+                    "class": "menuItem {{topMenuIndex==0?'select':''}}",
+                    "data-index": "0"
+                },
+                "m_data": [
+                    "\u5546\u54c1\u8be6\u60c5"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "topMenuItemClick",
+                    "class": "menuItem {{topMenuIndex==1?'select':''}}",
+                    "data-index": "1"
+                },
+                "m_data": [
+                    "\u8d2d\u4e70\u987b\u77e5"
+                ]
             }
         ]
     },
@@ -350,7 +684,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "addressItemSelect",
+                    "class": "addressItem",
+                    "data-item": "{{item}}",
+                    "wx:for": "{{receiveAddresses}}",
+                    "wx:key": "addressItem"
+                },
+                "m_data": []
             }
         ],
         "delBtnClick": [
@@ -359,7 +703,18 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "catchtap": "delBtnClick",
+                    "class": "btn-del",
+                    "data-index": "{{index}}",
+                    "data-iten": "{{item}}"
+                },
+                "m_data": [
+                    "\u5220\u9664"
+                ]
             }
         ],
         "addBtnClick": [
@@ -368,7 +723,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "addBtnClick",
+                    "class": "btn-def"
+                },
+                "m_data": [
+                    "\u65b0\u589e\u5730\u5740"
+                ]
             }
         ]
     },
@@ -379,7 +743,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "shopItemClick",
+                    "class": "shopView fw-500 {{selectShop&&selectShop.compId==item.compId&&item.select?'select':''}}",
+                    "data-shopidx": "{{index}}"
+                },
+                "m_data": [
+                    "\n        "
+                ]
             }
         ],
         "productItemClick": [
@@ -388,7 +762,20 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "productItemClick",
+                    "class": "productItem {{selectShop&&selectShop.compId==item.compId&&obj.select?'select':''}}",
+                    "data-itemidx": "{{idx}}",
+                    "data-shopidx": "{{index}}",
+                    "wx:for": "{{item.dataList}}",
+                    "wx:for-index": "idx",
+                    "wx:for-item": "obj",
+                    "wx:key": "productItem"
+                },
+                "m_data": []
             }
         ],
         "pushPayBtnClick": [
@@ -397,7 +784,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "pushPayBtnClick",
+                    "class": "btn-def"
+                },
+                "m_data": [
+                    "\u53bb\u7ed3\u7b97"
+                ]
             }
         ]
     },
@@ -408,7 +804,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "pushAddressPage",
+                    "class": "receiveInfoView"
+                },
+                "m_data": []
             }
         ],
         "callTell": [
@@ -417,7 +820,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/button",
+                "m_attributes": {
+                    "catchtap": "callTell",
+                    "class": "btn-phone iconfont icon-phone Icon_Phone",
+                    "data-phone": "{{saleShop.phone}}"
+                },
+                "m_data": []
             }
         ],
         "submitOrder": [
@@ -426,7 +837,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "submitOrder",
+                    "class": "btn-commit"
+                },
+                "m_data": []
             }
         ]
     },
@@ -437,7 +855,18 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "menuItemClick",
+                    "class": "menuItem",
+                    "data-item": "{{item}}",
+                    "wx:if": "{{!item.hide}}",
+                    "wx:for": "{{groupItem.list}}",
+                    "wx:key": "menuItem"
+                },
+                "m_data": []
             }
         ],
         "pushSeatCodeOrder": [
@@ -446,7 +875,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "pushSeatCodeOrder",
+                    "class": "orderBtn",
+                    "wx:if": "{{seatCodeInfo}}"
+                },
+                "m_data": [
+                    "\u4e70\u5355"
+                ]
             }
         ]
     },
@@ -457,7 +896,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "listItemClick",
+                    "class": "listItem",
+                    "data-item": "{{item}}",
+                    "wx:for": "{{dataList}}",
+                    "wx:key": "dataItem"
+                },
+                "m_data": []
             }
         ]
     },
@@ -468,7 +917,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "listItemClick",
+                    "class": "listItem",
+                    "data-item": "{{item}}",
+                    "wx:for": "{{dataList}}",
+                    "wx:key": "dataItem"
+                },
+                "m_data": []
             }
         ]
     },
@@ -479,7 +938,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "listItemClick",
+                    "class": "listItem",
+                    "data-item": "{{item}}",
+                    "wx:for": "{{dataList}}",
+                    "wx:key": "dataItem"
+                },
+                "m_data": []
             }
         ]
     },
@@ -490,7 +959,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "listItemClick",
+                    "class": "listItem",
+                    "data-item": "{{item}}",
+                    "wx:for": "{{dataList}}",
+                    "wx:key": "dataItem"
+                },
+                "m_data": []
             }
         ]
     },
@@ -502,7 +981,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "menuItemClick",
+                    "class": "menuItem {{menuIndex==item.index?'select':''}}",
+                    "data-index": "{{item.index}}",
+                    "wx:for": "{{menuList}}",
+                    "wx:key": "menuItem"
+                },
+                "m_data": []
             }
         ]
     },
@@ -517,7 +1006,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "bindBtnClick",
+                    "class": "btn-bind"
+                },
+                "m_data": [
+                    "\u5fae\u4fe1\u7ed1\u5b9a"
+                ]
             }
         ]
     },
@@ -527,7 +1025,20 @@
                 "m_details": {
                     "value": 0
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "picker",
+                "m_xpath": "/view/picker",
+                "m_attributes": {
+                    "bindchange": "bindStaffChange",
+                    "class": "shopView",
+                    "range": "{{staffList}}",
+                    "rangekey": "text",
+                    "value": "{{index}}",
+                    "wx:if": "{{staffInfo}}"
+                },
+                "m_data": [
+                    "\n        "
+                ]
             }
         ],
         "pushSubPage": [
@@ -536,21 +1047,51 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "pushSubPage",
+                    "class": "shareItem fw-500",
+                    "data-key": "share"
+                },
+                "m_data": [
+                    "\u6d3b\u52a8\u5206\u4eab\n            "
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "pushSubPage",
+                    "class": "posterItem fw-500",
+                    "data-key": "poster"
+                },
+                "m_data": [
+                    "\u8425\u9500\u6d77\u62a5\n            "
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "pushSubPage",
+                    "class": "yjItem fw-500",
+                    "data-key": "yj"
+                },
+                "m_data": [
+                    "\u6211\u7684\u4e1a\u7ee9\n            "
+                ]
             }
         ]
     },
@@ -561,7 +1102,18 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "menuItemClick",
+                    "class": "menuItem {{curMenu.index==item.index?'select':''}}",
+                    "data-item": "{{item}}",
+                    "wx:for": "{{menuList}}"
+                },
+                "m_data": [
+                    "\n\n            "
+                ]
             }
         ],
         "activityItemClick": [
@@ -570,7 +1122,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "activityItemClick",
+                    "class": "activityItem",
+                    "data-item": "{{item}}",
+                    "wx:for": "{{dataList}}",
+                    "wx:key": "orderItem"
+                },
+                "m_data": []
             }
         ],
         "groupInfoBtnClick": [
@@ -579,7 +1141,18 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "groupInfoBtnClick",
+                    "class": "btn-groupInfo",
+                    "data-item": "{{item}}",
+                    "wx:if": "{{curMenu.index==1}}"
+                },
+                "m_data": [
+                    "\u62fc\u56e2\u8fdb\u5ea6"
+                ]
             }
         ],
         "shareBtnClick": [
@@ -588,7 +1161,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "shareBtnClick",
+                    "class": "btn-share",
+                    "data-item": "{{item}}"
+                },
+                "m_data": [
+                    "\u5206\u4eab\u5ba2\u6237"
+                ]
             }
         ],
         "shareShopClick": [
@@ -597,7 +1180,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "shareShopClick",
+                    "class": "shopShareView",
+                    "wx:if": "{{storeIndexInfo}}"
+                },
+                "m_data": [
+                    "\u6574\u5e97\u5206\u4eab"
+                ]
             }
         ],
         "closePopView": [
@@ -606,13 +1199,31 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "closePopView",
+                    "catchtouchmove": "return",
+                    "class": "popView",
+                    "wx:if": "{{showPopView}}"
+                },
+                "m_data": []
             }
         ],
         "return": [
             {
                 "m_details": {},
-                "m_type": "touchmove"
+                "m_type": "touchmove",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "closePopView",
+                    "catchtouchmove": "return",
+                    "class": "popView",
+                    "wx:if": "{{showPopView}}"
+                },
+                "m_data": []
             }
         ],
         "disTap": [
@@ -621,7 +1232,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "catchtap": "disTap",
+                    "class": "contentView"
+                },
+                "m_data": []
             }
         ],
         "shareHBClick": [
@@ -630,7 +1248,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "shareHBClick",
+                    "class": "subItem"
+                },
+                "m_data": []
             }
         ],
         "sharePYQClick": [
@@ -639,7 +1264,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "sharePYQClick",
+                    "class": "subItem"
+                },
+                "m_data": []
             }
         ]
     },
@@ -650,7 +1282,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view",
+                "m_attributes": {
+                    "bindtap": "imgClick",
+                    "class": "posterView"
+                },
+                "m_data": []
             }
         ]
     },
@@ -660,13 +1299,39 @@
                 "m_details": {
                     "value": "2021-09-01"
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "picker",
+                "m_xpath": "/view/view/view/view/picker",
+                "m_attributes": {
+                    "bindchange": "bindDateChange",
+                    "data-key": "start",
+                    "end": "{{now}}",
+                    "mode": "date",
+                    "start": "2019-01-01",
+                    "value": "{{date}}"
+                },
+                "m_data": [
+                    "\n                "
+                ]
             },
             {
                 "m_details": {
                     "value": "2021-09-01"
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "picker",
+                "m_xpath": "/view/view/view/view/picker",
+                "m_attributes": {
+                    "bindchange": "bindDateChange",
+                    "data-key": "end",
+                    "end": "{{now}}",
+                    "mode": "date",
+                    "start": "2019-01-01",
+                    "value": "{{date}}"
+                },
+                "m_data": [
+                    "\n                "
+                ]
             }
         ],
         "bindTypeChange": [
@@ -674,7 +1339,18 @@
                 "m_details": {
                     "value": 0
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "picker",
+                "m_xpath": "/view/view/view/view/picker",
+                "m_attributes": {
+                    "bindchange": "bindTypeChange",
+                    "range": "{{typeList}}",
+                    "rangekey": "text",
+                    "value": "{{index}}"
+                },
+                "m_data": [
+                    "\n                "
+                ]
             }
         ]
     },
@@ -684,13 +1360,39 @@
                 "m_details": {
                     "value": "2021-09-01"
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "picker",
+                "m_xpath": "/view/view/view/view/picker",
+                "m_attributes": {
+                    "bindchange": "bindDateChange",
+                    "data-key": "start",
+                    "end": "{{now}}",
+                    "mode": "date",
+                    "start": "2019-01-01",
+                    "value": "{{date}}"
+                },
+                "m_data": [
+                    "\n                "
+                ]
             },
             {
                 "m_details": {
                     "value": "2021-09-01"
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "picker",
+                "m_xpath": "/view/view/view/view/picker",
+                "m_attributes": {
+                    "bindchange": "bindDateChange",
+                    "data-key": "end",
+                    "end": "{{now}}",
+                    "mode": "date",
+                    "start": "2019-01-01",
+                    "value": "{{date}}"
+                },
+                "m_data": [
+                    "\n                "
+                ]
             }
         ],
         "bindTypeChange": [
@@ -698,7 +1400,18 @@
                 "m_details": {
                     "value": 0
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "picker",
+                "m_xpath": "/view/view/view/view/picker",
+                "m_attributes": {
+                    "bindchange": "bindTypeChange",
+                    "range": "{{typeList}}",
+                    "rangekey": "text",
+                    "value": "{{index}}"
+                },
+                "m_data": [
+                    "\n                "
+                ]
             }
         ]
     },
@@ -710,7 +1423,17 @@
                     "currentItemId": "",
                     "source": "touch"
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "swiper",
+                "m_xpath": "/view/view/swiper",
+                "m_attributes": {
+                    "bindchange": "selectVipLevChange",
+                    "circular": "true",
+                    "class": "swiper-vip",
+                    "duration": "600",
+                    "interval": "6000"
+                },
+                "m_data": []
             }
         ],
         "agreementItemClick": [
@@ -719,7 +1442,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "agreementItemClick",
+                    "class": "agreementView"
+                },
+                "m_data": [
+                    "\u5df2\u9605\u8bfb\u5e76\u540c\u610f\n                "
+                ]
             }
         ],
         "pushAgreementContent": [
@@ -728,7 +1460,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "label",
+                "m_xpath": "/view/view/view/view/label",
+                "m_attributes": {
+                    "catchtap": "pushAgreementContent"
+                },
+                "m_data": [
+                    "\u300a\u5546\u57ce\u4f1a\u5458\u534f\u8bae\u300b"
+                ]
             }
         ],
         "buyBtnClick": [
@@ -737,7 +1477,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "buyBtnClick",
+                    "class": "{{disFlag?'btn-dis':''}}"
+                },
+                "m_data": []
             }
         ],
         "closePopView": [
@@ -746,7 +1493,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "closePopView",
+                    "class": "popView",
+                    "wx:if": "{{showPopViewFlag}}"
+                },
+                "m_data": []
             }
         ],
         "disTap": [
@@ -755,7 +1510,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "catchtap": "disTap",
+                    "class": "contentView"
+                },
+                "m_data": []
             }
         ]
     },
@@ -766,7 +1528,18 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "listItemClick",
+                    "class": "listItem",
+                    "data-item": "{{obj}}",
+                    "wx:for": "{{item.list}}",
+                    "wx:for-item": "obj",
+                    "wx:key": "item"
+                },
+                "m_data": []
             }
         ],
         "pickerChange": [
@@ -774,7 +1547,19 @@
                 "m_details": {
                     "value": 0
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "picker",
+                "m_xpath": "/view/view/view/picker",
+                "m_attributes": {
+                    "bindchange": "pickerChange",
+                    "class": "cView",
+                    "data-key": "{{obj.key}}",
+                    "range": "{{genderList}}",
+                    "rangekey": "text",
+                    "value": "{{memberInfo[obj.key]}}",
+                    "wx:if": "{{obj.key=='genderText'}}"
+                },
+                "m_data": []
             }
         ],
         "birthdayChange": [
@@ -782,7 +1567,19 @@
                 "m_details": {
                     "value": "2021-09-01"
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "picker",
+                "m_xpath": "/view/view/view/picker",
+                "m_attributes": {
+                    "bindchange": "birthdayChange",
+                    "class": "cView",
+                    "end": "2020-09-01",
+                    "mode": "date",
+                    "start": "1900-01-01",
+                    "value": "{{memberInfo[obj.key]}}",
+                    "wx:if": "{{obj.key=='birthday'}}"
+                },
+                "m_data": []
             }
         ],
         "bindChange": [
@@ -790,7 +1587,16 @@
                 "m_details": {
                     "value": []
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "picker-view",
+                "m_xpath": "/view/view/view/picker-view",
+                "m_attributes": {
+                    "bindchange": "bindChange",
+                    "indicatorstyle": "height: 50px;",
+                    "style": "width:100%;height:300px;",
+                    "value": "{{value}}"
+                },
+                "m_data": []
             }
         ]
     },
@@ -802,7 +1608,19 @@
                     "cursor": 11,
                     "keyCode": 68
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/input",
+                "m_attributes": {
+                    "bindinput": "inputChange",
+                    "class": "input-name",
+                    "data-key": "name",
+                    "placeholder": "\u8bf7\u8f93\u5165\u59d3\u540d",
+                    "placeholderstyle": "color: #ccc;",
+                    "type": "text",
+                    "value": "{{memberInfo.name}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
@@ -810,7 +1628,19 @@
                     "cursor": 11,
                     "keyCode": 86
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/input",
+                "m_attributes": {
+                    "bindinput": "inputChange",
+                    "class": "input-mobile",
+                    "data-key": "mobile",
+                    "placeholder": "\u8bf7\u8f93\u5165\u624b\u673a\u53f7",
+                    "placeholderstyle": "color: #ccc;",
+                    "type": "text",
+                    "value": "{{memberInfo.mobile}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
@@ -818,7 +1648,18 @@
                     "cursor": 11,
                     "keyCode": 68
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "inputChange",
+                    "class": "input-code",
+                    "data-key": "authCode",
+                    "placeholder": "\u8bf7\u8f93\u5165\u9a8c\u8bc1\u7801",
+                    "placeholderstyle": "color: #ccc;",
+                    "type": "text"
+                },
+                "m_data": []
             }
         ],
         "getAuthCode": [
@@ -827,7 +1668,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "getAuthCode",
+                    "class": "btn-code"
+                },
+                "m_data": []
             }
         ],
         "cancelBtnClick": [
@@ -836,7 +1684,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "cancelBtnClick",
+                    "class": "btn-cancel"
+                },
+                "m_data": [
+                    "\u53d6\u6d88"
+                ]
             }
         ],
         "saveBtnClick": [
@@ -845,7 +1702,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "saveBtnClick",
+                    "class": "btn-save"
+                },
+                "m_data": [
+                    "\u786e\u5b9a"
+                ]
             }
         ]
     },
@@ -856,7 +1722,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "pushMRResApp",
+                    "class": "pushView"
+                },
+                "m_data": [
+                    "\u8df3\u8f6c\u7f8e\u5bb9\u9884\u7ea6\u5c0f\u7a0b\u5e8f"
+                ]
             }
         ]
     },
@@ -867,7 +1742,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "empInfoClick",
+                    "class": "empInfoView",
+                    "style": "color:{{styleColor.textColor}};background:{{styleColor.bcColor}}",
+                    "wx:if": "{{resEmpInfo}}"
+                },
+                "m_data": []
             }
         ],
         "dateItemClick": [
@@ -876,7 +1760,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/scroll-view/view",
+                "m_attributes": {
+                    "bindtap": "dateItemClick",
+                    "class": "dateItem {{item.dateText==dateInfo.dateText?'select':''}}",
+                    "data-item": "{{item}}",
+                    "wx:for": "{{dateList}}",
+                    "wx:key": "{{index}}"
+                },
+                "m_data": []
             }
         ],
         "timeItemClick": [
@@ -885,21 +1779,60 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "timeItemClick",
+                    "class": "timeItem {{item.disFlag?'disItem':''}} {{item.hours==timeInfo.hours?'select':''}}",
+                    "data-item": "{{item}}",
+                    "style": "width:{{timeItemW}}px;background:{{item.hours==timeInfo.hours?styleColor.bcColor:'#f8f8f8'}};",
+                    "wx:for": "{{mTimeList}}",
+                    "wx:key": "{{index}}"
+                },
+                "m_data": [
+                    "\n                "
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "timeItemClick",
+                    "class": "timeItem {{item.disFlag?'disItem':''}} {{item.hours==timeInfo.hours?'select':''}}",
+                    "data-item": "{{item}}",
+                    "style": "width:{{timeItemW}}px;background:{{item.hours==timeInfo.hours?styleColor.bcColor:'#f8f8f8'}};",
+                    "wx:for": "{{nTimeList}}",
+                    "wx:key": "{{index}}"
+                },
+                "m_data": [
+                    "\n                "
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "timeItemClick",
+                    "class": "timeItem {{item.disFlag?'disItem':''}} {{item.hours==timeInfo.hours?'select':''}}",
+                    "data-item": "{{item}}",
+                    "style": "width:{{timeItemW}}px;background:{{item.hours==timeInfo.hours?styleColor.bcColor:'#f8f8f8'}};",
+                    "wx:for": "{{aTimeList}}",
+                    "wx:key": "{{index}}"
+                },
+                "m_data": [
+                    "\n                "
+                ]
             }
         ],
         "backStepClick": [
@@ -908,7 +1841,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "backStepClick",
+                    "class": "btn-back",
+                    "wx:if": "{{stepIndex==2&&tempResType!='reserveRes'}}"
+                },
+                "m_data": []
             }
         ],
         "closePopView": [
@@ -917,7 +1858,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "closePopView",
+                    "class": "btn-close"
+                },
+                "m_data": []
             }
         ],
         "resTypeItemClick": [
@@ -926,7 +1874,22 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "resTypeItemClick",
+                    "class": "resTypeItem overflowText {{item.select?'select':''}}",
+                    "data-index": "{{index}}",
+                    "data-item": "{{item}}",
+                    "style": "width:{{resTypeItemW}}px;background:{{item.select?styleColor.bcColor:'#f8f8f8'}};",
+                    "wx:if": "{{!item.hide}}",
+                    "wx:for": "{{resTypeList}}",
+                    "wx:key": "{{index}}"
+                },
+                "m_data": [
+                    "\n                    "
+                ]
             }
         ],
         "inputValue": [
@@ -936,7 +1899,16 @@
                     "cursor": 11,
                     "keyCode": 68
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "inputValue",
+                    "data-key": "userName",
+                    "placeholder": "\u586b\u5199\u59d3\u540d",
+                    "value": "{{userName}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
@@ -944,7 +1916,16 @@
                     "cursor": 11,
                     "keyCode": 68
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "inputValue",
+                    "data-key": "mobile",
+                    "placeholder": "\u586b\u5199\u624b\u673a\u53f7",
+                    "value": "{{mobile}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
@@ -952,7 +1933,16 @@
                     "cursor": 11,
                     "keyCode": 68
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "inputValue",
+                    "data-key": "remark",
+                    "placeholder": "\u586b\u5199\u5907\u6ce8\u4fe1\u606f",
+                    "value": "{{remark}}"
+                },
+                "m_data": []
             }
         ],
         "genderItemClick": [
@@ -961,14 +1951,36 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "genderItemClick",
+                    "class": "manItem {{gender==1?'select':''}}",
+                    "data-sex": "1",
+                    "style": "background:{{gender==1?styleColor.bcColor:'#f8f8f8'}};"
+                },
+                "m_data": [
+                    "\u7537\n                            "
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "genderItemClick",
+                    "class": "womanItem {{gender!=1?'select':''}}",
+                    "data-sex": "0",
+                    "style": "background:{{gender==0?styleColor.bcColor:'#f8f8f8'}};"
+                },
+                "m_data": [
+                    "\u5973\n                            "
+                ]
             }
         ],
         "getCurrentMobile": [
@@ -976,7 +1988,18 @@
                 "m_details": {
                     "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
                 },
-                "m_type": "getphonenumber"
+                "m_type": "getphonenumber",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/view/view/view/button",
+                "m_attributes": {
+                    "bindgetphonenumber": "getCurrentMobile",
+                    "class": "btn-mobile",
+                    "formtype": "submit",
+                    "opentype": "getPhoneNumber"
+                },
+                "m_data": [
+                    "\u6388\u6743\n                        "
+                ]
             }
         ],
         "resItemClick": [
@@ -985,7 +2008,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "resItemClick",
+                    "class": "empItem",
+                    "data-item": "{{item}}",
+                    "wx:for": "{{resEmpList}}",
+                    "wx:key": "resEmp"
+                },
+                "m_data": []
             }
         ],
         "nextBtnClick": [
@@ -994,7 +2027,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "nextBtnClick",
+                    "class": "btn-next",
+                    "style": "color:{{styleColor.textColor}};background:{{styleColor.bcColor}}"
+                },
+                "m_data": [
+                    "\n        "
+                ]
             }
         ]
     },
@@ -1005,7 +2048,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/view/image",
+                "m_attributes": {
+                    "catchtap": "onPreviewAvatar",
+                    "data-url": "{{empDetail.avatar}}",
+                    "mode": "aspectFill",
+                    "src": "{{empDetail.avatar||'https://static.bokao2o.com/images/bg200.png'}}"
+                },
+                "m_data": []
             }
         ],
         "bindShare": [
@@ -1014,7 +2066,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "bindShare",
+                    "class": "shareBox"
+                },
+                "m_data": []
             }
         ],
         "callTell": [
@@ -1023,7 +2082,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "catchtap": "callTell",
+                    "class": "btn-phone iconfont icon-phone Icon_Phone",
+                    "data-phone": "15803838875"
+                },
+                "m_data": []
             }
         ],
         "onSwitchTab": [
@@ -1032,14 +2099,34 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "onSwitchTab",
+                    "class": "menuItem {{tabIndex==index?'active':''}}",
+                    "data-index": "{{index}}",
+                    "wx:for": "{{tabs}}",
+                    "wx:key": "index"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "catchtap": "onSwitchTab",
+                    "class": "menuItem {{tabIndex==index?'active':''}}",
+                    "data-index": "{{index}}",
+                    "wx:for": "{{tabs}}",
+                    "wx:key": "index"
+                },
+                "m_data": []
             }
         ],
         "onSwitchPriceTab": [
@@ -1048,7 +2135,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/scroll-view/view/view",
+                "m_attributes": {
+                    "catchtap": "onSwitchPriceTab",
+                    "class": "tabItem {{priceTypeTabIndex==index?'active':''}}",
+                    "data-index": "{{index}}",
+                    "wx:for": "{{priceList}}",
+                    "wx:key": "index"
+                },
+                "m_data": []
             }
         ],
         "onSwitchWork": [
@@ -1057,7 +2154,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/scroll-view/view/view",
+                "m_attributes": {
+                    "catchtap": "onSwitchWork",
+                    "class": "tabItem {{workIndex==index?'active':''}}",
+                    "data-index": "{{index}}",
+                    "wx:for": "{{works}}",
+                    "wx:key": "index"
+                },
+                "m_data": []
             }
         ],
         "onPrivewWorks": [
@@ -1066,14 +2173,32 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/view/view/view/view/image",
+                "m_attributes": {
+                    "catchtap": "onPrivewWorks",
+                    "data-images": "{{item.images}}",
+                    "mode": "widthFix",
+                    "src": "{{item.images[0].url}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/view/view/view/view/image",
+                "m_attributes": {
+                    "catchtap": "onPrivewWorks",
+                    "data-images": "{{item.images}}",
+                    "mode": "widthFix",
+                    "src": "{{item.images[0].url}}"
+                },
+                "m_data": []
             }
         ],
         "addLike": [
@@ -1082,14 +2207,30 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "addLike",
+                    "class": "support",
+                    "data-index": "{{index}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "addLike",
+                    "class": "support",
+                    "data-index": "{{index}}"
+                },
+                "m_data": []
             }
         ],
         "resItemClick": [
@@ -1098,7 +2239,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "catchtap": "resItemClick",
+                    "class": "resBtn"
+                },
+                "m_data": [
+                    "\u7acb\u5373\u9884\u7ea6"
+                ]
             }
         ]
     },
@@ -1109,7 +2259,19 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "switchStatus",
+                    "class": "menuItem {{active==item.id?'select':''}}",
+                    "data-type": "{{item.id}}",
+                    "wx:for": "{{status}}",
+                    "wx:key": "{{index}}"
+                },
+                "m_data": [
+                    "\n\n            "
+                ]
             }
         ],
         "cancelReserve": [
@@ -1118,7 +2280,18 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "cancelReserve",
+                    "class": "cancelBtn",
+                    "data-id": "{{item.id}}",
+                    "wx:if": "{{item.status==0||item.status==1}}"
+                },
+                "m_data": [
+                    "\u53d6\u6d88\u9884\u7ea6"
+                ]
             }
         ]
     },
@@ -1129,14 +2302,34 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "topMenuItemClick",
+                    "class": "menuItem {{topMenuIndex==0?'select':''}}",
+                    "data-index": "0"
+                },
+                "m_data": [
+                    "\u5546\u54c1\u8be6\u60c5"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "topMenuItemClick",
+                    "class": "menuItem {{topMenuIndex==1?'select':''}}",
+                    "data-index": "1"
+                },
+                "m_data": [
+                    "\u8d2d\u4e70\u987b\u77e5"
+                ]
             }
         ]
     },
@@ -1147,7 +2340,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "posterItemClick",
+                    "class": "posterItem",
+                    "data-item": "{{item}}",
+                    "wx:for": "{{dataList}}",
+                    "wx:key": "posterItem"
+                },
+                "m_data": []
             }
         ]
     },
@@ -1158,7 +2361,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "activityItemClick",
+                    "class": "couponItem",
+                    "data-item": "{{item}}",
+                    "wx:for": "{{dataList}}",
+                    "wx:key": "vipCardItem"
+                },
+                "m_data": []
             }
         ]
     },
@@ -1169,7 +2382,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "pushShopListPage",
+                    "class": "shopView"
+                },
+                "m_data": []
             }
         ],
         "buyBtnClick": [
@@ -1178,14 +2398,32 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "buyBtnClick",
+                    "class": "btn-buy",
+                    "wx:if": "{{activityInfo.buyStatus==1}}"
+                },
+                "m_data": [
+                    "\u7acb\u5373\u9886\u53d6"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "buyBtnClick",
+                    "class": "btn-dis",
+                    "wx:if": "{{activityInfo.buyStatus!=1}}"
+                },
+                "m_data": []
             }
         ]
     },
@@ -1195,7 +2433,18 @@
                 "m_details": {
                     "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
                 },
-                "m_type": "getphonenumber"
+                "m_type": "getphonenumber",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/button",
+                "m_attributes": {
+                    "bindgetphonenumber": "getUserMobile",
+                    "class": "btn-bind",
+                    "opentype": "getPhoneNumber",
+                    "wx:if": "{{!JZDZFlag}}"
+                },
+                "m_data": [
+                    "\u5fae\u4fe1\u7ed1\u5361"
+                ]
             }
         ],
         "pushPswCardBind": [
@@ -1204,7 +2453,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "pushPswCardBind",
+                    "class": "btn-bind",
+                    "wx:if": "{{JZDZFlag}}"
+                },
+                "m_data": [
+                    "\u4f1a\u5458\u7ed1\u5361"
+                ]
             }
         ],
         "selectCardChange": [
@@ -1214,7 +2473,18 @@
                     "currentItemId": "",
                     "source": "touch"
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "swiper",
+                "m_xpath": "/view/view/swiper",
+                "m_attributes": {
+                    "bindchange": "selectCardChange",
+                    "circular": "true",
+                    "class": "swiper-vip",
+                    "duration": "600",
+                    "nextmargin": "32px",
+                    "previousmargin": "32px"
+                },
+                "m_data": []
             }
         ],
         "showCardQrCode": [
@@ -1223,7 +2493,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "showCardQrCode"
+                },
+                "m_data": [
+                    "\u5c55\u793a\u6761\u7801"
+                ]
             }
         ],
         "listItemClick": [
@@ -1232,7 +2510,19 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "listItemClick",
+                    "class": "listItem",
+                    "data-key": "{{item.key}}",
+                    "wx:for": "{{menuList}}",
+                    "wx:key": "listItem"
+                },
+                "m_data": [
+                    "\n                "
+                ]
             }
         ],
         "closeCardQrCode": [
@@ -1241,7 +2531,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "closeCardQrCode",
+                    "class": "popView",
+                    "wx:if": "{{qrCodeFlag}}"
+                },
+                "m_data": []
             }
         ],
         "disTap": [
@@ -1250,7 +2548,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "catchtap": "disTap",
+                    "class": "contentView"
+                },
+                "m_data": []
             }
         ]
     },
@@ -1262,7 +2567,18 @@
                     "currentItemId": "",
                     "source": "touch"
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "swiper",
+                "m_xpath": "/view/swiper",
+                "m_attributes": {
+                    "bindchange": "selectCardChange",
+                    "circular": "true",
+                    "class": "swiper-vip",
+                    "duration": "600",
+                    "nextmargin": "32px",
+                    "previousmargin": "32px"
+                },
+                "m_data": []
             }
         ],
         "unbindCardClick": [
@@ -1271,7 +2587,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "unbindCardClick"
+                },
+                "m_data": [
+                    "\u89e3\u7ed1\u6b64\u5361"
+                ]
             }
         ]
     },
@@ -1281,7 +2605,16 @@
                 "m_details": {
                     "value": "hello world"
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/input",
+                "m_attributes": {
+                    "bindchange": "inputPsw",
+                    "placeholder": "\u8bf7\u8f93\u5165\u4f1a\u5458\u5361\u5bc6\u7801\uff086\u4f4d\u6570\u5b57\uff09",
+                    "placeholderstyle": "color: #bbb;",
+                    "type": "password"
+                },
+                "m_data": []
             }
         ],
         "saveBtnClick": [
@@ -1290,7 +2623,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "saveBtnClick"
+                },
+                "m_data": [
+                    "\u7533\u8bf7"
+                ]
             }
         ]
     },
@@ -1300,7 +2641,17 @@
                 "m_details": {
                     "value": "hello world"
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/input",
+                "m_attributes": {
+                    "bindchange": "inputChange",
+                    "data-key": "mobile",
+                    "placeholder": "\u8bf7\u8f93\u5165\u60a8\u7684\u624b\u673a\u53f7",
+                    "placeholderstyle": "color: #bbb;",
+                    "value": "{{mobile}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
@@ -1308,13 +2659,34 @@
                     "cursor": 11,
                     "keyCode": 68
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/input",
+                "m_attributes": {
+                    "bindinput": "inputChange",
+                    "class": "input-code",
+                    "data-key": "authCode",
+                    "placeholder": "\u8bf7\u8f93\u5165\u9a8c\u8bc1\u7801",
+                    "placeholderstyle": "color: #ccc;",
+                    "type": "text"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "value": "hello world"
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/input",
+                "m_attributes": {
+                    "bindchange": "inputChange",
+                    "data-key": "password",
+                    "placeholder": "\u8bf7\u8f93\u5165\u4f1a\u5458\u5361\u5bc6\u7801\uff086\u4f4d\u6570\u5b57\uff09",
+                    "placeholderstyle": "color: #bbb;",
+                    "type": "password"
+                },
+                "m_data": []
             }
         ],
         "getAuthCode": [
@@ -1323,7 +2695,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "getAuthCode",
+                    "class": "btn-code"
+                },
+                "m_data": []
             }
         ],
         "saveBtnClick": [
@@ -1332,7 +2711,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "saveBtnClick"
+                },
+                "m_data": [
+                    "\u786e\u8ba4"
+                ]
             }
         ]
     },
@@ -1344,7 +2731,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "orderBtnClick",
+                    "class": "btn-order"
+                },
+                "m_data": [
+                    "\u5f00\u5355"
+                ]
             }
         ],
         "pushUserCenterPage": [
@@ -1353,7 +2749,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "pushUserCenterPage",
+                    "class": "btn-user"
+                },
+                "m_data": [
+                    "\u4f1a\u5458\u4e2d\u5fc3"
+                ]
             }
         ],
         "pushStorePage": [
@@ -1362,7 +2767,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "pushStorePage",
+                    "class": "btn-store"
+                },
+                "m_data": [
+                    "\u53bb\u5546\u573a\u770b\u770b"
+                ]
             }
         ],
         "payBtnClick": [
@@ -1371,7 +2785,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "payBtnClick",
+                    "class": "btn-buy"
+                },
+                "m_data": [
+                    "\u4e70\u5355"
+                ]
             }
         ],
         "pushStoreIndex": [
@@ -1380,7 +2803,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "pushStoreIndex",
+                    "class": "btn-order"
+                },
+                "m_data": [
+                    "\u53bb\u5546\u57ce\u770b\u770b"
+                ]
             }
         ]
     },
@@ -1390,19 +2822,48 @@
                 "m_details": {
                     "value": "hello world"
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/input",
+                "m_attributes": {
+                    "bindchange": "inputChange",
+                    "data-key": "cardNo",
+                    "placeholder": "\u8bf7\u8f93\u5165\u60a8\u7684\u5361\u53f7",
+                    "placeholderstyle": "color: #bbb;"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "value": "hello world"
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/input",
+                "m_attributes": {
+                    "bindchange": "inputChange",
+                    "data-key": "mobile",
+                    "placeholder": "\u8bf7\u8f93\u5165\u60a8\u7684\u624b\u673a\u53f7",
+                    "placeholderstyle": "color: #bbb;",
+                    "value": "{{mobile}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "value": "hello world"
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/input",
+                "m_attributes": {
+                    "bindchange": "inputChange",
+                    "data-key": "password",
+                    "placeholder": "\u8bf7\u8f93\u5165\u60a8\u7684\u4f1a\u5458\u5361\u5bc6\u7801",
+                    "placeholderstyle": "color: #bbb;",
+                    "type": "password"
+                },
+                "m_data": []
             }
         ],
         "bindBtnClick": [
@@ -1411,7 +2872,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "bindBtnClick",
+                    "class": "btn-bind"
+                },
+                "m_data": [
+                    "\u786e\u8ba4\u7ed1\u5361"
+                ]
             }
         ]
     },
@@ -1422,14 +2892,34 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "menuItemClick",
+                    "class": "menuItem {{menuIndex==0?'select':''}}",
+                    "data-index": "0"
+                },
+                "m_data": [
+                    "\u5206\u9500\u8ba2\u5355"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "menuItemClick",
+                    "class": "menuItem {{menuIndex==1?'select':''}}",
+                    "data-index": "1"
+                },
+                "m_data": [
+                    "\u5206\u9500\u6c47\u603b"
+                ]
             }
         ],
         "bindDateChange": [
@@ -1437,13 +2927,31 @@
                 "m_details": {
                     "value": "2021-09-01"
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "picker",
+                "m_xpath": "/view/view/view/picker",
+                "m_attributes": {
+                    "bindchange": "bindDateChange",
+                    "data-key": "startDate",
+                    "mode": "date",
+                    "value": "{{startDate}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "value": "2021-09-01"
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "picker",
+                "m_xpath": "/view/view/view/picker",
+                "m_attributes": {
+                    "bindchange": "bindDateChange",
+                    "data-key": "endDate",
+                    "mode": "date",
+                    "value": "{{endDate}}"
+                },
+                "m_data": []
             }
         ],
         "refreshDataList": [
@@ -1452,7 +2960,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "refreshDataList"
+                },
+                "m_data": [
+                    "\u67e5\u8be2"
+                ]
             }
         ],
         "rootUserItemClick": [
@@ -1461,7 +2977,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "rootUserItemClick",
+                    "class": "rootItem cItem",
+                    "data-index": "{{index}}"
+                },
+                "m_data": []
             }
         ]
     },
@@ -1473,7 +2997,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "pushShopListPage",
+                    "class": "shopView"
+                },
+                "m_data": []
             }
         ],
         "getBtnClick": [
@@ -1482,14 +3013,32 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "getBtnClick",
+                    "class": "btn-buy",
+                    "wx:if": "{{voucherInfo.useStatus==0}}"
+                },
+                "m_data": [
+                    "\u7acb\u5373\u9886\u53d6"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "getBtnClick",
+                    "class": "btn-dis",
+                    "wx:if": "{{voucherInfo.useStatus!=0}}"
+                },
+                "m_data": []
             }
         ]
     },
@@ -1500,7 +3049,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "menuItemClick",
+                    "class": "menuItem",
+                    "data-item": "{{item}}",
+                    "data-key": "{{item.key}}",
+                    "wx:for": "{{menuList}}"
+                },
+                "m_data": []
             }
         ]
     },
@@ -1511,7 +3070,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/button",
+                "m_attributes": {
+                    "bindtap": "linkBtnClick",
+                    "class": "btn-link"
+                },
+                "m_data": [
+                    "\u7acb\u5373\u9886\u53d6"
+                ]
             }
         ]
     },
@@ -1522,14 +3090,34 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "menuItemClick",
+                    "class": "menuItem {{menuIndex==0?'select':''}}",
+                    "data-index": "0"
+                },
+                "m_data": [
+                    "\u6211\u7684\u4e0b\u7ebf"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "menuItemClick",
+                    "class": "menuItem {{menuIndex==1?'select':''}}",
+                    "data-index": "1"
+                },
+                "m_data": [
+                    "\u4f63\u91d1\u660e\u7ec6"
+                ]
             }
         ],
         "inputValue": [
@@ -1539,7 +3127,16 @@
                     "cursor": 11,
                     "keyCode": 68
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/input",
+                "m_attributes": {
+                    "bindinput": "inputValue",
+                    "data-key": "keyword",
+                    "placeholder": "\u8bf7\u8f93\u5165\u5fae\u4fe1\u540d\u79f0\u641c\u7d22",
+                    "value": "{{keyword}}"
+                },
+                "m_data": []
             }
         ],
         "initReq": [
@@ -1548,7 +3145,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "initReq"
+                },
+                "m_data": [
+                    "\u67e5\u8be2"
+                ]
             }
         ]
     },
@@ -1559,14 +3164,34 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "topMenuItemClick",
+                    "class": "menuItem {{topMenuIndex==0?'select':''}}",
+                    "data-index": "0"
+                },
+                "m_data": [
+                    "\u5546\u54c1\u8be6\u60c5"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "topMenuItemClick",
+                    "class": "menuItem {{topMenuIndex==1?'select':''}}",
+                    "data-index": "1"
+                },
+                "m_data": [
+                    "\u8d2d\u4e70\u987b\u77e5"
+                ]
             }
         ]
     },
@@ -1577,7 +3202,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "txBtnClick",
+                    "class": "btn-tx"
+                },
+                "m_data": [
+                    "\u63d0\u73b0"
+                ]
             }
         ],
         "dateItemClick": [
@@ -1586,7 +3220,18 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "dateItemClick",
+                    "class": "dateItem {{dateType==item.key?'select':''}}",
+                    "data-item": "{{item}}",
+                    "wx:for": "{{dateTypeList}}"
+                },
+                "m_data": [
+                    "\n        "
+                ]
             }
         ]
     },
@@ -1598,7 +3243,15 @@
                     "cursor": 3,
                     "keyCode": 56
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "inputValue",
+                    "placeholder": "\u8bf7\u586b\u5199\u63d0\u73b0\u91d1\u989d",
+                    "type": "digit"
+                },
+                "m_data": []
             }
         ],
         "submitBtnClick": [
@@ -1607,7 +3260,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/button",
+                "m_attributes": {
+                    "bindtap": "submitBtnClick",
+                    "class": "btn-submit"
+                },
+                "m_data": [
+                    "\u7acb\u5373\u63d0\u73b0"
+                ]
             }
         ]
     },
