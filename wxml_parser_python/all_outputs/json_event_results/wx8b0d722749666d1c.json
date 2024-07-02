@@ -5,7 +5,15 @@
                 "m_details": {
                     "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
                 },
-                "m_type": "getphonenumber"
+                "m_type": "getphonenumber",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindgetphonenumber": "getPhoneNumber1",
+                    "class": "indexbtn1",
+                    "opentype": "getPhoneNumber"
+                },
+                "m_data": []
             }
         ],
         "getPhoneNumber": [
@@ -13,7 +21,15 @@
                 "m_details": {
                     "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
                 },
-                "m_type": "getphonenumber"
+                "m_type": "getphonenumber",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindgetphonenumber": "getPhoneNumber",
+                    "class": "indexbtn2",
+                    "opentype": "getPhoneNumber"
+                },
+                "m_data": []
             }
         ]
     },
@@ -24,7 +40,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "catchtap": "closeChoice",
+                    "class": "container2"
+                },
+                "m_data": []
             }
         ],
         "choicePic": [
@@ -33,7 +56,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "choicePic",
+                    "class": "center"
+                },
+                "m_data": []
             }
         ],
         "schoolnameblur": [
@@ -43,7 +73,19 @@
                     "cursor": 11,
                     "keyCode": 68
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "schoolnameblur",
+                    "bindkeyboardheightchange": "getSchoolInfo",
+                    "class": "inputs",
+                    "name": "school",
+                    "placeholder": "\u8bf7\u8f93\u5165\u60a8\u6240\u5728\u7684\u5b66\u6821",
+                    "placeholderclass": "phcolor2",
+                    "value": "{{schoolname}}"
+                },
+                "m_data": []
             }
         ],
         "openChoice": [
@@ -52,7 +94,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view/view/scroll-view/view",
+                "m_attributes": {
+                    "catchtap": "openChoice",
+                    "class": "msg-item",
+                    "wx:for": "{{schoolNameInfo}}",
+                    "wx:key": "{{index}}"
+                },
+                "m_data": []
             }
         ],
         "choiceSchoolName": [
@@ -61,7 +112,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view/view/scroll-view/view/view",
+                "m_attributes": {
+                    "catchtap": "choiceSchoolName",
+                    "class": "user-name",
+                    "data-index": "{{index}}"
+                },
+                "m_data": []
             }
         ],
         "bindMultiPickerChange": [
@@ -73,7 +132,20 @@
                         0
                     ]
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "picker",
+                "m_xpath": "/view/view/view/view/view/view/picker",
+                "m_attributes": {
+                    "bindchange": "bindMultiPickerChange",
+                    "bindcolumnchange": "bindMultiPickerColumnChange",
+                    "bindtap": "gradeDisppear",
+                    "class": "centers",
+                    "mode": "multiSelector",
+                    "range": "{{multiArray}}",
+                    "style": "width:100%;height:100%",
+                    "value": "{{multiIndex}}"
+                },
+                "m_data": []
             }
         ],
         "bindMultiPickerColumnChange": [
@@ -82,7 +154,20 @@
                     "column": 0,
                     "value": 0
                 },
-                "m_type": "columnchange"
+                "m_type": "columnchange",
+                "m_tag_name": "picker",
+                "m_xpath": "/view/view/view/view/view/view/picker",
+                "m_attributes": {
+                    "bindchange": "bindMultiPickerChange",
+                    "bindcolumnchange": "bindMultiPickerColumnChange",
+                    "bindtap": "gradeDisppear",
+                    "class": "centers",
+                    "mode": "multiSelector",
+                    "range": "{{multiArray}}",
+                    "style": "width:100%;height:100%",
+                    "value": "{{multiIndex}}"
+                },
+                "m_data": []
             }
         ],
         "gradeDisppear": [
@@ -91,7 +176,20 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "picker",
+                "m_xpath": "/view/view/view/view/view/view/picker",
+                "m_attributes": {
+                    "bindchange": "bindMultiPickerChange",
+                    "bindcolumnchange": "bindMultiPickerColumnChange",
+                    "bindtap": "gradeDisppear",
+                    "class": "centers",
+                    "mode": "multiSelector",
+                    "range": "{{multiArray}}",
+                    "style": "width:100%;height:100%",
+                    "value": "{{multiIndex}}"
+                },
+                "m_data": []
             }
         ],
         "classnameblur": [
@@ -101,7 +199,19 @@
                     "cursor": 10,
                     "keyCode": 48
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "classnameblur",
+                    "class": "inputs",
+                    "name": "school",
+                    "placeholder": "\u8bf7\u8f93\u5165\u60a8\u7684\u73ed\u7ea7",
+                    "placeholderclass": "phcolor2",
+                    "type": "number",
+                    "value": "{{className}}"
+                },
+                "m_data": []
             }
         ],
         "btn": [
@@ -110,7 +220,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/view/view/image",
+                "m_attributes": {
+                    "catchtap": "btn",
+                    "class": "goaheadBtn",
+                    "src": "http://cdn.nine-stars.cn/data/static/images01/goahead.png"
+                },
+                "m_data": []
             }
         ],
         "jumpBtn": [
@@ -119,7 +237,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/view/view/image",
+                "m_attributes": {
+                    "catchtap": "jumpBtn",
+                    "class": "goaheadBtn",
+                    "src": "http://cdn.nine-stars.cn/data/static/images01/gzjump.png",
+                    "style": "margin-left:20rpx"
+                },
+                "m_data": []
             }
         ]
     },
@@ -130,7 +257,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "catchtap": "closeChoice",
+                    "class": "container2"
+                },
+                "m_data": []
             }
         ],
         "choicePic": [
@@ -139,7 +273,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "choicePic",
+                    "class": "center"
+                },
+                "m_data": []
             }
         ],
         "schoolnameblur": [
@@ -149,7 +290,19 @@
                     "cursor": 11,
                     "keyCode": 68
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "schoolnameblur",
+                    "bindkeyboardheightchange": "getSchoolInfo",
+                    "class": "inputs",
+                    "name": "school",
+                    "placeholder": "\u8bf7\u8f93\u5165\u60a8\u6240\u5728\u7684\u5b66\u6821",
+                    "placeholderclass": "phcolor2",
+                    "value": "{{schoolname}}"
+                },
+                "m_data": []
             }
         ],
         "openChoice": [
@@ -158,7 +311,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view/view/scroll-view/view",
+                "m_attributes": {
+                    "catchtap": "openChoice",
+                    "class": "msg-item",
+                    "wx:for": "{{schoolNameInfo}}",
+                    "wx:key": "{{index}}"
+                },
+                "m_data": []
             }
         ],
         "choiceSchoolName": [
@@ -167,7 +329,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view/view/scroll-view/view/view",
+                "m_attributes": {
+                    "catchtap": "choiceSchoolName",
+                    "class": "user-name",
+                    "data-index": "{{index}}"
+                },
+                "m_data": []
             }
         ],
         "bindMultiPickerChange": [
@@ -179,7 +349,20 @@
                         0
                     ]
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "picker",
+                "m_xpath": "/view/view/view/view/view/view/picker",
+                "m_attributes": {
+                    "bindchange": "bindMultiPickerChange",
+                    "bindcolumnchange": "bindMultiPickerColumnChange",
+                    "bindtap": "gradeDisppear",
+                    "class": "centers",
+                    "mode": "multiSelector",
+                    "range": "{{multiArray}}",
+                    "style": "width:100%;height:100%",
+                    "value": "{{multiIndex}}"
+                },
+                "m_data": []
             }
         ],
         "bindMultiPickerColumnChange": [
@@ -188,7 +371,20 @@
                     "column": 0,
                     "value": 0
                 },
-                "m_type": "columnchange"
+                "m_type": "columnchange",
+                "m_tag_name": "picker",
+                "m_xpath": "/view/view/view/view/view/view/picker",
+                "m_attributes": {
+                    "bindchange": "bindMultiPickerChange",
+                    "bindcolumnchange": "bindMultiPickerColumnChange",
+                    "bindtap": "gradeDisppear",
+                    "class": "centers",
+                    "mode": "multiSelector",
+                    "range": "{{multiArray}}",
+                    "style": "width:100%;height:100%",
+                    "value": "{{multiIndex}}"
+                },
+                "m_data": []
             }
         ],
         "gradeDisppear": [
@@ -197,7 +393,20 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "picker",
+                "m_xpath": "/view/view/view/view/view/view/picker",
+                "m_attributes": {
+                    "bindchange": "bindMultiPickerChange",
+                    "bindcolumnchange": "bindMultiPickerColumnChange",
+                    "bindtap": "gradeDisppear",
+                    "class": "centers",
+                    "mode": "multiSelector",
+                    "range": "{{multiArray}}",
+                    "style": "width:100%;height:100%",
+                    "value": "{{multiIndex}}"
+                },
+                "m_data": []
             }
         ],
         "classnameblur": [
@@ -207,7 +416,19 @@
                     "cursor": 10,
                     "keyCode": 48
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "classnameblur",
+                    "class": "inputs",
+                    "name": "school",
+                    "placeholder": "\u8bf7\u8f93\u5165\u60a8\u7684\u73ed\u7ea7",
+                    "placeholderclass": "phcolor2",
+                    "type": "number",
+                    "value": "{{className}}"
+                },
+                "m_data": []
             }
         ],
         "btn": [
@@ -216,7 +437,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/view/view/image",
+                "m_attributes": {
+                    "catchtap": "btn",
+                    "class": "goaheadBtn",
+                    "src": "http://cdn.nine-stars.cn/data/static/images01/goahead.png"
+                },
+                "m_data": []
             }
         ],
         "jumpBtn": [
@@ -225,7 +454,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/view/view/image",
+                "m_attributes": {
+                    "catchtap": "jumpBtn",
+                    "class": "goaheadBtn",
+                    "src": "http://cdn.nine-stars.cn/data/static/images01/gzjump.png",
+                    "style": "margin-left:20rpx"
+                },
+                "m_data": []
             }
         ]
     },
@@ -236,7 +474,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/image",
+                "m_attributes": {
+                    "catchtap": "wear",
+                    "class": "btn",
+                    "src": "http://cdn.nine-stars.cn/data/static/images01/xyyes.png"
+                },
+                "m_data": []
             }
         ],
         "nowear": [
@@ -245,7 +491,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/view/image",
+                "m_attributes": {
+                    "catchtap": "nowear",
+                    "class": "btn",
+                    "src": "http://cdn.nine-stars.cn/data/static/images01/xyfou.png"
+                },
+                "m_data": []
             }
         ],
         "wearcorner": [
@@ -254,7 +508,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/view/image",
+                "m_attributes": {
+                    "catchtap": "wearcorner",
+                    "class": "btn",
+                    "src": "http://cdn.nine-stars.cn/data/static/images01/xyother.png"
+                },
+                "m_data": []
             }
         ]
     },
@@ -265,7 +527,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/image",
+                "m_attributes": {
+                    "catchtap": "takePic",
+                    "class": "takePic",
+                    "src": "../images/ok.png"
+                },
+                "m_data": []
             }
         ],
         "changeCamera": [
@@ -274,7 +544,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/image",
+                "m_attributes": {
+                    "catchtap": "changeCamera",
+                    "class": "changePic",
+                    "src": "../images/change.png"
+                },
+                "m_data": []
             }
         ],
         "choicePic": [
@@ -283,7 +561,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "choicePic",
+                    "class": "imageBox"
+                },
+                "m_data": []
             }
         ],
         "btnSave": [
@@ -292,7 +577,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/view/image",
+                "m_attributes": {
+                    "bindtap": "btnSave",
+                    "src": "http://cdn.nine-stars.cn/data/static/images01/goahead.png",
+                    "style": "height:40px;width:40%"
+                },
+                "m_data": []
             }
         ]
     },
@@ -303,7 +596,13 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "back",
+                "m_xpath": "/view/back",
+                "m_attributes": {
+                    "bindtap": "back"
+                },
+                "m_data": []
             }
         ],
         "formSubmit": [
@@ -312,7 +611,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/view/view/view/view/image",
+                "m_attributes": {
+                    "catchtap": "formSubmit",
+                    "class": "freeBtn",
+                    "src": "http://cdn.nine-stars.cn/data/static/images01/freeCollection.png"
+                },
+                "m_data": []
             }
         ],
         "showHos": [
@@ -321,7 +628,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/view/view/view/view/image",
+                "m_attributes": {
+                    "catchtap": "showHos",
+                    "class": "freeBtn",
+                    "src": "http://cdn.nine-stars.cn/data/static/images01/gzclickBtn.png"
+                },
+                "m_data": []
             }
         ],
         "share": [
@@ -330,7 +645,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "share",
+                    "class": "cardbg4"
+                },
+                "m_data": []
             }
         ],
         "askquestion": [
@@ -339,7 +661,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/image",
+                "m_attributes": {
+                    "bindtap": "askquestion",
+                    "class": "right",
+                    "src": "http://cdn.nine-stars.cn/data/static/images01/onlineConsultation.png"
+                },
+                "m_data": []
             }
         ],
         "colseHos": [
@@ -348,7 +678,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/image",
+                "m_attributes": {
+                    "bindtap": "colseHos",
+                    "class": "error",
+                    "src": "http://cdn.nine-stars.cn/data/static/images01/popupClose.png"
+                },
+                "m_data": []
             }
         ],
         "jumpOtherHos": [
@@ -357,35 +695,75 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "jumpOtherHos",
+                    "class": "gzBtnBg2",
+                    "data-id": "wx585606fd8529cbbc"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "jumpOtherHos",
+                    "class": "gzBtnBg",
+                    "data-id": "wxd48c42b1eabae8a9"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "jumpOtherHos",
+                    "class": "gzBtnBg",
+                    "data-id": "wx0ac04112ecc2780f"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "jumpOtherHos",
+                    "class": "gzBtnBg",
+                    "data-id": "wx0c14ad554c5cafad"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "jumpOtherHos",
+                    "class": "gzBtnBg",
+                    "data-id": "wx40b5ee41e0683097"
+                },
+                "m_data": []
             }
         ],
         "colse": [
@@ -394,7 +772,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "colse",
+                    "class": "error",
+                    "style": "z-index:9999;background-color:transparent"
+                },
+                "m_data": []
             }
         ],
         "baocun": [
@@ -403,14 +789,30 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "baocun",
+                    "class": "baocun",
+                    "style": "z-index:9999;background-color:transparent"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/button/image",
+                "m_attributes": {
+                    "bindtap": "baocun",
+                    "class": "baocun",
+                    "src": "http://cdn.nine-stars.cn/data/static/images01/popupSaveBtn.png"
+                },
+                "m_data": []
             }
         ]
     },
@@ -421,7 +823,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/view/view/view/image",
+                "m_attributes": {
+                    "catchtap": "formSubmit",
+                    "class": "freeBtn",
+                    "src": "http://cdn.nine-stars.cn/data/static/images01/freeCollection.png"
+                },
+                "m_data": []
             }
         ],
         "showHos": [
@@ -430,7 +840,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/view/view/view/image",
+                "m_attributes": {
+                    "catchtap": "showHos",
+                    "class": "freeBtn",
+                    "src": "http://cdn.nine-stars.cn/data/static/images01/gzclickBtn.png"
+                },
+                "m_data": []
             }
         ],
         "share": [
@@ -439,7 +857,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "share",
+                    "class": "cardbg4"
+                },
+                "m_data": []
             }
         ],
         "askquestion": [
@@ -448,7 +873,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/image",
+                "m_attributes": {
+                    "bindtap": "askquestion",
+                    "class": "right",
+                    "src": "http://cdn.nine-stars.cn/data/static/images01/onlineConsultation.png"
+                },
+                "m_data": []
             }
         ],
         "colseHos": [
@@ -457,7 +890,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/image",
+                "m_attributes": {
+                    "bindtap": "colseHos",
+                    "class": "error",
+                    "src": "http://cdn.nine-stars.cn/data/static/images01/popupClose.png"
+                },
+                "m_data": []
             }
         ],
         "jumpOtherHos": [
@@ -466,35 +907,75 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "jumpOtherHos",
+                    "class": "gzBtnBg2",
+                    "data-id": "wx585606fd8529cbbc"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "jumpOtherHos",
+                    "class": "gzBtnBg",
+                    "data-id": "wxd48c42b1eabae8a9"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "jumpOtherHos",
+                    "class": "gzBtnBg",
+                    "data-id": "wx0ac04112ecc2780f"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "jumpOtherHos",
+                    "class": "gzBtnBg",
+                    "data-id": "wx0c14ad554c5cafad"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "jumpOtherHos",
+                    "class": "gzBtnBg",
+                    "data-id": "wx40b5ee41e0683097"
+                },
+                "m_data": []
             }
         ],
         "colse": [
@@ -503,7 +984,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "colse",
+                    "class": "error",
+                    "style": "z-index:9999;background-color:transparent"
+                },
+                "m_data": []
             }
         ],
         "baocun": [
@@ -512,14 +1001,30 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "baocun",
+                    "class": "baocun",
+                    "style": "z-index:9999;background-color:transparent"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/button/image",
+                "m_attributes": {
+                    "bindtap": "baocun",
+                    "class": "baocun",
+                    "src": "http://cdn.nine-stars.cn/data/static/images01/popupSaveBtn.png"
+                },
+                "m_data": []
             }
         ]
     },
@@ -530,14 +1035,27 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "sexChoice",
+                    "class": "leftImage"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "sexChoice"
+                },
+                "m_data": []
             }
         ],
         "wearChoice": [
@@ -546,14 +1064,27 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "wearChoice",
+                    "class": "leftImage"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "wearChoice"
+                },
+                "m_data": []
             }
         ],
         "nameblur": [
@@ -563,7 +1094,18 @@
                     "cursor": 11,
                     "keyCode": 68
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "nameblur",
+                    "class": "inputs",
+                    "name": "name",
+                    "placeholder": "\u8bf7\u8f93\u5165\u5b69\u5b50\u7684\u59d3\u540d",
+                    "placeholderclass": "inputStyle",
+                    "value": "{{username}}"
+                },
+                "m_data": []
             }
         ],
         "ageblur": [
@@ -573,7 +1115,19 @@
                     "cursor": 10,
                     "keyCode": 48
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "ageblur",
+                    "class": "inputs",
+                    "name": "age",
+                    "placeholder": "\u8bf7\u8f93\u5165\u5b69\u5b50\u7684\u5e74\u9f84/\u5468\u5c81",
+                    "placeholderclass": "inputStyle",
+                    "type": "number",
+                    "value": "{{userage}}"
+                },
+                "m_data": []
             }
         ],
         "btn": [
@@ -582,7 +1136,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/image",
+                "m_attributes": {
+                    "bindtap": "btn",
+                    "src": "http://cdn.nine-stars.cn/data/static/images01/registerButton.png",
+                    "style": "height:40px;width:40%"
+                },
+                "m_data": []
             }
         ]
     },
@@ -593,79 +1155,227 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "catchtap": "submit"
+                },
+                "m_data": [
+                    "\u786e\u5b9a"
+                ]
             }
         ],
         "end": [
             {
                 "m_details": {},
-                "m_type": "touchend"
+                "m_type": "touchend",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "catchtouchend": "end",
+                    "catchtouchstart": "top",
+                    "data-type": "top"
+                },
+                "m_data": [
+                    "\u4e0a"
+                ]
             },
             {
                 "m_details": {},
-                "m_type": "touchend"
+                "m_type": "touchend",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "catchtouchend": "end",
+                    "catchtouchstart": "bottom",
+                    "data-type": "bottom"
+                },
+                "m_data": [
+                    "\u4e0b"
+                ]
             },
             {
                 "m_details": {},
-                "m_type": "touchend"
+                "m_type": "touchend",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "catchtouchend": "end",
+                    "catchtouchstart": "left",
+                    "data-type": "left"
+                },
+                "m_data": [
+                    "\u5de6"
+                ]
             },
             {
                 "m_details": {},
-                "m_type": "touchend"
+                "m_type": "touchend",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "catchtouchend": "end",
+                    "catchtouchstart": "right",
+                    "data-type": "right"
+                },
+                "m_data": [
+                    "\u53f3"
+                ]
             },
             {
                 "m_details": {},
-                "m_type": "touchend"
+                "m_type": "touchend",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "catchtouchend": "end",
+                    "catchtouchstart": "enlarge",
+                    "data-type": "enlarge"
+                },
+                "m_data": [
+                    "\u653e\u5927"
+                ]
             },
             {
                 "m_details": {},
-                "m_type": "touchend"
+                "m_type": "touchend",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "catchtouchend": "end",
+                    "catchtouchstart": "narrow",
+                    "data-type": "narrow"
+                },
+                "m_data": [
+                    "\u7f29\u5c0f"
+                ]
             },
             {
                 "m_details": {},
-                "m_type": "touchend"
+                "m_type": "touchend",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "catchtouchend": "end",
+                    "catchtouchstart": "rotate",
+                    "data-type": "rotate"
+                },
+                "m_data": [
+                    "\u65cb\u8f6c"
+                ]
             }
         ],
         "top": [
             {
                 "m_details": {},
-                "m_type": "touchstart"
+                "m_type": "touchstart",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "catchtouchend": "end",
+                    "catchtouchstart": "top",
+                    "data-type": "top"
+                },
+                "m_data": [
+                    "\u4e0a"
+                ]
             }
         ],
         "bottom": [
             {
                 "m_details": {},
-                "m_type": "touchstart"
+                "m_type": "touchstart",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "catchtouchend": "end",
+                    "catchtouchstart": "bottom",
+                    "data-type": "bottom"
+                },
+                "m_data": [
+                    "\u4e0b"
+                ]
             }
         ],
         "left": [
             {
                 "m_details": {},
-                "m_type": "touchstart"
+                "m_type": "touchstart",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "catchtouchend": "end",
+                    "catchtouchstart": "left",
+                    "data-type": "left"
+                },
+                "m_data": [
+                    "\u5de6"
+                ]
             }
         ],
         "right": [
             {
                 "m_details": {},
-                "m_type": "touchstart"
+                "m_type": "touchstart",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "catchtouchend": "end",
+                    "catchtouchstart": "right",
+                    "data-type": "right"
+                },
+                "m_data": [
+                    "\u53f3"
+                ]
             }
         ],
         "enlarge": [
             {
                 "m_details": {},
-                "m_type": "touchstart"
+                "m_type": "touchstart",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "catchtouchend": "end",
+                    "catchtouchstart": "enlarge",
+                    "data-type": "enlarge"
+                },
+                "m_data": [
+                    "\u653e\u5927"
+                ]
             }
         ],
         "narrow": [
             {
                 "m_details": {},
-                "m_type": "touchstart"
+                "m_type": "touchstart",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "catchtouchend": "end",
+                    "catchtouchstart": "narrow",
+                    "data-type": "narrow"
+                },
+                "m_data": [
+                    "\u7f29\u5c0f"
+                ]
             }
         ],
         "rotate": [
             {
                 "m_details": {},
-                "m_type": "touchstart"
+                "m_type": "touchstart",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "catchtouchend": "end",
+                    "catchtouchstart": "rotate",
+                    "data-type": "rotate"
+                },
+                "m_data": [
+                    "\u65cb\u8f6c"
+                ]
             }
         ],
         "upload": [
@@ -674,7 +1384,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/view/scroll-view/view/view/image",
+                "m_attributes": {
+                    "catchtap": "upload",
+                    "class": "newImage",
+                    "data-index": "{{index}}",
+                    "src": "../images/touxiang.png",
+                    "wx:if": "{{choiceIndex==index}}"
+                },
+                "m_data": []
             }
         ],
         "choice": [
@@ -683,7 +1403,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/scroll-view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "choice",
+                    "class": "{{(index+1)%4==1?'button-box':(index+1)%4==2?'button-box2':(index+1)%4==3?'button-box3':'button-box4'}}",
+                    "data-index": "{{index}}",
+                    "data-userid": "{{item.id}}",
+                    "style": "{{choiceIndex!==index?'background:transparent':''}}"
+                },
+                "m_data": []
             }
         ],
         "edit": [
@@ -692,7 +1422,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/view/scroll-view/view/view/image",
+                "m_attributes": {
+                    "catchtap": "edit",
+                    "class": "newImage",
+                    "src": "../images/bianji.png",
+                    "wx:if": "{{choiceIndex==index}}"
+                },
+                "m_data": []
             }
         ],
         "userLogin": [
@@ -701,7 +1440,13 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "catchtap": "userLogin"
+                },
+                "m_data": []
             }
         ],
         "addNewUser": [
@@ -710,7 +1455,13 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "catchtap": "addNewUser"
+                },
+                "m_data": []
             }
         ]
     },
@@ -721,14 +1472,32 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/text",
+                "m_attributes": {
+                    "catchtap": "changeType",
+                    "class": "{{changeType==true?'title-text3':'title-text'}}"
+                },
+                "m_data": [
+                    "\u5217\u8868\u6a21\u5f0f"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/text",
+                "m_attributes": {
+                    "catchtap": "changeType",
+                    "class": " {{changeType==true?'title-text':'title-text3'}}"
+                },
+                "m_data": [
+                    "\u66f2\u7ebf\u6a21\u5f0f"
+                ]
             }
         ],
         "goToAnalysis": [
@@ -737,25 +1506,68 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "goToAnalysis",
+                    "class": "item",
+                    "data-index": "{{index}}",
+                    "wx:for": "{{list}}",
+                    "wx:key": "index"
+                },
+                "m_data": []
             }
         ],
         "touchEndHandler": [
             {
                 "m_details": {},
-                "m_type": "touchend"
+                "m_type": "touchend",
+                "m_tag_name": "canvas",
+                "m_xpath": "/view/view/view/canvas",
+                "m_attributes": {
+                    "bindtouchend": "touchEndHandler",
+                    "bindtouchmove": "moveHandler",
+                    "bindtouchstart": "touchHandler",
+                    "canvasid": "lineCanvas",
+                    "class": "canvas",
+                    "disablescroll": "true"
+                },
+                "m_data": []
             }
         ],
         "moveHandler": [
             {
                 "m_details": {},
-                "m_type": "touchmove"
+                "m_type": "touchmove",
+                "m_tag_name": "canvas",
+                "m_xpath": "/view/view/view/canvas",
+                "m_attributes": {
+                    "bindtouchend": "touchEndHandler",
+                    "bindtouchmove": "moveHandler",
+                    "bindtouchstart": "touchHandler",
+                    "canvasid": "lineCanvas",
+                    "class": "canvas",
+                    "disablescroll": "true"
+                },
+                "m_data": []
             }
         ],
         "touchHandler": [
             {
                 "m_details": {},
-                "m_type": "touchstart"
+                "m_type": "touchstart",
+                "m_tag_name": "canvas",
+                "m_xpath": "/view/view/view/canvas",
+                "m_attributes": {
+                    "bindtouchend": "touchEndHandler",
+                    "bindtouchmove": "moveHandler",
+                    "bindtouchstart": "touchHandler",
+                    "canvasid": "lineCanvas",
+                    "class": "canvas",
+                    "disablescroll": "true"
+                },
+                "m_data": []
             }
         ]
     },
@@ -766,7 +1578,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "btn",
+                    "class": "btn"
+                },
+                "m_data": [
+                    "\u6559\u5b66\u6a21\u5f0f"
+                ]
             }
         ],
         "orderbtn": [
@@ -775,7 +1596,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "orderbtn",
+                    "class": "btn_baground,{{class}}",
+                    "style": "width:120px;height:40px"
+                },
+                "m_data": []
             }
         ],
         "orderes": [
@@ -784,7 +1613,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "orderes",
+                    "class": "mybtn"
+                },
+                "m_data": [
+                    "\u8df3\u8fc7"
+                ]
             }
         ]
     },
@@ -796,7 +1634,18 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/scroll-view/view",
+                "m_attributes": {
+                    "catchtap": "choice",
+                    "class": "{{(index+1)%4==1?'button-box':(index+1)%4==2?'button-box2':(index+1)%4==3?'button-box3':'button-box4'}}",
+                    "data-index": "{{index}}",
+                    "data-userid": "{{item.id}}",
+                    "style": "{{choiceIndex!==index?'background:transparent':''}}",
+                    "wx:for": "{{userListData}}"
+                },
+                "m_data": []
             }
         ],
         "userLogin": [
@@ -805,7 +1654,13 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "catchtap": "userLogin"
+                },
+                "m_data": []
             }
         ]
     },
@@ -816,14 +1671,28 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "changeDirection",
+                    "data-direction": "right"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "changeDirection",
+                    "data-direction": "wrong"
+                },
+                "m_data": []
             }
         ]
     },
@@ -834,14 +1703,28 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "changeDirection",
+                    "data-direction": "right"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "changeDirection",
+                    "data-direction": "wrong"
+                },
+                "m_data": []
             }
         ]
     },
@@ -852,7 +1735,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "goToList1",
+                    "data-name": "pageShare",
+                    "id": "share",
+                    "opentype": "share",
+                    "type": "primary"
+                },
+                "m_data": []
             }
         ]
     },
@@ -863,7 +1756,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "btn",
+                    "class": "btn"
+                },
+                "m_data": [
+                    "OK\n "
+                ]
             }
         ]
     },
@@ -875,7 +1777,19 @@
                     "cursor": 10,
                     "keyCode": 48
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "phoneInput",
+                    "class": "inputs",
+                    "maxlength": "13",
+                    "name": "telephone",
+                    "placeholder": "\u8bf7\u8f93\u5165\u624b\u673a\u53f7",
+                    "placeholderclass": "inputStyle",
+                    "type": "number"
+                },
+                "m_data": []
             }
         ],
         "verificationcodeInput": [
@@ -885,7 +1799,17 @@
                     "cursor": 10,
                     "keyCode": 48
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "verificationcodeInput",
+                    "class": "inputs2",
+                    "placeholder": "\u8bf7\u8f93\u5165\u9a8c\u8bc1\u7801",
+                    "placeholderclass": "inputStyle",
+                    "type": "number"
+                },
+                "m_data": []
             }
         ],
         "getVerificationCode": [
@@ -894,7 +1818,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/view/view/view/view/image",
+                "m_attributes": {
+                    "bindtap": "getVerificationCode",
+                    "class": "getCodeBtn",
+                    "src": "http://cdn.nine-stars.cn/data/static/images01/getcode.png",
+                    "wx:if": "{{!disabled}}"
+                },
+                "m_data": []
             }
         ],
         "goToList": [
@@ -903,7 +1836,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "goToList",
+                    "class": "lastBtn"
+                },
+                "m_data": []
             }
         ]
     },
@@ -915,7 +1855,18 @@
                     "cursor": 10,
                     "keyCode": 48
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "phoneblur",
+                    "class": "inputs",
+                    "name": "telephone",
+                    "placeholder": "\u8bf7\u8f93\u5165\u624b\u673a\u53f7",
+                    "placeholderclass": "inputStyle",
+                    "type": "number"
+                },
+                "m_data": []
             }
         ],
         "verificationcodeInput": [
@@ -925,7 +1876,17 @@
                     "cursor": 10,
                     "keyCode": 48
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "verificationcodeInput",
+                    "class": "inputs2",
+                    "placeholder": "\u8bf7\u8f93\u5165\u9a8c\u8bc1\u7801",
+                    "placeholderclass": "inputStyle",
+                    "type": "number"
+                },
+                "m_data": []
             }
         ],
         "getVerificationCode": [
@@ -934,7 +1895,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/view/view/view/view/image",
+                "m_attributes": {
+                    "bindtap": "getVerificationCode",
+                    "class": "getCodeBtn",
+                    "src": "http://cdn.nine-stars.cn/data/static/images01/getcode.png",
+                    "wx:if": "{{!disabled}}"
+                },
+                "m_data": []
             }
         ],
         "btn": [
@@ -943,7 +1913,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "btn",
+                    "class": "lastBtn"
+                },
+                "m_data": []
             }
         ]
     },
@@ -954,7 +1931,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/button",
+                "m_attributes": {
+                    "bindtap": "playsound"
+                },
+                "m_data": [
+                    "\u64ad\u653e\u58f0\u97f3\n "
+                ]
             }
         ],
         "play": [
@@ -963,7 +1948,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/button",
+                "m_attributes": {
+                    "bindtap": "play"
+                },
+                "m_data": [
+                    "\u9519\u8bef\u58f0\u97f3\n "
+                ]
             }
         ]
     },
@@ -977,7 +1970,21 @@
                     "cursor": 10,
                     "keyCode": 48
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "phoneInput",
+                    "class": "input",
+                    "maxlength": "13",
+                    "name": "phone",
+                    "placeholder": "\u8bf7\u8f93\u5165\u624b\u673a\u53f7\u7801",
+                    "placeholderclass": "phcolor",
+                    "style": "margin-left:20px;",
+                    "type": "number",
+                    "value": "{{phone}}"
+                },
+                "m_data": []
             }
         ],
         "verificationcodeInput": [
@@ -987,7 +1994,18 @@
                     "cursor": 10,
                     "keyCode": 48
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "verificationcodeInput",
+                    "name": "code",
+                    "placeholder": "\u8bf7\u8f93\u5165\u9a8c\u8bc1\u7801",
+                    "placeholderclass": "phcolor",
+                    "style": "margin-left:20px",
+                    "type": "number"
+                },
+                "m_data": []
             }
         ],
         "getVerificationCode": [
@@ -996,7 +2014,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "getVerificationCode",
+                    "class": "button ",
+                    "style": "height:40px;display:flex;align-items:center;justify-content:center;"
+                },
+                "m_data": []
             }
         ],
         "goToList": [
@@ -1005,7 +2031,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/image",
+                "m_attributes": {
+                    "bindtap": "goToList",
+                    "src": "../images/btn.png",
+                    "style": "height:40px;width:40%"
+                },
+                "m_data": []
             }
         ]
     },
@@ -1016,7 +2050,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/scroll-view/view/view",
+                "m_attributes": {
+                    "bindtap": "goToAnalysis",
+                    "class": "item",
+                    "data-index": "{{index}}",
+                    "wx:for": "{{list}}",
+                    "wx:key": "index"
+                },
+                "m_data": []
             }
         ]
     },
@@ -1029,7 +2073,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view",
+                "m_attributes": {
+                    "catchtap": "closeChoice",
+                    "class": "container",
+                    "style": "width:100%;height:100%;"
+                },
+                "m_data": []
             }
         ],
         "sexChoice": [
@@ -1038,14 +2090,27 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "sexChoice",
+                    "class": "leftImage"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "sexChoice"
+                },
+                "m_data": []
             }
         ],
         "nameblur": [
@@ -1055,7 +2120,18 @@
                     "cursor": 11,
                     "keyCode": 68
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "nameblur",
+                    "class": "inputs",
+                    "name": "name",
+                    "placeholder": "\u8bf7\u8f93\u5165\u5b69\u5b50\u7684\u59d3\u540d",
+                    "placeholderclass": "inputStyle",
+                    "value": "{{username}}"
+                },
+                "m_data": []
             }
         ],
         "ageblur": [
@@ -1065,7 +2141,19 @@
                     "cursor": 10,
                     "keyCode": 48
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "ageblur",
+                    "class": "inputs",
+                    "name": "age",
+                    "placeholder": "\u8bf7\u8f93\u5165\u5b69\u5b50\u7684\u5e74\u9f84/\u5468\u5c81",
+                    "placeholderclass": "inputStyle",
+                    "type": "number",
+                    "value": "{{userage}}"
+                },
+                "m_data": []
             }
         ],
         "btn": [
@@ -1074,7 +2162,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/view/view/image",
+                "m_attributes": {
+                    "bindtap": "btn",
+                    "src": "../images/editSave.png",
+                    "style": "height:80rpx;width:40%"
+                },
+                "m_data": []
             }
         ]
     }
