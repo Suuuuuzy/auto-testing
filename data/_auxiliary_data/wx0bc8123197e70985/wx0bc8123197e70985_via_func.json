@@ -1,0 +1,2240 @@
+{
+    "Error": [
+        {
+            "page": "pages/index/index",
+            "callback_function": "imageClick",
+            "event_name": "tap",
+            "error_msg": "Cannot read property 'dataset' of undefined"
+        },
+        {
+            "page": "pages/governmentCoupon/index/index",
+            "callback_function": "loadList",
+            "event_name": "tap",
+            "error_msg": "Cannot read property 'dataset' of undefined"
+        },
+        {
+            "page": "pages/governmentCoupon/index/index",
+            "callback_function": "loadList",
+            "event_name": "tap",
+            "error_msg": "Cannot read property 'dataset' of undefined"
+        },
+        {
+            "page": "pages/productOrder/list/list",
+            "callback_function": "tabClick",
+            "event_name": "tap",
+            "error_msg": "Cannot read property 'offsetLeft' of undefined"
+        },
+        {
+            "page": "pages/venue/list/list",
+            "callback_function": "selectGroup",
+            "event_name": "tap",
+            "error_msg": "Cannot read property 'dataset' of undefined"
+        },
+        {
+            "page": "pages/venue/list/list",
+            "callback_function": "selectFilterItem",
+            "event_name": "tap",
+            "error_msg": "Cannot read property 'dataset' of undefined"
+        },
+        {
+            "page": "pages/venue/list/list",
+            "callback_function": "selectFilterItem",
+            "event_name": "tap",
+            "error_msg": "Cannot read property 'dataset' of undefined"
+        },
+        {
+            "page": "pages/venue/detail/detail",
+            "callback_function": "phoneCall",
+            "event_name": "tap",
+            "error_msg": "Cannot read property 'phone' of null"
+        },
+        {
+            "page": "pages/venue/detail/detail",
+            "callback_function": "phoneCall",
+            "event_name": "tap",
+            "error_msg": "Cannot read property 'phone' of null"
+        },
+        {
+            "page": "pages/venue/detail/detail",
+            "callback_function": "openMap",
+            "event_name": "tap",
+            "error_msg": "Cannot read property 'latitude' of null"
+        },
+        {
+            "page": "pages/venue/detail/detail",
+            "callback_function": "stopTap",
+            "event_name": "tap",
+            "error_msg": "page.stopTap not exists"
+        },
+        {
+            "page": "pages/venue/selectCoupon/selectCoupon",
+            "callback_function": "couponClick",
+            "event_name": "tap",
+            "error_msg": "Cannot read property 'dataset' of undefined"
+        },
+        {
+            "page": "pages/venue/selectCoupon/selectCoupon",
+            "callback_function": "couponClick",
+            "event_name": "tap",
+            "error_msg": "Cannot read property 'dataset' of undefined"
+        },
+        {
+            "page": "pages/venue/product/product",
+            "callback_function": "showImage",
+            "event_name": "tap",
+            "error_msg": "Cannot read property 'dataset' of undefined"
+        },
+        {
+            "page": "pages/productOrder/comment/comment",
+            "callback_function": "starClick",
+            "event_name": "tap",
+            "error_msg": "Cannot read property 'dataset' of undefined"
+        },
+        {
+            "page": "pages/productOrder/comment/comment",
+            "callback_function": "deleteImage",
+            "event_name": "tap",
+            "error_msg": "Cannot read property 'dataset' of undefined"
+        },
+        {
+            "page": "pages/governmentCoupon/collectCoupon/collectCoupon",
+            "callback_function": "collectCoupon",
+            "event_name": "tap",
+            "error_msg": "Cannot read property 'dataset' of undefined"
+        }
+    ],
+    "None": [
+        {
+            "page": "pages/governmentCoupon/index/index",
+            "callback_function": "jump_my",
+            "event_name": "tap"
+        },
+        {
+            "page": "pages/governmentCoupon/index/index",
+            "callback_function": "closeRule",
+            "event_name": "tap"
+        },
+        {
+            "page": "pages/governmentCoupon/index/index",
+            "callback_function": "justCatch",
+            "event_name": "touchmove"
+        },
+        {
+            "page": "pages/governmentCoupon/index/index",
+            "callback_function": "showRule",
+            "event_name": "tap"
+        },
+        {
+            "page": "pages/governmentCoupon/index/index",
+            "callback_function": "collectCoupon",
+            "event_name": "tap"
+        },
+        {
+            "page": "pages/venue/orderProduct/orderProduct",
+            "callback_function": "countMinus",
+            "event_name": "tap"
+        },
+        {
+            "page": "pages/venue/orderProduct/orderProduct",
+            "callback_function": "countPlus",
+            "event_name": "tap"
+        },
+        {
+            "page": "pages/venue/orderProduct/orderProduct",
+            "callback_function": "selectCoupon",
+            "event_name": "tap"
+        },
+        {
+            "page": "pages/productOrder/code/code",
+            "callback_function": "auth",
+            "event_name": "tap"
+        },
+        {
+            "page": "pages/user/authentication/authentication",
+            "callback_function": "beginSmsTimer",
+            "event_name": "tap"
+        },
+        {
+            "page": "pages/user/authentication/authentication",
+            "callback_function": "nocard",
+            "event_name": "tap"
+        },
+        {
+            "page": "pages/productOrder/comment/comment",
+            "callback_function": "chooseImage",
+            "event_name": "tap"
+        },
+        {
+            "page": "pages/governmentCoupon/collectCoupon/collectCoupon",
+            "callback_function": "closeRule",
+            "event_name": "tap"
+        },
+        {
+            "page": "pages/governmentCoupon/collectCoupon/collectCoupon",
+            "callback_function": "justCatch",
+            "event_name": "touchmove"
+        },
+        {
+            "page": "pages/user/abnormalAuthentication/abnormalAuthentication",
+            "callback_function": "codeClick",
+            "event_name": "tap"
+        }
+    ],
+    "request": [
+        {
+            "page": "pages/venue/list/list",
+            "callback_function": "showSearchInput",
+            "event_name": "tap",
+            "method_params": {
+                "data": {
+                    "pageCount": 15,
+                    "hasErrors": false,
+                    "errorMessage": "",
+                    "errorCode": "0",
+                    "list": [
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u88d5\u534e\u533a\u5bcc\u5f3a\u5927\u885717\u53f7\u6000\u7279\u5168\u6c11\u5065\u8eab\u4e2d\u5fc3\u8d1f2--A17\u53f7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5176\u4ed6",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "ohou67btkm"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202202/jl84nur3j9",
+                            "distance": null,
+                            "latitude": "38.02571115129214",
+                            "longitude": "114.5282865583584",
+                            "name": "\u667a\u535a\u9ad8\u5c14\u592b\u4ff1\u4e50\u90e8",
+                            "stars": null,
+                            "tenantUuid": "292",
+                            "updatedTime": "2022-02-16T16:05:28",
+                            "uuid": "04girx3sgy"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u8d75\u53bf\u8d75\u5dde\u9547\u4e1c\u73af\u8def\u5357\u6bb5\u8def\u4e1c",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u7fbd\u6bdb\u7403",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "vefo93vihe"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202308/jvyqyoi83w",
+                            "distance": null,
+                            "latitude": "37.78274509352831",
+                            "longitude": "114.91649669791632",
+                            "name": "\u8d75\u53bf\u5965\u4f53\u5168\u6c11\u5065\u8eab\u4e2d\u5fc3",
+                            "stars": null,
+                            "tenantUuid": "384",
+                            "updatedTime": "2023-08-15T22:39:19",
+                            "uuid": "0rg81ktyxk"
+                        },
+                        {
+                            "address": "\u5b9a\u5dde\u5e02\u4e2d\u5174\u4e1c\u8def\u61cb\u946b\u5927\u53a6\u8d1f\u4e00\u5c42",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "m9hx0svpxe"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202111/bk2xwd468j",
+                            "distance": null,
+                            "latitude": "38.50260308660802",
+                            "longitude": "115.00533176838273",
+                            "name": "\u6052\u7f8e\u529b\u5065\u61cb\u946b\u5e97",
+                            "stars": null,
+                            "tenantUuid": "256",
+                            "updatedTime": "2022-03-28T16:37:56",
+                            "uuid": "15mr9ixlvs"
+                        },
+                        {
+                            "address": "\u77f3\u5bb6\u5e84\u5e02\u957f\u5b89\u533a\u548c\u5e73\u4e1c\u8def528\u53f7\u91d1\u5609\u56ed\u5e95\u5546A\u533a\u8d1f\u4e00\u5c42",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5c04\u7bad",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "zr0uc88n70"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202210/djq0ctmxup",
+                            "distance": null,
+                            "latitude": "38.053465602395136",
+                            "longitude": "114.56451066158084",
+                            "name": "\u957f\u5b89\u7fbd\u6797\u5c04\u7bad\u4ff1\u4e50\u90e8",
+                            "stars": null,
+                            "tenantUuid": "324",
+                            "updatedTime": "2022-10-27T11:14:35",
+                            "uuid": "1bnnpr7tkn"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u6ca7\u5dde\u5e02\u4efb\u4e18\u5e02\u897f\u73af\u8def\u529e\u4e8b\u5904\u5b8b\u5e84\u6751\u6751\u59d4\u4f1a\u897f",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u7fbd\u6bdb\u7403",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "o9ysp8y0a0"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "c3s0zue3oh"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202308/y63njpl13s",
+                            "distance": null,
+                            "latitude": "38.85721704512562",
+                            "longitude": "116.11198865686481",
+                            "name": "\u6cb3\u5317\u901f\u5065\u4f53\u80b2",
+                            "stars": null,
+                            "tenantUuid": "409",
+                            "updatedTime": "2023-08-31T11:07:23",
+                            "uuid": "1bu3jswr6w"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u9e7f\u6cc9\u533a\u5bfa\u5bb6\u5e84\u9547\u5bcc\u5b81\u8857\u798f\u5bff\u5df71\u53f7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u4e52\u4e53\u7403",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "xiwbulk9n4"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202210/k434kfvfi7",
+                            "distance": null,
+                            "latitude": "37.9883619584962",
+                            "longitude": "114.4634185159306",
+                            "name": "\u6cb3\u5317\u9521\u5c27\u4f53\u80b2\u53d1\u5c55\u6709\u9650\u516c\u53f8",
+                            "stars": null,
+                            "tenantUuid": "319",
+                            "updatedTime": "2022-10-25T17:37:06",
+                            "uuid": "1d0f6ylpt7"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u6ca7\u5dde\u5e02\u4efb\u4e18\u5e02\u6e24\u6d77\u4e1c\u8def\u98ce\u5c1a\u5e7f\u573a\u4e00\u697c",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6e38\u6cf3",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "g58xe239tv"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "a8hvv7j5jj"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202201/5k0cnaekmt",
+                            "distance": null,
+                            "latitude": "38.69482159754234",
+                            "longitude": "116.12362904867044",
+                            "name": "\u4efb\u4e18\u7231\u84dd\u9752\u5c11\u5e74\u6e38\u6cf3\u4e2d\u5fc3",
+                            "stars": null,
+                            "tenantUuid": "286",
+                            "updatedTime": "2022-01-17T10:49:07",
+                            "uuid": "1mrngw9jlc"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u5510\u5c71\u5e02\u9075\u5316\u5e02\u897f\u5173\u6751\u901a\u534e\u8857158\u53f7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6e38\u6cf3",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "9db5pxw7af"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202301/ptrhd3i2ja",
+                            "distance": null,
+                            "latitude": "40.186558764129806",
+                            "longitude": "117.95374990314406",
+                            "name": "\u9075\u5316\u5e02\u611a\u516c\u5317\u8def\u91d1\u6d77\u8c5a\u6e38\u6cf3\u9986",
+                            "stars": null,
+                            "tenantUuid": "366",
+                            "updatedTime": "2023-02-14T13:53:52",
+                            "uuid": "20kh13k3q0"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u65b0\u534e\u533a\u4e2d\u534e\u5317\u5927\u8857\u71d5\u90fd\u91d1\u5730\u57ceD\u533a4\u5ea7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5176\u4ed6",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "nz5cayn2cd"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202309/uqq48angnp",
+                            "distance": null,
+                            "latitude": "38.09138120453583",
+                            "longitude": "114.48377020474794",
+                            "name": "\u540c\u76df\u8dc6\u62f3\u9053\u9986",
+                            "stars": null,
+                            "tenantUuid": "418",
+                            "updatedTime": "2023-09-14T15:48:51",
+                            "uuid": "2kz3wgj7nl"
+                        },
+                        {
+                            "address": "\u957f\u5b89\u533a\u5317\u4e8c\u73af\u9ad8\u8425\u5927\u8857\u6052\u4e2d\u8def\u4ea4\u53e3\u897f\u884c20\u7c73\u8def\u5317 \u4e07\u62d3\u4f53\u80b2\u6052\u5927\u5fa1\u666f\u534a\u5c9b\u8fd0\u52a8\u4e2d\u5fc3",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "or1c837pbz"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202210/ppspngumko",
+                            "distance": null,
+                            "latitude": "38.08879264045374",
+                            "longitude": "114.56401544443257",
+                            "name": "\u4e07\u62d3\u4f53\u80b2\u5fa1\u666f\u534a\u5c9b\u5e97",
+                            "stars": "5",
+                            "tenantUuid": "130",
+                            "updatedTime": "2023-10-02T18:00:19",
+                            "uuid": "44zgd9irwi"
+                        },
+                        {
+                            "address": "\u6b63\u5b9a\u53bf\u4e2d\u5c71\u897f\u8def36\u53f7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6ed1\u96ea",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "kz3xo6h4gz"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202112/lna57n63ns",
+                            "distance": null,
+                            "latitude": "38.14175943158466",
+                            "longitude": "114.56932941602493",
+                            "name": "\u9ad8\u54e5\u4f53\u80b2\u8f6e\u6ed1\u9986",
+                            "stars": null,
+                            "tenantUuid": "272",
+                            "updatedTime": "2021-12-29T10:47:04",
+                            "uuid": "488vd0jl2j"
+                        },
+                        {
+                            "address": "\u77f3\u5bb6\u5e84\u5e02\u9ad8\u65b0\u533a\u957f\u6c5f\u5927\u9053\u5929\u5c71\u94f6\u6cb3\u5e7f\u573aC\u5ea7B\u4e00",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "g8nn6e4k74"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5176\u4ed6",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "li9zicjnas"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202312/jduk0iml5h",
+                            "distance": null,
+                            "latitude": "38.03719826186031",
+                            "longitude": "114.633294150107",
+                            "name": "\u516b\u96f6\u4e5d\u96f6\u8f6e\u6ed1\u8fd0\u52a8\u9986",
+                            "stars": null,
+                            "tenantUuid": "428",
+                            "updatedTime": "2023-12-27T10:50:31",
+                            "uuid": "4j82ise6id"
+                        },
+                        {
+                            "address": "\u592a\u884c\u897f\u8def3\u53f7\u4e94\u6d32\u5e7f\u573a\u897f\u5317\u89d2",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "og4svm6lft"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202210/ki8zn67381",
+                            "distance": null,
+                            "latitude": "30.29732726303168",
+                            "longitude": "120.09719975094508",
+                            "name": "\u672a\u6765\u5065\u8eab",
+                            "stars": null,
+                            "tenantUuid": "330",
+                            "updatedTime": "2023-08-09T09:19:59",
+                            "uuid": "5007blftdm"
+                        },
+                        {
+                            "address": "\u6ca7\u5dde\u5e02\u4efb\u4e18\u534e\u6cb9\u4e8c\u4e2d\u8def\u53e3\u5411\u897f800\u7c73\u8def\u5357",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "qsdbrv3n5h"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6e38\u6cf3",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "hu6i0lozei"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202003/faze0mlokg",
+                            "distance": null,
+                            "latitude": "38.67051198645515",
+                            "longitude": "116.08721165101711",
+                            "name": "\u96f6\u70b9\u6e38\u6cf3\u5065\u8eab\u6c47",
+                            "stars": "5",
+                            "tenantUuid": "109",
+                            "updatedTime": "2020-08-09T05:54:49",
+                            "uuid": "5j3lzt0n6c"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u77f3\u5bb6\u5e84\u5e02\u65b0\u534e\u533a\u6cf0\u534e\u8857422\u53f7\u6797\u836b\u5927\u9662(\u4e1c1\u95e8)",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6e38\u6cf3",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "am0ywxxa59"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "gn8f6fprb2"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202106/mihqlbd71u",
+                            "distance": null,
+                            "latitude": "38.06244480644818",
+                            "longitude": "114.46343400450264",
+                            "name": "\u4e07\u62d3\u4f53\u80b2\u6797\u836b\u5927\u9662\u5e97",
+                            "stars": null,
+                            "tenantUuid": "253",
+                            "updatedTime": "2022-04-02T17:22:36",
+                            "uuid": "5mzx5cbyoz"
+                        }
+                    ]
+                },
+                "header": {
+                    "Server": "uewaf/4.0.3",
+                    "Date": "Tue, 02 Jul 2024 19:18:11 GMT",
+                    "Content-Type": "application/json;charset=UTF-8",
+                    "Transfer-Encoding": "chunked",
+                    "Connection": "keep-alive",
+                    "Content-Encoding": "gzip"
+                },
+                "statusCode": 200,
+                "cookies": [],
+                "accelerateType": "none",
+                "errMsg": "request:ok"
+            }
+        },
+        {
+            "page": "pages/venue/list/list",
+            "callback_function": "clearSearchInput",
+            "event_name": "tap",
+            "method_params": {
+                "data": {
+                    "pageCount": 15,
+                    "hasErrors": false,
+                    "errorMessage": "",
+                    "errorCode": "0",
+                    "list": [
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u88d5\u534e\u533a\u5bcc\u5f3a\u5927\u885717\u53f7\u6000\u7279\u5168\u6c11\u5065\u8eab\u4e2d\u5fc3\u8d1f2--A17\u53f7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5176\u4ed6",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "ohou67btkm"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202202/jl84nur3j9",
+                            "distance": null,
+                            "latitude": "38.02571115129214",
+                            "longitude": "114.5282865583584",
+                            "name": "\u667a\u535a\u9ad8\u5c14\u592b\u4ff1\u4e50\u90e8",
+                            "stars": null,
+                            "tenantUuid": "292",
+                            "updatedTime": "2022-02-16T16:05:28",
+                            "uuid": "04girx3sgy"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u8d75\u53bf\u8d75\u5dde\u9547\u4e1c\u73af\u8def\u5357\u6bb5\u8def\u4e1c",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u7fbd\u6bdb\u7403",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "vefo93vihe"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202308/jvyqyoi83w",
+                            "distance": null,
+                            "latitude": "37.78274509352831",
+                            "longitude": "114.91649669791632",
+                            "name": "\u8d75\u53bf\u5965\u4f53\u5168\u6c11\u5065\u8eab\u4e2d\u5fc3",
+                            "stars": null,
+                            "tenantUuid": "384",
+                            "updatedTime": "2023-08-15T22:39:19",
+                            "uuid": "0rg81ktyxk"
+                        },
+                        {
+                            "address": "\u5b9a\u5dde\u5e02\u4e2d\u5174\u4e1c\u8def\u61cb\u946b\u5927\u53a6\u8d1f\u4e00\u5c42",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "m9hx0svpxe"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202111/bk2xwd468j",
+                            "distance": null,
+                            "latitude": "38.50260308660802",
+                            "longitude": "115.00533176838273",
+                            "name": "\u6052\u7f8e\u529b\u5065\u61cb\u946b\u5e97",
+                            "stars": null,
+                            "tenantUuid": "256",
+                            "updatedTime": "2022-03-28T16:37:56",
+                            "uuid": "15mr9ixlvs"
+                        },
+                        {
+                            "address": "\u77f3\u5bb6\u5e84\u5e02\u957f\u5b89\u533a\u548c\u5e73\u4e1c\u8def528\u53f7\u91d1\u5609\u56ed\u5e95\u5546A\u533a\u8d1f\u4e00\u5c42",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5c04\u7bad",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "zr0uc88n70"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202210/djq0ctmxup",
+                            "distance": null,
+                            "latitude": "38.053465602395136",
+                            "longitude": "114.56451066158084",
+                            "name": "\u957f\u5b89\u7fbd\u6797\u5c04\u7bad\u4ff1\u4e50\u90e8",
+                            "stars": null,
+                            "tenantUuid": "324",
+                            "updatedTime": "2022-10-27T11:14:35",
+                            "uuid": "1bnnpr7tkn"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u6ca7\u5dde\u5e02\u4efb\u4e18\u5e02\u897f\u73af\u8def\u529e\u4e8b\u5904\u5b8b\u5e84\u6751\u6751\u59d4\u4f1a\u897f",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u7fbd\u6bdb\u7403",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "o9ysp8y0a0"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "c3s0zue3oh"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202308/y63njpl13s",
+                            "distance": null,
+                            "latitude": "38.85721704512562",
+                            "longitude": "116.11198865686481",
+                            "name": "\u6cb3\u5317\u901f\u5065\u4f53\u80b2",
+                            "stars": null,
+                            "tenantUuid": "409",
+                            "updatedTime": "2023-08-31T11:07:23",
+                            "uuid": "1bu3jswr6w"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u9e7f\u6cc9\u533a\u5bfa\u5bb6\u5e84\u9547\u5bcc\u5b81\u8857\u798f\u5bff\u5df71\u53f7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u4e52\u4e53\u7403",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "xiwbulk9n4"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202210/k434kfvfi7",
+                            "distance": null,
+                            "latitude": "37.9883619584962",
+                            "longitude": "114.4634185159306",
+                            "name": "\u6cb3\u5317\u9521\u5c27\u4f53\u80b2\u53d1\u5c55\u6709\u9650\u516c\u53f8",
+                            "stars": null,
+                            "tenantUuid": "319",
+                            "updatedTime": "2022-10-25T17:37:06",
+                            "uuid": "1d0f6ylpt7"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u6ca7\u5dde\u5e02\u4efb\u4e18\u5e02\u6e24\u6d77\u4e1c\u8def\u98ce\u5c1a\u5e7f\u573a\u4e00\u697c",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6e38\u6cf3",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "g58xe239tv"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "a8hvv7j5jj"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202201/5k0cnaekmt",
+                            "distance": null,
+                            "latitude": "38.69482159754234",
+                            "longitude": "116.12362904867044",
+                            "name": "\u4efb\u4e18\u7231\u84dd\u9752\u5c11\u5e74\u6e38\u6cf3\u4e2d\u5fc3",
+                            "stars": null,
+                            "tenantUuid": "286",
+                            "updatedTime": "2022-01-17T10:49:07",
+                            "uuid": "1mrngw9jlc"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u5510\u5c71\u5e02\u9075\u5316\u5e02\u897f\u5173\u6751\u901a\u534e\u8857158\u53f7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6e38\u6cf3",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "9db5pxw7af"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202301/ptrhd3i2ja",
+                            "distance": null,
+                            "latitude": "40.186558764129806",
+                            "longitude": "117.95374990314406",
+                            "name": "\u9075\u5316\u5e02\u611a\u516c\u5317\u8def\u91d1\u6d77\u8c5a\u6e38\u6cf3\u9986",
+                            "stars": null,
+                            "tenantUuid": "366",
+                            "updatedTime": "2023-02-14T13:53:52",
+                            "uuid": "20kh13k3q0"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u65b0\u534e\u533a\u4e2d\u534e\u5317\u5927\u8857\u71d5\u90fd\u91d1\u5730\u57ceD\u533a4\u5ea7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5176\u4ed6",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "nz5cayn2cd"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202309/uqq48angnp",
+                            "distance": null,
+                            "latitude": "38.09138120453583",
+                            "longitude": "114.48377020474794",
+                            "name": "\u540c\u76df\u8dc6\u62f3\u9053\u9986",
+                            "stars": null,
+                            "tenantUuid": "418",
+                            "updatedTime": "2023-09-14T15:48:51",
+                            "uuid": "2kz3wgj7nl"
+                        },
+                        {
+                            "address": "\u957f\u5b89\u533a\u5317\u4e8c\u73af\u9ad8\u8425\u5927\u8857\u6052\u4e2d\u8def\u4ea4\u53e3\u897f\u884c20\u7c73\u8def\u5317 \u4e07\u62d3\u4f53\u80b2\u6052\u5927\u5fa1\u666f\u534a\u5c9b\u8fd0\u52a8\u4e2d\u5fc3",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "or1c837pbz"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202210/ppspngumko",
+                            "distance": null,
+                            "latitude": "38.08879264045374",
+                            "longitude": "114.56401544443257",
+                            "name": "\u4e07\u62d3\u4f53\u80b2\u5fa1\u666f\u534a\u5c9b\u5e97",
+                            "stars": "5",
+                            "tenantUuid": "130",
+                            "updatedTime": "2023-10-02T18:00:19",
+                            "uuid": "44zgd9irwi"
+                        },
+                        {
+                            "address": "\u6b63\u5b9a\u53bf\u4e2d\u5c71\u897f\u8def36\u53f7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6ed1\u96ea",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "kz3xo6h4gz"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202112/lna57n63ns",
+                            "distance": null,
+                            "latitude": "38.14175943158466",
+                            "longitude": "114.56932941602493",
+                            "name": "\u9ad8\u54e5\u4f53\u80b2\u8f6e\u6ed1\u9986",
+                            "stars": null,
+                            "tenantUuid": "272",
+                            "updatedTime": "2021-12-29T10:47:04",
+                            "uuid": "488vd0jl2j"
+                        },
+                        {
+                            "address": "\u77f3\u5bb6\u5e84\u5e02\u9ad8\u65b0\u533a\u957f\u6c5f\u5927\u9053\u5929\u5c71\u94f6\u6cb3\u5e7f\u573aC\u5ea7B\u4e00",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "g8nn6e4k74"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5176\u4ed6",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "li9zicjnas"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202312/jduk0iml5h",
+                            "distance": null,
+                            "latitude": "38.03719826186031",
+                            "longitude": "114.633294150107",
+                            "name": "\u516b\u96f6\u4e5d\u96f6\u8f6e\u6ed1\u8fd0\u52a8\u9986",
+                            "stars": null,
+                            "tenantUuid": "428",
+                            "updatedTime": "2023-12-27T10:50:31",
+                            "uuid": "4j82ise6id"
+                        },
+                        {
+                            "address": "\u592a\u884c\u897f\u8def3\u53f7\u4e94\u6d32\u5e7f\u573a\u897f\u5317\u89d2",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "og4svm6lft"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202210/ki8zn67381",
+                            "distance": null,
+                            "latitude": "30.29732726303168",
+                            "longitude": "120.09719975094508",
+                            "name": "\u672a\u6765\u5065\u8eab",
+                            "stars": null,
+                            "tenantUuid": "330",
+                            "updatedTime": "2023-08-09T09:19:59",
+                            "uuid": "5007blftdm"
+                        },
+                        {
+                            "address": "\u6ca7\u5dde\u5e02\u4efb\u4e18\u534e\u6cb9\u4e8c\u4e2d\u8def\u53e3\u5411\u897f800\u7c73\u8def\u5357",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "qsdbrv3n5h"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6e38\u6cf3",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "hu6i0lozei"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202003/faze0mlokg",
+                            "distance": null,
+                            "latitude": "38.67051198645515",
+                            "longitude": "116.08721165101711",
+                            "name": "\u96f6\u70b9\u6e38\u6cf3\u5065\u8eab\u6c47",
+                            "stars": "5",
+                            "tenantUuid": "109",
+                            "updatedTime": "2020-08-09T05:54:49",
+                            "uuid": "5j3lzt0n6c"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u77f3\u5bb6\u5e84\u5e02\u65b0\u534e\u533a\u6cf0\u534e\u8857422\u53f7\u6797\u836b\u5927\u9662(\u4e1c1\u95e8)",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6e38\u6cf3",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "am0ywxxa59"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "gn8f6fprb2"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202106/mihqlbd71u",
+                            "distance": null,
+                            "latitude": "38.06244480644818",
+                            "longitude": "114.46343400450264",
+                            "name": "\u4e07\u62d3\u4f53\u80b2\u6797\u836b\u5927\u9662\u5e97",
+                            "stars": null,
+                            "tenantUuid": "253",
+                            "updatedTime": "2022-04-02T17:22:36",
+                            "uuid": "5mzx5cbyoz"
+                        }
+                    ]
+                },
+                "header": {
+                    "Server": "uewaf/4.0.3",
+                    "Date": "Tue, 02 Jul 2024 19:19:03 GMT",
+                    "Content-Type": "application/json;charset=UTF-8",
+                    "Transfer-Encoding": "chunked",
+                    "Connection": "keep-alive",
+                    "Content-Encoding": "gzip"
+                },
+                "statusCode": 200,
+                "cookies": [],
+                "accelerateType": "none",
+                "errMsg": "request:ok"
+            }
+        },
+        {
+            "page": "pages/venue/list/list",
+            "callback_function": "hideSearchInput",
+            "event_name": "tap",
+            "method_params": {
+                "data": {
+                    "pageCount": 15,
+                    "hasErrors": false,
+                    "errorMessage": "",
+                    "errorCode": "0",
+                    "list": [
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u88d5\u534e\u533a\u5bcc\u5f3a\u5927\u885717\u53f7\u6000\u7279\u5168\u6c11\u5065\u8eab\u4e2d\u5fc3\u8d1f2--A17\u53f7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5176\u4ed6",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "ohou67btkm"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202202/jl84nur3j9",
+                            "distance": null,
+                            "latitude": "38.02571115129214",
+                            "longitude": "114.5282865583584",
+                            "name": "\u667a\u535a\u9ad8\u5c14\u592b\u4ff1\u4e50\u90e8",
+                            "stars": null,
+                            "tenantUuid": "292",
+                            "updatedTime": "2022-02-16T16:05:28",
+                            "uuid": "04girx3sgy"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u8d75\u53bf\u8d75\u5dde\u9547\u4e1c\u73af\u8def\u5357\u6bb5\u8def\u4e1c",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u7fbd\u6bdb\u7403",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "vefo93vihe"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202308/jvyqyoi83w",
+                            "distance": null,
+                            "latitude": "37.78274509352831",
+                            "longitude": "114.91649669791632",
+                            "name": "\u8d75\u53bf\u5965\u4f53\u5168\u6c11\u5065\u8eab\u4e2d\u5fc3",
+                            "stars": null,
+                            "tenantUuid": "384",
+                            "updatedTime": "2023-08-15T22:39:19",
+                            "uuid": "0rg81ktyxk"
+                        },
+                        {
+                            "address": "\u5b9a\u5dde\u5e02\u4e2d\u5174\u4e1c\u8def\u61cb\u946b\u5927\u53a6\u8d1f\u4e00\u5c42",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "m9hx0svpxe"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202111/bk2xwd468j",
+                            "distance": null,
+                            "latitude": "38.50260308660802",
+                            "longitude": "115.00533176838273",
+                            "name": "\u6052\u7f8e\u529b\u5065\u61cb\u946b\u5e97",
+                            "stars": null,
+                            "tenantUuid": "256",
+                            "updatedTime": "2022-03-28T16:37:56",
+                            "uuid": "15mr9ixlvs"
+                        },
+                        {
+                            "address": "\u77f3\u5bb6\u5e84\u5e02\u957f\u5b89\u533a\u548c\u5e73\u4e1c\u8def528\u53f7\u91d1\u5609\u56ed\u5e95\u5546A\u533a\u8d1f\u4e00\u5c42",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5c04\u7bad",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "zr0uc88n70"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202210/djq0ctmxup",
+                            "distance": null,
+                            "latitude": "38.053465602395136",
+                            "longitude": "114.56451066158084",
+                            "name": "\u957f\u5b89\u7fbd\u6797\u5c04\u7bad\u4ff1\u4e50\u90e8",
+                            "stars": null,
+                            "tenantUuid": "324",
+                            "updatedTime": "2022-10-27T11:14:35",
+                            "uuid": "1bnnpr7tkn"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u6ca7\u5dde\u5e02\u4efb\u4e18\u5e02\u897f\u73af\u8def\u529e\u4e8b\u5904\u5b8b\u5e84\u6751\u6751\u59d4\u4f1a\u897f",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u7fbd\u6bdb\u7403",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "o9ysp8y0a0"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "c3s0zue3oh"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202308/y63njpl13s",
+                            "distance": null,
+                            "latitude": "38.85721704512562",
+                            "longitude": "116.11198865686481",
+                            "name": "\u6cb3\u5317\u901f\u5065\u4f53\u80b2",
+                            "stars": null,
+                            "tenantUuid": "409",
+                            "updatedTime": "2023-08-31T11:07:23",
+                            "uuid": "1bu3jswr6w"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u9e7f\u6cc9\u533a\u5bfa\u5bb6\u5e84\u9547\u5bcc\u5b81\u8857\u798f\u5bff\u5df71\u53f7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u4e52\u4e53\u7403",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "xiwbulk9n4"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202210/k434kfvfi7",
+                            "distance": null,
+                            "latitude": "37.9883619584962",
+                            "longitude": "114.4634185159306",
+                            "name": "\u6cb3\u5317\u9521\u5c27\u4f53\u80b2\u53d1\u5c55\u6709\u9650\u516c\u53f8",
+                            "stars": null,
+                            "tenantUuid": "319",
+                            "updatedTime": "2022-10-25T17:37:06",
+                            "uuid": "1d0f6ylpt7"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u6ca7\u5dde\u5e02\u4efb\u4e18\u5e02\u6e24\u6d77\u4e1c\u8def\u98ce\u5c1a\u5e7f\u573a\u4e00\u697c",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6e38\u6cf3",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "g58xe239tv"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "a8hvv7j5jj"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202201/5k0cnaekmt",
+                            "distance": null,
+                            "latitude": "38.69482159754234",
+                            "longitude": "116.12362904867044",
+                            "name": "\u4efb\u4e18\u7231\u84dd\u9752\u5c11\u5e74\u6e38\u6cf3\u4e2d\u5fc3",
+                            "stars": null,
+                            "tenantUuid": "286",
+                            "updatedTime": "2022-01-17T10:49:07",
+                            "uuid": "1mrngw9jlc"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u5510\u5c71\u5e02\u9075\u5316\u5e02\u897f\u5173\u6751\u901a\u534e\u8857158\u53f7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6e38\u6cf3",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "9db5pxw7af"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202301/ptrhd3i2ja",
+                            "distance": null,
+                            "latitude": "40.186558764129806",
+                            "longitude": "117.95374990314406",
+                            "name": "\u9075\u5316\u5e02\u611a\u516c\u5317\u8def\u91d1\u6d77\u8c5a\u6e38\u6cf3\u9986",
+                            "stars": null,
+                            "tenantUuid": "366",
+                            "updatedTime": "2023-02-14T13:53:52",
+                            "uuid": "20kh13k3q0"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u65b0\u534e\u533a\u4e2d\u534e\u5317\u5927\u8857\u71d5\u90fd\u91d1\u5730\u57ceD\u533a4\u5ea7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5176\u4ed6",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "nz5cayn2cd"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202309/uqq48angnp",
+                            "distance": null,
+                            "latitude": "38.09138120453583",
+                            "longitude": "114.48377020474794",
+                            "name": "\u540c\u76df\u8dc6\u62f3\u9053\u9986",
+                            "stars": null,
+                            "tenantUuid": "418",
+                            "updatedTime": "2023-09-14T15:48:51",
+                            "uuid": "2kz3wgj7nl"
+                        },
+                        {
+                            "address": "\u957f\u5b89\u533a\u5317\u4e8c\u73af\u9ad8\u8425\u5927\u8857\u6052\u4e2d\u8def\u4ea4\u53e3\u897f\u884c20\u7c73\u8def\u5317 \u4e07\u62d3\u4f53\u80b2\u6052\u5927\u5fa1\u666f\u534a\u5c9b\u8fd0\u52a8\u4e2d\u5fc3",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "or1c837pbz"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202210/ppspngumko",
+                            "distance": null,
+                            "latitude": "38.08879264045374",
+                            "longitude": "114.56401544443257",
+                            "name": "\u4e07\u62d3\u4f53\u80b2\u5fa1\u666f\u534a\u5c9b\u5e97",
+                            "stars": "5",
+                            "tenantUuid": "130",
+                            "updatedTime": "2023-10-02T18:00:19",
+                            "uuid": "44zgd9irwi"
+                        },
+                        {
+                            "address": "\u6b63\u5b9a\u53bf\u4e2d\u5c71\u897f\u8def36\u53f7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6ed1\u96ea",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "kz3xo6h4gz"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202112/lna57n63ns",
+                            "distance": null,
+                            "latitude": "38.14175943158466",
+                            "longitude": "114.56932941602493",
+                            "name": "\u9ad8\u54e5\u4f53\u80b2\u8f6e\u6ed1\u9986",
+                            "stars": null,
+                            "tenantUuid": "272",
+                            "updatedTime": "2021-12-29T10:47:04",
+                            "uuid": "488vd0jl2j"
+                        },
+                        {
+                            "address": "\u77f3\u5bb6\u5e84\u5e02\u9ad8\u65b0\u533a\u957f\u6c5f\u5927\u9053\u5929\u5c71\u94f6\u6cb3\u5e7f\u573aC\u5ea7B\u4e00",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "g8nn6e4k74"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5176\u4ed6",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "li9zicjnas"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202312/jduk0iml5h",
+                            "distance": null,
+                            "latitude": "38.03719826186031",
+                            "longitude": "114.633294150107",
+                            "name": "\u516b\u96f6\u4e5d\u96f6\u8f6e\u6ed1\u8fd0\u52a8\u9986",
+                            "stars": null,
+                            "tenantUuid": "428",
+                            "updatedTime": "2023-12-27T10:50:31",
+                            "uuid": "4j82ise6id"
+                        },
+                        {
+                            "address": "\u592a\u884c\u897f\u8def3\u53f7\u4e94\u6d32\u5e7f\u573a\u897f\u5317\u89d2",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "og4svm6lft"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202210/ki8zn67381",
+                            "distance": null,
+                            "latitude": "30.29732726303168",
+                            "longitude": "120.09719975094508",
+                            "name": "\u672a\u6765\u5065\u8eab",
+                            "stars": null,
+                            "tenantUuid": "330",
+                            "updatedTime": "2023-08-09T09:19:59",
+                            "uuid": "5007blftdm"
+                        },
+                        {
+                            "address": "\u6ca7\u5dde\u5e02\u4efb\u4e18\u534e\u6cb9\u4e8c\u4e2d\u8def\u53e3\u5411\u897f800\u7c73\u8def\u5357",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "qsdbrv3n5h"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6e38\u6cf3",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "hu6i0lozei"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202003/faze0mlokg",
+                            "distance": null,
+                            "latitude": "38.67051198645515",
+                            "longitude": "116.08721165101711",
+                            "name": "\u96f6\u70b9\u6e38\u6cf3\u5065\u8eab\u6c47",
+                            "stars": "5",
+                            "tenantUuid": "109",
+                            "updatedTime": "2020-08-09T05:54:49",
+                            "uuid": "5j3lzt0n6c"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u77f3\u5bb6\u5e84\u5e02\u65b0\u534e\u533a\u6cf0\u534e\u8857422\u53f7\u6797\u836b\u5927\u9662(\u4e1c1\u95e8)",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6e38\u6cf3",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "am0ywxxa59"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "gn8f6fprb2"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202106/mihqlbd71u",
+                            "distance": null,
+                            "latitude": "38.06244480644818",
+                            "longitude": "114.46343400450264",
+                            "name": "\u4e07\u62d3\u4f53\u80b2\u6797\u836b\u5927\u9662\u5e97",
+                            "stars": null,
+                            "tenantUuid": "253",
+                            "updatedTime": "2022-04-02T17:22:36",
+                            "uuid": "5mzx5cbyoz"
+                        }
+                    ]
+                },
+                "header": {
+                    "Server": "uewaf/4.0.3",
+                    "Date": "Tue, 02 Jul 2024 19:19:55 GMT",
+                    "Content-Type": "application/json;charset=UTF-8",
+                    "Transfer-Encoding": "chunked",
+                    "Connection": "keep-alive",
+                    "Content-Encoding": "gzip"
+                },
+                "statusCode": 200,
+                "cookies": [],
+                "accelerateType": "none",
+                "errMsg": "request:ok"
+            }
+        },
+        {
+            "page": "pages/venue/list/list",
+            "callback_function": "closeFilter",
+            "event_name": "tap",
+            "method_params": {
+                "data": {
+                    "pageCount": 15,
+                    "hasErrors": false,
+                    "errorMessage": "",
+                    "errorCode": "0",
+                    "list": [
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u88d5\u534e\u533a\u5bcc\u5f3a\u5927\u885717\u53f7\u6000\u7279\u5168\u6c11\u5065\u8eab\u4e2d\u5fc3\u8d1f2--A17\u53f7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5176\u4ed6",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "ohou67btkm"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202202/jl84nur3j9",
+                            "distance": null,
+                            "latitude": "38.02571115129214",
+                            "longitude": "114.5282865583584",
+                            "name": "\u667a\u535a\u9ad8\u5c14\u592b\u4ff1\u4e50\u90e8",
+                            "stars": null,
+                            "tenantUuid": "292",
+                            "updatedTime": "2022-02-16T16:05:28",
+                            "uuid": "04girx3sgy"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u8d75\u53bf\u8d75\u5dde\u9547\u4e1c\u73af\u8def\u5357\u6bb5\u8def\u4e1c",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u7fbd\u6bdb\u7403",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "vefo93vihe"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202308/jvyqyoi83w",
+                            "distance": null,
+                            "latitude": "37.78274509352831",
+                            "longitude": "114.91649669791632",
+                            "name": "\u8d75\u53bf\u5965\u4f53\u5168\u6c11\u5065\u8eab\u4e2d\u5fc3",
+                            "stars": null,
+                            "tenantUuid": "384",
+                            "updatedTime": "2023-08-15T22:39:19",
+                            "uuid": "0rg81ktyxk"
+                        },
+                        {
+                            "address": "\u5b9a\u5dde\u5e02\u4e2d\u5174\u4e1c\u8def\u61cb\u946b\u5927\u53a6\u8d1f\u4e00\u5c42",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "m9hx0svpxe"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202111/bk2xwd468j",
+                            "distance": null,
+                            "latitude": "38.50260308660802",
+                            "longitude": "115.00533176838273",
+                            "name": "\u6052\u7f8e\u529b\u5065\u61cb\u946b\u5e97",
+                            "stars": null,
+                            "tenantUuid": "256",
+                            "updatedTime": "2022-03-28T16:37:56",
+                            "uuid": "15mr9ixlvs"
+                        },
+                        {
+                            "address": "\u77f3\u5bb6\u5e84\u5e02\u957f\u5b89\u533a\u548c\u5e73\u4e1c\u8def528\u53f7\u91d1\u5609\u56ed\u5e95\u5546A\u533a\u8d1f\u4e00\u5c42",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5c04\u7bad",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "zr0uc88n70"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202210/djq0ctmxup",
+                            "distance": null,
+                            "latitude": "38.053465602395136",
+                            "longitude": "114.56451066158084",
+                            "name": "\u957f\u5b89\u7fbd\u6797\u5c04\u7bad\u4ff1\u4e50\u90e8",
+                            "stars": null,
+                            "tenantUuid": "324",
+                            "updatedTime": "2022-10-27T11:14:35",
+                            "uuid": "1bnnpr7tkn"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u6ca7\u5dde\u5e02\u4efb\u4e18\u5e02\u897f\u73af\u8def\u529e\u4e8b\u5904\u5b8b\u5e84\u6751\u6751\u59d4\u4f1a\u897f",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u7fbd\u6bdb\u7403",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "o9ysp8y0a0"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "c3s0zue3oh"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202308/y63njpl13s",
+                            "distance": null,
+                            "latitude": "38.85721704512562",
+                            "longitude": "116.11198865686481",
+                            "name": "\u6cb3\u5317\u901f\u5065\u4f53\u80b2",
+                            "stars": null,
+                            "tenantUuid": "409",
+                            "updatedTime": "2023-08-31T11:07:23",
+                            "uuid": "1bu3jswr6w"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u9e7f\u6cc9\u533a\u5bfa\u5bb6\u5e84\u9547\u5bcc\u5b81\u8857\u798f\u5bff\u5df71\u53f7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u4e52\u4e53\u7403",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "xiwbulk9n4"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202210/k434kfvfi7",
+                            "distance": null,
+                            "latitude": "37.9883619584962",
+                            "longitude": "114.4634185159306",
+                            "name": "\u6cb3\u5317\u9521\u5c27\u4f53\u80b2\u53d1\u5c55\u6709\u9650\u516c\u53f8",
+                            "stars": null,
+                            "tenantUuid": "319",
+                            "updatedTime": "2022-10-25T17:37:06",
+                            "uuid": "1d0f6ylpt7"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u6ca7\u5dde\u5e02\u4efb\u4e18\u5e02\u6e24\u6d77\u4e1c\u8def\u98ce\u5c1a\u5e7f\u573a\u4e00\u697c",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6e38\u6cf3",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "g58xe239tv"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "a8hvv7j5jj"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202201/5k0cnaekmt",
+                            "distance": null,
+                            "latitude": "38.69482159754234",
+                            "longitude": "116.12362904867044",
+                            "name": "\u4efb\u4e18\u7231\u84dd\u9752\u5c11\u5e74\u6e38\u6cf3\u4e2d\u5fc3",
+                            "stars": null,
+                            "tenantUuid": "286",
+                            "updatedTime": "2022-01-17T10:49:07",
+                            "uuid": "1mrngw9jlc"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u5510\u5c71\u5e02\u9075\u5316\u5e02\u897f\u5173\u6751\u901a\u534e\u8857158\u53f7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6e38\u6cf3",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "9db5pxw7af"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202301/ptrhd3i2ja",
+                            "distance": null,
+                            "latitude": "40.186558764129806",
+                            "longitude": "117.95374990314406",
+                            "name": "\u9075\u5316\u5e02\u611a\u516c\u5317\u8def\u91d1\u6d77\u8c5a\u6e38\u6cf3\u9986",
+                            "stars": null,
+                            "tenantUuid": "366",
+                            "updatedTime": "2023-02-14T13:53:52",
+                            "uuid": "20kh13k3q0"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u65b0\u534e\u533a\u4e2d\u534e\u5317\u5927\u8857\u71d5\u90fd\u91d1\u5730\u57ceD\u533a4\u5ea7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5176\u4ed6",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "nz5cayn2cd"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202309/uqq48angnp",
+                            "distance": null,
+                            "latitude": "38.09138120453583",
+                            "longitude": "114.48377020474794",
+                            "name": "\u540c\u76df\u8dc6\u62f3\u9053\u9986",
+                            "stars": null,
+                            "tenantUuid": "418",
+                            "updatedTime": "2023-09-14T15:48:51",
+                            "uuid": "2kz3wgj7nl"
+                        },
+                        {
+                            "address": "\u957f\u5b89\u533a\u5317\u4e8c\u73af\u9ad8\u8425\u5927\u8857\u6052\u4e2d\u8def\u4ea4\u53e3\u897f\u884c20\u7c73\u8def\u5317 \u4e07\u62d3\u4f53\u80b2\u6052\u5927\u5fa1\u666f\u534a\u5c9b\u8fd0\u52a8\u4e2d\u5fc3",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "or1c837pbz"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202210/ppspngumko",
+                            "distance": null,
+                            "latitude": "38.08879264045374",
+                            "longitude": "114.56401544443257",
+                            "name": "\u4e07\u62d3\u4f53\u80b2\u5fa1\u666f\u534a\u5c9b\u5e97",
+                            "stars": "5",
+                            "tenantUuid": "130",
+                            "updatedTime": "2023-10-02T18:00:19",
+                            "uuid": "44zgd9irwi"
+                        },
+                        {
+                            "address": "\u6b63\u5b9a\u53bf\u4e2d\u5c71\u897f\u8def36\u53f7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6ed1\u96ea",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "kz3xo6h4gz"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202112/lna57n63ns",
+                            "distance": null,
+                            "latitude": "38.14175943158466",
+                            "longitude": "114.56932941602493",
+                            "name": "\u9ad8\u54e5\u4f53\u80b2\u8f6e\u6ed1\u9986",
+                            "stars": null,
+                            "tenantUuid": "272",
+                            "updatedTime": "2021-12-29T10:47:04",
+                            "uuid": "488vd0jl2j"
+                        },
+                        {
+                            "address": "\u77f3\u5bb6\u5e84\u5e02\u9ad8\u65b0\u533a\u957f\u6c5f\u5927\u9053\u5929\u5c71\u94f6\u6cb3\u5e7f\u573aC\u5ea7B\u4e00",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "g8nn6e4k74"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5176\u4ed6",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "li9zicjnas"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202312/jduk0iml5h",
+                            "distance": null,
+                            "latitude": "38.03719826186031",
+                            "longitude": "114.633294150107",
+                            "name": "\u516b\u96f6\u4e5d\u96f6\u8f6e\u6ed1\u8fd0\u52a8\u9986",
+                            "stars": null,
+                            "tenantUuid": "428",
+                            "updatedTime": "2023-12-27T10:50:31",
+                            "uuid": "4j82ise6id"
+                        },
+                        {
+                            "address": "\u592a\u884c\u897f\u8def3\u53f7\u4e94\u6d32\u5e7f\u573a\u897f\u5317\u89d2",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "og4svm6lft"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202210/ki8zn67381",
+                            "distance": null,
+                            "latitude": "30.29732726303168",
+                            "longitude": "120.09719975094508",
+                            "name": "\u672a\u6765\u5065\u8eab",
+                            "stars": null,
+                            "tenantUuid": "330",
+                            "updatedTime": "2023-08-09T09:19:59",
+                            "uuid": "5007blftdm"
+                        },
+                        {
+                            "address": "\u6ca7\u5dde\u5e02\u4efb\u4e18\u534e\u6cb9\u4e8c\u4e2d\u8def\u53e3\u5411\u897f800\u7c73\u8def\u5357",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "qsdbrv3n5h"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6e38\u6cf3",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "hu6i0lozei"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202003/faze0mlokg",
+                            "distance": null,
+                            "latitude": "38.67051198645515",
+                            "longitude": "116.08721165101711",
+                            "name": "\u96f6\u70b9\u6e38\u6cf3\u5065\u8eab\u6c47",
+                            "stars": "5",
+                            "tenantUuid": "109",
+                            "updatedTime": "2020-08-09T05:54:49",
+                            "uuid": "5j3lzt0n6c"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u77f3\u5bb6\u5e84\u5e02\u65b0\u534e\u533a\u6cf0\u534e\u8857422\u53f7\u6797\u836b\u5927\u9662(\u4e1c1\u95e8)",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6e38\u6cf3",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "am0ywxxa59"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "gn8f6fprb2"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202106/mihqlbd71u",
+                            "distance": null,
+                            "latitude": "38.06244480644818",
+                            "longitude": "114.46343400450264",
+                            "name": "\u4e07\u62d3\u4f53\u80b2\u6797\u836b\u5927\u9662\u5e97",
+                            "stars": null,
+                            "tenantUuid": "253",
+                            "updatedTime": "2022-04-02T17:22:36",
+                            "uuid": "5mzx5cbyoz"
+                        }
+                    ]
+                },
+                "header": {
+                    "Server": "uewaf/4.0.3",
+                    "Date": "Tue, 02 Jul 2024 19:20:47 GMT",
+                    "Content-Type": "application/json;charset=UTF-8",
+                    "Transfer-Encoding": "chunked",
+                    "Connection": "keep-alive",
+                    "Content-Encoding": "gzip"
+                },
+                "statusCode": 200,
+                "cookies": [],
+                "accelerateType": "none",
+                "errMsg": "request:ok"
+            }
+        },
+        {
+            "page": "pages/venue/list/list",
+            "callback_function": "stoptap",
+            "event_name": "tap",
+            "method_params": {
+                "data": {
+                    "pageCount": 15,
+                    "hasErrors": false,
+                    "errorMessage": "",
+                    "errorCode": "0",
+                    "list": [
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u88d5\u534e\u533a\u5bcc\u5f3a\u5927\u885717\u53f7\u6000\u7279\u5168\u6c11\u5065\u8eab\u4e2d\u5fc3\u8d1f2--A17\u53f7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5176\u4ed6",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "ohou67btkm"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202202/jl84nur3j9",
+                            "distance": null,
+                            "latitude": "38.02571115129214",
+                            "longitude": "114.5282865583584",
+                            "name": "\u667a\u535a\u9ad8\u5c14\u592b\u4ff1\u4e50\u90e8",
+                            "stars": null,
+                            "tenantUuid": "292",
+                            "updatedTime": "2022-02-16T16:05:28",
+                            "uuid": "04girx3sgy"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u8d75\u53bf\u8d75\u5dde\u9547\u4e1c\u73af\u8def\u5357\u6bb5\u8def\u4e1c",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u7fbd\u6bdb\u7403",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "vefo93vihe"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202308/jvyqyoi83w",
+                            "distance": null,
+                            "latitude": "37.78274509352831",
+                            "longitude": "114.91649669791632",
+                            "name": "\u8d75\u53bf\u5965\u4f53\u5168\u6c11\u5065\u8eab\u4e2d\u5fc3",
+                            "stars": null,
+                            "tenantUuid": "384",
+                            "updatedTime": "2023-08-15T22:39:19",
+                            "uuid": "0rg81ktyxk"
+                        },
+                        {
+                            "address": "\u5b9a\u5dde\u5e02\u4e2d\u5174\u4e1c\u8def\u61cb\u946b\u5927\u53a6\u8d1f\u4e00\u5c42",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "m9hx0svpxe"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202111/bk2xwd468j",
+                            "distance": null,
+                            "latitude": "38.50260308660802",
+                            "longitude": "115.00533176838273",
+                            "name": "\u6052\u7f8e\u529b\u5065\u61cb\u946b\u5e97",
+                            "stars": null,
+                            "tenantUuid": "256",
+                            "updatedTime": "2022-03-28T16:37:56",
+                            "uuid": "15mr9ixlvs"
+                        },
+                        {
+                            "address": "\u77f3\u5bb6\u5e84\u5e02\u957f\u5b89\u533a\u548c\u5e73\u4e1c\u8def528\u53f7\u91d1\u5609\u56ed\u5e95\u5546A\u533a\u8d1f\u4e00\u5c42",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5c04\u7bad",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "zr0uc88n70"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202210/djq0ctmxup",
+                            "distance": null,
+                            "latitude": "38.053465602395136",
+                            "longitude": "114.56451066158084",
+                            "name": "\u957f\u5b89\u7fbd\u6797\u5c04\u7bad\u4ff1\u4e50\u90e8",
+                            "stars": null,
+                            "tenantUuid": "324",
+                            "updatedTime": "2022-10-27T11:14:35",
+                            "uuid": "1bnnpr7tkn"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u6ca7\u5dde\u5e02\u4efb\u4e18\u5e02\u897f\u73af\u8def\u529e\u4e8b\u5904\u5b8b\u5e84\u6751\u6751\u59d4\u4f1a\u897f",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u7fbd\u6bdb\u7403",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "o9ysp8y0a0"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "c3s0zue3oh"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202308/y63njpl13s",
+                            "distance": null,
+                            "latitude": "38.85721704512562",
+                            "longitude": "116.11198865686481",
+                            "name": "\u6cb3\u5317\u901f\u5065\u4f53\u80b2",
+                            "stars": null,
+                            "tenantUuid": "409",
+                            "updatedTime": "2023-08-31T11:07:23",
+                            "uuid": "1bu3jswr6w"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u9e7f\u6cc9\u533a\u5bfa\u5bb6\u5e84\u9547\u5bcc\u5b81\u8857\u798f\u5bff\u5df71\u53f7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u4e52\u4e53\u7403",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "xiwbulk9n4"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202210/k434kfvfi7",
+                            "distance": null,
+                            "latitude": "37.9883619584962",
+                            "longitude": "114.4634185159306",
+                            "name": "\u6cb3\u5317\u9521\u5c27\u4f53\u80b2\u53d1\u5c55\u6709\u9650\u516c\u53f8",
+                            "stars": null,
+                            "tenantUuid": "319",
+                            "updatedTime": "2022-10-25T17:37:06",
+                            "uuid": "1d0f6ylpt7"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u6ca7\u5dde\u5e02\u4efb\u4e18\u5e02\u6e24\u6d77\u4e1c\u8def\u98ce\u5c1a\u5e7f\u573a\u4e00\u697c",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6e38\u6cf3",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "g58xe239tv"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "a8hvv7j5jj"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202201/5k0cnaekmt",
+                            "distance": null,
+                            "latitude": "38.69482159754234",
+                            "longitude": "116.12362904867044",
+                            "name": "\u4efb\u4e18\u7231\u84dd\u9752\u5c11\u5e74\u6e38\u6cf3\u4e2d\u5fc3",
+                            "stars": null,
+                            "tenantUuid": "286",
+                            "updatedTime": "2022-01-17T10:49:07",
+                            "uuid": "1mrngw9jlc"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u5510\u5c71\u5e02\u9075\u5316\u5e02\u897f\u5173\u6751\u901a\u534e\u8857158\u53f7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6e38\u6cf3",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "9db5pxw7af"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202301/ptrhd3i2ja",
+                            "distance": null,
+                            "latitude": "40.186558764129806",
+                            "longitude": "117.95374990314406",
+                            "name": "\u9075\u5316\u5e02\u611a\u516c\u5317\u8def\u91d1\u6d77\u8c5a\u6e38\u6cf3\u9986",
+                            "stars": null,
+                            "tenantUuid": "366",
+                            "updatedTime": "2023-02-14T13:53:52",
+                            "uuid": "20kh13k3q0"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u65b0\u534e\u533a\u4e2d\u534e\u5317\u5927\u8857\u71d5\u90fd\u91d1\u5730\u57ceD\u533a4\u5ea7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5176\u4ed6",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "nz5cayn2cd"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202309/uqq48angnp",
+                            "distance": null,
+                            "latitude": "38.09138120453583",
+                            "longitude": "114.48377020474794",
+                            "name": "\u540c\u76df\u8dc6\u62f3\u9053\u9986",
+                            "stars": null,
+                            "tenantUuid": "418",
+                            "updatedTime": "2023-09-14T15:48:51",
+                            "uuid": "2kz3wgj7nl"
+                        },
+                        {
+                            "address": "\u957f\u5b89\u533a\u5317\u4e8c\u73af\u9ad8\u8425\u5927\u8857\u6052\u4e2d\u8def\u4ea4\u53e3\u897f\u884c20\u7c73\u8def\u5317 \u4e07\u62d3\u4f53\u80b2\u6052\u5927\u5fa1\u666f\u534a\u5c9b\u8fd0\u52a8\u4e2d\u5fc3",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "or1c837pbz"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202210/ppspngumko",
+                            "distance": null,
+                            "latitude": "38.08879264045374",
+                            "longitude": "114.56401544443257",
+                            "name": "\u4e07\u62d3\u4f53\u80b2\u5fa1\u666f\u534a\u5c9b\u5e97",
+                            "stars": "5",
+                            "tenantUuid": "130",
+                            "updatedTime": "2023-10-02T18:00:19",
+                            "uuid": "44zgd9irwi"
+                        },
+                        {
+                            "address": "\u6b63\u5b9a\u53bf\u4e2d\u5c71\u897f\u8def36\u53f7",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6ed1\u96ea",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "kz3xo6h4gz"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202112/lna57n63ns",
+                            "distance": null,
+                            "latitude": "38.14175943158466",
+                            "longitude": "114.56932941602493",
+                            "name": "\u9ad8\u54e5\u4f53\u80b2\u8f6e\u6ed1\u9986",
+                            "stars": null,
+                            "tenantUuid": "272",
+                            "updatedTime": "2021-12-29T10:47:04",
+                            "uuid": "488vd0jl2j"
+                        },
+                        {
+                            "address": "\u77f3\u5bb6\u5e84\u5e02\u9ad8\u65b0\u533a\u957f\u6c5f\u5927\u9053\u5929\u5c71\u94f6\u6cb3\u5e7f\u573aC\u5ea7B\u4e00",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "g8nn6e4k74"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5176\u4ed6",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "li9zicjnas"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202312/jduk0iml5h",
+                            "distance": null,
+                            "latitude": "38.03719826186031",
+                            "longitude": "114.633294150107",
+                            "name": "\u516b\u96f6\u4e5d\u96f6\u8f6e\u6ed1\u8fd0\u52a8\u9986",
+                            "stars": null,
+                            "tenantUuid": "428",
+                            "updatedTime": "2023-12-27T10:50:31",
+                            "uuid": "4j82ise6id"
+                        },
+                        {
+                            "address": "\u592a\u884c\u897f\u8def3\u53f7\u4e94\u6d32\u5e7f\u573a\u897f\u5317\u89d2",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "og4svm6lft"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202210/ki8zn67381",
+                            "distance": null,
+                            "latitude": "30.29732726303168",
+                            "longitude": "120.09719975094508",
+                            "name": "\u672a\u6765\u5065\u8eab",
+                            "stars": null,
+                            "tenantUuid": "330",
+                            "updatedTime": "2023-08-09T09:19:59",
+                            "uuid": "5007blftdm"
+                        },
+                        {
+                            "address": "\u6ca7\u5dde\u5e02\u4efb\u4e18\u534e\u6cb9\u4e8c\u4e2d\u8def\u53e3\u5411\u897f800\u7c73\u8def\u5357",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "qsdbrv3n5h"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6e38\u6cf3",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "hu6i0lozei"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202003/faze0mlokg",
+                            "distance": null,
+                            "latitude": "38.67051198645515",
+                            "longitude": "116.08721165101711",
+                            "name": "\u96f6\u70b9\u6e38\u6cf3\u5065\u8eab\u6c47",
+                            "stars": "5",
+                            "tenantUuid": "109",
+                            "updatedTime": "2020-08-09T05:54:49",
+                            "uuid": "5j3lzt0n6c"
+                        },
+                        {
+                            "address": "\u6cb3\u5317\u7701\u77f3\u5bb6\u5e84\u5e02\u77f3\u5bb6\u5e84\u5e02\u65b0\u534e\u533a\u6cf0\u534e\u8857422\u53f7\u6797\u836b\u5927\u9662(\u4e1c1\u95e8)",
+                            "categoryList": [
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u6e38\u6cf3",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "am0ywxxa59"
+                                },
+                                {
+                                    "createdTime": null,
+                                    "logo": null,
+                                    "name": "\u5065\u8eab",
+                                    "selected": null,
+                                    "type": null,
+                                    "uuid": "gn8f6fprb2"
+                                }
+                            ],
+                            "coverImage": "https://huimeisports.cn-bj.ufileos.com/images/images/202106/mihqlbd71u",
+                            "distance": null,
+                            "latitude": "38.06244480644818",
+                            "longitude": "114.46343400450264",
+                            "name": "\u4e07\u62d3\u4f53\u80b2\u6797\u836b\u5927\u9662\u5e97",
+                            "stars": null,
+                            "tenantUuid": "253",
+                            "updatedTime": "2022-04-02T17:22:36",
+                            "uuid": "5mzx5cbyoz"
+                        }
+                    ]
+                },
+                "header": {
+                    "Server": "uewaf/4.0.3",
+                    "Date": "Tue, 02 Jul 2024 19:21:40 GMT",
+                    "Content-Type": "application/json;charset=UTF-8",
+                    "Transfer-Encoding": "chunked",
+                    "Connection": "keep-alive",
+                    "Content-Encoding": "gzip"
+                },
+                "statusCode": 200,
+                "cookies": [],
+                "accelerateType": "none",
+                "errMsg": "request:ok"
+            }
+        },
+        {
+            "page": "pages/governmentCoupon/collectCoupon/collectCoupon",
+            "callback_function": "showRule",
+            "event_name": "tap",
+            "method_params": {
+                "data": {
+                    "hasErrors": false,
+                    "errorMessage": "",
+                    "errorCode": "0",
+                    "list": []
+                },
+                "header": {
+                    "Server": "uewaf/4.0.3",
+                    "Date": "Tue, 02 Jul 2024 19:30:00 GMT",
+                    "Content-Type": "application/json;charset=UTF-8",
+                    "Content-Length": "63",
+                    "Connection": "keep-alive"
+                },
+                "statusCode": 200,
+                "cookies": [],
+                "accelerateType": "none",
+                "errMsg": "request:ok"
+            }
+        },
+        {
+            "page": "pages/user/abnormalAuthentication/abnormalAuthentication",
+            "callback_function": "beginSmsTimer",
+            "event_name": "tap",
+            "method_params": {
+                "data": {
+                    "hasErrors": true,
+                    "errorMessage": "\u8bf7\u8f93\u5165\u6b63\u786e\u7684\u624b\u673a\u53f7",
+                    "errorCode": "500"
+                },
+                "header": {
+                    "Server": "uewaf/4.0.3",
+                    "Date": "Tue, 02 Jul 2024 19:34:08 GMT",
+                    "Content-Type": "application/json;charset=UTF-8",
+                    "Content-Length": "81",
+                    "Connection": "keep-alive"
+                },
+                "statusCode": 200,
+                "cookies": [],
+                "accelerateType": "none",
+                "errMsg": "request:ok"
+            }
+        },
+        {
+            "page": "pages/productOrder/detail/detail",
+            "callback_function": "auth",
+            "event_name": "tap",
+            "method_params": {
+                "data": {
+                    "hasErrors": true,
+                    "errorMessage": "\u83b7\u53d6\u5fae\u4fe1\u4fe1\u606f\u5931\u8d25\uff0c\u8bf7\u7a0d\u540e\u518d\u8bd5",
+                    "errorCode": "500"
+                },
+                "header": {
+                    "Server": "uewaf/4.0.3",
+                    "Date": "Tue, 02 Jul 2024 19:35:02 GMT",
+                    "Content-Type": "application/json;charset=UTF-8",
+                    "Content-Length": "96",
+                    "Connection": "keep-alive"
+                },
+                "statusCode": 200,
+                "cookies": [],
+                "accelerateType": "none",
+                "errMsg": "request:ok"
+            }
+        }
+    ]
+}
