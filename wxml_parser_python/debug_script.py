@@ -36,7 +36,7 @@ if __name__ == '__main__':
 
     ROOT_DIR : str = '/home/bella-xia/auto-testing/data/0_passing_groundtruth'
     ROOT_DUMP_AST_DIR : str = '/home/bella-xia/auto-testing/wxml_parser_python/all_outputs/json_ast_results'
-    ROOT_DUMP_EVENT_DIR : str = '/home/bella-xia/auto-testing/wxml_parser_python/all_outputs/json_event_results'
+    ROOT_DUMP_EVENT_DIR : str = '/home/bella-xia/auto-testing/wxml_parser_python/all_outputs/json_event_full_results'
     STD_OUTPUT_DIR : str = '/home/bella-xia/auto-testing/wxml_parser_python/all_outputs/output_log.txt'
 
     all_miniprogram_names = os.listdir(ROOT_DIR)

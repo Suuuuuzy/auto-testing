@@ -60,6 +60,10 @@ class EventInstance:
     m_marks : Dict[str, any] = field(default_factory=dict)
     m_details : Dict[str, any] = field(default_factory=dict)
     m_touch_event: m_Touch_Event = field(default_factory=m_Touch_Event)
+    m_tag_name : str = ""
+    m_xpath : str = ""
+    m_attributes : Dict[str, any] = field(default_factory=dict)
+    m_data : List[str] = field(default_factory=list)
 
 @dataclass
 class SimplifiedEventInstance:
