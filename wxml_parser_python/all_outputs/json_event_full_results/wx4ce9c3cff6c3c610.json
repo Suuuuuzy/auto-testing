@@ -1,0 +1,991 @@
+{
+    "pages/index/index": {
+        "getInputValue": [
+            {
+                "m_is_bubbling": true,
+                "m_type": "input",
+                "m_timestamp": 0,
+                "m_target": {
+                    "m_id": "",
+                    "m_offset_left": 0.0,
+                    "m_offset_top": 0.0,
+                    "m_tag_name": "",
+                    "m_dataset": {}
+                },
+                "m_current_target": {
+                    "m_has_current_target": true,
+                    "m_current_target_properties": {
+                        "m_id": "",
+                        "m_offset_left": 0.0,
+                        "m_offset_top": 0.0,
+                        "m_tag_name": "",
+                        "m_dataset": {}
+                    }
+                },
+                "m_marks": {},
+                "m_details": {
+                    "value": "hello world",
+                    "cursor": 11,
+                    "keyCode": 68
+                },
+                "m_touch_event": {
+                    "m_is_touch": false,
+                    "m_touch_event_properties": {
+                        "m_is_canvas_touch": false,
+                        "m_touches": {
+                            "m_array": [],
+                            "m_changed_array": []
+                        },
+                        "m_canvas_touches": {
+                            "m_array": [],
+                            "m_changed_array": []
+                        }
+                    }
+                },
+                "m_tag_name": "input",
+                "m_xpath": "/view/input",
+                "m_attributes": {
+                    "bindinput": "getInputValue",
+                    "class": "input-radius",
+                    "placeholder": "\u8bf7\u8f93\u5165\u89c6\u9891\u5206\u4eab\u94fe\u63a5",
+                    "value": "{{videoShareUrl}}"
+                },
+                "m_data": []
+            }
+        ],
+        "handleSubtraction": [
+            {
+                "m_is_bubbling": true,
+                "m_type": "tap",
+                "m_timestamp": 0,
+                "m_target": {
+                    "m_id": "",
+                    "m_offset_left": 0.0,
+                    "m_offset_top": 0.0,
+                    "m_tag_name": "button",
+                    "m_dataset": {}
+                },
+                "m_current_target": {
+                    "m_has_current_target": true,
+                    "m_current_target_properties": {
+                        "m_id": "",
+                        "m_offset_left": 0.0,
+                        "m_offset_top": 0.0,
+                        "m_tag_name": "button",
+                        "m_dataset": {}
+                    }
+                },
+                "m_marks": {},
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_touch_event": {
+                    "m_is_touch": true,
+                    "m_touch_event_properties": {
+                        "m_is_canvas_touch": false,
+                        "m_touches": {
+                            "m_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ],
+                            "m_changed_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ]
+                        },
+                        "m_canvas_touches": {
+                            "m_array": [],
+                            "m_changed_array": []
+                        }
+                    }
+                },
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "handleSubtraction",
+                    "class": "button"
+                },
+                "m_data": [
+                    "\u4e00\u952e\u89e3\u6790"
+                ]
+            }
+        ],
+        "clear": [
+            {
+                "m_is_bubbling": true,
+                "m_type": "tap",
+                "m_timestamp": 0,
+                "m_target": {
+                    "m_id": "",
+                    "m_offset_left": 0.0,
+                    "m_offset_top": 0.0,
+                    "m_tag_name": "button",
+                    "m_dataset": {}
+                },
+                "m_current_target": {
+                    "m_has_current_target": true,
+                    "m_current_target_properties": {
+                        "m_id": "",
+                        "m_offset_left": 0.0,
+                        "m_offset_top": 0.0,
+                        "m_tag_name": "button",
+                        "m_dataset": {}
+                    }
+                },
+                "m_marks": {},
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_touch_event": {
+                    "m_is_touch": true,
+                    "m_touch_event_properties": {
+                        "m_is_canvas_touch": false,
+                        "m_touches": {
+                            "m_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ],
+                            "m_changed_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ]
+                        },
+                        "m_canvas_touches": {
+                            "m_array": [],
+                            "m_changed_array": []
+                        }
+                    }
+                },
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "clear",
+                    "class": "clear"
+                },
+                "m_data": [
+                    "\u6e05\u7a7a"
+                ]
+            }
+        ],
+        "handleBtnClick": [
+            {
+                "m_is_bubbling": true,
+                "m_type": "tap",
+                "m_timestamp": 0,
+                "m_target": {
+                    "m_id": "",
+                    "m_offset_left": 0.0,
+                    "m_offset_top": 0.0,
+                    "m_tag_name": "button",
+                    "m_dataset": {}
+                },
+                "m_current_target": {
+                    "m_has_current_target": true,
+                    "m_current_target_properties": {
+                        "m_id": "",
+                        "m_offset_left": 0.0,
+                        "m_offset_top": 0.0,
+                        "m_tag_name": "button",
+                        "m_dataset": {}
+                    }
+                },
+                "m_marks": {},
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_touch_event": {
+                    "m_is_touch": true,
+                    "m_touch_event_properties": {
+                        "m_is_canvas_touch": false,
+                        "m_touches": {
+                            "m_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ],
+                            "m_changed_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ]
+                        },
+                        "m_canvas_touches": {
+                            "m_array": [],
+                            "m_changed_array": []
+                        }
+                    }
+                },
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "handleBtnClick",
+                    "class": "button2"
+                },
+                "m_data": [
+                    "\u4e0b\u8f7d"
+                ]
+            }
+        ]
+    },
+    "pages/course/course": {
+        "addToMyapp": [
+            {
+                "m_is_bubbling": true,
+                "m_type": "tap",
+                "m_timestamp": 0,
+                "m_target": {
+                    "m_id": "",
+                    "m_offset_left": 0.0,
+                    "m_offset_top": 0.0,
+                    "m_tag_name": "view",
+                    "m_dataset": {}
+                },
+                "m_current_target": {
+                    "m_has_current_target": true,
+                    "m_current_target_properties": {
+                        "m_id": "",
+                        "m_offset_left": 0.0,
+                        "m_offset_top": 0.0,
+                        "m_tag_name": "view",
+                        "m_dataset": {}
+                    }
+                },
+                "m_marks": {},
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_touch_event": {
+                    "m_is_touch": true,
+                    "m_touch_event_properties": {
+                        "m_is_canvas_touch": false,
+                        "m_touches": {
+                            "m_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ],
+                            "m_changed_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ]
+                        },
+                        "m_canvas_touches": {
+                            "m_array": [],
+                            "m_changed_array": []
+                        }
+                    }
+                },
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "addToMyapp",
+                    "class": "item-inner"
+                },
+                "m_data": []
+            },
+            {
+                "m_is_bubbling": true,
+                "m_type": "tap",
+                "m_timestamp": 0,
+                "m_target": {
+                    "m_id": "",
+                    "m_offset_left": 0.0,
+                    "m_offset_top": 0.0,
+                    "m_tag_name": "view",
+                    "m_dataset": {}
+                },
+                "m_current_target": {
+                    "m_has_current_target": true,
+                    "m_current_target_properties": {
+                        "m_id": "",
+                        "m_offset_left": 0.0,
+                        "m_offset_top": 0.0,
+                        "m_tag_name": "view",
+                        "m_dataset": {}
+                    }
+                },
+                "m_marks": {},
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_touch_event": {
+                    "m_is_touch": true,
+                    "m_touch_event_properties": {
+                        "m_is_canvas_touch": false,
+                        "m_touches": {
+                            "m_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ],
+                            "m_changed_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ]
+                        },
+                        "m_canvas_touches": {
+                            "m_array": [],
+                            "m_changed_array": []
+                        }
+                    }
+                },
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "addToMyapp",
+                    "class": "item-inner"
+                },
+                "m_data": []
+            },
+            {
+                "m_is_bubbling": true,
+                "m_type": "tap",
+                "m_timestamp": 0,
+                "m_target": {
+                    "m_id": "",
+                    "m_offset_left": 0.0,
+                    "m_offset_top": 0.0,
+                    "m_tag_name": "view",
+                    "m_dataset": {}
+                },
+                "m_current_target": {
+                    "m_has_current_target": true,
+                    "m_current_target_properties": {
+                        "m_id": "",
+                        "m_offset_left": 0.0,
+                        "m_offset_top": 0.0,
+                        "m_tag_name": "view",
+                        "m_dataset": {}
+                    }
+                },
+                "m_marks": {},
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_touch_event": {
+                    "m_is_touch": true,
+                    "m_touch_event_properties": {
+                        "m_is_canvas_touch": false,
+                        "m_touches": {
+                            "m_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ],
+                            "m_changed_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ]
+                        },
+                        "m_canvas_touches": {
+                            "m_array": [],
+                            "m_changed_array": []
+                        }
+                    }
+                },
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "addToMyapp",
+                    "class": "item-inner"
+                },
+                "m_data": []
+            },
+            {
+                "m_is_bubbling": true,
+                "m_type": "tap",
+                "m_timestamp": 0,
+                "m_target": {
+                    "m_id": "",
+                    "m_offset_left": 0.0,
+                    "m_offset_top": 0.0,
+                    "m_tag_name": "view",
+                    "m_dataset": {}
+                },
+                "m_current_target": {
+                    "m_has_current_target": true,
+                    "m_current_target_properties": {
+                        "m_id": "",
+                        "m_offset_left": 0.0,
+                        "m_offset_top": 0.0,
+                        "m_tag_name": "view",
+                        "m_dataset": {}
+                    }
+                },
+                "m_marks": {},
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_touch_event": {
+                    "m_is_touch": true,
+                    "m_touch_event_properties": {
+                        "m_is_canvas_touch": false,
+                        "m_touches": {
+                            "m_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ],
+                            "m_changed_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ]
+                        },
+                        "m_canvas_touches": {
+                            "m_array": [],
+                            "m_changed_array": []
+                        }
+                    }
+                },
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "addToMyapp",
+                    "class": "item-inner"
+                },
+                "m_data": []
+            }
+        ]
+    },
+    "pages/user/user": {
+        "bindGetUserInfo": [
+            {
+                "m_is_bubbling": true,
+                "m_type": "getuserinfo",
+                "m_timestamp": 0,
+                "m_target": {
+                    "m_id": "",
+                    "m_offset_left": 0.0,
+                    "m_offset_top": 0.0,
+                    "m_tag_name": "",
+                    "m_dataset": {}
+                },
+                "m_current_target": {
+                    "m_has_current_target": true,
+                    "m_current_target_properties": {
+                        "m_id": "",
+                        "m_offset_left": 0.0,
+                        "m_offset_top": 0.0,
+                        "m_tag_name": "",
+                        "m_dataset": {}
+                    }
+                },
+                "m_marks": {},
+                "m_details": {
+                    "encryptedData": "WHZ2K5YGIp9D5AjIMo9tz+H3G5NYWjLiKXvyKWCrY6lTykC26vO",
+                    "iv": "si5BVYyuykJtuA+8/RSRJg==",
+                    "errMsg": "getUserInfo:ok",
+                    "rawData": {
+                        "avatarUrl": "https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132",
+                        "city": "Chengdu",
+                        "gender": 0,
+                        "language": "English",
+                        "nickName": "NICKNAME"
+                    }
+                },
+                "m_touch_event": {
+                    "m_is_touch": false,
+                    "m_touch_event_properties": {
+                        "m_is_canvas_touch": false,
+                        "m_touches": {
+                            "m_array": [],
+                            "m_changed_array": []
+                        },
+                        "m_canvas_touches": {
+                            "m_array": [],
+                            "m_changed_array": []
+                        }
+                    }
+                },
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindgetuserinfo": "bindGetUserInfo",
+                    "class": "userinfo-nickname",
+                    "hidden": "{{autorunBtnHiden}}",
+                    "lang": "zh_CN",
+                    "opentype": "getUserInfo",
+                    "type": "primary"
+                },
+                "m_data": [
+                    "\u70b9\u6b64\u767b\u5f55"
+                ]
+            }
+        ],
+        "alertMsg": [
+            {
+                "m_is_bubbling": true,
+                "m_type": "tap",
+                "m_timestamp": 0,
+                "m_target": {
+                    "m_id": "",
+                    "m_offset_left": 0.0,
+                    "m_offset_top": 0.0,
+                    "m_tag_name": "view",
+                    "m_dataset": {}
+                },
+                "m_current_target": {
+                    "m_has_current_target": true,
+                    "m_current_target_properties": {
+                        "m_id": "",
+                        "m_offset_left": 0.0,
+                        "m_offset_top": 0.0,
+                        "m_tag_name": "view",
+                        "m_dataset": {}
+                    }
+                },
+                "m_marks": {},
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_touch_event": {
+                    "m_is_touch": true,
+                    "m_touch_event_properties": {
+                        "m_is_canvas_touch": false,
+                        "m_touches": {
+                            "m_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ],
+                            "m_changed_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ]
+                        },
+                        "m_canvas_touches": {
+                            "m_array": [],
+                            "m_changed_array": []
+                        }
+                    }
+                },
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "alertMsg",
+                    "class": "item",
+                    "data-msg": "\u8054\u7cfb\u5ba2\u670d\uff0c\u5f00\u901a\u4f1a\u5458",
+                    "hidden": "{{!autorunBtnHiden}}"
+                },
+                "m_data": []
+            },
+            {
+                "m_is_bubbling": true,
+                "m_type": "tap",
+                "m_timestamp": 0,
+                "m_target": {
+                    "m_id": "",
+                    "m_offset_left": 0.0,
+                    "m_offset_top": 0.0,
+                    "m_tag_name": "view",
+                    "m_dataset": {}
+                },
+                "m_current_target": {
+                    "m_has_current_target": true,
+                    "m_current_target_properties": {
+                        "m_id": "",
+                        "m_offset_left": 0.0,
+                        "m_offset_top": 0.0,
+                        "m_tag_name": "view",
+                        "m_dataset": {}
+                    }
+                },
+                "m_marks": {},
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_touch_event": {
+                    "m_is_touch": true,
+                    "m_touch_event_properties": {
+                        "m_is_canvas_touch": false,
+                        "m_touches": {
+                            "m_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ],
+                            "m_changed_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ]
+                        },
+                        "m_canvas_touches": {
+                            "m_array": [],
+                            "m_changed_array": []
+                        }
+                    }
+                },
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "alertMsg",
+                    "class": "item",
+                    "data-msg": "\u8054\u7cfb\u5ba2\u670d\uff0c\u589e\u52a0\u89e3\u6790\u6b21\u6570",
+                    "hidden": "{{!autorunBtnHiden}}"
+                },
+                "m_data": []
+            }
+        ],
+        "addToMyapp": [
+            {
+                "m_is_bubbling": true,
+                "m_type": "tap",
+                "m_timestamp": 0,
+                "m_target": {
+                    "m_id": "",
+                    "m_offset_left": 0.0,
+                    "m_offset_top": 0.0,
+                    "m_tag_name": "view",
+                    "m_dataset": {}
+                },
+                "m_current_target": {
+                    "m_has_current_target": true,
+                    "m_current_target_properties": {
+                        "m_id": "",
+                        "m_offset_left": 0.0,
+                        "m_offset_top": 0.0,
+                        "m_tag_name": "view",
+                        "m_dataset": {}
+                    }
+                },
+                "m_marks": {},
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_touch_event": {
+                    "m_is_touch": true,
+                    "m_touch_event_properties": {
+                        "m_is_canvas_touch": false,
+                        "m_touches": {
+                            "m_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ],
+                            "m_changed_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ]
+                        },
+                        "m_canvas_touches": {
+                            "m_array": [],
+                            "m_changed_array": []
+                        }
+                    }
+                },
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "addToMyapp",
+                    "class": "item-inner"
+                },
+                "m_data": []
+            }
+        ],
+        "adTime": [
+            {
+                "m_is_bubbling": true,
+                "m_type": "tap",
+                "m_timestamp": 0,
+                "m_target": {
+                    "m_id": "",
+                    "m_offset_left": 0.0,
+                    "m_offset_top": 0.0,
+                    "m_tag_name": "view",
+                    "m_dataset": {}
+                },
+                "m_current_target": {
+                    "m_has_current_target": true,
+                    "m_current_target_properties": {
+                        "m_id": "",
+                        "m_offset_left": 0.0,
+                        "m_offset_top": 0.0,
+                        "m_tag_name": "view",
+                        "m_dataset": {}
+                    }
+                },
+                "m_marks": {},
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_touch_event": {
+                    "m_is_touch": true,
+                    "m_touch_event_properties": {
+                        "m_is_canvas_touch": false,
+                        "m_touches": {
+                            "m_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ],
+                            "m_changed_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ]
+                        },
+                        "m_canvas_touches": {
+                            "m_array": [],
+                            "m_changed_array": []
+                        }
+                    }
+                },
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "adTime",
+                    "class": "item-inner"
+                },
+                "m_data": []
+            }
+        ],
+        "hideImg": [
+            {
+                "m_is_bubbling": true,
+                "m_type": "tap",
+                "m_timestamp": 0,
+                "m_target": {
+                    "m_id": "",
+                    "m_offset_left": 0.0,
+                    "m_offset_top": 0.0,
+                    "m_tag_name": "view",
+                    "m_dataset": {}
+                },
+                "m_current_target": {
+                    "m_has_current_target": true,
+                    "m_current_target_properties": {
+                        "m_id": "",
+                        "m_offset_left": 0.0,
+                        "m_offset_top": 0.0,
+                        "m_tag_name": "view",
+                        "m_dataset": {}
+                    }
+                },
+                "m_marks": {},
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_touch_event": {
+                    "m_is_touch": true,
+                    "m_touch_event_properties": {
+                        "m_is_canvas_touch": false,
+                        "m_touches": {
+                            "m_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ],
+                            "m_changed_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ]
+                        },
+                        "m_canvas_touches": {
+                            "m_array": [],
+                            "m_changed_array": []
+                        }
+                    }
+                },
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "hideImg",
+                    "class": "addApp",
+                    "wx:if": "{{showImg}}"
+                },
+                "m_data": []
+            }
+        ]
+    },
+    "pages/applet/applet": {
+        "goMore": [
+            {
+                "m_is_bubbling": true,
+                "m_type": "tap",
+                "m_timestamp": 0,
+                "m_target": {
+                    "m_id": "",
+                    "m_offset_left": 0.0,
+                    "m_offset_top": 0.0,
+                    "m_tag_name": "view",
+                    "m_dataset": {}
+                },
+                "m_current_target": {
+                    "m_has_current_target": true,
+                    "m_current_target_properties": {
+                        "m_id": "",
+                        "m_offset_left": 0.0,
+                        "m_offset_top": 0.0,
+                        "m_tag_name": "view",
+                        "m_dataset": {}
+                    }
+                },
+                "m_marks": {},
+                "m_details": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "m_touch_event": {
+                    "m_is_touch": true,
+                    "m_touch_event_properties": {
+                        "m_is_canvas_touch": false,
+                        "m_touches": {
+                            "m_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ],
+                            "m_changed_array": [
+                                {
+                                    "m_identifier": 0.0,
+                                    "m_page_x": 0.0,
+                                    "m_page_y": 0.0,
+                                    "m_client_x": 0.0,
+                                    "m_client_y": 0.0
+                                }
+                            ]
+                        },
+                        "m_canvas_touches": {
+                            "m_array": [],
+                            "m_changed_array": []
+                        }
+                    }
+                },
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "catchtap": "goMore",
+                    "data-id": "{{item.id}}",
+                    "hoverclass": "hover-class",
+                    "style": "display:flex;height:120px;border-bottom:1pxsolid#DBDBDB",
+                    "wx:for": "{{tradeList}}"
+                },
+                "m_data": []
+            }
+        ]
+    }
+}
