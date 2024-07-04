@@ -1,7 +1,7 @@
 import minium_tests.base_case as base_case
 import minium, re
 from collections import namedtuple
-from typing import Dict, List
+from typing import Dict, List, Tuple
 
 
 '''
@@ -47,6 +47,98 @@ class BaseTaint(base_case.BaseCase):
             text_contains=selector_info.text_contains, 
             value=selector_info.value,
             xpath=selector_info.xpath)
+
+    def get_params_from_arguments(self, argument_dict : Dict[str, any]) -> Dict[str, any]:
+
+        # first try to get the touch events
+        touches : List[Dict[str, float]] | None = None
+        changedTouches : List[Dict[str, float]] = None
+
+        touch_instance = argument_dict.get('m_touch_event', None)
+
+        if touch_instance is not None and touch_instance.get('m_is_touch', False) is True:
+            touch_event_properties = touch_instance.get('m_touch_event_properties', None)
+
+            if touch_event_properties is not None:
+                canvas_touch_flag = touch_event_properties.get('m_is_canvas_touch', False)
+
+                if canvas_touch_flag is True and touch_event_properties.get('m_canvas_touches', None) is not None:
+                    for item in (touch_event_properties['m_canvas_touches']).get('m_array', []):
+                        if touches is None:
+                            touches = []
+                        touches.append({'identifier' : item['m_identifier'],
+                                        'x' : item['m_x'],
+                                        'y' : item['m_y']})
+                    for item in (touch_event_properties['m_canvas_touches']).get('m_changed_array', []):
+                        if changedTouches is None:
+                            changedTouches = []
+                        changedTouches.append({'identifier' : item['m_identifier'],
+                                        'x' : item['m_x'],
+                                        'y' : item['m_y']})
+                elif canvas_touch_flag is False and touch_event_properties.get('m_touches', None) is not None:
+                    for item in (touch_event_properties['m_touches']).get('m_array', []):
+                        if touches is None:
+                            touches = []
+                        touches.append({'identifier' : item['m_identifier'],
+                                        'pageX' : item['m_page_x'],
+                                        'pageY' : item['m_page_y'],
+                                        'clientX' : item['m_client_x'],
+                                        'clientY' : item['m_client_y']})
+                    for item in (touch_event_properties['m_touches']).get('m_changed_array', []):
+                        if changedTouches is None:
+                            changedTouches = []
+                        changedTouches.append({'identifier' : item['m_identifier'],
+                                        'pageX' : item['m_page_x'],
+                                        'pageY' : item['m_page_y'],
+                                        'clientX' : item['m_client_x'],
+                                        'clientY' : item['m_client_y']})
+        
+        target : Dict[str, any] | None = None
+        currentTarget : Dict[str, any] | None = None
+
+        target_instance = argument_dict.get('m_target', {
+            'm_id' : '',
+            'm_offset_left' :0.0,
+            'm_offset_top' : 0.0,
+            'm_tag_name' : "",
+            'm_dataset' : {}
+        })
+        currentTarget_wrapper = argument_dict.get('m_current_target', None)
+        if currentTarget_wrapper is not None and currentTarget_wrapper.get('m_has_current_target', False) is True:
+            currentTarget_instance = currentTarget_wrapper.get('m_current_target_properties', {
+            'm_id' : '',
+            'm_offset_left' :0.0,
+            'm_offset_top' : 0.0,
+            'm_tag_name' : "",
+            'm_dataset' : {}
+            })
+        
+        target = {
+            'id' : target_instance.get('m_id', ''),
+            'offsetLeft' : target_instance.get('m_offset_left', 0.0),
+            'offsetTop' : target_instance.get('m_offset_top', 0.0),
+            'tagName' : target_instance.get('m_tag_name', ''),
+            'dataset' : target_instance.get('m_dataset', {})
+        }
+
+        currentTarget = {
+            'id' : currentTarget_instance.get('m_id', ''),
+            'offsetLeft' : currentTarget_instance.get('m_offset_left', 0.0),
+            'offsetTop' : currentTarget_instance.get('m_offset_top', 0.0),
+            'tagName' : currentTarget_instance.get('m_tag_name', ''),
+            'dataset' : currentTarget_instance.get('m_dataset', {})
+        }
+
+        return {
+            'type' : argument_dict.get('m_type', 'view'),
+            'timeStamp' : argument_dict.get('m_type', 0),
+            'target' : target,
+            'currentTarget' : currentTarget,
+            'mark' : argument_dict.get('m_marks', {}),
+            'detail' : argument_dict.get('m_details', {}),
+            'touches' : touches,
+            'changedTouches' : changedTouches,
+        }
 
     def find_element_from_json_data(self, 
                                     page : str,

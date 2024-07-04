@@ -143,6 +143,20 @@ def get_ast(node : NodeScript.Node | None, buffer : List[str], depth : int =0) -
         child  : NodeScript.Node | None = node.get_children(idx)
         get_ast(child, buffer, depth + 1)
 
+def get_ast_via_json(node : NodeScript.Node | None) -> Dict[str, any]:
+    if node is None:
+        return {}
+    
+    current_node_str : str = node.to_string()
+    all_child_dicts : List[Dict[str, any]] = []
+    
+    for idx in range(node.get_num_children()):
+        child  : NodeScript.Node | None = node.get_children(idx)
+        child_node_dict = get_ast_via_json(child)
+        all_child_dicts.append(child_node_dict)
+    
+    return {current_node_str : all_child_dicts}
+
 
 def get_bind_element_json(node : NodeScript.Node, json_array : List[Dict[str, any]]) -> None:
     if node.get_num_bind() > 0:

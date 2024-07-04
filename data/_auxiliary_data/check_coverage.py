@@ -1,7 +1,7 @@
 import json, os
 
 if __name__ == '__main__':
-    ROOT_DIR = '/home/bella-xia/auto-testing/data/_auxiliary_data/wx0bc8123197e70985/'
+    ROOT_DIR = '/home/bella-xia/suzy-auto-testing/data/_auxiliary_data/wx0bc8123197e70985/'
     FILE_VIA_ELEMENT_DIR = os.path.join(ROOT_DIR, 'wx0bc8123197e70985_via_element.json')
     FILE_VIA_FUNC_DIR = os.path.join(ROOT_DIR, 'wx0bc8123197e70985_via_func.json')
     

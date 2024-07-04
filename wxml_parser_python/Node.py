@@ -83,7 +83,7 @@ class RootNode(Node):
         return_val = super().add_child(child)
         assert(return_val is None)
         assert(child.type() == NodeType.ELEMENT_NODE)
-        child.m_depth += 1
+        child.m_depth = self.m_depth + 1
                 
         if self.m_ancestry is None or self.m_ancestry == '':
             child.m_ancestry = '/' + self.m_name if self.m_name != '' else ''
