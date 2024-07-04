@@ -10,7 +10,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "image",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "index": "{{index}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -79,7 +81,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "auth": "true"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -140,7 +144,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "index": "{{index}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -262,7 +268,11 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "auth": "true",
+                        "idcard": "{{idcard}}",
+                        "name": "{{name}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -325,7 +335,13 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "couponamount": "{{item.couponPrice}}",
+                        "couponcount": "1",
+                        "couponid": "{{item.couponId}}",
+                        "idcard": "{{idcard}}",
+                        "name": "{{name}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -528,7 +544,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "type": "1"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -595,7 +613,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "type": "0"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -732,7 +752,11 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "couponamount": "{{item.couponPrice}}",
+                        "couponcount": "1",
+                        "couponid": "{{item.couponId}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -1247,7 +1271,10 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "index": "{{index}}",
+                        "name": "{{item.name}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -1450,7 +1477,10 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "name": "",
+                        "uuid": ""
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -1519,7 +1549,10 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "name": "{{item.name}}",
+                        "uuid": "{{item.uuid}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -2230,7 +2263,11 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "idcard": "{{idcard}}",
+                        "name": "{{name}}",
+                        "url": "../orderProduct/orderProduct?coverImage={{item.coverImage}}&uuid={{item.uuid}}&price={{item.price}}&title={{item.title}}&venueUuid={{venue.uuid}}&startTime={{item.startTime}}&endTime={{item.endTime}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -2367,7 +2404,13 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "price": "{{item.couponPrice}}",
+                        "required": "{{item.requiredPrice}}",
+                        "uuid": "{{item.uuid}}",
+                        "winfo": "{{item.wInfo}}",
+                        "waresname": "{{item.waresName}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -2439,7 +2482,13 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "price": "{{item.couponPrice}}",
+                        "required": "{{item.requiredPrice}}",
+                        "uuid": "{{item.uuid}}",
+                        "winfo": "{{item.wInfo}}",
+                        "waresname": "{{item.waresName}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -2772,7 +2821,10 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "image",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "commentindex": "{{index}}",
+                        "index": "{{innerIndex}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -2846,7 +2898,11 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "idcard": "{{idcard}}",
+                        "name": "{{name}}",
+                        "url": "../orderProduct/orderProduct?coverImage={{product.coverImage}}&uuid={{product.uuid}}&price={{product.price}}&title={{product.title}}&venueUuid={{venueUuid}}&startTime={{product.startTime}}&endTime={{product.endTime}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -2969,7 +3025,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "number": "{{item}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -3038,7 +3096,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "image",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "index": "{{index}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -3380,7 +3440,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "uuid": "{{item.uuid}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -3450,7 +3512,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "uuid": "{{item.uuid}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,

@@ -10,7 +10,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "swiper-item",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "ad": "{{ele}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -77,7 +79,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "ad": "{{item.data[0]}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -143,7 +147,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "swiper-item",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "ad": "{{ele}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -209,7 +215,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "ad": "{{item.data[0]}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -681,7 +689,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "swiper-item",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "ad": "{{ele}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -748,7 +758,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "ad": "{{item.data[0]}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -922,7 +934,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "order": "{{item.outTradeNo}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -1129,7 +1143,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "index": "{{index}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -1697,7 +1713,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "text",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "phone": "{{phone}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -1903,7 +1921,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "station-index": "{{index}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -1971,7 +1991,12 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "direction": "{{element.direction}}",
+                        "line-id": "{{element.line_id}}",
+                        "line-type": "{{element.switch_way}}",
+                        "station-id": "{{item.station[item.index].id||null}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -2045,7 +2070,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "desc": "{{element.line_desc}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -2113,7 +2140,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "station-index": "{{index}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -2507,7 +2536,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "line-id": "{{lineId}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -2574,7 +2605,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "image",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "bus-info": "{{ele}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -2643,7 +2676,10 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "station-id": "{{item.id}}",
+                        "station-name": "{{item.name}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -2783,7 +2819,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "desc": "{{item.line_desc}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -2972,7 +3010,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "item": "{{item}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -3111,7 +3151,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "swiper-item",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "ad": "{{ele}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -3177,7 +3219,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "ad": "{{item.data[0]}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -3245,7 +3289,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "url": "/pages/nfc/record/recharge-record"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -3311,7 +3357,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "url": "/pages/nfc/record/consume-record"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -3449,7 +3497,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "item": "{{item}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -3726,7 +3776,11 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "station-id": "{{item.id}}",
+                        "station-name": "{{item.name}}",
+                        "station-sort": "{{item.sort}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -3802,7 +3856,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "type": "origin"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -3867,7 +3923,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "type": "target"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -4000,7 +4058,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "index": "{{item.index}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -4069,7 +4129,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "type": "home"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -4134,7 +4196,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "type": "company"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -4267,7 +4331,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "data": "{{item}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -4336,7 +4402,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "index": "{{index}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -4406,7 +4474,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "data": "{{bus.getTransferLiveInfo(bus.getFirstBusInfo( item.steps||[] ).id,liveInfo)}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -4611,7 +4681,10 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "data": "{{commonAddress.home}}",
+                        "type": "home"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -4677,7 +4750,10 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "data": "{{commonAddress.company}}",
+                        "type": "company"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -4743,7 +4819,10 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "data": "{{item}}",
+                        "type": "other"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -4809,7 +4888,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "type": "other"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -4877,7 +4958,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "type": "home"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -4945,7 +5028,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "type": "company"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -5013,7 +5098,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "index": "{{index}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -5286,7 +5373,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "data": "{{item}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -5353,7 +5442,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "data": "{{item}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
@@ -5478,7 +5569,9 @@
                     "m_offset_left": 0.0,
                     "m_offset_top": 0.0,
                     "m_tag_name": "view",
-                    "m_dataset": {}
+                    "m_dataset": {
+                        "index": "{{index}}"
+                    }
                 },
                 "m_current_target": {
                     "m_has_current_target": true,
