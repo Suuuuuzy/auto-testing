@@ -3,11 +3,13 @@ from typing import Dict, List
 from contextlib import contextmanager
 
 import WXMLDocumentParser as WXMLDocumentParserScript
+import Node as NodeScript
 from Event import EventInstanceEncoder
 
 DEBUG_TOKENIZER = False
 DEBUG_PARSER = False
 DEBUG_PARSED_ARGS = True
+DEBUG_PARTICULAR_ELEMENT = False
 
 def read_app_json(miniprogram_path) -> List[str]:
     json_path = os.path.join(miniprogram_path, 'app.json')
@@ -34,16 +36,85 @@ def redirect_stdout(to_file):
 
 if __name__ == '__main__':
 
-    ROOT_DIR : str = '/home/bella-xia/auto-testing/data/0_passing_groundtruth'
-    ROOT_DUMP_AST_DIR : str = '/home/bella-xia/auto-testing/wxml_parser_python/all_outputs/json_ast_results'
-    ROOT_DUMP_EVENT_DIR : str = '/home/bella-xia/auto-testing/wxml_parser_python/all_outputs/json_event_results'
-    STD_OUTPUT_DIR : str = '/home/bella-xia/auto-testing/wxml_parser_python/all_outputs/output_log.txt'
+    ROOT_DIR : str = '/home/bella-xia/suzy-auto-testing/data/0_passing_groundtruth'
+    ROOT_DUMP_AST_DIR : str = '/home/bella-xia/suzy-auto-testing/wxml_parser_python/all_outputs/json_ast_results'
+    ROOT_DUMP_EVENT_DIR : str = '/home/bella-xia/suzy-auto-testing/wxml_parser_python/all_outputs/json_event_full_results'
+    STD_OUTPUT_DIR : str = '/home/bella-xia/suzy-auto-testing/wxml_parser_python/all_outputs/output_log.txt'
 
     all_miniprogram_names = os.listdir(ROOT_DIR)
 
     # TODO: comment out this line:
-    # all_miniprogram_names = ['wx94453ac9e8af894a']
+    # all_miniprogram_names = ['wx0bc8123197e70985']
 
+    if DEBUG_PARTICULAR_ELEMENT is True:
+        miniprogram_name = 'wx0bc8123197e70985'
+        page_name = 'pages/venue/detail/detail'
+        wxml_path : str = page_name + '.wxml'
+        access_page : str = os.path.join(ROOT_DIR, miniprogram_name, wxml_path)
+        try:
+            with open(access_page, 'r') as file:
+                content : str = file.read()
+        except FileNotFoundError:
+            print(f'unable to open file directory {access_page}')
+            exit(1)
+    
+        parser = WXMLDocumentParserScript.WXMLDocumentParser(input=content, page_name=page_name)
+        parser.run()
+        root : NodeScript.RootNode = parser.m_root
+
+        
+        # 3rd depth 1
+        counter = 0
+        ideal_idx = 3
+        for idx in range(root.get_num_children()):
+            child : NodeScript.Node = root.get_children(idx)
+            if child.type() == NodeScript.NodeType.ELEMENT_NODE:
+                counter += 1
+            if counter == ideal_idx:
+                break
+
+        # 1st depth 2
+        counter = 0
+        ideal_idx = 1
+        for idx in range(child.get_num_children()):
+            sub_child : NodeScript.Node = child.get_children(idx)
+            if sub_child.type() == NodeScript.NodeType.ELEMENT_NODE:
+                counter += 1
+            if counter == ideal_idx:
+                break
+        
+        # 3st depth 3
+        counter = 0
+        ideal_idx = 3
+        for idx in range(sub_child.get_num_children()):
+            sub_sub_child : NodeScript.Node = sub_child.get_children(idx)
+            if sub_sub_child.type() == NodeScript.NodeType.ELEMENT_NODE:
+                counter += 1
+            if counter == ideal_idx:
+                break
+    
+        # 1st depth 4
+        counter = 0
+        ideal_idx = 1
+        for idx in range(sub_sub_child.get_num_children()):
+            sub_sub_sub_child : NodeScript.Node = sub_sub_child.get_children(idx)
+            if sub_sub_sub_child.type() == NodeScript.NodeType.ELEMENT_NODE:
+                counter += 1
+            if counter == ideal_idx:
+                break
+        
+        # for idx in range(sub_sub_sub_child.get_num_children()):
+        #     child_instance : NodeScript.Node = sub_sub_sub_child.get_children(idx)
+        #     if child_instance.type() == NodeScript.NodeType.ATTRIBUTE_NODE:
+        #         print(f"[{child_instance.m_name} : {child_instance.m_auxiliary_data}]")
+    
+        for bind_instance in parser.m_bind_storage:
+            if bind_instance[2] == sub_sub_sub_child:
+                break
+        
+        print(parser._args_for_bind_element(bind_instance, get_full_info=True))
+
+        
     with open(STD_OUTPUT_DIR, 'w') as output_file:
 
         with redirect_stdout(output_file):
@@ -55,7 +126,8 @@ if __name__ == '__main__':
                 miniprogram_event_data : Dict[str, Dict[str, any]] = {}
 
                 # TODO: comment out this line:
-                # pages_data = ['pages/index/index']
+                # pages_data = ['pages/venue/detail/detail']
+
 
                 for page in pages_data:
                     print(f"workng on page {page}")
@@ -77,7 +149,7 @@ if __name__ == '__main__':
                         parser.print_tokens()
 
                     if DEBUG_PARSER is True:
-                        miniprogram_ast_data[page] = parser.run(print_ast_flag=False)
+                        miniprogram_ast_data[page] = parser.run(print_ast_flag=False, get_json_result=True)
 
                     if DEBUG_PARSED_ARGS is True:
                         miniprogram_event_data[page] = parser.get_all_bind_elements_args()

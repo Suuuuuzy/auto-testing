@@ -6,7 +6,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/van-overlay/view/image",
+                "m_attributes": {
+                    "catchtap": "navigateTo",
+                    "mode": "widthFix",
+                    "src": "{{popAd.backgroundImg}}"
+                },
+                "m_data": []
             }
         ]
     },
@@ -18,7 +26,17 @@
                 "m_details": {
                     "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
                 },
-                "m_type": "getphonenumber"
+                "m_type": "getphonenumber",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/button",
+                "m_attributes": {
+                    "bindgetphonenumber": "getPhoneNumber",
+                    "class": "button primary",
+                    "opentype": "getPhoneNumber"
+                },
+                "m_data": [
+                    "\u53bb\u7ed1\u5b9a"
+                ]
             }
         ],
         "toOrderListPage": [
@@ -27,35 +45,75 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toOrderListPage",
+                    "class": "checkmore",
+                    "data-sts": "0"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toOrderListPage",
+                    "class": "items",
+                    "data-sts": "1"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toOrderListPage",
+                    "class": "items",
+                    "data-sts": "2"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toOrderListPage",
+                    "class": "items",
+                    "data-sts": "3"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toOrderListPage",
+                    "class": "items",
+                    "data-sts": "5"
+                },
+                "m_data": []
             }
         ],
         "toRefundPage": [
@@ -64,7 +122,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toRefundPage",
+                    "class": "items",
+                    "data-sts": "6"
+                },
+                "m_data": []
             }
         ],
         "imageLoad": [
@@ -73,7 +139,16 @@
                     "height": 0,
                     "width": 0
                 },
-                "m_type": "load"
+                "m_type": "load",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/swiper/swiper-item/my-navigate/image",
+                "m_attributes": {
+                    "bindload": "imageLoad",
+                    "mode": "widthFix",
+                    "src": "{{item.imgUrl}}",
+                    "style": "width:100%;"
+                },
+                "m_data": []
             }
         ],
         "myCollectionHandle": [
@@ -82,7 +157,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "myCollectionHandle",
+                    "class": "col-item"
+                },
+                "m_data": []
             }
         ],
         "myPoint": [
@@ -91,7 +173,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "myPoint",
+                    "class": "col-item"
+                },
+                "m_data": []
             }
         ],
         "myPetCard": [
@@ -100,7 +189,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "myPetCard",
+                    "class": "col-item"
+                },
+                "m_data": []
             }
         ],
         "myHistoryHandle": [
@@ -109,7 +205,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "myHistoryHandle",
+                    "class": "col-item"
+                },
+                "m_data": []
             }
         ],
         "toSaleList": [
@@ -118,7 +221,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toSaleList",
+                    "class": "memu-item"
+                },
+                "m_data": []
             }
         ],
         "toCouponCenter": [
@@ -127,7 +237,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toCouponCenter",
+                    "class": "memu-item"
+                },
+                "m_data": []
             }
         ],
         "toMyCouponPage": [
@@ -136,7 +253,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toMyCouponPage",
+                    "class": "memu-item"
+                },
+                "m_data": []
             }
         ],
         "toAddressList": [
@@ -145,7 +269,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toAddressList",
+                    "class": "memu-item"
+                },
+                "m_data": []
             }
         ],
         "toDistCenter": [
@@ -154,7 +285,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toDistCenter",
+                    "class": "memu-item",
+                    "wx:if": "{{emId}}"
+                },
+                "m_data": []
             }
         ],
         "toSpreadDistCenter": [
@@ -163,7 +302,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toSpreadDistCenter",
+                    "class": "memu-item",
+                    "wx:if": "{{salerId}}"
+                },
+                "m_data": []
             }
         ]
     },
@@ -174,7 +321,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "chooseGift",
+                    "class": "right",
+                    "data-item": "{{pro}}"
+                },
+                "m_data": []
             }
         ],
         "onSelectedItem": [
@@ -183,7 +338,19 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "checkbox",
+                "m_xpath": "/view/view/view/mp-slideview/view/view/label/checkbox",
+                "m_attributes": {
+                    "bindtap": "onSelectedItem",
+                    "checked": "{{prod.checked}}",
+                    "color": "#105c3e",
+                    "data-index": "{{index}}",
+                    "data-scindex": "{{scIndex}}",
+                    "disabled": "{{prod.cantBuy}}",
+                    "value": "{{prod.prodId}}"
+                },
+                "m_data": []
             }
         ],
         "toProdPage": [
@@ -192,56 +359,130 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/mp-slideview/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toProdPage",
+                    "class": "pic",
+                    "data-pic": "{{prod.pic}}",
+                    "data-prodid": "{{prod.prodId}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/mp-slideview/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toProdPage",
+                    "class": "prod-name",
+                    "data-pic": "{{prod.pic}}",
+                    "data-prodid": "{{prod.prodId}}"
+                },
+                "m_data": [
+                    "\n\n\t\t\t\t\t\t\t\t\t"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/mp-slideview/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toProdPage",
+                    "data-pic": "{{prod.pic}}",
+                    "data-prodid": "{{prod.prodId}}",
+                    "style": "display:flex;justify-content:space-between;align-items:center;"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/mp-slideview/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toProdPage",
+                    "class": "price",
+                    "data-pic": "{{prod.pic}}",
+                    "data-prodid": "{{prod.prodId}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/mp-slideview/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toProdPage",
+                    "class": "pic",
+                    "data-pic": "{{prod.pic}}",
+                    "data-prodid": "{{prod.prodId}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/mp-slideview/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toProdPage",
+                    "class": "prod-name",
+                    "data-pic": "{{prod.pic}}",
+                    "data-prodid": "{{prod.prodId}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/mp-slideview/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toProdPage",
+                    "data-pic": "{{prod.pic}}",
+                    "data-prodid": "{{prod.prodId}}",
+                    "style": "display:flex;justify-content:space-between;align-items:center;"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/mp-slideview/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toProdPage",
+                    "class": "price",
+                    "data-pic": "{{prod.pic}}",
+                    "data-prodid": "{{prod.prodId}}"
+                },
+                "m_data": []
             }
         ],
         "openSku": [
@@ -250,7 +491,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/mp-slideview/view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "openSku",
+                    "class": "prod-info-text {{prod.skuName?'':'empty-n'}}",
+                    "data-prod": "{{prod}}"
+                },
+                "m_data": []
             }
         ],
         "onCountMinus": [
@@ -259,7 +508,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/mp-slideview/view/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "onCountMinus",
+                    "class": "minus",
+                    "data-index": "{{index}}",
+                    "data-scindex": "{{scIndex}}"
+                },
+                "m_data": []
             }
         ],
         "onCountPlus": [
@@ -268,7 +526,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/mp-slideview/view/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "onCountPlus",
+                    "class": "plus",
+                    "data-index": "{{index}}",
+                    "data-scindex": "{{scIndex}}"
+                },
+                "m_data": []
             }
         ],
         "clearLoseEfficacy": [
@@ -277,7 +544,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "clearLoseEfficacy",
+                    "class": "empty-prod"
+                },
+                "m_data": [
+                    "\u6e05\u7a7a\u5931\u6548\u5546\u54c1"
+                ]
             }
         ],
         "onSelAll": [
@@ -286,7 +562,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "label",
+                "m_xpath": "/view/view/view/label",
+                "m_attributes": {
+                    "bindtap": "onSelAll"
+                },
+                "m_data": [
+                    "\u5168\u9009"
+                ]
             }
         ],
         "onDelBasket": [
@@ -295,7 +579,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "onDelBasket",
+                    "class": "btn del"
+                },
+                "m_data": []
             }
         ],
         "toFirmOrder": [
@@ -304,7 +595,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toFirmOrder",
+                    "class": "btn settle"
+                },
+                "m_data": []
             }
         ]
     },
@@ -315,7 +613,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toggleCollapse",
+                    "class": "search-list-img"
+                },
+                "m_data": []
             }
         ],
         "toSearchPage": [
@@ -324,7 +629,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toSearchPage",
+                    "class": "search-box"
+                },
+                "m_data": []
             }
         ],
         "changeShowType": [
@@ -333,7 +645,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "changeShowType",
+                    "class": "search-list-img"
+                },
+                "m_data": []
             }
         ],
         "onStsTap": [
@@ -342,21 +661,45 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "onStsTap",
+                    "class": "tab-item complete {{sts==0?'on':''}}",
+                    "data-sts": "0"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "onStsTap",
+                    "class": "tab-item {{sts==1?'on':''}}",
+                    "data-sts": "1"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "onStsTap",
+                    "class": "tab-item {{sts==2?'on':''}}",
+                    "data-sts": "2"
+                },
+                "m_data": []
             }
         ],
         "toggleFilter": [
@@ -365,7 +708,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toggleFilter",
+                    "class": "tab-item {{isFilter?'on':''}}"
+                },
+                "m_data": []
             }
         ],
         "onMenuTab": [
@@ -374,7 +724,20 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/scroll-view/view",
+                "m_attributes": {
+                    "bindtap": "onMenuTab",
+                    "class": "menu-item {{selIndex==index?'active':''}} ",
+                    "data-id": "{{item.categoryId}}",
+                    "data-index": "{{index}}",
+                    "wx:for": "{{categoryList}}",
+                    "wx:key": "{{item}}"
+                },
+                "m_data": [
+                    "\n        "
+                ]
             }
         ],
         "getProdList": [
@@ -382,7 +745,17 @@
                 "m_details": {
                     "direction": "bottom"
                 },
-                "m_type": "scrolltolower"
+                "m_type": "scrolltolower",
+                "m_tag_name": "scroll-view",
+                "m_xpath": "/view/view/scroll-view",
+                "m_attributes": {
+                    "bindscrolltolower": "getProdList",
+                    "class": "rightcontent",
+                    "lowerthreshold": "200",
+                    "scrollintoview": "{{toViewId}}",
+                    "scrolly": "true"
+                },
+                "m_data": []
             }
         ],
         "toProdPage": [
@@ -391,7 +764,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/scroll-view/view/view",
+                "m_attributes": {
+                    "bindtap": "toProdPage",
+                    "class": "show-item",
+                    "data-pic": "{{item.pic}}",
+                    "data-prodid": "{{item.prodId}}",
+                    "wx:for": "{{productList}}"
+                },
+                "m_data": []
             }
         ],
         "addCart": [
@@ -400,7 +783,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/scroll-view/view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "addCart",
+                    "data-prod": "{{item}}",
+                    "wx:if": "{{item.totalStocks>0}}"
+                },
+                "m_data": []
             }
         ],
         "true": [
@@ -409,7 +800,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/van-popup/view/view",
+                "m_attributes": {
+                    "catchtap": "true",
+                    "class": "content"
+                },
+                "m_data": []
             }
         ],
         "resetFilter": [
@@ -418,7 +816,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/van-popup/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "resetFilter",
+                    "class": "btn btn1"
+                },
+                "m_data": [
+                    "\u91cd\u7f6e"
+                ]
             }
         ],
         "confirmFilter": [
@@ -427,7 +834,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/van-popup/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "confirmFilter",
+                    "class": "btn btn2"
+                },
+                "m_data": [
+                    "\u786e\u8ba4"
+                ]
             }
         ],
         "closeBtn": [
@@ -436,7 +852,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "closeBtn",
+                    "class": "close"
+                },
+                "m_data": []
             }
         ]
     },
@@ -446,7 +869,18 @@
                 "m_details": {
                     "value": "hello world!"
                 },
-                "m_type": "confirm"
+                "m_type": "confirm",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/input",
+                "m_attributes": {
+                    "bindconfirm": "toSearchProdPage",
+                    "bindinput": "getSearchContent",
+                    "class": "sear-input",
+                    "confirmtype": "search",
+                    "placeholder": "\u8f93\u5165\u5173\u952e\u5b57\u641c\u7d22",
+                    "value": "{{prodName}}"
+                },
+                "m_data": []
             }
         ],
         "getSearchContent": [
@@ -456,7 +890,18 @@
                     "cursor": 11,
                     "keyCode": 68
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/input",
+                "m_attributes": {
+                    "bindconfirm": "toSearchProdPage",
+                    "bindinput": "getSearchContent",
+                    "class": "sear-input",
+                    "confirmtype": "search",
+                    "placeholder": "\u8f93\u5165\u5173\u952e\u5b57\u641c\u7d22",
+                    "value": "{{prodName}}"
+                },
+                "m_data": []
             }
         ],
         "goBackIndex": [
@@ -465,7 +910,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/text",
+                "m_attributes": {
+                    "bindtap": "goBackIndex",
+                    "class": "search-hint"
+                },
+                "m_data": [
+                    "\u53d6\u6d88"
+                ]
             }
         ],
         "onHistSearch": [
@@ -474,14 +928,31 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "onHistSearch",
+                    "class": "tags",
+                    "data-name": "{{item.content}}",
+                    "wx:for": "{{hotSearchList}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "onHistSearch",
+                    "class": "tags",
+                    "data-name": "{{item}}"
+                },
+                "m_data": []
             }
         ],
         "clearSearch": [
@@ -490,7 +961,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/view/view/view/image",
+                "m_attributes": {
+                    "bindtap": "clearSearch",
+                    "src": "../../images/icon/clear-his.png"
+                },
+                "m_data": []
             }
         ]
     },
@@ -501,7 +979,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/radio-group/mp-slideview/view/view",
+                "m_attributes": {
+                    "bindtap": "selAddrToOrder",
+                    "class": "personal",
+                    "data-item": "{{item}}"
+                },
+                "m_data": []
             }
         ],
         "toEditAddress": [
@@ -510,7 +996,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/radio-group/mp-slideview/view/view/view/image",
+                "m_attributes": {
+                    "catchtap": "toEditAddress",
+                    "data-addrid": "{{item.addrId}}",
+                    "src": "../../images/icon/revise.png"
+                },
+                "m_data": []
             }
         ],
         "onDefaultAddr": [
@@ -519,7 +1013,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "label",
+                "m_xpath": "/view/view/radio-group/mp-slideview/view/view/view/label",
+                "m_attributes": {
+                    "bindtap": "onDefaultAddr",
+                    "data-addrid": "{{item.addrId}}"
+                },
+                "m_data": [
+                    "\u8bbe\u4e3a\u9ed8\u8ba4\u5730\u5740"
+                ]
             }
         ],
         "onAddAddr": [
@@ -528,7 +1031,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "onAddAddr",
+                    "class": "footer"
+                },
+                "m_data": []
             }
         ]
     },
@@ -540,7 +1050,17 @@
                     "cursor": 11,
                     "keyCode": 68
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "onReceiverInput",
+                    "maxlength": "15",
+                    "placeholder": "\u59d3\u540d",
+                    "type": "text",
+                    "value": "{{receiver}}"
+                },
+                "m_data": []
             }
         ],
         "onMobileInput": [
@@ -550,7 +1070,17 @@
                     "cursor": 10,
                     "keyCode": 48
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "onMobileInput",
+                    "maxlength": "11",
+                    "placeholder": "11\u4f4d\u624b\u673a\u53f7\u7801",
+                    "type": "number",
+                    "value": "{{mobile}}"
+                },
+                "m_data": []
             }
         ],
         "translate": [
@@ -559,7 +1089,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "translate",
+                    "class": "section"
+                },
+                "m_data": []
             }
         ],
         "onAddrInput": [
@@ -569,7 +1106,16 @@
                     "cursor": 11,
                     "keyCode": 68
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "onAddrInput",
+                    "placeholder": "\u5982\u697c\u53f7/\u5355\u5143/\u95e8\u724c\u53f7",
+                    "type": "text",
+                    "value": "{{addr}}"
+                },
+                "m_data": []
             }
         ],
         "onSaveAddr": [
@@ -578,7 +1124,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "onSaveAddr",
+                    "class": "keep btn"
+                },
+                "m_data": []
             }
         ],
         "onDeleteAddr": [
@@ -587,7 +1140,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "onDeleteAddr",
+                    "class": "clear btn",
+                    "wx:if": "{{addrId!=0}}"
+                },
+                "m_data": []
             }
         ],
         "cancel": [
@@ -596,7 +1157,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/mp-halfscreendialog/view/view/text",
+                "m_attributes": {
+                    "catchtap": "cancel",
+                    "class": "left-bt"
+                },
+                "m_data": [
+                    "\u53d6\u6d88"
+                ]
             }
         ],
         "confirm": [
@@ -605,7 +1175,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/mp-halfscreendialog/view/view/text",
+                "m_attributes": {
+                    "catchtap": "confirm",
+                    "class": "right-bt {{loading?'loading':''}}"
+                },
+                "m_data": [
+                    "\u786e\u5b9a"
+                ]
             }
         ],
         "bindChange": [
@@ -613,7 +1192,16 @@
                 "m_details": {
                     "value": []
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "picker-view",
+                "m_xpath": "/mp-halfscreendialog/view/picker-view",
+                "m_attributes": {
+                    "bindchange": "bindChange",
+                    "catchtap": "nono",
+                    "indicatorstyle": "height: 50rpx;",
+                    "value": "{{value}}"
+                },
+                "m_data": []
             }
         ],
         "nono": [
@@ -622,7 +1210,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "picker-view",
+                "m_xpath": "/mp-halfscreendialog/view/picker-view",
+                "m_attributes": {
+                    "bindchange": "bindChange",
+                    "catchtap": "nono",
+                    "indicatorstyle": "height: 50rpx;",
+                    "value": "{{value}}"
+                },
+                "m_data": []
             }
         ]
     },
@@ -633,35 +1230,85 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/text",
+                "m_attributes": {
+                    "bindtap": "onStsTap",
+                    "class": "{{sts==0?'on':''}}",
+                    "data-sts": "0"
+                },
+                "m_data": [
+                    "\u5168\u90e8"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/text",
+                "m_attributes": {
+                    "bindtap": "onStsTap",
+                    "class": "{{sts==1?'on':''}}",
+                    "data-sts": "1"
+                },
+                "m_data": [
+                    "\u5f85\u652f\u4ed8"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/text",
+                "m_attributes": {
+                    "bindtap": "onStsTap",
+                    "class": "{{sts==2?'on':''}}",
+                    "data-sts": "2"
+                },
+                "m_data": [
+                    "\u5f85\u53d1\u8d27"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/text",
+                "m_attributes": {
+                    "bindtap": "onStsTap",
+                    "class": "{{sts==3?'on':''}}",
+                    "data-sts": "3"
+                },
+                "m_data": [
+                    "\u5f85\u6536\u8d27"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/text",
+                "m_attributes": {
+                    "bindtap": "onStsTap",
+                    "class": "{{sts==5?'on':''}}",
+                    "data-sts": "5"
+                },
+                "m_data": [
+                    "\u5df2\u5b8c\u6210"
+                ]
             }
         ],
         "delOrderList": [
@@ -670,7 +1317,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/view/view/view/view/image",
+                "m_attributes": {
+                    "bindtap": "delOrderList",
+                    "class": "clear-list-btn",
+                    "data-ordernum": "{{item.orderNumber}}",
+                    "src": "../../images/icon/clear-his.png"
+                },
+                "m_data": []
             }
         ],
         "toOrderDetailPage": [
@@ -679,7 +1335,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toOrderDetailPage",
+                    "class": "item-cont",
+                    "data-ordernum": "{{item.orderNumber}}"
+                },
+                "m_data": []
             }
         ],
         "onCancelOrder": [
@@ -688,7 +1352,19 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "onCancelOrder",
+                    "class": "button",
+                    "data-ordernum": "{{item.orderNumber}}",
+                    "hoverclass": "none",
+                    "wx:if": "{{item.status==1}}"
+                },
+                "m_data": [
+                    "\u53d6\u6d88\u8ba2\u5355"
+                ]
             }
         ],
         "onPayAgain": [
@@ -697,7 +1373,19 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "onPayAgain",
+                    "class": "button warn",
+                    "data-ordernum": "{{item.orderNumber}}",
+                    "hoverclass": "none",
+                    "wx:if": "{{item.status==1}}"
+                },
+                "m_data": [
+                    "\u4ed8\u6b3e"
+                ]
             }
         ],
         "toDeliveryPage": [
@@ -706,7 +1394,19 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "toDeliveryPage",
+                    "class": "button",
+                    "data-ordernum": "{{item.orderNumber}}",
+                    "hoverclass": "none",
+                    "wx:if": "{{item.status==3||item.status==5}}"
+                },
+                "m_data": [
+                    "\u67e5\u770b\u7269\u6d41"
+                ]
             }
         ],
         "onConfirmReceive": [
@@ -715,7 +1415,19 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "onConfirmReceive",
+                    "class": "button warn",
+                    "data-ordernum": "{{item.orderNumber}}",
+                    "hoverclass": "none",
+                    "wx:if": "{{item.status==3}}"
+                },
+                "m_data": [
+                    "\u786e\u8ba4\u6536\u8d27"
+                ]
             }
         ],
         "billApply": [
@@ -724,7 +1436,21 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "billApply",
+                    "class": "button warn red",
+                    "data-actualtotal": "{{item.actualTotal}}",
+                    "data-index": "{{index}}",
+                    "data-ordernum": "{{item.orderNumber}}",
+                    "hoverclass": "none",
+                    "wx:if": "{{item.isInvoice!==1&&item.status==5&&finallyTimeShow<30}}"
+                },
+                "m_data": [
+                    "\u7533\u8bf7\u5f00\u7968"
+                ]
             }
         ],
         "billView": [
@@ -733,7 +1459,19 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "billView",
+                    "class": "button warn",
+                    "data-ordernum": "{{item.orderNumber}}",
+                    "hoverclass": "none",
+                    "wx:if": "{{item.isInvoice==1}}"
+                },
+                "m_data": [
+                    "\u67e5\u770b\u53d1\u7968"
+                ]
             }
         ]
     },
@@ -744,14 +1482,32 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "copeAddr",
+                    "class": "copy-btn"
+                },
+                "m_data": [
+                    "\u590d\u5236"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "copeAddr",
+                    "class": "copy-btn"
+                },
+                "m_data": [
+                    "\u590d\u5236"
+                ]
             }
         ],
         "toProdPage": [
@@ -760,21 +1516,47 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toProdPage",
+                    "class": "prod-pic",
+                    "data-prodid": "{{item.prodId}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toProdPage",
+                    "class": "prodname",
+                    "data-prodid": "{{item.prodId}}"
+                },
+                "m_data": [
+                    "\n\t\t\t\t\t\t"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toProdPage",
+                    "class": "prod-info-cont",
+                    "data-prodid": "{{item.prodId}}"
+                },
+                "m_data": []
             }
         ],
         "applyRefund": [
@@ -783,14 +1565,35 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "applyRefund",
+                    "class": "btn",
+                    "data-item": "{{item}}",
+                    "wx:if": "{{item.showReturn}}"
+                },
+                "m_data": [
+                    "\u9000\u6b3e"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "applyRefund",
+                    "class": "apply-service",
+                    "wx:if": "{{showAllReturn}}"
+                },
+                "m_data": [
+                    "\u7533\u8bf7\u9000\u6b3e"
+                ]
             }
         ],
         "navigateRefund": [
@@ -799,35 +1602,90 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "navigateRefund",
+                    "class": "btn",
+                    "data-item": "{{item}}",
+                    "wx:if": "{{item.itemStatus==1}}"
+                },
+                "m_data": [
+                    "\u552e\u540e\u4e2d"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "navigateRefund",
+                    "class": "btn",
+                    "data-item": "{{item}}",
+                    "wx:if": "{{item.itemStatus==2}}"
+                },
+                "m_data": [
+                    "\u5f85\u9000\u8d27"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "navigateRefund",
+                    "class": "btn",
+                    "data-item": "{{item}}",
+                    "wx:if": "{{item.itemStatus==3}}"
+                },
+                "m_data": [
+                    "\u5df2\u9000\u6b3e"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "navigateRefund",
+                    "class": "btn",
+                    "data-item": "{{item}}",
+                    "wx:if": "{{item.itemStatus==4}}"
+                },
+                "m_data": [
+                    "\u9000\u6b3e\u4e2d"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "navigateRefund",
+                    "class": "btn",
+                    "data-item": "{{item}}",
+                    "wx:if": "{{item.itemStatus==5}}"
+                },
+                "m_data": [
+                    "\u9000\u6b3e\u5931\u8d25"
+                ]
             }
         ],
         "onCancelOrder": [
@@ -836,7 +1694,19 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "onCancelOrder",
+                    "class": "button",
+                    "data-ordernum": "{{item.primaryOrderNo}}",
+                    "hoverclass": "none",
+                    "wx:if": "{{item.status==1}}"
+                },
+                "m_data": [
+                    "\u53d6\u6d88\u8ba2\u5355"
+                ]
             }
         ],
         "onConfirmReceive": [
@@ -845,14 +1715,38 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "onConfirmReceive",
+                    "class": "button warn",
+                    "data-ordernum": "{{item.primaryOrderNo}}",
+                    "hoverclass": "none",
+                    "wx:if": "{{item.status==1}}"
+                },
+                "m_data": [
+                    "\u518d\u6b21\u8d2d\u4e70"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "onConfirmReceive",
+                    "class": "button warn",
+                    "data-ordernum": "{{item.primaryOrderNo}}",
+                    "hoverclass": "none",
+                    "wx:if": "{{item.status==3}}"
+                },
+                "m_data": [
+                    "\u786e\u8ba4\u6536\u8d27"
+                ]
             }
         ],
         "onPayAgain": [
@@ -861,14 +1755,36 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "onPayAgain",
+                    "class": "button warn",
+                    "data-ordernum": "{{item.primaryOrderNo}}",
+                    "hoverclass": "none",
+                    "wx:if": "{{item.status==1}}"
+                },
+                "m_data": [
+                    "\u4ed8\u6b3e"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "onPayAgain",
+                    "class": "btn red",
+                    "wx:if": "{{status==1}}"
+                },
+                "m_data": [
+                    "\u7acb\u5373\u652f\u4ed8"
+                ]
             }
         ],
         "toDeliveryPage": [
@@ -877,7 +1793,19 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "toDeliveryPage",
+                    "class": "button",
+                    "data-ordernum": "{{item.primaryOrderNo}}",
+                    "hoverclass": "none",
+                    "wx:if": "{{item.status==3||item.status==5}}"
+                },
+                "m_data": [
+                    "\u67e5\u770b\u7269\u6d41"
+                ]
             }
         ],
         "copyBtn": [
@@ -886,7 +1814,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "copyBtn",
+                    "class": "copy-btn"
+                },
+                "m_data": [
+                    "\u590d\u5236"
+                ]
             }
         ],
         "buyAgain": [
@@ -895,7 +1832,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "buyAgain",
+                    "class": "btn"
+                },
+                "m_data": [
+                    "\u518d\u6b21\u8d2d\u4e70"
+                ]
             }
         ],
         "billApply": [
@@ -904,7 +1850,20 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "billApply",
+                    "class": "btn",
+                    "data-actualtotal": "{{orderInfo.actualTotal}}",
+                    "data-ordernum": "{{orderInfo.primaryOrderNo}}",
+                    "hoverclass": "none",
+                    "wx:if": "{{orderInfo.isInvoice!=1&&status==5&&finallyTimeShow<30}}"
+                },
+                "m_data": [
+                    "\u7533\u8bf7\u5f00\u7968"
+                ]
             }
         ],
         "billView": [
@@ -913,7 +1872,19 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "billView",
+                    "class": "btn",
+                    "data-ordernum": "{{item.primaryOrderNo}}",
+                    "hoverclass": "none",
+                    "wx:if": "{{orderInfo.isInvoice==1}}"
+                },
+                "m_data": [
+                    "\u67e5\u770b\u53d1\u7968"
+                ]
             }
         ]
     },
@@ -924,7 +1895,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/van-tabs/van-tab/view",
+                "m_attributes": {
+                    "bindtap": "toAddrListPage",
+                    "class": "delivery-addr "
+                },
+                "m_data": []
             }
         ],
         "toOrderDetailPage": [
@@ -933,7 +1911,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toOrderDetailPage",
+                    "class": "item-wrap",
+                    "data-ordernum": "{{item.primaryOrderNo}}",
+                    "wx:for": "{{orderItems}}",
+                    "wx:key": "item"
+                },
+                "m_data": []
             }
         ],
         "chooseGift": [
@@ -942,7 +1930,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "chooseGift",
+                    "class": "edit-gift",
+                    "wx:if": "{{item.itemType==2}}"
+                },
+                "m_data": [
+                    "\u4fee\u6539\u793c\u54c1"
+                ]
             }
         ],
         "showCouponPopup": [
@@ -951,7 +1949,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "showCouponPopup",
+                    "class": "item coupon"
+                },
+                "m_data": []
             }
         ],
         "showCardPopup": [
@@ -960,7 +1965,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "showCardPopup",
+                    "class": "item card"
+                },
+                "m_data": []
             }
         ],
         "showPointPopup": [
@@ -969,7 +1981,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "showPointPopup",
+                    "class": "item point",
+                    "wx:if": "{{false}}"
+                },
+                "m_data": []
             }
         ],
         "showInvoicePopup": [
@@ -978,7 +1998,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "showInvoicePopup",
+                    "class": "item invoice",
+                    "wx:if": "{{false}}"
+                },
+                "m_data": []
             }
         ],
         "bindRemark": [
@@ -988,7 +2016,14 @@
                     "cursor": 11,
                     "keyCode": 68
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "bindRemark",
+                    "placeholder": "\u7ed9\u5356\u5bb6\u7559\u8a00"
+                },
+                "m_data": []
             }
         ],
         "toPay": [
@@ -997,7 +2032,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toPay",
+                    "class": "footer-box",
+                    "wx:if": "{{orderItems.length}}"
+                },
+                "m_data": [
+                    "\u63d0\u4ea4\u8ba2\u5355"
+                ]
             }
         ],
         "true": [
@@ -1006,28 +2051,68 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "van-popup",
+                "m_xpath": "/van-popup",
+                "m_attributes": {
+                    "bind:close": "closePopup",
+                    "catchtap": "true",
+                    "customstyle": "height: 80%;",
+                    "position": "bottom",
+                    "show": "{{popupShow}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "van-popup",
+                "m_xpath": "/van-popup",
+                "m_attributes": {
+                    "bind:close": "closePopup",
+                    "catchtap": "true",
+                    "customstyle": "height: 60%;",
+                    "position": "bottom",
+                    "show": "{{pointPopupShow}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "van-popup",
+                "m_xpath": "/van-popup",
+                "m_attributes": {
+                    "bind:close": "closePopup",
+                    "catchtap": "true",
+                    "customstyle": "height: 750rpx;",
+                    "position": "bottom",
+                    "show": "{{cardPopupShow}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "van-popup",
+                "m_xpath": "/van-popup",
+                "m_attributes": {
+                    "bind:close": "closePopup",
+                    "catchtap": "true",
+                    "customstyle": "height: 750rpx;",
+                    "position": "bottom",
+                    "show": "{{invoicePopupShow}}"
+                },
+                "m_data": []
             }
         ],
         "closePopup": [
@@ -1036,28 +2121,56 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/van-popup/view/view/view",
+                "m_attributes": {
+                    "bindtap": "closePopup",
+                    "class": "close"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/van-popup/view/view/view",
+                "m_attributes": {
+                    "bindtap": "closePopup",
+                    "class": "close"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/van-popup/view/view/view",
+                "m_attributes": {
+                    "bindtap": "closePopup",
+                    "class": "close"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/van-popup/view/view/view",
+                "m_attributes": {
+                    "bindtap": "closePopup",
+                    "class": "close"
+                },
+                "m_data": []
             }
         ],
         "changeCouponSts": [
@@ -1066,14 +2179,36 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/van-popup/view/view/view",
+                "m_attributes": {
+                    "bindtap": "changeCouponSts",
+                    "class": "coupon-tab {{couponSts==1?'on':''}}",
+                    "data-sts": "1"
+                },
+                "m_data": [
+                    "\u53ef\u7528\u4f18\u60e0\u5238(",
+                    ")"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/van-popup/view/view/view",
+                "m_attributes": {
+                    "bindtap": "changeCouponSts",
+                    "class": "coupon-tab {{couponSts==2?'on':''}}",
+                    "data-sts": "2"
+                },
+                "m_data": [
+                    "\u4e0d\u53ef\u7528\u4f18\u60e0\u5238(",
+                    ")"
+                ]
             }
         ],
         "choosedCoupon": [
@@ -1082,7 +2217,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/van-popup/view/view/text",
+                "m_attributes": {
+                    "bindtap": "choosedCoupon"
+                },
+                "m_data": [
+                    "\u786e\u5b9a"
+                ]
             }
         ],
         "onCountMinus": [
@@ -1091,7 +2234,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/van-popup/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "onCountMinus",
+                    "class": "minus"
+                },
+                "m_data": []
             }
         ],
         "onPointChange": [
@@ -1099,7 +2249,15 @@
                 "m_details": {
                     "value": "1234567890"
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "input",
+                "m_xpath": "/van-popup/view/view/view/view/input",
+                "m_attributes": {
+                    "bindchange": "onPointChange",
+                    "type": "number",
+                    "value": "{{point}}"
+                },
+                "m_data": []
             }
         ],
         "onCountPlus": [
@@ -1108,7 +2266,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/van-popup/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "onCountPlus",
+                    "class": "plus"
+                },
+                "m_data": []
             }
         ],
         "usePoint": [
@@ -1117,7 +2282,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/van-popup/view/view/text",
+                "m_attributes": {
+                    "bindtap": "usePoint"
+                },
+                "m_data": [
+                    "\u786e\u5b9a"
+                ]
             }
         ],
         "checkCard": [
@@ -1126,7 +2299,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/van-popup/view/view/van-tabs/van-tab/view",
+                "m_attributes": {
+                    "bindtap": "checkCard",
+                    "class": "card",
+                    "data-item": "{{item}}",
+                    "wx:for": "{{valuableCard.canUseCard}}"
+                },
+                "m_data": []
             }
         ],
         "confirmCard": [
@@ -1135,7 +2317,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/van-popup/view/view/text",
+                "m_attributes": {
+                    "bindtap": "confirmCard"
+                },
+                "m_data": [
+                    "\u786e\u5b9a"
+                ]
             }
         ],
         "chooseInvoiceTitle": [
@@ -1144,7 +2334,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/van-popup/view/view/view",
+                "m_attributes": {
+                    "bindtap": "chooseInvoiceTitle"
+                },
+                "m_data": [
+                    "\u9009\u62e9\u53d1\u7968"
+                ]
             }
         ],
         "confirmInvoice": [
@@ -1153,7 +2351,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/van-popup/view/view/text",
+                "m_attributes": {
+                    "bindtap": "confirmInvoice"
+                },
+                "m_data": [
+                    "\u786e\u5b9a"
+                ]
             }
         ]
     },
@@ -1163,7 +2369,18 @@
                 "m_details": {
                     "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
                 },
-                "m_type": "getphonenumber"
+                "m_type": "getphonenumber",
+                "m_tag_name": "button",
+                "m_xpath": "/button",
+                "m_attributes": {
+                    "bindgetphonenumber": "getPhoneNumber",
+                    "class": "confirm",
+                    "color": "#eb2444",
+                    "opentype": "getPhoneNumber"
+                },
+                "m_data": [
+                    "\u6388\u6743\u83b7\u53d6\u624b\u673a\u53f7"
+                ]
             }
         ],
         "goback": [
@@ -1172,7 +2389,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/button",
+                "m_attributes": {
+                    "bindtap": "goback",
+                    "class": "cancel"
+                },
+                "m_data": [
+                    "\u6682\u4e0d\u6388\u6743"
+                ]
             }
         ]
     },
@@ -1184,14 +2410,32 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "{{!orderType?'toOrderList':'toSaleList'}}",
+                    "class": "button checkorder"
+                },
+                "m_data": [
+                    "\u67e5\u770b\u8ba2\u5355"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "{{!orderType?'toOrderList':'toSaleList'}}",
+                    "class": "button checkorder"
+                },
+                "m_data": [
+                    "\u67e5\u770b\u8ba2\u5355"
+                ]
             }
         ],
         "toIndex": [
@@ -1200,7 +2444,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "toIndex",
+                    "class": "button shopcontinue"
+                },
+                "m_data": [
+                    "\u7ee7\u7eed\u8d2d\u7269"
+                ]
             }
         ]
     },
@@ -1210,7 +2463,17 @@
                 "m_details": {
                     "value": "hello world!"
                 },
-                "m_type": "confirm"
+                "m_type": "confirm",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/input",
+                "m_attributes": {
+                    "bindconfirm": "toSearchConfirm",
+                    "bindinput": "getSearchContent",
+                    "class": "sear-input",
+                    "confirmtype": "search",
+                    "value": "{{prodName}}"
+                },
+                "m_data": []
             }
         ],
         "getSearchContent": [
@@ -1220,7 +2483,17 @@
                     "cursor": 11,
                     "keyCode": 68
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/input",
+                "m_attributes": {
+                    "bindconfirm": "toSearchConfirm",
+                    "bindinput": "getSearchContent",
+                    "class": "sear-input",
+                    "confirmtype": "search",
+                    "value": "{{prodName}}"
+                },
+                "m_data": []
             }
         ],
         "changeShowType": [
@@ -1229,7 +2502,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "changeShowType",
+                    "class": "search-list-img"
+                },
+                "m_data": []
             }
         ],
         "onStsTap": [
@@ -1238,21 +2518,45 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "onStsTap",
+                    "class": "tab-item complete {{sts==0?'on':''}}",
+                    "data-sts": "0"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "onStsTap",
+                    "class": "tab-item {{sts==1?'on':''}}",
+                    "data-sts": "1"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "onStsTap",
+                    "class": "tab-item {{sts==2?'on':''}}",
+                    "data-sts": "2"
+                },
+                "m_data": []
             }
         ],
         "toProdPage": [
@@ -1261,7 +2565,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toProdPage",
+                    "class": "show-item",
+                    "data-prodid": "{{item.prodId}}",
+                    "wx:for": "{{searchProdList}}"
+                },
+                "m_data": []
             }
         ]
     },
@@ -1272,7 +2585,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "openShare",
+                    "class": "col"
+                },
+                "m_data": [
+                    "\u5206\u4eab\n        "
+                ]
             }
         ],
         "addOrCannelCollection": [
@@ -1281,7 +2603,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "addOrCannelCollection",
+                    "class": "col"
+                },
+                "m_data": [
+                    "\u6536\u85cf\n        "
+                ]
             }
         ],
         "actionClick": [
@@ -1290,21 +2621,51 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/mp-halfscreendialog/button",
+                "m_attributes": {
+                    "bindtap": "actionClick",
+                    "class": "item",
+                    "data-value": "0",
+                    "opentype": "share"
+                },
+                "m_data": [
+                    "\u5206\u4eab\u7ed9\u670b\u53cb"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/mp-halfscreendialog/button",
+                "m_attributes": {
+                    "bindtap": "actionClick",
+                    "class": "item",
+                    "data-value": "1"
+                },
+                "m_data": [
+                    "\u751f\u6210\u6d77\u62a5"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/mp-halfscreendialog/button",
+                "m_attributes": {
+                    "bindtap": "actionClick",
+                    "class": "item cancel"
+                },
+                "m_data": [
+                    "\u53d6\u6d88"
+                ]
             }
         ],
         "showPromotion": [
@@ -1313,7 +2674,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "showPromotion",
+                    "class": "promotion-content",
+                    "wx:if": "{{prodInfo.promotionInfo&&prodInfo.promotionInfo!==null&&prodInfo.promotionInfo.length>0}}"
+                },
+                "m_data": []
             }
         ],
         "showGroup": [
@@ -1322,7 +2691,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "showGroup",
+                    "class": "view-more",
+                    "wx:if": "{{prodInfo.groupbuyinfo.length>2}}"
+                },
+                "m_data": [
+                    "\u67e5\u770b\u66f4\u591a "
+                ]
             }
         ],
         "{{item.orderNumber===null?'showSku':'goView'}}": [
@@ -1331,14 +2710,42 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "group-buying-list",
+                "m_xpath": "/view/view/view/group-buying-list",
+                "m_attributes": {
+                    "bindtap": "{{item.orderNumber===null?'showSku':'goView'}}",
+                    "data-groupbuyid": "{{item.groupbuyId}}",
+                    "data-ordernumber": "{{item.orderNumber}}",
+                    "data-remainmember": "{{item.remainMember}}",
+                    "grouplist": "{{item}}",
+                    "id": "add-cart",
+                    "wx:if": "{{i<2}}",
+                    "wx:for": "{{prodInfo.groupbuyinfo}}",
+                    "wx:for-index": "i"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "group-buying-list",
+                "m_xpath": "/view/view/view/view/group-buying-list",
+                "m_attributes": {
+                    "bindtap": "{{item.orderNumber===null?'showSku':'goView'}}",
+                    "data-groupbuyid": "{{item.groupbuyId}}",
+                    "data-ordernumber": "{{item.orderNumber}}",
+                    "data-remainmember": "{{item.remainMember}}",
+                    "grouplist": "{{item}}",
+                    "id": "add-cart",
+                    "wx:if": "{{i<10}}",
+                    "wx:for": "{{prodInfo.groupbuyinfo}}",
+                    "wx:for-index": "i"
+                },
+                "m_data": []
             }
         ],
         "showSku": [
@@ -1347,7 +2754,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "showSku",
+                    "class": "sku"
+                },
+                "m_data": []
             }
         ],
         "showComment": [
@@ -1356,21 +2770,43 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "showComment",
+                    "class": "cmt-tit"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "showComment",
+                    "class": "cmt-tag"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "showComment"
+                },
+                "m_data": [
+                    "\u67e5\u770b\u5168\u90e8\u8bc4\u4ef7"
+                ]
             }
         ],
         "toHomePage": [
@@ -1379,7 +2815,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toHomePage",
+                    "class": "btn icon"
+                },
+                "m_data": [
+                    "\u9996\u9875\n      "
+                ]
             }
         ],
         "toCartPage": [
@@ -1388,7 +2833,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toCartPage",
+                    "class": "btn icon"
+                },
+                "m_data": [
+                    "\u8d2d\u7269\u8f66\n        "
+                ]
             }
         ],
         "addToCart": [
@@ -1397,21 +2851,44 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/block/view",
+                "m_attributes": {
+                    "bindtap": "addToCart",
+                    "class": "btn cart"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/block/view",
+                "m_attributes": {
+                    "bindtap": "addToCart",
+                    "class": "btn cart"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/mp-halfscreendialog/view/view/view",
+                "m_attributes": {
+                    "bindtap": "addToCart",
+                    "class": "btn cart"
+                },
+                "m_data": [
+                    "\u52a0\u5165\u8d2d\u7269\u8f66"
+                ]
             }
         ],
         "buyNow": [
@@ -1420,14 +2897,31 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/block/view",
+                "m_attributes": {
+                    "bindtap": "buyNow",
+                    "class": "{{showBuy?'btn buy':'btn buy hidden'}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/mp-halfscreendialog/view/view/view",
+                "m_attributes": {
+                    "bindtap": "buyNow",
+                    "class": "btn buy",
+                    "wx:if": "{{showBuy}}"
+                },
+                "m_data": [
+                    "\u7acb\u5373\u8d2d\u4e70"
+                ]
             }
         ],
         "buildGroup": [
@@ -1436,14 +2930,31 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/block/view",
+                "m_attributes": {
+                    "bindtap": "buildGroup",
+                    "class": "{{showBuy?'btn buy':'btn buy hidden'}}",
+                    "data-buytype": "1"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "buildGroup",
+                    "class": "{{showBuy?'btn buy':'btn buy hidden'}}",
+                    "data-buytype": "2",
+                    "wx:if": "{{prodInfo.groupbuyinfo===null&&prodInfo.preorderRuleEntity}}"
+                },
+                "m_data": []
             }
         ],
         "closePopup": [
@@ -1452,21 +2963,42 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "closePopup",
+                    "class": "close"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/mp-halfscreendialog/view/view/view",
+                "m_attributes": {
+                    "bindtap": "closePopup",
+                    "class": "close"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "closePopup",
+                    "class": "close"
+                },
+                "m_data": []
             }
         ],
         "true": [
@@ -1475,7 +3007,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/mp-halfscreendialog/view",
+                "m_attributes": {
+                    "catchtap": "true",
+                    "class": "pup-sku-main"
+                },
+                "m_data": []
             }
         ],
         "toChooseItem": [
@@ -1484,7 +3023,18 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/mp-halfscreendialog/view/view/view/block/view/text",
+                "m_attributes": {
+                    "bindtap": "toChooseItem",
+                    "class": "sku-choose-item {{wxs.array_contain(selectedProp,item)?'active':''}}",
+                    "data-key": "{{key}}",
+                    "data-val": "{{item}}",
+                    "wx:for": "{{value}}",
+                    "wx:key": "*this"
+                },
+                "m_data": []
             }
         ],
         "onCountMinus": [
@@ -1493,7 +3043,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/mp-halfscreendialog/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "onCountMinus",
+                    "class": "minus"
+                },
+                "m_data": []
             }
         ],
         "onCountPlus": [
@@ -1502,7 +3059,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/mp-halfscreendialog/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "onCountPlus",
+                    "class": "plus"
+                },
+                "m_data": []
             }
         ],
         "buyGroupNow": [
@@ -1511,7 +3075,18 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/mp-halfscreendialog/view/view/view",
+                "m_attributes": {
+                    "bindtap": "buyGroupNow",
+                    "class": "btn buy",
+                    "data-activepaytype": "depositPay",
+                    "data-buytype": "1"
+                },
+                "m_data": [
+                    "\u53c2\u52a0\u56e2\u8d2d"
+                ]
             }
         ],
         "{{prodInfo.preorderRuleEntity.limitBuyNum-prodInfo.preorderRuleEntity.buyNum>0?'buyGroupNow':''}}": [
@@ -1520,7 +3095,19 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/mp-halfscreendialog/view/view/view",
+                "m_attributes": {
+                    "bindtap": "{{prodInfo.preorderRuleEntity.limitBuyNum-prodInfo.preorderRuleEntity.buyNum>0?'buyGroupNow':''}}",
+                    "class": "btn buy ",
+                    "data-activepaytype": "{{prodInfo.preorderRuleEntity.presaleType===0?'':'depositPay'}}",
+                    "data-buytype": "2",
+                    "data-isallowedrefunddeposit": "{{prodInfo.preorderRuleEntity.isAllowedRefundDeposit}}"
+                },
+                "m_data": [
+                    "\u53c2\u52a0\u9884\u552e\n        "
+                ]
             }
         ],
         "getProdCommPage": [
@@ -1529,35 +3116,90 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "getProdCommPage",
+                    "class": "{{evaluate==-1?'selected':''}}",
+                    "data-evaluate": "-1"
+                },
+                "m_data": [
+                    "\u5168\u90e8(",
+                    ")"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "getProdCommPage",
+                    "class": "{{evaluate==0?'selected':''}}",
+                    "data-evaluate": "0"
+                },
+                "m_data": [
+                    "\u597d\u8bc4(",
+                    ")"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "getProdCommPage",
+                    "class": "{{evaluate==1?'selected':''}}",
+                    "data-evaluate": "1"
+                },
+                "m_data": [
+                    "\u4e2d\u8bc4(",
+                    ")"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "getProdCommPage",
+                    "class": "{{evaluate==2?'selected':''}}",
+                    "data-evaluate": "2"
+                },
+                "m_data": [
+                    "\u5dee\u8bc4(",
+                    ")"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "getProdCommPage",
+                    "class": "{{evaluate==3?'selected':''}}",
+                    "data-evaluate": "3"
+                },
+                "m_data": [
+                    "\u6709\u56fe(",
+                    ")"
+                ]
             }
         ],
         "getMoreCommPage": [
@@ -1566,7 +3208,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "getMoreCommPage"
+                },
+                "m_data": [
+                    "\u70b9\u51fb\u52a0\u8f7d\u66f4\u591a"
+                ]
             }
         ],
         "closeShare": [
@@ -1575,7 +3225,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "closeShare",
+                    "class": "share-pop",
+                    "wx:if": "{{showShare}}"
+                },
+                "m_data": []
             }
         ],
         "preview": [
@@ -1584,7 +3242,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/image",
+                "m_attributes": {
+                    "catchtap": "preview",
+                    "class": "image",
+                    "mode": "aspectFit",
+                    "src": "{{sharePic}}"
+                },
+                "m_data": []
             }
         ],
         "saveImage": [
@@ -1593,7 +3260,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "catchtap": "saveImage",
+                    "class": "btn"
+                },
+                "m_data": [
+                    "\u4fdd\u5b58\u56fe\u7247"
+                ]
             }
         ]
     },
@@ -1612,7 +3288,19 @@
                         "nickName": "NICKNAME"
                     }
                 },
-                "m_type": "getuserinfo"
+                "m_type": "getuserinfo",
+                "m_tag_name": "button",
+                "m_xpath": "/button",
+                "m_attributes": {
+                    "bindgetuserinfo": "onGotUserInfo",
+                    "class": "confirm",
+                    "color": "#eb2444",
+                    "lang": "zh_CN",
+                    "opentype": "getUserInfo"
+                },
+                "m_data": [
+                    "\u5fae\u4fe1\u6388\u6743"
+                ]
             }
         ],
         "goback": [
@@ -1621,7 +3309,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/button",
+                "m_attributes": {
+                    "bindtap": "goback",
+                    "class": "cancel"
+                },
+                "m_data": [
+                    "\u6682\u4e0d\u6388\u6743"
+                ]
             }
         ]
     },
@@ -1632,7 +3329,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toSearchPage",
+                    "class": "search-box"
+                },
+                "m_data": []
             }
         ],
         "onStsTap": [
@@ -1641,21 +3345,45 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "onStsTap",
+                    "class": "tab-item complete {{status==0?'on':''}}",
+                    "data-status": "0"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "onStsTap",
+                    "class": "tab-item {{status==1?'on':''}}",
+                    "data-status": "1"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "onStsTap",
+                    "class": "tab-item {{status==2?'on':''}}",
+                    "data-status": "2"
+                },
+                "m_data": []
             }
         ],
         "toggleFilter": [
@@ -1664,7 +3392,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toggleFilter",
+                    "class": "tab-item {{isFilter?'on':''}}"
+                },
+                "m_data": []
             }
         ],
         "confirm": [
@@ -1673,14 +3408,32 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "confirm",
+                    "class": "btn"
+                },
+                "m_data": [
+                    "\u786e\u5b9a"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "confirm",
+                    "class": "btn"
+                },
+                "m_data": [
+                    "\u786e\u5b9a"
+                ]
             }
         ],
         "true": [
@@ -1689,7 +3442,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/van-popup/view/view",
+                "m_attributes": {
+                    "catchtap": "true",
+                    "class": "content"
+                },
+                "m_data": []
             }
         ],
         "resetFilter": [
@@ -1698,7 +3458,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/van-popup/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "resetFilter",
+                    "class": "btn btn1"
+                },
+                "m_data": [
+                    "\u91cd\u7f6e"
+                ]
             }
         ],
         "confirmFilter": [
@@ -1707,7 +3476,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/van-popup/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "confirmFilter",
+                    "class": "btn btn2"
+                },
+                "m_data": [
+                    "\u786e\u8ba4"
+                ]
             }
         ]
     },
@@ -1718,7 +3496,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toNewsDetail",
+                    "class": "news-item",
+                    "data-id": "{{item.id}}",
+                    "wx:for": "{{news}}"
+                },
+                "m_data": []
             }
         ]
     },
@@ -1730,7 +3517,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "setTabIndex",
+                    "class": "{{activeIndex===index?'tab active':'tab'}}",
+                    "data-index": "{{index}}",
+                    "wx:for": "{{tabs}}"
+                },
+                "m_data": []
             }
         ]
     },
@@ -1741,7 +3537,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/swiper/swiper-item/view",
+                "m_attributes": {
+                    "bindtap": "viewLink",
+                    "class": "swiper-item",
+                    "data-item": "{{item}}"
+                },
+                "m_data": []
             }
         ],
         "selectTab": [
@@ -1750,7 +3554,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "selectTab",
+                    "class": "{{tabIndex==index?'tab active':'tab'}}",
+                    "data-index": "{{index}}",
+                    "wx:for": "{{tabs}}"
+                },
+                "m_data": []
             }
         ],
         "getCoupon": [
@@ -1759,14 +3572,34 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/scroll-view/view/view",
+                "m_attributes": {
+                    "bindtap": "getCoupon",
+                    "class": "right",
+                    "data-coupon": "{{item}}",
+                    "wx:if": "{{tabIndex===0}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "getCoupon",
+                    "class": "button",
+                    "data-coupon": "{{item}}",
+                    "wx:if": "{{item.canAccept}}"
+                },
+                "m_data": [
+                    "\u9886\u53d6"
+                ]
             }
         ],
         "selectCate": [
@@ -1775,7 +3608,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/scroll-view/view",
+                "m_attributes": {
+                    "bindtap": "selectCate",
+                    "class": "{{selectedIndex===index?'tab active':'tab'}}",
+                    "data-index": "{{index}}",
+                    "wx:for": "{{titles}}"
+                },
+                "m_data": []
             }
         ],
         "useCoupon": [
@@ -1784,7 +3626,18 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "useCoupon",
+                    "class": "button",
+                    "data-coupon": "{{item}}",
+                    "wx:elif": "{{item.hasNum>0}}"
+                },
+                "m_data": [
+                    "\u53bb\u4f7f\u7528"
+                ]
             }
         ]
     },
@@ -1795,7 +3648,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "selectShop",
+                    "class": "left",
+                    "data-shop": "{{item}}"
+                },
+                "m_data": []
             }
         ],
         "viewGoodsStock": [
@@ -1804,7 +3665,18 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "viewGoodsStock",
+                    "class": "right",
+                    "data-shopid": "{{item.shopId}}",
+                    "data-status": "{{item.stockStatus}}"
+                },
+                "m_data": [
+                    "\n\t\t"
+                ]
             }
         ],
         "onClickHide": [
@@ -1813,7 +3685,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/van-overlay/view/image",
+                "m_attributes": {
+                    "bindtap": "onClickHide",
+                    "class": "icon",
+                    "src": "/images/icon/close-o.png"
+                },
+                "m_data": []
             }
         ]
     },
@@ -1824,7 +3704,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toProdPage",
+                    "class": "item-cont",
+                    "data-prodid": "{{item.prodId}}",
+                    "wx:for": "{{orderItemDtos}}"
+                },
+                "m_data": []
             }
         ],
         "openRefundType": [
@@ -1833,7 +3722,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "openRefundType",
+                    "class": "item",
+                    "wx:if": "{{selectable}}"
+                },
+                "m_data": []
             }
         ],
         "openRefundReason": [
@@ -1842,7 +3739,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "openRefundReason",
+                    "class": "item"
+                },
+                "m_data": []
             }
         ],
         "remarkChange": [
@@ -1850,7 +3754,15 @@
                 "m_details": {
                     "value": "hello world"
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/view/input",
+                "m_attributes": {
+                    "bindchange": "remarkChange",
+                    "class": "item-txt",
+                    "type": "text"
+                },
+                "m_data": []
             }
         ],
         "submit": [
@@ -1859,7 +3771,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "submit",
+                    "class": "order-detail-footer"
+                },
+                "m_data": [
+                    "\u63d0\u4ea4\n    "
+                ]
             }
         ]
     },
@@ -1871,7 +3792,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toOrderDetailPage",
+                    "class": "item-cont",
+                    "data-id": "{{item.returnApplyId}}",
+                    "data-item": "{{item}}"
+                },
+                "m_data": []
             }
         ],
         "cancelApply": [
@@ -1880,7 +3810,19 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "cancelApply",
+                    "class": "button",
+                    "data-id": "{{item.returnApplyId}}",
+                    "hoverclass": "none",
+                    "wx:if": "{{item.canCancel}}"
+                },
+                "m_data": [
+                    "\u64a4\u9500\u7533\u8bf7"
+                ]
             }
         ]
     },
@@ -1891,14 +3833,34 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toggle",
+                    "class": "btn off",
+                    "wx:if": "{{!expand}}"
+                },
+                "m_data": [
+                    "\u5c55\u5f00\n\t\t\t"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toggle",
+                    "class": "btn on",
+                    "wx:else": ""
+                },
+                "m_data": [
+                    "\u6536\u8d77\n\t\t\t"
+                ]
             }
         ],
         "toProdPage": [
@@ -1907,7 +3869,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toProdPage",
+                    "class": "item-cont",
+                    "data-prodid": "{{item.prodId}}",
+                    "wx:for": "{{info.returnApplyDetail}}"
+                },
+                "m_data": []
             }
         ],
         "copyBtn": [
@@ -1916,7 +3887,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "copyBtn",
+                    "class": "copy-btn",
+                    "data-content": "{{info.billNo}}"
+                },
+                "m_data": [
+                    "\u590d\u5236"
+                ]
             }
         ],
         "cancelApply": [
@@ -1925,7 +3906,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "cancelApply",
+                    "class": "apply-service",
+                    "wx:if": "{{info.canCancel}}"
+                },
+                "m_data": [
+                    "\u64a4\u9500\u7533\u8bf7"
+                ]
             }
         ]
     },
@@ -1936,14 +3927,34 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/view/view/view/view/view/view/block/image",
+                "m_attributes": {
+                    "bindtap": "star",
+                    "class": "star",
+                    "data-index": "{{index}}",
+                    "src": "/images/icon/star-red.png",
+                    "wx:if": "{{score>index}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/view/view/view/view/view/view/block/image",
+                "m_attributes": {
+                    "bindtap": "star",
+                    "class": "star",
+                    "data-index": "{{index}}",
+                    "src": "/images/icon/star-empty.png",
+                    "wx:else": ""
+                },
+                "m_data": []
             }
         ],
         "inputChange": [
@@ -1952,7 +3963,14 @@
                     "value": "hello world",
                     "cursor": 11
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "textarea",
+                "m_xpath": "/view/view/view/view/view/textarea",
+                "m_attributes": {
+                    "bindinput": "inputChange",
+                    "placeholder": "\u5b9d\u8d1d\u6ee1\u8db3\u4f60\u7684\u671f\u5f85\u5417\uff1f\u8bf4\u8bf4\u5b83\u7684\u4f18\u70b9\u548c\u7f8e\u4e2d\u4e0d\u8db3\u7684\u5730\u65b9\u5427"
+                },
+                "m_data": []
             }
         ],
         "anonymousChange": [
@@ -1961,7 +3979,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "label",
+                "m_xpath": "/view/view/view/view/view/label",
+                "m_attributes": {
+                    "bindtap": "anonymousChange"
+                },
+                "m_data": [
+                    "\u533f\u540d\u8bc4\u8bba\n          "
+                ]
             }
         ],
         "submit": [
@@ -1970,7 +3996,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "submit",
+                    "class": "button",
+                    "loading": "{{submitting}}"
+                },
+                "m_data": [
+                    "\u63d0\u4ea4"
+                ]
             }
         ]
     },
@@ -1982,7 +4018,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/div/image",
+                "m_attributes": {
+                    "bindtap": "preview",
+                    "src": "{{imgUrl}}"
+                },
+                "m_data": []
             }
         ]
     },
@@ -1994,7 +4037,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "openExpressCompany",
+                    "class": "item"
+                },
+                "m_data": []
             }
         ],
         "expressNumberChange": [
@@ -2004,7 +4054,16 @@
                     "cursor": 11,
                     "keyCode": 68
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "expressNumberChange",
+                    "class": "item-txt",
+                    "type": "text",
+                    "value": "{{expressNumber}}"
+                },
+                "m_data": []
             }
         ],
         "confirm": [
@@ -2013,7 +4072,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/button",
+                "m_attributes": {
+                    "bindtap": "confirm",
+                    "hoverclass": "none"
+                },
+                "m_data": [
+                    "\u786e\u5b9a"
+                ]
             }
         ]
     },
@@ -2024,7 +4092,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view",
+                "m_attributes": {
+                    "bindtap": "openAction",
+                    "class": "share-container spread",
+                    "wx:if": "{{show}}"
+                },
+                "m_data": []
             }
         ],
         "closePop": [
@@ -2033,7 +4109,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view",
+                "m_attributes": {
+                    "bindtap": "closePop",
+                    "class": "code-pop",
+                    "wx:if": "{{showCode}}"
+                },
+                "m_data": []
             }
         ],
         "preview": [
@@ -2042,7 +4126,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/image",
+                "m_attributes": {
+                    "catchtap": "preview",
+                    "class": "image",
+                    "mode": "aspectFit",
+                    "src": "{{imgUrl}}"
+                },
+                "m_data": []
             }
         ],
         "saveImage": [
@@ -2051,7 +4144,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "catchtap": "saveImage",
+                    "class": "btn"
+                },
+                "m_data": [
+                    "\u4fdd\u5b58\u56fe\u7247"
+                ]
             }
         ],
         "itemClick": [
@@ -2060,21 +4162,51 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/mp-halfscreendialog/button",
+                "m_attributes": {
+                    "bindtap": "itemClick",
+                    "class": "item",
+                    "data-value": "0",
+                    "opentype": "share"
+                },
+                "m_data": [
+                    "\u5206\u4eab\u7ed9\u670b\u53cb"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/mp-halfscreendialog/button",
+                "m_attributes": {
+                    "bindtap": "itemClick",
+                    "class": "item",
+                    "data-value": "1"
+                },
+                "m_data": [
+                    "\u751f\u6210\u6d77\u62a5"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/mp-halfscreendialog/button",
+                "m_attributes": {
+                    "bindtap": "itemClick",
+                    "class": "item cancel"
+                },
+                "m_data": [
+                    "\u53d6\u6d88"
+                ]
             }
         ]
     },
@@ -2085,7 +4217,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/div/image",
+                "m_attributes": {
+                    "bindtap": "preview",
+                    "src": "{{imgUrl}}"
+                },
+                "m_data": []
             }
         ]
     },
@@ -2110,7 +4249,13 @@
                         "buyerMobile": "default input string. \n"
                     }
                 },
-                "m_type": "submit"
+                "m_type": "submit",
+                "m_tag_name": "form",
+                "m_xpath": "/form",
+                "m_attributes": {
+                    "bindsubmit": "applyForm"
+                },
+                "m_data": []
             }
         ],
         "chooseInvoice": [
@@ -2119,7 +4264,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/form/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "chooseInvoice",
+                    "class": "choose-invoice"
+                },
+                "m_data": [
+                    "\u9009\u62e9\u62ac\u5934"
+                ]
             }
         ]
     },
@@ -2130,7 +4284,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "sendModal",
+                    "class": "btn"
+                },
+                "m_data": [
+                    "\u91cd\u65b0\u53d1\u9001"
+                ]
             }
         ],
         "onCancel": [
@@ -2139,20 +4302,48 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view",
+                "m_attributes": {
+                    "bindtap": "onCancel",
+                    "catchtouchmove": "preventTouchMove",
+                    "class": "modal-mask",
+                    "wx:if": "{{showSendModal}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "onCancel",
+                    "class": "btn-cancel",
+                    "data-status": "cancel"
+                },
+                "m_data": [
+                    "\u53d6\u6d88"
+                ]
             }
         ],
         "preventTouchMove": [
             {
                 "m_details": {},
-                "m_type": "touchmove"
+                "m_type": "touchmove",
+                "m_tag_name": "view",
+                "m_xpath": "/view",
+                "m_attributes": {
+                    "bindtap": "onCancel",
+                    "catchtouchmove": "preventTouchMove",
+                    "class": "modal-mask",
+                    "wx:if": "{{showSendModal}}"
+                },
+                "m_data": []
             }
         ],
         "inputValue": [
@@ -2162,7 +4353,15 @@
                     "cursor": 11,
                     "keyCode": 68
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/input",
+                "m_attributes": {
+                    "bindinput": "inputValue",
+                    "class": "input",
+                    "type": "text"
+                },
+                "m_data": []
             }
         ],
         "onSend": [
@@ -2171,7 +4370,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "onSend",
+                    "class": "btn-confirm",
+                    "data-status": "confirm"
+                },
+                "m_data": [
+                    "\u53d1\u9001"
+                ]
             }
         ]
     },
@@ -2182,7 +4391,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "goBack",
+                    "class": "btn"
+                },
+                "m_data": [
+                    "\u8fd4\u56de\u8ba2\u5355\u5217\u8868"
+                ]
             }
         ]
     },
@@ -2193,14 +4411,32 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "navigateTo",
+                    "class": "location",
+                    "data-url": "/pages/nearby-shop/switchcity/switchcity?city={{nowCity}}"
+                },
+                "m_data": [
+                    "\n\t\t\t\t"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/scroll-view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "navigateTo",
+                    "class": "row1",
+                    "data-url": "/pages/shop/detail/detail?id={{item.shopId}}"
+                },
+                "m_data": []
             }
         ],
         "bindKeyInput": [
@@ -2210,7 +4446,15 @@
                     "cursor": 11,
                     "keyCode": 68
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "bindKeyInput",
+                    "placeholder": "\u8f93\u5165\u5730\u5740\u5bfb\u627e\u9644\u8fd1\u95e8\u5e97",
+                    "type": "text"
+                },
+                "m_data": []
             }
         ],
         "getShopPoiList": [
@@ -2219,7 +4463,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/view/view/image",
+                "m_attributes": {
+                    "bindtap": "getShopPoiList",
+                    "mode": "widthFix",
+                    "src": "/images/icon/search.png",
+                    "style": "width:32rpx;height:32rpx;margin-right:12rpx;padding:30rpx;"
+                },
+                "m_data": []
             }
         ],
         "lower": [
@@ -2227,7 +4480,16 @@
                 "m_details": {
                     "direction": "bottom"
                 },
-                "m_type": "scrolltolower"
+                "m_type": "scrolltolower",
+                "m_tag_name": "scroll-view",
+                "m_xpath": "/view/scroll-view",
+                "m_attributes": {
+                    "bindscrolltolower": "lower",
+                    "bindscrolltoupper": "upper",
+                    "class": "shop-list",
+                    "scrolly": "true"
+                },
+                "m_data": []
             }
         ],
         "upper": [
@@ -2235,7 +4497,16 @@
                 "m_details": {
                     "direction": "top"
                 },
-                "m_type": "scrolltoupper"
+                "m_type": "scrolltoupper",
+                "m_tag_name": "scroll-view",
+                "m_xpath": "/view/scroll-view",
+                "m_attributes": {
+                    "bindscrolltolower": "lower",
+                    "bindscrolltoupper": "upper",
+                    "class": "shop-list",
+                    "scrolly": "true"
+                },
+                "m_data": []
             }
         ],
         "openLocation": [
@@ -2244,7 +4515,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/scroll-view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "openLocation",
+                    "class": "address",
+                    "data-shop": "{{item}}",
+                    "wx:if": "{{item.address}}"
+                },
+                "m_data": []
             }
         ],
         "call": [
@@ -2253,7 +4533,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/scroll-view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "call",
+                    "class": "address",
+                    "data-telephone": "{{item.phone}}",
+                    "wx:if": "{{item.phone}}"
+                },
+                "m_data": []
             }
         ],
         "goCategory": [
@@ -2262,7 +4551,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/scroll-view/view/view",
+                "m_attributes": {
+                    "bindtap": "goCategory",
+                    "class": "right",
+                    "data-index": "{{index}}"
+                },
+                "m_data": [
+                    "\u53bb\u9009\u8d2d\n\t\t\t"
+                ]
             }
         ]
     },
@@ -2273,13 +4572,30 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "hotCity",
+                    "class": "thishotText"
+                },
+                "m_data": []
             }
         ],
         "clickLetter": [
             {
                 "m_details": {},
-                "m_type": "touchend"
+                "m_type": "touchend",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "catchtouchend": "clickLetter",
+                    "data-letter": "{{item.name}}",
+                    "style": "color:rgb(217,172,83);font-size:20rpx;",
+                    "wx:for": "{{searchLetter}}",
+                    "wx:key": "index"
+                },
+                "m_data": []
             }
         ],
         "bindScroll": [
@@ -2292,7 +4608,17 @@
                     "scrollTop": 0.0,
                     "scrollWidth": 0.0
                 },
-                "m_type": "scroll"
+                "m_type": "scroll",
+                "m_tag_name": "scroll-view",
+                "m_xpath": "/scroll-view",
+                "m_attributes": {
+                    "bindscroll": "bindScroll",
+                    "scrollintoview": "{{scrollTopId}}",
+                    "scrolltop": "{{scrollTop}}",
+                    "scrolly": "true",
+                    "style": "height:{{winHeight}}px"
+                },
+                "m_data": []
             }
         ],
         "bindHotCity": [
@@ -2301,7 +4627,18 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/scroll-view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "bindHotCity",
+                    "class": "weui-grid",
+                    "data-city": "{{item.city}}",
+                    "data-citycode": "{{item.cityCode}}",
+                    "wx:for": "{{hotcityList}}",
+                    "wx:key": "{{index}}"
+                },
+                "m_data": []
             }
         ],
         "bindCity": [
@@ -2310,7 +4647,21 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/scroll-view/view/view",
+                "m_attributes": {
+                    "bindtap": "bindCity",
+                    "class": "item_city",
+                    "data-city": "{{ct.city}}",
+                    "data-citycode": "{{ct.code}}",
+                    "wx:for": "{{item.cityInfo}}",
+                    "wx:for-item": "ct",
+                    "wx:key": "{{ct.id}}"
+                },
+                "m_data": [
+                    "\n    "
+                ]
             }
         ]
     },
@@ -2321,7 +4672,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/div/image",
+                "m_attributes": {
+                    "bindtap": "preview",
+                    "src": "{{imgUrl}}"
+                },
+                "m_data": []
             }
         ]
     },
@@ -2332,14 +4690,32 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toProdPage",
+                    "class": "prod-name"
+                },
+                "m_data": [
+                    " "
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/van-popup/view/block/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toProdPage",
+                    "class": "prod-name"
+                },
+                "m_data": [
+                    " "
+                ]
             }
         ],
         "openSku": [
@@ -2348,7 +4724,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "catchtap": "openSku",
+                    "class": "prod-info-text-choose {{item.skuName?'':'empty-n'}}",
+                    "data-prod": "{{item}}"
+                },
+                "m_data": []
             }
         ],
         "changeGoodsNumber": [
@@ -2357,7 +4741,18 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "changeGoodsNumber",
+                    "class": "button",
+                    "data-item": "{{item}}",
+                    "wx:if": "{{item.count===1}}"
+                },
+                "m_data": [
+                    "\u6dfb\u52a0"
+                ]
             }
         ],
         "selectNumber": [
@@ -2366,7 +4761,18 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "selectNumber",
+                    "class": "button",
+                    "data-item": "{{item}}",
+                    "wx:elif": "{{item.count>0}}"
+                },
+                "m_data": [
+                    "\u6dfb\u52a0"
+                ]
             }
         ],
         "showPopup": [
@@ -2375,7 +4781,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "showPopup",
+                    "class": "total"
+                },
+                "m_data": [
+                    "\u5df2\u9009\uff1a"
+                ]
             }
         ],
         "toPrevPage": [
@@ -2384,7 +4799,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view",
+                "m_attributes": {
+                    "bindtap": "toPrevPage",
+                    "class": "btn"
+                },
+                "m_data": []
             }
         ],
         "true": [
@@ -2393,7 +4815,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "van-popup",
+                "m_xpath": "/van-popup",
+                "m_attributes": {
+                    "bind:close": "closePopup",
+                    "catchtap": "true",
+                    "position": "bottom",
+                    "show": "{{popupShow}}"
+                },
+                "m_data": []
             }
         ],
         "closePopup": [
@@ -2402,7 +4833,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/van-popup/view/view/view",
+                "m_attributes": {
+                    "bindtap": "closePopup",
+                    "class": "close"
+                },
+                "m_data": []
             }
         ],
         "delGoods": [
@@ -2411,7 +4849,18 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/van-popup/view/block/view/view/view",
+                "m_attributes": {
+                    "bindtap": "delGoods",
+                    "class": "button",
+                    "data-index": "{{index}}",
+                    "data-redemptionid": "{{item.redemptionId}}"
+                },
+                "m_data": [
+                    "\u5220\u9664"
+                ]
             }
         ]
     },
@@ -2422,21 +4871,50 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/mp-halfscreendialog/button",
+                "m_attributes": {
+                    "bindtap": "actionClick",
+                    "class": "item",
+                    "opentype": "share"
+                },
+                "m_data": [
+                    "\u5206\u4eab\u7ed9\u670b\u53cb"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/mp-halfscreendialog/button",
+                "m_attributes": {
+                    "bindtap": "actionClick",
+                    "class": "item",
+                    "data-value": "1"
+                },
+                "m_data": [
+                    "\u751f\u6210\u6d77\u62a5"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/mp-halfscreendialog/button",
+                "m_attributes": {
+                    "bindtap": "actionClick",
+                    "class": "item cancel"
+                },
+                "m_data": [
+                    "\u53d6\u6d88"
+                ]
             }
         ]
     },
@@ -2447,21 +4925,47 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toProdPage",
+                    "class": "prod-pic",
+                    "data-prodid": "{{item.prodId}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toProdPage",
+                    "class": "prodname",
+                    "data-prodid": "{{item.prodId}}"
+                },
+                "m_data": [
+                    "\n                        "
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toProdPage",
+                    "class": "prod-info-cont",
+                    "data-prodid": "{{item.prodId}}"
+                },
+                "m_data": []
             }
         ],
         "navigateRefund": [
@@ -2470,35 +4974,90 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "navigateRefund",
+                    "class": "btn",
+                    "data-item": "{{item}}",
+                    "wx:if": "{{item.itemStatus==1}}"
+                },
+                "m_data": [
+                    "\u552e\u540e\u4e2d"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "navigateRefund",
+                    "class": "btn",
+                    "data-item": "{{item}}",
+                    "wx:if": "{{item.itemStatus==2}}"
+                },
+                "m_data": [
+                    "\u5f85\u9000\u8d27"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "navigateRefund",
+                    "class": "btn",
+                    "data-item": "{{item}}",
+                    "wx:if": "{{item.itemStatus==3}}"
+                },
+                "m_data": [
+                    "\u5df2\u9000\u6b3e"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "navigateRefund",
+                    "class": "btn",
+                    "data-item": "{{item}}",
+                    "wx:if": "{{item.itemStatus==4}}"
+                },
+                "m_data": [
+                    "\u9000\u6b3e\u4e2d"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "navigateRefund",
+                    "class": "btn",
+                    "data-item": "{{item}}",
+                    "wx:if": "{{item.itemStatus==5}}"
+                },
+                "m_data": [
+                    "\u9000\u6b3e\u5931\u8d25"
+                ]
             }
         ],
         "onCancelOrder": [
@@ -2507,14 +5066,38 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "onCancelOrder",
+                    "class": "button",
+                    "data-ordernum": "{{item.primaryOrderNo}}",
+                    "hoverclass": "none",
+                    "wx:if": "{{item.status==1}}"
+                },
+                "m_data": [
+                    "\u53d6\u6d88\u9884\u552e\u5355"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "onCancelOrder",
+                    "class": "apply-service",
+                    "data-ordernum": "",
+                    "hoverclass": "none",
+                    "wx:if": "{{status==1}}"
+                },
+                "m_data": [
+                    "\u53d6\u6d88\u8ba2\u5355"
+                ]
             }
         ],
         "onPayAgain": [
@@ -2523,21 +5106,52 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "onPayAgain",
+                    "class": "button warn",
+                    "data-ordernum": "{{item.primaryOrderNo}}",
+                    "hoverclass": "none",
+                    "wx:if": "{{item.status==1}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/view/view/view/button",
+                "m_attributes": {
+                    "bindtap": "onPayAgain",
+                    "class": "button warn",
+                    "data-ordernum": "{{item.primaryOrderNo}}",
+                    "hoverclass": "none",
+                    "wx:if": "{{item.status==5}}"
+                },
+                "m_data": [
+                    "\u4ed8\u5c3e\u6b3e"
+                ]
             },
             {
                 "m_details": {
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "onPayAgain",
+                    "class": "btn red",
+                    "data-activepaytype": "{{groupList.presaleType===0?'':'depositPay'}}",
+                    "wx:if": "{{status==1}}"
+                },
+                "m_data": []
             }
         ],
         "copyBtn": [
@@ -2546,7 +5160,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "copyBtn",
+                    "class": "copy-btn"
+                },
+                "m_data": [
+                    "\u590d\u5236"
+                ]
             }
         ],
         "applyRefund": [
@@ -2555,7 +5178,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "applyRefund",
+                    "class": "apply-service",
+                    "wx:if": "{{status===5||status===2}}"
+                },
+                "m_data": [
+                    "\u7533\u8bf7\u9000\u6b3e"
+                ]
             }
         ],
         "{{endBalanceStartTime-nowTime>0?'':'onPayAgain'}}": [
@@ -2564,7 +5197,18 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/view/view/view/view/text",
+                "m_attributes": {
+                    "bindtap": "{{endBalanceStartTime-nowTime>0?'':'onPayAgain'}}",
+                    "class": "btn {{endBalanceStartTime-nowTime>0?'disable':'red'}}",
+                    "data-activepaytype": "",
+                    "wx:if": "{{status==5}}"
+                },
+                "m_data": [
+                    "\u4ed8\u5c3e\u6b3e"
+                ]
             }
         ]
     },
@@ -2575,7 +5219,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toAddrListPage",
+                    "class": "delivery-addr "
+                },
+                "m_data": []
             }
         ],
         "toOrderDetailPage": [
@@ -2584,7 +5235,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toOrderDetailPage",
+                    "class": "item-wrap",
+                    "data-ordernum": "{{item.primaryOrderNo}}",
+                    "wx:for": "{{orderItems}}",
+                    "wx:key": "item"
+                },
+                "m_data": []
             }
         ],
         "chooseGift": [
@@ -2593,7 +5254,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "chooseGift",
+                    "class": "edit-gift",
+                    "wx:if": "{{item.itemType==2}}"
+                },
+                "m_data": [
+                    "\u4fee\u6539\u793c\u54c1"
+                ]
             }
         ],
         "bindRemark": [
@@ -2603,7 +5274,14 @@
                     "cursor": 11,
                     "keyCode": 68
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/view/input",
+                "m_attributes": {
+                    "bindinput": "bindRemark",
+                    "placeholder": "\u7ed9\u5356\u5bb6\u7559\u8a00"
+                },
+                "m_data": []
             }
         ],
         "toPay": [
@@ -2612,7 +5290,17 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toPay",
+                    "class": "footer-box",
+                    "wx:if": "{{orderItems.length}}"
+                },
+                "m_data": [
+                    "\u63d0\u4ea4\u8ba2\u5355"
+                ]
             }
         ]
     },
@@ -2623,7 +5311,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "image",
+                "m_xpath": "/view/image",
+                "m_attributes": {
+                    "bindtap": "toExchange",
+                    "src": "{{imgServer}}/coupon_pic/coupon_index.jpg?t={{t}}"
+                },
+                "m_data": []
             }
         ],
         "hideDialog": [
@@ -2632,7 +5327,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/mp-halfscreendialog/view/view/view",
+                "m_attributes": {
+                    "bindtap": "hideDialog",
+                    "class": "btn-content"
+                },
+                "m_data": []
             }
         ],
         "getPhoneNumber": [
@@ -2640,7 +5342,17 @@
                 "m_details": {
                     "errMsg": "getPhoneNumber:fail Error: The mobile phone user bound needs to be verified. Please complete the SMS verification step on the client"
                 },
-                "m_type": "getphonenumber"
+                "m_type": "getphonenumber",
+                "m_tag_name": "button",
+                "m_xpath": "/mp-halfscreendialog/view/view/view/button",
+                "m_attributes": {
+                    "bindgetphonenumber": "getPhoneNumber",
+                    "class": "btn",
+                    "opentype": "getPhoneNumber"
+                },
+                "m_data": [
+                    "\u7ed1\u5b9a\u624b\u673a\u53f7"
+                ]
             }
         ]
     },
@@ -2651,14 +5363,36 @@
                     "cursor": 0,
                     "value": ""
                 },
-                "m_type": "blur"
+                "m_type": "blur",
+                "m_tag_name": "input",
+                "m_xpath": "/view/van-tabs/van-tab/view/view/input",
+                "m_attributes": {
+                    "bindblur": "checkCoupon",
+                    "bindinput": "onCouponCodeInput",
+                    "maxlength": "15",
+                    "placeholder": "\u8bf7\u8f93\u5165\u5361\u53f7",
+                    "type": "text",
+                    "value": "{{couponCode}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
                     "cursor": 0,
                     "value": ""
                 },
-                "m_type": "blur"
+                "m_type": "blur",
+                "m_tag_name": "input",
+                "m_xpath": "/view/van-tabs/van-tab/view/view/input",
+                "m_attributes": {
+                    "bindblur": "checkCoupon",
+                    "bindinput": "onCouponCodeInput",
+                    "maxlength": "15",
+                    "placeholder": "\u8bf7\u8f93\u5165\u5361\u53f7",
+                    "type": "text",
+                    "value": "{{couponCode}}"
+                },
+                "m_data": []
             }
         ],
         "onCouponCodeInput": [
@@ -2668,7 +5402,18 @@
                     "cursor": 11,
                     "keyCode": 68
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/van-tabs/van-tab/view/view/input",
+                "m_attributes": {
+                    "bindblur": "checkCoupon",
+                    "bindinput": "onCouponCodeInput",
+                    "maxlength": "15",
+                    "placeholder": "\u8bf7\u8f93\u5165\u5361\u53f7",
+                    "type": "text",
+                    "value": "{{couponCode}}"
+                },
+                "m_data": []
             },
             {
                 "m_details": {
@@ -2676,7 +5421,18 @@
                     "cursor": 11,
                     "keyCode": 68
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/van-tabs/van-tab/view/view/input",
+                "m_attributes": {
+                    "bindblur": "checkCoupon",
+                    "bindinput": "onCouponCodeInput",
+                    "maxlength": "15",
+                    "placeholder": "\u8bf7\u8f93\u5165\u5361\u53f7",
+                    "type": "text",
+                    "value": "{{couponCode}}"
+                },
+                "m_data": []
             }
         ],
         "onReceiverInput": [
@@ -2686,7 +5442,17 @@
                     "cursor": 11,
                     "keyCode": 68
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/van-tabs/van-tab/view/view/input",
+                "m_attributes": {
+                    "bindinput": "onReceiverInput",
+                    "maxlength": "15",
+                    "placeholder": "\u8bf7\u8f93\u5165\u59d3\u540d",
+                    "type": "text",
+                    "value": "{{receiver}}"
+                },
+                "m_data": []
             }
         ],
         "onMobileInput": [
@@ -2696,7 +5462,17 @@
                     "cursor": 10,
                     "keyCode": 48
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/van-tabs/van-tab/view/view/input",
+                "m_attributes": {
+                    "bindinput": "onMobileInput",
+                    "maxlength": "11",
+                    "placeholder": "\u8bf7\u8f93\u516511\u4f4d\u624b\u673a\u53f7\u7801",
+                    "type": "number",
+                    "value": "{{mobile}}"
+                },
+                "m_data": []
             }
         ],
         "translate": [
@@ -2705,7 +5481,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/van-tabs/van-tab/view/view",
+                "m_attributes": {
+                    "bindtap": "translate",
+                    "class": "section"
+                },
+                "m_data": []
             }
         ],
         "onAddrInput": [
@@ -2715,7 +5498,16 @@
                     "cursor": 11,
                     "keyCode": 68
                 },
-                "m_type": "input"
+                "m_type": "input",
+                "m_tag_name": "input",
+                "m_xpath": "/view/van-tabs/van-tab/view/view/input",
+                "m_attributes": {
+                    "bindinput": "onAddrInput",
+                    "placeholder": "\u5982\u697c\u53f7/\u5355\u5143/\u95e8\u724c\u53f7",
+                    "type": "text",
+                    "value": "{{addr}}"
+                },
+                "m_data": []
             }
         ],
         "goSelectShop": [
@@ -2724,7 +5516,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/van-tabs/van-tab/view/view",
+                "m_attributes": {
+                    "bindtap": "goSelectShop",
+                    "class": "delivery-addr"
+                },
+                "m_data": []
             }
         ],
         "onSureExchange": [
@@ -2733,7 +5532,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "onSureExchange",
+                    "class": "keep btn"
+                },
+                "m_data": []
             }
         ],
         "onAlreadyAddr": [
@@ -2742,7 +5548,15 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "onAlreadyAddr",
+                    "class": "clear btn",
+                    "wx:if": "{{deliverType===0}}"
+                },
+                "m_data": []
             }
         ],
         "cancel": [
@@ -2751,7 +5565,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/mp-halfscreendialog/view/view/text",
+                "m_attributes": {
+                    "catchtap": "cancel",
+                    "class": "left-bt"
+                },
+                "m_data": [
+                    "\u53d6\u6d88"
+                ]
             }
         ],
         "confirm": [
@@ -2760,7 +5583,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "text",
+                "m_xpath": "/mp-halfscreendialog/view/view/text",
+                "m_attributes": {
+                    "catchtap": "confirm",
+                    "class": "right-bt {{loading?'loading':''}}"
+                },
+                "m_data": [
+                    "\u786e\u5b9a"
+                ]
             }
         ],
         "bindChange": [
@@ -2768,7 +5600,16 @@
                 "m_details": {
                     "value": []
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "picker-view",
+                "m_xpath": "/mp-halfscreendialog/view/picker-view",
+                "m_attributes": {
+                    "bindchange": "bindChange",
+                    "catchtap": "nono",
+                    "indicatorstyle": "height: 50rpx;",
+                    "value": "{{value}}"
+                },
+                "m_data": []
             }
         ],
         "nono": [
@@ -2777,7 +5618,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "picker-view",
+                "m_xpath": "/mp-halfscreendialog/view/picker-view",
+                "m_attributes": {
+                    "bindchange": "bindChange",
+                    "catchtap": "nono",
+                    "indicatorstyle": "height: 50rpx;",
+                    "value": "{{value}}"
+                },
+                "m_data": []
             }
         ]
     },
@@ -2788,7 +5638,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view",
+                "m_attributes": {
+                    "bindtap": "toHome",
+                    "style": "height:100vh;"
+                },
+                "m_data": []
             }
         ]
     },
@@ -2799,7 +5656,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "toProdPage",
+                    "class": "item-cont",
+                    "data-prodid": "{{item.prodId}}",
+                    "wx:for": "{{orderItemDtos}}"
+                },
+                "m_data": []
             }
         ],
         "openRefundReason": [
@@ -2808,7 +5674,14 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view/view/view",
+                "m_attributes": {
+                    "bindtap": "openRefundReason",
+                    "class": "item"
+                },
+                "m_data": []
             }
         ],
         "remarkChange": [
@@ -2816,7 +5689,15 @@
                 "m_details": {
                     "value": "hello world"
                 },
-                "m_type": "change"
+                "m_type": "change",
+                "m_tag_name": "input",
+                "m_xpath": "/view/view/view/view/view/input",
+                "m_attributes": {
+                    "bindchange": "remarkChange",
+                    "class": "item-txt",
+                    "type": "text"
+                },
+                "m_data": []
             }
         ],
         "submit": [
@@ -2825,7 +5706,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "view",
+                "m_xpath": "/view/view/view",
+                "m_attributes": {
+                    "bindtap": "submit",
+                    "class": "order-detail-footer"
+                },
+                "m_data": [
+                    "\u63d0\u4ea4\n      "
+                ]
             }
         ]
     },
@@ -2836,7 +5726,16 @@
                     "x": 0.0,
                     "y": 0.0
                 },
-                "m_type": "tap"
+                "m_type": "tap",
+                "m_tag_name": "button",
+                "m_xpath": "/view/view/button",
+                "m_attributes": {
+                    "bindtap": "goBack",
+                    "class": "btn"
+                },
+                "m_data": [
+                    "\u8fd4\u56de\u6211\u7684\u9884\u552e\u5355"
+                ]
             }
         ]
     }

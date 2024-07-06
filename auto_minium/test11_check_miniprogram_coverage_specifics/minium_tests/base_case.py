@@ -1,5 +1,4 @@
-import minium
-
+import minium, json
 
 class BaseCase(minium.MiniTest):
     """
@@ -39,6 +38,7 @@ class BaseCase(minium.MiniTest):
 
     @classmethod
     def tearDownClass(cls):
+        cls.mini.shutdown()
         super(BaseCase, cls).tearDownClass()
 
     def setUp(self):
@@ -46,3 +46,8 @@ class BaseCase(minium.MiniTest):
 
     def tearDown(self):
         pass
+
+    def get_json_data(self, file_path : str):
+        with open(file_path, 'r', encoding='utf-8') as file:
+            json_data = file.read()
+        return json.loads(json_data)
