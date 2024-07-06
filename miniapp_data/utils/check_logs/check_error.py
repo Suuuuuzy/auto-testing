@@ -12,7 +12,7 @@ matches = re.findall(pattern, content)
 matches = set(matches)
 wxpay_list = (matches)
 
-with open('auto_minium/test5_find_pages_and_inputs/autominium_test.log') as f:
+with open('../../../auto_minium/method_iterator/autominium_test.log') as f:
     content = f.read()
 paras = content.split('\n\n')
 # print(paras[0])

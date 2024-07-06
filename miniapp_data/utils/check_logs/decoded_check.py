@@ -14,6 +14,15 @@ logging.basicConfig(
     datefmt='%Y-%m-%d %H:%M:%S',
 )
 
+sources = []
+sinks = ["sensWechatApi"]
+
+source_sink_pairs = [
+    "sensWechatApi": "navigate",
+    "onLaunch": "all",
+    
+]
+
 
 
 class CAPNPParser:
