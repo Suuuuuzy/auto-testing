@@ -1,4 +1,4 @@
-import os, re
+import os, re, json
 from tqdm import tqdm
 import multiprocessing as mp
 import logging
@@ -17,7 +17,7 @@ def handle_packages(pkgs):
         preprocess(pkg)
 
 
-if __name__ == '__main__':
+def preprocess_all():
     # logger.info('Started')
     ROOT = "/media/dataj/miniapp_data/wxapkgs-42w-unpacked"
     files = os.listdir(ROOT)
@@ -38,4 +38,20 @@ if __name__ == '__main__':
     batched_package_names = [package_names[i:i+batch_size] for i in range(0, len(package_names), batch_size)]
     with mp.Pool(processes=processes) as pool:
         pool.map(handle_packages, batched_package_names)
+
+def proprocess_error():
+    # logger.info('Started')
+    ROOT = "/media/dataj/miniapp_data/wxapkgs-42w-unpacked"
+    with open("check_logs/error_appids.txt") as f:
+        files = json.load(f) 
+    files = [os.path.join(ROOT, i) for i in files]  
+    logger.info(f'Start preprocessing {len(files)} packages')    
+    package_names = files
+    processes = 128
+    batch_size = (len(package_names) + processes - 1) // processes
+    batched_package_names = [package_names[i:i+batch_size] for i in range(0, len(package_names), batch_size)]
+    with mp.Pool(processes=processes) as pool:
+        pool.map(handle_packages, batched_package_names)
         
+if __name__ == '__main__':
+    proprocess_error()
