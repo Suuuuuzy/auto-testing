@@ -229,7 +229,7 @@ def main():
         for record in parsed_data:
             for range in record['message']['jsSinkTainted']['taintSource']['ranges']:
                 source_type = range['type'] 
-                if source_type in ['sensWechatApi', 'formSubmit', 'inputBox']: #, 'onLaunch']:
+                if source_type in ['sensWechatApi', 'formSubmit', 'inputBox', 'onLaunch']:
                     # if source_type not in dataflow_cnt:
                     #     dataflow_cnt[source_type] = {}
                     for content_log in record["message"]["jsSinkTainted"]["targetString"]["segments"]:
