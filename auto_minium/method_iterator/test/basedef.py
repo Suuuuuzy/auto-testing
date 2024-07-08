@@ -4,10 +4,15 @@ import minium
 
 class BaseDef(minium.MiniTest):
     
-    def navigate_to_open(self, route):
+    def navigate_to_open(self, route, query=None):
         """以导航的方式跳转到指定页面,不允许跳转到 tabbar 页面,支持相对路径和绝对路径, 小程序中页面栈最多十层"""
         try:
-            self.app.navigate_to(route)
+            # query = {"value1": "1", "value2": "dd"}
+            # page = self.app.navigate_to("/pages/testapp/testapp", query)
+            # if query:
+            self.app.navigate_to(route, query)
+            # else:
+                # self.app.navigate_to(route)
         except Exception as e:
             exception_message = e.args[0] if e.args else str(e)
             if (exception_message == "can not navigateTo a tabbar page"):
@@ -19,9 +24,12 @@ class BaseDef(minium.MiniTest):
         """关闭当前页面，重定向到应用内的某个页面,不允许跳转到 tabbar 页面"""
         self.app.redirect_to(route)
     
-    def relaunch_to_open(self, route):
+    def relaunch_to_open(self, route, query=None):
         """关闭所有页面，打开到应用内的某个页面"""
-        self.app.relaunch(route)
+        # if query:
+        self.app.relaunch(route, query)
+        # else:
+            # self.app.navigate_to(route)
     
     def switch_tab_open(self, route):
         """跳转到 tabBar 页面,会关闭其他所有非 tabBar 页面"""
