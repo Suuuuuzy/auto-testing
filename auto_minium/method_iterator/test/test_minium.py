@@ -20,7 +20,7 @@ class Minium_Query(BaseDef):
         )
         
     def test_methods(self):
-        text_input = """<script\x0Atype="text/javascript">javascript:alert("minium");</script>"""
+        text_input = "javascriptMinium"
         # try to find bind_methods_navi.json first
         bind_json_file = os.path.join(self.mini.project_path, "bind_methods_navi.json")
         # if it does not exist, use bind_methods.json
@@ -31,6 +31,9 @@ class Minium_Query(BaseDef):
         pages = self.find_all_pages()
         pages = ['/' + i for i in pages]
         finished_pages = set()
+        visited_pages = set()
+        all_pages_length = len(pages)
+        all_pages = set(pages)
         
         def get_arg(trigger, item):
             if trigger not in ["bindsubmit"]:
@@ -98,18 +101,31 @@ class Minium_Query(BaseDef):
                         dealWithPage(cur_path)
                         return
            
-                    
-        
+        time.sleep(10) # give it some time for onLaunch?  
+        query = {'fakeKey': 'fakeValue'}
         while len(pages)>0:
             page = pages[0]
             stack = self.app.get_page_stack() 
             if len(stack)>9:
-                self.relaunch_to_open(page)
+                self.relaunch_to_open(page, query)
             else:
-                self.navigate_to_open(page)
+                self.navigate_to_open(page, query)
             self.logger.info(f'[+] Navigate through API, to: {page}')
-            time.sleep(2) # wait until navigation takes effect
+            time.sleep(5) # wait until navigation takes effect
+            visited_pages.add(page)
             dealWithPage(page)
+        
+        # visit the rest pages if they have not been visited with query
+        if len(visited_pages)!=all_pages_length:
+          for page in all_pages-visited_pages:
+                stack = self.app.get_page_stack() 
+                if len(stack)>9:
+                    self.relaunch_to_open(page, query)
+                else:
+                    self.navigate_to_open(page, query)
+                self.logger.info(f'[+] Navigate through API without dealWithPage, to: {page}')
+                time.sleep(5) # wait until navigation takes effect
+            
         
         
     def tearDown(self):

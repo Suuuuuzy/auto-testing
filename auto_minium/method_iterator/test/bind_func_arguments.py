@@ -1,5 +1,5 @@
-text_input = """<script\x0Atype="text/javascript">javascript:alert("minium");</script>"""
-
+# text_input = """<script\x0Atype="text/javascript">javascript:alert("minium");</script>"""
+text_input = "javascriptMinium"
 # catchtap
 bindtap_arg = {
                   "type":"tap",
