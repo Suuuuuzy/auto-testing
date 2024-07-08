@@ -79,16 +79,16 @@ class Minium_Query(BaseDef):
                 while len(items)>0:
                     item = items[0]
                     try:
-                        self.logger.info(f'[+] Try calling method {item["handler"]} in page {page}, current page: {self.app.get_current_page()}')
+                        # self.logger.info(f'[+] Try calling method {item["handler"]} in page {page}, current page: {self.app.get_current_page()}')
                         if page!=self.app.get_current_page().path:
                             self.logger.error(f'[+] Calling method in different pages')
                             stack = self.app.get_page_stack() 
-                            self.logger.error(f'[+] Current stack: {stack}')
+                            # self.logger.error(f'[+] Current stack: {stack}')
                         result  = self.page.call_method(item["handler"], get_arg(trigger, item))
                         self.logger.info(f'[+] Call method {item["handler"]}, result: {result}')
-                    except:
+                    except Exception as e:
                         self.logger.info(f'[+] Call method error {item["handler"]}')
-                        logger_main.error(f'[+] Call method error {item["handler"]} in miniapp {self.mini.project_path}')
+                        logger_main.error(f'[+] Call method: {item["handler"]} error: {e} in miniapp {self.mini.project_path}')
                     items.remove(item)
                     self.logger.info(f'[+] There are {len(items)} methods for {trigger} left on page: {page}')
                     time.sleep(2) # wait until the call_method takes effect (if the call method is navigation)
