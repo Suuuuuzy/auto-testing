@@ -93,7 +93,7 @@ def handle_wxapkgs(package_names):
     for package in tqdm(all_unpacked_packages):
         if not os.path.exists(os.path.join(output_dir, package)):
             try:
-                decompile_with_self_built_unveilr(os.path.join(input_dir, package+".wxapkg"), os.path.join(output_dir, package))
+                decompile_wxapkg_with_unveilr(os.path.join(input_dir, package+".wxapkg"), os.path.join(output_dir, package))
             except Exception as e:
                 logger.error(f'package {package} encountering error when trying to unpack: {str(e)}')
 
@@ -127,17 +127,17 @@ def get_not_in_log():
         package_names = json.load(fp)
     
     # not in log
-    # with open('unpack_with_unveil.log') as f:
-    #     content = f.read()
-    #     # Regular expression pattern to match and extract any string between the directory path and the .wxapkg extension
-    #     pattern = r"/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w/([^\.]+)\.wxapkg"
-    #     # Search for the pattern in the input string
-    #     matches = re.findall(pattern, content)
-    #     matches = set(matches)
-    # package_names = [i for i in package_names if i not in matches]
+    with open('unpack_with_unveil.log') as f:
+        content = f.read()
+        # Regular expression pattern to match and extract any string between the directory path and the .wxapkg extension
+        pattern = r"/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w/([^\.]+)\.wxapkg"
+        # Search for the pattern in the input string
+        matches = re.findall(pattern, content)
+        matches = set(matches)
+    package_names = [i for i in package_names if i not in matches]
     
     # not unpacked
-    # package_names = [i for i in package_names if not os.path.exists(os.path.join(output_dir, i))]
+    package_names = [i for i in package_names if not os.path.exists(os.path.join(output_dir, i))]
     
     print(len(package_names))
     return package_names
