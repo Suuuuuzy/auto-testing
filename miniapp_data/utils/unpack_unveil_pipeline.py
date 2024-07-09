@@ -60,16 +60,28 @@ def decompile_wxapkg_with_unveilr(wxapkg, output_path=None):
         cmdline = [decompiler_tool, wxapkg, '-o', output_path, '-f']
     else:
         cmdline = [decompiler_tool, wxapkg, '-f']
-
     try:
         out = subprocess.check_output(cmdline)
-        logger.info(out)
+        # logger.info(out)
         logger.info('Decompile Success: {}'.format(wxapkg))
-        return True
     except Exception as e:
         logger.error(e)
-        return False
 
+def decompile_with_self_built_unveilr(wxapkg, output_path=None):
+    node_tool = 'node'
+    decompiler_tool = '/media/data4/jianjia_data4/miniapp_data/unpack/unveilr/bin/index.js'
+    if output_path is not None:
+        cmdline = [node_tool, decompiler_tool, wxapkg, '-o', output_path, '-f']
+    else:
+        cmdline = [decompiler_tool, wxapkg, '-f']
+    # print(cmdline)
+    try:
+        out = subprocess.check_output(cmdline)
+        # logger.info(out)
+        logger.info('Decompile Success: {}'.format(wxapkg))
+    except Exception as e:
+        logger.error(e)
+    
 output_dir = '/media/dataj/miniapp_data/wxapkgs-42w-unpacked/'
 input_dir = "/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w/"
 
@@ -81,7 +93,7 @@ def handle_wxapkgs(package_names):
     for package in tqdm(all_unpacked_packages):
         if not os.path.exists(os.path.join(output_dir, package)):
             try:
-                decompile_wxapkg_with_unveilr(os.path.join(input_dir, package+".wxapkg"), os.path.join(output_dir, package))
+                decompile_with_self_built_unveilr(os.path.join(input_dir, package+".wxapkg"), os.path.join(output_dir, package))
             except Exception as e:
                 logger.error(f'package {package} encountering error when trying to unpack: {str(e)}')
 
@@ -99,14 +111,7 @@ def prepare_split_list(num_thread):
         os.system("rm -rf {}".format(tmp_list_dir))
     os.system("mkdir {}".format(tmp_list_dir))
     package_list = get_not_in_log()
-
-    num_packages = len(package_list) 
-    chunk_size = math.floor(num_packages / num_thread)
-    sub_package_lists = [[] for i in range(num_thread)]
-    file_pointer = 0
-    # for package in package_list:
-    #     sub_package_lists[file_pointer % num_thread].append(package)
-    #     file_pointer += 1
+    
     batch_size = (len(package_list) + num_thread - 1) // num_thread
     batched_package_list = [package_list[i:i+batch_size] for i in range(0, len(package_list), batch_size)]
 
@@ -120,17 +125,20 @@ def prepare_split_list(num_thread):
 def get_not_in_log():
     with open(appid_file, 'r') as fp:
         package_names = json.load(fp)
+    
     # not in log
-    with open('unpack_with_unveil.log') as f:
-        content = f.read()
-        # Regular expression pattern to match and extract any string between the directory path and the .wxapkg extension
-        pattern = r"/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w/([^\.]+)\.wxapkg"
-        # Search for the pattern in the input string
-        matches = re.findall(pattern, content)
-        matches = set(matches)
-    package_names = [i for i in package_names if i not in matches]
+    # with open('unpack_with_unveil.log') as f:
+    #     content = f.read()
+    #     # Regular expression pattern to match and extract any string between the directory path and the .wxapkg extension
+    #     pattern = r"/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w/([^\.]+)\.wxapkg"
+    #     # Search for the pattern in the input string
+    #     matches = re.findall(pattern, content)
+    #     matches = set(matches)
+    # package_names = [i for i in package_names if i not in matches]
+    
     # not unpacked
-    package_names = [i for i in package_names if not os.path.exists(os.path.join(output_dir, i))]
+    # package_names = [i for i in package_names if not os.path.exists(os.path.join(output_dir, i))]
+    
     print(len(package_names))
     return package_names
 
@@ -148,7 +156,7 @@ def main():
         
         for i in range(num_thread):
             cur_list_path = os.path.join("unpack_tmp_split_list", str(i))
-            cur_cmd = f'activate; python unpack_unveil_pipeline.py -f {cur_list_path}'
+            cur_cmd = f'python unpack_unveil_pipeline.py -f {cur_list_path}'
             # screen -dmS my_session bash -c 'activate; python unpack_unveil_pipeline.py -f unpack_tmp_split_list/4'
             print(f"screen -dmS unpack_{i} bash -c '{cur_cmd}'")
             os.system(f"screen -dmS unpack_{i} bash -c '{cur_cmd}'")
