@@ -30,6 +30,7 @@ if __name__ == '__main__':
     logfileName = 'wxapkgs-42w-unpacked-preprocessing.log'
     logging.basicConfig(filename=logfileName, level=logging.INFO)
     logger.info('Started')
+    # wxapkg_path = "/media/dataj/miniapp_data/wxapkgs-42w-unpacked/" + sys.argv[1]
     wxapkg_path = sys.argv[1]
     preprocess(wxapkg_path)
     logger.info('preprocessing finished\n')
