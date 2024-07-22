@@ -1,6 +1,6 @@
 from basedef import BaseDef
 import os, json, time
-from bind_func_arguments import *
+from bind_func_arguments import trigger_arg_dic
 import logging
 logger_main = logging.getLogger(__name__)
 logging.basicConfig(
@@ -20,14 +20,13 @@ class Minium_Query(BaseDef):
         )
         
     def test_methods(self):
+        eles_in_pages = {} # a global variable to record eles in pages
         text_input = "javascriptMinium"
-        # try to find bind_methods_navi.json first
-        bind_json_file = os.path.join(self.mini.project_path, "bind_methods_navi.json")
-        # if it does not exist, use bind_methods.json
-        if not os.path.exists(bind_json_file):
+        bind_json_file = os.path.join(self.mini.project_path, "bind_methods_navi.json") # try to find bind_methods_navi.json first
+        if not os.path.exists(bind_json_file): # if it does not exist, use bind_methods.json
             bind_json_file = os.path.join(self.mini.project_path, "bind_methods.json")
         with open(bind_json_file) as f:
-            bind_methods = json.load(f)
+            bind_methods = json.load(f) # a global variable to record binding methods in pages
         pages = self.find_all_pages()
         pages = ['/' + i for i in pages]
         finished_pages = set()
@@ -36,38 +35,55 @@ class Minium_Query(BaseDef):
         all_pages = set(pages)
         
         def get_arg(trigger, item):
-            if trigger not in ["bindsubmit"]:
-                return trigger_arg_dic[trigger]
-            elif trigger == "bindsubmit":
-                arg = trigger_arg_dic[trigger]
-                form_data = item["form_dic"]
-                for key in form_data:
-                    form_data[key] = text_input 
-                arg["detail"]["value"] = form_data
-                return arg
-                
-        def dealWithPage(page):
+            return trigger_arg_dic[trigger]
+            # if trigger not in ["bindsubmit"]:
+            #     return trigger_arg_dic[trigger]
+            # elif trigger == "bindsubmit":
+            #     arg = trigger_arg_dic[trigger]
+            #     form_data = item["form_dic"]
+            #     for key in form_data:
+            #         form_data[key] = text_input 
+            #     arg["detail"]["value"] = form_data
+            #     return arg
+        
+        def dealWithInput(inputs):
+            # 1. inputs
+            # inputs = self.find_all_inputs()
+            self.logger.info(f"[+] There are {len(inputs)} inputs left on page {page}")
+            while len(inputs)>0:
+                cur_input = inputs[0]
+                try:
+                    cur_input.input(text_input, with_confirm=True)
+                    self.logger.info(f'[+] Action: input in page: {page}')
+                except Exception as e:
+                    self.logger.error(f'[+] Encountering error: {e} during input in page: {page}')
+                inputs.remove(cur_input)
+                cur_path = self.app.get_current_page().path
+                if page!=cur_path:
+                    dealWithPage(cur_path)
+                    
+        def dealWithForm(forms):
+            # 2. forms
+            # forms = self.find_all_forms()
+            self.logger.info(f"[+] There are {len(forms)} forms left on page {page}")
+            while len(forms)>0:
+                form_block = forms[0]
+                try:
+                    inputElements = self.find_all_inputs_from_component(form_block)
+                    inputArrays = {}
+                    for inputElement in inputElements:
+                        inputArrays[inputElement.name] = text_input
+                    form_block.trigger("submit", {"value" : inputArrays})
+                    self.logger.info(f'[+] Action: submit a form in page: {page}')
+                except Exception as e:
+                    self.logger.error(f'[+] Encountering error: {e} during submit in page: {page}')
+                forms.remove(form_block)
+                cur_path = self.app.get_current_page().path
+                if page!=cur_path:
+                    dealWithPage(cur_path)
+                    
+        def dealWithOtherMethods(triggers, page):
             page_in_json = page[1:]
-            if page in finished_pages:
-                return
-            bindings_cnt = 0
-            for trigger in bind_methods[page_in_json]["binding_event"]:
-                # if trigger not in ["bindsubmit"]:
-                bindings_cnt += len(bind_methods[page_in_json]["binding_event"][trigger])
-            if bindings_cnt==0:
-                finished_pages.add(page)
-                pages.remove(page)
-                self.logger.info(f'[+] {page} finishes')
-                return
-            
-            # we want to do bindsubmit, bindinput, bindconfirm first? then bindtap, bindblur?
-            triggers = [i for i in bind_methods[page_in_json]["binding_event"]]
-            prioritized_triggers = ["bindinput", "bindconfirm", "bindsubmit"]
-            # if trigger in prioritized_triggers exists in triggers, move them to the front
-            for trigger in prioritized_triggers:
-                if trigger in triggers:
-                    triggers.remove(trigger)
-                    triggers.insert(0, trigger)
             self.logger.info(f'[+] See triggers {triggers}')
             for trigger in triggers:
                 if trigger not in trigger_arg_dic:
@@ -100,7 +116,44 @@ class Minium_Query(BaseDef):
                         # when this returns, we assume the page is still here, but it's not the case!
                         dealWithPage(cur_path)
                         return
-           
+                    
+        def dealWithPage(page):
+            page_in_json = page[1:]
+            if page in finished_pages:
+                return
+            if page not in eles_in_pages:
+                inputs = self.find_all_inputs()
+                forms = self.find_all_forms()
+                # btns = self.find_all_buttons()
+                eles_in_pages[page] = {"inputs":inputs, "forms":forms}
+                
+            if page_in_json not in bind_methods:
+                finished_pages.add(page)
+                pages.remove(page)
+                logger_main.error(f'[+] {page_in_json} not in bind_methods')
+                return
+            # page finish checking
+            bindings_cnt = 0
+            prioritized_triggers = ["bindinput", "bindconfirm", "bindsubmit"]
+            triggers = [i for i in bind_methods[page_in_json]["binding_event"] if i not in prioritized_triggers]
+            for trigger in triggers:
+                # if trigger not in ["bindsubmit"]:
+                bindings_cnt += len(bind_methods[page_in_json]["binding_event"][trigger])
+            ele_cnt = 0
+            for ele_type in eles_in_pages[page]:
+                ele_cnt += len(eles_in_pages[page][ele_type])
+            if bindings_cnt==0 and ele_cnt==0:
+                finished_pages.add(page)
+                pages.remove(page)
+                self.logger.info(f'[+] {page} finishes')
+                return
+            
+            # for the triggers as input, we fire the event because that's where we taint e.detail.value
+            dealWithInput(eles_in_pages[page]["inputs"])
+            dealWithForm(eles_in_pages[page]["forms"])
+            dealWithOtherMethods(triggers, page)
+            
+        # test starts here
         time.sleep(10) # give it some time for onLaunch?  
         query = {'fakeKey': 'fakeValue'}
         while len(pages)>0:

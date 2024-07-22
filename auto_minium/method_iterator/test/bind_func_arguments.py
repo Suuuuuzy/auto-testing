@@ -27,7 +27,7 @@ bindblur_arg = {
 
 bindinput_arg = {
     "type":"input",
-    "timeStamp":1719778404943,
+    "timeStamp":1721618450239, # was it because the timestamp is outdated??
     "detail":{"value":text_input,"cursor":7,"keyCode":86},
     "target":{"id":"","dataset":{},"offsetTop":18,"offsetLeft":32},
     "currentTarget":{"id":"","dataset":{},"offsetTop":18,"offsetLeft":32},
@@ -115,10 +115,10 @@ trigger_arg_dic = {
                 "bindtap": bindtap_arg,
                 "catchtap": bindtap_arg,
                 "bindblur": bindblur_arg,
-                "bindinput": bindinput_arg,
-                "bindsubmit": bindsubmit_arg,
-                "catchsubmit": bindsubmit_arg,
-                "bindconfirm": bindconfirm_arg,
+                # "bindinput": bindinput_arg,
+                # "bindsubmit": bindsubmit_arg,
+                # "catchsubmit": bindsubmit_arg,
+                # "bindconfirm": bindconfirm_arg,
                 "bindlongtap": bindlongtap_arg,
                 "bindtouchstart": bindtouchstart_arg,
                 "bindtouchmove": bindtouchmove_arg,
