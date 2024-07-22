@@ -21,15 +21,13 @@ def format_wxml_style_attribute(file_path):
         # Input string
         # input_string = 'wx:key="{{index}}"'
         # output_string = 'wx:key="index"'
-
         # Regular expression pattern to match wx:key="{{index}}"
-        pattern = r'wx:key="\{\{(.*)\}\}"'
-        
+        pattern = r'wx:key=([\'\"])\{\{([^\}]*)\}\}([\'\"])'
         # Replace the matched pattern with wx:key="index"
-        content = re.sub(pattern, r'wx:key="\1"', content)
+        content = re.sub(pattern, r'wx:key=\1\2\3', content)
 
-        # Regular expression to match the pattern and remove unnecessary line breaks and spaces
-        pattern = r"'\s*(.*?)\s*'"
+        # Regular expression to match the pattern and remove unnecessary line breaks, do not remove spaces!
+        pattern = r"'\n*(.*?)\n*'"
         replacement = "'" + r'\1' + "'"
         # Perform the substitution
         content = re.sub(pattern, replacement, content)
@@ -44,7 +42,9 @@ def format_wxml_style_attribute(file_path):
         # <view class="box-center-des">{{'分享好友
         #       领取'+(list.share||0)+'元券(满'+(list.share_full||0)+'立减)'}}</view>        
         def remove_line_breaks_inside_quotes(match):
-            return re.sub(r"'[^']*'", lambda m: m.group(0).replace('\n', '').replace(' ', ''), match.group(0))
+            pattern = r'\n[\s]+'
+            res = re.sub(pattern, r'', match.group(0))
+            return res
 
         # Regular expression to find the {{}} blocks
         content = re.sub(r"{{[^{}]*}}", remove_line_breaks_inside_quotes, content)
@@ -59,5 +59,5 @@ def format_wxml_style_attribute(file_path):
 
 # Example usage
 if __name__ == '__main__':
-    WXML_FILE_PATH = '/Users/jianjia/WeChatProjects/wxa1dcf85f43ea3263-pc/make_speed/other/activity/activity.wxml'
+    WXML_FILE_PATH = '/media/dataj/miniapp_data/CMRF_groundtruth/fp_dataset_unpack/wx0a5f95accb6079e1_org/pages/shop/cart/goodslist.wxml'
     format_wxml_style_attribute(WXML_FILE_PATH)

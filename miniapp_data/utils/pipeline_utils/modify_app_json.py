@@ -54,17 +54,6 @@ def process_subpackage_info(subpackage_data, root_dir):
             logger.error(f'root/pages not in subpackage in app.json in {root_dir}')
 
 
-def process_page_info(pages, root_dir):
-    missing_pages = []
-    for page in pages:
-        print(page)
-        if not check_page(os.path.join(root_dir, page)):
-            missing_pages.append(page)
-    print(missing_pages)
-    pages = [i for i in pages if i not in missing_pages] 
-    print(pages)           
-        
-
 def check_borderStyle(json_data):
     if 'tabBar' in json_data:
         if "borderStyle" in json_data['tabBar']:
@@ -93,7 +82,10 @@ def check_window_attrs(json_data):
             color = json_data['window']['backgroundTextStyle']
             if color not in ["dark", "light"]:
                 json_data['window']['backgroundTextStyle'] = "light"
-            
+        if "backgroundColor" in json_data['window']:
+            color = json_data['window']['backgroundColor']
+            if not color.startswith("#"):
+                json_data['window']['backgroundColor'] = "#ffffff"
 
 def check_attrs(json_data):
     if "navigationBarTextStyle" in json_data:
@@ -104,6 +96,17 @@ def check_attrs(json_data):
         color = json_data['backgroundTextStyle']
         if color not in ["dark", "light"]:
             json_data['backgroundTextStyle'] = "light"
+    if "backgroundColor" in json_data:
+        color = json_data['backgroundColor']
+        if not color.startswith("#"):
+            json_data['backgroundColor'] = "#ffffff"
+
+def check_components(root_path, json_data):
+    if "usingComponents" in json_data:
+        names = [i for i in json_data["usingComponents"]]
+        for name in names:
+            if not check_page(os.path.join(root_path, json_data["usingComponents"][name])):
+                del json_data["usingComponents"][name]
 
 def check_all_paths(MINIRPOGRAM_PATH, APP_JSON_PATH=None):
     
@@ -125,7 +128,6 @@ def check_all_paths(MINIRPOGRAM_PATH, APP_JSON_PATH=None):
             if not check_page(os.path.join(MINIRPOGRAM_PATH, page)):
                 missing_pages.append(page)
         json_data['pages'] = [i for i in pages if i not in missing_pages]
-        # process_page_info(json_data['pages'], MINIRPOGRAM_PATH)
     if 'preloadRule' in json_data:
         pages = [i for i in json_data['preloadRule']]
         for page in pages:

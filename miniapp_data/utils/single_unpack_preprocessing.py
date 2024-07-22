@@ -7,7 +7,7 @@ import json
 import platform
 from pathlib import Path
 import sys
-from single_unpack_unveil import decompile_wxapkg_with_unveilr
+from unpack_unveil_pipeline import decompile_wxapkg_with_unveilr
 from single_preprocess import preprocess
 
 logging.basicConfig(
@@ -25,8 +25,8 @@ if __name__ == '__main__':
     wxapkg_ROOT = "/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w"
     unpack_ROOT = "/media/dataj/miniapp_data/wxapkgs-42w-unpacked"
     appid = sys.argv[1]
-    wxapkg_path = os.path.join(wxapkg_ROOT, appid)
-    output_path = os.path.join(unpack_ROOT, appid.replace(".wxapkg", ""))
+    wxapkg_path = os.path.join(wxapkg_ROOT, appid+".wxapkg")
+    output_path = os.path.join(unpack_ROOT, appid)
     
     decompile_wxapkg_with_unveilr(wxapkg_path, output_path)
     preprocess(output_path)
