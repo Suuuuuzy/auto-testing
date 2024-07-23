@@ -1,3 +1,4 @@
+#!/media/dataj/wechat-devtools-linux/testing/myenv/bin/python3
 import os
 import re
 import subprocess

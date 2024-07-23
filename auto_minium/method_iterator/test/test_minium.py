@@ -58,6 +58,7 @@ class Minium_Query(BaseDef):
                 except Exception as e:
                     self.logger.error(f'[+] Encountering error: {e} during input in page: {page}')
                 inputs.remove(cur_input)
+                time.sleep(5)
                 cur_path = self.app.get_current_page().path
                 if page!=cur_path:
                     dealWithPage(cur_path)
@@ -78,10 +79,11 @@ class Minium_Query(BaseDef):
                 except Exception as e:
                     self.logger.error(f'[+] Encountering error: {e} during submit in page: {page}')
                 forms.remove(form_block)
+                time.sleep(5)
                 cur_path = self.app.get_current_page().path
                 if page!=cur_path:
                     dealWithPage(cur_path)
-                    
+        
         def dealWithOtherMethods(triggers, page):
             page_in_json = page[1:]
             self.logger.info(f'[+] See triggers {triggers}')
@@ -96,9 +98,12 @@ class Minium_Query(BaseDef):
                     item = items[0]
                     try:
                         # self.logger.info(f'[+] Try calling method {item["handler"]} in page {page}, current page: {self.app.get_current_page()}')
-                        if page!=self.app.get_current_page().path:
-                            self.logger.error(f'[+] Calling method in different pages')
-                            stack = self.app.get_page_stack() 
+                        cur_path = self.app.get_current_page().path
+                        if page!=cur_path:
+                            self.logger.info(f'[+] Calling method in different pages')
+                            dealWithPage(cur_path)
+                            return
+                            # stack = self.app.get_page_stack() 
                             # self.logger.error(f'[+] Current stack: {stack}')
                         result  = self.page.call_method(item["handler"], get_arg(trigger, item))
                         self.logger.info(f'[+] Call method {item["handler"]}, result: {result}')
@@ -107,10 +112,10 @@ class Minium_Query(BaseDef):
                         logger_main.error(f'[+] Call method: {item["handler"]} error: {e} in miniapp {self.mini.project_path}')
                     items.remove(item)
                     self.logger.info(f'[+] There are {len(items)} methods for {trigger} left on page: {page}')
-                    time.sleep(2) # wait until the call_method takes effect (if the call method is navigation)
+                    time.sleep(5) # wait until the call_method takes effect (if the call method is navigation)
                     cur_page = self.app.get_current_page()
                     cur_path = cur_page.path
-                    self.logger.info(f'[+] Check currnet page: {cur_page}')
+                    self.logger.info(f'[+] Check current page: {cur_page}')
                     if page!=cur_path:
                         self.logger.info(f'[+] Navigate naturally, from {page} to {cur_path}')
                         # when this returns, we assume the page is still here, but it's not the case!
@@ -134,7 +139,7 @@ class Minium_Query(BaseDef):
                 return
             # page finish checking
             bindings_cnt = 0
-            prioritized_triggers = ["bindinput", "bindconfirm", "bindsubmit"]
+            prioritized_triggers = ["bindinput", "bindconfirm", "bindsubmit", "catchsubmit"]
             triggers = [i for i in bind_methods[page_in_json]["binding_event"] if i not in prioritized_triggers]
             for trigger in triggers:
                 # if trigger not in ["bindsubmit"]:
@@ -155,9 +160,13 @@ class Minium_Query(BaseDef):
             
         # test starts here
         time.sleep(10) # give it some time for onLaunch?  
-        query = {'fakeKey': 'fakeValue'}
+        
         while len(pages)>0:
             page = pages[0]
+            if page not in visited_pages:
+                query = {'fakeKey': 'fakeValue'}
+            else:
+                query = None
             stack = self.app.get_page_stack() 
             if len(stack)>9:
                 self.relaunch_to_open(page, query)
@@ -168,6 +177,7 @@ class Minium_Query(BaseDef):
             visited_pages.add(page)
             dealWithPage(page)
         
+        query = {'fakeKey': 'fakeValue'}
         # visit the rest pages if they have not been visited with query
         if len(visited_pages)!=all_pages_length:
           for page in all_pages-visited_pages:
