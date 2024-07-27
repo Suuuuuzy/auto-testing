@@ -113,6 +113,7 @@ bindtouchend_arg = {
 
 trigger_arg_dic = {
                 "bindtap": bindtap_arg,
+                "bind:tap": bindtap_arg,
                 "catchtap": bindtap_arg,
                 "bindblur": bindblur_arg,
                 # "bindinput": bindinput_arg,
