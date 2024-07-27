@@ -10,6 +10,7 @@ logging.basicConfig(
     datefmt='%Y-%m-%d %H:%M:%S',
 )
 
+import timeout_decorator
 
 class Minium_Query(BaseDef):
     def setUp(self):
@@ -18,35 +19,56 @@ class Minium_Query(BaseDef):
         result = self.app.evaluate(
             "function(){args=arguments;__setLog__('/home/suzy/temp/new_taint_log_file/'+args[0])}",[appid], sync=True
         )
-        
+    
+    def get_binding_cnt(self):
+        cnt = 0
+        for page in self.bind_methods:
+            for event in self.bind_methods[page]["binding_event"]:
+                cnt += len(self.bind_methods[page]["binding_event"][event])
+        return cnt
+    
+    def get_ele_cnt(self):
+        cnt = 0
+        for page in self.eles_in_pages:
+            for ele in self.eles_in_pages[page]:
+                cnt += len(self.eles_in_pages[page][ele])
+                # = {"inputs":inputs, "forms":forms}
+        return cnt
+    
+    # @timeout_decorator.timeout(300) # set timeout to be 300s (5min)
     def test_methods(self):
-        eles_in_pages = {} # a global variable to record eles in pages
+        self.eles_in_pages = {} # a global variable to record eles in pages
         text_input = "javascriptMinium"
         bind_json_file = os.path.join(self.mini.project_path, "bind_methods_navi.json") # try to find bind_methods_navi.json first
         if not os.path.exists(bind_json_file): # if it does not exist, use bind_methods.json
             bind_json_file = os.path.join(self.mini.project_path, "bind_methods.json")
         with open(bind_json_file) as f:
-            bind_methods = json.load(f) # a global variable to record binding methods in pages
-        pages = self.find_all_pages()
-        pages = ['/' + i for i in pages]
-        finished_pages = set()
-        visited_pages = set()
-        all_pages_length = len(pages)
-        all_pages = set(pages)
+            self.bind_methods = json.load(f) # a global variable to record binding methods in pages
+        # remove tab bar pages from bind_methods       
+        app_json_file = os.path.join(self.mini.project_path, "app.json")
+        with open(app_json_file) as f:
+            content = json.load(f)
+        self.tabbar_pages = [i['pagePath'] for i in content['tabBar']['list']]
+        # for tab in tabbar_pages:
+        #     del self.bind_methods[tab]
+        # remove inputs/forms from the methods in bind_methods
+        prioritized_triggers = ["bindinput", "bindconfirm", "bindsubmit", "catchsubmit"]
+        pages = [page for page in self.bind_methods if page!="app"]
+        for page in pages:
+            for i in prioritized_triggers:
+                if i in self.bind_methods[page]["binding_event"]:
+                    del self.bind_methods[page]["binding_event"][i]
+        self.pages = ['/' + i for i in pages]
+        self.finished_pages = set()
+        self.visited_pages = {} # record how many times we visit each page
+        self.all_pages = set(self.pages)
+        self.all_ele_cnt = 0
+        self.all_binding_cnt = self.get_binding_cnt()
         
         def get_arg(trigger, item):
             return trigger_arg_dic[trigger]
-            # if trigger not in ["bindsubmit"]:
-            #     return trigger_arg_dic[trigger]
-            # elif trigger == "bindsubmit":
-            #     arg = trigger_arg_dic[trigger]
-            #     form_data = item["form_dic"]
-            #     for key in form_data:
-            #         form_data[key] = text_input 
-            #     arg["detail"]["value"] = form_data
-            #     return arg
         
-        def dealWithInput(inputs):
+        def dealWithInput(inputs, page):
             # 1. inputs
             # inputs = self.find_all_inputs()
             self.logger.info(f"[+] There are {len(inputs)} inputs left on page {page}")
@@ -63,7 +85,7 @@ class Minium_Query(BaseDef):
                 if page!=cur_path:
                     dealWithPage(cur_path)
                     
-        def dealWithForm(forms):
+        def dealWithForm(forms, page):
             # 2. forms
             # forms = self.find_all_forms()
             self.logger.info(f"[+] There are {len(forms)} forms left on page {page}")
@@ -85,15 +107,15 @@ class Minium_Query(BaseDef):
                     dealWithPage(cur_path)
         
         def dealWithOtherMethods(triggers, page):
-            page_in_json = page[1:]
-            self.logger.info(f'[+] See triggers {triggers}')
+            page_in_json = page[1:] if page.startswith('/') else page
+            self.logger.info(f'[+] See triggers {triggers} in page: {page}')
             for trigger in triggers:
                 if trigger not in trigger_arg_dic:
-                    logger_main.error(f"[+] {trigger} not implemeted in trigger_arg_dic in miniapp {self.mini.project_path}!")
+                    logger_main.error(f"[+] {trigger} not implemeted in trigger_arg_dic in miniapp {self.mini.project_path}")
                     # skip the ones we don't include for now, to see whether the test stops
-                    bind_methods[page_in_json]["binding_event"][trigger] = []
+                    self.bind_methods[page_in_json]["binding_event"][trigger] = []
                     continue
-                items = bind_methods[page_in_json]["binding_event"][trigger]
+                items = self.bind_methods[page_in_json]["binding_event"][trigger]
                 while len(items)>0:
                     item = items[0]
                     try:
@@ -123,75 +145,92 @@ class Minium_Query(BaseDef):
                         return
                     
         def dealWithPage(page):
-            page_in_json = page[1:]
-            if page in finished_pages:
+            page_in_json = page[1:] if page.startswith('/') else page
+            if page in self.finished_pages:
                 return
-            if page not in eles_in_pages:
+            if page not in self.eles_in_pages:
                 inputs = self.find_all_inputs()
                 forms = self.find_all_forms()
                 # btns = self.find_all_buttons()
-                eles_in_pages[page] = {"inputs":inputs, "forms":forms}
-                
-            if page_in_json not in bind_methods:
-                finished_pages.add(page)
-                pages.remove(page)
-                logger_main.error(f'[+] {page_in_json} not in bind_methods')
-                return
-            # page finish checking
+                self.eles_in_pages[page] = {"inputs":inputs, "forms":forms}
+                ele_cnt = 0
+                for ele_type in self.eles_in_pages[page]:
+                    ele_cnt += len(self.eles_in_pages[page][ele_type])
+                self.all_ele_cnt += ele_cnt
+
+            # see if the page finishes
             bindings_cnt = 0
-            prioritized_triggers = ["bindinput", "bindconfirm", "bindsubmit", "catchsubmit"]
-            triggers = [i for i in bind_methods[page_in_json]["binding_event"] if i not in prioritized_triggers]
+            triggers = [i for i in self.bind_methods[page_in_json]["binding_event"]]
             for trigger in triggers:
-                # if trigger not in ["bindsubmit"]:
-                bindings_cnt += len(bind_methods[page_in_json]["binding_event"][trigger])
+                bindings_cnt += len(self.bind_methods[page_in_json]["binding_event"][trigger])
             ele_cnt = 0
-            for ele_type in eles_in_pages[page]:
-                ele_cnt += len(eles_in_pages[page][ele_type])
+            for ele_type in self.eles_in_pages[page]:
+                ele_cnt += len(self.eles_in_pages[page][ele_type])
             if bindings_cnt==0 and ele_cnt==0:
-                finished_pages.add(page)
-                pages.remove(page)
+                self.finished_pages.add(page)
+                self.pages.remove(page)
+                logger_main.info(f'Page: {page} finished.')
                 self.logger.info(f'[+] {page} finishes')
                 return
             
             # for the triggers as input, we fire the event because that's where we taint e.detail.value
-            dealWithInput(eles_in_pages[page]["inputs"])
-            dealWithForm(eles_in_pages[page]["forms"])
+            dealWithInput(self.eles_in_pages[page]["inputs"], page)
+            dealWithForm(self.eles_in_pages[page]["forms"], page)
             dealWithOtherMethods(triggers, page)
             
         # test starts here
         time.sleep(10) # give it some time for onLaunch?  
-        
-        while len(pages)>0:
-            page = pages[0]
-            if page not in visited_pages:
+        MAX_VISIT_TIME = 3
+        while len(self.pages)>0:
+            page = self.pages[0]
+            if page not in self.visited_pages:
+                self.visited_pages[page] = 0
                 query = {'fakeKey': 'fakeValue'}
             else:
+                if self.visited_pages[page]>MAX_VISIT_TIME:
+                    self.logger.info(f'[+] Visit page: {page} {MAX_VISIT_TIME} times, we give up.')
+                    self.finished_pages.add(page)
+                    self.pages.remove(page)
+                    continue
                 query = None
-            stack = self.app.get_page_stack() 
-            if len(stack)>9:
-                self.relaunch_to_open(page, query)
-            else:
-                self.navigate_to_open(page, query)
             self.logger.info(f'[+] Navigate through API, to: {page}')
-            time.sleep(5) # wait until navigation takes effect
-            visited_pages.add(page)
-            dealWithPage(page)
-        
-        query = {'fakeKey': 'fakeValue'}
-        # visit the rest pages if they have not been visited with query
-        if len(visited_pages)!=all_pages_length:
-          for page in all_pages-visited_pages:
+            if page[1:] in self.tabbar_pages: # tab bars can not pass parameters
+                self.switch_tab_open(page)
+            else:
                 stack = self.app.get_page_stack() 
                 if len(stack)>9:
                     self.relaunch_to_open(page, query)
                 else:
                     self.navigate_to_open(page, query)
-                self.logger.info(f'[+] Navigate through API without dealWithPage, to: {page}')
-                time.sleep(5) # wait until navigation takes effect
+            
+            time.sleep(5) # wait until navigation takes effect
+            self.visited_pages[page] += 1
+            logger_main.info(f'Page: {page} visited {self.visited_pages[page]} time.')
+            dealWithPage(page)
+        
+        query = {'fakeKey': 'fakeValue'}
+        # visit the rest pages if they have not been visited with query
+        visited_pages_set = set([i for i in self.visited_pages])
+        if len(visited_pages_set)!=len(self.all_pages):
+          for page in self.all_pages-visited_pages_set:
+                if page[1:] not in self.tabbar_pages: # tab bars can not pass parameters
+                    stack = self.app.get_page_stack() 
+                    if len(stack)>9:
+                        self.relaunch_to_open(page, query)
+                    else:
+                        self.navigate_to_open(page, query)
+                    self.logger.info(f'[+] Navigate through API without dealWithPage, to: {page}')
+                    time.sleep(5) # wait until navigation takes effect
+                    self.visited_pages[page] = 1
+                    logger_main.info(f'Page: {page} visited {self.visited_pages[page]} time.')
             
         
         
     def tearDown(self):
+        logger_main.info(f'Finished {len(self.finished_pages)} pages out of {len(self.all_pages)}.')
+        logger_main.info(f'Visited {len(self.visited_pages)} pages out of {len(self.all_pages)}.')
+        logger_main.info(f'Visited {self.all_binding_cnt-self.get_binding_cnt()} binding functions out of {self.all_binding_cnt}.')
+        logger_main.info(f'Visited {self.all_ele_cnt-self.get_ele_cnt()} input/forms out of {self.all_ele_cnt}.')
         self.mini.shutdown()
         super().tearDown()
         

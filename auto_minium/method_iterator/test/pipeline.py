@@ -97,7 +97,8 @@ def run_pkgs(all_project_lists, project_path):
     for project in all_project_lists:
         input_data = {  
             "project_path": os.path.join(project_path, project),
-            "dev_tool_path": dev_tool_path
+            "dev_tool_path": dev_tool_path,
+            "auto_authorize": True
             # "test_port" add for parallel running?
             }
         generate_config(input_data)
