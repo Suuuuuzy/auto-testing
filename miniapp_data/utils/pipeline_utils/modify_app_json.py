@@ -133,6 +133,12 @@ def check_all_paths(MINIRPOGRAM_PATH, APP_JSON_PATH=None):
         for page in pages:
             if not check_page(os.path.join(MINIRPOGRAM_PATH, page)):
                 del json_data['preloadRule'][page]
+    if 'plugins' in json_data:
+        plugins = [i for i in json_data['plugins']]
+        for itemkey in plugins:
+            if 'provider' in json_data['plugins'][itemkey]:
+                del json_data['plugins'][itemkey]
+
     
     write_json_file(APP_JSON_PATH, json_data)
 

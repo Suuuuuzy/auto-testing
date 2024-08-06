@@ -49,7 +49,7 @@ def get_cmrf_fp_appid():
 
 def run_pkgs_in_parallel(package_names):
     logger.info(f'Start preprocessing {len(package_names)} packages')    
-    processes = 128
+    processes = 10
     batch_size = (len(package_names) + processes - 1) // processes
     batched_package_names = [package_names[i:i+batch_size] for i in range(0, len(package_names), batch_size)]
     with mp.Pool(processes=processes) as pool:
@@ -75,6 +75,7 @@ def main():
         pkgs = [os.path.join(project_path, i) for i in pkgs]
     else:
         pkgs = get_42w_not_preprocessed_appid()
+    # pkgs = pkgs[:300]
     run_pkgs_in_parallel(pkgs)
         
         
