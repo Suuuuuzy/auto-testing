@@ -19,8 +19,6 @@ logging.basicConfig(
     datefmt='%Y-%m-%d %H:%M:%S',
 )
 
-# appid only
-appid_file = '/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w.json'
 
 # Decompile with unveilr
 class UnsupportedOSException(Exception):
@@ -209,8 +207,11 @@ def prepare_split_list(num_thread):
     
 
 def get_not_in_log(output_dir):
+    # appid only
+    appid_file = '/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w.json'
     with open(appid_file, 'r') as fp:
         package_names = json.load(fp)
+    # wx9b5f4adcfa3922cc-pc
     
     # not in log
     with open('unpack_with_unveil.log') as f:
@@ -220,6 +221,7 @@ def get_not_in_log(output_dir):
         # Search for the pattern in the input string
         matches = re.findall(pattern, content)
         matches = set(matches)
+        # wx48f500ce8359d9c5-pc
     package_names = [i for i in package_names if i not in matches]
     
     # not unpacked
@@ -276,6 +278,9 @@ def main():
         unpacked = os.listdir(output_dir)
         package_names = [i for i in package_names if i not in unpacked]
     elif args.single:
+        # args.single: /media/dataj/miniapp_data/wxapkgs-11w/wx507477e9caef7015-pc.wxapkg
+        # input_dir: /media/dataj/miniapp_data/wxapkgs-11w/wx507477e9caef7015-pc
+        # output_dir: /media/dataj/miniapp_data/wxapkgs-11w/wx507477e9caef7015-pc
         package_names = [args.single.split("/")[-1]]
         input_dir = args.single.replace(package_names[0], "")
         package_names[0] = package_names[0].replace(".wxapkg", "")
