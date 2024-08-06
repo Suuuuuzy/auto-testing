@@ -135,7 +135,7 @@ def main():
             all_project_lists = get_in_file_not_run(content["pkgs"], project_path)
     else: # default: 42w large scale
         project_path = "/media/dataj/miniapp_data/wxapkgs-42w-unpacked"
-        error_scale = "error_appids.txt"
+        error_scale = "42w_large_scale_error_appids.txt"
         if args.error:
             all_project_lists = get_error(error_scale)
         else:

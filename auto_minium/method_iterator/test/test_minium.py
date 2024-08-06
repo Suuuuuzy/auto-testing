@@ -35,8 +35,16 @@ class Minium_Query(BaseDef):
                 # = {"inputs":inputs, "forms":forms}
         return cnt
     
-    # @timeout_decorator.timeout(300) # set timeout to be 300s (5min)
-    def test_methods(self):
+    def mock_storage(self):
+        functionDeclaration = """function(options,defval){
+            var storageValue ='testvalue';
+            storageValue.__setTaint__(__taintConstants__()['WechatAPI']);
+            return {data:storageValue}
+        }"""
+        self.app.mock_wx_method("getStorage", functionDeclaration=functionDeclaration)
+            
+    @timeout_decorator.timeout(300) # set timeout to be 300s (5min)
+    def test_methods(self):        
         self.eles_in_pages = {} # a global variable to record eles in pages
         text_input = "javascriptMinium"
         bind_json_file = os.path.join(self.mini.project_path, "bind_methods_navi.json") # try to find bind_methods_navi.json first
@@ -48,10 +56,9 @@ class Minium_Query(BaseDef):
         app_json_file = os.path.join(self.mini.project_path, "app.json")
         with open(app_json_file) as f:
             content = json.load(f)
-        self.tabbar_pages = [i['pagePath'] for i in content['tabBar']['list']]
-        # for tab in tabbar_pages:
-        #     del self.bind_methods[tab]
-        # remove inputs/forms from the methods in bind_methods
+        self.tabbar_pages = []
+        if 'tabBar' in content:
+            self.tabbar_pages = [i['pagePath'] for i in content['tabBar']['list']]
         prioritized_triggers = ["bindinput", "bindconfirm", "bindsubmit", "catchsubmit"]
         pages = [page for page in self.bind_methods if page!="app"]
         for page in pages:
@@ -64,6 +71,7 @@ class Minium_Query(BaseDef):
         self.all_pages = set(self.pages)
         self.all_ele_cnt = 0
         self.all_binding_cnt = self.get_binding_cnt()
+        self.mock_storage()
         
         def get_arg(trigger, item):
             return trigger_arg_dic[trigger]
@@ -84,7 +92,9 @@ class Minium_Query(BaseDef):
                 cur_path = self.app.get_current_page().path
                 if page!=cur_path:
                     dealWithPage(cur_path)
-                    
+        
+        
+                      
         def dealWithForm(forms, page):
             # 2. forms
             # forms = self.find_all_forms()
@@ -185,7 +195,7 @@ class Minium_Query(BaseDef):
             page = self.pages[0]
             if page not in self.visited_pages:
                 self.visited_pages[page] = 0
-                query = {'fakeKey': 'fakeValue'}
+                query = {'testkey': 'testvalue'}
             else:
                 if self.visited_pages[page]>MAX_VISIT_TIME:
                     self.logger.info(f'[+] Visit page: {page} {MAX_VISIT_TIME} times, we give up.')
@@ -208,7 +218,7 @@ class Minium_Query(BaseDef):
             logger_main.info(f'Page: {page} visited {self.visited_pages[page]} time.')
             dealWithPage(page)
         
-        query = {'fakeKey': 'fakeValue'}
+        query = {'testkey': 'testvalue'}
         # visit the rest pages if they have not been visited with query
         visited_pages_set = set([i for i in self.visited_pages])
         if len(visited_pages_set)!=len(self.all_pages):
