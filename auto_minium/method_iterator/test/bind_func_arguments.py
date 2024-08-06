@@ -108,7 +108,28 @@ bindtouchend_arg = {
     }
 
 # bindchange
-# bindgetuserinfo
+bindgetuserinfo_arg = {
+    "type":"getuserinfo",
+    "timeStamp":680160,
+    "target":{"id":"","offsetLeft":14,"offsetTop":124,"dataset":{}},
+    "currentTarget":{"id":"","offsetLeft":14,"offsetTop":124,"dataset":{}},
+    "mark":{},
+    "detail":{
+        "errMsg":"getUserInfo:ok",
+        "rawData":"{\"nickName\":\"游客\",\"avatarUrl\":\"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJ5mponqTImpsvliciaNkSxNYUaTWrh43K3EwZjp1cRQu0hjxwWqd5bGcxeAiazaLb3hOSZwmzGxy33g/132\",\"gender\":1,\"province\":\"Guangdong\",\"city\":\"Guangzhou\",\"country\":\"CN\"}",
+        "userInfo":{
+            "nickName":"游客",
+            "avatarUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJ5mponqTImpsvliciaNkSxNYUaTWrh43K3EwZjp1cRQu0hjxwWqd5bGcxeAiazaLb3hOSZwmzGxy33g/132",
+            "gender":1,
+            "province":"Guangdong",
+            "city":"Guangzhou",
+            "country":"CN"
+            }
+        },
+    "mut":False,
+    "_userTap":False
+    }
+
 
 
 trigger_arg_dic = {
@@ -124,5 +145,6 @@ trigger_arg_dic = {
                 "bindtouchstart": bindtouchstart_arg,
                 "bindtouchmove": bindtouchmove_arg,
                 "catchtouchmove": bindtouchmove_arg,
-                "bindtouchend": bindtouchend_arg
+                "bindtouchend": bindtouchend_arg,
+                "bindgetuserinfo": bindgetuserinfo_arg
                 }
