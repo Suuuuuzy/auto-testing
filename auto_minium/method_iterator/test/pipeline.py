@@ -112,8 +112,11 @@ def main():
         description='Unpacking of miniapps')
     # parser.add_argument('--large_scale', action='store_true', help="run multiple package parallelly")
     parser.add_argument('--error', action='store_true', help="run error packages")
-    parser.add_argument('--file', '-f',  help="run the ids in the file")
+    parser.add_argument('--input', '-i',  help="run the ids in the input file")
     parser.add_argument('--cmrf_fp', action='store_true',  help="unpack the ids in for cmrf fp")
+    parser.add_argument('--taintmini_report', action='store_true', help="rerun the ones reported by taintmini but not by us")
+    parser.add_argument('--random_100', action='store_true', help="rerun the 100 random miniapps")
+    parser.add_argument('--force', '-f', action='store_true', help="run the ids in the input file force")
     args = parser.parse_args()
     
     error_scale = None
@@ -124,15 +127,41 @@ def main():
             all_project_lists = get_error(error_scale)
         else:
             all_project_lists = get_cmrf_fp()
-    elif args.file is not None:
-        with open(args.file) as f:
+    elif args.input is not None:
+        with open(args.input) as f:
             content = json.load(f)
         project_path = content["unpackpath"]
-        error_scale = args.file.split("/")[-1] + ".txt"
+        error_scale = args.input.split("/")[-1] + ".txt"
         if args.error:
             all_project_lists = get_error(error_scale)
         else:
             all_project_lists = get_in_file_not_run(content["pkgs"], project_path)
+        if args.force:
+            all_project_lists = content["pkgs"]
+    elif args.taintmini_report:
+        all_project_lists = []
+        our_tool_result = "/media/dataj/wechat-devtools-linux/testing/auto-testing/miniapp_data/appid_file/random_100_no_error_appids.json"
+        with open(our_tool_result) as f:
+            save_dic = json.load(f)
+        random_100_dic = save_dic['appid_log_dic']
+        
+        sum_file = "/media/dataj/miniapp_pre_work/TaintMini/random_100_results/summary/sum.json"
+        with open(sum_file) as f:
+            content = json.load(f)
+        for result_file in content:
+            appid = result_file.replace("-result.csv", "")
+            if len(random_100_dic[appid]) == 0:
+                all_project_lists.append(appid)
+        project_path = "/media/dataj/miniapp_data/wxapkgs-42w-unpacked"
+    elif args.random_100:
+        our_tool_result = "/media/dataj/wechat-devtools-linux/testing/auto-testing/miniapp_data/appid_file/random_100_no_error_appids.json"
+        with open(our_tool_result) as f:
+            save_dic = json.load(f)
+        all_project_lists = save_dic['pkgs']
+        logs = os.listdir("/home/suzy/temp/decoded_new_taint_log_file")
+        logged_miniapp_ids = set([i.split("_")[0] for i in logs])
+        all_project_lists = [i for i in all_project_lists if i not in logged_miniapp_ids]
+        project_path = "/media/dataj/miniapp_data/wxapkgs-42w-unpacked"
     else: # default: 42w large scale
         project_path = "/media/dataj/miniapp_data/wxapkgs-42w-unpacked"
         error_scale = "42w_large_scale_error_appids.txt"
@@ -141,7 +170,7 @@ def main():
         else:
             all_project_lists = get_large_scale()
     print(len(all_project_lists))
-            
+    
     run_pkgs(all_project_lists, project_path)
     
 

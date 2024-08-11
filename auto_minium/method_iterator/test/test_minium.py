@@ -1,6 +1,6 @@
 from basedef import BaseDef
 import os, json, time
-from bind_func_arguments import trigger_arg_dic
+from bind_func_arguments import get_arg, trigger_arg_dic
 import logging
 logger_main = logging.getLogger(__name__)
 logging.basicConfig(
@@ -73,8 +73,6 @@ class Minium_Query(BaseDef):
         self.all_binding_cnt = self.get_binding_cnt()
         self.mock_storage()
         
-        def get_arg(trigger, item):
-            return trigger_arg_dic[trigger]
         
         def dealWithInput(inputs, page):
             # 1. inputs
@@ -129,15 +127,17 @@ class Minium_Query(BaseDef):
                 while len(items)>0:
                     item = items[0]
                     try:
-                        # self.logger.info(f'[+] Try calling method {item["handler"]} in page {page}, current page: {self.app.get_current_page()}')
                         cur_path = self.app.get_current_page().path
                         if page!=cur_path:
                             self.logger.info(f'[+] Calling method in different pages')
                             dealWithPage(cur_path)
                             return
-                            # stack = self.app.get_page_stack() 
-                            # self.logger.error(f'[+] Current stack: {stack}')
-                        result  = self.page.call_method(item["handler"], get_arg(trigger, item))
+                        args = get_arg(item)
+                        if args is None:
+                            logger_main.info(f"[+]Did not get args for {item['trigger']}")
+                            items.remove(item)
+                            continue
+                        result  = self.page.call_method(item["handler"], args)
                         self.logger.info(f'[+] Call method {item["handler"]}, result: {result}')
                     except Exception as e:
                         self.logger.info(f'[+] Call method error {item["handler"]}')
@@ -218,7 +218,7 @@ class Minium_Query(BaseDef):
             logger_main.info(f'Page: {page} visited {self.visited_pages[page]} time.')
             dealWithPage(page)
         
-        query = {'testkey': 'testvalue'}
+        query = {'testkey': 'testvalueOnLoad'}
         # visit the rest pages if they have not been visited with query
         visited_pages_set = set([i for i in self.visited_pages])
         if len(visited_pages_set)!=len(self.all_pages):
