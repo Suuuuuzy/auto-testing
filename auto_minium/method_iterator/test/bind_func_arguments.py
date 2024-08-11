@@ -25,6 +25,7 @@ bindblur_arg = {
     "_userTap":False
     }
 
+"""
 bindinput_arg = {
     "type":"input",
     "timeStamp":1721618450239, # was it because the timestamp is outdated??
@@ -55,6 +56,7 @@ bindconfirm_arg =  {
     "mut":False,
     "_userTap":False
     }
+"""
 
 bindlongtap_arg =  {
     "type":"longtap",
@@ -148,3 +150,74 @@ trigger_arg_dic = {
                 "bindtouchend": bindtouchend_arg,
                 "bindgetuserinfo": bindgetuserinfo_arg
                 }
+
+
+# <view id="tapTest" data-hi="Weixin" bindtap="tapName"> Click me! </view>
+"""
+{
+  "type":"tap",
+  "timeStamp":895,
+  "target": {
+    "id": "tapTest",
+    "dataset":  {
+      "hi":"Weixin"
+    }
+  },
+  "currentTarget":  {
+    "id": "tapTest",
+    "dataset": {
+      "hi":"Weixin"
+    }
+  },
+  "detail": {
+    "x":53,
+    "y":14
+  },
+  "touches":[{
+    "identifier":0,
+    "pageX":53,
+    "pageY":14,
+    "clientX":53,
+    "clientY":14
+  }],
+  "changedTouches":[{
+    "identifier":0,
+    "pageX":53,
+    "pageY":14,
+    "clientX":53,
+    "clientY":14
+  }]
+}
+"""
+
+def get_arg(item):
+    trigger = item['trigger']
+    # if trigger in bindchange, we need to further pass the name
+    # TODO: the arguments for different bindchanges
+    if trigger not in trigger_arg_dic:
+        print(f"Trigger {trigger} not found in trigger_arg_dic")
+        return None
+    if trigger in ["bindchange"]:
+        pass
+    res = trigger_arg_dic[trigger]
+    if item["target"]["dataset"]!={}:
+        for key in ["target", "currentTarget"]:
+            res[key]["dataset"] = item["target"]["dataset"]
+    return res
+
+
+if __name__ == "__main__":
+    item = {
+          "name": "view",
+          "trigger": "bindtap",
+          "handler": "clickTab",
+          "form_dic": {},
+          "target": {
+            "id": "",
+            "dataset": {
+              "current": "1"
+            }
+          }
+        }
+    res = get_arg(item)
+    print(res)
