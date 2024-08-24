@@ -1,5 +1,5 @@
 import re, os
-
+import jsbeautifier
 
 def format_wxml_style_attribute(file_path):
     try:
@@ -49,6 +49,28 @@ def format_wxml_style_attribute(file_path):
         # Regular expression to find the {{}} blocks
         content = re.sub(r"{{[^{}]*}}", remove_line_breaks_inside_quotes, content)
         
+        wxs_regex = re.compile(r'(<wxs[^>]*>)([\s\S]*?)<\/wxs>')
+        # Function to beautify JavaScript code inside <wxs> tags
+        def beautify_wxs_content(content):
+            def beautify_js(match):
+                # Extract JavaScript code from the match group
+                prefix = match.group(1)
+                js_code = match.group(2)
+                # print(js_code)
+                # Beautify the JavaScript code
+                beautified_code = jsbeautifier.beautify(js_code)
+                # Return the beautified code wrapped in the <wxs> tags
+                return f'{prefix}{beautified_code}</wxs>'
+
+            # Replace and beautify the content inside <wxs> tags
+            output_text = wxs_regex.sub(beautify_js, content)
+            return output_text
+
+        # Apply the beautification process
+        content = beautify_wxs_content(content)
+
+        # Print the beautified output
+        # print(content)
         # Write the modified content back to the file
         with open(file_path, 'w', encoding='utf-8') as file:
             file.write(content)
@@ -59,5 +81,5 @@ def format_wxml_style_attribute(file_path):
 
 # Example usage
 if __name__ == '__main__':
-    WXML_FILE_PATH = '/media/dataj/miniapp_data/CMRF_groundtruth/fp_dataset_unpack/wx0a5f95accb6079e1_org/pages/shop/cart/goodslist.wxml'
+    WXML_FILE_PATH = 'test.wxml'
     format_wxml_style_attribute(WXML_FILE_PATH)

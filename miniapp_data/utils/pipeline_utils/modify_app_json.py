@@ -39,7 +39,9 @@ def check_page(page_path):
     return True
 
 
-def process_subpackage_info(subpackage_data, root_dir):
+def process_subpackage_info(app_json, root_dir):
+    subpackage_data = app_json['subPackages']
+    missing_subpackages = []
     for item in subpackage_data:
         if 'root' in item and 'pages' in item:
             if item['root'].startswith('/'):
@@ -50,8 +52,17 @@ def process_subpackage_info(subpackage_data, root_dir):
                 if not check_page(os.path.join(root_dir, item['root'], page)):
                     missing_pages.append(page)
             item['pages'] = [i for i in item['pages'] if i not in missing_pages]
+            if item['pages']==[]:
+                print(f'no pages in {item["name"]}')
+                missing_subpackages.append(item)
         else:
             logger.error(f'root/pages not in subpackage in app.json in {root_dir}')
+    
+    app_json['subPackages'] = [i for i in subpackage_data if i not in missing_subpackages]
+    if app_json['subPackages']==[]:
+        del app_json['subPackages']
+    # print(app_json)
+
 
 
 def check_borderStyle(json_data):
@@ -120,7 +131,7 @@ def check_all_paths(MINIRPOGRAM_PATH, APP_JSON_PATH=None):
     check_borderStyle(json_data)
     check_window_attrs(json_data)
     if 'subPackages' in json_data:
-        process_subpackage_info(json_data['subPackages'], MINIRPOGRAM_PATH)
+        process_subpackage_info(json_data, MINIRPOGRAM_PATH)
     if 'pages' in json_data:
         pages = json_data['pages']
         missing_pages = []
@@ -138,6 +149,7 @@ def check_all_paths(MINIRPOGRAM_PATH, APP_JSON_PATH=None):
         for itemkey in plugins:
             if 'provider' in json_data['plugins'][itemkey]:
                 del json_data['plugins'][itemkey]
+            
 
     
     write_json_file(APP_JSON_PATH, json_data)
