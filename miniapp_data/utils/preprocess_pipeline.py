@@ -36,7 +36,7 @@ def get_42w_not_preprocessed_appid():
 def get_error_ids():
      # logger.info('Started')
     ROOT = "/media/dataj/miniapp_data/wxapkgs-42w-unpacked"
-    with open("check_logs/error_appids.txt") as f:
+    with open("../appid_file/42w_large_scale_error_appids.json") as f:
         files = json.load(f) 
     files = [os.path.join(ROOT, i) for i in files]  
     return files
