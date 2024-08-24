@@ -16,9 +16,9 @@ class Minium_Query(BaseDef):
     def setUp(self):
         appid = self.mini.project_path.split('/')[-1]
         # __setLog__('/home/suzy/temp/new_taint_log_file/'+appid)
-        result = self.app.evaluate(
-            "function(){args=arguments;__setLog__('/home/suzy/temp/new_taint_log_file/'+args[0])}",[appid], sync=True
-        )
+        # result = self.app.evaluate(
+        #     "function(){args=arguments;__setLog__('/home/suzy/temp/new_taint_log_file/'+args[0])}",[appid], sync=True
+        # )
     
     def get_binding_cnt(self):
         cnt = 0
