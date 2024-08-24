@@ -4,6 +4,8 @@ import json, os, re
 import subprocess
 import tracemalloc
 import argparse
+import time
+from main import maintest
 # from utils import write_to_file
 import logging
 logger = logging.getLogger(__name__)
@@ -22,11 +24,6 @@ def generate_config(input_data):
     with open('config.json', 'w') as config_file:
         json.dump(config, config_file, indent=2)
 
-def run_python_script(script_path):
-    subprocess.run(['python', script_path, 'config.json'])
-
-dev_tool_path = "/media/dataj/wechat-devtools-linux/wechat-web-devtools-linux-nodebug/bin/wechat-devtools-cli"
-script_path = '/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/main.py' 
 
 def get_cmrf_fp():
     project_path = "/media/dataj/miniapp_data/CMRF_groundtruth/fp_dataset_unpack/"
@@ -93,19 +90,29 @@ def get_large_scale():
     return all_project_lists
 
 def run_pkgs(all_project_lists, project_path):
-    tracemalloc.start()
+    def run_python_script(script_path):
+        subprocess.run(['python', script_path, 'config.json'])
+    script_path = '/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/main.py' 
+    dev_tool_path = "/media/dataj/wechat-devtools-linux/wechat-web-devtools-linux-nodebug/bin/wechat-devtools-cli"
+    # tracemalloc.start()
     for project in all_project_lists:
+        # subprocess.run(['pkill', '-f', 'nwjs'])
         input_data = {  
             "project_path": os.path.join(project_path, project),
             "dev_tool_path": dev_tool_path,
             "auto_authorize": True
+            # ,"close_ide": True,
+            # "full_reset": True
             # "test_port" add for parallel running?
             }
         generate_config(input_data)
+        # time.sleep(3)
         run_python_script(script_path)
-    snapshot = tracemalloc.take_snapshot()
-    top_stats = snapshot.statistics('lineno')
-    logger.info(f'Memory Allocation: {top_stats[:10]}')
+        time.sleep(5)
+        # maintest()
+    # snapshot = tracemalloc.take_snapshot()
+    # top_stats = snapshot.statistics('lineno')
+    # logger.info(f'Memory Allocation: {top_stats[:10]}')
 
 def main():
     parser = argparse.ArgumentParser(

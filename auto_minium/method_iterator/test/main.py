@@ -34,8 +34,11 @@ class MyTestResult(unittest.TextTestResult):
 class MyTestRunner(unittest.TextTestRunner):
     def _makeResult(self):
         return MyTestResult(self.stream, self.descriptions, self.verbosity)
-    
-if __name__ == "__main__":
+
+def maintest():
+    # subprocess.run(['pkill', '-f', 'nwjs'])
+    # subprocess.run(['pkill', '-f', 'wechat'])
+    subprocess.run(['pkill', '-f', 'nwjs'])
     start_time = time.time()
     with open("config.json") as f:
         config = json.load(f)
@@ -43,8 +46,13 @@ if __name__ == "__main__":
     
     bind_json_file = os.path.join(config["project_path"], "bind_methods.json")
     bind_navi_json_file = os.path.join(config["project_path"], "bind_methods_navi.json")
+    # regenrate the bind_methods.json file
+    if os.path.exists(bind_json_file):
+        os.remove(bind_json_file)
+    if os.path.exists(bind_navi_json_file):
+        os.remove(bind_navi_json_file)
     if (not os.path.exists(bind_json_file)) and (not os.path.exists(bind_navi_json_file)):
-        script_path = "/media/dataj/MiniScope/src/static/miniapp.py"
+        script_path = "/media/dataj/wechat-devtools-linux/testing/auto-testing/prework/MiniScope/src/static/miniapp.py"
         subprocess.run(['python', script_path, config["project_path"]])
         logger_main.info(f"Generate bind_methods.json for {config['project_path']}")
     
@@ -56,3 +64,6 @@ if __name__ == "__main__":
     logger_main.info(elapse_time)
     # cmd = "pkill -f nwjs"
     # subprocess.run(['pkill', '-f', 'nwjs'])
+
+if __name__ == "__main__":
+    maintest()
