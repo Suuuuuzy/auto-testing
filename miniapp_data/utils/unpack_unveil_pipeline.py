@@ -56,9 +56,9 @@ def decompile_wxapkg_with_unveilr(wxapkg, output_path=None):
         raise UnsupportedOSException("Unsupported OS: {} {}".format(system, machine))
     
     if output_path is not None:
-        cmdline = [decompiler_tool, wxapkg, '-o', output_path, '-f']
+        cmdline = [decompiler_tool, wxapkg, '-o', output_path, '-f', '--clear-output']
     else:
-        cmdline = [decompiler_tool, wxapkg, '-f']
+        cmdline = [decompiler_tool, wxapkg, '-f', '--clear-output']
     try:
         out = subprocess.check_output(cmdline)
         # logger.info(out)
@@ -236,6 +236,7 @@ def main():
     parser.add_argument('--parallel', '-p',  type=int, help="run multiple package parallelly")
     parser.add_argument('--file', '-f',  help="unpack the ids in the file")
     parser.add_argument('--single', '-s', help="unpack a single file")
+    parser.add_argument('--output', '-o', help="unpack a single file, the output dir")
     parser.add_argument('--cmrf_fp', action='store_true',  help="unpack the ids in for cmrf fp")
     parser.add_argument('--cmrf_fn', action='store_true',  help="unpack the ids in for cmrf fn")
     # decide what program we use to unpack
@@ -279,12 +280,16 @@ def main():
         package_names = [i for i in package_names if i not in unpacked]
     elif args.single:
         # args.single: /media/dataj/miniapp_data/wxapkgs-11w/wx507477e9caef7015-pc.wxapkg
-        # input_dir: /media/dataj/miniapp_data/wxapkgs-11w/wx507477e9caef7015-pc
-        # output_dir: /media/dataj/miniapp_data/wxapkgs-11w/wx507477e9caef7015-pc
+        # input_dir: /media/dataj/miniapp_data/wxapkgs-11w/
+        # output_dir: /media/dataj/miniapp_data/wxapkgs-11w/
+        # intput: /media/data4/jianjia_data4/miniapp_data/wxapkgs-42w
+        # output_dir: /media/dataj/miniapp_data/wxapkgs-42w-unpacked
         package_names = [args.single.split("/")[-1]]
         input_dir = args.single.replace(package_names[0], "")
         package_names[0] = package_names[0].replace(".wxapkg", "")
-        output_dir = input_dir
+        output_dir = args.output
+        if not args.output:
+            output_dir = "/media/dataj/miniapp_data/wxapkgs-42w-unpacked"
     else: 
         output_dir = "/media/dataj/miniapp_data/wxapkgs-42w-unpacked/"
         input_dir = "/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w/"
