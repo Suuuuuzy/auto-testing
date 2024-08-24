@@ -1,4 +1,5 @@
-# this script checks the log after decoding
+# this script checks the log after decoding in largescale
+# output result to decoded_check.log
 # logpath: /home/suzy/temp/decoded_new_taint_log_file/
 
 import re, os, json, sys
