@@ -34,3 +34,13 @@ def get_appids(appid_type):
     matches = re.findall(pattern, content)
     matches = set(matches)    
     return list(matches)
+
+import json
+def get_id_set_from_42w_file():
+    file = "/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w.json"
+    with open(file) as f:
+        appids = json.load(f)
+    return set(appids)
+
+# appids = get_id_from_file()
+# print(appids[:100])

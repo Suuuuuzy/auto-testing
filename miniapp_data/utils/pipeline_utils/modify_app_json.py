@@ -53,7 +53,7 @@ def process_subpackage_info(app_json, root_dir):
                     missing_pages.append(page)
             item['pages'] = [i for i in item['pages'] if i not in missing_pages]
             if item['pages']==[]:
-                print(f'no pages in {item["name"]}')
+                # print(f'no pages in {item["name"]}') # name might not exist
                 missing_subpackages.append(item)
         else:
             logger.error(f'root/pages not in subpackage in app.json in {root_dir}')

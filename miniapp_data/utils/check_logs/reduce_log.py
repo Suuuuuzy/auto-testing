@@ -184,6 +184,10 @@ def single_miniapp_id(miniapp_id):
         for i in useful_records:
             same = False
             for j in all_records:
+                if len(all_records)==2:
+                    print("============")
+                    print(i)
+                    print(j)
                 if same_frames(i, j) and same_content(i, j):
                     # print('same!')
                     same = True

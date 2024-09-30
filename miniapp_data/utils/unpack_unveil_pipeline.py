@@ -10,7 +10,11 @@ import multiprocessing as mp
 import re
 import argparse, math
 from utils import *
-
+from Crypto.Protocol.KDF import PBKDF2
+from Crypto.Hash import SHA1
+from Crypto.Cipher import AES
+import shutil
+from check_logs.get_unpack_fail_ids import get_from_log, get_id_set_from_42w_file
 
 logging.basicConfig(
     filename='unpack_with_unveil.log',
@@ -70,9 +74,9 @@ def decompile_with_self_built_unveilr(wxapkg, output_path=None):
     node_tool = 'node'
     decompiler_tool = '/media/data4/jianjia_data4/miniapp_data/unpack/unveilr/bin/index.js'
     if output_path is not None:
-        cmdline = [node_tool, decompiler_tool, wxapkg, '-o', output_path, '-f']
+        cmdline = [node_tool, decompiler_tool, wxapkg, '-o', output_path, '-f', '--clear-output']
     else:
-        cmdline = [decompiler_tool, wxapkg, '-f']
+        cmdline = [decompiler_tool, wxapkg, '-f', '--clear-output']
     # print(cmdline)
     try:
         out = subprocess.check_output(cmdline)
@@ -139,8 +143,7 @@ def decrypt_by_salt_and_iv(wxid, input_file, output_file, salt, iv):
         with open(input_file, mode='rb') as f:
             data_byte = f.read()
         if data_byte[0:WXAPKG_FLAG_LEN].decode("utf-8") != WXAPKG_FLAG:
-            logger.info('{} The file does not need to be decrypted, or it is not a wxapkg encryption package',
-                        input_file)
+            logger.info(f'{input_file} The file does not need to be decrypted, or it is not a wxapkg encryption package')
             return False
         # 初始化密钥
         cipher = AES.new(key, AES.MODE_CBC, iv.encode('utf-8'))
@@ -175,7 +178,13 @@ def handle_wxapkgs(package_names, input_dir, output_dir, unpacker = None):
             if unpacker=="self_built_unveilr":
                 decompile_with_self_built_unveilr(os.path.join(input_dir, package+".wxapkg"), os.path.join(output_dir, package))
             elif unpacker=="wxUnpacker":
-                decompile_wxapkg_with_wxUnpacker(os.path.join(input_dir, package+".wxapkg"))
+                res = decompile_wxapkg_with_wxUnpacker(os.path.join(input_dir, package+".wxapkg"))
+                if res:
+                    if os.path.exists(os.path.join(input_dir, package)):
+                        shutil.move(os.path.join(input_dir, package), os.path.join(output_dir, package))
+                        print(f'{package} unpack and move sucess')
+                else:
+                    print(f'{package} unpack failed')
             else: # default
                 decompile_wxapkg_with_unveilr(os.path.join(input_dir, package+".wxapkg"), os.path.join(output_dir, package))
             # except Exception as e:
@@ -206,29 +215,13 @@ def prepare_split_list(num_thread):
         cnt += 1
     
 
-def get_not_in_log(output_dir):
-    # appid only
-    appid_file = '/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w.json'
-    with open(appid_file, 'r') as fp:
-        package_names = json.load(fp)
-    # wx9b5f4adcfa3922cc-pc
+def get_42w_not_in_log(output_dir):
+    log_matches = get_from_log('unpack_with_unveil.log')
+    log_matches = log_matches.union(get_from_log('unpack_with_unveil_test.log'))    
+    log_matches = get_id_set_from_42w_file()-log_matches
     
-    # not in log
-    with open('unpack_with_unveil.log') as f:
-        content = f.read()
-        # Regular expression pattern to match and extract any string between the directory path and the .wxapkg extension
-        pattern = r"/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w/([^\.]+)\.wxapkg"
-        # Search for the pattern in the input string
-        matches = re.findall(pattern, content)
-        matches = set(matches)
-        # wx48f500ce8359d9c5-pc
-    package_names = [i for i in package_names if i not in matches]
-    
-    # not unpacked
-    package_names = [i for i in package_names if not os.path.exists(os.path.join(output_dir, i))]
-    
-    print(len(package_names))
-    return package_names
+    print(len(log_matches))
+    return log_matches
 
 def main():
     parser = argparse.ArgumentParser(
@@ -244,24 +237,14 @@ def main():
     parser.add_argument('--wxUnpacker', action='store_true',  help="unpack with wxUnpacker") 
     args = parser.parse_args()
     
-    if args.parallel is not None:
-        num_thread = int(args.parallel)
-        prepare_split_list(num_thread)
-        
-        for i in range(num_thread):
-            cur_list_path = os.path.join("unpack_tmp_split_list", str(i))
-            cur_cmd = f'python unpack_unveil_pipeline.py -f {cur_list_path}'
-            # screen -dmS my_session bash -c 'activate; python unpack_unveil_pipeline.py -f unpack_tmp_split_list/4'
-            print(f"screen -dmS unpack_{i} bash -c '{cur_cmd}'")
-            os.system(f"screen -dmS unpack_{i} bash -c '{cur_cmd}'")
-    elif args.file is not None:
+    if args.file is not None:
         with open(args.file) as f:
             content = json.load(f)
         input_dir = content["pkgpath"]
         output_dir = content["unpackpath"]
         package_names = content["pkgs"]
-        unpacked = os.listdir(output_dir)
-        package_names = [i for i in package_names if i not in unpacked]
+        # unpacked = os.listdir(output_dir)
+        # package_names = [i for i in package_names if i not in unpacked]
     elif args.cmrf_fp:
         output_dir = "/media/dataj/miniapp_data/CMRF_groundtruth/fp_dataset_unpack"
         input_dir = "/media/dataj/miniapp_data/CMRF_groundtruth/fp_dataset"
@@ -294,7 +277,7 @@ def main():
         output_dir = "/media/dataj/miniapp_data/wxapkgs-42w-unpacked/"
         input_dir = "/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w/"
         # it seems that the unpacking process can not be parallelized.....
-        package_names = get_not_in_log(output_dir)
+        package_names = get_42w_not_in_log(output_dir)
     
     if args.self_built_unveilr: # self_built_unveilr
         handle_wxapkgs(package_names, input_dir, output_dir, "self_built_unveilr")
@@ -303,7 +286,67 @@ def main():
     else: # default: unveilr
         handle_wxapkgs(package_names, input_dir, output_dir)
 
+    # if args.parallel is not None:
+    #     # Decode wxapkgs with multiprocess
+    #     processes = 128
+    #     batch_size = (len(package_names) + processes - 1) // processes
+    #     batched_package_names = [package_names[i:i+batch_size] for i in range(0, len(package_names), batch_size)]
+    #     with mp.Pool(processes=processes) as pool:
+    #         pool.map(handle_wxapkgs, batched_package_names)
+
+def handle_wxapkgs_with_wxUnpacker(pkgs):
+    input_dir = "/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w"
+    output_dir = "/media/dataj/miniapp_data/wxapkgs-42w-unpacked"
+    for package in pkgs:
+        res = decompile_wxapkg_with_wxUnpacker(os.path.join(input_dir, package+".wxapkg"))
+        if res:
+            if os.path.exists(os.path.join(input_dir, package)):
+                if os.path.exists(os.path.join(output_dir, package)):
+                    shutil.rmtree(os.path.join(output_dir, package), ignore_errors=True)
+                shutil.move(os.path.join(input_dir, package), os.path.join(output_dir, package))
+                logger.info(f'{package} unpack and move sucess')
+                
+def unpack_failed_with_wxUnpacker():
+    jsonfile = "../appid_file/unpack_failed.json"
+    with open(jsonfile) as f:
+            content = json.load(f)
+    package_names = content["pkgs"]
+    
+    processes = 64
+    batch_size = (len(package_names) + processes - 1) // processes
+    batched_package_names = [package_names[i:i+batch_size] for i in range(0, len(package_names), batch_size)]
+    with mp.Pool(processes=processes) as pool:
+        pool.map(handle_wxapkgs_with_wxUnpacker, batched_package_names)
+    
+    
+                        
 if __name__ == '__main__':
     main()
+# unpack_failed_with_wxUnpacker()
+
+def clean_input_dir(packages):
+    input_dir = "/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w"
+    output_dir = "/media/dataj/miniapp_data/wxapkgs-42w-unpacked"
     
+    pattern = r"(wx[a-zA-Z0-9]{16}-pc)"    
+    cnt = 0
+    for package in tqdm(packages):
+        if os.path.isdir(os.path.join(input_dir, package)):
+            log_matches = re.findall(pattern, package)
+            if len(log_matches) > 0:
+                print('move 1')
+                cnt += 1
+                if os.path.exists(os.path.join(output_dir, package)):
+                    shutil.rmtree(os.path.join(output_dir, package), ignore_errors=True)
+                shutil.move(os.path.join(input_dir, package), os.path.join(output_dir, package))
+    print(cnt)
+
+def clean_input_dir_in_batch():
+    input_dir = "/media/data4/jianjia_data4/miniapp_data/wxapkgs-42w"
+    package_names = os.listdir(input_dir)
     
+    processes = 64
+    batch_size = (len(package_names) + processes - 1) // processes
+    batched_package_names = [package_names[i:i+batch_size] for i in range(0, len(package_names), batch_size)]
+    with mp.Pool(processes=processes) as pool:
+        pool.map(clean_input_dir, batched_package_names)

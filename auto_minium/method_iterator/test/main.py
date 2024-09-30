@@ -35,14 +35,34 @@ class MyTestRunner(unittest.TextTestRunner):
     def _makeResult(self):
         return MyTestResult(self.stream, self.descriptions, self.verbosity)
 
+def kill_wechat():
+    # Find PIDs of processes containing "wechat"
+    find_process = subprocess.run(['pgrep', '-f', 'wechat-web-devtools-linux-nodebug'], capture_output=True, text=True)
+
+    # Check if any PIDs were found
+    if find_process.stdout:
+        pids = find_process.stdout.splitlines()  # Split output into lines to get individual PIDs
+        for pid in pids:
+            # Kill each process using SIGKILL
+            subprocess.run(['kill', '-9', pid])
+            print(f"Killed process with PID: {pid}")
+    else:
+        print("No processes found matching 'wechat'.")
+    
 def maintest():
-    # subprocess.run(['pkill', '-f', 'nwjs'])
+    kill_wechat()
     # subprocess.run(['pkill', '-f', 'wechat'])
-    subprocess.run(['pkill', '-f', 'nwjs'])
+    # subprocess.run(['pkill', '-f', 'nwjs'])
     start_time = time.time()
     with open("config.json") as f:
         config = json.load(f)
     logger_main.info("Start Running test for: " + config["project_path"])
+    
+    # preprocess
+    # /media/dataj/wechat-devtools-linux/testing/auto-testing/miniapp_data/utils/single_preprocess.py
+    script_path = "/media/dataj/wechat-devtools-linux/testing/auto-testing/miniapp_data/utils/single_preprocess.py"
+    subprocess.run(['python', script_path, config["project_path"]])
+    logger_main.info(f"Preprocess for {config['project_path']}")
     
     bind_json_file = os.path.join(config["project_path"], "bind_methods.json")
     bind_navi_json_file = os.path.join(config["project_path"], "bind_methods_navi.json")
@@ -52,7 +72,7 @@ def maintest():
     if os.path.exists(bind_navi_json_file):
         os.remove(bind_navi_json_file)
     if (not os.path.exists(bind_json_file)) and (not os.path.exists(bind_navi_json_file)):
-        script_path = "/media/dataj/wechat-devtools-linux/testing/auto-testing/prework/MiniScope/src/static/miniapp.py"
+        script_path = "/media/dataj/wechat-devtools-linux/prework/MiniScope/src/static/generate_binds_for_jianjia.py"
         subprocess.run(['python', script_path, config["project_path"]])
         logger_main.info(f"Generate bind_methods.json for {config['project_path']}")
     
