@@ -96,7 +96,6 @@ def run_pkgs(all_project_lists, project_path):
     dev_tool_path = "/media/dataj/wechat-devtools-linux/wechat-web-devtools-linux-nodebug/bin/wechat-devtools-cli"
     # tracemalloc.start()
     for project in all_project_lists:
-        # subprocess.run(['pkill', '-f', 'nwjs'])
         input_data = {  
             "project_path": os.path.join(project_path, project),
             "dev_tool_path": dev_tool_path,
@@ -135,16 +134,23 @@ def main():
         else:
             all_project_lists = get_cmrf_fp()
     elif args.input is not None:
-        with open(args.input) as f:
-            content = json.load(f)
-        project_path = content["unpackpath"]
-        error_scale = args.input.split("/")[-1] + ".txt"
-        if args.error:
-            all_project_lists = get_error(error_scale)
+        if args.input.endswith(".json"):
+            with open(args.input) as f:
+                content = json.load(f)
+            project_path = content["unpackpath"]
+            error_scale = args.input.split("/")[-1] + ".txt"
+            if args.error:
+                all_project_lists = get_error(error_scale)
+            else:
+                all_project_lists = get_in_file_not_run(content["pkgs"], project_path)
+            if args.force:
+                all_project_lists = content["pkgs"]
         else:
-            all_project_lists = get_in_file_not_run(content["pkgs"], project_path)
-        if args.force:
-            all_project_lists = content["pkgs"]
+            with open(args.input) as f:
+                content = f.read()
+                all_project_lists = content.split("\n")
+                all_project_lists = [i for i in all_project_lists if i!=""]
+                project_path = ""
     elif args.taintmini_report:
         all_project_lists = []
         our_tool_result = "/media/dataj/wechat-devtools-linux/testing/auto-testing/miniapp_data/appid_file/random_100_no_error_appids.json"
