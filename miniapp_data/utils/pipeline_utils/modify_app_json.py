@@ -1,5 +1,7 @@
 import os, json
 import logging
+import shutil
+
 logger = logging.getLogger(__name__)
 
 def read_json_file(file_path):
@@ -119,11 +121,16 @@ def check_components(root_path, json_data):
             if not check_page(os.path.join(root_path, json_data["usingComponents"][name])):
                 del json_data["usingComponents"][name]
 
-def check_all_paths(MINIRPOGRAM_PATH, APP_JSON_PATH=None):
+def update_app_json(MINIRPOGRAM_PATH, APP_JSON_PATH=None):
     
     if not APP_JSON_PATH:
         APP_JSON_PATH = os.path.join(MINIRPOGRAM_PATH, 'app.json')
     
+    source = APP_JSON_PATH
+    destination = APP_JSON_PATH.replace('app.json', 'app_copy.json')
+    if not os.path.isfile(destination):
+        shutil.copy2(source, destination)
+  
     json_data = read_json_file(APP_JSON_PATH)
     if not json_data:
         return
@@ -140,10 +147,11 @@ def check_all_paths(MINIRPOGRAM_PATH, APP_JSON_PATH=None):
                 missing_pages.append(page)
         json_data['pages'] = [i for i in pages if i not in missing_pages]
     if 'preloadRule' in json_data:
-        pages = [i for i in json_data['preloadRule']]
-        for page in pages:
-            if not check_page(os.path.join(MINIRPOGRAM_PATH, page)):
-                del json_data['preloadRule'][page]
+        # pages = [i for i in json_data['preloadRule']]
+        # for page in pages:
+        #     if not check_page(os.path.join(MINIRPOGRAM_PATH, page)):
+        #         del json_data['preloadRule'][page]
+        del json_data['preloadRule']
     if 'plugins' in json_data:
         plugins = [i for i in json_data['plugins']]
         for itemkey in plugins:
@@ -159,5 +167,5 @@ if __name__ == "__main__":
 
     APP_JSON_PATH = '/Users/jianjia/WeChatProjects/wx916b5de2bad511d0-pc/app.json'
     MINIRPOGRAM_NAME = "/Users/jianjia/WeChatProjects/wx916b5de2bad511d0-pc"
-    check_all_paths(MINIRPOGRAM_NAME, APP_JSON_PATH)
+    update_app_json(MINIRPOGRAM_NAME, APP_JSON_PATH)
     
