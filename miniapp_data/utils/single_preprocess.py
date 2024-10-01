@@ -3,7 +3,7 @@ from tqdm import tqdm
 import logging
 logger = logging.getLogger(__name__)
 from pipeline_utils.modify_files import find_and_format_files
-from pipeline_utils.modify_app_json import check_all_paths
+from pipeline_utils.modify_app_json import update_app_json
 from pipeline_utils.modify_config_json import modify_config_with_url
 from pipeline_utils.modify_babel import modify_babel_path
 import sys
@@ -15,7 +15,7 @@ def preprocess(MINIRPOGRAM_PATH):
     modify_config_with_url(MINIRPOGRAM_PATH)
 
     # print('Step 2: preprocess app.json \n')
-    check_all_paths(MINIRPOGRAM_PATH)
+    update_app_json(MINIRPOGRAM_PATH)
 
     # print('Step 3: Walk through the directory and modify .wxml, bem.wxs, .js, .json files\n')
     # .wxml, bem.wxs, .js, .json
