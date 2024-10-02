@@ -1,0 +1,154 @@
+#!/media/dataj/wechat-devtools-linux/testing/myenv/bin/python
+import logging
+logger = logging.getLogger(__name__)
+logging.basicConfig(
+    filename='unpack.log',
+    level=logging.DEBUG,
+    format='%(asctime)s.%(msecs)03d %(levelname)s %(module)s - %(funcName)s: %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S',
+)
+
+
+import json, os
+from utils.wxapkg_decoder import decompile_wxapkg_with_wxUnpacker, decompile_wxapkg_with_unveilr
+import shutil
+
+# import distutils.dir_util.copy_tree as copy_tree
+
+def decompile(src, local_unpack_path):
+    if not decompile_wxapkg_with_unveilr(src):
+        logger.error(f'decompile_wxapkg_with_unveilr for {src} failed')
+        if not decompile_wxapkg_with_wxUnpacker(src, local_unpack_path):
+            logger.error(f'decompile_wxapkg_with_wxUnpacker for {src} failed')
+            return False
+    return True
+
+
+def move_code(source_dir, destination_dir):
+    # Check if destination directory exists, if not, create it
+    if not os.path.exists(destination_dir):
+        os.makedirs(destination_dir)
+
+    # Move all files and directories from the source to the destination
+    for item in os.listdir(source_dir):
+        source_item = os.path.join(source_dir, item)
+        destination_item = os.path.join(destination_dir, item)
+
+        # Move the directory or file
+        shutil.move(source_item, destination_item)
+
+def copy_code(source_dir, destination_dir):
+    # Ensure destination directory exists
+    if not os.path.exists(destination_dir):
+        os.makedirs(destination_dir)
+
+    # Loop through items in the source directory
+    for item in os.listdir(source_dir):
+        source_item = os.path.join(source_dir, item)
+        destination_item = os.path.join(destination_dir, item)
+        
+        # If it's a directory, use copytree
+        if os.path.isdir(source_item):
+            if os.path.exists(destination_item):
+                # logger.info("exists", destination_item)
+                copy_code(source_item, destination_item)
+            else:
+                shutil.copytree(source_item, destination_item)
+        else:
+            # If it's a file, use copy
+            shutil.copy(source_item, destination_item)
+
+def copy_and_overwrite(from_path, to_path):
+    if os.path.exists(to_path):
+        shutil.rmtree(to_path)
+    shutil.copytree(from_path, to_path)
+
+def decompile_wxapkg(src, dst=None, innerpath=None, local_unpack_path = None):
+    # print("inside decompile_wxapkg")
+    # print(local_unpack_path, dst) 
+    tmp_local_unpack_path = src.replace(".wxapkg", "")
+    if os.path.isdir(tmp_local_unpack_path) and len(os.listdir(tmp_local_unpack_path))>0:
+        pass
+    else:
+        if not decompile(src, tmp_local_unpack_path):
+            return
+    if not local_unpack_path:
+        local_unpack_path  = tmp_local_unpack_path
+    print(f"local_unpack_path: {local_unpack_path}, dst: {dst}")
+    # decide the dst
+    if dst is None:
+        print(os.listdir(local_unpack_path))
+        for dst_can in os.listdir(local_unpack_path):
+            if dst_can in local_unpack_path:
+                dst = dst_can
+                break
+    # if not os.path.isdir(dst):
+    if dst is not None:
+        os.makedirs(dst, exist_ok=True)
+    if os.listdir(local_unpack_path)== os.listdir(dst):
+        logger.info(f'{src} already unpacked and copied!')
+        return
+    logger.info(f"Unpack subpkg, src: {src}, dst: {dst}")
+    if innerpath!="":
+        logger.info(f"innerpath: {innerpath}")
+    copy_code(local_unpack_path,  dst)
+    
+            
+def process_pkg(info, dd_pkgs_prefix, unpack_pkg_prefix, wxids = None):
+    dd_pkgs = os.listdir(dd_pkgs_prefix)
+    if wxids==None:
+        wxids = [i for i in info]
+    for wxid in wxids:
+        if wxid not in info:
+            logger.error(f"{wxid} info not found!")
+            continue
+        logger.info(f">>>> unpacking wxid: {wxid}")
+        pkg_list = info[wxid]
+        # create the obj dir for the wxid
+        if not os.path.isdir(unpack_pkg_prefix + '/' + wxid):
+            os.mkdir(unpack_pkg_prefix + '/' + wxid)
+        for pkg in pkg_list:
+            if pkg["wxapkg_file"] not in dd_pkgs:
+                tmp  = pkg["wxapkg_file"]
+                logger.info(f"{tmp} missing for {wxid}!")
+            # unpack and move this pkg
+            src = os.path.join(dd_pkgs_prefix, pkg['wxapkg_file'])
+            dst = os.path.join(unpack_pkg_prefix, wxid)
+            innerpath = ""
+            if len(pkg['path'])>0:
+                innerpath = pkg['path'][0]
+                if innerpath[0] == "/":
+                    innerpath = innerpath[1:]
+            decompile_wxapkg(src, dst, innerpath)
+
+
+def main():
+    
+    info_file = "../logs/info.json"
+    pkg_prefix  = "../pkg"
+    unpack_pkg_prefix = "../pkg_unpack"
+
+    with open(info_file) as f:
+        content = json.load(f)
+    info = content["Zstd"]
+   
+    wxids = ["wx143b173be0c69447"]
+    wxids = set([i for i in info])
+    
+    # exclude the ones that have been tried unpacking
+    with open("unpack.log") as f:
+        content = f.read()
+    lines = content.split("\n")
+    lines = lines[:-1]
+    tried_ids = set([i.split(">>>> unpacking wxid: ")[-1] for i in lines])
+    wxids = wxids - tried_ids
+    
+    wxids = list(wxids)
+    print(f'Unpacking {len(wxids)} pkgs')
+    
+    # wxids = None
+    process_pkg(info, pkg_prefix, unpack_pkg_prefix, wxids)
+    
+
+if __name__ == '__main__':
+    main()
