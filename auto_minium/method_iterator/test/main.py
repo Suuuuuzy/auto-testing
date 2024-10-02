@@ -15,8 +15,6 @@ logging.basicConfig(
 )
 # from utils import write_to_file
 
-def run_python_script(script_path):
-    subprocess.run(['python', script_path, config["project_path"]])
     
 class MyTestResult(unittest.TextTestResult):
     def addError(self, test, err):
@@ -58,6 +56,10 @@ def maintest():
         config = json.load(f)
     logger_main.info("Start Running test for: " + config["project_path"])
     
+    app_json = os.path.join(config["project_path"], "app.json")
+    if not os.path.exists(app_json):
+        logger_main.error("No app.json for: " + config["project_path"])
+        return
     # preprocess
     # /media/dataj/wechat-devtools-linux/testing/auto-testing/miniapp_data/utils/single_preprocess.py
     script_path = "/media/dataj/wechat-devtools-linux/testing/auto-testing/miniapp_data/utils/single_preprocess.py"
