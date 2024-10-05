@@ -22,7 +22,7 @@ text = """09-26 22:14:01.315 23589 23633 D Wechat7020: USEFUL INFO: The appid: W
 09-14 22:57:34.142  7288  7362 D Wechat7020: USEFUL INFO: The appid: WxaPkgZstd_wx143b173be0c69447$/pages/zcordercheck/_18 and its pkg dir: /data/user/0/com.tencent.mm/MicroMsg/appbrand/pkg/general/_-628106894_18.wxapkg
 09-14 22:57:34.142  7288  7362 D Wechat7020: USEFUL INFO: The appid: WxaPkgZstd_wx143b173be0c69447$/pages/zcordercheck/_18 and its pkg dir: /data/user/0/com.tencent.mm/MicroMsg/appbrand/pkg/general/_-628106894_18.wxapkg"""
 
-useful_path = "../logs/useful_info.txt"
+useful_path = "../newcrawl/logs/useful_info.txt"
 with open(useful_path) as f:
     text = f.read()
 
@@ -68,8 +68,13 @@ for text in texts:
         info["Patch"] = "_"+parts[0].replace(info_type+"_", "")+"_"+postfix+".wxapkg.diff"
         info_sum["Diff"][info["Patch"]] = info
 
+print(len(info_sum["Zstd"]))
 
-output_path = "../logs/info.json"
+import os
+unpack_path = "/media/dataj/wechat-devtools-linux/testing/auto-testing/miniapp_data/newcrawl/pkg_unpack"
+unpack_len = len(os.listdir(unpack_path))
+print(f"{unpack_len} pkgs unpacked")
+output_path = "../newcrawl/logs/info.json"
 with open(output_path,"w") as f:
     json.dump(info_sum, f, indent = 2)
 
