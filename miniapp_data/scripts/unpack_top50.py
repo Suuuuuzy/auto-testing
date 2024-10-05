@@ -204,7 +204,7 @@ def process_pkg(pkg_prefix, unpack_pkg_prefix, wxids):
         rootpath = os.path.join(pkg_prefix, wxid)
         wxapkg_path = [i for i in os.listdir(rootpath) if not i.startswith(".")][0]
         rootpath = os.path.join(rootpath, wxapkg_path)
-        print(f">>>> unpacking wxid: {wxid} at dir: {rootpath}")
+        logger.info(f">>>> unpacking wxid: {wxid} at dir: {rootpath}")
         
         if not os.path.isdir(unpack_pkg_prefix + '/' + wxid):
             os.mkdir(unpack_pkg_prefix + '/' + wxid)
@@ -213,22 +213,12 @@ def process_pkg(pkg_prefix, unpack_pkg_prefix, wxids):
         wxapkgs = [i for i in os.listdir(rootpath) if i.endswith(".wxapkg")]
         for pkg in wxapkgs:
             src = os.path.join(rootpath, pkg)
-            # local_unpack_path = src.replace(".wxapkg", "")
-            # decompile(src, local_unpack_path)   
             innerpath = pkg.replace(".wxapkg", "")
             if innerpath=="__APP__":
                 innerpath=""
-                # local_unpack_path = os.path.join(src.replace(".wxapkg", ""))
-            # elif innerpath=="":
-            #     local_unpack_path = os.path.join(src.replace(".wxapkg", ""), innerpath[1:-1])
             else:
                 innerpath = innerpath.split("_")[1]
-                # local_unpack_path = os.path.join(src.replace(".wxapkg", ""), innerpath)
-            dst = os.path.join(unpack_pkg_prefix, wxid, innerpath)
-            print(f"src: {src}, dst: {dst}") 
-            # print(f"local_unpack_path: {local_unpack_path}")
-            # we do not know the local unapck path until we decompile??? dst is not know, either....
-            decompile_wxapkg(src)
+            decompile_wxapkg(src, dst=unpack_pkg_prefix + '/' + wxid)
         
         
         # deal with plugins??
@@ -240,7 +230,7 @@ def main():
     wxids = get_wxids_from_csv(csvfile)
     print(wxids)
     
-    # wxids = ["wx1fde2c33280d64b6"]
+    wxids = ["wxde8ac0a21135c07d"]
     pkg_prefix  = "../top50/packages"
     unpack_pkg_prefix = "../top50/packages_unpack"
     

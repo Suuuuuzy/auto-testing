@@ -56,41 +56,27 @@ def copy_code(source_dir, destination_dir):
                 shutil.copytree(source_item, destination_item)
         else:
             # If it's a file, use copy
-            shutil.copy(source_item, destination_item)
+            if not os.path.exists(destination_item):
+                shutil.copy(source_item, destination_item)
 
 def copy_and_overwrite(from_path, to_path):
     if os.path.exists(to_path):
         shutil.rmtree(to_path)
     shutil.copytree(from_path, to_path)
 
-def decompile_wxapkg(src, dst=None, innerpath=None, local_unpack_path = None):
-    # print("inside decompile_wxapkg")
-    # print(local_unpack_path, dst) 
-    tmp_local_unpack_path = src.replace(".wxapkg", "")
-    if os.path.isdir(tmp_local_unpack_path) and len(os.listdir(tmp_local_unpack_path))>0:
+def decompile_wxapkg(src, dst=None):
+    local_unpack_path = src.replace(".wxapkg", "")
+    if os.path.isdir(local_unpack_path) and len(os.listdir(local_unpack_path))>0:
         pass
     else:
-        if not decompile(src, tmp_local_unpack_path):
+        if not decompile(src, local_unpack_path):
             return
-    if not local_unpack_path:
-        local_unpack_path  = tmp_local_unpack_path
     print(f"local_unpack_path: {local_unpack_path}, dst: {dst}")
-    # decide the dst
-    if dst is None:
-        print(os.listdir(local_unpack_path))
-        for dst_can in os.listdir(local_unpack_path):
-            if dst_can in local_unpack_path:
-                dst = dst_can
-                break
-    # if not os.path.isdir(dst):
-    if dst is not None:
-        os.makedirs(dst, exist_ok=True)
-    if os.listdir(local_unpack_path)== os.listdir(dst):
-        logger.info(f'{src} already unpacked and copied!')
-        return
+    # this might not be the case since there might be nested pkgs.
+    # if os.listdir(local_unpack_path)== os.listdir(dst):
+    #     logger.info(f'{src} already unpacked and copied!')
+    #     return
     logger.info(f"Unpack subpkg, src: {src}, dst: {dst}")
-    if innerpath!="":
-        logger.info(f"innerpath: {innerpath}")
     copy_code(local_unpack_path,  dst)
     
             
@@ -119,20 +105,22 @@ def process_pkg(info, dd_pkgs_prefix, unpack_pkg_prefix, wxids = None):
                 innerpath = pkg['path'][0]
                 if innerpath[0] == "/":
                     innerpath = innerpath[1:]
-            decompile_wxapkg(src, dst, innerpath)
+            if innerpath!="":
+                logger.info(f"innerpath: {innerpath}")
+            decompile_wxapkg(src, dst=dst)
 
 
 def main():
     
-    info_file = "../logs/info.json"
-    pkg_prefix  = "../pkg"
-    unpack_pkg_prefix = "../pkg_unpack"
+    info_file = "../newcrawl/logs/info.json"
+    pkg_prefix  = "../newcrawl/pkg"
+    unpack_pkg_prefix = "../newcrawl/pkg_unpack"
 
     with open(info_file) as f:
         content = json.load(f)
     info = content["Zstd"]
    
-    wxids = ["wx143b173be0c69447"]
+    # wxids = ["wx143b173be0c69447"]
     wxids = set([i for i in info])
     
     # exclude the ones that have been tried unpacking
