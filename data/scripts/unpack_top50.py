@@ -230,7 +230,7 @@ def main():
     wxids = get_wxids_from_csv(csvfile)
     print(wxids)
     
-    wxids = ["wxde8ac0a21135c07d"]
+    # wxids = ["wxde8ac0a21135c07d"]
     pkg_prefix  = "../top50/packages"
     unpack_pkg_prefix = "../top50/packages_unpack"
     

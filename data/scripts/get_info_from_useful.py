@@ -71,7 +71,7 @@ for text in texts:
 print(len(info_sum["Zstd"]))
 
 import os
-unpack_path = "/media/dataj/wechat-devtools-linux/testing/auto-testing/miniapp_data/newcrawl/pkg_unpack"
+unpack_path = "/media/dataj/wechat-devtools-linux/testing/auto-testing/data/newcrawl/pkg_unpack"
 unpack_len = len(os.listdir(unpack_path))
 print(f"{unpack_len} pkgs unpacked")
 output_path = "../newcrawl/logs/info.json"
