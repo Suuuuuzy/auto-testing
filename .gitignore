@@ -4,10 +4,10 @@
 **/.DS_Store
 auto_minium/method_iterator/config.json
 auto_minium/method_iterator/outputs
-miniapp_data/appid_file/
-miniapp_data/newcrawl/*
-miniapp_data/top50
-!miniapp_data/newcrawl/scripts
-!miniapp_data/newcrawl/top50/miniapp-dataset-top50.csv
+data/appid_file
+data/newcrawl
+data/top50
+!data/newcrawl/scripts
+!data/newcrawl/top50/miniapp-dataset-top50.csv
 tmp.py
 node_modules/
