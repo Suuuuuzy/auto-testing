@@ -61,8 +61,7 @@ def maintest():
         logger_main.error("No app.json for: " + config["project_path"])
         return
     # preprocess
-    # /media/dataj/wechat-devtools-linux/testing/auto-testing/miniapp_data/utils/single_preprocess.py
-    script_path = "/media/dataj/wechat-devtools-linux/testing/auto-testing/miniapp_data/utils/single_preprocess.py"
+    script_path = "/media/dataj/wechat-devtools-linux/testing/auto-testing/data/data_utils/single_preprocess.py"
     subprocess.run(['python', script_path, config["project_path"]])
     logger_main.info(f"Preprocess for {config['project_path']}")
     

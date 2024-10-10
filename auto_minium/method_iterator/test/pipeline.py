@@ -198,26 +198,20 @@ def main():
         with open(args.input) as f:
             content = json.load(f)
         project_path = content["unpackpath"]
-        error_scale = args.input.split("/")[-1] + ".txt"
-        if args.error:
-            all_project_lists = get_error(error_scale)
-        else:
-            all_project_lists = get_in_file_not_run(content["pkgs"], project_path)
-        if args.force:
-            all_project_lists = content["pkgs"]
+        pkgs = content["pkgs"]
+        all_project_lists = [os.path.join(project_path, i) for i in pkgs]
     else:
         with open(args.input) as f:
             content = f.read()
             all_project_lists = content.split("\n")
             all_project_lists = [i for i in all_project_lists if i!=""]
-            project_path = ""
-            all_project_lists = get_in_file_not_run(all_project_lists, project_path)
-
-
+    print(f">>>pipeline running {len(all_project_lists)} packages")
+    run(all_project_lists)
+    
 def run(all_project_lists):
     def run_python_script(script_path):
         subprocess.run(['python', script_path, 'config.json'])
-    script_path = '/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/main.py' 
+    main_test = '/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/main.py' 
     dev_tool_path = "/media/dataj/wechat-devtools-linux/wechat-web-devtools-linux-nodebug/bin/wechat-devtools-cli"
     # tracemalloc.start()
     for project_path in all_project_lists:
@@ -230,7 +224,7 @@ def run(all_project_lists):
             # "test_port" add for parallel running?
             }
         generate_config(input_data)
-        run_python_script(script_path)
+        run_python_script(main_test)
         time.sleep(5)
     
     
