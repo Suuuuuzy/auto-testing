@@ -1,0 +1,93 @@
+
+Step 1: check config existence and modify config so that url can be processed unchecked
+
+Step 2: Eliminate all missing pages
+
+In total, there are 10 complete pages and 0 missing pages
+{'exist': [], 'miss': ['guide/guide']}
+unable to find subPackage pages/offline-functional/. reducing from app.json
+{'exist': [], 'miss': ['index/index', 'protocol/protocol']}
+unable to find subPackage pages/merchantAuthorize/. reducing from app.json
+{'exist': [], 'miss': ['index/index', 'detail/detail']}
+unable to find subPackage pages/reward/. reducing from app.json
+{'exist': [], 'miss': ['index/index', 'detailed/detailed', 'rules/rules', 'history/history', 'history-detail/history-detail']}
+unable to find subPackage pages/additional-buy/. reducing from app.json
+{'exist': [], 'miss': ['index/index', 'index2/index2', 'detail/detail', 'rule/rule', 'myGift/myGift', 'officialQg/officialQg', 'bankActivity/bankActivity', 'unionpay/unionpay', 'unionpayRule/unionpayRule', 'luckyCover/make/make', 'luckyCover/edit/edit', 'luckyCover/verify/verify', 'luckyCover/myCover/myCover', 'edit/edit']}
+unable to find subPackage pages/merchantGift/. reducing from app.json
+{'exist': [], 'miss': ['customerDetails']}
+unable to find subPackage pages/customerDetails/. reducing from app.json
+{'exist': ['index/index', 'details/details', 'bookkeeping/bookkeeping', 'store/store', 'analysis/analysis', 'record/record', 'history/history', 'excludedReceiptList/excludedReceiptList', 'transferlist/transferlist', 'setting/setting', 'interim/interim', 'tips/tips', 'time/time'], 'miss': []}
+{'exist': [], 'miss': ['index/index', 'rule/rule', 'info/info']}
+unable to find subPackage pages/creditCard/. reducing from app.json
+{'exist': [], 'miss': ['carNum']}
+unable to find subPackage pages/carNum/. reducing from app.json
+{'exist': ['index/index', 'courier/courier', 'apply/apply', 'provision/provision', 'detail/detail', 'list/list', 'detailed/detailed', 'me/me', 'activitygift/activitygift', 'exchange/exchange', 'status/status', 'order/order', 'applyNormal/applyNormal', 'activityPayCode/activityPayCode', 'ad/ad', 'activity88/activity', 'enter/enter', 'refund/refund', 'refund_status/refund_status', 'open/material_detail/material_detail', 'open/confirm_order/confirm_order', 'open/qrcode_confirm_order/qrcode_confirm_order'], 'miss': []}
+{'exist': [], 'miss': ['index/index', 'edit/edit']}
+unable to find subPackage pages/announcement/. reducing from app.json
+{'exist': [], 'miss': ['loan']}
+unable to find subPackage pages/loan/. reducing from app.json
+{'exist': [], 'miss': ['index']}
+unable to find subPackage pages/applyMiniProgram/. reducing from app.json
+{'exist': [], 'miss': ['index']}
+unable to find subPackage pages/launchLink/. reducing from app.json
+{'exist': [], 'miss': ['business/business', 'edit/edit', 'index/index', 'manualAdd/manualAdd', 'share/share', 'sortSet/sortSet', 'sortMenu/sortMenu', 'status/status', 'menuSet/menuSet', 'management/management', 'order/order', 'promotion/promotion', 'poster/poster', 'posterEdit/posterEdit', 'messageNote/messageNote', 'commitOrders/commitOrders', 'setting/index/index', 'setting/detail/detail', 'setting/time/time', 'setting/businessHour/businessHour', 'choosepic/choosepic', 'completeAdd/completeAdd']}
+unable to find subPackage pages/takeaway/. reducing from app.json
+{'exist': [], 'miss': ['batchEdit/batchEdit', 'buyTools/buyTools', 'edit/edit', 'index/index', 'newer/newer', 'manualAdd/manualAdd', 'sortSet/sortSet', 'sortMenu/sortMenu', 'status/status', 'menuSet/menuSet', 'management/management', 'order/order', 'search/search', 'orderSearch/index', 'setting/index/index', 'setting/businessSetting/index', 'setting/businessMode/index', 'setting/businessTime/index', 'setting/distributionFee/index', 'setting/orderSetting/index', 'setting/packagefee/index', 'setting/unified/unified', 'setting/saleValueAndDiscount/index', 'setting/unifiedDetail/unifiedDetail', 'setting/unifiedTime/unifiedTime', 'setting/goodPackagingFee/index', 'setting/discountSetting/index', 'setting/showsaleSetting/index', 'setting/printerSetting/index', 'setting/preorderSetting/index', 'setting/orderType/pickUp/pickUp', 'setting/orderType/delivery/delivery', 'setting/orderType/inStore/inStore', 'setting/orderType/unified/unified', 'exportOrder/exportOrder', 'goodLibraryNew/chooseBusiness/index', 'goodLibraryNew/chooseIndustry/index', 'goodLibraryNew/batchAddGood/index', 'customerGroup/index/index', 'customerGroup/qrcode/qrcode', 'customerGroup/edit/edit', 'customerGroup/guide/guide', 'customerGroup/merchantGroup/index', 'customerGroup/introduction/introduction', 'graphicLink/index', 'setting/deliveryFee/index', 'setting/deliveryMode/index', 'setting/unifiedDeliveryFee/index', 'setting/shopDelivery/index/index', 'setting/shopDelivery/introduction/index', 'setting/shopDelivery/goodsPick/index']}
+unable to find subPackage pages/orderAssistant/. reducing from app.json
+{'exist': [], 'miss': ['introduction/introduction', 'howToPlay/howToPlay', 'chooseGoodSource/chooseGoodSource', 'selectShelfGood/selectShelfGood', 'editFlashSaleGood/editFlashSaleGood', 'manageFlashSale/manageFlashSale', 'history/history', 'flashSalePoster/flashSalePoster']}
+unable to find subPackage pages/flashSale/. reducing from app.json
+{'exist': [], 'miss': ['business/business', 'share/share', 'promotion/promotion', 'poster/poster', 'posterEdit/posterEdit', 'choosepic/choosepic', 'singlePoster/singlePoster', 'multiplePoster/chooseProducts/chooseProducts', 'multiplePoster/poster/poster']}
+unable to find subPackage pages/orderPoster/. reducing from app.json
+{'exist': [], 'miss': ['index', '__plugin__/wx9ad912bf20548d92/pages/address-form-local/main', '__plugin__/wx9ad912bf20548d92/pages/order-detail/order-detail', '__plugin__/wx9ad912bf20548d92/pages/localsend/localsend', '__plugin__/wx9ad912bf20548d92/pages/local-order-detail/local-order-detail', '__plugin__/wx9ad912bf20548d92/pages/address/address', '__plugin__/wx9ad912bf20548d92/pages/shipping/shipping']}
+unable to find subPackage pages/distributionPlugin/. reducing from app.json
+{'exist': [], 'miss': ['guide/guide']}
+unable to find subPackage pages/takeawayCommon/. reducing from app.json
+{'exist': ['index/index', 'detail/detail', 'detail-simple/detail-simple', 'edit/edit', 'success/success', 'cropper/cropper', 'privilege/privilege', 'address/address', 'category/category', 'fail/fail', 'setting/setting', 'modify/modify', 'change/change', 'guide/guide', 'info/info', 'qrcode/qrcode', 'bindCard/bindCard', 'idCardEdit/idCardEdit', 'businessType/businessType', 'guideSimple/guideSimple', 'guideSimpleRule/guideSimpleRule'], 'miss': []}
+{'exist': [], 'miss': ['index/index', 'detail/detail', 'success/success']}
+unable to find subPackage pages/channels/. reducing from app.json
+{'exist': [], 'miss': ['index/index', 'detail/detail', 'history/history', 'guide/guide', 'detail2/detail2']}
+unable to find subPackage pages/missionCenter/. reducing from app.json
+{'exist': [], 'miss': ['index/index', 'norm/norm', 'status/status', 'edit/edit', 'preview/preview']}
+unable to find subPackage pages/ad/. reducing from app.json
+{'exist': [], 'miss': ['guide/guide']}
+unable to find subPackage pages/receipt-professional/. reducing from app.json
+{'exist': [], 'miss': ['index/index', 'detail/detail', 'friends/friends', 'history/history', 'poster/poster', 'setting/setting', 'lostMember/lostMember', 'newMemberList/newMemberList', 'servicePoster/index/index', 'servicePoster/content/content', 'guide/guide', 'select/select', 'info/info', 'data/data', 'rule/rule', 'preview/preview', 'materials/materials', 'apply/apply', 'success/success', 'status/status', 'couponAwardEdit/couponAwardEdit', 'awardSelect/awardSelect', 'experienceGold/experienceGold', 'couponSuccess/couponSuccess']}
+unable to find subPackage pages/fiM/. reducing from app.json
+{'exist': [], 'miss': ['index/index', 'detail/detail', 'eventSetting/eventSetting', 'awardSetting/awardSetting', 'participants/participants', 'management/management', 'history/history', 'modifyAwardList/modifyAwardList', 'historicalDetail/historicalDetail', 'poster/poster', 'success/success', 'threshold/threshold', 'rule/rule']}
+unable to find subPackage pages/lottery/. reducing from app.json
+{'exist': [], 'miss': ['notice/index/index', 'notice/edit/edit', 'notice/timerEdit/timerEdit', 'notice/timerList/timerList']}
+unable to find subPackage pages/customerGroup/. reducing from app.json
+{'exist': [], 'miss': ['forward/forward', 'claim/claim', 'history/history']}
+unable to find subPackage pages/insurance/. reducing from app.json
+{'exist': [], 'miss': ['index/index', 'story/story', 'material/material', 'course/course', 'edit/edit', 'faq/faq', 'fail/fail', 'rules/rules', 'quota/quota', 'upload/upload', 'pre-edit/pre-edit', '__plugin__/wx614fc54151de9389/pages/index/index']}
+unable to find subPackage pages/concern/. reducing from app.json
+{'exist': [], 'miss': ['index/index', 'toggle/toggle']}
+unable to find subPackage pages/accessibility/. reducing from app.json
+{'exist': [], 'miss': ['index/index', 'detail/detail']}
+unable to find subPackage pages/achievement/. reducing from app.json
+{'exist': ['recordSelectTime'], 'miss': []}
+{'exist': [], 'miss': ['forbidden']}
+unable to find subPackage pages/forbidden/. reducing from app.json
+{'exist': [], 'miss': ['recordPeriod']}
+unable to find subPackage pages/recordPeriod/. reducing from app.json
+{'exist': ['voice_explain', 'select'], 'miss': []}
+{'exist': ['message2'], 'miss': []}
+{'exist': ['news', 'index/index', 'news/news', 'forum/forum'], 'miss': []}
+{'exist': [], 'miss': ['notice']}
+unable to find subPackage pages/notice/. reducing from app.json
+{'exist': ['index/index', 'code/code', 'manage/manage', 'status/status', 'process/process'], 'miss': []}
+{'exist': [], 'miss': ['realname']}
+unable to find subPackage pages/realname/. reducing from app.json
+{'exist': ['index'], 'miss': []}
+{'exist': [], 'miss': ['contactCustomer']}
+unable to find subPackage pages/contactCustomer/. reducing from app.json
+{'exist': [], 'miss': ['contactRecord']}
+unable to find subPackage pages/contactRecord/. reducing from app.json
+{'exist': ['status'], 'miss': []}
+there are a total of 45 subPackages, of which 35 do not have corresponding files, and 10 has
+
+Step 3: Check all inclusion of plugins in js scripts
+
+checking for pattern re.compile('requirePlugin("tencentvideo")')
+checking for pattern re.compile('requirePlugin("distribution-plugin")')
+checking for pattern re.compile('requirePlugin("id-verification")')

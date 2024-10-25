@@ -1,0 +1,204 @@
+{
+    "\\components\\ad-info-flow\\ad-info-flow.js": [
+        "wx.navigateTo({url:\"/pages/msg-center/msg-webview/msg-webview?url=\".concat(encodeURIComponent(n),\"&reportData=\").concat(encodeURIComponent(JSON.stringify(h)),\"&channel=customAd\"),})"
+    ],
+    "\\components\\ad-self-custom\\common\\self-custom\\self-custom.js": [
+        "wx.navigateTo({url:\"/pages/msg-center/msg-webview/msg-webview?url=\".concat(encodeURIComponent(o),\"&reportData=\").concat(encodeURIComponent(JSON.stringify(p)),\"&channel=customAd\"),})"
+    ],
+    "\\components\\detail-share-bottom-navigation-new\\detail-share-bottom-navigation-new.js": [
+        "wx.navigateTo({url:\"/package-my/msg-html5/msg-html5?url=https://mp.weixin.qq.com/s/owNSTNZ9IyJYZoi_jh2Wmw\"})"
+    ],
+    "\\components\\dialog\\cgi-dialog\\cgi-dialog.js": [
+        "wx.navigateTo({url:\"/pages/msg-center/msg-webview/msg-webview?url=\".concat(encodeURIComponent(this.data.config.jumpUrl))})"
+    ],
+    "\\components\\dialog\\download-app-dialog\\download-app-dialog.js": [
+        "wx.navigateTo({url:\"/pages/msg-center/msg-webview/msg-webview?url=\".concat(t)})"
+    ],
+    "\\components\\dialog\\invite-share-dialog\\invite-share-dialog.js": [
+        "wx.navigateTo({url:\"\".concat(this.data.jumpUrl,\"?url=\").concat(encodeURIComponent(s))})"
+    ],
+    "\\components\\favorite-bottom-panel\\favorite-bottom-panel.js": [
+        "wx.navigateTo({url:\"/package-my/favoritefolder/favoritefolder?videoId=\".concat(i.id,\"&targetUid=\").concat(i.uid,\"&favoriteId=\").concat(e.id)})"
+    ],
+    "\\components\\follow-page-component\\follow-page-component.js": [
+        "wx.navigateTo({url:\"/package-comment/recommend/recommend\"})",
+        "wx.navigateTo({url:\"../../pages/msg-center/msg-webview/msg-webview?url=\".concat(encodeURIComponent(e))})"
+    ],
+    "\\components\\recommend-item\\item.js": [
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(this.data.recommendUser.wxUserInfoSimpleVO.uid)})"
+    ],
+    "\\components\\reward\\reward-input\\reward-input.js": [
+        "wx.navigateTo({url:\"/package-money/video-detail-appreciate/video-detail-appreciate?videoId=\".concat(this.properties.video?this.properties.video.id:0)})"
+    ],
+    "\\components\\share-page-component\\feed-video-component\\comment-pop-window\\comment-pop-window.js": [
+        "wx.navigateTo({url:\"/package-comment/comment/comment?videoId=\".concat(this.data.id,\"&commentId=\").concat(t.id,\"&authorId=\").concat(this.data.video.user.uid,\"&reply=\",!0)})",
+        "wx.navigateTo({url:\"/package-comment/comment/comment?videoId=\".concat(this.data.id,\"&commentId=\").concat(t.id,\"&authorId=\").concat(this.data.video.user.uid)})"
+    ],
+    "\\components\\share-page-component\\feed-video-component\\feed-video\\feed-video.js": [
+        "wx.navigateTo({url:\"../../../../pages/msg-center/msg-webview/msg-webview?url=\".concat(encodeURIComponent(t))})",
+        "wx.navigateTo({url:\"/package-comment/comment/comment?videoId=\".concat(this.data.video.id,\"&commentId=\").concat(t.id,\"&authorId=\").concat(this.data.video.user.uid,\"&reply=\",!0)})",
+        "wx.navigateTo({url:\"/package-comment/comment/comment?videoId=\".concat(this.data.video.id,\"&commentId=\").concat(t.id,\"&authorId=\").concat(this.data.video.user.uid)})"
+    ],
+    "\\components\\uploader\\uploader.js": [
+        "wx.navigateTo({url:a})",
+        "wx.navigateTo({url:\"/package-my/help-html5/help-html5?url=\".concat(encodeURIComponent(e))})",
+        "wx.navigateTo({url:\"/package-my/help-html5/help-html5?url=\".concat(encodeURIComponent(e))})"
+    ],
+    "\\components\\user\\user-avatar--simple\\user-avatar--simple.js": [
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(e)})"
+    ],
+    "\\components\\video\\video-detail-vote\\video-detail-vote.js": [
+        "wx.navigateTo({url:\"/package-activity/native-activity/native-activity?activityId=\".concat(this.data.apVoteData.apid,\"&rootPageSource=\").concat(this.data.pageSource)})"
+    ],
+    "\\components\\video\\video-nav\\video-nav.js": [
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(t.uid)})"
+    ],
+    "\\components\\video\\video-swiper\\index.js": [
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(t.user.uid),})"
+    ],
+    "\\components\\video\\videoCell-collections\\videoCell-collections.js": [
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(this.properties.targetUid,\"&collectionId=\").concat(this.properties.folder.id)})"
+    ],
+    "\\components\\video\\videoCell-flow\\videoCell-flow.js": [
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(a.uid)})"
+    ],
+    "\\components\\video\\videoCell-singleRow\\videoCell-singleRow.js": [
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(this.data.videoItem.user.uid)})"
+    ],
+    "\\components\\video-comment\\comment-hot\\comment-hot.js": [
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(t)})"
+    ],
+    "\\components\\video-comment\\comment-item\\comment-item.js": [
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(o)})"
+    ],
+    "\\package-detail\\video-detail\\video-detail.js": [
+        "wx.navigateTo({url:\"../../pages/msg-center/msg-webview/msg-webview?url=\".concat(encodeURIComponent(t)),})",
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(this.data.headVideo.user.uid,\"&collectionId=\").concat(this.data.currentVideoFolder.id),})",
+        "wx.navigateTo({url:\"/package-comment/comment/comment?videoId=\".concat(this.data.id,\"&commentId=\").concat(t.id,\"&authorId=\").concat(this.data.headVideo.user.uid,\"&reply=\",!0),})",
+        "wx.navigateTo({url:\"/package-comment/comment/comment?videoId=\".concat(this.data.id,\"&commentId=\").concat(t.id,\"&authorId=\").concat(this.data.headVideo.user.uid),})",
+        "wx.redirectTo({url:\"/pages/share/guide/guide\"+v.options2Url(p),})"
+    ],
+    "\\package-money\\earnings-details\\earnings-details.js": [
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(t)})"
+    ],
+    "\\package-money\\mybenefit\\my-benefit.js": [
+        "wx.navigateTo({url:\"/package-money/withdraw/withdraw\"})",
+        "wx.navigateTo({url:\"/package-money/earnings-details/earnings-details\"})",
+        "wx.navigateTo({url:\"/package-money/video-earnings/video-earnings?videoId=\".concat(t.videoId,\"&targetUid=\").concat(t.videoUid)})",
+        "wx.navigateTo({url:\"/package-money/video-appreciates/video-appreciates?videoId=\".concat(t.video.videoId,\"&targetUid=\").concat(t.video.videoUid)})",
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(t.payUser.uid)})",
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(t.rewardUser.uid)})"
+    ],
+    "\\package-money\\purchased-video\\purchased-video.js": [
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(a)})"
+    ],
+    "\\package-money\\video-appreciates\\video-appreciates.js": [
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(t.rewardUser.uid)})"
+    ],
+    "\\package-money\\video-appreciates-notify\\video-appreciates-notify.js": [
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(t.rewardUser.uid)})"
+    ],
+    "\\package-money\\video-detail-appreciate\\video-detail-appreciate.js": [
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(t.rewardUser.uid)})"
+    ],
+    "\\package-money\\withdraw\\withdraw.js": [
+        "wx.navigateTo({url:\"../withdraw-history/withdraw-history\"})"
+    ],
+    "\\package-msg\\msg-new-comment\\msg-new-comment.js": [
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(t.targetUid)})"
+    ],
+    "\\package-msg\\msg-new-favorite\\msg-new-favorite.js": [
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(t.targetUid)})"
+    ],
+    "\\package-msg\\msg-new-follow\\msg-new-follow.js": [
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(t.targetUid)})"
+    ],
+    "\\package-msg\\msg-new-share\\msg-new-share.js": [
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(a.targetId)})",
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(t.targetUid)})"
+    ],
+    "\\package-msg\\msg-new-up\\msg-new-up.js": [
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(t.targetUid)})"
+    ],
+    "\\package-my\\help-feedback\\help-feedback.js": [
+        "wx.navigateTo({url:\"../help-video/help-video?id=\".concat(a)})",
+        "wx.navigateTo({url:s})",
+        "wx.navigateTo({url:\"../help-insert-gzh/help-insert-gzh\"})",
+        "wx.navigateTo({url:\"../help-appreciate/help-appreciate\".concat(c)})"
+    ],
+    "\\package-my\\manage-all-danmu\\manage-all-danmu.js": [
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(t.uid)})",
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(t.uid)})"
+    ],
+    "\\package-my\\manage-danmu-video\\manage-danmu-video.js": [
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(t.uid)})",
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(t.uid)})"
+    ],
+    "\\package-my\\my-settings\\my-settings.js": [
+        "wx.navigateTo({url:\"/package-my/my-edit/my-edit\"})",
+        "wx.navigateTo({url:\"/package-money/purchased-video/purchased-video\"})",
+        "wx.navigateTo({url:\"/package-money/mybenefit/my-benefit\"})",
+        "wx.navigateTo({url:\"/package-my/manage-all-danmu/manage-all-danmu\"})",
+        "wx.navigateTo({url:\"/package-my/my-data/my-data\"})",
+        "wx.navigateTo({url:\"/package-my/help-feedback/help-feedback\"})"
+    ],
+    "\\package-upload\\videoEdit\\videoEdit.js": [
+        "wx.navigateTo({url:\"/package-my/help-feedback/help-feedback\"})"
+    ],
+    "\\pages\\category.js": [
+        "wx.navigateTo({url:\"./msg-center/msg-webview/msg-webview?url=\".concat(encodeURIComponent(t)),})"
+    ],
+    "\\pages\\user-videos.js": [
+        "wx.navigateTo({url:t,fail:function(e){console.error(e);},})",
+        "wx.navigateTo({url:\"/pages/Ad/self-ad?&adInfo=\".concat(encodeURIComponent(JSON.stringify(this.data.insertAdInfo)),\"&videoInfo=\").concat(encodeURIComponent(JSON.stringify(t)),\"&abTest4867=\").concat(encodeURIComponent(JSON.stringify(this.data.isHitAdExpCode507))),events:{resumePlayFromAdPage:function(e){(S.globalData.abTest507=!1),a.resumeCurrPlayer();},},success:function(e){a.pauseCurrPlayer(),e.eventChannel.emit(\"reportData\",{reportData:a.data.pageParams.reportData||{},rootPageSource:a.data.videoPageSource,videoData:a.data.pageParams.video,})",
+        "wx.redirectTo({url:\"/pages/share/guide/guide\"+u.options2Url(v)})"
+    ],
+    "\\pages\\Ad\\self-ad.js": [
+        "wx.redirectTo({url:\"/pages/msg-center/msg-webview/msg-webview?url=\".concat(encodeURIComponent(n),\"&reportData=\").concat(encodeURIComponent(JSON.stringify(a)),\"&channel=customAd\"),success:function(e){i.infoLog(e);},fail:function(e){i.infoLog(e);},})"
+    ],
+    "\\pages\\follow-tab\\follow-tab.js": [
+        "wx.navigateTo({url:\"../msg-center/msg-webview/msg-webview?url=\".concat(encodeURIComponent(a)),})"
+    ],
+    "\\pages\\home\\home.js": [
+        "wx.navigateTo({url:\"/package-my/my-follow/my-follow\"})",
+        "wx.navigateTo({url:\"/package-my/my-fans/my-fans\"})",
+        "wx.navigateTo({url:\"/package-my/my-settings/my-settings\"})",
+        "wx.navigateTo({url:\"/package-my/my-data/my-data\"})",
+        "wx.navigateTo({url:\"/pages/mine/mine-info?uid=\".concat(this.data.userInfo.uid),})"
+    ],
+    "\\pages\\msg-center\\msg\\msg.js": [
+        "wx.navigateTo({url:t})",
+        "wx.navigateTo({url:\"../msg-webview/msg-webview?url=\".concat(n,\"&title=\").concat(t.shareContent||t.messageTitle,\"&imgPath=\").concat(t.shareImgPath||t.imgPath)})",
+        "wx.navigateTo({url:\"\".concat(t.jumpUrl,\"&messageId=\").concat(t.id,\"&source=msgCenter\"),fail:function(e){o.toast(\"\u672a\u77e5\u9875\u9762\u8def\u5f84\")}})",
+        "wx.navigateTo({url:\"/pages/msg-center/msg-webview/msg-webview?url=\".concat(encodeURIComponent(v))})"
+    ],
+    "\\pages\\post\\post.js": [
+        "wx.navigateTo({url:o.jumpUrl})",
+        "wx.navigateTo({url:\"/package-my/help-html5/help-html5?url=\".concat(encodeURIComponent(o.jumpUrl),\"&shareImage=\").concat(encodeURIComponent(i),\"&name=\").concat(encodeURIComponent(r))})",
+        "wx.navigateTo({url:\"/package-my/help-html5/help-html5?url=\".concat(encodeURIComponent(\"https://mp.weixin.qq.com/s/uqp_a6zJYrvrcpY1sq2lcg\"))})",
+        "wx.navigateTo({url:\"/package-my/help-html5/help-html5?url=\".concat(encodeURIComponent(\"https://mp.weixin.qq.com/s/uqp_a6zJYrvrcpY1sq2lcg\"))})",
+        "wx.navigateTo({url:\"/package-point/musicList/musicList?entranceType=CREATE_DEFAULT&projectId=\".concat(a)})",
+        "wx.navigateTo({url:a})"
+    ],
+    "\\utils\\navigator.js": [
+        "wx.navigateTo({url:\"/package-comment/comment/comment?videoId=\".concat(o,\"&commentId=\").concat(a,\"&authorId=\").concat(t,\"&secondCommentId=\").concat(c,\"&rootPageSource=\").concat(n,\"&type=2\"),})",
+        "wx.navigateTo({url:\"/package-comment/comment/comment?videoId=\".concat(o,\"&commentId=\").concat(a,\"&authorId=\").concat(t,\"&rootPageSource=\").concat(n,\"&type=2\"),})",
+        "wx.navigateTo({url:l,fail:function(a){if(\"navigateTo:failwebviewcountlimitexceed\"===a.errMsg){console.log(\"\u8d85\u4e86\");vart=n.buildRouterPath(o,e);wx.reLaunch({url:t})",
+        "wx.navigateTo({url:\"/package-my/manage-danmu-video/manage-danmu-video?videoId=\".concat(e,\"&selectDanmu=\").concat(o),})",
+        "wx.navigateTo({url:\"/\"+e,success:function(){o&&o();},})",
+        "wx.navigateTo({url:\"/package-audit/apply-reaudit/apply-reaudit\"})",
+        "wx.navigateTo({url:y,events:{acceptDataFromOpenedPage:function(e){b(e);},},fail:function(e){console.log(\"navigateTo:fail\",e);},})",
+        "wx.navigateTo({url:\"/package-detail/video-detail/video-detail?id=\".concat(o,\"&targetUid=\").concat(a,\"&rootPageSource=\").concat(t,\"&comment=\",!0),})",
+        "wx.navigateTo({url:\"/package-detail/video-detail/video-detail?id=\".concat(o,\"&targetUid=\").concat(a,\"&rootPageSource=\").concat(t,\"&comment=\",!0,\"&fromType=from_type_msg_click\"),})",
+        "wx.navigateTo({url:\"/package-detail/video-detail/video-detail?id=\".concat(o,\"&targetUid=\").concat(a,\"&rootPageSource=\").concat(t,\"&comment=\",!0,\"&fromType=from_ype_hot_comments_click\"),})",
+        "wx.navigateTo({url:c})",
+        "wx.navigateTo({url:\"/package-upload/videoEdit/videoEdit?type=\".concat(e.TRANSMIT_KEY_VIDEO_EDIT),})",
+        "wx.navigateTo({url:\"/package-upload/videoEdit/videoEdit?type=\".concat(e.TRANSMIT_KEY_VIDEO_UPLOAD),})",
+        "wx.navigateTo({url:\"/package-my/report-abuse/report-abuse?videoId=\".concat(e),})",
+        "wx.redirectTo({url:y,fail:function(e){console.log(\"navigateTo:fail\",e);},})"
+    ],
+    "\\utils\\sharePageRouter.js": [
+        "wx.navigateTo(i)",
+        "wx.redirectTo(i):wx.navigateTo(i)"
+    ]
+}

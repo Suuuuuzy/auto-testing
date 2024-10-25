@@ -1,0 +1,31 @@
+
+Surveying miniprogram wxe73c2db202c7eebf_微信支付有优惠
+
+
+Step 1: check config existence and modify config so that url can be processed unchecked
+
+Step 2: Eliminate all missing pages
+
+In total, there are 1 complete pages and 0 missing pages
+{'exist': ['couponhistory/couponhistory', 'redPacket88GameWebView/redPacket88GameWebView', 'userAgreementAndHideProtect/userAgreementAndHideProtect', 'setUpCenter/hideSetUp', 'userHideAgreement/userHideAgreement', 'userHideAgreement/tenPayHidePolicy', 'userHideAgreement/wechatPaymentUserAgreement', 'timeline/timelineDetailPage/timelineDetailPage', 'timeline/timelineHomePage/timelineHomePage', 'timeline/perfectMoment/perfectMoment'], 'miss': []}
+{'exist': ['settings/index', 'award-pool/index', 'webview/index', 'settings/personalization/personalization', 'error/error'], 'miss': []}
+{'exist': ['user-profile/index'], 'miss': []}
+{'exist': ['pages/stamp-calendar/index', 'pages/stamp-record/index'], 'miss': []}
+{'exist': [], 'miss': ['pages/detail/index']}
+unable to find subPackage dist/bank-discount-packages/. reducing from app.json
+{'exist': [], 'miss': ['webview/index', 'notice/notice', 'qixi/home/index', 'qixi/select-lantern/index', 'qixi/result/index', 'mid-autumn/result/index', 'spring-festival/result/index']}
+unable to find subPackage dist/activity-packages/. reducing from app.json
+{'exist': ['award-details/index', 'exchange-success/index', 'ency-policy/index', 'award-shelf/index', 'ttz-subsidy/index'], 'miss': []}
+{'exist': ['pages/bought-shops/bought-shops', 'pages/personal-center/personal-center', 'pages/sku-person-center/sku-person-center', 'pages/cash-free/index', 'pages/lottery-detail/lottery-detail', 'pages/repurchase/repurchase', 'pages/merchant-detail/merchant-detail', 'pages/expired-awards/index', 'pages/sku-mall/sku-mall', 'pages/sku-mall/sku-mall-test'], 'miss': []}
+{'exist': [], 'miss': ['receive-coins/index']}
+unable to find subPackage dist/share-packages/. reducing from app.json
+{'exist': [], 'miss': ['present/index']}
+unable to find subPackage dist/second-floor-packages/. reducing from app.json
+{'exist': [], 'miss': ['pages/live-zone/live-zone']}
+unable to find subPackage dist/live-zone-packages/. reducing from app.json
+{'exist': [], 'miss': ['router/index']}
+unable to find subPackage dist/pages/. reducing from app.json
+there are a total of 12 subPackages, of which 6 do not have corresponding files, and 6 has
+
+Step 3: Check all inclusion of plugins in js scripts
+
