@@ -8,8 +8,7 @@ logging.basicConfig(
     datefmt='%Y-%m-%d %H:%M:%S',
 )
 
-
-import json, os
+import json, os, re
 from utils.wxapkg_decoder import decompile_wxapkg_with_wxUnpacker, decompile_wxapkg_with_unveilr
 import shutil
 
@@ -85,9 +84,6 @@ def process_pkg(info, dd_pkgs_prefix, unpack_pkg_prefix, wxids = None):
     if wxids==None:
         wxids = [i for i in info]
     for wxid in wxids:
-        if wxid not in info:
-            logger.error(f"{wxid} info not found!")
-            continue
         logger.info(f">>>> unpacking wxid: {wxid}")
         pkg_list = info[wxid]
         # create the obj dir for the wxid
@@ -109,6 +105,16 @@ def process_pkg(info, dd_pkgs_prefix, unpack_pkg_prefix, wxids = None):
                 logger.info(f"innerpath: {innerpath}")
             decompile_wxapkg(src, dst=dst)
 
+def get_ids_from_metadata():
+    with open("../newcrawl/logs/meta_data.txt") as f:
+        content = f.read()
+
+    pattern = r'wx[a-zA-Z0-9]{16}'
+    ids = set(re.findall(pattern, content))
+    
+    # ids = content.split("shopAppid=")
+    # ids = [i.split("&")[0] for i in ids if i.startswith("wx")]
+    return ids
 
 def main():
     
@@ -119,22 +125,48 @@ def main():
     with open(info_file) as f:
         content = json.load(f)
     info = content["Zstd"]
-   
-    # wxids = ["wx143b173be0c69447"]
-    wxids = set([i for i in info])
+    
+    # ==============================
+    # Option 1: get ids from 42w appids
+    # wxids = set([i for i in info])
+    
+    # Option 2: get ids from meta data
+    ids = get_ids_from_metadata()
+    wxids = set(ids)
+    
+    # Option 3: only one!
+    # wxids = set(["wx850d691fd02de8a1"])
+    # ==============================
+    
+    print(f'>>>> Total number of wxids loaded: {len(wxids)}')
+    
+    info_ids = set([i for i in info])
+    print(f'>>>> Number of wxids that are not crawled: {len(wxids-info_ids)}')
     
     # exclude the ones that have been tried unpacking
     with open("unpack.log") as f:
-        content = f.read()
-    lines = content.split("\n")
-    lines = lines[:-1]
-    tried_ids = set([i.split(">>>> unpacking wxid: ")[-1] for i in lines])
+        content = f.read()    
+    pattern = r'wx[a-zA-Z0-9]{16}'
+    tried_ids = set(re.findall(pattern, content))
     wxids = wxids - tried_ids
     
-    wxids = list(wxids)
-    print(f'Unpacking {len(wxids)} pkgs')
+    # include the ones does not have info
+    pattern = r'Info not found >>> (wx[a-zA-Z0-9]{16})'
+    not_found_ids = set(re.findall(pattern, content))
+    wxids = (wxids.union(not_found_ids))
     
-    # wxids = None
+    # exclude the ones unapcked in unpack_pkg_prefix, in theory this is included in tried_ids
+    wxids = list(wxids)
+    files = os.listdir(unpack_pkg_prefix)
+    wxids = [i for i in wxids if i in info and i not in files] 
+    
+    # wxids = ["wx548eca3f99062f38",
+    #          "wxf4433487625264eb",
+    #          "wxea1ecea148fd9f83",
+    #          "wxfb116a9a6bb00643"]
+    
+    print(f'Unpacking {len(wxids)} pkgs')
+
     process_pkg(info, pkg_prefix, unpack_pkg_prefix, wxids)
     
 

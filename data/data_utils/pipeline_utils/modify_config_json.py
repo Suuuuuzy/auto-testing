@@ -1,12 +1,12 @@
 import os
 from .modify_app_json import read_json_file, write_json_file
-
+APPID = "wx73e0ecea472e8cfb"
 def modify_config_with_url(miniprogram_path):
     miniprogram_name=miniprogram_path.split('/')[-1]
     config_path = os.path.join(miniprogram_path, 'project.config.json')
     if (os.path.exists(config_path) is False):
          config_json = {
-             "appid": "wxc26bf025c84ef3b7",
+             "appid": APPID,
              "compileType": "miniprogram",
              "libVersion": "2.25.3",
              "packOptions": {
@@ -30,13 +30,13 @@ def modify_config_with_url(miniprogram_path):
         try:
             config_json = read_json_file(config_path)
             if (config_json.get('appid') is None):
-                config_json['appid'] = "wxc26bf025c84ef3b7"
+                config_json['appid'] = APPID
             else:
-                config_json['appid'] = "wxc26bf025c84ef3b7"
+                config_json['appid'] = APPID
         except Exception as e:
             # print(f'encountering exception when parsing config json file: {str(e)}')
             config_json = {
-             "appid": "wxc26bf025c84ef3b7",
+             "appid": APPID,
              "compileType": "miniprogram",
              "libVersion": "2.25.3",
              "packOptions": {

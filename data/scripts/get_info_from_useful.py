@@ -68,12 +68,18 @@ for text in texts:
         info["Patch"] = "_"+parts[0].replace(info_type+"_", "")+"_"+postfix+".wxapkg.diff"
         info_sum["Diff"][info["Patch"]] = info
 
-print(len(info_sum["Zstd"]))
+print(f'{len(info_sum["Zstd"])} pkg infos in useful_info.txt')
 
 import os
 unpack_path = "/media/dataj/wechat-devtools-linux/testing/auto-testing/data/newcrawl/pkg_unpack"
-unpack_len = len(os.listdir(unpack_path))
-print(f"{unpack_len} pkgs unpacked")
+unpacked_ids = set(os.listdir(unpack_path))
+unpack_len = len(unpacked_ids)
+print(f"{unpack_len} dirs in data/newcrawl/pkg_unpack")
+
+from unpack import get_ids_from_metadata
+metadata_ids = get_ids_from_metadata()
+print(f"Among them, {len(unpacked_ids.intersection(metadata_ids))} dirs are from meta data crawl")
+
 output_path = "../newcrawl/logs/info.json"
 with open(output_path,"w") as f:
     json.dump(info_sum, f, indent = 2)

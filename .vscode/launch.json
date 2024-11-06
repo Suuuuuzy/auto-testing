@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch WeChat Devtools CLI",
+            "program": "/media/dataj/wechat-devtools-linux/wechat-web-devtools-linux-nodebug/package.nw/js/common/cli/index.js",
+            "args": [
+                "auto",
+                "--project",
+                "/media/dataj/wechat-devtools-linux/testing/auto-testing/data/newcrawl/pkg_unpack/wx7a90cde8b672a238",
+                "--auto-port",
+                "9420"
+            ]
+        }
+    ]
+}
