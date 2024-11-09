@@ -1,0 +1,227 @@
+Description:
+You are an assistant checking for sensitive information leaked from the in wechat miniapp code snippets.
+
+Task: 
+You need to check whether the arguments of the navigateToMiniProgram function contain any sensitive information, including email, phone, address, userinfo, etc. However, it should not include bussiness data, like order ID or token. 
+To do this, you need to do a data flow analysis of all the arguments passed to the navigateToMiniProgram function in the provided code context. 
+Then, you should decide whethere the arguments contain any sensitive information based on your experence, e.g., the name of the variable.
+You should only focus privacy leak in the arguments of navigateToMiniProgram function, but not other's like wx.makePhoneCall.
+
+Examples: 
+  Here is an example positive vulnerable code snippet that you should flag as sensitive:
+
+  Case 1:
+  Dataflow: this.userinfo.phonenumber -> n -> extraData
+  ```javascript
+  navToServiceMin: function (t) {
+          var n = {
+            phonenumber: this.userinfo.phonenumber,
+            nickName: this.userinfo.nickName,
+            loginby: "gldcxt",
+            companyalias: "glsp",
+          };
+          t && (n.order = t),
+            e.navigateToMiniProgram({
+              appId: "wx110c7e5923885373",
+              extraData: n,
+              complete: function (e) {
+                console.log(e);
+              },
+            });
+        },
+  ```
+
+  Case 2:
+  Dataflow: wx.getStorageSync("mobile") -> extraData
+  ```
+  wx.navigateToMiniProgram({
+  appId: "wxc94daee5c5b654ad",
+  path: "pages/index/index",
+  extraData: {
+    source: "wxProgramZHT",
+    openPage: "parking",
+    channel: "168001",
+    mobile: wx.getStorageSync("mobile"),
+  },
+  ```
+
+  Case 3:
+  Dataflow: userInfo -> extraData
+  ```
+  navToMiniProgram: function () {
+      console.log(r);
+      var a = wx.getAccountInfoSync();
+      wx.navigateToMiniProgram({
+        appId: i,
+        path: r,
+        envVersion: a.miniProgram.envVersion,
+        extraData: { userInfo: p, personId: "" },
+        success: function (a) {},
+        fail: function (a) {
+          console.info(a),
+            a &&
+              -1 !== a.errMsg.indexOf("navigateToMiniProgram:fail appId") &&
+              wx.showModal({
+                title: "提示",
+                content: "目标小程序appId:【".concat(
+                  i,
+                  "】不在配置列表内，无法跳转"
+                ),
+                showCancel: !1,
+                success: function (a) {},
+              }),
+            a &&
+              -1 !==
+                a.errMsg.indexOf("navigateToMiniProgram:fail invalid appid") &&
+              wx.showModal({
+                title: "提示",
+                content: "目标小程序appId:【".concat(i, "】无效"),
+                showCancel: !1,
+                success: function (a) {},
+              });
+        },
+      });
+  ```
+
+  Here is some negatives that you should not flag as sensitive:
+  Case 1:
+  Reason: No sensitive information in arguments of wx.navigateToMiniProgram
+  ```
+  goMiniProgram: function () {
+    wx.navigateToMiniProgram({
+      appId: "wx6885acbedba59c14",
+      path: "pages/result/result?nu=".concat(
+        this.data.orderInfo.shippingNo,
+        "&querysource=third_xcx"
+      ),
+      envVersion: "release",
+      success: function (e) {},
+    });
+  },
+  ```
+
+  Case 2:
+  Reason: No sensitive information in arguments of wx.navigateToMiniProgram, the phoneNumber is passed to makePhoneCall function but not wx.navigateToMiniProgram 
+  ```
+  if (
+      -1 == t.indexOf(":") ||
+      -1 != t.indexOf("tel:") ||
+      -1 != t.indexOf("miniapp:")
+    ) {
+      var c = t.split(":");
+      2 == c.length
+        ? "tel" == c[0]
+          ? e.makePhoneCall({ phoneNumber: c[1] })
+          : e.navigateToMiniProgram({
+              appId: c[1],
+              extraData: { appid: this.$config.wxAppId },
+              success: function (e) {},
+            })
+        : e.navigateTo({ url: t });
+  ```
+
+  Case 3:
+  Reason: No sensitive information in arguments of wx.navigateToMiniProgram
+  ```
+  getPhoneNumber: function getPhoneNumber(e) {
+    var session_key = wx.getStorageSync("session_key");
+    var openid = wx.getStorageSync("openid");
+    if (session_key && openid) {
+      var that = this;
+      wx.request({
+        //后台接口地址
+        url: apiDomain + "follow",
+        data: {
+          session_key: session_key,
+          openid: openid,
+          account_token: ext.account_token,
+          iv: e.detail.iv,
+          encryptedData: e.detail.encryptedData,
+        },
+        method: "POST",
+        header: {
+          "content-type": "application/json",
+        },
+        success: function success(res) {
+          if (res.data.status == "success") {
+            wx.showToast({
+              title: "会员卡激活成功",
+            });
+            that.getUser();
+          }
+        },
+      });
+  openXCX: function openXCX(e) {
+    console.log(e);
+    var appid = e.currentTarget.dataset.appid;
+    var path = e.currentTarget.dataset.path;
+    wx.navigateToMiniProgram({
+      appId: appid,
+      path: path,
+      envVersion: "develop",
+      success: function success(res) {
+        // 打开成功
+      },
+    });
+  },
+  ```
+
+  Case 4:
+  Reason: The URL with phoneNumber is used is a different if condition than the branch uses wx.navigateToMiniProgram
+  if ("新市民客服" == t.currentTarget.dataset.name)
+          wx.openCustomerServiceChat({
+            extInfo: { url: t.currentTarget.dataset.url },
+            corpId: "wx68af57f001f18f5d",
+            success: function (a) {},
+            fail: function (a) {
+              console.log(a),
+                wx.showToast({ title: "打开会话失败，请重试", icon: "none" });
+            },
+          });
+        else if (0 == o.indexOf("http://") || 0 == o.indexOf("https://")) {
+          -1 != o.indexOf("DoubleTwelve") &&
+            (o =
+              o +
+              "&mobile=" +
+              a.globalData.userphone +
+              "&openid=" +
+              a.globalData.openid);
+          var s =
+            "/pages/wapPage/wapPage?url=" + e.urlencode(JSON.stringify(o));
+          "我的保单" == t.currentTarget.dataset.name &&
+            (s += "&noShare=1&getOpenid=1"),
+            "在线退保" ==
+              t.currentTarget.dataset.name
+                .replace(/\ +/g, "")
+                .replace(/[\r\n]/g, "") &&
+              (s += "&noShare=1&getOpenid=1&wlogin=2"),
+            wx.navigateTo({ url: s });
+        } else
+          "2" == i
+            ? wx.navigateToMiniProgram({
+                appId: t.currentTarget.dataset.appid,
+                path: o,
+                extraData: { foo: "bar" },
+                envVersion: "release",
+                success: function (a) {},
+                fail: function (a) {},
+              })
+            : wx.navigateTo({ url: o + "?id=" + r });
+      }
+
+  Also, if the argument is from the a network request's response, then it is also less interesting.
+
+Return:
+  If you think it is sensitive, you should reply in the follow way 
+    - Replace the first XXX in the following template with a list of sensitive information you think that has been leaked (Don't consider bussiness data, like orderId as sensitive.)
+    - Replace the second XXX in the following template with a sentense of reason why you think so.
+    - Tempalate:
+      "[Yes]: The code snippet potentially leaked user's sensitive information: [XXX]. The reason is [XXX]."
+
+  If you think it is not sensitive, you should directly reply:
+    - Template:
+      "[No]"
+
+  If you think you cannot decide based on the given context, you should reply (However, you should try your best to descide given the context):
+    - Template:
+      "[Unknown]"
