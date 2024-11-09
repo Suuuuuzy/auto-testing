@@ -78,8 +78,13 @@ print(f"{unpack_len} dirs in data/newcrawl/pkg_unpack")
 
 from unpack import get_ids_from_metadata
 metadata_ids = get_ids_from_metadata()
-print(f"Among them, {len(unpacked_ids.intersection(metadata_ids))} dirs are from meta data crawl")
+meta_unpacked = list(unpacked_ids.intersection(metadata_ids))
+print(f"Among them, {len(meta_unpacked)} dirs are from meta data crawl")
 
+output_path = "../newcrawl/logs/meta_unpacked.json"
+with open(output_path,"w") as f:
+    json.dump(meta_unpacked, f)
+    
 output_path = "../newcrawl/logs/info.json"
 with open(output_path,"w") as f:
     json.dump(info_sum, f, indent = 2)
