@@ -56,6 +56,15 @@ def maintest():
         config = json.load(f)
     logger_main.info("Start Running test for: " + config["project_path"])
     
+    # update the package.json (update the log name prefix)
+    appid = config["project_path"].split("/")[-1]
+    package_json_file = os.path.join(config["dev_tool_path"].split('bin')[0], "package.nw/package.json")
+    with open(package_json_file) as f:
+        package_json = json.load(f)
+    package_json["js-flags"] = f"--taint_log_file=/home/suzy/temp/new_taint_log_file/{appid} --generate_undefined_properties"
+    with open(package_json_file, "w") as f:
+        json.dump(package_json, f)
+    
     app_json = os.path.join(config["project_path"], "app.json")
     if not os.path.exists(app_json):
         logger_main.error("No app.json for: " + config["project_path"])
