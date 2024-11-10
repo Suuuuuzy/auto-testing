@@ -1,5 +1,6 @@
 import re, json, argparse, random
 import numpy as np
+import pandas as pd
 
 ALL_INFO_EXTRACTION_PATTERNS = {
     "start test pattern": re.compile(r"Start Running test for: ([^\s]+)"),
@@ -171,6 +172,12 @@ if __name__ == "__main__":
                         current_instance_dict["all_pages"] = int(
                             finished_pages_search.group(2)
                         )
+                        current_instance_dict["finished_pages_ratio"] = (
+                            float(finished_pages_search.group(1))
+                            / float(finished_pages_search.group(2))
+                            if float(finished_pages_search.group(2)) != 0
+                            else None
+                        )
                         continue
 
                     # e.g. 2024-11-06 14:34:51.053 INFO test_minium - tearDown: Visited 13 pages out of 25.
@@ -181,6 +188,12 @@ if __name__ == "__main__":
                     if visited_pages_search is not None:
                         current_instance_dict["visited_pages"] = int(
                             visited_pages_search.group(1)
+                        )
+                        current_instance_dict["visited_pages_ratio"] = (
+                            float(visited_pages_search.group(1))
+                            / float(visited_pages_search.group(2))
+                            if float(visited_pages_search.group(2)) != 0
+                            else None
                         )
                         continue
 
@@ -197,6 +210,12 @@ if __name__ == "__main__":
                         current_instance_dict["all_bindings"] = int(
                             visited_binding_func_search.group(2)
                         )
+                        current_instance_dict["visited_bindings_ratio"] = (
+                            float(visited_binding_func_search.group(1))
+                            / float(visited_binding_func_search.group(2))
+                            if float(visited_binding_func_search.group(2)) != 0
+                            else None
+                        )
                         continue
 
                     # 2024-11-06 14:34:51.053 INFO test_minium - tearDown: Visited 0 input/forms out of 0.
@@ -211,6 +230,12 @@ if __name__ == "__main__":
                         )
                         current_instance_dict["all_input_form"] = int(
                             visited_input_form_search.group(2)
+                        )
+                        current_instance_dict["visited_input_form_ratio"] = (
+                            float(visited_input_form_search.group(1))
+                            / float(visited_input_form_search.group(2))
+                            if float(visited_input_form_search.group(2)) != 0
+                            else None
                         )
                         continue
             elif log_type == "ERROR" and test_type == "main - maintest":
@@ -261,7 +286,7 @@ if __name__ == "__main__":
     }
 
     with open(args.file_output + ".json", "w", encoding="utf-8") as f:
-        json.dump(filtered_dict, f, indent=4)
+        json.dump(all_metadata_dict, f, indent=4)
 
     # STEP 3: randomly sample 100 instances
     random.seed(args.random_seed)
@@ -275,41 +300,86 @@ if __name__ == "__main__":
                 "\n".join([sample["dir"] for _, sample in random_sample_dict.items()])
             )
 
-        all_stats = np.stack(
-            [
-                [
-                    (
-                        float(sample["visited_pages"]) / float(sample["all_pages"])
-                        if sample["all_pages"] != 0
-                        else 1
-                    ),
-                    (
-                        float(sample["finished_pages"]) / float(sample["all_pages"])
-                        if sample["all_pages"] != 0
-                        else 1
-                    ),
-                    (
-                        float(sample["visited_bindings"])
-                        / float(sample["all_bindings"])
-                        if sample["all_bindings"] != 0
-                        else 1
-                    ),
-                    (
-                        float(sample["visited_input_form"])
-                        / float(sample["all_input_form"])
-                        if sample["all_input_form"] != 0
-                        else 1
-                    ),
-                ]
-                for _, sample in random_sample_dict.items()
-            ],
-            dtype=np.float32,
-        )
-        all_data_result = all_stats.sum(axis=0) / args.random_n
+    finished_pages_ratios = np.array([], dtype=np.float32)
+    visited_pages_ratios = np.array([], dtype=np.float32)
+    visited_binding_func_ratios = np.array([], dtype=np.float32)
+    visited_input_form_ratios = np.array([], dtype=np.float32)
+    for _, sample in random_sample_dict.items():
 
-        print(
-            f"average visited page from 100 samples : {all_data_result[0]}\n"
-            + f"average finished page from 100 samples : {all_data_result[1]}\n"
-            + f"average visited bindings from 100 samples : {all_data_result[2]}\n"
-            + f"average visited form and input from 100 samples : {all_data_result[3]}\n"
+        finished_pages_ratios = (
+            np.append(finished_pages_ratios, sample["finished_pages_ratio"])
+            if sample["finished_pages_ratio"] is not None
+            else finished_pages_ratios
         )
+
+        visited_pages_ratios = (
+            np.append(finished_pages_ratios, sample["visited_pages_ratio"])
+            if sample["visited_pages_ratio"] is not None
+            else finished_pages_ratios
+        )
+
+        visited_binding_func_ratios = (
+            np.append(visited_binding_func_ratios, sample["visited_bindings_ratio"])
+            if sample["visited_bindings_ratio"] is not None
+            else visited_binding_func_ratios
+        )
+
+        visited_input_form_ratios = (
+            np.append(visited_input_form_ratios, sample["visited_input_form_ratio"])
+            if sample["visited_input_form_ratio"] is not None
+            else visited_input_form_ratios
+        )
+
+    print(
+        f"average visited page from 100 samples : {visited_pages_ratios.sum(axis=0) / float(visited_pages_ratios.shape[0])}\n"
+        + f"average finished page from 100 samples : {finished_pages_ratios.sum(axis=0) / float(finished_pages_ratios.shape[0])}\n"
+        + f"average visited form and input from 100 samples : {visited_input_form_ratios.sum(axis=0) / float(visited_input_form_ratios.shape[0])}\n"
+        + f"average visited bindings from 100 samples : {visited_binding_func_ratios.sum(axis=0) / float(visited_binding_func_ratios.shape[0])}\n"
+    )
+    with open(args.file_output + ".out", "w") as f:
+        f.write(
+            f"average visited page from 100 samples : {visited_pages_ratios.sum(axis=0) / float(visited_pages_ratios.shape[0])}\n"
+            + f"average finished page from 100 samples : {finished_pages_ratios.sum(axis=0) / float(finished_pages_ratios.shape[0])}\n"
+            + f"average visited form and input from 100 samples : {visited_input_form_ratios.sum(axis=0) / float(visited_input_form_ratios.shape[0])}\n"
+            + f"average visited bindings from 100 samples : {visited_binding_func_ratios.sum(axis=0) / float(visited_binding_func_ratios.shape[0])}\n"
+        )
+
+    all_stats = np.stack(
+        [
+            [
+                (
+                    sample["visited_pages_ratio"]
+                    if sample["visited_pages_ratio"] is not None
+                    else np.nan
+                ),
+                (
+                    sample["finished_pages_ratio"]
+                    if sample["finished_pages_ratio"] is not None
+                    else np.nan
+                ),
+                (
+                    sample["visited_input_form_ratio"]
+                    if sample["visited_input_form_ratio"] is not None
+                    else np.nan
+                ),
+                (
+                    sample["visited_bindings_ratio"]
+                    if sample["visited_bindings_ratio"] is not None
+                    else np.nan
+                ),
+            ]
+            for _, sample in random_sample_dict.items()
+        ],
+        dtype=np.float32,
+    )
+    df = pd.DataFrame(
+        all_stats,
+        index=[key for key, _ in random_sample_dict.items()],
+        columns=[
+            "visited pages",
+            "finished pages",
+            "visited input form",
+            "visited bindings ratio",
+        ],
+    )
+    df.to_csv(args.file_output + ".csv")
