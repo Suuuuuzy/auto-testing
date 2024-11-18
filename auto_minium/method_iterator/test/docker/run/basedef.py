@@ -41,9 +41,6 @@ class BaseDef(minium.MiniTest):
             os.mkdir(os.path.dirname(output_path))
         self.app.screen_shot(output_path)  # 截图并存到`output_path`文件夹中
     
-    def find_all_elements(self):
-        all_elements = self.page.get_elements(selector="button,view,checkbox,input,textarea,form,scroll-view,switch,picker,radio-group", index=-1)
-        return all_elements
     
     def find_all_pages(self):
         all_pages_path = self.app.get_all_pages_path()
@@ -61,26 +58,6 @@ class BaseDef(minium.MiniTest):
     def find_all_forms(self):
         all_forms = self.page.get_elements("form")
         return all_forms
-    
-    def find_all_scroll_views(self):
-        all_scroll_views = self.page.get_elements("scroll-view")
-        return all_scroll_views
-    
-    def find_all_switches(self):
-        all_switches = self.page.get_elements("switch")
-        return all_switches
-    
-    def find_all_picker(self):
-        all_pickers = self.page.get_elements("picker")
-        return all_pickers
-
-    def find_all_sliders(self):
-        all_sliders = self.page.get_elements("slider")
-        return all_sliders
-    
-    def find_all_radio_groups(self):
-        all_radio_groups = self.page.get_elements("radio-group")
-        return all_radio_groups
 
     def find_all_inputs_from_component(self, component):
         all_inputs = component.get_elements("input")
@@ -109,6 +86,7 @@ class BaseDef(minium.MiniTest):
         value = ele_text.attribute("value")[0]
         self.assertEqual(text, value, f"element {element} is properly modified")
         
+    
     def tap(self, element):
         sleep(1)
 
