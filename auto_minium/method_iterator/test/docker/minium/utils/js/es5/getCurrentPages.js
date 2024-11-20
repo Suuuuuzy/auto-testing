@@ -1,0 +1,1 @@
+function miniumGetCurrentPages(a){var b=getCurrentPages();return a&&(b=[b.pop()]),b=b.map(function(a){if(a){var b=a.route,c=b.indexOf("__plugin__/");return-1<c&&(b="plugin-private://"+b.slice(c+11)),{pageId:a.__wxWebviewId__,path:b,query:a.options,renderer:a.renderer}}}),a?b.pop():b}

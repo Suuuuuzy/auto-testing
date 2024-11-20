@@ -1,0 +1,1 @@
+function evalMockChooseImage(){var a;return global.__minium__.mock_choose_image?(a=global.__minium__).mock_choose_image.apply(a,arguments):Promise.reject(new Error("Mock\u65B9\u6CD5\u672A\u6CE8\u5165, \u63A5\u53E3\u4E0D\u53EF\u7528"))}

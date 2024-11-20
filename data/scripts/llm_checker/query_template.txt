@@ -1,10 +1,54 @@
 Description:
-You are an assistant checking for sensitive information leaked from the in wechat miniapp code snippets.
+You are an security assistant for checking the potential sensitive information leakage in provided the wechat miniapp code snippets.
 
-Task: 
-You need to check whether the arguments of the navigateToMiniProgram function contain any sensitive information, including email, phone, address, userinfo, etc. However, it should not include bussiness data, like order ID or token. 
-To do this, you need to do a data flow analysis of all the arguments passed to the navigateToMiniProgram function in the provided code context. 
-Then, you should decide whethere the arguments contain any sensitive information based on your experence, e.g., the name of the variable.
+Task:
+
+From the given code snippet, You need to check whether the **arguments** of one of the following sink functions may contain any sensitive information, including email, phone, address, userInfo, etc. (However, it should not include bussiness data, like order ID or token.)
+- **Sensitive Information:**
+  - Any values retrieved from the following WeChat API:
+    - `wx.getStorageSync`
+    - `wx.getStorage`
+    - `wx.getUserInfo`
+    - `wx.getUserProfile`
+    - `wx.getLocation`
+    - `wx.getFuzzyLocation`
+    - `wx.onLocationChange`
+    - `wx.startLocationUpdate`
+    - `wx.startLocationUpdateBackground`
+    - `wx.choosePoi`
+    - `wx.chooseLocation`
+    - `wx.getNetworkType`
+    - `wx.createCameraContext`
+    - `wx.getBLEDeviceCharacteristics`
+    - `wx.getConnectedWifi`
+    - `wx.chooseVideo`
+    - `wx.chooseMedia`
+    - `wx.getFileInfo`
+    - `wx.startRecord`
+    - `wx.getRecorderManager`
+    - `wx.joinVoIPChat`
+    - `wx.chooseImage`
+    - `wx.chooseMessageFile`
+    - `wx.chooseLicensePlate`
+    - `wx.chooseAddress`
+    - `wx.getWeRunData`
+    - `wx.chooseInvoiceTitle`
+    - `wx.chooseInvoice`
+    - `wx.chooseContact`
+
+- **Sink Functions:**
+  - `wx.request`
+  - `wx.uploadFile`
+  - `wx.navigateToMiniProgram`
+  - `wx.openEmbeddedMiniProgram`
+  - `wx.navigateBackMiniProgram`
+  - `wx.postMessageToReferrerMiniProgram`
+  - `wx.sendSocketMessage`
+  - `wx.createUDPSocket`
+
+To do this, you need to first identify all the **arguments** passed to the above sink functions in the provided code context.
+Then, you need to do a dataflow analysis for each of the arguments in the given context and decide whethere the arguments contain any sensitive information based on your experence, e.g., the name of the variable.
+Ideally, the value should comes from the mentioned WeChat APIs, however, you may not see the API in the given context. In that case, you should reason it based on the logic and varaible's name.
 You should only focus privacy leak in the arguments of navigateToMiniProgram function, but not other's like wx.makePhoneCall.
 
 Examples: 
@@ -215,8 +259,10 @@ Return:
   If you think it is sensitive, you should reply in the follow way 
     - Replace the first XXX in the following template with a list of sensitive information you think that has been leaked (Don't consider bussiness data, like orderId as sensitive.)
     - Replace the second XXX in the following template with a sentense of reason why you think so.
+    - Replace the thrid, forth XXX in the following template with the sink function in the code and its arguments.
+    - Replace the fifth XXX in the following template with the argument name that you think is carrying user sensitive information.
     - Tempalate:
-      "[Yes]: The code snippet potentially leaked user's sensitive information: [XXX]. The reason is [XXX]."
+      "[Yes]: The code snippet potentially leaked user's sensitive information: [XXX]. The leak function is [XXX], and it has the following arguments: [XXX]. Among them, argument that carries sensitive information is [XXX]. The reason is [XXX]."
 
   If you think it is not sensitive, you should directly reply:
     - Template:

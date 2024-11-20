@@ -1,0 +1,1 @@
+function hookWxMethod(a,b,c){if(!global.__minium__.canHook)throw new Error("hook\u65B9\u6CD5\u672A\u5B9E\u73B0");c?global.__minium__.setCall(a,b,{before:$_before_$,after:$_after_$,callback:$_callback_$}):global.__minium__.delCall(a,b)}

@@ -1,0 +1,1 @@
+function getAppConfig(){if(0===arguments.length)return __wxConfig;var a={};return Array.from(arguments).forEach(function(b){a[b]=__wxConfig[b]}),a}

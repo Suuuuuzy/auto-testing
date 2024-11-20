@@ -1,0 +1,983 @@
+{
+    "wxcfb242e7bb33f0ab": {},
+    "wx6188bb06271804e1": {},
+    "wx95f8bd06d3e15271": {},
+    "wx32540bd863b27570": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wx32540bd863b27570/_21468_1731571492920_0_decoded": [
+            {
+                "sink func": "request(aka value) ",
+                "trace_instance": "sendRequest(aka value) [31530/appservice/42.js:322]",
+                "script": {
+                    "script name": "42.js",
+                    "script function": "sendRequest(aka value) ",
+                    "script line number": 322,
+                    "script start": 317,
+                    "script end": 327,
+                    "script spec": "){casea:returnr.send(Object.assign({},e,{isApiReq:!0}),!0),null;default:returnwx.request(e);}},},{key:\"getResData\",",
+                    "used API": ".request"
+                }
+            }
+        ],
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tmp_outputs/wx32540bd863b27570/_30473_1731426152788_0_decoded": [
+            {
+                "sink func": "request(aka value) ",
+                "trace_instance": "sendRequest(aka value) [58831/appservice/42.js:322]",
+                "script": {
+                    "script name": "42.js",
+                    "script function": "sendRequest(aka value) ",
+                    "script line number": 322,
+                    "script start": 317,
+                    "script end": 327,
+                    "script spec": "){casea:returnr.send(Object.assign({},e,{isApiReq:!0}),!0),null;default:returnwx.request(e);}},},{key:\"getResData\",",
+                    "used API": ".request"
+                }
+            }
+        ]
+    },
+    "wx9e9b87595c41dbb7": {},
+    "wx99aec39990c815c2": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wx99aec39990c815c2/_1346_1731599255958_0_decoded": [
+            {
+                "sink func": "value ",
+                "trace_instance": "analyse [pages/index/index.js:116]",
+                "script": {
+                    "script name": "pages/index/index.js",
+                    "script function": "analyse ",
+                    "script line number": 116,
+                    "script start": 111,
+                    "script end": 121,
+                    "script spec": "this.setData({inputvalue:\"\"});},analyse:function(){vare=this;wx.request({url:t.globalData.url+\"jiance\",data:{token:wx.getStorageSync(\"token\"),id:wx.getStorageSync(\"id\"),},",
+                    "used API": ".request"
+                }
+            }
+        ]
+    },
+    "wxd9813e0a0d4d4156": {},
+    "wxed4da19e927e9301": {},
+    "wx44ccc5f820fbc39d": {},
+    "wx0c6dcbaa92394920": {},
+    "wx4ba3cd2bc80f0c37": {},
+    "wx4474ed752dbe0955": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wx4474ed752dbe0955/_16028_1731571025490_0_decoded": [
+            {
+                "sink func": "request(aka value) ",
+                "trace_instance": "e [50967/appservice/733e.js:42]",
+                "script": {
+                    "script name": "733e.js",
+                    "script function": "e ",
+                    "script line number": 42,
+                    "script start": 37,
+                    "script end": 47,
+                    "script spec": "o=t.complete;(t.complete=function(n){i.shift(),i.length&&e(),o&&o.call(this,n);}),n.context.request(t);}}),(exports.rnd=s),(exports.rndSeed=a),(exports.serialize=o),",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "request(aka value) ",
+                "trace_instance": "te [50967/appservice/b256.js:571]",
+                "script": {
+                    "script name": "b256.js",
+                    "script function": "te ",
+                    "script line number": 571,
+                    "script start": 566,
+                    "script end": 576,
+                    "script spec": "varn=e.url,r=e.data,i=e.success,a=e.fail;t.request({method:\"POST\",url:n,data:r,success:function(t){vare=t.statusCode||t.status;",
+                    "used API": ".request"
+                }
+            }
+        ]
+    },
+    "wxb344a8513eaaf849": {},
+    "wxcf0acd2b6453ffad": {},
+    "wx9ad5a74d6e19dd11": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wx9ad5a74d6e19dd11/_28442_1731598806565_0_decoded": [
+            {
+                "sink func": "request(aka value) ",
+                "trace_instance": "onLaunch [44465/appservice/app.js:92]",
+                "script": {
+                    "script name": "app.js",
+                    "script function": "onLaunch ",
+                    "script line number": 92,
+                    "script start": 87,
+                    "script end": 97,
+                    "script spec": "});},}),this.globalData.user_id&&wx.request({url:\"\".concat(this.globalData.rjddENV,\"user/ak/\").concat(this.globalData.platform_key,\"/user/\").concat(this.globalData.user_id,\"/userinfo.json\"),method:\"POST\",",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "request(aka value) ",
+                "trace_instance": "UserPoint [pages/home/home.js:558]",
+                "script": {
+                    "script name": "pages/home/home.js",
+                    "script function": "UserPoint ",
+                    "script line number": 558,
+                    "script start": 553,
+                    "script end": 563,
+                    "script spec": "}));},UserPoint:function(){vare=this;wx.request({url:c.UserPoint(),method:\"POST\",data:{access_token:wx.getStorageSync(\"access_token\")},header:{\"Content-Type\":\"application/x-www-form-urlencoded\",",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "request(aka value) ",
+                "trace_instance": "userBuyBooks [pages/home/home.js:286]",
+                "script": {
+                    "script name": "pages/home/home.js",
+                    "script function": "userBuyBooks ",
+                    "script line number": 286,
+                    "script start": 281,
+                    "script end": 291,
+                    "script spec": "},userBuyBooks:function(){vare=this;wx.getStorageSync(\"user_id\")&&wx.request({url:c.MyOrderbooks(),method:\"POST\",data:{access_token:wx.getStorageSync(\"access_token\")},header:{\"Content-Type\":\"application/x-www-form-urlencoded\",",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "request(aka value) ",
+                "trace_instance": "getUserPermission [pages/home/home.js:589]",
+                "script": {
+                    "script name": "pages/home/home.js",
+                    "script function": "getUserPermission ",
+                    "script line number": 589,
+                    "script start": 584,
+                    "script end": 594,
+                    "script spec": "},getUserPermission:function(){vare=this;this.setData({isGetPermission:!1,isPermission:!1}),wx.request({url:c.GetUserauth(),method:\"POST\",data:{access_token:wx.getStorageSync(\"access_token\")},header:{\"Content-Type\":\"application/x-www-form-urlencoded\",",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "request(aka value) ",
+                "trace_instance": "success [pages/home/home.js:312]",
+                "script": {
+                    "script name": "pages/home/home.js",
+                    "script function": "success ",
+                    "script line number": 312,
+                    "script start": 307,
+                    "script end": 317,
+                    "script spec": "0!=e.data.menuScrollActive?(e.getUserHome(),e.getHomeMatchedList()):e.getUserHome();}elsewx.request({url:c.getAccessToken(),method:\"POST\",header:{\"Content-Type\":\"application/x-www-form-urlencoded\",\"app-channel\":\"miniprogram\",",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "value ",
+                "trace_instance": "wordCatalogInfo [cnWordPage/pages/word_catalog_info/word_catalog_info.js:89]",
+                "script": {
+                    "script name": "cnWordPage/pages/word_catalog_info/word_catalog_info.js",
+                    "script function": "wordCatalogInfo ",
+                    "script line number": 89,
+                    "script start": 84,
+                    "script end": 94,
+                    "script spec": "}},wordCatalogInfo:function(){vara=this;wx.request({url:i.wordCatalogInfo(this.data.catalog_id),method:\"POST\",data:{},header:{\"Content-Type\":\"application/json\",",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "value ",
+                "trace_instance": "getProgress [cnWordPage/pages/word_catalog_info/word_catalog_info.js:595]",
+                "script": {
+                    "script name": "cnWordPage/pages/word_catalog_info/word_catalog_info.js",
+                    "script function": "getProgress ",
+                    "script line number": 595,
+                    "script start": 590,
+                    "script end": 600,
+                    "script spec": "},getProgress:function(){vara=this;wx.getStorageSync(\"user_id\")&&wx.request({url:i.getProgress(),method:\"POST\",data:{book_id:\"\",chapter_id:this.data.catalog_id,type:\"03\"},header:{\"app-channel\":\"miniprogram\",",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "value ",
+                "trace_instance": "setAccumulate [cnWordPage/pages/word_catalog_info/word_catalog_info.js:654]",
+                "script": {
+                    "script name": "cnWordPage/pages/word_catalog_info/word_catalog_info.js",
+                    "script function": "setAccumulate ",
+                    "script line number": 654,
+                    "script start": 649,
+                    "script end": 659,
+                    "script spec": "s=a+n+wx.getStorageSync(\"user_id\")+o+\"pepdiandu2022\";(s=(s=e.hexMD5(s)).toLowerCase()),this.setData({accumulateDateStart:+newDate()}),o>0&&wx.request({url:i.setAccumulate({book_id:n,times:o,type:\"07\",datetime:a,",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "value ",
+                "trace_instance": "setAccumulate [cnWordPage/pages/interpretation/interpretation.js:50]",
+                "script": {
+                    "script name": "cnWordPage/pages/interpretation/interpretation.js",
+                    "script function": "setAccumulate ",
+                    "script line number": 50,
+                    "script start": 45,
+                    "script end": 55,
+                    "script spec": "c=i+s+wx.getStorageSync(\"user_id\")+o+\"pepdiandu2022\";(c=(c=a.hexMD5(c)).toLowerCase()),this.setData({accumulateDateStart:+newDate()}),o>0&&wx.request({url:e.setAccumulate({book_id:s,times:o,type:\"07\",datetime:i,",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "value ",
+                "trace_instance": "wordCatalogInfo [enWordPage/pages/wordCatalogInfo/wordCatalogInfo.js:72]",
+                "script": {
+                    "script name": "enWordPage/pages/wordCatalogInfo/wordCatalogInfo.js",
+                    "script function": "wordCatalogInfo ",
+                    "script line number": 72,
+                    "script start": 67,
+                    "script end": 77,
+                    "script spec": "}},wordCatalogInfo:function(){vara=this;wx.request({url:o.enWordCatalogInfo(this.data.catalog_id),method:\"POST\",data:{},header:{\"Content-Type\":\"application/json\",",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "value ",
+                "trace_instance": "getProgress [enWordPage/pages/wordCatalogInfo/wordCatalogInfo.js:257]",
+                "script": {
+                    "script name": "enWordPage/pages/wordCatalogInfo/wordCatalogInfo.js",
+                    "script function": "getProgress ",
+                    "script line number": 257,
+                    "script start": 252,
+                    "script end": 262,
+                    "script spec": "getProgress:function(){vara=this;wx.getStorageSync(\"user_id\")&&this.data.catalog_id&&wx.request({url:o.getProgress(),method:\"POST\",data:{book_id:\"\",chapter_id:this.data.catalog_id,type:\"04\"},header:{\"app-channel\":\"miniprogram\",",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "value ",
+                "trace_instance": "setMoreProgress [enWordPage/pages/word_dictation/word_dictation.js:375]",
+                "script": {
+                    "script name": "enWordPage/pages/word_dictation/word_dictation.js",
+                    "script function": "setMoreProgress ",
+                    "script line number": 375,
+                    "script start": 370,
+                    "script end": 380,
+                    "script spec": "details:{wordCount:e,wordList:o},},s={book_id:this.data.book_id,type:\"04\",data:[n]};console.log(s),wx.request({url:i.setMoreProgress(),method:\"POST\",data:s,header:{\"Content-Type\":\"application/json\",",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "value ",
+                "trace_instance": "setAccumulate [enWordPage/pages/work_study/work_study.js:236]",
+                "script": {
+                    "script name": "enWordPage/pages/work_study/work_study.js",
+                    "script function": "setAccumulate ",
+                    "script line number": 236,
+                    "script start": 231,
+                    "script end": 241,
+                    "script spec": "n=t+o+wx.getStorageSync(\"user_id\")+s+\"pepdiandu2022\";(n=(n=i.hexMD5(n)).toLowerCase()),this.setData({accumulateDateStart:+newDate()}),s>0&&wx.request({url:e.setAccumulate({book_id:o,times:s,type:\"06\",datetime:t,",
+                    "used API": ".request"
+                }
+            }
+        ]
+    },
+    "wx409090c647c9abde": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wx409090c647c9abde/_32082_1731576927224_0_decoded": [
+            {
+                "sink func": "request(aka value) ",
+                "trace_instance": "/* anonymous */ [16610/appservice/taro.js:7933]",
+                "script": {
+                    "script name": "taro.js",
+                    "script function": "/* anonymous */ ",
+                    "script line number": 7933,
+                    "script start": 7928,
+                    "script end": 7938,
+                    "script spec": "}),(t.complete=function(e){o&&o(e);}),(n=e.request(t));});return(pe(n,a),(a.abort=function(e){returne&&e(),n&&n.abort(),a;",
+                    "used API": ".request"
+                }
+            }
+        ],
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wx409090c647c9abde/_31009_1731576830477_0_decoded": [
+            {
+                "sink func": "request(aka value) ",
+                "trace_instance": "/* anonymous */ [28612/appservice/taro.js:7933]",
+                "script": {
+                    "script name": "taro.js",
+                    "script function": "/* anonymous */ ",
+                    "script line number": 7933,
+                    "script start": 7928,
+                    "script end": 7938,
+                    "script spec": "}),(t.complete=function(e){o&&o(e);}),(n=e.request(t));});return(pe(n,a),(a.abort=function(e){returne&&e(),n&&n.abort(),a;",
+                    "used API": ".request"
+                }
+            }
+        ]
+    },
+    "wx10c0611db3c5b8d3": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wx10c0611db3c5b8d3/_23355_1731594689889_0_decoded": [
+            {
+                "sink func": "originRequest(aka value) ",
+                "trace_instance": "_send(aka value) [utils/fLogger.js:379]",
+                "script": {
+                    "script name": "utils/fLogger.js",
+                    "script function": "_send(aka value) ",
+                    "script line number": 379,
+                    "script start": 374,
+                    "script end": 384,
+                    "script spec": "vare=this,t=this.queue.length;t&&(this.requestTask&&this.requestTask.abort(),(this.requestTask=this.originRequest({url:this.url,method:\"POST\",data:JSON.stringify(this.queue),header:{\"content-type\":\"application/json\"},success:function(){",
+                    "used API": ".request"
+                }
+            }
+        ]
+    },
+    "wx9250746f70f1ac7d": {},
+    "wxe982bda2ccd6cfe1": {},
+    "wx1644df8e4fe6f725": {},
+    "wx7f9416391161a1a0": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wx7f9416391161a1a0/_19615_1731571395276_0_decoded": [
+            {
+                "sink func": "value(aka value) ",
+                "trace_instance": "/* anonymous */(aka /* anonymous */) [23781/appservice/vendors.js:9951]",
+                "script": {
+                    "script name": "vendors.js",
+                    "script function": "/* anonymous */(aka /* anonymous */) ",
+                    "script line number": 9951,
+                    "script start": 9946,
+                    "script end": 9956,
+                    "script spec": "constt=Et.request||Et.httpRequest;returnthis._buffer.add(()=>newPromise((n,r)=>{t({url:this.url,method:\"POST\",data:JSON.stringify(e),header:{\"content-type\":\"application/json\"},success(e){",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "request(aka value) ",
+                "trace_instance": "/* anonymous */(aka /* anonymous */) [23781/appservice/taro.js:5773]",
+                "script": {
+                    "script name": "taro.js",
+                    "script function": "/* anonymous */(aka /* anonymous */) ",
+                    "script line number": 5773,
+                    "script start": 5768,
+                    "script end": 5778,
+                    "script spec": "}),(t.complete=function(e){a&&a(e);}),(n=e.request(t));});return((c.abort=function(e){returne&&e(),n&&n.abort(),c;}),",
+                    "used API": ".request"
+                }
+            }
+        ],
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/outputs/wx7f9416391161a1a0/_6144_1731375230186_0_decoded": [
+            {
+                "sink func": "value(aka value) ",
+                "trace_instance": "/* anonymous */(aka /* anonymous */) [60356/appservice/vendors.js:9951]",
+                "script": {
+                    "script name": "vendors.js",
+                    "script function": "/* anonymous */(aka /* anonymous */) ",
+                    "script line number": 9951,
+                    "script start": 9946,
+                    "script end": 9956,
+                    "script spec": "constt=Et.request||Et.httpRequest;returnthis._buffer.add(()=>newPromise((n,r)=>{t({url:this.url,method:\"POST\",data:JSON.stringify(e),header:{\"content-type\":\"application/json\"},success(e){",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "request(aka value) ",
+                "trace_instance": "/* anonymous */(aka /* anonymous */) [60356/appservice/taro.js:5773]",
+                "script": {
+                    "script name": "taro.js",
+                    "script function": "/* anonymous */(aka /* anonymous */) ",
+                    "script line number": 5773,
+                    "script start": 5768,
+                    "script end": 5778,
+                    "script spec": "}),(t.complete=function(e){a&&a(e);}),(n=e.request(t));});return((c.abort=function(e){returne&&e(),n&&n.abort(),c;}),",
+                    "used API": ".request"
+                }
+            }
+        ]
+    },
+    "wxf6c75fdbc91fddb5": {},
+    "wx4dea6f132ae99e01": {},
+    "wx989b810f88665131": {},
+    "wx1b5e2763b9c1e06e": {},
+    "wx5b0ed3b8c0499950": {},
+    "wxd2c817e1b9cd8ee2": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wxd2c817e1b9cd8ee2/_32715_1731599174764_0_decoded": [
+            {
+                "sink func": "request(aka value) ",
+                "trace_instance": "request [miniprogram_npm/@mtfe/saas-user-auth/index.js:2207]",
+                "script": {
+                    "script name": "miniprogram_npm/@mtfe/saas-user-auth/index.js",
+                    "script function": "request ",
+                    "script line number": 2207,
+                    "script start": 2202,
+                    "script end": 2212,
+                    "script spec": "});})(s({},P().options,{silenceLogin:1}));}),(r.request=function(e){returnwx.request(e);}),(r.handleSuccessLog=function(){vart=Date.now()-this.lastRequestTime;this.addPerformance(m,t,\"success\"),e.prototype.handleSuccessLog.call(this);",
+                    "used API": ".request"
+                }
+            }
+        ]
+    },
+    "wxdb83eb3ce5870e64": {},
+    "wx261cadb46db60f60": {},
+    "wxf3199b6102658f9c": {},
+    "wxf225684ee1536a5f": {},
+    "wx4759a6929119c4d5": {},
+    "wxa4b8c0bda7f71cfc": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wxa4b8c0bda7f71cfc/_15103_1731570861554_0_decoded": [
+            {
+                "sink func": "request(aka value) ",
+                "trace_instance": "tn [49622/appservice/BC55DC77E0B5079CDA33B470F28BFE65.js:3638]",
+                "script": {
+                    "script name": "BC55DC77E0B5079CDA33B470F28BFE65.js",
+                    "script function": "tn ",
+                    "script line number": 3638,
+                    "script start": 3633,
+                    "script end": 3643,
+                    "script spec": "(r[\"Content-Type\"]=\"application/octet-stream\"),(u=\"arraybuffer\"),(t=zt(t)));try{wx.request({url:n,data:t,method:\"POST\",ignore:!0,header:r,",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "value ",
+                "trace_instance": "Xe [49622/appservice/BC55DC77E0B5079CDA33B470F28BFE65.js:~3547]",
+                "script": {
+                    "script name": "BC55DC77E0B5079CDA33B470F28BFE65.js",
+                    "script function": "Xe ",
+                    "script line number": 3547,
+                    "script start": 3542,
+                    "script end": 3552,
+                    "script spec": "value:Xe,}):console.warn(\"wx.requestisnotdefined\");}functionXe(){vart,e=x(arguments);try{return(s(We.request)&&We.request.apply(this,e),",
+                    "used API": ".request"
+                }
+            }
+        ]
+    },
+    "wxb937e3d0b3ca117e": {},
+    "wx2ef8c895efabc5bc": {},
+    "wx696a42df4f2456d3": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/outputs/wx696a42df4f2456d3/_11441_1731373079350_0_decoded": [
+            {
+                "sink func": "request(aka value) ",
+                "trace_instance": "t [26580/appservice/taro.js:1290]",
+                "script": {
+                    "script name": "taro.js",
+                    "script function": "t ",
+                    "script line number": 1290,
+                    "script start": 1285,
+                    "script end": 1295,
+                    "script spec": "o[i]=arguments[i];r&&r.apply(t,o);}),e.pendingQueue.push(t),{v:wx.request(t)});};this.pendingQueue.length<this.MAX_REQUEST;){",
+                    "used API": ".request"
+                }
+            }
+        ]
+    },
+    "wx2e0f33621b8c8e66": {},
+    "wx71caa703e7afc9f3": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wx71caa703e7afc9f3/_15036_1731587120339_0_decoded": [
+            {
+                "sink func": "value(aka value) ",
+                "trace_instance": "request(aka value) [common/request.js:253]",
+                "script": {
+                    "script name": "common/request.js",
+                    "script function": "request(aka value) ",
+                    "script line number": 253,
+                    "script start": 248,
+                    "script end": 258,
+                    "script spec": "wx.setStorageSync(\"isCommonEncrypt\",\"yes\");elsewx.removeStorageSync(\"isCommonEncrypt\");s.info(\"请求api接口：\"+a),s.info(\"请求入参：\"+JSON.stringify(o)),wx.request({url:a,data:o,header:p.setHeader(n,y,h),method:t,success:function(e){",
+                    "used API": ".request"
+                }
+            }
+        ]
+    },
+    "wx947b1f478f867256": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wx947b1f478f867256/_16680_1731567419519_0_decoded": [
+            {
+                "sink func": "request(aka value) ",
+                "trace_instance": "/* anonymous */ [utils/common/http.js:74]",
+                "script": {
+                    "script name": "utils/common/http.js",
+                    "script function": "/* anonymous */ ",
+                    "script line number": 74,
+                    "script start": 69,
+                    "script end": 79,
+                    "script spec": "o.warn(\"url=\".concat(s.url,\",err=\").concat(e&&e.errMsg));},});wx.request(n);});}[\"get\",\"post\",\"put\"].forEach(function(t){c[t]=function(r,a,o){returnc(r,a,e({method:t.toLocaleUpperCase()},o));",
+                    "used API": ".request"
+                }
+            }
+        ]
+    },
+    "wxa1ebeeb0ed47f0b2": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/outputs/wxa1ebeeb0ed47f0b2/_18136_1731377370511_0_decoded": [
+            {
+                "sink func": "request(aka value) ",
+                "trace_instance": "/* anonymous */(aka /* anonymous */) [52277/appservice/taro.js:7518]",
+                "script": {
+                    "script name": "taro.js",
+                    "script function": "/* anonymous */(aka /* anonymous */) ",
+                    "script line number": 7518,
+                    "script start": 7513,
+                    "script end": 7523,
+                    "script spec": "}),(t.complete=function(e){a&&a(e);}),(n=e.request(t));});return(Fe(n,o),(o.abort=function(e){returne&&e(),n&&n.abort(),o;",
+                    "used API": ".request"
+                }
+            }
+        ]
+    },
+    "wxf47aa38d871be854": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wxf47aa38d871be854/_19578_1731590913411_0_decoded": [
+            {
+                "sink func": "setStorageSync(aka value) ",
+                "trace_instance": "r(aka r) [common/vendor.js:38107]",
+                "script": {
+                    "status": "Not Found"
+                }
+            },
+            {
+                "sink func": "setStorageSync(aka value) ",
+                "trace_instance": "r(aka r) [common/vendor.js:~38106]",
+                "script": {
+                    "status": "Not Found"
+                }
+            }
+        ]
+    },
+    "wx32440b558fb90c1e": {},
+    "wx4e404fa2766e3cf4": {},
+    "wxfc524e98760ce99c": {},
+    "wx9e9fe4584604b8af": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wx9e9fe4584604b8af/_29562_1731580935981_0_decoded": [
+            {
+                "sink func": "value ",
+                "trace_instance": "zhifu [pages/getvip/getvip.js:28]",
+                "script": {
+                    "script name": "pages/getvip/getvip.js",
+                    "script function": "zhifu ",
+                    "script line number": 28,
+                    "script start": 23,
+                    "script end": 33,
+                    "script spec": "if(\"\"!=a){vari=t.currentTarget.dataset.id;wx.showLoading({title:\"正在准备支付~\"});varn=this;wx.request({url:e.globalData.websize+\"?gc=pay\",data:{openid:a,payid:i},method:\"POST\",success:function(t){wx.hideLoading(),",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "value ",
+                "trace_instance": "add_residue [54853/appservice/app.js:208]",
+                "script": {
+                    "script name": "app.js",
+                    "script function": "add_residue ",
+                    "script line number": 208,
+                    "script start": 203,
+                    "script end": 213,
+                    "script spec": ":function(){},a=this;console.log(\"add_residue\"),wx.showLoading({title:\"数据提交中~\"});varn=wx.getStorageSync(\"openid\");wx.request({url:a.globalData.websize+\"?gc=recharge\",method:\"post\",data:{type:t,openid:n,data:e},success:function(t){wx.hideLoading(),",
+                    "used API": ".request"
+                }
+            }
+        ]
+    },
+    "wx936aa5357931e226": {},
+    "wxd5b5b9bd64eb51cd": {},
+    "wx2f9d2eaf241cc168": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wx2f9d2eaf241cc168/_14155_1731586981343_0_decoded": [
+            {
+                "sink func": "request(aka value) ",
+                "trace_instance": "/* anonymous */ [utils/request.js:4]",
+                "script": {
+                    "script name": "utils/request.js",
+                    "script function": "/* anonymous */ ",
+                    "script line number": 4,
+                    "script start": 0,
+                    "script end": 9,
+                    "script spec": "Object.defineProperty(exports,\"__esModule\",{value:!0}),(exports.default=function(e){returnnewPromise((r,s)=>{wx.request(Object.assign(e,{url:`${t.default.domain}${e.path}`,success(e){r(e.data);},",
+                    "used API": ".request"
+                }
+            }
+        ]
+    },
+    "wxbfe24664b9cf5b3b": {},
+    "wx4f38007b839da9d3": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wx4f38007b839da9d3/_9472_1731599961925_0_decoded": [
+            {
+                "sink func": "request(aka value) "
+            },
+            {
+                "sink func": "request(aka value) "
+            }
+        ]
+    },
+    "wx7643d5f831302ab0": {},
+    "wx666b9f5791ab2a08": {},
+    "wx9fd66d4d0e83c5f9": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wx9fd66d4d0e83c5f9/_23993_1731571626856_0_decoded": [
+            {
+                "sink func": "setStorageSync(aka value) ",
+                "trace_instance": "setStorageSync [24494/appservice/49.js:39]",
+                "script": {
+                    "status": "Not Found"
+                }
+            },
+            {
+                "sink func": "request(aka value) ",
+                "trace_instance": "sendRequest(aka value) [24494/appservice/42.js:322]",
+                "script": {
+                    "status": "Not Found"
+                }
+            },
+            {
+                "sink func": "value ",
+                "trace_instance": "sendRequest(aka value) [24494/appservice/42.js:~302]",
+                "script": {
+                    "status": "Not Found"
+                }
+            }
+        ]
+    },
+    "wx6334fc0a18e06243": {},
+    "wxcecfde2bc765c661": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wxcecfde2bc765c661/_16984_1731579082932_0_decoded": [
+            {
+                "sink func": "setStorageSync(aka value) ",
+                "trace_instance": "a [node/track-mini-program.js:6108]",
+                "script": {
+                    "script name": "node/track-mini-program.js",
+                    "script function": "a ",
+                    "script line number": 6108,
+                    "script start": 6103,
+                    "script end": 6113,
+                    "script spec": "},a=function(e,n){if(t&&c.own[e])returnt.setStorage(e,n);try{wx.setStorageSync(e,n);}catch(e){}},i=wx.request,o=wx.getSystemInfo,s=wx.getNetworkType,",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "value(aka value) ",
+                "trace_instance": "request [node/track-mini-program.js:6222]",
+                "script": {
+                    "script name": "node/track-mini-program.js",
+                    "script function": "request ",
+                    "script line number": 6222,
+                    "script start": 6217,
+                    "script end": 6227,
+                    "script spec": "}),(d.pr.request=function(e,t){varn=!!this.env[oe],r=\"https://neptune.jd.com/log/m/v3?std=\"+e.std;i({url:t?r:c.addr(n)+\"?std=\"+e.std,data:e,method:\"POST\",header:{\"content-type\":\"application/json\"},success:function(e){},",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "value(aka value) ",
+                "trace_instance": "request [node/track-mini-program.js:~6219]",
+                "script": {
+                    "script name": "node/track-mini-program.js",
+                    "script function": "request ",
+                    "script line number": 6219,
+                    "script start": 6214,
+                    "script end": 6224,
+                    "script spec": "this.isReady?this.sendData.apply(this,arguments):this.logCache.push(arguments);}),(d.pr.request=function(e,t){varn=!!this.env[oe],r=\"https://neptune.jd.com/log/m/v3?std=\"+e.std;i({url:t?r:c.addr(n)+\"?std=\"+e.std,data:e,",
+                    "used API": ".request"
+                }
+            }
+        ]
+    },
+    "wx4e5614dba2dc7974": {},
+    "wx02d7892c6aa51bc9": {},
+    "wx9580c9208762a7c5": {},
+    "wx56799943d8e6b4e6": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wx56799943d8e6b4e6/_28670_1731584681201_0_decoded": [
+            {
+                "sink func": "request(aka value) ",
+                "trace_instance": "getConfig [27930/appservice/app.js:151]",
+                "script": {
+                    "script name": "app.js",
+                    "script function": "getConfig ",
+                    "script line number": 151,
+                    "script start": 146,
+                    "script end": 156,
+                    "script spec": "n=t.globalData.configing;o||(o=wx.getStorageSync(\"openid\")),n||((t.globalData.configing=1),wx.request({url:t.globalData.url_hosts+\"api/weather/config\",header:t.getHeader(),data:{pf:t.globalData.platform,scene:t.globalData.scene,",
+                    "used API": ".request"
+                }
+            }
+        ],
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wx56799943d8e6b4e6/_27864_1731584608946_0_decoded": [
+            {
+                "sink func": "request(aka value) ",
+                "trace_instance": "getConfig [58652/appservice/app.js:151]",
+                "script": {
+                    "script name": "app.js",
+                    "script function": "getConfig ",
+                    "script line number": 151,
+                    "script start": 146,
+                    "script end": 156,
+                    "script spec": "n=t.globalData.configing;o||(o=wx.getStorageSync(\"openid\")),n||((t.globalData.configing=1),wx.request({url:t.globalData.url_hosts+\"api/weather/config\",header:t.getHeader(),data:{pf:t.globalData.platform,scene:t.globalData.scene,",
+                    "used API": ".request"
+                }
+            }
+        ]
+    },
+    "wxf780a3b16440eb52": {},
+    "wx84dd50b996d3d862": {},
+    "wxf9f4629fdcde0cd1": {},
+    "wxffebffc3c6ed8f03": {},
+    "wx1f1ba42cbf3295fa": {},
+    "wx7dcbe10e0996b67c": {},
+    "wxd5201eb08d2fa15c": {},
+    "wx307e11636e7679c6": {},
+    "wx66a90900db27b9ae": {},
+    "wx15925524a62a8c32": {},
+    "wxdd09c9500614c89a": {},
+    "wxc4104b171e3d1376": {},
+    "wx6b79d40cb232628e": {},
+    "wx40bb3af01551eafd": {},
+    "wx1ecd361f1e61d45e": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wx1ecd361f1e61d45e/_18428_1731604637248_0_decoded": [
+            {
+                "sink func": "value ",
+                "trace_instance": "sendRequest [common/vendor.js:28111]",
+                "script": {
+                    "script name": "common/vendor.js",
+                    "script function": "sendRequest ",
+                    "script line number": 28111,
+                    "script start": 28106,
+                    "script end": 28116,
+                    "script spec": "try{varn,i=\"GET\";r&&((i=\"POST\"),(n=JSON.stringify(r))),e.request({url:t,method:i,data:n,fail:function(t){o.warn(\"[arms]sendRequestfail\",t);",
+                    "used API": ".request"
+                }
+            }
+        ]
+    },
+    "wx39ba8e38ebc58189": {},
+    "wx4e8a0957bbf2ead8": {},
+    "wxbd366a40bcdc86da": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wxbd366a40bcdc86da/_23887_1731598419500_0_decoded": [
+            {
+                "sink func": "value(aka value) ",
+                "trace_instance": "/* anonymous */ [miniprogram_npm/@datarangers/sdk-mp/index.js:2747]",
+                "script": {
+                    "script name": "miniprogram_npm/@datarangers/sdk-mp/index.js",
+                    "script function": "/* anonymous */ ",
+                    "script line number": 2747,
+                    "script start": 2742,
+                    "script end": 2752,
+                    "script spec": "returnfunction(n){vars=n.timeout||i.option.get(\"request_timeout\"),o=\"number\"==typeofs&&s>0;returnnewPromise(function(i,r){vara=e.request(Object.assign(Object.assign(Object.assign({},n),o&&!t?{timeout:s}:{}),",
+                    "used API": ".request"
+                }
+            }
+        ]
+    },
+    "wx4080846d0cec2fd5": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wx4080846d0cec2fd5/_10544_1731570252794_0_decoded": [
+            {
+                "sink func": "request(aka value) ",
+                "trace_instance": "G(aka G) [15820/appservice/bundle.js:30378]",
+                "script": {
+                    "script name": "bundle.js",
+                    "script function": "G(aka G) ",
+                    "script line number": 30378,
+                    "script start": 30373,
+                    "script end": 30383,
+                    "script spec": "method:\"POST\",url:\"\".concat(dt,\"/report.do\"),data:bt,};(St.header=at),wx.request(St);}}functionK(W){G(W);}",
+                    "used API": ".request"
+                }
+            }
+        ]
+    },
+    "wxd2e34288104be4bb": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wxd2e34288104be4bb/_1862_1731569196469_0_decoded": [
+            {
+                "sink func": "value ",
+                "trace_instance": "post [JS/grace.js:79]",
+                "script": {
+                    "status": "Not Found"
+                }
+            },
+            {
+                "sink func": "value ",
+                "trace_instance": "request [youmeng/index.js:296]",
+                "script": {
+                    "script name": "youmeng/index.js",
+                    "script function": "request ",
+                    "script line number": 296,
+                    "script start": 291,
+                    "script end": 301,
+                    "script spec": "}),(e.fail=function(){i||(r&&clearTimeout(r),\"function\"==typeofn&&n(!1));}),wx.request(e),(r=setTimeout(function(){r&&clearTimeout(r),(i=!0),\"function\"==typeofn&&n(i);},e.timeout||5e3));}),(e.prototype.getSdkType=function(){",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "value ",
+                "trace_instance": "post [JS/grace.js:~58]",
+                "script": {
+                    "status": "Not Found"
+                }
+            },
+            {
+                "sink func": "value ",
+                "trace_instance": "request [youmeng/index.js:~285]",
+                "script": {
+                    "script name": "youmeng/index.js",
+                    "script function": "request ",
+                    "script line number": 285,
+                    "script start": 280,
+                    "script end": 290,
+                    "script spec": "wx.onNetworkStatusChange(function(t){\"function\"==typeofe&&e(t.isConnected);});}),(e.prototype.request=function(e){vart=e.success,n=e.fail,i=!1,r=null;(e.success=function(e){",
+                    "used API": ".request"
+                }
+            }
+        ]
+    },
+    "wxd4185d00bf7e08ac": {},
+    "wx3c502013f70fed9b": {},
+    "wxfe0e405895cafdf9": {},
+    "wxb63203ca8ecbc8fc": {},
+    "wxca32cd132ab78a69": {},
+    "wxe87f500c8cef4c8a": {},
+    "wxb582778073a9f01a": {},
+    "wxe766d738ad655e8c": {},
+    "wx933ed168c846c96f": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wx933ed168c846c96f/_627_1731606630740_0_decoded": [
+            {
+                "sink func": "value(aka value) ",
+                "trace_instance": "/* anonymous */ [utils/util.js:98]",
+                "script": {
+                    "script name": "utils/util.js",
+                    "script function": "/* anonymous */ ",
+                    "script line number": 98,
+                    "script start": 93,
+                    "script end": 103,
+                    "script spec": "},commonAjax:function(e,t,r){varn=getApp();returnnewPromise(function(a,o,i){wx.request({url:n.globalData.url+e,data:r,method:1===t?\"GET\":\"POST\",header:1===t",
+                    "used API": ".request"
+                }
+            }
+        ]
+    },
+    "wx5bd9f1109d55b993": {},
+    "wx43317052cc1b35a6": {},
+    "wxcc8a51267886fec4": {},
+    "wx2772c3b71faea09a": {},
+    "wx899453f7931fb63f": {},
+    "wxece3a9a4c82f58c9": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wxece3a9a4c82f58c9/_13197_1731567038340_0_decoded": [
+            {
+                "sink func": "value(aka value) ",
+                "trace_instance": "t [41779/appservice/mor.v.js:~40068]",
+                "script": {
+                    "script name": "mor.v.js",
+                    "script function": "t ",
+                    "script line number": 40068,
+                    "script start": 40063,
+                    "script end": 40073,
+                    "script spec": "if(\"undefined\"!=typeofwx){try{!(function(){vare=wx.request;functiont(t){try{if(t&&t.url){varn=x.gen(t.url);n&&(t.header||(t.header={}),",
+                    "used API": ".request"
+                }
+            }
+        ]
+    },
+    "wxf5ec50035320c6b0": {},
+    "wx0822fae80de3b620": {},
+    "wx6a881368e4138593": {},
+    "wxcff7381e631cf54e": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wxcff7381e631cf54e/_7707_1731599779230_0_decoded": [
+            {
+                "sink func": "request(aka value) "
+            },
+            {
+                "sink func": "value(aka value) ",
+                "trace_instance": "g [utils/reportToPanorama.js:121]",
+                "script": {
+                    "script name": "utils/reportToPanorama.js",
+                    "script function": "g ",
+                    "script line number": 121,
+                    "script start": 116,
+                    "script end": 126,
+                    "script spec": "e.forEach(function(e){e.openid||(e.openid=getApp().globalData.userLogOpenId);}),u(\"上报\",e.length,e),wx.request({url:\"https://cube.weixinbridge.com/cube/report/reportbizdata?f=json\",method:\"POST\",data:\"report_items=\".concat(JSON.stringify(e)),responseType:\"text\",timeout:1e4,",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "request(aka value) "
+            }
+        ]
+    },
+    "wxba24d24f8e8e85c5": {
+        "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output/wxba24d24f8e8e85c5/_780_1731595618843_0_decoded": [
+            {
+                "sink func": "request(aka value) ",
+                "trace_instance": "getWxUser [pages/waterControll/Greenb/Greenb.js:63]",
+                "script": {
+                    "script name": "pages/waterControll/Greenb/Greenb.js",
+                    "script function": "getWxUser ",
+                    "script line number": 63,
+                    "script start": 58,
+                    "script end": 68,
+                    "script spec": "if((console.log(\"openId===\"+a),null!=a&&\"\"!=a)){varo=newDate().getTime(),n=e.sendSign(o),s=wx.getStorageSync(\"token\");wx.request({url:e.url+\"/applet/getWxUser\",data:{openId:a,appid:e.globalData.appid,timestamp:o,",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "value(aka value) ",
+                "trace_instance": "consLogListOffline [pages/waterControll/Greenb/Greenb.js:109]",
+                "script": {
+                    "script name": "pages/waterControll/Greenb/Greenb.js",
+                    "script function": "consLogListOffline ",
+                    "script line number": 109,
+                    "script start": 104,
+                    "script end": 114,
+                    "script spec": "varo=wx.getStorageSync(\"consLogList\"),n=wx.getStorageSync(\"token\");null!=o&&\"\"!=o&&wx.request({url:e.getUrl()+\"/applet/consLogListOffline\",data:{openId:t,consLogList:o,token:n},success:function(e){if(200==e.data.statusCode)try{",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "value ",
+                "trace_instance": "getWxUser [pages/waterControll/userInfo/userInfo.js:40]",
+                "script": {
+                    "script name": "pages/waterControll/userInfo/userInfo.js",
+                    "script function": "getWxUser ",
+                    "script line number": 40,
+                    "script start": 35,
+                    "script end": 45,
+                    "script spec": "o=wx.getStorageSync(\"schoolName\"),a=newDate().getTime(),i=e.sendSign(a),s=wx.getStorageSync(\"token\");wx.request({url:e.getUrl()+\"/applet/getWxUser\",data:{openId:t,schoolName:o,appid:e.globalData.appid,",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "value ",
+                "trace_instance": "getUserInfo [pages/waterControll/account/account.js:67]",
+                "script": {
+                    "script name": "pages/waterControll/account/account.js",
+                    "script function": "getUserInfo ",
+                    "script line number": 67,
+                    "script start": 62,
+                    "script end": 72,
+                    "script spec": "getUserInfo:function(){vart=wx.getStorageSync(\"schoolName\"),o=wx.getStorageSync(\"token\"),a=wx.getStorageSync(\"openId\");wx.request({url:e.getUrl()+\"/applet/deviceRoomList\",data:{schoolName:t,openId:a,token:o},success:function(e){if(200==e.data.statusCode){vart=e.data.resultObject;",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "value ",
+                "trace_instance": "getUserInfo [pages/waterControll/account/account.js:82]",
+                "script": {
+                    "script name": "pages/waterControll/account/account.js",
+                    "script function": "getUserInfo ",
+                    "script line number": 82,
+                    "script start": 77,
+                    "script end": 87,
+                    "script spec": "varn=this;(a=wx.getStorageSync(\"openId\")),(t=n.data.schoolName);if(null!=a){o=wx.getStorageSync(\"token\");wx.request({url:e.getUrl()+\"/applet/saveFlushAccount\",data:{openId:a,schoolName:t,token:o},success:function(t){if(200==t.data.statusCode){varo=t.data.resultObject;",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "value ",
+                "trace_instance": "onShow [pages/waterControll/instruction/instruction.js:10]",
+                "script": {
+                    "script name": "pages/waterControll/instruction/instruction.js",
+                    "script function": "onShow ",
+                    "script line number": 10,
+                    "script start": 5,
+                    "script end": 15,
+                    "script spec": "vare=this,o=wx.getStorageSync(\"schoolName\"),a=wx.getStorageSync(\"token\"),n=wx.getStorageSync(\"openId\");wx.request({url:t.url+\"/applet/getInfoUrl\",data:{schoolName:o,type:\"weixin\",openId:n,token:a},success:function(o){console.log(t.url+o.data.resultObject),e.setData({infoUrl:t.url+o.data.resultObject});",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "value ",
+                "trace_instance": "onLoad [pages/waterControll/payInfo/payInfo.js:21]",
+                "script": {
+                    "script name": "pages/waterControll/payInfo/payInfo.js",
+                    "script function": "onLoad ",
+                    "script line number": 21,
+                    "script start": 16,
+                    "script end": 26,
+                    "script spec": "null!=n&&\"\"!=n&&e.setData({listData:n});varr=wx.getStorageSync(\"schoolName\"),g=wx.getStorageSync(\"openId\"),l=wx.getStorageSync(\"token\");wx.request({url:a.url+\"/applet/getBuyInfo\",data:{openId:g,schoolName:r,token:l},success:function(t){if(\"200\"==t.data.statusCode){vars=t.data.resultObject;",
+                    "used API": ".request"
+                }
+            },
+            {
+                "sink func": "value ",
+                "trace_instance": "onLoad [pages/waterControll/consume/consume.js:21]",
+                "script": {
+                    "script name": "pages/waterControll/consume/consume.js",
+                    "script function": "onLoad ",
+                    "script line number": 21,
+                    "script start": 16,
+                    "script end": 26,
+                    "script spec": "null!=n&&\"\"!=n&&e.setData({listData:n});varr=wx.getStorageSync(\"schoolName\"),g=wx.getStorageSync(\"openId\"),l=wx.getStorageSync(\"token\");wx.request({url:a.url+\"/applet/getConsumeInfo\",data:{openId:g,schoolName:r,token:l},success:function(t){if(\"200\"==t.data.statusCode){vars=t.data.resultObject;",
+                    "used API": ".request"
+                }
+            }
+        ]
+    },
+    "wx73e76ca6e3a04a0f": {}
+}

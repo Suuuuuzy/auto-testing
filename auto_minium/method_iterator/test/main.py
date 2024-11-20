@@ -5,17 +5,13 @@ import unittest, time, datetime
 import subprocess
 import logging
 import os
+import sys
 import json
-logger_main = logging.getLogger(__name__)
-logging.basicConfig(
-    filename='autominium_test.log',
-    level=logging.DEBUG,
-    format='%(asctime)s.%(msecs)03d %(levelname)s %(module)s - %(funcName)s: %(message)s',
-    datefmt='%Y-%m-%d %H:%M:%S',
-)
-# from utils import write_to_file
+import signal
 
-    
+global logger_main
+test_cases = []
+
 class MyTestResult(unittest.TextTestResult):
     def addError(self, test, err):
         super().addError(test, err)
@@ -46,54 +42,46 @@ def kill_wechat():
             print(f"Killed process with PID: {pid}")
     else:
         print("No processes found matching 'wechat'.")
+
+def cleanup():
+    """Function to call teardown on each test case."""
+    logger_main.info("Running cleanup: calling teardown on all test cases.")
+    for test_case in test_cases:
+        test_case.tearDown()
+
+def handle_termination_signal(signum, frame):
+    """Handle termination signals to ensure cleanup runs."""
+    logger_main.info(f"Termination signal {signum} received. Running cleanup.")
+    cleanup()
+    sys.exit(0)
     
-def maintest():
-    kill_wechat()
-    # subprocess.run(['pkill', '-f', 'wechat'])
-    # subprocess.run(['pkill', '-f', 'nwjs'])
+def maintest(log_file_path='autominium_test.log'):
     start_time = time.time()
-    with open("config.json") as f:
-        config = json.load(f)
-    logger_main.info("Start Running test for: " + config["project_path"])
-    
-    # update the package.json (update the log name prefix)
-    appid = config["project_path"].split("/")[-1]
-    package_json_file = os.path.join(config["dev_tool_path"].split('bin')[0], "package.nw/package.json")
-    with open(package_json_file) as f:
-        package_json = json.load(f)
-    package_json["js-flags"] = f"--taint_log_file=/home/suzy/temp/new_taint_log_file/{appid} --generate_undefined_properties"
-    with open(package_json_file, "w") as f:
-        json.dump(package_json, f)
-    
-    app_json = os.path.join(config["project_path"], "app.json")
-    if not os.path.exists(app_json):
-        logger_main.error("No app.json for: " + config["project_path"])
-        return
-    # preprocess
-    script_path = "/media/dataj/wechat-devtools-linux/testing/auto-testing/data/data_utils/single_preprocess.py"
-    subprocess.run(['python', script_path, config["project_path"]])
-    logger_main.info(f"Preprocess for {config['project_path']}")
-    
-    bind_json_file = os.path.join(config["project_path"], "bind_methods.json")
-    bind_navi_json_file = os.path.join(config["project_path"], "bind_methods_navi.json")
-    # regenrate the bind_methods.json file
-    if os.path.exists(bind_json_file):
-        os.remove(bind_json_file)
-    if os.path.exists(bind_navi_json_file):
-        os.remove(bind_navi_json_file)
-    if (not os.path.exists(bind_json_file)) and (not os.path.exists(bind_navi_json_file)):
-        script_path = "/media/dataj/wechat-devtools-linux/prework/MiniScope/src/static/generate_binds_for_jianjia.py"
-        subprocess.run(['python', script_path, config["project_path"]])
-        logger_main.info(f"Generate bind_methods.json for {config['project_path']}")
+
+    global logger_main
+    logger_main = logging.getLogger(__name__)
+    logging.basicConfig(
+        filename=log_file_path,
+        level=logging.DEBUG,
+        format='%(asctime)s.%(msecs)03d %(levelname)s %(module)s - %(funcName)s: %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S',
+    )
+
+    Minium_Query.logger_main = logger_main
     
     loaded_suite = unittest.TestLoader().loadTestsFromTestCase(Minium_Query)
+    for test_case in loaded_suite:
+        logger_main.info(test_case)
+        test_cases.append(test_case)
+    
+    signal.signal(signal.SIGTERM, handle_termination_signal)
+    signal.signal(signal.SIGINT, handle_termination_signal)
+
     runner = MyTestRunner(verbosity=2)
     result = runner.run(loaded_suite)
     elapse_time = "Elapse time: " +  str(datetime.timedelta(seconds=(time.time() - start_time))) + "\n"
     logger_main.info(result)
     logger_main.info(elapse_time)
-    # cmd = "pkill -f nwjs"
-    # subprocess.run(['pkill', '-f', 'nwjs'])
 
 if __name__ == "__main__":
     maintest()

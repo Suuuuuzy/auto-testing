@@ -1,0 +1,1 @@
+function uuid(){global.__minium__.get_mini_network_id||(global.__minium__.get_mini_network_id=function(){for(var a=[],b="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ",c=0;36>c;c++)a[c]=b.substr(Math.floor(16*Math.random()),1);a[14]="4",a[19]=b.substr(8|3&a[19],1),a[8]=a[13]=a[18]=a[23]="-";var d=a.join("");return d})}

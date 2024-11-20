@@ -1,0 +1,10 @@
+[error] {
+  code: 10,
+  message: 'Error: 错误 Error: INVALID_TOKEN,invalid credential, access_token is invalid or not latest [20241112 11:16:01][] (code 10)Error: 错误 Error: INVALID_TOKEN,invalid credential, access_token is invalid or not latest [20241112 11:16:01][] (code 10)\n' +
+    '    at Object.GENERIC_ERROR (/media/dataj/wechat-devtools-linux/wechat-web-devtools-linux-nodebug/package.nw/core.wxvpkg/7201d239ccdbdc262e2ecf5fe0c8aca3.js:2:93)\n' +
+    '    at Proxy.exports.getAppInfo (/media/dataj/wechat-devtools-linux/wechat-web-devtools-linux-nodebug/package.nw/core.wxvpkg/b3effda444fe34caae1384305e9562c6.js:2:1063)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n' +
+    '    at async exports.getProjectInfo (/media/dataj/wechat-devtools-linux/wechat-web-devtools-linux-nodebug/package.nw/core.wxvpkg/9d9d19a87db58211a644d4d305c488d5.js:2:2443)\n' +
+    '    at async /media/dataj/wechat-devtools-linux/wechat-web-devtools-linux-nodebug/package.nw/core.wxvpkg/7a975443f52e91830ae1d65cdf8c86db.js:2:3660\n' +
+    '    at async Object.<anonymous> (/media/dataj/wechat-devtools-linux/wechat-web-devtools-linux-nodebug/package.nw/core.wxvpkg/7a975443f52e91830ae1d65cdf8c86db.js:2:3012)'
+}

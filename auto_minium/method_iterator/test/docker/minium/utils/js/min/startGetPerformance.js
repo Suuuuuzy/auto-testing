@@ -1,0 +1,1 @@
+function startGetPerformance(e){global.__minium__.performanceList=[];var r=wx.getPerformance();global.__minium__.observer=r.createObserver(((e,r)=>{global.__minium__.performanceList=global.__minium__.performanceList.concat(e.getEntries())})),global.__minium__.observer.observe({entryTypes:e})}

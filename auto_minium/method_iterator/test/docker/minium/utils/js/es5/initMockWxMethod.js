@@ -1,0 +1,1 @@
+function initMockWxMethod(){if(!global.__minium__.mock_wx_method){var a=wx._MINI_WX_PROXY_,b=new Map;global.__minium__.mock_wx_method=function(c){global.replaceMethod(a,c,wx[c],b)},global.__minium__.restore_wx_method=function(c){global.restoreMethod(a,c,b)}}}

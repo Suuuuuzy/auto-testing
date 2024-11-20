@@ -1,0 +1,1 @@
+function ideHandleMap(a){return a?global.__minium__.handle_mock_map_modal&&global.__minium__.handle_mock_map_modal(a):global.__minium__.handle_mock_map_modal&&global.__minium__.handle_mock_map_modal("\u786E\u5B9A")}

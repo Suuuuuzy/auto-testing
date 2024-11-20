@@ -7,15 +7,15 @@ import json
 OPENAI_CLIENT = OpenAI() # Defaults to os.environ.get("OPENAI_API_KEY")
 
 class MiniAppAnalyzer:
-  def __init__(self, source_folder, folder_filter, max_count, pattern, output_folder, context_chars=100, openai_client=None, model="gpt-4o-mini"):
+  def __init__(self, source_folder, folder_filter, max_count, patterns, output_folder, context_chars=100, openai_client=None, model="gpt-4o"):
     self.source_folder = source_folder
     self.output_folder = output_folder
-    self.output_file = os.path.join(output_folder, "results.json")
+    self.output_file = os.path.join(output_folder, "results-last-dance-1.json")
     self.log_file = os.path.join(output_folder, "llm_checker.log")
     self.folder_filter = folder_filter
     self.max_count = max_count
     
-    self.pattern = pattern
+    self.patterns = patterns
     self.context_chars = context_chars
     
     self.batch_results = []
@@ -73,8 +73,8 @@ class MiniAppAnalyzer:
         ]
       )
       result = response.choices[0].message.content.strip()
-      self.logger.info(f"Code Snippet For Analysis: {context.replace("\n", "\\n")}")
-      self.logger.info(f"OpenAI API response: {result}")
+      # self.logger.info(f"Code Snippet For Analysis: {context.replace("\n", "\\n")}")
+      # self.logger.info(f"OpenAI API response: {result}")
       
       if re.search(r"\[yes\]", result, re.IGNORECASE):
         return result
@@ -86,30 +86,34 @@ class MiniAppAnalyzer:
       return None
 
   def analyze_file(self, file_path, appid):
-    """Analyzes a single JavaScript file for 'navigateToMiniProgram' calls."""
+    """Analyzes a single JavaScript file for calls in self.patterns."""
     with open(file_path, 'r', encoding='utf-8') as file:
       code = file.read().replace("  ", "")
-      index = code.find(self.pattern)
-      while index != -1:
-        context = self._get_code_context(code, index)
-        api_result = self._check_sensitive_data(context)
-        
-        if api_result:
-          result = {
-            "appid": appid,
-            "file": file_path,
-            "position": index,
-            "context": context,
-            "api_result": api_result
-          }
-          self.batch_results.append(result)
-          self.logger.info(f"Sensitive data found in file '{file_path}' at position {index}.")
 
-          # Write to file if batch size is reached
-          if len(self.batch_results) >= self.batch_size:
-              self.save_batch_to_json()
+      for pattern in self.patterns:
+        index = code.find(pattern)
+        while index != -1:
+          context = self._get_code_context(code, index)
+          api_result = self._check_sensitive_data(context)
+          
+          if api_result:
+              result = {
+                  "appid": appid,
+                  "file": file_path,
+                  "position": index,
+                  "context": context,
+                  "pattern": pattern,  # Add pattern to result for clarity
+                  "api_result": api_result
+              }
+              self.batch_results.append(result)
+              self.logger.info(f"Sensitive data found in file '{file_path}' at position {index} for pattern '{pattern}'.")
 
-        index = code.find("navigateToMiniProgram(", index + 1)
+              # Write to file if batch size is reached
+              if len(self.batch_results) >= self.batch_size:
+                  self.save_batch_to_json()
+
+          # Move to the next occurrence of the pattern
+          index = code.find(pattern, index + 1)
 
   def save_batch_to_json(self):
     """Appends the batch results to the JSON output file."""
@@ -165,18 +169,29 @@ class MiniAppAnalyzer:
 if __name__ == "__main__":
   source_folder = "/media/dataj/wechat-devtools-linux/testing/auto-testing/data/newcrawl/pkg_unpack"
   output_folder = "/media/dataj/wechat-devtools-linux/testing/auto-testing/data/scripts/llm_checker/output"
-  pattern = "navigateToMiniProgram("
-  max_count = 2000
+  
+  sink_patterns = [
+    # ".request(",
+    # ".uploadFile(",
+    "navigateToMiniProgram"
+    # ".openEmbeddedMiniProgram(",
+    # ".navigateBackMiniProgram(",
+    # ".postMessageToReferrerMiniProgram(",
+    # ".sendSocketMessage(",
+    # ".createUDPSocket("
+  ]
+  
+  max_count = 3000
   context_chars = 1000
   
   # def folder_filter(folder_name):
   #   return folder_name.startswith("wx")
   
-  interested_ids = json.load(open("./filtered_id.json"))
+  interested_ids = json.load(open("/media/dataj/wechat-devtools-linux/testing/auto-testing/data/scripts/llm_checker/larger_than_10k_meta_output.json")).keys()
   def folder_filter(folder_name):
     if folder_name in interested_ids:
       return True
     return False
    
-  analyzer = MiniAppAnalyzer(source_folder, folder_filter, max_count, pattern, output_folder, context_chars=context_chars, openai_client=OPENAI_CLIENT)
+  analyzer = MiniAppAnalyzer(source_folder, folder_filter, max_count, sink_patterns, output_folder, context_chars=context_chars, openai_client=OPENAI_CLIENT)
   analyzer.analyze_folder()

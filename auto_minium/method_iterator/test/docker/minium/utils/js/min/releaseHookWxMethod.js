@@ -1,0 +1,1 @@
+function releaseHookWxMethod(){var e=wx._MINI_WX_PROXY_||wx,_=e.$_origin_$;_&&_!=e.$_method_$&&Object.defineProperty(e,"$_method_$",{get:()=>_}),"undefined"!=typeof $_before_$&&($_before_$=void 0),"undefined"!=typeof $_after_$&&($_after_$=void 0),"undefined"!=typeof $_callback_$&&($_callback_$=void 0)}

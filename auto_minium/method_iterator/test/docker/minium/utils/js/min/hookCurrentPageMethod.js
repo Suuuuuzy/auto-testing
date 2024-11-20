@@ -1,0 +1,1 @@
+function hookCurrentPageMethod(){var o=getCurrentPages().pop();if(!o||!o.$_method_$)throw new Error("page not support or no $_method_$ method");if(!o.$_method_$.__hooked__){var _=o.$_method_$;o.$_method_$=function(...o){"undefined"!=typeof $_callback_$&&$_callback_$(...o),_.call(this,...o)}.bind(o),o.$_method_$.__hooked__=!0}}
