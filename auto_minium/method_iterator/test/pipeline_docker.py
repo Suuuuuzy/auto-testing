@@ -148,6 +148,7 @@ def schedule(miniapp_ids):
 
 def main():
   miniapp_ids = read_miniapp_ids(INPUT_FILE)
+  miniapp_ids = ["wx0a7e8d29ab6f0b31"]
   logger.info(f"Read {len(miniapp_ids)} miniapp IDs from {INPUT_FILE}")
   schedule(miniapp_ids)
 

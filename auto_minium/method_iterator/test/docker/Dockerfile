@@ -1,11 +1,12 @@
 # Start from a base image with X11 and Node.js
-FROM ubuntu:20.04
+FROM ubuntu:16.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=America/New_York
 
 # Install necessary packages
 RUN apt-get update && apt-get install -y \
+    software-properties-common \
     curl \
     unzip \
     nodejs \
@@ -16,10 +17,7 @@ RUN apt-get update && apt-get install -y \
     libnss3 \
     libxss1 \
     libasound2 \
-    xvfb \
-    python3 \
-    python3-pip \ 
-    && rm -rf /var/lib/apt/lists/*
+    xvfb
 
 COPY ./libs/libcapnp-0.5.3.so /usr/lib/x86_64-linux-gnu/
 COPY ./libs/libkj-0.5.3.so /usr/lib/x86_64-linux-gnu/
@@ -28,12 +26,12 @@ COPY ./wechat-devtools-config-deprecated /root/.config/wechat-devtools
 
 RUN apt update && apt install -y vim net-tools lsof
 
-RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
-    apt install -y nodejs && \
-    npm install -g wscat
+# Add deadsnakes PPA for Python 3.8 and install Python 3.8 and pip
+RUN add-apt-repository ppa:deadsnakes/ppa && \
+    apt-get update && \
+    apt-get install -y python3.8 python3.8-distutils && \
+    curl -sS https://bootstrap.pypa.io/get-pip.py | python3.8
 
-# Install minium
-RUN pip3 install minium timeout_decorator
 
 # Copy run script for starting taint analysis
 COPY ./run /run

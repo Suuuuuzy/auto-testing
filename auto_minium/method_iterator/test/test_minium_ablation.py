@@ -1,5 +1,4 @@
 import os, json, time
-import atexit
 import threading
 from basedef import BaseDef
 from bind_func_arguments import get_arg, trigger_arg_dic
@@ -9,17 +8,16 @@ class Minium_Query(BaseDef):
     
     def setUp(self):
         appid = self.mini.project_path.split('/')[-1]
-        atexit.register(self.tearDown)
         # __setLog__('/home/suzy/temp/new_taint_log_file/'+appid)
         # result = self.app.evaluate(
         #     "function(){args=arguments;__setLog__('/home/suzy/temp/new_taint_log_file/'+args[0])}",[appid], sync=True
         # )
     
     def periodic_progress_log(self):
-        """Log progress every 10 seconds in a separate thread."""
+        """Log progress every 5 seconds in a separate thread."""
         while True:
             self.output_progress()
-            time.sleep(10)
+            time.sleep(5)
         
     def get_binding_cnt(self):
         cnt = 0
@@ -48,6 +46,7 @@ class Minium_Query(BaseDef):
         progress_thread = threading.Thread(target=self.periodic_progress_log, daemon=True)
         progress_thread.start()
 
+    # @timeout_decorator.timeout(300) # set timeout to be 300s (5min)
     def test_methods(self):
         self.eles_in_pages = {} # a global variable to record eles in pages
         text_input = "javascriptMinium"
@@ -76,9 +75,8 @@ class Minium_Query(BaseDef):
         self.all_ele_cnt = 0
         self.all_binding_cnt = self.get_binding_cnt()
         self.mock_storage()
-
-        # self._setupProcessOutput()
         
+        self._setupProcessOutput()
         
         def dealWithInput(inputs, page):
             # 1. inputs
