@@ -45,7 +45,10 @@ OUTPUT_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_mini
 MINIAPP_PATH = "/media/dataj/wechat-devtools-linux/prework/MiniTracker/Benchmark/Dynamic"
 # DEV_TOOL_PATH = "/media/dataj/wechat-devtools-linux/wechat-web-devtools-linux-nodebug/bin/wechat-devtools-cli"
 DEV_TOOL_PATH = "/media/dataj/wechat-devtools-linux/fix_multi/WeChat_Dev_Tools_v1.06.2409140-continuous_x86_64_linux/bin/wechat-devtools-cli"
-GLOBAL_RUN_LOCK = True # Grab the lock before do the copy and run, release the lock after the run
+
+# Run Configs
+TEST_CASE = "autominium_test" # "autominium_test" or "monkey_test"
+MAX_RUN = 2000
 
 class Worker():
   lock = threading.Lock()
@@ -57,7 +60,7 @@ class Worker():
     self.assigned_test_port = 9222 + self.workid
     
     self.per_test_timeout = 300
-    self.lock_release_timeout = 30
+    self.lock_release_timeout = 5
     
     self.package_json_path = os.path.join(CONFIG_WORK_PATH, f"package-{self.workid}.json")
     self.config_json_path = os.path.join(CONFIG_WORK_PATH, f"config-{self.workid}.json")
@@ -112,7 +115,8 @@ class Worker():
     app_json_path = os.path.join(miniapp_folder, "app.json")
 
     # Check if app.json exists
-    if not os.path.exists(app_json_path):
+
+    if not miniapp_folder or not os.path.exists(app_json_path):
         logger.error(f"Sanity check failed: app.json not found for miniapp {miniapp_id}")
         return False
     logger.info(f"Sanity check passed for miniapp {miniapp_id}")
@@ -167,8 +171,9 @@ class Worker():
       subprocess.run(['cp', self.config_json_path, config_dest], check=True)
 
       # Run test in a separate process with a specified log file path
-      log_file_path = os.path.join(OUTPUT_PATH, miniapp_id, f"autominium_test.log")
-      process = subprocess.Popen(['python3', '-c', f'from main import maintest; maintest("{log_file_path}")'])
+
+      log_file_path = os.path.join(OUTPUT_PATH, miniapp_id, f"{TEST_CASE}.log")
+      process = subprocess.Popen(['python3', '-c', f'from main import maintest; maintest("{TEST_CASE}", "{log_file_path}")'])
       logger.info(f"Start the process: {process.pid} for miniapp {miniapp_id}")
       
       # Start a timer thread to release the lock after `self.lock_release_timeout` seconds
@@ -243,47 +248,45 @@ def read_miniapp_ids(input_file):
           miniapp_ids.append(miniapp_id)
   return miniapp_ids
 
-# def read_good_miniapp_ids(input_file):
-#   """
-#   Read the list of miniapp IDs from the input file.
-#   Assume the file looks like:
-#   {
-#     "wx2c348cf579062e56": {
-#         "score": 4.0,
-#         "score_times": 106607,
-#         "title": "美团外卖丨外卖美食奶茶咖啡水果"
-#     },
-#     "wxde8ac0a21135c07d": {
-#         "score": 4.5,
-#         "score_times": 83923,
-#         "title": "美团丨外卖美食买菜酒店电影购物"
-#     },
-#   }
-#   """
-#   miniapp_ids = []
-#   with open(input_file, 'r', encoding='utf-8') as file:
-#     data = json.load(file)
+def read_good_miniapp_ids(input_file):
+  """
+  Read the list of miniapp IDs from the input file.
+  Assume the file looks like:
+  {
+    "wx2c348cf579062e56": {
+        "score": 4.0,
+        "score_times": 106607,
+        "title": "美团外卖丨外卖美食奶茶咖啡水果"
+    },
+    "wxde8ac0a21135c07d": {
+        "score": 4.5,
+        "score_times": 83923,
+        "title": "美团丨外卖美食买菜酒店电影购物"
+    },
+  }
+  """
+  miniapp_ids = []
+  with open(input_file, 'r', encoding='utf-8') as file:
+    data = json.load(file)
     
-#     # Sort miniapp IDs based on score_times in descending order
-#     sorted_miniapp_ids = sorted(data.keys(), key=lambda id: data[id]['score_times'], reverse=True)
+    # Sort miniapp IDs based on score_times in descending order
+    sorted_miniapp_ids = sorted(data.keys(), key=lambda id: data[id]['score_times'], reverse=True)
     
-#     return sorted_miniapp_ids
+    return sorted_miniapp_ids
 
 
 def main():
   # gen_miniapp_ids()
-  # miniapp_ids = read_miniapp_ids(INPUT_FILE)
-  # logger.info(f"Read {len(miniapp_ids)} miniapp IDs from {INPUT_FILE}")
+  miniapp_ids = read_miniapp_ids(INPUT_FILE)
 
-  # miniapp_ids = ["UserInput1", "PageAndGlobalData6", "PageAndGlobalData7", "PageAndGlobalData8"]
-  # miniapp_ids = ["UserInput1"]
-  miniapp_ids = os.listdir(MINIAPP_PATH)
-  
+  # miniapp_ids = ["wxd6aa6a9b753a535c", "wxba24d24f8e8e85c5"]
+
+  logger.info(f"Read {len(miniapp_ids)} miniapp IDs from {INPUT_FILE}")
+
   # Assuming the Worker class and miniapp_ids list are defined
-  workers = [Worker("Zhengyu", 0), Worker("Jianjia", 1), Worker("Pixal", 2)]
-  # workers = [Worker("Jianjia", 1), Worker("Pixal", 2)]
+  workers = [Worker("Zhengyu", 0), Worker("Yichao", 1)]
   num_workers = len(workers)
-  num_miniapps = len(miniapp_ids)
+  num_miniapps = min(len(miniapp_ids), MAX_RUN)
 
   # Calculate how many miniapp IDs each worker should process
   miniapps_per_worker = num_miniapps // num_workers
@@ -317,14 +320,12 @@ def main():
   logger.info("Both worker tasks have completed.")
 
 def single_worker_test():
-  # miniapp_ids = read_miniapp_ids(INPUT_FILE)
-  miniapp_ids = ["Utils2","Utils3", "Utils4","Utils5","Utils6","Utils7"]
-  # logger.info(f"Read {len(miniapp_ids)} miniapp IDs from {INPUT_FILE}")
+  miniapp_ids = read_miniapp_ids(INPUT_FILE)
+  miniapp_ids = ["wxc395913ec26476b3"]
+  logger.info(f"Read {len(miniapp_ids)} miniapp IDs from {INPUT_FILE}")
   
-  # worker = Worker("Zhengyu", 0)
-  # worker = Worker("Jianjia", 1)
-  worker = Worker("Pixal", 2)
-  for miniapp_id in miniapp_ids[:1]:
+  worker = Worker("Zhengyu-0", 0)
+  for miniapp_id in miniapp_ids[:]:
     worker.run(miniapp_id)
   
 if __name__ == "__main__":

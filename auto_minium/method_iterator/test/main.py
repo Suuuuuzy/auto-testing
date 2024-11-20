@@ -1,6 +1,7 @@
 #!/usr/bin/env python3.8
 
-from test_minium import Minium_Query
+from test_minium_ablation import Minium_Query
+from test_monkey_ablation import Monkey_Query
 import unittest, time, datetime
 import subprocess
 import logging
@@ -54,8 +55,8 @@ def handle_termination_signal(signum, frame):
     logger_main.info(f"Termination signal {signum} received. Running cleanup.")
     cleanup()
     sys.exit(0)
-    
-def maintest(log_file_path='autominium_test.log'):
+
+def maintest(test='autominium_test', log_file_path='autominium_test.log'):
     start_time = time.time()
 
     global logger_main
@@ -68,8 +69,13 @@ def maintest(log_file_path='autominium_test.log'):
     )
 
     Minium_Query.logger_main = logger_main
+    Monkey_Query.logger_main = logger_main
     
-    loaded_suite = unittest.TestLoader().loadTestsFromTestCase(Minium_Query)
+    if test == 'autominium_test':
+        loaded_suite = unittest.TestLoader().loadTestsFromTestCase(Minium_Query)
+    else:
+        loaded_suite = unittest.TestLoader().loadTestsFromTestCase(Monkey_Query)
+
     for test_case in loaded_suite:
         logger_main.info(test_case)
         test_cases.append(test_case)
