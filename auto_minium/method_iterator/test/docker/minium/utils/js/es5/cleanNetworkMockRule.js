@@ -1,0 +1,1 @@
+function cleanNetworkMockRule(){global.__minium__["%(interface)s_network_mocked"]&&new global.__minium__.MockRule("%(interface)s_network_mock_rule").clean()}

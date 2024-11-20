@@ -1,0 +1,1 @@
+function callContextMethod(a,b,c,d){var e,f=global.__minium__.$_createMediaContext_$s["".concat(b,"_").concat(a)];f||(f=wx.$_createMediaContext_$(a),global.__minium__.$_createMediaContext_$s["".concat(b,"_").concat(a)]=f),(e=f)[c].apply(e,global.babelHelpers.toConsumableArray(d))}

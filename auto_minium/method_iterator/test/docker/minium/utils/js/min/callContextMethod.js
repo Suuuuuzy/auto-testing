@@ -1,0 +1,1 @@
+function callContextMethod(_,e,t,a){var $=global.__minium__.$_createMediaContext_$s[`${e}_${_}`];$||($=wx.$_createMediaContext_$(_),global.__minium__.$_createMediaContext_$s[`${e}_${_}`]=$),$[t](...a)}

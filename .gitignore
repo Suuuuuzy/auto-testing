@@ -3,7 +3,7 @@
 **/*.pyc
 **/.DS_Store
 auto_minium/method_iterator/config.json
-auto_minium/method_iterator/outputs
+auto_minium/method_iterator/debug.py
 data/appid_file
 data/newcrawl
 data/top50
@@ -11,3 +11,7 @@ data/top50
 !data/newcrawl/top50/miniapp-dataset-top50.csv
 tmp.py
 node_modules/
+data/scripts/llm_checker/test/
+**/outputs/
+**/output/
+**/tmp_outputs/

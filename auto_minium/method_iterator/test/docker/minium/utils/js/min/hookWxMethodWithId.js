@@ -1,0 +1,1 @@
+function hookWxMethodWithId(_,l,o){if(!global.__minium__.canHook)throw new Error("hook方法未实现");o?global.__minium__.setCall(_,l,{before:$_before_$,after:$_after_$,callback:$_callback_$},!0):global.__minium__.delCall(_,l)}

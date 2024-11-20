@@ -300,86 +300,88 @@ if __name__ == "__main__":
                 "\n".join([sample["dir"] for _, sample in random_sample_dict.items()])
             )
 
-    finished_pages_ratios = np.array([], dtype=np.float32)
-    visited_pages_ratios = np.array([], dtype=np.float32)
-    visited_binding_func_ratios = np.array([], dtype=np.float32)
-    visited_input_form_ratios = np.array([], dtype=np.float32)
-    for _, sample in random_sample_dict.items():
+    # num_of_samples (100) * num_of_stats (11)
+    # the column is ordered as:
+    #       all pages (0); visited pages (1); visited_pages_ratio (2);
+    #                      finished_pages (3); finished_pages_ratio (4);
+    #       all_input_form (5); visited_input_form (6); visited_input_form_ratio (7);
+    #       all_bindings (8); visited bindings (9); visited_bindings_ratio (10)
 
-        finished_pages_ratios = (
-            np.append(finished_pages_ratios, sample["finished_pages_ratio"])
-            if sample["finished_pages_ratio"] is not None
-            else finished_pages_ratios
-        )
+    all_data = np.zeros((args.random_n, 11), dtype=np.float32)
 
-        visited_pages_ratios = (
-            np.append(finished_pages_ratios, sample["visited_pages_ratio"])
-            if sample["visited_pages_ratio"] is not None
-            else finished_pages_ratios
-        )
+    # get the valid number of ratios
+    visited_pages_ratio_total = 0
+    finished_pages_ratio_total = 0
+    visited_input_form_ratio_total = 0
+    visited_bindings_ratio_total = 0
 
-        visited_binding_func_ratios = (
-            np.append(visited_binding_func_ratios, sample["visited_bindings_ratio"])
-            if sample["visited_bindings_ratio"] is not None
-            else visited_binding_func_ratios
-        )
+    for sample_idx, (_, sample) in enumerate(random_sample_dict.items()):
 
-        visited_input_form_ratios = (
-            np.append(visited_input_form_ratios, sample["visited_input_form_ratio"])
-            if sample["visited_input_form_ratio"] is not None
-            else visited_input_form_ratios
-        )
+        all_data[sample_idx, 0] = sample["all_pages"]
+        all_data[sample_idx, 1] = sample["visited_pages"]
+        all_data[sample_idx, 3] = sample["finished_pages"]
+        all_data[sample_idx, 5] = sample["all_input_form"]
+        all_data[sample_idx, 6] = sample["visited_input_form"]
+        all_data[sample_idx, 8] = sample["all_bindings"]
+        all_data[sample_idx, 9] = sample["visited_bindings"]
 
-    print(
-        f"average visited page from 100 samples : {visited_pages_ratios.sum(axis=0) / float(visited_pages_ratios.shape[0])}\n"
-        + f"average finished page from 100 samples : {finished_pages_ratios.sum(axis=0) / float(finished_pages_ratios.shape[0])}\n"
-        + f"average visited form and input from 100 samples : {visited_input_form_ratios.sum(axis=0) / float(visited_input_form_ratios.shape[0])}\n"
-        + f"average visited bindings from 100 samples : {visited_binding_func_ratios.sum(axis=0) / float(visited_binding_func_ratios.shape[0])}\n"
+        if sample["visited_pages_ratio"] is not None:
+            visited_pages_ratio_total += 1
+            all_data[sample_idx, 2] = sample["visited_pages_ratio"]
+
+        if sample["finished_pages_ratio"] is not None:
+            finished_pages_ratio_total += 1
+            all_data[sample_idx, 4] = sample["finished_pages_ratio"]
+
+        if sample["visited_input_form_ratio"] is not None:
+            visited_input_form_ratio_total += 1
+            all_data[sample_idx, 7] = sample["visited_input_form_ratio"]
+
+        if sample["visited_bindings_ratio"] is not None:
+            visited_bindings_ratio_total += 1
+            all_data[sample_idx, 10] = sample["visited_bindings_ratio"]
+
+    all_data_sums = all_data.sum(axis=0)
+    all_data_sums[2] = all_data_sums[2] / float(visited_pages_ratio_total)
+    all_data_sums[4] = all_data_sums[4] / float(finished_pages_ratio_total)
+    all_data_sums[7] = all_data_sums[7] / float(visited_input_form_ratio_total)
+    all_data_sums[10] = all_data_sums[10] / float(visited_bindings_ratio_total)
+
+    f_string: str = (
+        f"based on ratio per sample: \n"
+        + f"average visited page from {args.random_n} samples: {all_data_sums[2]}\n"
+        + f"average finished page from {args.random_n} samples: {all_data_sums[4]}\n"
+        + f"average visited input and form from {args.random_n} samples: {all_data_sums[7]}\n"
+        + f"average visited bindings from {args.random_n} samples: {all_data_sums[10]}\n\n"
+        + f"based on number per sample: \n"
+        + f"average visited page from {args.random_n} samples: {all_data_sums[1] / all_data_sums[0]} ({int(all_data_sums[1])} / {int(all_data_sums[0])})\n"
+        + f"average finished page from {args.random_n} samples: {all_data_sums[3] / all_data_sums[0]} ({int(all_data_sums[3])} / {int(all_data_sums[0])})\n"
+        + f"average visited input and form from {args.random_n} samples: {all_data_sums[6] / all_data_sums[5]} ({int(all_data_sums[6])} / {int(all_data_sums[5])})\n"
+        + f"average visited bindings from {args.random_n} samples: {all_data_sums[9] / all_data_sums[8]} ({int(all_data_sums[9])} / {int(all_data_sums[8])})"
     )
+
+    print(f_string)
+
     with open(args.file_output + ".out", "w") as f:
-        f.write(
-            f"average visited page from 100 samples : {visited_pages_ratios.sum(axis=0) / float(visited_pages_ratios.shape[0])}\n"
-            + f"average finished page from 100 samples : {finished_pages_ratios.sum(axis=0) / float(finished_pages_ratios.shape[0])}\n"
-            + f"average visited form and input from 100 samples : {visited_input_form_ratios.sum(axis=0) / float(visited_input_form_ratios.shape[0])}\n"
-            + f"average visited bindings from 100 samples : {visited_binding_func_ratios.sum(axis=0) / float(visited_binding_func_ratios.shape[0])}\n"
-        )
+        f.write(f_string)
 
-    all_stats = np.stack(
-        [
-            [
-                (
-                    sample["visited_pages_ratio"]
-                    if sample["visited_pages_ratio"] is not None
-                    else np.nan
-                ),
-                (
-                    sample["finished_pages_ratio"]
-                    if sample["finished_pages_ratio"] is not None
-                    else np.nan
-                ),
-                (
-                    sample["visited_input_form_ratio"]
-                    if sample["visited_input_form_ratio"] is not None
-                    else np.nan
-                ),
-                (
-                    sample["visited_bindings_ratio"]
-                    if sample["visited_bindings_ratio"] is not None
-                    else np.nan
-                ),
-            ]
-            for _, sample in random_sample_dict.items()
-        ],
-        dtype=np.float32,
-    )
+    all_data_plus_sum = np.vstack((all_data, all_data_sums))
+
     df = pd.DataFrame(
-        all_stats,
-        index=[key for key, _ in random_sample_dict.items()],
+        all_data_plus_sum,
+        index=[key for key, _ in random_sample_dict.items()] + ["total"],
         columns=[
+            "all pages",
             "visited pages",
-            "finished pages",
-            "visited input form",
-            "visited bindings ratio",
+            "visited_pages_ratio",
+            "finished_pages",
+            "finished_pages_ratio",
+            "all_input_form",
+            "visited_input_form",
+            "visited_input_form_ratio",
+            "all_bindings",
+            "visited bindings",
+            "visited_bindings_ratio",
         ],
     )
     df.to_csv(args.file_output + ".csv")

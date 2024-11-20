@@ -1,0 +1,1 @@
+function mockWxMethod(a,b){if(!global.__minium__.canMock)throw new Error("mock\u65B9\u6CD5\u672A\u5B9E\u73B0");var c=$_function_$;c?global.__minium__.setMock(a,c,b):global.__minium__.delMock(a)}

@@ -1,20 +1,15 @@
-from basedef import BaseDef
 import os, json, time
-from bind_func_arguments import get_arg, trigger_arg_dic
-import logging
-logger_main = logging.getLogger(__name__)
-logging.basicConfig(
-    filename='autominium_test.log',
-    level=logging.DEBUG,
-    format='%(asctime)s.%(msecs)03d %(levelname)s %(module)s - %(funcName)s: %(message)s',
-    datefmt='%Y-%m-%d %H:%M:%S',
-)
-
+import atexit
 import timeout_decorator
+from basedef import BaseDef
+from bind_func_arguments import get_arg, trigger_arg_dic
 
 class Minium_Query(BaseDef):
+    logger_main = None
+    
     def setUp(self):
         appid = self.mini.project_path.split('/')[-1]
+        atexit.register(self.tearDown)
         # __setLog__('/home/suzy/temp/new_taint_log_file/'+appid)
         # result = self.app.evaluate(
         #     "function(){args=arguments;__setLog__('/home/suzy/temp/new_taint_log_file/'+args[0])}",[appid], sync=True
@@ -43,7 +38,7 @@ class Minium_Query(BaseDef):
         }"""
         self.app.mock_wx_method("getStorage", functionDeclaration=functionDeclaration)
             
-    @timeout_decorator.timeout(300) # set timeout to be 300s (5min)
+    # @timeout_decorator.timeout(300) # set timeout to be 300s (5min)
     def test_methods(self):        
         self.eles_in_pages = {} # a global variable to record eles in pages
         text_input = "javascriptMinium"
@@ -119,7 +114,7 @@ class Minium_Query(BaseDef):
             self.logger.info(f'[+] See triggers {triggers} in page: {page}')
             for trigger in triggers:
                 if trigger not in trigger_arg_dic:
-                    logger_main.error(f"[+] {trigger} not implemeted in trigger_arg_dic in miniapp {self.mini.project_path}")
+                    self.logger_main.error(f"[+] {trigger} not implemeted in trigger_arg_dic in miniapp {self.mini.project_path}")
                     # skip the ones we don't include for now, to see whether the test stops
                     self.bind_methods[page_in_json]["binding_event"][trigger] = []
                     continue
@@ -134,14 +129,14 @@ class Minium_Query(BaseDef):
                             return
                         args = get_arg(item)
                         if args is None:
-                            logger_main.info(f"[+]Did not get args for {item['trigger']}")
+                            self.logger_main.info(f"[+]Did not get args for {item['trigger']}")
                             items.remove(item)
                             continue
                         result  = self.page.call_method(item["handler"], args)
                         self.logger.info(f'[+] Call method {item["handler"]}, result: {result}')
                     except Exception as e:
                         self.logger.info(f'[+] Call method error {item["handler"]}')
-                        logger_main.error(f'[+] Call method: {item["handler"]} error: {e} in miniapp {self.mini.project_path}')
+                        self.logger_main.error(f'[+] Call method: {item["handler"]} error: {e} in miniapp {self.mini.project_path}')
                     items.remove(item)
                     self.logger.info(f'[+] There are {len(items)} methods for {trigger} left on page: {page}')
                     time.sleep(5) # wait until the call_method takes effect (if the call method is navigation)
@@ -179,7 +174,7 @@ class Minium_Query(BaseDef):
             if bindings_cnt==0 and ele_cnt==0:
                 self.finished_pages.add(page)
                 self.pages.remove(page)
-                logger_main.info(f'Page: {page} finished.')
+                self.logger_main.info(f'Page: {page} finished.')
                 self.logger.info(f'[+] {page} finishes')
                 return
             
@@ -215,7 +210,7 @@ class Minium_Query(BaseDef):
             
             time.sleep(5) # wait until navigation takes effect
             self.visited_pages[page] += 1
-            logger_main.info(f'Page: {page} visited {self.visited_pages[page]} time.')
+            self.logger_main.info(f'Page: {page} visited {self.visited_pages[page]} time.')
             dealWithPage(page)
         
         query = {'testkey': 'testvalueOnLoad'}
@@ -232,15 +227,15 @@ class Minium_Query(BaseDef):
                     self.logger.info(f'[+] Navigate through API without dealWithPage, to: {page}')
                     time.sleep(5) # wait until navigation takes effect
                     self.visited_pages[page] = 1
-                    logger_main.info(f'Page: {page} visited {self.visited_pages[page]} time.')
+                    self.logger_main.info(f'Page: {page} visited {self.visited_pages[page]} time.')
             
         
         
     def tearDown(self):
-        logger_main.info(f'Finished {len(self.finished_pages)} pages out of {len(self.all_pages)}.')
-        logger_main.info(f'Visited {len(self.visited_pages)} pages out of {len(self.all_pages)}.')
-        logger_main.info(f'Visited {self.all_binding_cnt-self.get_binding_cnt()} binding functions out of {self.all_binding_cnt}.')
-        logger_main.info(f'Visited {self.all_ele_cnt-self.get_ele_cnt()} input/forms out of {self.all_ele_cnt}.')
+        self.logger_main.info(f'Finished {len(self.finished_pages)} pages out of {len(self.all_pages)}.')
+        self.logger_main.info(f'Visited {len(self.visited_pages)} pages out of {len(self.all_pages)}.')
+        self.logger_main.info(f'Visited {self.all_binding_cnt-self.get_binding_cnt()} binding functions out of {self.all_binding_cnt}.')
+        self.logger_main.info(f'Visited {self.all_ele_cnt-self.get_ele_cnt()} input/forms out of {self.all_ele_cnt}.')
         self.mini.shutdown()
         super().tearDown()
         

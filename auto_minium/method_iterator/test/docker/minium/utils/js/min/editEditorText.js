@@ -1,0 +1,1 @@
+function editEditorText(){return global.__minium__.edRes="",new Promise((e=>{wx.createSelectorQuery().select("#%(editorid)s").context((function(t){t.context.insertText({text:"%(text)s",success(t){global.__minium__.edRes=t.errMsg,e(t.errMsg)},fail(t){global.__minium__.edRes=t.errMsg,e(t.errMsg)}})})).exec()}))}

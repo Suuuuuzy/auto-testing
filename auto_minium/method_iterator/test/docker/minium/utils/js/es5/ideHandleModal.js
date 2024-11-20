@@ -1,0 +1,1 @@
+function ideHandleModal(a){return global.__minium__.handle_mock_native_modal&&global.__minium__.handle_mock_native_modal(a)}

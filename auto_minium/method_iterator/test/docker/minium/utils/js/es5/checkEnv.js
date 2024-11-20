@@ -1,0 +1,1 @@
+function checkInject(){var a=!1,b=!1;return global.__minium__?a=!0:(global.__minium__={},a=!1),b=!!wx._MINI_WX_PROXY_,{injected:a,isThirdApp:b}}

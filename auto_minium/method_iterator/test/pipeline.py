@@ -218,7 +218,7 @@ def run(all_project_lists):
         input_data = {  
             "project_path": project_path,
             "dev_tool_path": dev_tool_path,
-            "auto_authorize": True
+            "auto_authorize": True,
             # ,"close_ide": True,
             # "full_reset": True
             # "test_port" add for parallel running?

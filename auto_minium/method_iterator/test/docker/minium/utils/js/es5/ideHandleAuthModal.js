@@ -1,0 +1,1 @@
+function ideHandleAuthModal(a){return global.__minium__.handle_mock_auth_modal&&global.__minium__.handle_mock_auth_modal(a)}
