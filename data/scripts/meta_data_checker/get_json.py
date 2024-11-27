@@ -1,130 +1,140 @@
 import re
 import json
 import codecs
+import logging
 
-# Define the nested_pattern to extract key-value pairs and handle nested structures
-nested_pattern = re.compile(r"(\w+)=((?:Bundle\[\{.*?\}\]|{.*?})|\".*?\"|[^,]+)", re.UNICODE)
+logging.basicConfig(
+    level=logging.DEBUG,  # Set the logging level
+    format='%(asctime)s - %(levelname)s - %(message)s',  # Format includes time
+    datefmt='%Y-%m-%d %H:%M:%S',  # Timestamp format
+    filename='app.log',  # Log file name
+    filemode='w'  # Overwrite the log file on each run (use 'a' to append)
+)
 
 counter_skipped_no_appid = 0
 counter_skipped_only_default_appid = 0
 
-# Function to parse each content
-def parse_each_content(content):
-    # Initialize an empty dictionary to store the JSON object
+
+# META_LOG = "first_100_lines.txt"
+# META_LOG = "/media/dataj/wechat-devtools-linux/testing/auto-testing/data/newcrawl/logs/meta_data.txt"
+META_LOG = "reduced_meta_data.txt"
+
+
+def get_info_from_meta_json(a):
     result = {}
-
-    # Use the provided regular expression pattern
-    pattern = re.compile(
-        r'(?:\\"|")weappUrl(?:\\"|"):(?:\\"|")[^\"]*?id=(wx(?!82e6ae1175f264fa)[a-z0-9]{16})[^\"]*?(?:\\"|").*?(?:\\"|")score(?:\\"|"):(?:\\"|")([0-9.]+)(?:\\"|").*?(?:\\"|")score_times(?:\\"|"):([0-9]+).*?(?:\\"|")style(?:\\"|"):\d*?,(?:\\"|")title(?:\\"|"):(?:\\"|")(.*?)(?:\\"|")(?:,|})',
-        re.DOTALL
-    )
-
-    # Search for matches in the content
-    for match in pattern.finditer(content):
-        app_id, score, score_times, title = match.groups()
-        
-        adjusted_title = re.sub(r'$', '', title, flags=re.MULTILINE)
-        adjusted_title = re.sub(r'^', '', adjusted_title, flags=re.MULTILINE)
-        adjusted_title = adjusted_title.replace('<em class=\\"highlight\\">', '')
-        adjusted_title = adjusted_title.replace('<em class="highlight">', '')
-        adjusted_title = adjusted_title.replace('<em class=\\\\"highlight\\\\">', '')
-        adjusted_title = adjusted_title.replace('</em>', '')
-
-        # Add the app_id with score, score_times, and title to the result
-        result[app_id] = {
-            "score": float(score),
-            "score_times": int(score_times),
-            "title": adjusted_title
-        }
-        
-    another_pattern = re.compile(
-        r'jumpInfo(?:\\"|"):{(?:\\"|")appID(?:\\"|"):(?:\\"|")(wx(?!82e6ae1175f264fa)[a-z0-9]{16})[^\"]*?(?:\\"|").*?(?:\\"|")score(?:\\"|"):(?:\\"|")([0-9.]+)(?:\\"|").*?(?:\\"|")score_times(?:\\"|"):([0-9]+).*?(?:\\"|")style(?:\\"|"):\d*?,(?:\\"|")title(?:\\"|"):(?:\\"|")(.*?)(?:\\"|")(?:,|})',
-        re.DOTALL
-    )
-    
-    for match in another_pattern.finditer(content):
-        app_id, score, score_times, title = match.groups()
-        
-        adjusted_title = re.sub(r'\\n', '', title, flags=re.MULTILINE)
-        adjusted_title = re.sub(r'$', '', title, flags=re.MULTILINE)
-        adjusted_title = re.sub(r'^', '', adjusted_title, flags=re.MULTILINE)
-        adjusted_title = adjusted_title.replace('<em class=\\"highlight\\">', '')
-        adjusted_title = adjusted_title.replace('<em class="highlight">', '')
-        adjusted_title = adjusted_title.replace('<em class=\\\\"highlight\\\\">', '')
-        adjusted_title = adjusted_title.replace('</em>', '')
-
-        # Add the app_id with score, score_times, and title to the result
-        result[app_id] = {
-            "score": float(score),
-            "score_times": int(score_times),
-            "title": adjusted_title
-        }
-
+    try:
+        datas = a["data"]
+        if not datas:
+            return result
+        for data in datas:
+            if "subBoxes" not in data:
+                continue
+            subBoxes = data["subBoxes"]
+            for box in subBoxes:
+                data = box["items"][0]
+                appID = data["jumpInfo"].get("appID")
+                appVersion = data["jumpInfo"].get("appVersion")
+                title = data.get("title")
+                source_title = data.get("source").get("title")
+                score = None
+                score_times = None
+                if "serviceComment" in data:
+                    score = data["serviceComment"]["comment"].get("score")
+                    score_times = data["serviceComment"]["comment"].get("score_times")
+                    if not appID:
+                        weappUrl = data["serviceComment"]["comment"]["jumpInfo"].get("weappUrl")
+                        if weappUrl:
+                            appID = re.findall(r"wx[a-z0-9]{16}", weappUrl, re.DOTALL)
+                            if len(appID)>0:
+                                appID = appID[0]
+                            else:
+                                continue
+                desc = data.get("desc")
+                result[appID] = {
+                    "title": title,
+                    "source_title": source_title,
+                    "appVersion": appVersion,
+                    "score": score,
+                    "score_times": score_times,
+                    "desc": desc
+                }
+    except Exception as e:
+        logging.error(f"Error: {e}")
+        logging.error(json.dumps(a))
     return result
-
-
-# Function to find_appId for each_value
-def find_appId(each_value):
-    global counter_skipped_no_appid, counter_skipped_only_default_appid
-    appId_list = re.findall(r"wx[a-z0-9]{16}", each_value, re.DOTALL)
-    if not appId_list:
-        counter_skipped_no_appid += 1
-        return None
-    elif all(id == "wx82e6ae1175f264fa" for id in appId_list): 
-        # "wx82e6ae1175f264fa" is a common id that should be excluded
-        counter_skipped_only_default_appid += 1
-        return None
-    else:
-        return [id for id in appId_list if id != "wx82e6ae1175f264fa"]
-
+        
 
 # Function to process the entire file at once
 def process_file():
     BEGIN_CONST = "HomeWebViewUI: "
+    DISCARD_CONST = "beforeHookedMethod"
     json_output = []
     
     # Step 1: Read all lines with "HomeWebViewUI: "
     extracted_content = []
-    with codecs.open("/media/dataj/wechat-devtools-linux/testing/auto-testing/data/newcrawl/logs/meta_data.txt", "r", encoding="utf-8", errors="ignore") as file:
+    para = []
+    with codecs.open(META_LOG, "r", encoding="utf-8", errors="ignore") as file:
         for line in file:
-            # Extract the content following "HomeWebViewUI: "
+            if DISCARD_CONST in line:
+                continue
             if BEGIN_CONST in line:
-                extracted_content.append(line[line.find(BEGIN_CONST):].replace(BEGIN_CONST, ''))
+                last_index = line.rfind(BEGIN_CONST)
+                if last_index != -1:
+                    add_string = line[last_index:].replace(BEGIN_CONST, '')
+                    extracted_content.append(add_string)
+                    if add_string.startswith("arg:1:Bundle[{"):
+                        add_string = add_string.strip()
+                        para.append(add_string)
+                    elif add_string.startswith("arg:"):
+                        continue
+                    elif add_string.startswith("sb.length"):
+                        if len(para)>0:
+                            para[-1] += "\n" + add_string
+                    else:
+                        add_string = add_string.strip()
+                        if len(para)>0:
+                            para[-1] += add_string
     
     # Step 2: Concatenate all extracted parts into a single string
-    concatenated_content = ''.join(extracted_content)
-    
-    # Step 3: Extract all `arg:1:Bundle[{...}]` entries
-    raw_entries = re.findall(r"arg:1:Bundle\[\{(.*?)\}\]:-:class android\.os\.Bundle", concatenated_content, re.DOTALL)
-    
-    # # Step 4: Assign AppId to each raw_entry
-    # entry_with_appId = {}
-    # for each in raw_entries:
-    #     find_result = find_appId(each)
-    #     if not find_result:
-    #         continue
-    #     for each_id in find_result:
-    #         entry_with_appId[each_id] = each
-    
-    # Step 5: Parse the concatenated entries
-    json_output = {}
-    for each in raw_entries:
-        new_entries = parse_each_content(each)
+    concatenated_content = '\n'.join(para)
         
-        conflicting_keys = json_output.keys() & new_entries.keys()
-        if conflicting_keys:
-            for key in conflicting_keys:
-                if json_output[key] != new_entries[key]:
-                    print("Conflict appId: ", key, ", Current Value in json_output: {", json_output[key], ", New Value: ", new_entries[key])
+    cleaned_text = re.sub(r'<em class="highlight">(.*?)</em>', r'\1', concatenated_content)
+    cleaned_text = re.sub(r'<em class=\\\"highlight\\\">(.*?)</em>', r'\1', cleaned_text)
+    cleaned_text = re.sub(r'<emclass=\\\"highlight\\\">(.*?)</em>', r'\1', cleaned_text)
+    
+    with open("intermediate.txt", "w") as f:
+        f.write(cleaned_text)
         
-        json_output = {**json_output, **new_entries}
-
-    # Save the JSON output to a file
-    with open("meta_data_output.json", "w", encoding="utf-8") as json_file:
-        json.dump(json_output, json_file, ensure_ascii=False, indent=4)
-
-    print("JSON output successfully saved to json_output.json.")
+    # Find the specific bundle
+    bundle_matches = re.findall(r'fts_key_json_data=(.*?), fts_key_new_query=', cleaned_text)
+    bundle_results = {}
+    result = {}
+    if bundle_matches:
+        for idx, match in enumerate(bundle_matches, start=1):
+            bundle_content = match
+            a = None
+            try:
+                a = json.loads(bundle_content)
+            except Exception as e:
+                logging.error("json.loads Error: "+ str(e))
+                logging.error(bundle_content)
+            if a:
+                if "query" in a:
+                    bundle_results[idx] = a
+                    new_result = get_info_from_meta_json(a)
+                    result.update(new_result)
+    else:
+        print("No Bundle found.")
+    
+    with open(f"bundle_results/results.json", "w") as f:
+        json.dump(result, f, ensure_ascii=False, indent=2)
 
 # Run the function
 process_file()
+
+#  
+# grep -C 5 "wxa6d40a50372562bc" /media/dataj/wechat-devtools-linux/testing/auto-testing/data/newcrawl/logs/meta_data.txt
+# head -n 100 /media/dataj/wechat-devtools-linux/testing/auto-testing/data/newcrawl/logs/meta_data.txt > first_100_lines.txt
+# head -n 10000 /media/dataj/wechat-devtools-linux/testing/auto-testing/data/newcrawl/logs/meta_data.txt > first_100_lines.txt
+#  tail -n 100 app.log > first_100_lines.txt
 
