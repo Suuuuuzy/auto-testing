@@ -31,32 +31,17 @@ from logger import setup_logger
 logger = setup_logger(__name__, "logs/pipeline_multi.log", level=logging.DEBUG)
 
 # Constants
-INPUT_FILE = "/media/dataj/wechat-devtools-linux/testing/auto-testing/data/appid_file/metacrawl_run.txt"
+INPUT_FILE = "/media/dataj/wechat-devtools-linux/testing/auto-testing/tasks/voyage/navi_miniapps.json"
 # INPUT_FILE = "/media/dataj/wechat-devtools-linux/testing/auto-testing/data/scripts/meta_data_checker/meta_json_output.json"
 CONFIG_WORK_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/work"
 CONFIG_READY_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test"
-# PACKAGE_JSON_READY_PATH = "/media/dataj/wechat-devtools-linux/wechat-web-devtools-linux-nodebug/package.nw"
-<<<<<<< HEAD
 PACKAGE_JSON_READY_PATH = "/media/dataj/wechat-devtools-linux/wechat-web-devtools-linux-nodebug/package.nw"
-PREPROCESS_SCRIPT_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/data/data_utils/single_preprocess.py"
+PREPROCESS_SCRIPT_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/data_utils/single_preprocess.py"
 PREPROCESS_SCRIPT_GENERATE_BIND_PATH = "/media/dataj/wechat-devtools-linux/prework/MiniScope/src/static/generate_binds_for_jianjia.py"
 # OUTPUT_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/miniTracker_gt/outputs"
-OUTPUT_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output"
+OUTPUT_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/navi/output"
 MINIAPP_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/data/newcrawl/pkg_unpack/"
-# MINIAPP_PATH = "/media/dataj/wechat-devtools-linux/prework/MiniTracker/Benchmark/Dynamic"
-# DEV_TOOL_PATH = "/media/dataj/wechat-devtools-linux/wechat-web-devtools-linux-nodebug/bin/wechat-devtools-cli"
 DEV_TOOL_PATH = "/media/dataj/wechat-devtools-linux/wechat-web-devtools-linux-nodebug/bin/wechat-devtools-cli"
-=======
-PACKAGE_JSON_READY_PATH = "/media/dataj/wechat-devtools-linux/fix_multi/WeChat_Dev_Tools_v1.06.2409140-continuous_x86_64_linux/package.nw"
-PREPROCESS_SCRIPT_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/data/data_utils/single_preprocess.py"
-PREPROCESS_SCRIPT_GENERATE_BIND_PATH = "/media/dataj/wechat-devtools-linux/prework/MiniScope/src/static/generate_binds_for_jianjia.py"
-OUTPUT_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/miniTracker_gt/outputs"
-# OUTPUT_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output"
-# MINIAPP_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/data/newcrawl/pkg_unpack/"
-MINIAPP_PATH = "/media/dataj/wechat-devtools-linux/prework/MiniTracker/Benchmark/Dynamic"
-# DEV_TOOL_PATH = "/media/dataj/wechat-devtools-linux/wechat-web-devtools-linux-nodebug/bin/wechat-devtools-cli"
-DEV_TOOL_PATH = "/media/dataj/wechat-devtools-linux/fix_multi/WeChat_Dev_Tools_v1.06.2409140-continuous_x86_64_linux/bin/wechat-devtools-cli"
->>>>>>> 5ecb2dcc5d7c7c4e329524c97f843b5b904f8a1d
 
 # Run Configs
 TEST_CASE = "autominium_test" # "autominium_test" or "monkey_test"
@@ -296,7 +281,7 @@ def main():
   logger.info(f"Read {len(miniapp_ids)} miniapp IDs from {INPUT_FILE}")
 
   # Assuming the Worker class and miniapp_ids list are defined
-  workers = [Worker("Zhengyu", 0), Worker("Yichao", 1)]
+  workers = [Worker("Zhengyu", 0), Worker("Jianjia", 1)]
   num_workers = len(workers)
   num_miniapps = min(len(miniapp_ids), MAX_RUN)
 
