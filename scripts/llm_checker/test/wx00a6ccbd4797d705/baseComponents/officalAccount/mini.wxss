@@ -1,0 +1,57 @@
+.officialAccountLieFlat .official {
+  border-radius: 6rpx;
+  margin: auto;
+  overflow: hidden;
+}
+.officialAccountWrap .content-position {
+  background: #fff;
+  border-radius: 16rpx;
+  bottom: calc(env(safe-area-inset-bottom) + 140rpx);
+  box-shadow: 0rpx 4rpx 18rpx rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  height: 294rpx;
+  left: 0;
+  margin: auto;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  width: 690rpx;
+  z-index: 500;
+}
+.officialAccountWrap .content-position .pr {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+.officialAccountWrap .content-position .offBackImage {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+.officialAccountWrap .content-position .pre {
+  height: 100%;
+  padding: 0 24rpx;
+  position: relative;
+}
+.officialAccountWrap .content-position .pre .cha {
+  background: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  font-size: 24rpx;
+  height: 40rpx;
+  line-height: 42rpx;
+  position: absolute;
+  right: 24rpx;
+  text-align: center;
+  top: 24rpx;
+  width: 40rpx;
+}
+.officialAccountWrap .content-position .pre .official {
+  border-radius: 6rpx;
+  bottom: 24rpx;
+  overflow: hidden;
+  position: absolute;
+  width: 642rpx;
+}

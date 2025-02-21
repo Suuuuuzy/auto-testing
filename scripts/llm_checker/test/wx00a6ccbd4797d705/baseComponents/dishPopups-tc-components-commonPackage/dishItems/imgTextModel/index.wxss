@@ -1,0 +1,104 @@
+.itemContainer.data-v-3dda0f3e {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 10px;
+}
+.itemContainer .plr5.data-v-3dda0f3e {
+  padding: 0 2px;
+}
+.itemContainer .item.data-v-3dda0f3e {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.itemContainer .item .dish-label.data-v-3dda0f3e {
+  font-size: 18rpx;
+  left: 0;
+  position: absolute;
+  text-align: left;
+  top: 0;
+}
+.itemContainer .item .dish-label .label-item.data-v-3dda0f3e {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10rpx 10rpx 0 0;
+  color: #fff;
+  margin-bottom: 8rpx;
+  padding: 4rpx 20rpx;
+  width: 42%;
+}
+.itemContainer .item .limitQuantityStyle.data-v-3dda0f3e {
+  align-items: center;
+  background-color: hsla(0, 0%, 100%, 0.75);
+  border-bottom-left-radius: 20rpx;
+  border-top-left-radius: 20rpx;
+  display: flex;
+  height: 36rpx;
+  padding: 0 10rpx;
+  position: absolute;
+  right: 0;
+  top: 100rpx;
+}
+.itemContainer .item .limitQuantityStyle .icon-huo.data-v-3dda0f3e {
+  color: red;
+}
+.itemContainer .item .itemDetail.data-v-3dda0f3e {
+  line-height: 1;
+  margin-top: -5rpx;
+  padding: 5px;
+  position: relative;
+}
+.itemContainer .item .itemDetail .itemName.data-v-3dda0f3e {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  font-weight: 600;
+  height: 30px;
+  line-height: 15px;
+  margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.itemContainer .item .itemDetail .addPriceWrap.data-v-3dda0f3e {
+  font-weight: 700;
+  height: 36rpx;
+  line-height: 36rpx;
+  padding-bottom: 2px;
+}
+.itemContainer .item .itemDetail .dish-max-num__tip.data-v-3dda0f3e {
+  color: #666;
+  font-size: 9px !important;
+  line-height: 24rpx;
+  margin-top: 6rpx;
+  position: absolute;
+  right: 0;
+}
+.itemContainer .item .itemDetail .dish-max-num__tip .iconfont.data-v-3dda0f3e {
+  color: red;
+  display: inline-block;
+  font-size: 9px;
+  margin-right: 2px;
+}
+.itemContainer.data-v-3dda0f3e:after {
+  content: " ";
+  flex-grow: 9999;
+  min-width: 90px;
+}
+.cookWrap.data-v-3dda0f3e {
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-bottom: 6rpx;
+}
+.cookWrap .cookBorder.data-v-3dda0f3e {
+  border: 1px dashed;
+  border-radius: 8rpx;
+  display: inline-block;
+  height: 32rpx;
+  line-height: 32rpx;
+  padding: 0 4rpx;
+}
+.addItemWrap.data-v-3dda0f3e {
+  position: relative;
+  text-align: right;
+}

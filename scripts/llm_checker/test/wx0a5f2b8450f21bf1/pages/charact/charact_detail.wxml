@@ -1,0 +1,25 @@
+<view>
+  <cu-custom
+    bgColor="bg-gradual-blue"
+    bind:__l="__l"
+    isBack="{{true}}"
+    vueId="2e637200-1"
+    vueSlots="{{['content']}}"
+  >
+    <view slot="content">提取结果</view>
+  </cu-custom>
+  <view class="container">
+    <view class="container-text">{{text}}</view>
+    <view class="tool">
+      <view bindtap="sxb" class="sxb">复制</view>
+    </view>
+  </view>
+  <view class="pic-padding">
+    <ad
+      adTheme="white"
+      adType="video"
+      unitId="{{fontAd}}"
+      wx:if="{{showAd}}"
+    ></ad>
+  </view>
+</view>

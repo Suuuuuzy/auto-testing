@@ -1,0 +1,84 @@
+<view class="login-page data-v-40d214b5">
+  <view class="top-view data-v-40d214b5">
+    <image
+      class="page-logo data-v-40d214b5"
+      mode="widthFix"
+      src="http://image.fanglinxq.com/assets/logo.png"
+    ></image>
+    <text class="main-title data-v-40d214b5">芳邻星球</text>
+    <view class="sub-title data-v-40d214b5">
+      <text class="data-v-40d214b5">同城速配</text>
+      <text class="data-v-40d214b5">附近约会</text>
+    </view>
+  </view>
+  <view class="button-content data-v-40d214b5">
+    <button
+      bindgetphonenumber="__e"
+      class="wxLogin data-v-40d214b5"
+      data-event-opts="{{[ [ 'getphonenumber',[ [ 'getPhoneNumber',['$event'] ] ] ] ]}}"
+      openType="getPhoneNumber"
+      ripple="{{true}}"
+      shape="circle"
+      wx:if="{{checked}}"
+    >
+      <image
+        mode
+        class="wx-icon data-v-40d214b5"
+        src="http://image.fanglinxq.com/assets/wechat.svg"
+      ></image
+      >微信登录（畅玩）
+    </button>
+    <button
+      bindtap="__e"
+      class="wxLogin data-v-40d214b5"
+      data-event-opts="{{[ [ 'tap',[ [ 'checkRule',['$event'] ] ] ] ]}}"
+      ripple="{{true}}"
+      shape="circle"
+      wx:else
+    >
+      <image
+        mode
+        class="wx-icon data-v-40d214b5"
+        src="http://image.fanglinxq.com/assets/wechat.svg"
+      ></image
+      >微信登录（畅玩）
+    </button>
+    <u-button
+      bind:__l="__l"
+      bind:click="__e"
+      class="visitor data-v-40d214b5"
+      customStyle="{{$root.a0}}"
+      data-event-opts="{{[ [ '^click',[ ['handleVisitor'] ] ] ]}}"
+      ripple="{{true}}"
+      shape="circle"
+      vueId="6b4b36ba-1"
+      vueSlots="{{['default']}}"
+      >去逛一逛</u-button
+    >
+  </view>
+  <view class="agreement data-v-40d214b5">
+    <u-checkbox
+      activeColor="#7105FF"
+      bind:__l="__l"
+      bind:input="__e"
+      class="data-v-40d214b5"
+      data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','checked','$event',[] ] ] ] ] ]}}"
+      iconSize="26"
+      labelSize="26"
+      shape="circle"
+      value="{{checked}}"
+      vueId="6b4b36ba-2"
+    ></u-checkbox
+    >登录即同意芳邻星球<text
+      bindtap="__e"
+      class="agreement-word data-v-40d214b5"
+      data-event-opts="{{[ [ 'tap',[ [ 'handleNavigater',['/pages/subPages/webView/index?webview=https://fanglsj.com/user_service.html&title=用户协议'] ] ] ] ]}}"
+      >用户协议</text
+    >和<text
+      bindtap="__e"
+      class="agreement-word data-v-40d214b5"
+      data-event-opts="{{[ [ 'tap',[ [ 'handleNavigater',['/pages/subPages/webView/index?webview=https://fanglsj.com/all.html&title=隐私政策'] ] ] ] ]}}"
+      >隐私政策</text
+    >
+  </view>
+</view>

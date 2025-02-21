@@ -1,0 +1,28 @@
+<navBar
+  back="{{true}}"
+  bindback="handlerGobackClick"
+  bindhome="handlerGohomeClick"
+  color="white"
+  home="{{false}}"
+  iconTheme="white"
+  title="火瞳企业消费管理平台"
+></navBar>
+<view class="container">
+  <view class="user-info">
+    <image class="background" src="/assets/img/userBg.png"></image>
+    <image class="user-image" src="{{headDefaultUrl}}"></image>
+  </view>
+  <view class="main">
+    <view>{{userInfo.user.name}}</view>
+    <view>共{{cardNum}}张卡片</view>
+  </view>
+  <van-button
+    block
+    bind:click="logout"
+    color="linear-gradient(to right, #3680FD, #7659FC)"
+    id="logout"
+    type="primary"
+    >退出登录</van-button
+  >
+</view>
+<van-dialog id="van-dialog"></van-dialog>

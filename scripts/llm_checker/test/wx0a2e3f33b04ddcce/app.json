@@ -1,0 +1,73 @@
+{
+  "plugins": {
+    "auth-plugin": {
+      "version": "1.1.5",
+      "provider": "wx9acc1deb2cb15bba",
+      "subpackage": "__APP__"
+    }
+  },
+  "style": "v2",
+  "tabBar": {
+    "custom": false,
+    "color": "#ACACAC",
+    "selectedColor": "#3680FD",
+    "backgroundColor": "white",
+    "list": [
+      {
+        "pagePath": "pages/menu/menu",
+        "text": "菜谱",
+        "iconPath": "assets/img/menu-gray.png",
+        "selectedIconPath": "assets/img/menu-blue.png"
+      },
+      {
+        "pagePath": "pages/delivery/delivery",
+        "text": "点餐",
+        "iconPath": "assets/img/delivery-gray.png",
+        "selectedIconPath": "assets/img/delivery-blue.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "iconPath": "assets/img/order-gray.png",
+        "selectedIconPath": "assets/img/order-blue.png"
+      },
+      {
+        "pagePath": "pages/card/card",
+        "text": "我的卡片",
+        "iconPath": "assets/img/card-gray.png",
+        "selectedIconPath": "assets/img/card-blue.png"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "default"
+  },
+  "pages": [
+    "pages/onelogin/onelogin",
+    "pages/login/login",
+    "pages/card/card",
+    "pages/details/details",
+    "pages/hongbao/hongbao",
+    "pages/hongbaoDetail/hongbaoDetail",
+    "pages/recharge/recharge",
+    "pages/menu/menu",
+    "pages/rate/rate",
+    "pages/rating/rating",
+    "pages/delivery/delivery",
+    "pages/deliveryDetail/deliveryDetail",
+    "pages/createOrder/createOrder",
+    "pages/payOrder/payOrder",
+    "pages/payResult/payResult",
+    "pages/order/order",
+    "pages/orderDetail/orderDetail",
+    "pages/logout/logout",
+    "pages/privacy/privacy",
+    "pages/contact/contact",
+    "pages/qrcode/qrcode",
+    "__plugin__/wx9acc1deb2cb15bba/pages/privacy/index",
+    "__plugin__/wx9acc1deb2cb15bba/pages/serving/index",
+    "__plugin__/wx9acc1deb2cb15bba/pages/contract-list/index"
+  ]
+}

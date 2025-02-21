@@ -1,0 +1,48 @@
+<view class="tabs">
+  <scroll-view
+    class="scroll-h"
+    id="tab-bar"
+    scrollIntoView="{{scrollInto}}"
+    scrollX="{{true}}"
+    showScrollbar="{{false}}"
+  >
+    <view
+      bindtap="__e"
+      class="uni-tab-item"
+      data-current="{{index}}"
+      data-event-opts="{{[ [ 'tap',[ [ 'ontabtap',['$event'] ] ] ] ]}}"
+      wx:for="{{list_data}}"
+      wx:for-item="tab"
+      wx:key="cateId"
+    >
+      <text
+        class="{{['uni-tab-item-title',tabIndex==index?'uni-tab-item-title-active':'']}}"
+        >{{tab.cateName}}</text
+      >
+    </view>
+  </scroll-view>
+  <view class="line-h"></view>
+  <view class="uni-list-cell uni-list-cell-pd">
+    <view class="uni-list-cell-db gl_color_title">消息全开</view>
+    <switch
+      bindchange="__e"
+      checked="{{is_check_all}}"
+      data-event-opts="{{[ [ 'change',[ [ 'change_all',['$event'] ] ] ] ]}}"
+    ></switch>
+  </view>
+  <view class="line-h" style="margin-top: -2rpx"></view>
+  <scroll-view scrollY="true" style="flex: 1">
+    <view>
+      <view wx:for="{{list_page_data}}" wx:key="index">
+        <view class="uni-list-cell uni-list-cell-pd">
+          <view class="uni-list-cell-db gl_color_title">{{item.name}}</view>
+          <switch
+            bindchange="__e"
+            checked="{{item.isOpen}}"
+            data-event-opts="{{[ [ 'change',[ [ 'change_item',[index] ] ] ] ]}}"
+          ></switch>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,90 @@
+<view class="data-v-d3131d8c">
+  <zym-navigation
+    bind:__l="__l"
+    class="data-v-d3131d8c"
+    uI="d3131d8c-0"
+    uP="{{a}}"
+    wx:if="{{a}}"
+  ></zym-navigation>
+  <u-skeleton
+    bind:__l="__l"
+    class="data-v-d3131d8c"
+    uI="d3131d8c-1"
+    uP="{{o}}"
+    uS="{{['d']}}"
+    wx:if="{{o}}"
+  >
+    <view class="infoBox data-v-d3131d8c">
+      <view class="gift-title data-v-d3131d8c">
+        <image
+          bindtap="{{c}}"
+          class="gift-img data-v-d3131d8c"
+          mode=""
+          src="{{b}}"
+        ></image>
+        <view class="gift-top-info data-v-d3131d8c">
+          <text class="top-title data-v-d3131d8c">{{d}}</text>
+          <view class="top-center data-v-d3131d8c"
+            >价值 <text class="through data-v-d3131d8c"> ¥{{e}}</text> 高端礼品
+          </view>
+          <view class="price data-v-d3131d8c">
+            <text class="now data-v-d3131d8c">￥{{f}}</text>
+            <text class="old data-v-d3131d8c">库存：{{g}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="gift-content data-v-d3131d8c">
+        <view class="content-title data-v-d3131d8c"> 礼包内容 </view>
+        <view class="gift-item data-v-d3131d8c" wx:for="{{h}}" wx:key="e">
+          <view class="item-name data-v-d3131d8c">{{item.a}} {{item.b}}</view>
+          <view class="item-info data-v-d3131d8c">
+            <view class="data-v-d3131d8c">
+              <text class="item-price-type data-v-d3131d8c">零售价：</text>
+              <text class="item-price data-v-d3131d8c">￥{{item.c}}</text>
+            </view>
+            <text class="item-num data-v-d3131d8c">x{{item.d}}</text>
+          </view>
+        </view>
+        <view class="gift-rules data-v-d3131d8c">
+          <view
+            class="rule-info mb24 data-v-d3131d8c"
+            wx:for="{{i}}"
+            wx:for-item="rul"
+            wx:key="d"
+          >
+            <view class="rule-top data-v-d3131d8c">
+              <text class="rule-price-type data-v-d3131d8c">{{rul.a}} </text>
+              <text class="rule-price data-v-d3131d8c">x{{rul.b}}</text>
+            </view>
+            <view class="data-v-d3131d8c">
+              <text class="rule-num data-v-d3131d8c">加油金总计：</text>
+              <text class="rule-price data-v-d3131d8c">￥{{rul.c}}</text>
+            </view>
+          </view>
+          <u-line
+            bind:__l="__l"
+            class="data-v-d3131d8c"
+            uI="d3131d8c-2,d3131d8c-1"
+            uP="{{j}}"
+            wx:if="{{j}}"
+          ></u-line>
+          <view class="rule mt24 data-v-d3131d8c">
+            <view class="rule-title data-v-d3131d8c"> 使用规则 </view>
+            <view class="rule-date data-v-d3131d8c"> 线下到店核销或退换 </view>
+            <view class="rule-date data-v-d3131d8c"> 有效期至{{k}}</view>
+            <view class="rule-detail data-v-d3131d8c">{{l}}</view>
+          </view>
+        </view>
+      </view>
+      <view bindtap="{{n}}" class="gift-btn data-v-d3131d8c">
+        <u-button
+          bind:__l="__l"
+          class="data-v-d3131d8c"
+          uI="d3131d8c-3,d3131d8c-1"
+          uP="{{m}}"
+          wx:if="{{m}}"
+        ></u-button>
+      </view>
+    </view>
+  </u-skeleton>
+</view>

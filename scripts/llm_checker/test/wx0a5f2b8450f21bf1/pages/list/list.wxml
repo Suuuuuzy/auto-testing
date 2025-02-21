@@ -1,0 +1,25 @@
+<cu-custom
+  bgColor="bg-gradual-blue"
+  bind:__l="__l"
+  isBack="{{true}}"
+  vueId="2e637200-1"
+  vueSlots="{{['content']}}"
+>
+  <view slot="backText">返回</view>
+  <view slot="content">解析记录</view>
+</cu-custom>
+<view class="text">
+  <view class="text2"
+    >历史记录只保存在手机缓存里，不上传到服务器，如果手机清理了缓存，历史记录也会被清除。</view
+  >
+  <view bind:tap="cleanLs" class="text3">清空历史记录</view>
+</view>
+<view class="container">
+  <view class="cu-list menu sm-border" wx:for="{{list}}" wx:key="index">
+    <view class="cu-item">
+      <view bindtap="copyText" class="item" data-item="{{list[index]}}"
+        >{{list[index]}}</view
+      >
+    </view>
+  </view>
+</view>

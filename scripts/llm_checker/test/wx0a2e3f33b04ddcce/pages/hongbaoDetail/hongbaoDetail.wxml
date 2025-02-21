@@ -1,0 +1,31 @@
+<navBar
+  back="{{true}}"
+  bindback="handlerGobackClick"
+  bindhome="handlerGohomeClick"
+  home="{{false}}"
+  title="使用详情"
+></navBar>
+<view class="page">
+  <view class="placeholder"></view>
+  <view class="hongbaoDetail">
+    <view
+      class="detail-card"
+      data-item="{{item}}"
+      wx:for="{{detailsData}}"
+      wx:key="id"
+    >
+      <view class="detail-in">
+        <view class="text1"
+          >订单号：<text class="text1a">{{item.tradeNo}}</text>
+        </view>
+        <view class="text3 {{item.type===4||item.type===5?'text3a':'text3b'}}"
+          >{{item.formatterFee}}</view
+        >
+      </view>
+      <view class="detail-in">
+        <view class="text2">{{item.createTime}}</view>
+        <view class="text4">{{item.orderType}}</view>
+      </view>
+    </view>
+  </view>
+</view>

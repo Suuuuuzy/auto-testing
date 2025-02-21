@@ -1,0 +1,66 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<import src="/pages/template/shop-item/shop-item.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view>
+  <view class="{{isUy?'rtl':''}}" id="menuTab" wx:if="{{pageData}}">
+    <scroll-view scrollWithAnimation scrollX class="bg-white nav">
+      <view
+        bindtap="tabSelect"
+        class="cu-item {{index==TabCur?'text-pink cur':''}}"
+        data-id="{{index}}"
+        id="tab_{{index}}"
+        style="min-width: 80rpx"
+        wx:for="{{pageData.menu}}"
+        wx:key="index"
+      >
+        <view>
+          <text class="">{{isUy?item.uy_name:item.ch_name}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<scroll-view
+  bindscrolltolower="loadMore"
+  scrollWithAnimation="true"
+  scrollY="true"
+  showScrollbar="true"
+  style="height: calc(100vh - {{menuTabHeight}}rpx);;"
+>
+  <view>
+    <view>
+      <view
+        class="bg-white padding-bottom-sm {{isUy?'rtl':''}}"
+        wx:if="{{pageData}}"
+      >
+        <view class="flex padding-top">
+          <view class="flex-sub" wx:for="{{Str.shopsSortType}}" wx:key="index">
+            <view
+              bindtap="sortClick"
+              class="line-{{shopsSortIndex==index?'pink':'gray'}} text-center radius padding-tb-xs  margin-left-{{index==0?'sm':'xs'}} margin-right-{{index==Str.shopsSortType.length-1?'sm':'xs'}}"
+              data-index="{{index}}"
+            >
+              {{isUy?item.uy_name:item.ch_name}}</view
+            >
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="margin-top-sm">
+      <view
+        class="margin-lr-xs padding-bottom-xs radius"
+        style="border-radius: 20rpx"
+        wx:if="{{pageData}}"
+        wx:for="{{shopsData}}"
+        wx:key="index"
+      >
+        <template
+          is="_shopListItem"
+          data="{{isUy:isUy,Str:Str,lanIndex:lanIndex,item:item,ossImage:ossImage,navUrl:'/pages/home/mall/mall-home',showPercent:pageData.setting.show_percent}}"
+        ></template>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

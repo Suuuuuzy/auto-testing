@@ -1,0 +1,238 @@
+.data-v-4e14259e::-webkit-scrollbar {
+  display: none;
+}
+.freshs.data-v-4e14259e {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+}
+.warp.data-v-4e14259e {
+  font-family: myfontB;
+  height: 100%;
+  width: 750rpx;
+}
+.rotate-image.data-v-4e14259e {
+  animation: rotateAnimation-4e14259e 0.2s linear forwards;
+}
+@-webkit-keyframes rotateAnimation-4e14259e {
+  0% {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes rotateAnimation-4e14259e {
+  0% {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+.popbox.data-v-4e14259e {
+  padding: 24rpx 32rpx;
+}
+.selectOli .selectleft.data-v-4e14259e {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  padding: 3rpx;
+  width: 430rpx;
+}
+.gun-list.data-v-4e14259e {
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+}
+.gun-list .guntxt.data-v-4e14259e {
+  color: #c0c2cc;
+  font-size: 48rpx;
+  font-weight: 700;
+  letter-spacing: 0rpx;
+  margin-bottom: 20rpx;
+}
+.gun-list .gun-item.data-v-4e14259e {
+  align-items: center;
+  background-color: #f7f8fa;
+  border-radius: 10rpx;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 28rpx;
+  height: 176rpx;
+  justify-content: center;
+  margin: 0 10rpx 10rpx 0;
+  padding: 10rpx;
+  text-align: center;
+  width: calc((100% - 50rpx) / 5);
+}
+.gun-list .gun-item .txt-gun.data-v-4e14259e {
+  background-color: #fff;
+}
+.gun-list .gun-item.data-v-4e14259e:nth-of-type(5n) {
+  margin-right: 0 !important;
+}
+.gun-list .gunactive.data-v-4e14259e {
+  background-color: #06b9c0;
+}
+.gun-list .gunactive .txt.data-v-4e14259e {
+  color: #fffaf5;
+}
+.gun-list .gunactive .txt-gun.data-v-4e14259e {
+  background-color: #fff;
+}
+.order-list.data-v-4e14259e {
+  align-items: flex-start;
+  background: #fff;
+  border-radius: 10px 10px, 0, 0;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+.order-item.data-v-4e14259e {
+  background-color: #f7f8fa;
+  border: 4rpx solid #06b9c0;
+  border-radius: 5rpx;
+  color: #06b9c0;
+  font-size: 32rpx;
+  width: 686rpx;
+}
+.order-item .oilType.data-v-4e14259e {
+  color: #fff;
+}
+.order-item .oilTypecolor.data-v-4e14259e {
+  background-color: #fff;
+  padding: 4rpx 12rpx;
+}
+.order-item .itemtop.data-v-4e14259e {
+  background-color: #06b9c0;
+  color: #fff;
+  height: 124rpx;
+  padding: 0 32rpx;
+  width: 100%;
+}
+.order-item .bbtom.data-v-4e14259e {
+  background: #f0feff;
+  color: #06b9c0;
+  height: 172rpx;
+  opacity: 0.8;
+  padding: 32rpx;
+  width: 100%;
+}
+.order-item .txt.data-v-4e14259e,
+.order-item .txt1.data-v-4e14259e {
+  font-size: 40rpx;
+}
+.order-item .txt.data-v-4e14259e {
+  font-size: 77rpx;
+  font-weight: 700;
+  text-align: right;
+}
+.order-item .txt1.data-v-4e14259e {
+  color: #fff;
+}
+.order-item .carid.data-v-4e14259e {
+  align-items: center;
+  border: 2rpx solid #06b9c0;
+  border-radius: 4rpx;
+  display: -webkit-flex;
+  display: flex;
+  height: 64rpx;
+  justify-content: flex-start;
+  padding: 8rpx 24rpx;
+  width: 220rpx;
+}
+.refsh.data-v-4e14259e {
+  background-color: #f7f8fa;
+  bottom: 30rpx;
+  font-size: 32rpx;
+  height: 92rpx;
+  left: 32rpx;
+  position: absolute;
+  width: 686rpx;
+}
+.refreshimg.data-v-4e14259e {
+  height: 40rpx;
+  margin-right: 20rpx;
+  width: 40rpx;
+}
+.refi.data-v-4e14259e {
+  height: 40rpx;
+  margin-right: 20rpx;
+  width: 25rpx;
+}
+.gunimg.data-v-4e14259e {
+  height: 32rpx;
+  width: 32rpx;
+}
+.Paycontent.data-v-4e14259e {
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 50rpx 32rpx 0;
+}
+.Paycontent .Map-MIn.data-v-4e14259e {
+  align-items: center;
+  color: #8a8f99;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 36rpx;
+  height: 88rpx;
+  width: 100%;
+}
+.Paycontent .Map-MIn .Mapicon.data-v-4e14259e {
+  height: 37.33rpx;
+  width: 36.67rpx;
+}
+.Paycontent .payForm.data-v-4e14259e {
+  flex-grow: 1;
+  position: relative;
+  width: 100%;
+}
+.Paycontent .payForm .guns.data-v-4e14259e {
+  align-items: center;
+  background: #fff;
+  border-radius: 4rpx;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 36rpx;
+  height: 112rpx;
+  padding: 24rpx 36rpx 24rpx 32rpx;
+  width: 100%;
+}
+.Paycontent .payForm .gimg.data-v-4e14259e {
+  height: 56rpx;
+  margin-right: 20rpx;
+  width: 56rpx;
+}
+.Paycontent .payForm .oilGunOrderIdber.data-v-4e14259e {
+  align-items: center;
+  background: #fff;
+  border-radius: 4rpx;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 36rpx;
+  height: 112rpx;
+  padding: 24rpx 36rpx 24rpx 32rpx;
+  width: 100%;
+}
+.Paycontent .payForm .totalColor.data-v-4e14259e {
+  color: #333;
+  font-size: 40rpx;
+  font-weight: 700;
+  letter-spacing: 0rpx;
+  line-height: 52rpx;
+}
+.Paycontent .payForm .btn.data-v-4e14259e {
+  background: #fafafc;
+  border: none;
+  border-radius: 4rpx;
+  font-size: 40rpx;
+  height: 100rpx;
+  padding: 24rpx 32rpx;
+  text-align: center;
+  width: 686rpx;
+}

@@ -1,0 +1,23 @@
+<view
+  ariaLabel="{{ariaLabel||'关闭'}}"
+  ariaRole="{{ariaRole||'button'}}"
+  bind:tap="handleClick"
+  bind:transitionend="onTransitionEnd"
+  catchtouchmove="noop"
+  class="{{prefix}}-overlay {{transitionClass}} class"
+  style="{{_._style( ['--td-overlay-transition-duration:'+duration+'ms','z-index:'+_zIndex,computedStyle,style,customStyle] )}}"
+  wx:if="{{realVisible&&preventScrollThrough}}"
+>
+  <slot></slot>
+</view>
+<view
+  ariaLabel="{{ariaLabel||'关闭'}}"
+  ariaRole="{{ariaRole||'button'}}"
+  bind:tap="handleClick"
+  bind:transitionend="onTransitionEnd"
+  class="{{prefix}}-overlay {{transitionClass}} class"
+  style="{{_._style( ['z-index:'+_zIndex,computedStyle,style,customStyle] )}}"
+  wx:elif="{{realVisible}}"
+>
+  <slot></slot>
+</view>

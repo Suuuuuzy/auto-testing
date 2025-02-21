@@ -1,0 +1,91 @@
+@import "/pages/shop-home/shop-search/shop-search.wxss";
+.VerticalNav.nav {
+  white-space: normal;
+  width: 200rpx;
+}
+.VerticalNav.nav .cu-item {
+  background-color: #fff;
+  border: none;
+  height: 90rpx;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+.VerticalNav.nav .cu-item.cur {
+  background-color: #f1f1f1;
+}
+.VerticalNav.nav .cu-item.cur::after {
+  background-color: currentColor;
+  border-radius: 10rpx 0 0 10rpx;
+  bottom: 0;
+  content: "";
+  height: 30rpx;
+  margin: auto;
+  position: absolute;
+  right: 0rpx;
+  top: 0;
+  width: 8rpx;
+}
+.VerticalBox {
+  display: -webkit-flex;
+  display: flex;
+}
+.VerticalMain {
+  background-color: #f1f1f1;
+}
+.tab-left {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAAyCAYAAAHdFxkBAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABDxJREFUeNpiZKAA/P//34FYtYyMjAcYBhlghHriP90sBILB4nkmeltIz4Am6PnB5JhhH/Ojnh/Jnv+PAA0D6XmAAGKk0BPEVnUKwEJ+wUiu5hIHSwAw0ruUHyz1+4gt5EY9PtJac4wD6ZCBzO8AAcSIFhvzgVTCcEjKg6mTNOJ7rKORPzg6q/uHswdHcmd8UNZro7l9tPk6CkYjnbpFPBQ4jEY5AwNAADEOUCTQIvANgKX4hNEoJb3LNlzq9wPABOA4Gr14indQ/3yYNegcRlvto/30UYDWTx/NEaOt91EwGumjYDTSR8FopI+C0UgffGC0oTpCczow3hNGoxqpGzuScsJon30E1ulIEy/3R3KkAwRg315qGASiKIAWB5VQCeAACbVQCVVCHYATJFAnldA+ktmwaYaEhN85CWF/4TJvIBQZQd3j1MRx05HVdPGQeoiBxYqevnr2otm0Kor/FgOzx7hxU5PmeCXfviGNo6UoyF7R44b5xOkqjl16xer+FAN/i55eT7ai2PFF9JaRjKL7AKXonGWPDig6oOisKXZfjRSwRz8HP+ii6AqP0Z0jqb9TxnouPwHYu6MbBGEoCsNhAuMGOAob6AaO4Ga6CXEC3UBG8JJg4huRGKW3358QX8khP6dAbav6LFPQilLjeV5Mc8XPRJ8a4SSqvzHEcVjj7jcoXPSQu42fm3hWR0d4fEX06X+7rWhWyz1k34kBi0X3Br6gC2faK5aITnKyIy+vhb57UZSHT2f4qNG1uVZH8kbX5sW3+l4KmC0EbV48pryC6IbvgLnuANFRBIMIQPQKntFFAKLn5yoCED0/GxFgDm/dEzyjN02zFQOInv0i+rwGQ/f8xL3awiDQ6FodGh1ZWt0NG0SvRfbArrggegU8QnZ73MMzekWM02M7y0ZDo+dmHMb3b5s5nOM4iqU+ngK0d3dHCQNRGEATxwIogQ7ECrQToQLtQKlAOyB0oB1AB5RAB9KB3kz2wfHJTGKShXNm7jDD4+Xn4+6wu72u1Kb58D5qEXWT3mh/fUMuvBxk9mvpPWpfNJdt2FwE5Bfo6X6Hx6hli9CGS7CL2kbAV1oBTC7Q0+T9XLiBDdp6i1qb4IFRAz3tlHBDAPRjZXIHBg30CPJN0SynA4IdyC3QI8jrP6a5nQn+3zHq1lI80JerH2H+JMxhMPOi2Uw81wqgtwk97VncaAcMzjndQD8TepoQhDmMYxafwRdtADoHetFsRwPG86AFQFfOfoUpfBDdrwP0MKEDAAId6GinBYBAh/zttQAQ6ACAQIcJuNMCoCv/codpqI+BPWgDINAhb06MAzqx5A7TUJ8YV5/tPtMKQKBD5qFeNBe2vGoF0JYld5iuqizLlTYAJnTI2/Kr8ZluRAQwocMZ2UVtY3qvtAIQ6HBejinoP+rHCPuTlsBluY5a/3qu3gvry4C2DkIEYDzfQYGw27Rss8QAAAAASUVORK5CYII=);
+}
+.tab-left,
+.tab-right {
+  background-size: 100% 100%;
+  height: 100rpx;
+  width: 710rpx;
+}
+.tab-right {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAAyCAYAAAHdFxkBAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABClJREFUeNpiZBiE4P///w1A6gAxahkZGQ+Qaw/jIPP0f3rZBQw0RiaGEQpAAT1iPQ8Co54fafkdBlhGoqdhACCAGAdjcgSGhwMJpfaBIe9xeqaAEZvXR2wJP+rxUY/TN1+v/w8F9LYbIIAYGUYBoWp1/zDxjiKw6n8w4pvueCK7H5oD9w8jb92HFiznR3P6IOtJjFboo2A00umUywuGux9ZRqMZHtmg+tthJPgVIIBG63TiEoQBkBKgeuBTMGc0GumjDTpiEhjjaKSPwBY8LOJHI32EddlG9Iw6nggPGOb+Gx2cGUm5fLSfjht8GI30kQcmjvbTR17x/p4WffLRSB+t00eL99EIH4300QgfjXSaRXLCfyQwkvwOEIB9OzgCCIaiKDrpQAl0oAQt6UQndKAUOtCC2FlmhgU/526yfzM37ydEp+OpPENe5ujD78eZUkoj0fG23FteWkl8lj2L3xEdzje1jOw+poPk9cjuNg4lkq9S+PcmrdGhzStAo6OERQRER3x2Efz8nC4CGN01OkhOcqIjqNxNjb+JEh3Rxe6vN1w3uQ+pxOIUgL07ukEQhsIozIODuIqTWEdwAzdgBBnBDXQDHcENXMEa8cXEKAkGevudhPT9yunfS6Hq0THmhJGa5zvvlyJu/okOdyI6SpR7n4ekEpNxzdc2T1oHouMfgldzpmZBdFn4DdExSj+fh7NKzJrVe1viYRyG9uAknz/HvqWS6JDkFbDJyd4RHUNEt6deIK/v0S3d8YvkrSoU+9vdJDqkeSWpLtGB+BN1kuiQ6PE5ER1ErwBLd4DoAIgOgOgAiA6A6JgD3oqLge01fBPd1ppER3DJ/RUT0RFc8tQ4QSYMCyXAhyQnOdERVPCH3Jbrlu4IKnjbP3QjuURHILF3eVjna6kadXAXoL07vEkYCAMwTBMH6AiMgBPABrqBdQM2QCcQJ6Cj4ATqBLqBbFDvpP4w+oPqQe/M8yQNMcHEfNG83ml7/rwG5BCfePDHZbjm/WttKhQkHlqzO/C98X3P/edsq6rapfoiBB0YI+BNv3pcmAZ8iX0brvsQ+ldBB3Jdga/CtTQNGGQdrttDVvKCDhx7Jb4xCUgiHpu8FnRAyOF/+PF4dEEHUoY8bq3HA3enpgFHdx7C/vT5gfvWgFQxjxF/E3M4mcfwc7e0QgdSBz3G3O1mcHrXYaXeWqEDKWJ+I+Ywmk3cIbNCB1IE/WViqx3G1Ao6kCLoDuyCkdlyBwBBB/iwNQIQdKB8D0YAgg4ACDqQgbkRwLj8lzvwJ13XzSb7x70Cgg4UHHRPiIMM2HIHfhvyWsxB0IGyY3432R/EIuaQiTMjAAaEPJ5x3pgEWKED5UW8iVvr/eNdxRys0IFSAh5ersK1MA0QdCDvaNd9sC/616mpQNnctgYw/i9XM5NgoG/fN+8o5aGLg4St+gAAAABJRU5ErkJggg==);
+}
+image[class*="gif-"] {
+  border-radius: 6rpx;
+  display: block;
+}
+.shop-desc-img {
+  height: 40rpx;
+  width: 40rpx;
+}
+.add-icon,
+.add-icon image {
+  height: 55rpx;
+  width: 55rpx;
+}
+.top-view {
+  background-size: cover;
+}
+.page-color {
+  background-color: #fff;
+}
+.nav-item {
+  display: inline-block;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: 0 10rpx;
+  padding: 0 15rpx;
+}
+.block {
+  background: #fff;
+  border-radius: 16rpx;
+  height: 750rpx;
+  position: relative;
+  width: 600rpx;
+}
+.close-btn {
+  bottom: calc(-1 * (48rpx + 64rpx));
+  left: 50%;
+  margin-left: -32rpx;
+  position: absolute;
+}
+.wrapper {
+  display: block;
+  margin: 32rpx;
+}

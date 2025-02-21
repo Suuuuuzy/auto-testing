@@ -1,0 +1,221 @@
+.loading-text {
+  color: #8629f5;
+  margin-left: 10rpx;
+}
+.home-container {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.gift-img {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 600rpx;
+}
+.empty-view {
+  padding-bottom: 120rpx;
+}
+.home-bg {
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.nullloacation {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.nullloacation image {
+  display: block;
+  height: 370rpx;
+  width: 370rpx;
+}
+.nullloacation .auth-btn {
+  background: linear-gradient(90deg, #5983ff, #a836ff);
+  border-radius: 44rpx;
+  color: #fff;
+  font-size: 32rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  margin-top: 30rpx;
+  text-align: center;
+  width: 300rpx;
+}
+.tabs-home-container {
+  background-color: #fff;
+  border-radius: 30px;
+  flex: 1;
+  margin-top: 0rpx;
+  padding: 12rpx 32rpx;
+  position: relative;
+}
+.tabs-home-container .tabs-sticky {
+  align-items: center;
+  background-color: #fff;
+  background: #fff;
+  border-radius: 30rpx;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  padding: 24rpx 0 32rpx;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 2;
+}
+.tabs-home-container .tabs-sticky .filter-warp {
+  align-items: center;
+  border: 2rpx solid #cecece;
+  border-radius: 30rpx;
+  color: #010101;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 28rpx;
+  padding: 6rpx 16rpx;
+}
+.tabs-home-container .tabs-sticky .filter-warp image {
+  display: block;
+  height: 48rpx;
+  margin-right: 4rpx;
+  width: 48rpx;
+}
+.tabs-home-container .tabs-sticky .tabs-view {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+}
+.tabs-home-container .tabs-sticky .tabs-view .item-tab {
+  color: #373737;
+  font-size: 32rpx;
+  margin-right: 34rpx;
+}
+.tabs-home-container .tabs-sticky .tabs-view .active {
+  color: #000;
+  font-size: 40rpx;
+  font-weight: 700;
+}
+.tabs-home-container .raiusNone {
+  border-radius: 0;
+  left: 32rpx;
+  width: calc(100vw - 64rpx);
+}
+.top-scroll-content .top-scroll-list {
+  justify-content: flex-start;
+  padding: 32rpx;
+  white-space: nowrap;
+}
+.top-scroll-content .item-star,
+.top-scroll-content .top-scroll-list {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+}
+.top-scroll-content .item-star {
+  flex-direction: column;
+  margin-left: 32rpx;
+  position: relative;
+  width: 115rpx;
+}
+.top-scroll-content .item-star .avatar-warp {
+  align-items: center;
+  border: 5rpx solid #8629f5;
+  border-radius: 50%;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+}
+.top-scroll-content .item-star .tip {
+  display: block;
+  height: 28rpx;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 86rpx;
+  width: 70rpx;
+  z-index: 1;
+}
+.top-scroll-content .item-star .star-name {
+  color: #232323;
+  font-size: 24rpx;
+  margin-top: 24rpx;
+  max-width: 120rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.top-scroll-content .add {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.top-scroll-content .add image {
+  height: 90rpx;
+  width: 90rpx;
+}
+.top-scroll-content .add text {
+  color: #000;
+  display: block;
+  font-size: 24rpx;
+  margin-top: 29rpx;
+  text-align: center;
+}
+.star-title {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  padding: 0 32rpx;
+  position: relative;
+  z-index: 1;
+}
+.star-title image {
+  display: block;
+  height: 32rpx;
+  margin-right: 17rpx;
+  width: 32rpx;
+}
+.star-title text {
+  color: #000;
+  font-size: 32rpx;
+}
+text,
+view {
+  color: #010101;
+  font-family: SourceHanSansCN-Medium;
+}
+.flex {
+  display: -webkit-flex;
+  display: flex;
+}
+.wallet-page .u-input__input {
+  font-size: 32rpx !important;
+}
+.u-notice-bar {
+  padding: 0 !important;
+}
+.tip-icon {
+  height: 28rpx;
+  width: 70rpx;
+}
+.wallet-page .u-btn--default--disabled {
+  opacity: 0.5;
+}
+.name_ text {
+  color: #3995e0;
+  margin: 0 10rpx;
+}
+.u-swipe-del view {
+  color: #fff;
+}
+.home-navbar .u-navbar {
+  background: inherit !important;
+}

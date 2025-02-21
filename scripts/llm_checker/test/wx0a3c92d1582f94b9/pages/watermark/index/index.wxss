@@ -1,0 +1,134 @@
+page {
+  background-color: #f5f4f6;
+}
+.index-box2 {
+  padding: 0 30rpx 30rpx;
+}
+.btn-bottom {
+  background-color: #fff;
+  bottom: 0;
+  box-sizing: border-box;
+  left: 0;
+  padding: 20rpx 30rpx;
+  position: fixed;
+  width: 100%;
+}
+.btn-bottom .submit {
+  align-items: center;
+  background: #f5c259;
+  border-radius: 10rpx;
+  color: #3d0601;
+  font-size: 24rpx;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 80rpx;
+}
+.btn-bottom .submit,
+.list {
+  display: -webkit-flex;
+  display: flex;
+}
+.list {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 30rpx;
+}
+.list .item {
+  margin-bottom: 20rpx;
+  width: 48%;
+}
+.list .item .box {
+  background-color: #fff;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.list .item .img image {
+  display: block;
+  height: 350rpx;
+  width: 100%;
+}
+.list .item .text {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  font-size: 22rpx;
+  height: 52rpx;
+  line-height: 26rpx;
+  margin: 15rpx;
+  overflow: hidden;
+}
+.list .item .btn {
+  border: 1px solid #ddd;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+  line-height: 45rpx;
+  margin-top: 15rpx;
+  text-align: center;
+}
+.refresh-tip {
+  background: #f5f4f6;
+  border: none;
+  bottom: 0;
+  font-size: 28rpx;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  width: 100%;
+}
+.index-box {
+  background-color: #fff;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  padding: 30rpx;
+}
+.index-box .title {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+}
+.index-box .title .h1 {
+  border-left: 8rpx solid #f5c259;
+  padding-left: 10rpx;
+}
+.index-box .title .copy {
+  color: #59709e;
+}
+.index-box .input-box {
+  border-bottom: 1px solid #eee;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 0;
+}
+.index-box .input-box input {
+  width: 500rpx;
+}
+.index-box .input-box .clear {
+  background-color: #ddd;
+  border-radius: 50rpx;
+  height: 40rpx;
+  width: 40rpx;
+}
+.index-box .input-box .clear image {
+  height: 100%;
+  width: 100%;
+}
+.index-box .submit {
+  align-items: center;
+  background: #f5c259;
+  border-radius: 10rpx;
+  color: #3d0601;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 24rpx;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 80rpx;
+  margin-top: 30rpx;
+}
+.index-box .submit image {
+  display: block;
+  height: 28rpx;
+  margin-left: 15rpx;
+  width: 36rpx;
+}

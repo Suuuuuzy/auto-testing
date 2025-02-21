@@ -1,0 +1,16 @@
+<collectcardbox-commonpackage
+  BoxState="{{BoxState}}"
+  bind:__l="__l"
+  bind:close="__e"
+  bind:init="__e"
+  bind:refresh="__e"
+  class="vue-ref"
+  collectItem="{{collectItem}}"
+  context="{{context}}"
+  data-event-opts="{{[ [ '^refresh',[ ['resetDishConnextStep'] ] ],[ '^init',[ ['init'] ] ],[ '^close',[ ['close'] ] ] ]}}"
+  data-ref="collectcardboxCommonpackage"
+  maxCollect="{{maxCollect}}"
+  needIcon="{{needIcon}}"
+  vueId="50befe1e-1"
+  wx:if="{{componentReady}}"
+></collectcardbox-commonpackage>

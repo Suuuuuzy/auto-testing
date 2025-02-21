@@ -1,0 +1,34 @@
+<view class="dub-page">
+  <cu-custom
+    bgColor="bg-gradual-blue"
+    bind:__l="__l"
+    isBack="{{true}}"
+    vueId="2e637200-1"
+    vueSlots="{{['content']}}"
+  >
+    <view slot="content">文字配音助手</view>
+  </cu-custom>
+  <view class="content">
+    <textarea
+      bindblur="onBlur"
+      bindinput="setText"
+      maxlength="300"
+      placeholder="请输入配音所需要的文本"
+      value="{{text}}"
+    ></textarea>
+    <view class="position-button">
+      <view bindtap="playVoice">播放配音</view>
+    </view>
+    <view class="position-button">
+      <view bindtap="saveVoiceToPhone">复制配音链接</view>
+    </view>
+  </view>
+  <view class="pic-padding">
+    <ad
+      adTheme="white"
+      adType="video"
+      unitId="{{picToTextAd}}"
+      wx:if="{{showAd}}"
+    ></ad>
+  </view>
+</view>

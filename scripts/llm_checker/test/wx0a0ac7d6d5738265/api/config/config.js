@@ -1,0 +1,6 @@
+exports.code = {
+  SUCCESS: 2e4,
+  FAIL: 20001,
+  REQUESTFAIL: 500,
+  TOKENFAIL: 20004,
+};

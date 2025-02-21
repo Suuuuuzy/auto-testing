@@ -1,0 +1,32 @@
+<view class="{{['container','_div','data-v-435ccf98','tab-top-'+tab]}}">
+    <view class="scroll-page _div data-v-435ccf98" style="{{'top:'+scrollPageTop+'px'+';'}}">
+        <block wx:if="{{nowSearchText&&nowSearchText===searchText}}">
+            <scroll-view bindscrolltolower="__e" class="{{['content','content-tab','data-v-435ccf98',tab===2&&serviceList?'active':'']}}" data-event-opts="{{[ [ 'scrolltolower',[ [ 'toBottomRefresh',['$event'] ] ] ] ]}}" enableBackToTop="{{true}}" scrollY="{{true}}">
+                <view class="boutique-item-list _div data-v-435ccf98">
+                    <pp-boutique-item bind:__l="__l" class="data-v-435ccf98" item="{{item}}" vueId="{{'5dda2c76-1-'+index}}" wx:for="{{serviceList}}" wx:key="index"></pp-boutique-item>
+                </view>
+            </scroll-view>
+            <scroll-view bindscrolltolower="__e" class="{{['content','content-tab','data-v-435ccf98',tab===1&&retailerList?'active':'']}}" data-event-opts="{{[ [ 'scrolltolower',[ [ 'toBottomRefresh',['$event'] ] ] ] ]}}" enableBackToTop="{{true}}" scrollY="{{true}}">
+                <view class="boutique-item-list _div data-v-435ccf98">
+                    <pp-boutique-item bind:__l="__l" class="data-v-435ccf98" item="{{item}}" vueId="{{'5dda2c76-2-'+index}}" wx:for="{{retailerList}}" wx:key="index"></pp-boutique-item>
+                </view>
+            </scroll-view>
+        </block>
+    </view>
+    <view class="nav-top _div data-v-435ccf98">
+        <view class="nav-top-placeholder _div data-v-435ccf98" style="{{'height:'+navigationBarHeightPlaceholder+'px'+';'}}"></view>
+        <view class="nav-top-inner _div data-v-435ccf98">
+            <view class="nav-title _div data-v-435ccf98"></view>
+            <view class="icon-back _div data-v-435ccf98">
+                <image class="pic _img data-v-435ccf98" src="/static/img/icon-back-black.svg"></image>
+            </view>
+            <view class="nav-search-out _div data-v-435ccf98">
+                <view class="icon-search _div data-v-435ccf98">
+                    <image class="pic _img data-v-435ccf98" src="/static/img/icon-search.svg"></image>
+                </view>
+                <input bindconfirm="__e" bindinput="__e" class="input data-v-435ccf98" confirmType="search" data-event-opts="{{[ [ 'confirm',[ [ 'confirmSearch',['$event'] ] ] ],[ 'input',[ [ '__set_model',[ '','searchText','$event',[] ] ] ] ] ]}}" focus="{{true}}" placeholder="国家或地区、城市…" type="text" value="{{searchText}}"></input>
+            </view>
+            <view bindtap="__e" class="nav-left-hover _div data-v-435ccf98" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"></view>
+        </view>
+    </view>
+</view>

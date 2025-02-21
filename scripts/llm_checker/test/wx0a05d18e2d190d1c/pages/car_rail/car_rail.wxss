@@ -1,0 +1,70 @@
+.location_btn_layout_sytle {
+  top: 30rpx;
+  margin-left: 650rpx;
+  width: 80rpx;
+  position: absolute;
+}
+.input_radius_style {
+  width: 100%;
+}
+.location_btn_image_style {
+  padding: 10rpx;
+  background-color: #fff;
+  border-radius: 5rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+.uni-tip {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  padding: 15px;
+  margin-left: 100rpx;
+  margin-top: 100rpx;
+  width: 490rpx;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.uni-tip-title {
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  color: #333;
+}
+.uni-tip-content,
+.uni-tip-message {
+  font-size: 14px;
+  color: #666;
+}
+.uni-tip-content {
+  text-align: center;
+}
+.uni-tip-group-button {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  margin-top: 20px;
+}
+.uni-tip-button {
+  -webkit-box-flex: 1;
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+  color: #3b4144;
+}
+.radius_input_style {
+  border: 2rpx solid #999;
+  margin-left: 5px;
+  margin-top: 5rpx;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}

@@ -1,0 +1,127 @@
+<view
+  catchtouchmove="__e"
+  class="uni-calendar data-v-2c87941e"
+  data-event-opts="{{[ [ 'touchmove',[ [ 'clean',['$event'] ] ] ] ]}}"
+>
+  <view
+    bindtap="__e"
+    class="{{['uni-calendar__mask data-v-2c87941e',aniMaskShow?'uni-calendar--mask-show':'']}}"
+    data-event-opts="{{[ [ 'tap',[ [ 'clean',['$event'] ] ] ] ]}}"
+    wx:if="{{!insert&&show}}"
+  ></view>
+  <view
+    class="{{['uni-calendar__content data-v-2c87941e',!insert?'uni-calendar--fixed':'',aniMaskShow?'uni-calendar--ani-show':'']}}"
+    wx:if="{{insert||show}}"
+  >
+    <view
+      class="uni-calendar__header uni-calendar--fixed-top data-v-2c87941e"
+      wx:if="{{!insert}}"
+    >
+      <view
+        bindtap="__e"
+        class="uni-calendar__header-btn-box data-v-2c87941e"
+        data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}"
+      >
+        <text
+          class="uni-calendar__header-text uni-calendar--fixed-width data-v-2c87941e"
+          >取消</text
+        >
+      </view>
+      <view
+        bindtap="__e"
+        class="uni-calendar__header-btn-box data-v-2c87941e"
+        data-event-opts="{{[ [ 'tap',[ [ 'confirm',['$event'] ] ] ] ]}}"
+      >
+        <text
+          class="uni-calendar__header-text uni-calendar--fixed-width data-v-2c87941e"
+          >确定</text
+        >
+      </view>
+    </view>
+    <view class="uni-calendar__header data-v-2c87941e">
+      <view
+        bindtap="__e"
+        class="uni-calendar__header-btn-box data-v-2c87941e"
+        data-event-opts="{{[ [ 'tap',[ [ 'pre',['$event'] ] ] ] ]}}"
+      >
+        <view
+          class="uni-calendar__header-btn uni-calendar--left data-v-2c87941e"
+        ></view>
+      </view>
+      <text class="uni-calendar__header-text data-v-2c87941e"
+        >{{(nowDate.year||'')+'年'+(nowDate.month||'')+'月'}}</text
+      >
+      <view
+        bindtap="__e"
+        class="uni-calendar__header-btn-box data-v-2c87941e"
+        data-event-opts="{{[ [ 'tap',[ [ 'next',['$event'] ] ] ] ]}}"
+      >
+        <view
+          class="uni-calendar__header-btn uni-calendar--right data-v-2c87941e"
+        ></view>
+      </view>
+      <text
+        bindtap="__e"
+        class="uni-calendar__backtoday data-v-2c87941e"
+        data-event-opts="{{[ [ 'tap',[ [ 'backtoday',['$event'] ] ] ] ]}}"
+        >回到今天</text
+      >
+    </view>
+    <view class="uni-calendar__box data-v-2c87941e">
+      <view class="uni-calendar__box-bg data-v-2c87941e" wx:if="{{showMonth}}">
+        <text class="uni-calendar__box-bg-text data-v-2c87941e"
+          >{{nowDate.month}}</text
+        >
+      </view>
+      <view class="uni-calendar__weeks data-v-2c87941e">
+        <view class="uni-calendar__weeks-day data-v-2c87941e">
+          <text class="uni-calendar__weeks-day-text data-v-2c87941e">日</text>
+        </view>
+        <view class="uni-calendar__weeks-day data-v-2c87941e">
+          <text class="uni-calendar__weeks-day-text data-v-2c87941e">一</text>
+        </view>
+        <view class="uni-calendar__weeks-day data-v-2c87941e">
+          <text class="uni-calendar__weeks-day-text data-v-2c87941e">二</text>
+        </view>
+        <view class="uni-calendar__weeks-day data-v-2c87941e">
+          <text class="uni-calendar__weeks-day-text data-v-2c87941e">三</text>
+        </view>
+        <view class="uni-calendar__weeks-day data-v-2c87941e">
+          <text class="uni-calendar__weeks-day-text data-v-2c87941e">四</text>
+        </view>
+        <view class="uni-calendar__weeks-day data-v-2c87941e">
+          <text class="uni-calendar__weeks-day-text data-v-2c87941e">五</text>
+        </view>
+        <view class="uni-calendar__weeks-day data-v-2c87941e">
+          <text class="uni-calendar__weeks-day-text data-v-2c87941e">六</text>
+        </view>
+      </view>
+      <view
+        class="uni-calendar__weeks data-v-2c87941e"
+        wx:for="{{weeks}}"
+        wx:for-index="weekIndex"
+        wx:key="weekIndex"
+      >
+        <view
+          class="uni-calendar__weeks-item data-v-2c87941e"
+          wx:for="{{item}}"
+          wx:for-index="weeksIndex"
+          wx:for-item="weeks"
+          wx:key="weeksIndex"
+        >
+          <uni-calendar-item
+            bind:__l="__l"
+            bind:change="__e"
+            calendar="{{calendar}}"
+            class="data-v-2c87941e"
+            data-event-opts="{{[ [ '^change',[ ['choiceDate'] ] ] ]}}"
+            lunar="{{lunar}}"
+            selected="{{selected}}"
+            vueId="{{'138a9022-1-'+weekIndex+'-'+weeksIndex}}"
+            weeks="{{weeks}}"
+          ></uni-calendar-item>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

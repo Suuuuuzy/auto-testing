@@ -1,0 +1,47 @@
+<view class="choose-product _div data-v-147d9020">
+  <view
+    class="product-add _div data-v-147d9020"
+    style="{{'height:'+set.size+'px'+';'+'line-height:'+set.size+'px'+';'}}"
+  >
+    <view class="product-add__content _div data-v-147d9020">
+      <view
+        catchtap="__e"
+        class="{{['product-add__minus','iconfont','icon-jianqu','_div','data-v-147d9020',trueNum<=set.min||minusDisable?'disable':'']}}"
+        data-event-opts="{{[ [ 'tap',[ [ 'minus',['$event'] ] ] ] ]}}"
+        style="{{'height:'+set.size+'px'+';'+'line-height:'+set.size+'px'+';'+'width:'+set.size+'px'+';'+'color:'+set.themeColor+';'+'font-size:'+set.size*32/22+'px'+';'+'display:'+(trueNum?'block':'none')+';'}}"
+      ></view>
+      <view
+        bindtap="__e"
+        class="product-add__input _div data-v-147d9020"
+        data-event-opts="{{[ [ 'tap',[ [ 'minus',['$event'] ] ] ] ]}}"
+        style="{{'height:'+set.size+'px'+';'+'width:'+set.inputSize+'px'+';'+'font-size:'+set.size*14/22+'px'+';'+'display:'+(trueNum?'block':'none')+';'}}"
+        wx:if="{{set.isShowPop}}"
+        >{{''+trueNum+''}}</view
+      >
+      <view
+        class="product-add__input _div data-v-147d9020"
+        style="{{'height:'+set.size+'px;min-height:'+set.size+'px;width:'+set.inputSize+'px;font-size:'+set.size*14/22+'px;display:'+(trueNum?'block':'none')}}"
+        wx:else
+      >
+        <input-num
+          bind:__l="__l"
+          bind:click="__e"
+          bind:input="__e"
+          bind:shift="__e"
+          class="data-v-147d9020"
+          customStyle="{{'width:'+set.inputSize+'px'}}"
+          data-event-opts="{{[ [ '^input',[ ['printNewNum'] ] ],[ '^click',[ ['inputClick'] ] ],[ '^shift',[ ['shift'] ] ] ]}}"
+          precision="{{precision}}"
+          value="{{trueNum}}"
+          vueId="4f50e6f9-1"
+        ></input-num>
+      </view>
+      <view
+        catchtap="__e"
+        class="{{['product-add__plus','iconfont','_div','data-v-147d9020','icon-jiashang']}}"
+        data-event-opts="{{[ [ 'tap',[ [ 'plus',['$event'] ] ] ] ]}}"
+        style="{{'height:'+set.size+'px'+';'+'line-height:'+set.size+'px'+';'+'width:'+set.size+'px'+';'+'color:'+(maxNum<=trueNum?'#cccccc':set.themeColor)+';'+'font-size:'+set.size*32/22+'px'+';'+'filter:'+(set.disableAdd?'grayscale(100)':'grayscale(0)')+';'}}"
+      ></view>
+    </view>
+  </view>
+</view>

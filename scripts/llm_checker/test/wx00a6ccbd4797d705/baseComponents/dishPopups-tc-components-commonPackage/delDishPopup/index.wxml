@@ -1,0 +1,81 @@
+<weixin-popup
+  bind:__l="__l"
+  bind:close="__e"
+  class="data-v-fe3365a0"
+  closeIconPosition="{{closePosition=='1'?'top-right':'out-top-left'}}"
+  closeOnClickOverlay="{{true}}"
+  closeable="{{true}}"
+  customStyle="{{popType==2?'border-radius:12rpx;':''}}"
+  data-event-opts="{{[ [ '^close',[ ['hidePopup'] ] ] ]}}"
+  position="center"
+  round="{{true}}"
+  show="{{showPopup}}"
+  vueId="41d0413d-1"
+  vueSlots="{{['default']}}"
+>
+  <view class="main_content_wrap data-v-fe3365a0" wx:if="{{showPopup}}">
+    <view class="titleWrap _div data-v-fe3365a0">
+      <view class="fc3 f34 tc fw mb10r _div data-v-fe3365a0">修改餐品</view>
+      <view class="fc6 f22 tc _div data-v-fe3365a0"
+        >{{'您一共点了'+itemsNum+'份'+(curCookGroup.combineFlag?curCookGroup.realItemName:curCookGroup.itemName)}}</view
+      >
+    </view>
+    <view
+      class="bfc scroll pb30 _div data-v-fe3365a0"
+      style="{{'max-height:'+windowHeight*0.5+'px'+';'+'width:'+windowWidth*0.8+'px'+';'}}"
+      wx:if="{{itemListData.length}}"
+    >
+      <view
+        class="_div data-v-fe3365a0"
+        wx:for="{{$root.l1}}"
+        wx:for-index="i"
+        wx:for-item="itemData"
+        wx:key="i"
+      >
+        <view
+          class="_div data-v-fe3365a0"
+          wx:for="{{itemData.l0}}"
+          wx:key="index"
+        >
+          <view
+            class="selCookList _div data-v-fe3365a0"
+            wx:if="{{itemData[$orig]['cookNumMap'][ item[$orig] ]>0}}"
+          >
+            <view class="f26 fc3 fw itemName mb20r _div data-v-fe3365a0"
+              >{{itemData[$orig].combineFlag?itemData[$orig].realItemName:itemData[$orig].itemName}}</view
+            >
+            <view
+              class="f24 fc6 itemName mb20r _div data-v-fe3365a0"
+              wx:if="{{itemData[$orig].cookSchemeMap[ item[$orig] ]||itemData[$orig].combineFlag}}"
+              >{{''+item.m0+''}}</view
+            >
+            <view class="flexBetween _div data-v-fe3365a0">
+              <view
+                bindtap="__e"
+                class="{{['changeBtn','f24','c6','tc','_div','data-v-fe3365a0',itemData[$orig].showAddCookBtn&&itemData[$orig].defaultStrForBtn==item[$orig]?'blink':'']}}"
+                data-event-opts="{{[ [ 'tap',[ [ 'changePreCook',['$0','$1'],[ [ ['itemListData','',i],['orderSequence','',index] ],[ ['itemListData','',i] ] ] ] ] ] ]}}"
+                style="{{item.s0}}"
+                wx:if="{{itemData[$orig].hasCookStyle}}"
+                >{{''+(itemData[$orig].showAddCookBtn&&itemData[$orig].defaultStrForBtn==item[$orig]||!itemData[$orig].cookSchemeMap[
+                item[$orig] ]?'选':'换')+'做法'}}</view
+              >
+              <view class="_div data-v-fe3365a0" wx:else></view>
+              <add-de-btn
+                bind:__l="__l"
+                bind:inputChange="__e"
+                bind:minusFun="__e"
+                bind:plusFun="__e"
+                bind:shift="__e"
+                class="data-v-fe3365a0"
+                data-event-opts="{{[ [ '^plusFun',[ [ 'add',['$0','$1'],[ [ ['itemListData','',i],['orderSequence','',index] ],[ ['itemListData','',i] ] ] ] ] ],[ '^minusFun',[ [ 'remove',['$0','$1'],[ [ ['itemListData','',i],['orderSequence','',index] ],[ ['itemListData','',i] ] ] ] ] ],[ '^inputChange',[ ['getNumber'] ] ],[ '^shift',[ ['shift'] ] ] ]}}"
+                set="{{item.a0}}"
+                trueNum="{{itemData[$orig]['cookNumMap'][ item[$orig] ]}}"
+                vueId="{{'41d0413d-2-'+i+'-'+index+','+'41d0413d-1'}}"
+              ></add-de-btn>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</weixin-popup>

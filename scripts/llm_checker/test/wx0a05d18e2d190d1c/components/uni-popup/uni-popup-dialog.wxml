@@ -1,0 +1,26 @@
+<view class="uni-popup-dialog data-v-05bc7417">
+    <view class="uni-dialog-title data-v-05bc7417">
+        <text class="{{['uni-dialog-title-text data-v-05bc7417','uni-popup__'+dialogType]}}">{{title}}</text>
+    </view>
+    <view class="uni-dialog-content data-v-05bc7417">
+        <text class="uni-dialog-content-text data-v-05bc7417" wx:if="{{mode==='base'||mode==='Phone_pwd_code'||mode==='Phone_code'}}">{{content_msg}}</text>
+        <view class="uni-dialog-input-view data-v-05bc7417" wx:if="{{mode==='Phone_pwd_code'||mode==='Phone_code'}}">
+            <input bindinput="__e" class="uni-dialog-input data-v-05bc7417" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','val1','$event',[] ] ] ] ] ]}}" disabled="{{phone_disable}}" focus="{{focus}}" placeholder="{{phone_placeholder}}" type="number" value="{{val1}}"></input>
+        </view>
+        <view class="uni-dialog-input-view data-v-05bc7417" wx:if="{{mode==='Phone_pwd_code'}}">
+            <input bindinput="__e" class="uni-dialog-input data-v-05bc7417" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','val2','$event',[] ] ] ] ] ]}}" focus="{{focus}}" password="true" placeholder="{{pwd_placeholder}}" type="text" value="{{val2}}"></input>
+        </view>
+        <view class="uni-dialog-input-view data-v-05bc7417" wx:if="{{mode==='Phone_pwd_code'||mode==='Phone_code'}}">
+            <input bindinput="__e" class="uni-dialog-input data-v-05bc7417" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','val3','$event',[] ] ] ] ] ]}}" focus="{{focus}}" placeholder="{{code_placeholder}}" type="number" value="{{val3}}"></input>
+            <text bindtap="__e" class="gl_size_s code_style data-v-05bc7417" data-event-opts="{{[ [ 'tap',[ [ 'onClickCode',['$event'] ] ] ] ]}}">{{code_title}}</text>
+        </view>
+    </view>
+    <view class="uni-dialog-button-group data-v-05bc7417">
+        <view bindtap="__e" class="uni-dialog-button data-v-05bc7417" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}">
+            <text class="uni-dialog-button-text data-v-05bc7417">{{cancle_title}}</text>
+        </view>
+        <view bindtap="__e" class="uni-dialog-button uni-border-left data-v-05bc7417" data-event-opts="{{[ [ 'tap',[ [ 'onOk',['$event'] ] ] ] ]}}">
+            <text class="uni-dialog-button-text uni-button-color data-v-05bc7417">确定</text>
+        </view>
+    </view>
+</view>

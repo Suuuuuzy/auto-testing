@@ -1,0 +1,11 @@
+<keyboard-common-package
+  bind:__l="__l"
+  canUse="{{canUse}}"
+  class="vue-ref"
+  data-ref="keyBoard"
+  mode="{{mode}}"
+  type="{{type}}"
+  vueId="b10ed3b0-1"
+  zIndex="{{zIndex}}"
+  wx:if="{{isReady}}"
+></keyboard-common-package>

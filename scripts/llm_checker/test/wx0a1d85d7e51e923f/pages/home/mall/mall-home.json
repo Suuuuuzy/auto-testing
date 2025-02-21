@@ -1,0 +1,22 @@
+{
+  "usingComponents": {
+    "t-icon": "../../../miniprogram_npm/tdesign-miniprogram/icon/icon",
+    "t-image": "../../../miniprogram_npm/tdesign-miniprogram/image/image",
+    "shop-top": "./components/shop-top/shop-top",
+    "price": "/components/price/index",
+    "t-popup": "../../../miniprogram_npm/tdesign-miniprogram/popup/popup",
+    "t-tag": "../../../miniprogram_npm/tdesign-miniprogram/tag/tag",
+    "t-dialog": "../../../miniprogram_npm/tdesign-miniprogram/dialog/dialog",
+    "good-pop": "./components/good-pop/good-pop",
+    "custom": "/comp/my-custom/my-custom",
+    "date-time-picker": "/comp/date-time-picker/date-time-picker",
+    "dialog": "/comp/dialog/dialog",
+    "item": "/comp/list-item/list-item"
+  },
+  "waterfall": "/comp/waterfall-layout/waterfall",
+  "waterfall-item": "/comp/waterfall-layout/waterfall-item",
+  "enablePullDownRefresh": true,
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "white",
+  "__warning__": "invalid page.json [\"waterfall\"]、page.json [\"waterfall-item\"]"
+}

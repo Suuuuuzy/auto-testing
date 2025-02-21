@@ -1,0 +1,169 @@
+<import src="/pages/template/shop-item/shop-item.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<view class="" style="padding-bottom: 100rpx">
+  <view
+    class="flex justify-between align-center padding-lr-sm bg-white padding-tb-xs"
+    style="min-height: 90rpx"
+  >
+    <view class="flex-sub">
+      <view class="text-sm flex align-center" wx:if="{{addressName}}">
+        <text class="icon-location text-cyan" style="font-size: 35rpx"></text>
+        <text decode="true">&nbsp;</text>
+        <text>{{addressName}}</text>
+      </view>
+    </view>
+    <view class="text-right flex-sub">
+      <view url="/pages/common-page/select-area/select-area" wx:if="{{1}}">
+        <text class="uy-tom"
+          >{{pageData.locationArea?isUy?pageData.locationArea.uy_name:pageData.locationArea.ch_name:Str.selectArea[lanIndex]}}</text
+        >
+        <text class="icon-triangledownfill"></text>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{pageData}}">
+    <view class="bg-white">
+      <swiper
+        autoplay="true"
+        circular="true"
+        class="screen-swiper margin-lr-xs padding-top-xs"
+        duration="500"
+        indicatorActiveColor="yellow"
+        indicatorColor="grey"
+        indicatorDots="true"
+        interval="5000"
+        style="min-height: 225rpx; height: 225rpx"
+        wx:if="{{pageData.scrollAdvert}}"
+      >
+        <swiper-item
+          bindtap="swiperItemClick"
+          data-item="{{item}}"
+          wx:for="{{pageData.scrollAdvert}}"
+          wx:key="index"
+        >
+          <image
+            mode="aspectFill"
+            src="{{item.img_url}}"
+            style="border-radius: 16rpx"
+          ></image>
+        </swiper-item>
+      </swiper>
+    </view>
+    <view>
+      <view class="padding-top-sm bg-white">
+        <view class="grid col-4 padding-tb {{isUy?'rtl':''}}">
+          <view
+            class="text-center padding-bottom"
+            wx:for="{{pageData.menu}}"
+            wx:key="index"
+          >
+            <view
+              bindtap="menuItemClick"
+              data-item="{{item}}"
+              url="../agency-purchasing-page/purcashing-order/purcashing-order?title={{Str.purcashing[lanIndex]}}&typeId={{item.id}}"
+            >
+              <view>
+                <image
+                  src="{{item.icon_url}}"
+                  style="width: 80rpx; height: 80rpx"
+                ></image>
+              </view>
+              <view>
+                <text
+                  class="text-black text-bold text-cut uy-tom"
+                  style="width: 150rpx"
+                  >{{isUy?item.uy_title:item.ch_title}}</text
+                >
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <scroll-view
+      scrollWithAnimation
+      scrollY
+      class="margin-top"
+      wx:if="{{goodsData.data}}"
+    >
+      <waterfall
+        customClass="waterfall-box"
+        id="waterfall01"
+        isAllLoaded="{{isAllLoaded}}"
+        loading="{{updateLoading}}"
+      >
+        <waterfall-item
+          customClass="product-item-box"
+          wx:for="{{goodsData.data}}"
+          wx:key="index"
+        >
+          <navigator
+            class=""
+            url="/pages/home/group/group-goods/group-good-details/group-good-details?goodId={{item.id}}"
+          >
+            <view
+              class="bg-img"
+              style="background-image: url({{item.images[0].img_url+'?x-oss-process=image/resize,m_lfit,h_300,w_300'}});height:300rpx"
+            ></view>
+            <view class="padding-xs">
+              <view class="{{isUy?'rtl':''}}">
+                <text class="text-black text-bold uy-tom"
+                  >{{isUy?item.uy_name:item.ch_name}}</text
+                >
+              </view>
+              <view class="{{isUy?'rtl':''}}">
+                <text class="text-gray uy-tom text-sm"
+                  >{{isUy?item.shop.uy_name:item.shop.ch_name}}</text
+                >
+              </view>
+              <view
+                class="flex justify-between {{isUy?'rtl':''}} padding-lr-xs"
+              >
+                <view class="text-sm">
+                  <text
+                    class="cu-tag line-cyan uy-tom sm radius"
+                    wx:if="{{item.shop.area}}"
+                    >{{isUy?item.shop.area.uy_name:item.shop.area.ch_name}}</text
+                  >
+                </view>
+                <view class="text-gray text-sm" wx:if="{{item.distance!=-1}}"
+                  >{{item.distance}}</view
+                >
+              </view>
+              <view class="padding-lr-xs text-center margin-bottom-sm">
+                <view class="flex align-center">
+                  <view class="flex-sub">
+                    <price
+                      decimalSmaller
+                      class="text-bold text-red uy-tom text-xl"
+                      price="{{item.activity_price}}"
+                      priceUnit="yuan"
+                    ></price>
+                    <text>&nbsp;</text>
+                    <price
+                      decimalSmaller
+                      class=""
+                      price="{{item.price}}"
+                      priceUnit="yuan"
+                      type="delthrough"
+                    ></price>
+                  </view>
+                  <view
+                    class="flex-sub bg-img text-black padding-right-xs flex align-center"
+                  >
+                    <view class="text-right" style="width: 100%">
+                      <text class="text-cyan uy-tom"
+                        >{{Str.buy[lanIndex]}}</text
+                      >
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </navigator>
+        </waterfall-item>
+      </waterfall>
+    </scroll-view>
+  </view>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

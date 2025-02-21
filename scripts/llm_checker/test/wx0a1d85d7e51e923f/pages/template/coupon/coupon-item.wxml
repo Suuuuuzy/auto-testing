@@ -1,0 +1,123 @@
+<template name="couponItem">
+  <view wx:if="{{item.is_cash_cart==1}}">
+    <view
+      class="bg-img coupon-cash-item-bg shadow-blur padding-sm flex align-center"
+    >
+      <view class="flex justify-between align-center" style="width: 630rpx">
+        <view class="flex justify-start align-center">
+          <view>
+            <text class="text-xxl text-price padding-left-sm text-red"
+              >{{item.amount}}</text
+            >
+          </view>
+          <view class="padding-top-xs padding-left-xs text-center">
+            <view class="text-sm" style="color: #c3c9b2"
+              >{{isUy?Str.cashCart[1]:Str.cashCart[0]}}</view
+            >
+            <view class="text-sm" style="color: #c3c9b2"
+              >{{isUy?Str.cashCart[0]:Str.cashCart[1]}}</view
+            >
+            <view class="text-xs text-gray">
+              <text>{{Str.validPeriod[lanIndex]}}</text>
+              <text>{{item.expiration_date}}</text>
+            </view>
+          </view>
+        </view>
+        <view>
+          <view
+            bindtap="selectedClick"
+            data-index="{{index}}"
+            wx:if="{{hasSelected}}"
+          >
+            <text
+              class="icon-{{item.selected?'roundcheckfill':'round'}} text-xxl text-{{item.selected?'pink':'grey'}}"
+              style="font-size: 50rpx"
+            ></text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:else>
+    <view
+      class="bg-img coupon-item-bg shadow-blur padding-sm flex align-center"
+      wx:if="{{item.only_shop==0}}"
+    >
+      <view class="flex justify-between align-center" style="width: 630rpx">
+        <view class="flex justify-start align-center">
+          <view>
+            <text class="text-xxl text-price text-red">{{item.amount}}</text>
+          </view>
+          <view class="padding-left-xl">
+            <view class="text-lg"
+              >{{isUy?Str.couponCart[1]:Str.couponCart[0]}}</view
+            >
+            <view class="text-lg"
+              >{{isUy?Str.couponCart[0]:Str.couponCart[1]}}</view
+            >
+            <view class="text-sm text-gray">
+              <text>{{Str.validPeriod[lanIndex]}}</text>
+              <text>{{item.expiration_date}}</text>
+            </view>
+          </view>
+        </view>
+        <view>
+          <view
+            bindtap="selectedClick"
+            data-index="{{index}}"
+            wx:if="{{hasSelected}}"
+          >
+            <text
+              class="icon-{{item.selected?'roundcheckfill':'round'}} text-xxl text-{{item.selected?'pink':'grey'}}"
+              style="font-size: 50rpx"
+            ></text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="bg-img coupon-shop-item-bg shadow-blur padding-sm flex align-center"
+      wx:if="{{item.only_shop==1}}"
+    >
+      <view class="flex justify-between align-center" style="width: 630rpx">
+        <view class="flex justify-start">
+          <view>
+            <text class="text-xxl text-price text-white">{{item.amount}}</text>
+          </view>
+          <view class="padding-left-xl">
+            <view class="text-cut" style="width: 350rpx"
+              >{{isUy?item.shop.uy_name:item.shop.ch_name}}</view
+            >
+            <view class="text-sm text-gray">
+              <text>{{Str.validPeriod[lanIndex]}}</text>
+              <text>{{item.expiration_date}}</text>
+            </view>
+            <view class="text-sm" style="color: #b4b4b4"
+              >{{Str.onlyUseThisShop[lanIndex]}}</view
+            >
+          </view>
+        </view>
+        <view>
+          <view
+            bindtap="selectedClick"
+            data-index="{{index}}"
+            wx:if="{{hasSelected}}"
+          >
+            <text
+              class="icon-{{item.selected?'roundcheckfill':'round'}} text-xxl text-{{item.selected?'pink':'grey'}}"
+              style="font-size: 50rpx"
+            ></text>
+          </view>
+          <navigator
+            url="/pages/home/mall/mall-home?shopId={{item.shop_id}}&title={{isUy?item.shop.uy_name:item.shop.ch_name}}"
+            wx:else
+          >
+            <button class="cu-btn bg-pink radius sm">
+              {{Str.useIt[lanIndex]}}
+            </button>
+          </navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

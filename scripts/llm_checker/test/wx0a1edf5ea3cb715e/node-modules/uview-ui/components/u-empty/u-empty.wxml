@@ -1,0 +1,23 @@
+<view
+  class="u-empty data-v-4e41cd72"
+  style="{{'margin-top:'+marginTop+'rpx'+';'}}"
+  wx:if="{{show}}"
+>
+  <u-icon
+    bind:__l="__l"
+    class="data-v-4e41cd72"
+    color="{{iconColor}}"
+    customStyle="{{iconStyle}}"
+    label="{{text?text:icons[mode]}}"
+    labelColor="{{color}}"
+    labelPos="bottom"
+    labelSize="{{fontSize}}"
+    marginTop="14"
+    name="{{src?src:'empty-'+mode}}"
+    size="{{iconSize}}"
+    vueId="55f7abbe-1"
+  ></u-icon>
+  <view class="u-slot-wrap data-v-4e41cd72">
+    <slot name="bottom"></slot>
+  </view>
+</view>

@@ -1,0 +1,70 @@
+<view class="u-form-item data-v-c6985323">
+  <view
+    bindtap="{{k}}"
+    class="u-form-item__body data-v-c6985323"
+    style="{{l+';'+m}}"
+  >
+    <slot name="label" wx:if="{{$slots.label}}"></slot>
+    <block wx:else>
+      <view
+        class="u-form-item__body__left data-v-c6985323"
+        style="{{'width:'+h+';'+'margin-bottom:'+i}}"
+        wx:if="{{a}}"
+      >
+        <view class="u-form-item__body__left__content data-v-c6985323">
+          <text
+            class="u-form-item__body__left__content__required data-v-c6985323"
+            wx:if="{{b}}"
+            >*</text
+          >
+          <view
+            class="u-form-item__body__left__content__icon data-v-c6985323"
+            wx:if="{{c}}"
+          >
+            <u-icon
+              bind:__l="__l"
+              class="data-v-c6985323"
+              uI="c6985323-0"
+              uP="{{d}}"
+              wx:if="{{d}}"
+            ></u-icon>
+          </view>
+          <text
+            class="u-form-item__body__left__content__label data-v-c6985323"
+            style="{{f+';'+g}}"
+            >{{e}}</text
+          >
+        </view>
+      </view>
+    </block>
+    <view class="u-form-item__body__right data-v-c6985323">
+      <view class="u-form-item__body__right__content data-v-c6985323">
+        <view class="u-form-item__body__right__content__slot data-v-c6985323">
+          <slot></slot>
+        </view>
+        <view
+          class="item__body__right__content__icon data-v-c6985323"
+          wx:if="{{j}}"
+        >
+          <slot name="right"></slot>
+        </view>
+      </view>
+    </view>
+  </view>
+  <slot name="error" wx:if="{{$slots.error}}"></slot>
+  <block wx:else>
+    <text
+      class="u-form-item__body__right__message data-v-c6985323"
+      style="{{'margin-left:'+p}}"
+      wx:if="{{n}}"
+      >{{o}}</text
+    >
+  </block>
+  <u-line
+    bind:__l="__l"
+    class="data-v-c6985323"
+    uI="c6985323-1"
+    uP="{{r}}"
+    wx:if="{{q}}"
+  ></u-line>
+</view>

@@ -1,0 +1,34 @@
+.uni-list-cell {
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+}
+.uni-list .label-3 {
+  padding: 0;
+}
+.label-2-text {
+  -webkit-box-flex: 1;
+  flex: 1;
+}
+.uni-textarea {
+  margin-top: 20rpx;
+  left: 30rpx;
+  right: -30rpx;
+  width: 90%;
+  position: relative;
+  background: #fff;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+.btn_confirm_style {
+  margin-top: 120rpx;
+  position: absolute;
+  line-height: 88rpx;
+  width: 80%;
+  height: 88rpx;
+  color: #fff;
+  background-color: #fe7506;
+  border-radius: 44rpx;
+  margin-left: 10%;
+}

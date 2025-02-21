@@ -1,0 +1,111 @@
+.plate.data-v-e3998e4b {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+}
+.plate .item.data-v-e3998e4b {
+  background-color: #f3f4f7;
+  border-radius: 8rpx;
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 32rpx;
+  font-weight: 700;
+  height: 80rpx;
+  line-height: 80rpx;
+  position: relative;
+  text-align: center;
+  width: 64rpx;
+}
+.plate .item.active.data-v-e3998e4b {
+  background-color: #bbb;
+}
+.plate .new-energy.data-v-e3998e4b {
+  align-items: center;
+  border: 2rpx dashed #03be9f;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: flex;
+  font-weight: 700;
+  justify-content: center;
+}
+.plate .point.data-v-e3998e4b {
+  color: #bdc4cc;
+  font-size: 18rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+.plate .triangle.data-v-e3998e4b {
+  border-color: transparent #00c69d #00c69d transparent;
+  border-radius: 1rpx 2rpx;
+  border-style: solid;
+  border-width: 6rpx;
+  bottom: 6rpx;
+  height: 0;
+  position: absolute;
+  right: 6rpx;
+  width: 0;
+}
+.panel.data-v-e3998e4b {
+  background-color: #f5f5f5;
+  bottom: 0;
+  box-sizing: border-box;
+  left: 0;
+  position: fixed;
+  transform: translateY(100%);
+  transition: all 0.3s ease;
+  width: 100%;
+  z-index: 999;
+}
+.panel.show.data-v-e3998e4b {
+  transform: translate(0);
+}
+.panel .header.data-v-e3998e4b {
+  align-items: center;
+  color: #2080f7;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 34rpx;
+  height: 96rpx;
+  justify-content: space-between;
+  padding: 0 24rpx;
+}
+.panel .panelList.data-v-e3998e4b {
+  padding: 0 19rpx 30rpx;
+}
+.panel .panelList .item.data-v-e3998e4b {
+  display: inline-block;
+  height: 84rpx;
+  margin-bottom: 8rpx;
+  margin-right: 8rpx;
+  vertical-align: top;
+  width: calc((100% - 72rpx) / 8);
+}
+.panel .panelList .item view.data-v-e3998e4b {
+  background: #fefffe;
+  border-radius: 6rpx;
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 40rpx;
+  font-weight: 700;
+  height: 84rpx;
+  line-height: 84rpx;
+  text-align: center;
+  width: 100%;
+}
+.panel .panelList .item view.disabled.data-v-e3998e4b {
+  background-color: rgba(254, 255, 254, 0.6);
+  color: rgba(0, 0, 0, 0.23);
+}
+.panel .panelList .item.data-v-e3998e4b:nth-of-type(8n) {
+  margin-right: 0;
+}
+.panel .panelList .backspace.data-v-e3998e4b {
+  background: #fefffe;
+  border-radius: 6rpx;
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 68rpx;
+  font-weight: 700;
+  height: 84rpx;
+  line-height: 84rpx;
+  text-align: center;
+  vertical-align: top;
+}

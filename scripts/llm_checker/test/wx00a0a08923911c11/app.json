@@ -1,0 +1,110 @@
+{
+  "permission": {},
+  "plugins": {
+    "novel-plugin": {
+      "version": "latest",
+      "provider": "wx293c4b6097a8a4d0",
+      "genericsImplementation": {
+        "novel": { "charge-dialog": "./components/charge-dialog/charge-dialog" }
+      },
+      "subpackage": "__APP__"
+    }
+  },
+  "tabBar": {
+    "color": "#aaaaaa",
+    "selectedColor": "#FE6868",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/shujia/shujia",
+        "iconWidth": "28px",
+        "text": "书架",
+        "iconPath": "static/img/ic_sj_normal.png",
+        "selectedIconPath": "static/img/ic_sj_selected.png"
+      },
+      {
+        "pagePath": "pages/shucheng/shucheng",
+        "iconfont": "",
+        "text": "书城",
+        "iconWidth": "28px",
+        "iconPath": "static/img/ic_sc_normal.png",
+        "selectedIconPath": "static/img/ic_sc_selected.png"
+      },
+      {
+        "pagePath": "pages/stack/stack",
+        "iconfont": "",
+        "text": "书库",
+        "iconWidth": "28px",
+        "iconPath": "static/img/ic_sk_normal.png",
+        "selectedIconPath": "static/img/ic_sk_selected.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconWidth": "28px",
+        "text": "我的",
+        "iconPath": "static/img/ic_mine_normal.png",
+        "selectedIconPath": "static/img/ic_mine_selected.png"
+      }
+    ]
+  },
+  "subPackages": [
+    {
+      "root": "pages/wode/",
+      "pages": [
+        "invitationCode",
+        "bloggerCenter",
+        "setting",
+        "notice",
+        "noticeDetail",
+        "personalInfo",
+        "topup",
+        "coinsRecord",
+        "consume",
+        "corePay",
+        "consumeList",
+        "consumeListDetail",
+        "readRecord",
+        "plan",
+        "renewalAgreement",
+        "contact"
+      ]
+    },
+    {
+      "root": "pages/account/",
+      "pages": ["bound", "boundAccount", "resetPwd"]
+    },
+    {
+      "root": "pages/bountyMission/",
+      "pages": [
+        "bountyMissionDay",
+        "bountyMissionLimit",
+        "bountyMissionList",
+        "bountyMissionProgress"
+      ]
+    },
+    { "root": "pages/setAccount/", "pages": ["bind", "unbind"] },
+    {
+      "root": "pages/tixian/",
+      "pages": ["tixian", "cashList", "tixianProgress"]
+    }
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+  "pages": [
+    "pages/shucheng/shucheng",
+    "pages/stack/stack",
+    "pages/shujia/shujia",
+    "pages/shucheng/search",
+    "pages/readPage/detail",
+    "pages/readPage/catalog",
+    "pages/readPage/audio",
+    "pages/mine/mine",
+    "pages/readPage/chapter",
+    "pages/readPage/longChapter",
+    "__plugin__/wx293c4b6097a8a4d0/pages/novel/index"
+  ]
+}

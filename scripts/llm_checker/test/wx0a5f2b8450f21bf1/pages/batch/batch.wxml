@@ -1,0 +1,107 @@
+<view class="page">
+  <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">批量解析</view>
+  </cu-custom>
+  <view
+    class="container"
+    style="width: 750rpx; height: 283rpx; display: flex; box-sizing: border-box"
+  >
+    <view
+      class="originContainer"
+      style="
+        width: 712rpx;
+        height: 240rpx;
+        display: flex;
+        box-sizing: border-box;
+      "
+    >
+      <view class="txt">
+        <textarea
+          bindinput="analyseUrl"
+          maxlength="-1"
+          placeholder="请复制用户个人主页的分享链接进行批量解析"
+          style="
+            width: 670rpx;
+            height: 272rpx;
+            display: block;
+            box-sizing: border-box;
+          "
+          value="{{analyseUrl}}"
+        ></textarea>
+      </view>
+    </view>
+  </view>
+  <view class="btn">
+    <button bindtap="clearText" class="bt-a cu-btn bg-blue shadow">
+      粘贴链接
+    </button>
+    <button bindtap="empty" class="bt-b cu-btn bg-blue shadow">清空链接</button>
+  </view>
+  <button
+    bindtap="analyse"
+    class="bt-c cu-btn bg-blue shadow"
+    style="height: 60rpx; display: inline-flex"
+  >
+    立刻解析
+  </button>
+  <view class="pic-padding">
+    <ad
+      adTheme="white"
+      adType="video"
+      unitId="{{batchAd}}"
+      wx:if="{{showAd}}"
+    ></ad>
+  </view>
+  <button
+    bindtap="jiacishuadd2"
+    class="bt-c cu-btn bg-purple shadow"
+    style="height: 60rpx; display: inline-flex"
+    wx:if="{{productList.length>0}}"
+  >
+    下载选中作品
+  </button>
+  <button
+    bindtap="quanadd2"
+    class="bt-c cu-btn bg-pink shadow"
+    style="height: 60rpx; display: inline-flex"
+    wx:if="{{productList.length>0}}"
+  >
+    下载全部作品
+  </button>
+  <view class="footer" wx:if="{{productList.length>0}}">
+    <view class="footer_text"
+      >下载全部作品，只会下载已经解析出来的全部作品</view
+    >
+    <view class="footer_text">如想终止下载，请点击"清空链接"即可停止下载</view>
+  </view>
+  <view class="toast" wx:if="{{down}}">
+    下载中{{currentindex}}/{{down_num}}
+  </view>
+  <view wx:if="{{productList.length>0}}">
+    <view class="video_box">
+      <view class="video_item" wx:for="{{productList}}" wx:key="index">
+        <image
+          class="icon"
+          mode="aspectFill"
+          src="../../static/img/tupian.png"
+          wx:if="{{item.videoType==2}}"
+        ></image>
+        <image
+          bindtap="playVideo"
+          class="img_img"
+          data-shu="{{index}}"
+          src="{{item.cover}}"
+        ></image>
+        <view
+          catchtap="choseVideo"
+          class="item_check {{item.checked&&'checked'}}"
+          data-shu="{{index}}"
+        ></view>
+        <view class=" {{item.checked&&'item_mask'}}"></view>
+      </view>
+    </view>
+    <view class="cu-load bg-white loading" wx:if="{{has_more}}"></view>
+    <view class="cu-load bg-white" wx:else>已经没有更多了</view>
+  </view>
+</view>

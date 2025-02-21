@@ -1,0 +1,71 @@
+<view>
+  <cu-custom
+    bgColor="bg-gradual-blue"
+    bind:__l="__l"
+    isBack="{{true}}"
+    vueId="a464a218-1"
+    vueSlots="{{['content']}}"
+  >
+    <view slot="content">背景音乐提取</view>
+  </cu-custom>
+  <view class="solids video padding-sm">
+    <view
+      bindtap="__e"
+      data-event-opts="{{[ [ 'tap',[ [ 'upload',['$event'] ] ] ] ]}}"
+    >
+      <text class="cuIcon-cameraadd" style="font-size: 40px"></text>
+    </view>
+    <view
+      bindtap="__e"
+      data-event-opts="{{[ [ 'tap',[ [ 'upload',['$event'] ] ] ] ]}}"
+    >
+      <text>点我上传视频提取背景音乐</text>
+    </view>
+  </view>
+  <view class="padding-sm" wx:if="{{result}}">
+    <video class="video-play" src="{{tempFilePath}}"></video>
+  </view>
+  <view
+    bindtap="__e"
+    class="padding-sm flex flex-direction"
+    data-event-opts="{{[ [ 'tap',[ ['complete'] ] ] ]}}"
+    style="margin-top: -7px"
+    wx:if="{{result}}"
+  >
+    <button class="cu-btn bg-cyan">开始提取音乐</button>
+  </view>
+  <view class="box" wx:if="{{showMusic}}">
+    <view class="cu-bar btn-group">
+      <button
+        bindtap="__e"
+        class="cu-btn bg-orange shadow-blur"
+        data-event-opts="{{[ [ 'tap',[ [ 'handleAudio',[1] ] ] ] ]}}"
+      >
+        播放音乐
+      </button>
+      <button
+        bindtap="__e"
+        class="cu-btn bg-green shadow"
+        data-event-opts="{{[ [ 'tap',[ [ 'handleAudio',[2] ] ] ] ]}}"
+      >
+        暂停音乐
+      </button>
+    </view>
+    <view class="cu-bar btn-group">
+      <button
+        bindtap="__e"
+        class="cu-btn bg-orange shadow-blur"
+        data-event-opts="{{[ [ 'tap',[ [ 'copyMusic',['$event'] ] ] ] ]}}"
+      >
+        复制音乐链接
+      </button>
+      <button
+        bindtap="__e"
+        class="cu-btn bg-green shadow"
+        data-event-opts="{{[ [ 'tap',[ [ 'downloadFile',['$event'] ] ] ] ]}}"
+      >
+        下载音乐
+      </button>
+    </view>
+  </view>
+</view>

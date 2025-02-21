@@ -1,0 +1,25 @@
+<view class="u-checkbox data-v-64fe7600" style="{{$root.s0}}">
+  <view
+    bindtap="__e"
+    class="{{['u-checkbox__icon-wrap','data-v-64fe7600',iconClass]}}"
+    data-event-opts="{{[ [ 'tap',[ [ 'toggle',['$event'] ] ] ] ]}}"
+    style="{{$root.s1}}"
+  >
+    <u-icon
+      bind:__l="__l"
+      class="u-checkbox__icon-wrap__icon data-v-64fe7600"
+      color="{{iconColor}}"
+      name="checkbox-mark"
+      size="{{checkboxIconSize}}"
+      vueId="0009dd26-1"
+    ></u-icon>
+  </view>
+  <view
+    bindtap="__e"
+    class="u-checkbox__label data-v-64fe7600"
+    data-event-opts="{{[ [ 'tap',[ [ 'onClickLabel',['$event'] ] ] ] ]}}"
+    style="{{'font-size:'+$root.g0+';'}}"
+  >
+    <slot></slot>
+  </view>
+</view>

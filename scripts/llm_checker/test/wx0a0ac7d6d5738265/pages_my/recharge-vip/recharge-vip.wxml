@@ -1,0 +1,73 @@
+<view class="warp data-v-71a469d5">
+    <zym-navigation bind:__l="__l" class="data-v-71a469d5" uI="71a469d5-0" uP="{{a}}" wx:if="{{a}}"></zym-navigation>
+    <u-skeleton bind:__l="__l" class="data-v-71a469d5" uI="71a469d5-1" uP="{{M}}" uS="{{['d']}}" wx:if="{{M}}">
+        <view class="recharge-vip data-v-71a469d5">
+            <view class="recharge data-v-71a469d5">
+                <view class="recharge-money data-v-71a469d5">
+                    <view class="amn-rss data-v-71a469d5">
+                        <view class="amn data-v-71a469d5"> 钱包余额 </view>
+                        <view class="amnnum data-v-71a469d5">{{b}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="consume-list data-v-71a469d5">
+                <view class="oilcard data-v-71a469d5">
+                    <text bindtap="{{d}}" class="{{['textline','data-v-71a469d5',c&&'active']}}" style="margin-right:20rpx">油卡</text>
+                    <text bindtap="{{f}}" class="{{['textline','data-v-71a469d5',e&&'active']}}">消费记录</text>
+                </view>
+                <card-list bind:__l="__l" bindopenRechange="{{i}}" class="w100 r data-v-71a469d5" data-c-h="{{!h}}" uI="71a469d5-2,71a469d5-1" uP="{{j}}" uR="cardLists" wx:if="{{j}}"></card-list>
+                <u-button bind:__l="__l" bindclick="{{l}}" class="data-v-71a469d5" uI="71a469d5-3,71a469d5-1" uP="{{m}}" wx:if="{{k}}"></u-button>
+                <consume-list bind:__l="__l" class="w100 r data-v-71a469d5" data-c-h="{{!o}}" uI="71a469d5-4,71a469d5-1" uP="{{p}}" uR="consumeLists" wx:if="{{p}}"></consume-list>
+            </view>
+            <u-popup bind:__l="__l" bindclose="{{J}}" class="data-v-71a469d5" uI="71a469d5-5,71a469d5-1" uP="{{K}}" uS="{{['d']}}" wx:if="{{K}}">
+                <view class="pop data-v-71a469d5">
+                    <view class="pop--header data-v-71a469d5">
+                        <text class="poptxt data-v-71a469d5">充值金额</text>
+                        <image catchtap="{{r}}" class="popbtn data-v-71a469d5" mode="" src="{{q}}"></image>
+                    </view>
+                    <view class="pop--listbtn data-v-71a469d5">
+                        <view catchtap="{{topUp.d}}" class="{{['listbtn','data-v-71a469d5',topUp.b&&'poplist--active']}}" wx:for="{{s}}" wx:for-item="topUp" wx:key="c"> ￥{{topUp.a}}</view>
+                    </view>
+                    <view class="pop--input data-v-71a469d5" wx:if="{{t}}">
+                        <view class="fuhao data-v-71a469d5"> ￥ </view>
+                        <view class="data-v-71a469d5" style="height:100%" wx:if="{{v}}">
+                            <input adjustPosition="{{false}}" bindblur="{{w}}" bindinput="{{y}}" class="inpu data-v-71a469d5" type="digit" value="{{x}}"></input>
+                        </view>
+                        <view bindtap="{{A}}" class="inpu data-v-71a469d5" style="width:686rpx" wx:else>{{z}}</view>
+                    </view>
+                    <view class="data-v-71a469d5" style="display:flex;align-items:center">
+                        <u-icon bind:__l="__l" class="data-v-71a469d5" uI="71a469d5-6,71a469d5-5" uP="{{B}}" wx:if="{{B}}"></u-icon>
+                        <u-text bind:__l="__l" class="data-v-71a469d5" uI="71a469d5-7,71a469d5-5" uP="{{C}}" wx:if="{{C}}"></u-text>
+                    </view>
+                    <view class="tipool data-v-71a469d5">
+                        <view class="couponbox-info data-v-71a469d5" wx:if="{{D}}">
+                            <view class="couponbox-info-toast data-v-71a469d5"> 当前油卡包含以下优惠 </view>
+                            <view class="couponbox-info-item data-v-71a469d5" wx:for="{{E}}" wx:for-item="t" wx:key="f">
+                                <text class="type data-v-71a469d5" style="{{'background:'+t.b}}">{{t.a}}</text>
+                                <view class="cop data-v-71a469d5">每升优惠 <text class="yhje data-v-71a469d5">￥{{t.c}}</text>
+                                    <text class="data-v-71a469d5">有效时段：{{t.d}}-{{t.e}}</text>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="couponbox-info data-v-71a469d5" wx:else>
+                            <view class="couponbox-info-toast data-v-71a469d5"> 当前油卡无优惠信息 </view>
+                        </view>
+                        <view class="couponbox-info data-v-71a469d5">
+                            <view class="couponbox-info-toast data-v-71a469d5"> 充值 <text class="data-v-71a469d5" style="color:#007aff">{{F}}</text> 元后优惠 </view>
+                            <view class=" data-v-71a469d5" wx:if="{{G}}">
+                                <view class="couponbox-info-item data-v-71a469d5" wx:for="{{H}}" wx:for-item="t" wx:key="f">
+                                    <text class="type data-v-71a469d5" style="{{'background:'+t.b}}">{{t.a}}</text>
+                                    <view class="cop data-v-71a469d5">每升优惠 <text class="yhje data-v-71a469d5">￥{{t.c}}</text>
+                                        <text class="data-v-71a469d5">有效时段：{{t.d}}-{{t.e}}</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <button bindtap="{{I}}" class="ybtn data-v-71a469d5" type="default">确认</button>
+                </view>
+            </u-popup>
+            <add-fleet-card bind:__l="__l" class="r data-v-71a469d5" uI="71a469d5-8,71a469d5-1" uR="openAddFleet"></add-fleet-card>
+        </view>
+    </u-skeleton>
+</view>

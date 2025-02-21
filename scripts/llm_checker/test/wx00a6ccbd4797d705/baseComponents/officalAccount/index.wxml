@@ -1,0 +1,23 @@
+<view class="_div">
+  <offical-account-of-mini
+    bind:__l="__l"
+    context="{{context}}"
+    type="{{type}}"
+    vueId="288e6100-1"
+    zIndex="{{zIndex}}"
+    wx:if="{{show&&followPublicAccountStyle=='1'}}"
+  ></offical-account-of-mini>
+  <offical-account-of-mini2
+    appType="{{appType}}"
+    bind:__l="__l"
+    bind:authComplate="__e"
+    context="{{context}}"
+    customStyle="{{customStyle}}"
+    data-event-opts="{{[ [ '^authComplate',[ ['authComplate'] ] ] ]}}"
+    followPublicAccountTips="{{followPublicAccountTips}}"
+    type="{{type}}"
+    vueId="288e6100-2"
+    zIndex="{{zIndex}}"
+    wx:if="{{show&&followPublicAccountStyle=='2'}}"
+  ></offical-account-of-mini2>
+</view>

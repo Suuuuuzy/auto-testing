@@ -1,0 +1,29 @@
+<view class="container">
+    <view class="searchSection">
+        <view class="searchSection-main">
+            <icon color="#b2b2b2" size="21rpx" type="search"></icon>
+            <input bindconfirm="searchConfirm" bindinput="searchInput" bindkeyboardheightchange="searchBoardheightchange" class="searchInput" focus="{{focusFlag}}" placeholder="请输入受理编号查询办件进度" placeholderClass="searchPlaceholder" type="text" value="{{searchInput}}"></input>
+            <icon catchtap="clearTap" class="search-cancelIcon" color="#b2b2b2" hidden="{{clearFlagHide}}" size="25rpx" type="clear"></icon>
+        </view>
+    </view>
+    <view id="busiProgress">
+        <view class="noData" hidden="{{dataFlag}}">暂无数据</view>
+        <view class="common-list" hidden="{{!dataFlag}}" wx:for="{{busiProgress}}" wx:key="declareSN">
+            <view class="commonList-title">{{item.businessName}}</view>
+            <view class="commonList-detail">
+                <view>受理编号：{{item.declareSN}}</view>
+                <view>
+                    <text>当前业务状态：</text>
+                    <text class="toApproval" wx:if="{{item.curaction=='待审批'}}">{{item.curaction}}</text>
+                    <text class="refuse" wx:elif="{{item.curaction=='不批准'}}">{{item.curaction}}</text>
+                    <text class="approved" wx:elif="{{item.curaction=='办结'}}">{{item.curaction}}</text>
+                    <text wx:else>{{item.curaction}}</text>
+                </view>
+                <view>申请人：{{item.applicantName}}</view>
+                <view>经办人：{{item.linkManName}}</view>
+                <view>受理时间：{{item.startTime}}</view>
+                <view>收件单位：{{item.bureau}}</view>
+            </view>
+        </view>
+    </view>
+</view>

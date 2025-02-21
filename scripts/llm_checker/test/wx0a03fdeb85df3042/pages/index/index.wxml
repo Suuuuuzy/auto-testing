@@ -1,0 +1,158 @@
+<view class="container" hidden="{{!userInfoFlag}}">
+  <view id="businessChoose">
+    <view class="businessChoose_shadow">
+      <view class="businessChoose_cont">
+        <view
+          bindtap="businessTap"
+          class="businessManagement"
+          data-idx="{{index}}"
+          wx:for="{{businessChoose}}"
+          wx:key="businessid"
+        >
+          <image mode="aspectFit" src="{{item.businessImg}}"></image>
+          <text>{{item.businessName}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <image
+    class="businessChoose_bg"
+    src="../asserts/images/index_businessBg.png"
+  ></image>
+  <view bindtap="userCenterTap" id="userCenter">
+    <image
+      class="userCenter_bg"
+      src="../asserts/images/index_user_bg.png"
+    ></image>
+    <view class="userInfo">
+      <view class="userInfo_userAvatarUrl">
+        <image
+          src="{{userinfo.userAuth?'../asserts/images/index_loggedHead.png':'../asserts/images/index_unloggedHead.png'}}"
+        ></image>
+      </view>
+      <view class="userInfo_userNickName">
+        <text wx:if="{{userinfo&&userinfo.userAuth}}"
+          >{{userinfo.realName}}</text
+        >
+        <open-data type="userNickName" wx:else></open-data>
+      </view>
+    </view>
+    <view class="userCenterTap">个人中心</view>
+  </view>
+  <view id="mainCont">
+    <image
+      bindtap="handleGoAged"
+      class="index-banner_two"
+      src="../asserts/images/index_banner_slh.png"
+    ></image>
+    <swiper class="index-banner">
+      <swiper-item bindtap="education">
+        <image src="../asserts/images/ruxue.jpg"></image>
+      </swiper-item>
+      <swiper-item bindtap="onEduThingTap">
+        <image src="../asserts/images/index_banner_jyrx.png"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="../asserts/images/index_banner_lz.jpg"></image>
+      </swiper-item>
+    </swiper>
+    <view class="packageService">
+      <view class="mainCont-title">
+        <text class="mainCont-titleText">一件事套餐服务</text>
+      </view>
+      <swiper
+        class="packageService_item"
+        displayMultipleItems="1"
+        skipHiddenItemLayout="{{true}}"
+      >
+        <swiper-item class="packageService_item_1">
+          <view bindtap="bindOneThingTapNew" class="item-common">
+            <text>一件事套餐办理</text>
+            <image src="../asserts/images/index_tcfw_2.png"></image>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+    <view class="hotService">
+      <view class="mainCont-title">
+        <text class="mainCont-titleText">热点服务</text>
+        <view
+          bindtap="bindHotServiceMoreTap"
+          class="mainCont-more"
+          hidden="{{hotService.length==0}}"
+        >
+          <text>更多服务</text>
+          <image
+            class="rightArrow"
+            src="../asserts/images/index_rightArrow.png"
+          ></image>
+        </view>
+      </view>
+      <view class="hotService-cont">
+        <view class="noData" hidden="{{hotService.length!=0}}"
+          >{{hotServiceNoData}}</view
+        >
+        <view
+          bindtap="bindHotServiceTap"
+          class="hotService_item"
+          data-idx="{{index}}"
+          hidden="{{index>3}}"
+          wx:for="{{hotService}}"
+          wx:key="id"
+        >
+          <image
+            mode="aspectFit"
+            src="https://spj.csdsj.net/gateway/zwfw-api/api/file/download?fileId={{item.iconId}}"
+          ></image>
+          <text>{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="commonItem" wx:for="{{commonItem}}" wx:key="id">
+      <view class="mainCont-title">
+        <view class="mainCont-titleText">
+          <image
+            mode="aspectFit"
+            src="https://spj.csdsj.net/gateway/zwfw-api/api/file/download?fileId={{item.iconId}}"
+          ></image>
+          <text>{{item.name}}</text>
+        </view>
+        <view
+          bindtap="bindTypeMoreTap"
+          class="mainCont-more"
+          data-parentIdx="{{index}}"
+          hidden="{{item.applications.length==0}}"
+        >
+          <text>更多</text>
+          <image
+            class="rightArrow"
+            src="../asserts/images/index_rightArrow.png"
+          ></image>
+        </view>
+      </view>
+      <view class="noData" hidden="{{item.applications.length!=0}}"
+        >{{commonItemNoData}}</view
+      >
+      <view class="commonItem_cont">
+        <view
+          class="commonItem_cont_list"
+          hidden="{{contIndex>3}}"
+          wx:for="{{item.applications}}"
+          wx:for-index="contIndex"
+          wx:for-item="contItem"
+          wx:key="id"
+        >
+          <view
+            bindtap="bindTypeTap"
+            data-childIdx="{{contIndex}}"
+            data-parentIdx="{{index}}"
+            >{{contItem.name}}</view
+          >
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="footer">
+    <view>主办单位：常熟市数据局 备案序号：苏ICP备2024121663号</view>
+  </view>
+</view>

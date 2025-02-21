@@ -1,0 +1,58 @@
+<view class="{{['cmd-progress cmd-progress-default',setStatusClass]}}">
+  <view
+    class="{{['cmd-progress cmd-progress-default',setStatusClass]}}"
+    wx:if="{{type=='circle'||type=='dashboard'}}"
+  >
+    <view class="cmd-progress-inner" style="{{setCircleStyle}}">
+      <text style="{{setCircle}}"></text>
+      <text
+        class="cmd-progress-text"
+        title="{{setFormat}}"
+        wx:if="{{showInfo&&!custom}}"
+      >
+        <block
+          wx:if="{{status!='success'&&status!='exception'&&setProgress<100}}"
+          >{{setFormat}}</block
+        >
+        <text
+          style="{{setCircleIcon}}"
+          wx:if="{{status=='exception'||status=='success'||setProgress==100}}"
+        ></text>
+      </text>
+      <view class="cmd-progress-custom" wx:else>
+        <slot></slot>
+      </view>
+    </view>
+  </view>
+  <block wx:if="{{type=='line'}}">
+    <view class="cmd-progress-outer">
+      <view
+        class="cmd-progress-inner"
+        style="{{'border-radius:'+(strokeShape=='square'?0:'100px')+';'}}"
+      >
+        <view class="cmd-progress-bg" style="{{setLineStyle}}"></view>
+        <view
+          class="cmd-progress-success-bg"
+          style="{{setLineSuccessStyle}}"
+          wx:if="{{successPercent}}"
+        ></view>
+      </view>
+    </view>
+    <text
+      class="cmd-progress-text"
+      title="{{setFormat}}"
+      wx:if="{{showInfo&&!custom}}"
+    >
+      <block wx:if="{{status!='success'&&status!='exception'&&setProgress<100}}"
+        >{{setFormat}}</block
+      >
+      <text
+        style="{{setLineStatusIcon}}"
+        wx:if="{{status=='exception'||status=='success'||setProgress==100}}"
+      ></text>
+    </text>
+    <view class="cmd-progress-custom" wx:else>
+      <slot></slot>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,407 @@
+<view class="container _div data-v-34004108">
+  <scroll-view
+    bindscroll="__e"
+    bindscrolltolower="__e"
+    class="{{['content','data-v-34004108',showFixed?'fixed-tab':'']}}"
+    data-event-opts="{{[ [ 'scroll',[ [ 'scrollPage',['$event'] ] ] ],[ 'scrolltolower',[ [ 'toBottomRefresh',['$event'] ] ] ] ]}}"
+    enableBackToTop="{{true}}"
+    scrollY="{{true}}"
+  >
+    <view class="watch-top-swiper-out _div data-v-34004108">
+      <view
+        class="_div data-v-34004108"
+        style="{{'height:'+navigationBarHeightPlaceholder+'px'+';'}}"
+      ></view>
+      <view class="watch-top-swiper-gap _div data-v-34004108"></view>
+      <scroll-view
+        class="watch-top-swiper-inner data-v-34004108"
+        scrollIntoView="{{nowView}}"
+        scrollX="{{true}}"
+      >
+        <view class="watch-top-item-gap _div data-v-34004108" id="c1"></view>
+        <view
+          bindtap="__e"
+          class="{{['watch-top-item','_div','data-v-34004108',nowCollection==='超级复杂功能时计'?'active':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'chooseItem',['超级复杂功能时计',1] ] ] ] ]}}"
+        >
+          <view class="watch-top-item-pic _div data-v-34004108">
+            <image
+              class="pic _img data-v-34004108"
+              mode="aspectFit"
+              src="http://cdn.impdigital.cn/patek/cjfz-brown.jpg"
+            ></image>
+          </view>
+          <view class="watch-top-item-title _div data-v-34004108"
+            >超级复杂功能时计</view
+          >
+          <view class="watch-top-item-bar _div data-v-34004108"></view>
+        </view>
+        <view
+          bindtap="__e"
+          class="{{['watch-top-item','_div','data-v-34004108',nowCollection==='复杂功能时计'?'active':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'chooseItem',['复杂功能时计',2] ] ] ] ]}}"
+          id="c2"
+        >
+          <view class="watch-top-item-pic _div data-v-34004108">
+            <image
+              class="pic _img data-v-34004108"
+              mode="aspectFit"
+              src="http://cdn.impdigital.cn/patek/fz-brown.jpg"
+            ></image>
+          </view>
+          <view class="watch-top-item-title _div data-v-34004108"
+            >复杂功能时计</view
+          >
+          <view class="watch-top-item-bar _div data-v-34004108"></view>
+        </view>
+        <view
+          bindtap="__e"
+          class="{{['watch-top-item','_div','data-v-34004108',nowCollection==='Calatrava'?'active':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'chooseItem',['Calatrava',3] ] ] ] ]}}"
+          id="c3"
+        >
+          <view class="watch-top-item-pic _div data-v-34004108">
+            <image
+              class="pic _img data-v-34004108"
+              mode="aspectFit"
+              src="http://cdn.impdigital.cn/patek/calatrava-brown.jpg"
+            ></image>
+          </view>
+          <view class="watch-top-item-title _div data-v-34004108"
+            >Calatrava</view
+          >
+          <view class="watch-top-item-bar _div data-v-34004108"></view>
+        </view>
+        <view
+          bindtap="__e"
+          class="{{['watch-top-item','_div','data-v-34004108',nowCollection==='Gondolo'?'active':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'chooseItem',['Gondolo',4] ] ] ] ]}}"
+          id="c4"
+        >
+          <view class="watch-top-item-pic _div data-v-34004108">
+            <image
+              class="pic _img data-v-34004108"
+              mode="aspectFit"
+              src="http://cdn.impdigital.cn/patek/gondolo-brown.jpg"
+            ></image>
+          </view>
+          <view class="watch-top-item-title _div data-v-34004108">Gondolo</view>
+          <view class="watch-top-item-bar _div data-v-34004108"></view>
+        </view>
+        <view
+          bindtap="__e"
+          class="{{['watch-top-item','_div','data-v-34004108',nowCollection==='Golden Ellipse'?'active':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'chooseItem',['Golden Ellipse',5] ] ] ] ]}}"
+          id="c5"
+        >
+          <view class="watch-top-item-pic _div data-v-34004108">
+            <image
+              class="pic _img data-v-34004108"
+              mode="aspectFit"
+              src="http://cdn.impdigital.cn/patek/golden-brown.jpg"
+            ></image>
+          </view>
+          <view class="watch-top-item-title _div data-v-34004108"
+            >Golden Ellipse</view
+          >
+          <view class="watch-top-item-bar _div data-v-34004108"></view>
+        </view>
+        <view
+          bindtap="__e"
+          class="{{['watch-top-item','_div','data-v-34004108',nowCollection==='Nautilus'?'active':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'chooseItem',['Nautilus',6] ] ] ] ]}}"
+          id="c6"
+        >
+          <view class="watch-top-item-pic _div data-v-34004108">
+            <image
+              class="pic _img data-v-34004108"
+              mode="aspectFit"
+              src="http://cdn.impdigital.cn/patek/nautilus-brown.jpg"
+            ></image>
+          </view>
+          <view class="watch-top-item-title _div data-v-34004108"
+            >Nautilus</view
+          >
+          <view class="watch-top-item-bar _div data-v-34004108"></view>
+        </view>
+        <view
+          bindtap="__e"
+          class="{{['watch-top-item','_div','data-v-34004108',nowCollection==='Aquanaut'?'active':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'chooseItem',['Aquanaut',7] ] ] ] ]}}"
+          id="c7"
+        >
+          <view class="watch-top-item-pic _div data-v-34004108">
+            <image
+              class="pic _img data-v-34004108"
+              mode="aspectFit"
+              src="http://cdn.impdigital.cn/patek/aqua-brown.jpg"
+            ></image>
+          </view>
+          <view class="watch-top-item-title _div data-v-34004108"
+            >Aquanaut</view
+          >
+          <view class="watch-top-item-bar _div data-v-34004108"></view>
+        </view>
+        <view
+          bindtap="__e"
+          class="{{['watch-top-item','_div','data-v-34004108',nowCollection==='Twenty~4'?'active':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'chooseItem',['Twenty~4',8] ] ] ] ]}}"
+          id="c8"
+        >
+          <view class="watch-top-item-pic _div data-v-34004108">
+            <image
+              class="pic _img data-v-34004108"
+              mode="aspectFit"
+              src="http://cdn.impdigital.cn/patek/twenty4-brown.jpg"
+            ></image>
+          </view>
+          <view class="watch-top-item-title _div data-v-34004108"
+            >Twenty~4</view
+          >
+          <view class="watch-top-item-bar _div data-v-34004108"></view>
+        </view>
+        <view
+          bindtap="__e"
+          class="{{['watch-top-item','_div','data-v-34004108',nowCollection==='怀表'?'active':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'chooseItem',['怀表',9] ] ] ] ]}}"
+          id="c9"
+        >
+          <view class="watch-top-item-pic _div data-v-34004108">
+            <image
+              class="pic _img data-v-34004108"
+              mode="aspectFit"
+              src="https://static.patek.com/images/articles/face_brown/150/973J_010@2x.jpg"
+            ></image>
+          </view>
+          <view class="watch-top-item-title _div data-v-34004108">怀表</view>
+          <view class="watch-top-item-bar _div data-v-34004108"></view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="watch-top-swiper-out-fixed _div data-v-34004108">
+      <view
+        class="_div data-v-34004108"
+        style="{{'height:'+navigationBarHeightPlaceholder+'px'+';'}}"
+      ></view>
+      <view
+        class="watch-top-swiper-out-fixed-inner _div data-v-34004108"
+      ></view>
+    </view>
+    <view class="{{['topic-top','_div','data-v-34004108',showMore?'more':'']}}">
+      <view class="topic-title _div data-v-34004108"
+        >{{nowCollection+'系列'}}</view
+      >
+      <block wx:if="{{nowCollection==='超级复杂功能时计'}}">
+        <view class="topic-pic _div data-v-34004108">
+          <image
+            class="pic _img data-v-34004108"
+            mode="aspectFill"
+            src="https://www.patek.com/resources/img/collection/grandes_complications/grandes_complications_767.jpg"
+          ></image>
+        </view>
+        <view class="topic-more-title _div data-v-34004108"
+          >一生的工艺技巧</view
+        >
+        <view class="topic-more-detail _div data-v-34004108"
+          >复杂的制表工艺是对设计师专业知识与制表匠精湛技艺的终极考验。
+          百达翡丽精通各种复杂功能的制造技术，并在20世纪成功制造出两款世界上最为复杂的便携式时计。每一款时计都是凝聚了数代制表师的工艺技巧的结晶，堪称是不朽的艺术杰作。</view
+        >
+      </block>
+      <block wx:else>
+        <block wx:if="{{nowCollection==='复杂功能时计'}}">
+          <view class="topic-pic _div data-v-34004108">
+            <image
+              class="pic _img data-v-34004108"
+              mode="aspectFill"
+              src="https://www.patek.com/resources/img/collection/complications/complications_767.jpg"
+            ></image>
+          </view>
+          <view class="topic-more-title _div data-v-34004108"
+            >精巧艺术的终极测试</view
+          >
+          <view class="topic-more-detail _div data-v-34004108"
+            >制表中的“复杂功能”是指机械腕表除了时间显示和简单日期显示之外的其他功能。百达翡丽一贯秉承复杂腕表注重日常实用功能的传统，提供年历、双时区时间和世界时间等复杂功能。百达翡丽为拥有这一领域无以伦比的专业知识而感到自豪，同时也热衷于将这种登峰造极的艺术付诸实践。</view
+          >
+        </block>
+        <block wx:else>
+          <block wx:if="{{nowCollection==='Calatrava'}}">
+            <view class="topic-pic _div data-v-34004108">
+              <image
+                class="pic _img data-v-34004108"
+                mode="aspectFill"
+                src="https://www.patek.com/resources/img/collection/calatrava/calatrava_767.jpg"
+              ></image>
+            </view>
+            <view class="topic-more-title _div data-v-34004108">简约传奇</view>
+            <view class="topic-more-detail _div data-v-34004108"
+              >Calatrava拥有简洁的线条，被视为圆形腕表经典，也是百达翡丽风格的杰出代表之一。极致优雅，经典永恒，低调完美，Calatrava是一代代腕表爱好者心中的挚爱。</view
+            >
+          </block>
+          <block wx:else>
+            <block wx:if="{{nowCollection==='Gondolo'}}">
+              <view class="topic-pic _div data-v-34004108">
+                <image
+                  class="pic _img data-v-34004108"
+                  mode="aspectFill"
+                  src="https://cdn.impdigital.cn/patek/top-pic.png"
+                ></image>
+              </view>
+              <view class="topic-more-title _div data-v-34004108"
+                >装饰艺术精神</view
+              >
+              <view class="topic-more-detail _div data-v-34004108"
+                >长方形、酒桶形、靠垫形，Gondolo系列集合了百达翡丽的大多数非圆形表款。硬朗的线条、经典的风格和简约的几何形状是对装饰艺术时期风格的现代演绎，那个时代也是百达翡丽的黄金年代之一。依靠推出Gondolo，百达翡丽巧妙融合现代主义，再次诠释了其历史传承中的经典款式，这些经典表款目前都陈列在百达翡丽博物馆中受人敬仰。</view
+              >
+            </block>
+            <block wx:else>
+              <block wx:if="{{nowCollection==='Golden Ellipse'}}">
+                <view class="topic-pic _div data-v-34004108">
+                  <image
+                    class="pic _img data-v-34004108"
+                    mode="aspectFill"
+                    src="https://www.patek.com/resources/img/collection/golden_ellipse/golden_ellipse_767.jpg"
+                  ></image>
+                </view>
+                <view class="topic-more-title _div data-v-34004108"
+                  >完美和谐</view
+                >
+                <view class="topic-more-detail _div data-v-34004108"
+                  >介于圆形和长方形之间的椭圆形表壳，蓝金表盘，金色指针和时标浮动其中。1968年问世的百达翡丽Golden
+                  Ellipse是对传统腕表造型的一次大胆突破。然而这款创新腕表绝不仅仅是顺应时尚潮流，而是拥有内在的和谐美感，十分赏心悦目。其设计符合古希腊数学家发现的“黄金分割比例”。1：1.6181的黄金比例是艺术史和建筑史上许多最伟大的作品共同遵循的基本比例。</view
+                >
+              </block>
+              <block wx:else>
+                <block wx:if="{{nowCollection==='Nautilus'}}">
+                  <view class="topic-pic _div data-v-34004108">
+                    <image
+                      class="pic _img data-v-34004108"
+                      mode="aspectFill"
+                      src="https://www.patek.com/resources/img/collection/nautilus/nautilus_767.jpg"
+                    ></image>
+                  </view>
+                  <view class="topic-more-title _div data-v-34004108"
+                    >运动优雅</view
+                  >
+                  <view class="topic-more-detail _div data-v-34004108"
+                    >Nautilus拥有圆润的八角形表圈，精巧独特的舷窗结构表壳和饰有水平横纹浮雕图案的表盘，自1976年面世起就完美诠释了运动型腕表的优雅风格。四十年过去了，该系列现拥有丰富的男女表款设计，采用不锈钢、玫瑰金、白金或双色组合材质，以无与伦比的精致品味展现最具活力的生活方式。</view
+                  >
+                </block>
+                <block wx:else>
+                  <block wx:if="{{nowCollection==='Aquanaut'}}">
+                    <view class="topic-pic _div data-v-34004108">
+                      <image
+                        class="pic _img data-v-34004108"
+                        mode="aspectFill"
+                        src="https://www.patek.com/resources/img/collection/aquanaut/aquanaut_767.jpg"
+                      ></image>
+                    </view>
+                    <view class="topic-more-title _div data-v-34004108"
+                      >现代、动感、时尚</view
+                    >
+                    <view class="topic-more-detail _div data-v-34004108"
+                      >1997年发布的Aquanaut曾轰动一时。它是如此年轻又让人惊喜的设计。圆润的八角形表壳，灵感源自Nautilus。独特的“Tropical”表带由新型复合材料制成，经久耐磨，可抵抗海水侵蚀和紫外线辐射。</view
+                    >
+                  </block>
+                  <block wx:else>
+                    <block wx:if="{{nowCollection==='Twenty~4'}}">
+                      <view class="topic-pic _div data-v-34004108">
+                        <image
+                          class="pic _img data-v-34004108"
+                          mode="aspectFill"
+                          src="https://www.patek.com/resources/img/collection/twenty4/twenty4_2018_767.jpg"
+                        ></image>
+                      </view>
+                      <view class="topic-more-title _div data-v-34004108"
+                        >恒久优雅的女式石英与自动机械腕表</view
+                      >
+                      <view class="topic-more-detail _div data-v-34004108"
+                        >1999 年诞生的 Twenty～4
+                        系列是女性永恒优雅的化身。该系列腕表外形精美，为积极向上的现代女性量身打造，旨在融入她们生活中的每个瞬间。该系列设有镶钻玫瑰金和不锈钢款式，无论身着简约时尚的职业装还是优雅的晚礼服，该款腕表皆能与之相得益彰。2018
+                        年全新推出的 Twenty～4
+                        自动机械腕表，使该系列的现有表款更为丰富完整，它首次采用圆形表壳，搭载配备日期视窗和中心大秒针的
+                        Caliber 324 S C 自动上弦机芯。</view
+                      >
+                    </block>
+                    <block wx:else>
+                      <block wx:if="{{nowCollection==='怀表'}}">
+                        <view class="topic-pic _div data-v-34004108">
+                          <image
+                            class="pic _img data-v-34004108"
+                            mode="aspectFill"
+                            src="https://www.patek.com/resources/img/collection/pocket_watches/pocket_watches_767.jpg"
+                          ></image>
+                        </view>
+                        <view class="topic-more-title _div data-v-34004108"
+                          >传统的印记</view
+                        >
+                        <view class="topic-more-detail _div data-v-34004108"
+                          >数十年来，怀表一直是百达翡丽展现珍稀工艺的主要舞台。即使在腕表取代怀表后，后者依然能为珍稀时计鉴赏家们带来欣喜。作为高级制表技艺的守护者，百达翡丽延续了生产少量怀表的传统。它们的艺术美感永远涌动着迷人魅力。这些配备手动上弦机芯的时计在生产过程中，无论是工艺，还是走时精度，均遵循百达翡丽印记的严格要求。</view
+                        >
+                      </block>
+                    </block>
+                  </block>
+                </block>
+              </block>
+            </block>
+          </block>
+        </block>
+      </block>
+      <view
+        bindtap="__e"
+        class="topic-arrow-down _div data-v-34004108"
+        data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+      >
+        <image
+          class="pic _img data-v-34004108"
+          src="/static/img/arrow-down-round.svg"
+        ></image>
+      </view>
+      <view class="topic-divider _div data-v-34004108"></view>
+    </view>
+    <view class="topic-list _div data-v-34004108" wx:if="{{productShow}}">
+      <view
+        class="topic-list-line _div data-v-34004108"
+        wx:for="{{productShow}}"
+        wx:key="index"
+      >
+        <view
+          bindtap="__e"
+          class="topic-list-line-item _div data-v-34004108"
+          data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}"
+          data-event-params="{{itemInner:itemInner}}"
+          wx:for="{{item}}"
+          wx:for-index="indexInner"
+          wx:for-item="itemInner"
+          wx:key="indexInner"
+        >
+          <view class="topic-list-line-item-pic _div data-v-34004108">
+            <image
+              class="pic _img data-v-34004108"
+              lazyLoad="{{true}}"
+              mode="aspectFit"
+              src="{{itemInner.articleImages}}"
+            ></image>
+          </view>
+          <view class="topic-list-line-item-code _div data-v-34004108"
+            >{{itemInner.reference}}</view
+          >
+          <view class="topic-list-line-item-detail _div data-v-34004108"
+            >{{itemInner.caseMaterial}}</view
+          >
+          <view class="topic-list-line-item-title _div data-v-34004108"
+            >{{itemInner.collection}}</view
+          >
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <pp-nav
+    back="{{true}}"
+    bind:__l="__l"
+    class="data-v-34004108"
+    fixed="{{true}}"
+    logo="{{true}}"
+    placeholder="{{navigationBarHeightPlaceholder}}"
+    vueId="6f20fe22-1"
+  ></pp-nav>
+</view>

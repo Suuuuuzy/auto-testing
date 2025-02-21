@@ -1,0 +1,537 @@
+<view class="msg-new">
+  <view class="text">点击右上角添加到我的小程序，随时使用</view>
+  <view class="img">
+    <image src="/images/icon-top.png"></image>
+  </view>
+</view>
+<view class="watermark-box">
+  <textarea
+    bindfocus="onFocus"
+    bindinput="onInput"
+    class="watermark"
+    maxlength="-1"
+    placeholder="{{msg}}"
+    value="{{link}}"
+  ></textarea>
+  <view class="clear">
+    <image bindtap="clearInput" src="/images/icon-x.png"></image>
+  </view>
+  <view class="btn--s">
+    <view>
+      <button bindtap="copyUrl" class="btn on" data-type="copy">
+        <view class="c">粘贴</view> 立即去水印
+        <image src="/images/icon-btn.png"></image>
+      </button>
+      <navigator
+        class="index-box"
+        style="background: #f5c259; color: #3d0601"
+        url="/pages/sph/sph"
+        wx:if="{{showSph}}"
+      >
+        <image mode="heightFix" src="/images/icon-sph.png"></image>
+        <view>视频号下载</view>
+      </navigator>
+    </view>
+    <navigator class="history" hoverClass="on" url="/pages/history/history"
+      >历史记录</navigator
+    >
+  </view>
+  <view class="tab-span" wx:if="{{isShow}}">
+    <view
+      bindtap="showTag"
+      class="item {{showTag==0?'on':''}}"
+      data-i="0"
+      wx:if="{{src!=''}}"
+    >
+      <image src="/images/icon-tab-2.png"></image>
+      <view> 视频<view class="msg">无水印视频</view> </view>
+    </view>
+    <view bindtap="showTag" class="item {{showTag==1?'on':''}}" data-i="1">
+      <image src="/images/icon-tab-3.png"></image>
+      <view>多图<view class="msg">无水印图片</view> </view>
+    </view>
+    <view bindtap="showTag" class="item {{showTag==2?'on':''}}" data-i="2">
+      <image src="/images/icon-tab-1.png"></image>
+      <view>文案<view class="msg">一键复制文案</view> </view>
+    </view>
+  </view>
+  <block wx:if="{{showTag==0&&src!=''&&isShow}}">
+    <view class="video">
+      <video id="video" poster="{{cover}}" src="{{src}}"></video>
+      <view bindtap="vipStateShow" class="gowater">视频去重</view>
+    </view>
+    <view
+      bindtap="isShowAd"
+      class="down-btn"
+      data-saveType="save"
+      data-type="onDownload"
+      >下载保存到相册</view
+    >
+    <view class="btn-box">
+      <view bindtap="onConversion" class="li" wx:if="{{conversion_Num>0}}">
+        <image src="/images/icon-zh.png"></image>
+        <view class="text">
+          <view class="h2">转文案</view>
+          <view class="p"> 音频转文字</view>
+        </view>
+      </view>
+      <view bindtap="isShowAd" class="li" data-type="copyLink">
+        <image src="/images/icon-link.png"></image>
+        <view class="text">
+          <view class="h2">链接</view>
+          <view class="p"> 复制视频链接</view>
+        </view>
+      </view>
+      <view
+        bindtap="isShowAd"
+        class="li"
+        data-saveType="edit"
+        data-type="onDownload"
+      >
+        <image src="/images/icon-edit.png"></image>
+        <view class="text">
+          <view class="h2">剪辑</view>
+          <view class="p"> 视频时长截取</view>
+        </view>
+      </view>
+      <view bindtap="vipStateShow" class="li" wx:if="{{!isSeo}}">
+        <image src="/images/icon-water.png"></image>
+        <view class="text">
+          <view class="h2">改MD5</view>
+          <view class="p"> 视频快速编辑</view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:elif="{{showTag==1&&isShow}}">
+    <view class="imgs-box">
+      <view class="item" wx:if="{{images==''&&cover!=''}}">
+        <image
+          bindtap="isShowAd"
+          data-type="onShowImg"
+          data-url="{{cover}}"
+          mode="aspectFill"
+          src="{{cover}}"
+        ></image>
+        <view
+          bindtap="isShowAd"
+          class="down-img"
+          data-type="onDownImg"
+          data-url="{{cover}}"
+          >下载此图</view
+        >
+      </view>
+      <view class="item" wx:for="{{images}}">
+        <view bindtap="goImgWater" class="gowater" data-url="{{item}}"
+          >编辑水印</view
+        >
+        <image
+          bindtap="isShowAd"
+          data-type="onShowImg"
+          data-url="{{item}}"
+          mode="aspectFill"
+          src="{{item}}"
+        ></image>
+        <view
+          bindtap="isShowAd"
+          class="down-img"
+          data-type="onDownImg"
+          data-url="{{item}}"
+          >下载此图</view
+        >
+      </view>
+    </view>
+    <view class="btn-box" wx:if="{{isShow}}">
+      <view bindtap="isShowAd" class="li" data-type="onDownImgs">
+        <image src="/images/icon-dowload.png"></image>
+        <view class="text">
+          <view class="h2">下载</view>
+          <view class="p"> 全部存相册</view>
+        </view>
+      </view>
+      <button class="li" openType="share">
+        <image src="/images/icon-share.png"></image>
+        <view class="text">
+          <view class="h2">分享</view>
+          <view class="p"> 推荐给好友</view>
+        </view>
+      </button>
+    </view>
+  </block>
+  <block wx:elif="{{showTag==2&&isShow}}">
+    <view class="title-box">{{title==''?'无':title}}</view>
+    <view class="btn-box" wx:if="{{isShow}}">
+      <view bindtap="isShowAd" class="li" data-type="onCopyTitle">
+        <image src="/images/icon-dowload.png"></image>
+        <view class="text">
+          <view class="h2">复制</view>
+          <view class="p"> 复制到剪切板</view>
+        </view>
+      </view>
+      <view
+        bindtap="onConversion"
+        class="li"
+        wx:if="{{conversion_Num>0&&src!=''}}"
+      >
+        <image src="/images/icon-zh.png"></image>
+        <view class="text">
+          <view class="h2">转文案</view>
+          <view class="p"> 视频中提文案</view>
+        </view>
+      </view>
+      <button class="li" openType="share">
+        <image src="/images/icon-share.png"></image>
+        <view class="text">
+          <view class="h2">分享</view>
+          <view class="p"> 推荐给好友</view>
+        </view>
+      </button>
+    </view>
+  </block>
+</view>
+<view class="line"></view>
+<view class="handle-msg"> 目前支持100多个国内外主流平台，复制链接试试 </view>
+<view class="handle-box" wx:if="{{!isSeo}}">
+  <view class="item-box">
+    <view class="item">
+      <view class="left">
+        <view class="img">
+          <image src="/images/icon-add2.png"></image>
+        </view>
+        <view class="msg"> 解析后立即下载视频&图片 </view>
+      </view>
+      <switch bindchange="onAutodown" checked="{{autodown}}"></switch>
+    </view>
+    <view class="item" wx:if="{{xcx.appid}}">
+      <view class="left">
+        <view class="img">
+          <image src="{{xcx.icon}}"></image>
+        </view>
+        <view class="msg"> {{xcx.title}} </view>
+      </view>
+      <navigator
+        appId="{{xcx.appid}}"
+        class="btn"
+        path="{{xcx.path}}"
+        target="miniProgram"
+      >
+        进入
+      </navigator>
+    </view>
+    <view class="item">
+      <view class="left">
+        <view class="img">
+          <image src="/images/icon-fx2.png"></image>
+        </view>
+        <view class="msg"> 我们的小程序不错? 分享给好友。 </view>
+      </view>
+      <button class="btn" openType="share">分享</button>
+    </view>
+  </view>
+</view>
+<view class="otherbg" wx:if="{{problem.length>0}}">
+  <view class="other">
+    <view class="h1">常见问题</view>
+    <view
+      bindtap="goHtml"
+      class="item"
+      data-url="{{item.url}}"
+      wx:for="{{problem}}"
+    >
+      {{item.title}}
+      <image class="img" mode="" src="/images/icon-you.png"></image>
+    </view>
+  </view>
+</view>
+<view class="ad-ok-bg" wx:if="{{adState==1}}">
+  <view class="ad-ok">
+    <view class="msg">广告加载完毕！</view>
+    <view bindtap="{{type}}" class="btn">确认</view>
+  </view>
+</view>
+<view class="ad-ok-bg{{error=='无印豆不足'?'2':''}}" wx:if="{{error!=''}}">
+  <view class="ad-ok{{error=='无印豆不足'?'2':''}}">
+    <view class="msg">
+      <view>{{error}}</view
+      >{{error=='签名失败请重试'?'请把日期时间调整正确':''}}</view
+    >
+    <view class="error-btn" wx:if="{{error!='无印豆不足'}}">
+      <button bindtap="clearError">取消</button>
+      <button openType="contact">联系客服</button>
+    </view>
+    <block wx:else>
+      <view class="btn-box">
+        <view bindtap="noAd" class="btn pay">
+          <image src="/images/icon-vip.png"></image>
+          <text>{{error==''?'':'开通'}}会员</text>
+        </view>
+      </view>
+      <image
+        bindtap="clearError"
+        class="msg-close"
+        src="/images/msg-close.png"
+      ></image>
+    </block>
+  </view>
+</view>
+<block wx:if="{{conversionShow}}">
+  <view bindtap="onConversionHide" class="ad-ok-bg"></view>
+  <view class="conversion-box">
+    <view class="title">文案提取结果</view>
+    <view class="msg">
+      <scroll-view scrollY class="text"> {{conversion}} </scroll-view>
+    </view>
+    <view class="btn-box">
+      <button bindtap="isShowAd" class="btn on" data-type="onCopyConversion">
+        复制文案 <image src="/images/icon-wenan-copy.png"></image>
+      </button>
+    </view>
+  </view>
+</block>
+<view class="ad-ok-bg" wx:if="{{beyond!=''}}">
+  <view class="ad-ok">
+    <view class="msg">
+      <view>{{beyond}}</view>请复制链接去APP重新解析下载<view class="contact"
+        >操作较为复杂不懂 <button openType="contact">[联系客服]</button>
+      </view>
+    </view>
+    <view class="error-btn">
+      <button bindtap="clearError">取消</button>
+      <button bindtap="copyLink2">复制链接</button>
+    </view>
+  </view>
+</view>
+<view class="ad-ok-bg" wx:if="{{showHistory}}">
+  <view class="ad-ok">
+    <view class="msg">
+      <view class="title">已提交</view>
+      <view>视频处理需要一定时间，请耐心等候</view>
+      <block wx:if="{{isMsg}}"> 处理完成后以微信消息通知您 </block>
+      <block wx:else>
+        处理完成后请点击<text style="color: #f00">'历史记录'</text>查看
+      </block>
+    </view>
+    <view class="history-btn">
+      <view bindtap="goHistory" class="it left">查看进度</view>
+      <view bindtap="closeHistory" class="it right">确认</view>
+    </view>
+  </view>
+</view>
+<view class="ad-ok-bg2" wx:if="{{isShowDownload||errormoney!=''}}">
+  <view class="ad-ok2">
+    <view class="msg" wx:if="{{errormoney}}"
+      >{{errormoney}}
+      <view wx:if="{{task.comment.show}}"
+        >5星好评+文字获取{{task.comment.config}}枚无印豆</view
+      >
+      <view wx:elif="{{task.timeShare.show}}"
+        >推给好友获得无印豆完成{{type=='copyLink'||type=='onCopyTitle'||type=='onCopyConversion'?'复制':'下载'}}</view
+      >
+      <view wx:elif="{{task.ad.data<task.ad.config.length}}"
+        >请观看广告获得无印豆完成{{type=='copyLink'||type=='onCopyTitle'||type=='onCopyConversion'?'复制':'下载'}}</view
+      >
+    </view>
+    <view class="msg" wx:else>
+      <view>{{typeMsg}}需 <text>-1枚无印豆</text> </view> 账号无印豆余额：<text
+        >{{userInfo.money}}枚</text
+      >
+    </view>
+    <view class="btn-box">
+      <view bindtap="noAd" class="btn pay">
+        <image src="/images/icon-vip.png"></image>
+        <text>{{errormoney==''?'':'开通'}}会员</text>
+      </view>
+      <view
+        bindtap="{{type=='vipDown'?'vipDown':'isShowAd'}}"
+        class="btn"
+        wx:if="{{errormoney==''}}"
+      >
+        <image src="/images/icon-v.png"></image>
+        <text
+          >{{type=='copyLink'||type=='onCopyTitle'||type=='onCopyConversion'?'复制':'下载'}}</text
+        >
+      </view>
+      <button bindtap="onComment" class="btn" wx:elif="{{task.comment.show}}">
+        <image src="/images/icon-v.png"></image>
+        <text>立即评论</text>
+      </button>
+      <button
+        class="btn"
+        data-type="timeShare"
+        openType="share"
+        wx:elif="{{task.timeShare.show}}"
+      >
+        <image src="/images/icon-v.png"></image>
+        <text>推给好友</text>
+      </button>
+      <view
+        bindtap="showTaskAd"
+        class="btn"
+        wx:elif="{{task.ad.data<task.ad.config.length}}"
+      >
+        <image src="/images/icon-v.png"></image>
+        <text
+          >{{type=='copyLink'||type=='onCopyTitle'||type=='onCopyConversion'?'观看复制':'观看下载'}}</text
+        >
+      </view>
+    </view>
+    <image
+      bindtap="isHideDownload"
+      class="msg-close"
+      src="/images/msg-close.png"
+    ></image>
+  </view>
+</view>
+<view class="ad-ok-bg2" wx:if="{{isShowSph}}">
+  <view class="ad-ok2">
+    <view class="msg">
+      <view>视频号免费体验5次已用完</view> 需要开通
+      <text style="font-weight: bold">月/季/年</text> 会员才能使用</view
+    >
+    <view class="btn-box">
+      <view bindtap="noAd2" class="btn pay" style="margin-bottom: 10rpx">
+        <image src="/images/icon-vip.png"></image>
+        <text>会员</text>
+      </view>
+    </view>
+    <view class="contact"
+      >遇到任何问题，请联系<button openType="contact">客服</button>
+    </view>
+    <image
+      bindtap="isHideDownload"
+      class="msg-close"
+      src="/images/msg-close.png"
+    ></image>
+  </view>
+</view>
+<view class="ad-ok-bg" style="display:{{adMsgState?'block':'none'}}">
+  <view class="ad-box {{adMsgState?'on':''}}">
+    <view class="msg">正在去除水印，请耐心等待...</view>
+    <view class="ad" wx:if="{{adMsgState&&!isSeo&&isAd}}">
+      <swiper
+        autoplay="true"
+        circular="true"
+        duration="200"
+        interval="5000"
+        style="height: 320rpx"
+        wx:if="{{adStates==1}}"
+      >
+        <swiper-item
+          bindtap="To"
+          data-appid="{{item.appid}}"
+          data-path="{{item.path}}"
+          data-type="app"
+          wx:for="{{imgUrls}}"
+        >
+          <image
+            class="slide-image"
+            src="{{item.icon}}"
+            style="width: 640rpx; height: 320rpx"
+          ></image>
+        </swiper-item>
+      </swiper>
+      <block wx:else>
+        <ad unitId="{{ad_banner}}" wx:if="{{ad_banner}}"></ad>
+      </block>
+    </view>
+  </view>
+</view>
+<view
+  catchtap="vipStateHide"
+  class="ad-ok-bg"
+  style="display:{{vipState?'block':'none'}};z-index:999999"
+></view>
+<view class="vip-select-box" style="display:{{vipState?'block':'none'}}">
+  <view class="vip-select-box-top">
+    <image
+      mode="widthFix"
+      src="https://apis.ddfans.com/bian/public/static/image/qsy/icon-vip-top2.png?v=1"
+    ></image>
+  </view>
+  <view class="vip-select-list">
+    <view
+      bindtap="vipHandle"
+      class="item btn"
+      data-i="{{index}}"
+      wx:for="{{viphandle}}"
+    >
+      <view class="img {{item.state?'on':''}}">
+        <image src="/images/icon-selected{{item.state?'':'-'}}.png"></image>
+      </view>
+      <view class="text">{{item.msg}}</view>
+      <image
+        capture-catch:tap="onShowMsg"
+        class="xq"
+        data-img="https://apis.ddfans.com/bian/public/static/image/qsy/msg/{{item.code}}.jpg"
+        src="/images/icon-xq.png"
+        wx:if="{{item.code!='md5'}}"
+      ></image>
+    </view>
+    <view bindtap="onCut" class="item btn">
+      <view class="img {{isCut?'on':''}}">
+        <image src="/images/icon-selected{{isCut?'':'-'}}.png"></image>
+      </view>
+      <view class="text">视频时长截取</view>
+      <image
+        capture-catch:tap="onShowMsg"
+        class="xq"
+        data-img="https://apis.ddfans.com/bian/public/static/image/qsy/msg/cutout.jpg"
+        src="/images/icon-xq.png"
+      ></image>
+    </view>
+    <view bindtap="onWater" class="item btn">
+      <view class="img {{isWater?'on':''}}">
+        <image src="/images/icon-selected{{isWater?'':'-'}}.png"></image>
+      </view>
+      <view class="text">手动去除水印</view>
+      <image
+        capture-catch:tap="onShowMsg"
+        class="xq"
+        data-img="https://apis.ddfans.com/bian/public/static/image/qsy/msg/water2.jpg"
+        src="/images/icon-xq.png"
+      ></image>
+    </view>
+  </view>
+  <view class="msg" wx:if="{{userInfo.level==0}}"
+    >本次提交需要{{VideoHandleMoney}}枚无印豆</view
+  >
+  <view bindtap="vipDownload" class="vip-select-ok btn">
+    <image src="/images/icon-xiazai.png"></image>
+  </view>
+</view>
+<view class="ad-ok-bg" wx:if="{{showPrivacy}}">
+  <view class="ad-ok">
+    <view
+      class="msg"
+      style="text-align: left; padding: 20rpx 25rpx; color: #333"
+    >
+      <view
+        >在你使用【{{name}}】服务之前，请仔细阅读<text
+          bindtap="openPrivacy"
+          style="color: #085bfe"
+          >《{{name}}小程序隐私保护指引》</text
+        >
+        如你同意<text bindtap="openPrivacy" style="color: #085bfe"
+          >《{{name}}小程序隐私保护指引》</text
+        >，请点击"同意"开始使用{{name}}</view
+      >
+    </view>
+    <view class="history-btn">
+      <button
+        bindtap="exitMini"
+        class="it left"
+        style="background-color: #e8e9e9; color: #b8b5b5"
+      >
+        拒绝
+      </button>
+      <button
+        bindagreeprivacyauthorization="handleAgreePrivacyAuthorization"
+        class="it right"
+        id="agree-btn"
+        openType="agreePrivacyAuthorization"
+      >
+        同意
+      </button>
+    </view>
+  </view>
+</view>

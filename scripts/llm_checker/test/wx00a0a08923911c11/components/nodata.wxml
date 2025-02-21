@@ -1,0 +1,33 @@
+<view class="noData">
+  <image
+    class="empty-network empty-img mt24"
+    src="https://img.zhangwenpindu.cn/img/state_Network_Empty.png"
+    wx:if="{{imgtype=='network'}}"
+  ></image>
+  <image
+    class="empty-collect empty-img mt24"
+    src="https://img.zhangwenpindu.cn/img/state_collect_Empty.png"
+    wx:if="{{imgtype=='collect'}}"
+  ></image>
+  <image
+    class="empty-watch empty-img mt24"
+    src="https://img.zhangwenpindu.cn/img/state_watch_Empty.png"
+    wx:if="{{imgtype=='watch'}}"
+  ></image>
+  <image
+    class="empty-collect empty-img mt24"
+    src="https://img.zhangwenpindu.cn/img/state_collect_Empty.png"
+    wx:if="{{imgtype=='notice'}}"
+  ></image>
+  <image
+    class="state_task_compelte empty-img mt24"
+    src="https://img.zhangwenpindu.cn/img/state_task_compelte.png"
+    wx:if="{{imgtype=='taskCompolete'}}"
+  ></image>
+  <image
+    class="state_task_over empty-img mt24"
+    src="https://img.zhangwenpindu.cn/img/state_task_over.png"
+    wx:if="{{imgtype=='taskOver'}}"
+  ></image>
+  <slot name="datatitle"></slot>
+</view>

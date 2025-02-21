@@ -1,0 +1,94 @@
+<view
+  class="{{['dish-item-layout9','_div','data-v-3b2773e6','template-'+dishConfig.template,dishConfig.hasBGColor?'hasBackground-'+dishConfig.template:'']}}"
+  style="{{'background:'+goodsBgColor+';'+'margin-bottom:'+(goodsBgColor&&!dishConfig.hasBGColor?'4rpx':'')+';'}}"
+>
+  <view class="dish-image _div data-v-3b2773e6">
+    <view
+      class="_div data-v-3b2773e6"
+      style="position: relative; display: flex; overflow: hidden"
+    >
+      <image
+        bindtap="__e"
+        class="layout9-image data-v-3b2773e6"
+        data-event-opts="{{[ [ 'tap',[ [ 'showBigPicModle',['$event'] ] ] ] ]}}"
+        lazyLoad="{{true}}"
+        mode="aspectFill"
+        src="{{dishImages}}"
+        style="{{$root.s0}}"
+      ></image>
+      <view
+        class="dish-pickRanking-img _div data-v-3b2773e6"
+        wx:if="{{dishData.pickRanking!==undefined}}"
+      >
+        <image
+          class="data-v-3b2773e6"
+          mode="widthFix"
+          src="{{'https://cdnpic.wuuxiang.com/msgjDecorationImg/pick-no'+dishData.pickRanking+'.png'}}"
+          style="width: 100%; height: 100%"
+        ></image>
+      </view>
+      <view
+        class="dish-sales ellipsis1 wordBreakBreakAll _div data-v-3b2773e6"
+        wx:if="{{showSales}}"
+        >{{''+dishConfig.customSalesText+'：'+salesVolumeText+''}}</view
+      >
+      <view
+        class="marker f24 _div data-v-3b2773e6"
+        wx:if="{{dishData._markerUrl}}"
+      >
+        <view
+          class="pr _div data-v-3b2773e6"
+          style="{{'width:'+dishConfig.markerWidth+'px'+';'+'height:'+dishConfig.markerHeight+'px'+';'}}"
+        >
+          <image
+            class="markerUrl data-v-3b2773e6"
+            src="{{dishData._markerUrl}}"
+            style="{{'width:'+dishConfig.markerWidth+'px'+';'+'height:'+dishConfig.markerHeight+'px'+';'}}"
+          ></image>
+          <label class="markerText _span data-v-3b2773e6"
+            >{{dishData._markerText}}</label
+          >
+        </view>
+      </view>
+      <view
+        class="dish-guqing _div data-v-3b2773e6"
+        wx:if="{{dishConfig.guQingFlg&&dishConfig.showAddDish}}"
+        >本店暂时售罄</view
+      >
+      <label
+        class="bofangBtn pa _span data-v-3b2773e6"
+        wx:if="{{dishData.videoName}}"
+      >
+        <label class="pr bofangCopy _span data-v-3b2773e6">
+          <view class="iconfont icon-bofang _i data-v-3b2773e6"></view>
+        </label>
+      </label>
+      <view
+        class="dish-itemcountNew-img _div data-v-3b2773e6"
+        wx:if="{{dishData.itemcountNew}}"
+      >
+        <label class="_span data-v-3b2773e6"
+          >{{'已点'+dishData.itemcountNew}}</label
+        >
+      </view>
+    </view>
+  </view>
+  <view class="dish-info _div data-v-3b2773e6">
+    <dish-info
+      bind:__l="__l"
+      bind:add="__e"
+      bind:getNumber="__e"
+      bind:inputClick="__e"
+      bind:remove="__e"
+      bind:shift="__e"
+      class="data-v-3b2773e6"
+      context="{{context}}"
+      data-event-opts="{{[ [ '^add',[ ['add'] ] ],[ '^remove',[ ['remove'] ] ],[ '^getNumber',[ ['getNumber'] ] ],[ '^inputClick',[ ['inputClick'] ] ],[ '^shift',[ ['shift'] ] ] ]}}"
+      dishConfig="{{dishConfig}}"
+      dishData="{{dishData}}"
+      layout="{{layout}}"
+      style="height: 100%"
+      vueId="0e232b4e-1"
+    ></dish-info>
+  </view>
+</view>

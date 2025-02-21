@@ -1,0 +1,68 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<import src="/pages/template/shop-item/shop-item.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view class="cu-bar search bg-white solid-top fixed">
+    <view class="search-form radius">
+        <text class="icon-search"></text>
+        <input bindconfirm="bindConfirm" bindfocus="inputFocus" bindinput="inputSearch" confirmType="search" placeholder="{{Str.inputSearchShop[lanIndex]}}" type="text" value="{{keyword}}"></input>
+    </view>
+    <view class="action">
+        <button bindtap="bindConfirm" class="cu-btn bg-white text-pink shadow-blur radius" disabled="{{keyword.length==0}}">{{Str.search[lanIndex]}}</button>
+    </view>
+</view>
+<view class="" style="margin-top: 110rpx;" wx:if="{{pageData&&pageData.keywords.length>0}}">
+    <view wx:if="{{showKeyword}}">
+        <view class="cu-bar bg-white margin-top-sm {{isUy?'rtl padding-right-sm':''}}">
+            <view class="action uy-tom text-black"> {{Str.hotSearch[lanIndex]}} </view>
+            <view class="action"></view>
+        </view>
+        <view class="bg-white padding-lr-sm padding-top-xs padding-bottom-sm {{isUy?'rtl':''}}">
+            <view class="lately-main">
+                <view bindtap="keywordClick" class="chunk" data-title="{{isUy?item.uy_title:item.ch_title}}" wx:for="{{pageData.keywords}}" wx:key="index">
+                    <text class="text-df uy-tom">{{isUy?item.uy_title:item.ch_title}}</text>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{historySearch.length>0}}">
+            <view class="cu-bar bg-white margin-top-sm {{isUy?'rtl padding-lr-sm':''}}">
+                <view class="action uy-tom text-black"> {{Str.historySearch[lanIndex]}} </view>
+                <view class="action">
+                    <text bindtap="deleteHistoryBtn" class="icon-delete" style="font-size: 50rpx;"></text>
+                </view>
+            </view>
+            <view class="bg-white padding-lr-sm padding-top-xs padding-bottom-sm {{isUy?'rtl':''}}" wx:if="{{!searchResult}}">
+                <view class="lately-main">
+                    <view bindtap="keywordClick" class="chunk" data-title="{{item}}" wx:for="{{historySearch}}" wx:key="index">
+                        <text class="text-df uy-tom">{{item}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{pageData.recommendShop.length>0}}">
+            <view class="cu-bar bg-white margin-top-sm {{isUy?'rtl padding-lr-sm':''}}">
+                <view class="action uy-tom text-black"> {{Str.recommend[lanIndex]}} </view>
+                <view class="action"></view>
+            </view>
+            <view class="cu-list menu sm-border {{isUy?'rtl':''}}">
+                <navigator class="cu-item" url="/pages/home/mall/mall-home?shopId={{item.id}}&title={{isUy?item.uy_name:item.ch_name}}" wx:for="{{pageData.recommendShop}}">
+                    <view class="cu-avatar radius " style="background-image:url({{ossImage+item.icon_url+'?x-oss-process=image/resize,m_lfit,h_400,w_400'}});"></view>
+                    <view class="content margin-lr-xs">
+                        <view class="text-black">{{isUy?item.uy_name:item.ch_name}}</view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <view wx:else>
+        <view class="solids-top" wx:for="{{result.shops.data}}" wx:key="index">
+            <template is="_shopItemWithScrollGoods" data="{{isUy:isUy,Str:Str,lanIndex:lanIndex,item:item,ossImage:ossImage,navUrl:'/pages/home/mall/mall-home'}}"></template>
+        </view>
+    </view>
+    <view style="margin-top: 150rpx;" wx:if="{{!showKeyword&&result&&result.shops.data.length==0}}">
+        <view class="weui-loadmore weui-loadmore_line">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line" style="background-color:#f1f1f1"> {{Str.noContent[lanIndex]}}</view>
+        </view>
+    </view>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

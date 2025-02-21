@@ -1,0 +1,33 @@
+<view class="_div data-v-a65fec02">
+  <weixin-popup
+    bind:__l="__l"
+    class="data-v-a65fec02"
+    customStyle="width: 620rpx;min-height: 742rpx;"
+    position="center"
+    round="{{true}}"
+    show="{{showPop}}"
+    vueId="46b318f2-1"
+    vueSlots="{{['default']}}"
+  >
+    <view class="flexCenter pictureCont data-v-a65fec02">
+      <view class="picture data-v-a65fec02"></view>
+    </view>
+    <view class="tc data-v-a65fec02">
+      <view class="f36 c3 fw500 data-v-a65fec02">您来早了,活动还未开始</view>
+      <view class="f28 c6.mt20r data-v-a65fec02">活动时间:</view>
+      <view
+        class="f28 c6 .mt20r actionTime data-v-a65fec02"
+        wx:if="{{actionData.activityTime}}"
+        >{{actionData.activityTime}}</view
+      >
+    </view>
+    <view class="know flexContentCenter data-v-a65fec02">
+      <view
+        bindtap="__e"
+        class="{{['knowBtn','f36','tc','fw500','data-v-a65fec02','box']}}"
+        data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}"
+        >知道了</view
+      >
+    </view>
+  </weixin-popup>
+</view>

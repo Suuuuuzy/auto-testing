@@ -1,0 +1,89 @@
+<navBar
+  back="{{false}}"
+  background="#fff"
+  bindback="handlerGobackClick"
+  bindhome="handlerGohomeClick"
+  home="{{true}}"
+  title="火瞳企业消费管理平台"
+></navBar>
+<view class="container" style="height:{{windowHeight}}px">
+  <view class="user-info">
+    <view class="user-info-main">
+      <image class="background" src="/assets/img/userBg.png"></image>
+      <image class="user-image" src="{{headDefaultUrl}}"></image>
+      <view class="user-info-details">
+        <view class="account">账号： {{accountPhone}}</view>
+        <view class="company">
+          <van-dropdown-menu>
+            <van-dropdown-item
+              bindchange="changeCompany"
+              options="{{companyOption}}"
+              value="{{companyId}}"
+            ></van-dropdown-item>
+          </van-dropdown-menu>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="main" style="height:{{menuHeight}}px;">
+    <view class="day-tab">
+      <van-sidebar
+        activeKey="{{activeKey}}"
+        bindchange="changeDay"
+        customClass="sidebar"
+      >
+        <van-sidebar-item wx:for="{{dayList}}" wx:key="effectiveDate">
+          <view slot="title">
+            <view class="">{{item.day}}</view>
+            <view class="">{{item.date}}</view>
+          </view>
+        </van-sidebar-item>
+      </van-sidebar>
+    </view>
+    <view class="menu" style="width:{{menuWidth}}px">
+      <view class="meal">
+        <van-tabs
+          active="{{effectiveMealTimes}}"
+          bind:change="changeMeal"
+          type="card"
+        >
+          <van-tab title="早餐"></van-tab>
+          <van-tab title="午餐"></van-tab>
+          <van-tab title="晚餐"></van-tab>
+        </van-tabs>
+      </view>
+      <view class="menu-main">
+        <block wx:for="{{menuData}}" wx:key="id">
+          <view bind:tap="toRate" class="dish" data-item="{{item}}">
+            <view class="dish-image">
+              <image
+                class="image"
+                mode="aspectFit"
+                src="{{item.pictureUrl?item.pictureUrl:foodDefaultUrl}}"
+              ></image>
+            </view>
+            <view class="dish-info">
+              <view class="name">{{item.name}}</view>
+              <view>
+                <van-rate
+                  allowHalf
+                  readonly
+                  size="10px"
+                  value="{{item.score}}"
+                ></van-rate>
+                <text class="score">{{item.score||0}}</text>
+              </view>
+              <view class="description">{{item.description}}</view>
+              <view class="price">￥{{item.price}}</view>
+            </view>
+          </view>
+          <view
+            class="splitline"
+            wx:if="{{index!==deliveryDayData.length-1}}"
+          ></view>
+        </block>
+        <view class="subInfo">无更多菜品</view>
+      </view>
+    </view>
+  </view>
+</view>

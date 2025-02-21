@@ -1,0 +1,73 @@
+<view class="uni-stat__select">
+  <label class="uni-label-text hide-on-phone _span" wx:if="{{label}}"
+    >{{label+'：'}}</label
+  >
+  <view class="{{['uni-stat-box',current?'uni-stat__actived':'']}}">
+    <view class="{{['uni-select',disabled?'uni-select--disabled':'']}}">
+      <view
+        bindtap="__e"
+        class="uni-select__input-box"
+        data-event-opts="{{[ [ 'tap',[ [ 'toggleSelector',['$event'] ] ] ] ]}}"
+      >
+        <view class="uni-select__input-text" wx:if="{{current}}"
+          >{{current}}</view
+        >
+        <view
+          class="uni-select__input-text uni-select__input-placeholder"
+          wx:else
+          >{{typePlaceholder}}</view
+        >
+        <view
+          catchtap="__e"
+          data-event-opts="{{[ [ 'tap',[ [ 'clearVal',['$event'] ] ] ] ]}}"
+          wx:if="{{current&&clear&&!disabled}}"
+        >
+          <uni-icons
+            bind:__l="__l"
+            color="#c0c4cc"
+            size="24"
+            type="clear"
+            vueId="011c9238-1"
+          ></uni-icons>
+        </view>
+        <view wx:else>
+          <uni-icons
+            bind:__l="__l"
+            color="#999"
+            size="14"
+            type="{{showSelector?'top':'bottom'}}"
+            vueId="011c9238-2"
+          ></uni-icons>
+        </view>
+      </view>
+      <view
+        bindtap="__e"
+        class="uni-select--mask"
+        data-event-opts="{{[ [ 'tap',[ [ 'toggleSelector',['$event'] ] ] ] ]}}"
+        wx:if="{{showSelector}}"
+      ></view>
+      <view class="uni-select__selector" wx:if="{{showSelector}}">
+        <view class="uni-popper__arrow"></view>
+        <scroll-view class="uni-select__selector-scroll" scrollY="true">
+          <view class="uni-select__selector-empty" wx:if="{{$root.g0===0}}">
+            <text>{{emptyTips}}</text>
+          </view>
+          <block wx:else>
+            <view
+              bindtap="__e"
+              class="uni-select__selector-item"
+              data-event-opts="{{[ [ 'tap',[ [ 'change',['$0'],[ [ ['mixinDatacomResData','',index] ] ] ] ] ] ]}}"
+              wx:for="{{$root.l0}}"
+              wx:key="index"
+            >
+              <text
+                class="{{[item[$orig].disable?'uni-select__selector__disabled':'']}}"
+                >{{item.m0}}</text
+              >
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</view>

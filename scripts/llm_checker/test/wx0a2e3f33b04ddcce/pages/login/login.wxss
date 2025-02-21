@@ -1,0 +1,67 @@
+.container {
+  flex-direction: column !important;
+  font-family: PingFangSC, PingFangSC-Regular;
+}
+.main {
+  padding: 72rpx;
+}
+.background {
+  height: 218rpx;
+  width: 100%;
+}
+.user-info {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 196rpx;
+  text-align: center;
+  width: 100%;
+}
+.login-form {
+  padding-bottom: 90rpx;
+}
+.user-image {
+  height: 160rpx;
+  margin-bottom: 22rpx;
+  width: 160rpx;
+}
+.account {
+  padding-bottom: 16rpx;
+}
+.van-cell {
+  border-bottom: 1rpx solid #eaeaea;
+}
+.van-button {
+  font-weight: 500 !important;
+  width: 100% !important;
+}
+.imageCode {
+  height: 30rpx;
+  margin-right: 20rpx;
+  transform: scale(1.5);
+  width: 75rpx;
+}
+.privacy {
+  color: #1b263c;
+  padding-left: 30rpx;
+  position: relative;
+  top: 50rpx;
+}
+.privacy .navigator {
+  display: inline-block;
+}
+.privacy .navigator,
+.subtext {
+  color: #3469fc;
+  font-size: 30rpx;
+}
+.subtext {
+  padding-top: 30rpx;
+  text-align: center;
+}
+.tip {
+  color: grey;
+  font-size: 24rpx;
+  margin-top: 30rpx;
+}

@@ -1,0 +1,10 @@
+<view class="serach">
+    <view class="content" style="{{'border-radius:'+radius+'px'+';'}}">
+        <view class="{{['content-box',mode===2?'center':'']}}">
+            <text class="iconfont icon-sousuo"></text>
+            <input bindblur="__e" bindconfirm="__e" bindfocus="__e" bindinput="__e" class="{{['input',!active&&mode===2?'center':'']}}" confirmType="search" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','inputVal','$event',[] ] ],[ 'inputChange',['$event'] ] ] ],[ 'confirm',[ [ 'triggerConfirm',['$event'] ] ] ],[ 'focus',[ [ 'focus',['$event'] ] ] ],[ 'blur',[ [ 'blur',['$event'] ] ] ] ]}}" focus="{{isFocus}}" placeholder="{{placeholder}}" placeholderStyle="font-size: 14px" value="{{inputVal}}"></input>
+            <text bindtap="__e" class="iconfont iconguanbi" data-event-opts="{{[ [ 'tap',[ [ 'clear',['$event'] ] ] ] ]}}" hidden="{{!isDelShow}}"></text>
+        </view>
+    </view>
+    <view bindtap="__e" class="back" data-event-opts="{{[ [ 'tap',[ [ 'back',['$event'] ] ] ] ]}}" style="{{'border-color:'+themeColor+';'+'color:'+themeColor+';'}}">{{searchName}}</view>
+</view>

@@ -1,0 +1,47 @@
+<view class="container _div data-v-67e6cc64">
+  <scroll-view
+    bindscrolltolower="__e"
+    class="content data-v-67e6cc64"
+    data-event-opts="{{[ [ 'scrolltolower',[ [ 'toBottomRefresh',['$event'] ] ] ] ]}}"
+    enableBackToTop="{{true}}"
+    scrollY="{{true}}"
+  >
+    <view class="topic-list _div data-v-67e6cc64" wx:if="{{dataList}}">
+      <view
+        class="topic-list-line _div data-v-67e6cc64"
+        wx:for="{{dataList}}"
+        wx:key="index"
+      >
+        <view
+          bindtap="__e"
+          class="topic-list-line-item _div data-v-67e6cc64"
+          data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+          data-event-params="{{itemInner:itemInner}}"
+          wx:for="{{item}}"
+          wx:for-index="indexInner"
+          wx:for-item="itemInner"
+          wx:key="indexInner"
+        >
+          <view class="topic-list-line-item-pic _div data-v-67e6cc64">
+            <image
+              class="pic _img data-v-67e6cc64"
+              lazyLoad="{{true}}"
+              mode="aspectFit"
+              src="{{itemInner.articleImages}}"
+            ></image>
+          </view>
+          <view class="topic-list-line-item-code _div data-v-67e6cc64"
+            >{{itemInner.reference}}</view
+          >
+          <view class="topic-list-line-item-detail _div data-v-67e6cc64"
+            >{{itemInner.caseMaterial}}</view
+          >
+          <view class="topic-list-line-item-title _div data-v-67e6cc64"
+            >{{itemInner.collection}}</view
+          >
+        </view>
+      </view>
+    </view>
+    <view class="filter-bottom _div data-v-67e6cc64"></view>
+  </scroll-view>
+</view>

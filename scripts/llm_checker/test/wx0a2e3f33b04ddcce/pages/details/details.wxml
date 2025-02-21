@@ -1,0 +1,73 @@
+<navBar
+  back="{{true}}"
+  bindback="handlerGobackClick"
+  bindhome="handlerGohomeClick"
+  home="{{false}}"
+  title="交易明细"
+></navBar>
+<view class="container">
+  <view style="height: 90rpx">
+    <view class="time-picker">
+      <van-dropdown-menu>
+        <van-dropdown-item id="pickDate" title="{{displayDate}}">
+          <van-datetime-picker
+            bind:confirm="onSelect"
+            minDate="{{minDate}}"
+            type="year-month"
+            value="{{currentDate}}"
+          ></van-datetime-picker>
+        </van-dropdown-item>
+      </van-dropdown-menu>
+    </view>
+  </view>
+  <view class="details" style="padding-top: 90rpx; box-sizing: border-box">
+    <view class="main">
+      <view class="panel" wx:for="{{detailsData}}" wx:key="*this">
+        <view class="panel-info-part">
+          <view class="panel-info">
+            <view class="panel-device">
+              <view class="device-name">{{item.method}}</view>
+              <view class="pay-status">
+                <van-tag
+                  color="#EFEFEF"
+                  textColor="#999999"
+                  wx:if="{{item.tradeState!=='1'}}"
+                  >{{item.status}}</van-tag
+                >
+                <van-tag
+                  color="#EAFCE0"
+                  textColor="#5DB200"
+                  wx:if="{{item.tradeState==='1'}}"
+                  >{{item.status}}</van-tag
+                >
+              </view>
+            </view>
+            <view class="panel-status">{{item.createTimeFormat}}</view>
+          </view>
+        </view>
+        <view class="panel-money-part">
+          <view class="moneyRed" wx:if="{{item.moneyFormat>0}}"
+            >{{item.moneyFormat}}</view
+          >
+          <view class="moneyBlack" wx:else>{{item.moneyFormat}}</view>
+          <view class="buttonB" wx:if="{{item.tradeState==='0'}}">
+            <van-button
+              plain
+              bind:click="updateRechargeOrderState"
+              disabled="{{isDisabled}}"
+              icon="replay"
+              id="{{item.tradeNo}}"
+              type="info"
+              >刷新</van-button
+            >
+          </view>
+        </view>
+      </view>
+      <view class="subInfo" wx:if="{{pageNum===totalPage||totalPage===0}}"
+        >已获取全部数据</view
+      >
+      <view class="subInfo" wx:else>上划获取新数据</view>
+    </view>
+  </view>
+  <van-toast id="van-toast"></van-toast>
+</view>

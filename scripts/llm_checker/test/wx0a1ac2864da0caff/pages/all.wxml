@@ -1,0 +1,35 @@
+<view class="container _div data-v-33b4d066">
+    <scroll-view bindscrolltolower="__e" class="content data-v-33b4d066" data-event-opts="{{[ [ 'scrolltolower',[ [ 'toBottomRefresh',['$event'] ] ] ] ]}}" enableBackToTop="{{true}}" scrollY="{{true}}">
+        <view class="all-search-out _div data-v-33b4d066">
+            <view class="all-search-bar _div data-v-33b4d066">
+                <view class="icon-search _div data-v-33b4d066">
+                    <image class="pic _img data-v-33b4d066" src="/static/img/icon-search.svg"></image>
+                </view>
+                <input bindconfirm="__e" bindinput="__e" class="input data-v-33b4d066" confirmType="search" data-event-opts="{{[ [ 'confirm',[ [ 'confirmSearch',['$event'] ] ] ],[ 'input',[ [ '__set_model',[ '','searchText','$event',[] ] ] ] ] ]}}" focus="{{true}}" placeholder="百达翡丽型号或关键字" type="text" value="{{searchText}}"></input>
+            </view>
+            <view bindtap="__e" class="filter-right _div data-v-33b4d066" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}">
+                <view class="icon-filter _div data-v-33b4d066">
+                    <image class="pic _img data-v-33b4d066" src="/static/img/icon-filter.svg"></image>
+                </view>
+                <view class="_div data-v-33b4d066">筛选</view>
+            </view>
+        </view>
+        <view class="topic-list _div data-v-33b4d066" wx:if="{{$root.g0}}">
+            <view class="topic-list-line _div data-v-33b4d066" wx:for="{{productShow}}" wx:key="index">
+                <view bindtap="__e" class="topic-list-line-item _div data-v-33b4d066" data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}" data-event-params="{{itemInner:itemInner}}" wx:for="{{item}}" wx:for-index="indexInner" wx:for-item="itemInner" wx:key="indexInner">
+                    <view class="topic-list-line-item-pic _div data-v-33b4d066">
+                        <image class="pic _img data-v-33b4d066" lazyLoad="{{true}}" mode="aspectFit" src="{{itemInner.articleImages}}"></image>
+                    </view>
+                    <view class="topic-list-line-item-code _div data-v-33b4d066">{{itemInner.reference}}</view>
+                    <view class="topic-list-line-item-detail _div data-v-33b4d066">{{itemInner.caseMaterial}}</view>
+                    <view class="topic-list-line-item-title _div data-v-33b4d066">{{itemInner.collection}}</view>
+                </view>
+            </view>
+        </view>
+        <block wx:else>
+            <view class="topic-empty _div data-v-33b4d066" wx:if="{{$root.g1}}">未查询到结果</view>
+        </block>
+        <view class="filter-bottom _div data-v-33b4d066"></view>
+        <view class="all-gap _div data-v-33b4d066"></view>
+    </scroll-view>
+</view>

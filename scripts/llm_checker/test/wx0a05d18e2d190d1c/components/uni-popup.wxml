@@ -1,0 +1,20 @@
+<view class="uni-popup" wx:if="{{showPopup}}">
+  <view
+    bindtap="__e"
+    class="{{['uni-popup__mask',ani,animation?'ani':'',!custom?'uni-custom':'']}}"
+    data-event-opts="{{[ [ 'tap',[ [ 'close',[true] ] ] ] ]}}"
+  ></view>
+  <view
+    bindtap="__e"
+    class="{{['uni-popup__wrapper',type,ani,animation?'ani':'',!custom?'uni-custom':'']}}"
+    data-event-opts="{{[ [ 'tap',[ [ 'close',[true] ] ] ] ]}}"
+  >
+    <view
+      catchtap="__e"
+      class="uni-popup__wrapper-box"
+      data-event-opts="{{[ [ 'tap',[ [ 'clear',['$event'] ] ] ] ]}}"
+    >
+      <slot></slot>
+    </view>
+  </view>
+</view>

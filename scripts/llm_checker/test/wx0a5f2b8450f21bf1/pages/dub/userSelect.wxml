@@ -1,0 +1,41 @@
+<view class="container">
+  <view class="left">
+    <view
+      bindtap="changeIndex"
+      class="{{index==selectIndex?'left_item':'left_item_default'}}"
+      data-index="{{index}}"
+      wx:for="{{category}}"
+      wx:key="index"
+    >
+      {{item}}
+    </view>
+  </view>
+  <view class="right">
+    <view
+      bindtap="choosePerson"
+      class="right_item"
+      data-index="{{index}}"
+      wx:if="{{selectIndex==item.category}}"
+      wx:for="{{detail}}"
+      wx:key="index"
+    >
+      <view style="flex: 1">
+        <view class="itemName">{{item.name}}</view>
+        <view class="itemSuit">{{item.suit}}</view>
+      </view>
+      <view
+        catchtap="closeAudio"
+        class="stop-listen-demo"
+        wx:if="{{nowPalySourceIndex==item.id}}"
+        >暂停播放</view
+      >
+      <view
+        catchtap="listenDemo"
+        class="listen-demo"
+        data-id="{{item.id}}"
+        wx:else
+        >试听一下</view
+      >
+    </view>
+  </view>
+</view>

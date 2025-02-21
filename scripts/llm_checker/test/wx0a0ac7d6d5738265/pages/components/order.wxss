@@ -1,0 +1,61 @@
+.header {
+  background-color: transparent;
+  width: 750rpx;
+}
+.header .navBar {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 30rpx;
+  font-weight: 600;
+  justify-content: center;
+  text-align: center;
+}
+.header .navBar .right_icon {
+  float: left;
+  padding-left: 24rpx;
+}
+.header .navBar .right_icon image {
+  height: 46rpx;
+  line-height: 46rpx;
+  width: 30rpx;
+}
+.warp {
+  font-family: myfontB;
+  position: relative;
+  width: 750rpx;
+}
+.warp .content {
+  margin-top: 10rpx;
+}
+.nologin,
+.warp .content {
+  position: fixed;
+  width: 100%;
+}
+.nologin {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.nologin .text {
+  color: #45474d;
+  font-size: 30rpx;
+}
+.nologin button {
+  align-items: center;
+  background-color: #06b9c0;
+  border-radius: 20rpx;
+  color: #fff;
+  display: -webkit-flex;
+  display: flex;
+  height: 70rpx;
+  justify-content: center;
+  margin-top: 20rpx;
+  width: 209rpx;
+}

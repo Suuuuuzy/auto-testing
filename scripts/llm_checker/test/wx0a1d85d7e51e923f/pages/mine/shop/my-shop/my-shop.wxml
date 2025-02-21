@@ -1,0 +1,93 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<import src="/pages/template/shop-item/shop-item.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view class="margin-top-xs bg-white" wx:for="{{pageData.shops}}" wx:key="index">
+  <template
+    is="_shopListItem"
+    data="{{isUy:isUy,Str:Str,lanIndex:lanIndex,item:item,ossImage:ossImage,navUrl:'/pkgAdmin/pages/mine/shop/shop-home/shop-home?shopId='+item.id}}"
+  ></template>
+  <navigator
+    class="padding-tb-sm padding-right-sm flex"
+    url="/pkgAdmin/pages/mine/shop/shop-home/shop-home?shopId={{item.id}}"
+    wx:if="{{0}}"
+  >
+    <view class="flex-sub text-center">
+      <image
+        class="radius"
+        mode="aspectFill"
+        src="{{ossImage+item.icon_url+'?x-oss-process=image/resize,m_lfit,h_200,w_200'}}"
+        style="width: 140rpx; height: 140rpx"
+      ></image>
+    </view>
+    <view class="flex-treble">
+      <view class="text-lg text-black">{{isUy?item.uy_name:item.ch_name}}</view>
+      <view class="shop-title">
+        <view class="flex justify-between">
+          <view class="text-sm">
+            <text
+              class="icon icon-favorfill text-{{index<item.star_count?'yellow':'gray'}}"
+              wx:for="{{5}}"
+              wx:for-item="_item"
+              wx:key="index"
+            ></text>
+          </view>
+          <view class="{{isUy?'rtl':''}}" style="">
+            <text class="text-sm text-cyan"
+              >{{item.arrive_time}}{{Str.minut[lanIndex]}}</text
+            >
+            <text
+              class="text-grey text-sm padding-lr-xs"
+              wx:if="{{item.distance&&item.distance!=-1}}"
+              >|</text
+            >
+            <text
+              class="text-sm text-pink"
+              wx:if="{{item.distance&&item.distance!=-1}}"
+              >{{item.distance}}</text
+            >
+          </view>
+        </view>
+      </view>
+      <view class="flex justify-start">
+        <view class="{{isUy?'rtl':''}} text-sm"
+          >{{Str.startPrice[lanIndex]}}
+          <text class="text-price text-pink">{{item.starting_price}}</text>
+        </view>
+        <view class="text-grey padding-lr-xs text-sm"> | </view>
+        <view class="{{isUy?'rtl':''}} text-sm"
+          >{{Str.deliveryFee[lanIndex]}}
+          <text class="text-price text-pink">{{item.delivery_fee}}</text>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</view>
+<view>
+  <view class="weui-loadmore weui-loadmore_line">
+    <view
+      class="weui-loadmore__tips weui-loadmore__tips_in-line"
+      style="background-color: #f1f1f1"
+    >
+      {{Str.noContent[lanIndex]}}</view
+    >
+  </view>
+</view>
+<view
+  class="weui-footer weui-footer_fixed-bottom solids-top"
+  style="bottom: 0"
+  wx:if="{{0}}"
+>
+  <view class="bg-white text-center padding-sm">
+    <view class="text-center">
+      <button
+        bindgetuserinfo="addShopBtn"
+        class="cu-btn lg block bg-pink"
+        openType="getUserInfo"
+      >
+        <text class="icon-roundadd padding-xs"></text> {{Str.addShop[lanIndex]}}
+      </button>
+    </view>
+  </view>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

@@ -1,0 +1,16 @@
+<view
+  bindtap="__e"
+  data-event-opts="{{[ [ 'tap',[ [ 'clickEvent',['$event'] ] ] ] ]}}"
+>
+  <slot></slot>
+  <scoped-slots-default
+    bind:__l="__l"
+    class="scoped-ref"
+    day="{{timeData.day}}"
+    hour="{{timeData.hour}}"
+    minute="{{timeData.minute}}"
+    remain="{{timeData.remain}}"
+    second="{{timeData.second}}"
+    time="{{time}}"
+  ></scoped-slots-default>
+</view>

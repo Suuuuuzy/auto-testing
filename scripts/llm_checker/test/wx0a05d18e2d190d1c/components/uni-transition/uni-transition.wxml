@@ -1,0 +1,10 @@
+<view
+  bindtap="__e"
+  class="{{['uni-transition vue-ref',ani.in]}}"
+  data-event-opts="{{[ [ 'tap',[ [ 'change',['$event'] ] ] ] ]}}"
+  data-ref="ani"
+  style="{{'transform:'+transform+';'+stylesObject}}"
+  wx:if="{{isShow}}"
+>
+  <slot></slot>
+</view>

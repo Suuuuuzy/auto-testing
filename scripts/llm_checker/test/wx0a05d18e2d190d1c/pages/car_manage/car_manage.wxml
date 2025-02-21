@@ -1,0 +1,111 @@
+<view class="page">
+  <scroll-view scrollY="true" style="margin-bottom: 100rpx">
+    <empty
+      bind:__l="__l"
+      vueId="43e03880-1"
+      wx:if="{{carList.length==0}}"
+    ></empty>
+    <view class="item_layout_style" wx:for="{{carList}}" wx:key="index">
+      <view
+        bindtap="__e"
+        data-event-opts="{{[ [ 'tap',[ [ 'click_item_viewFun',['$event'] ] ] ] ]}}"
+        data-value="{{item}}"
+      >
+        <view class="plate_no_style">{{item.plateNo}}</view>
+        <view
+          class="{{[currentCar.carId==item.carId?'current_car_style':'view_hidde']}}"
+          >当前车辆</view
+        >
+        <view
+          class="{{[item.bluetooth==undefined?'bind_text_style_nor':'bind_text_style_sel']}}"
+          style="top: 120rpx"
+          >{{''+(item.bluetooth==undefined?'未绑定蓝牙':'已绑定蓝牙')+''}}</view
+        >
+        <view
+          class="{{[item.gps==undefined?'bind_text_style_nor':'bind_text_style_sel']}}"
+          style="top: 160rpx"
+          >{{''+(item.gps==undefined?'未绑定模组':'已绑定模组')+''}}</view
+        >
+        <image
+          class="{{[item.isAuthorizeCar?'author_style':'view_hidde']}}"
+          mode="aspectFit"
+          src="../../static/images/icon_authored.png"
+        ></image>
+        <image
+          class="car_logo_style"
+          mode="aspectFit"
+          src="{{item.brandLogo==undefined?'../../static/images/icon_authored.png':item.brandLogo}}"
+        ></image>
+        <text class="car_series_name_style">{{item.seriesName}}</text>
+        <view class="item_click_view_style"></view>
+      </view>
+      <view class="line_grey"></view>
+      <view class="item_btn_layout_style">
+        <view
+          bindtap="__e"
+          class="icon_layout_style"
+          data-event-opts="{{[ [ 'tap',[ [ 'click_terminalFun',['$event'] ] ] ] ]}}"
+          data-value="{{item}}"
+        >
+          <image
+            class="icon_style"
+            mode="aspectFit"
+            src="../../static/images/icon_terminal_sel.png"
+          ></image>
+          <view class="icon_text_style_sel">终端</view>
+        </view>
+        <view
+          bindtap="__e"
+          class="icon_layout_style"
+          data-event-opts="{{[ [ 'tap',[ [ 'click_authFun',['$event'] ] ] ] ]}}"
+          data-value="{{item}}"
+        >
+          <image
+            class="icon_style"
+            mode="aspectFit"
+            src="{{item.isAuthorizeCar?'../../static/images/icon_author_nor.png':'../../static/images/icon_author_sel.png'}}"
+          ></image>
+          <view
+            class="{{[item.isAuthorizeCar?'icon_text_style':'icon_text_style_sel']}}"
+            >授权</view
+          >
+        </view>
+        <view
+          bindtap="__e"
+          class="icon_layout_style"
+          data-event-opts="{{[ [ 'tap',[ [ 'click_renewFun',['$event'] ] ] ] ]}}"
+          data-value="{{item}}"
+        >
+          <image
+            class="icon_style"
+            mode="aspectFit"
+            src="{{item.gps==undefined?'../../static/images/icon_renew_nor.png':'../../static/images/icon_renew_sel.png'}}"
+          ></image>
+          <view
+            class="{{[item.gps==undefined?'icon_text_style':'icon_text_style_sel']}}"
+            >续费</view
+          >
+        </view>
+        <view
+          bindtap="__e"
+          class="icon_layout_style"
+          data-event-opts="{{[ [ 'tap',[ [ 'click_setFun',['$event'] ] ] ] ]}}"
+          data-value="{{item}}"
+        >
+          <image
+            class="icon_style"
+            mode="aspectFit"
+            src="../../static/images/icon_set_sel.png"
+          ></image>
+          <view class="icon_text_style_sel">设置</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <image
+    bindtap="__e"
+    class="add_btn_style"
+    data-event-opts="{{[ [ 'tap',[ [ 'click_add_carFun',['$event'] ] ] ] ]}}"
+    src="../../static/images/icon_add.png"
+  ></image>
+</view>

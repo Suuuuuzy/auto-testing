@@ -1,0 +1,44 @@
+<view>
+  <map
+    id="myMap"
+    latitude="{{centerLat}}"
+    longitude="{{centerLng}}"
+    markers="{{marker}}"
+    polyline="{{polyline}}"
+    scale="{{scale}}"
+    showLocation="{{true}}"
+    style="{{'width:'+maxWidth+'px;height:'+maxHeight+'px;'}}"
+    subkey="{{mapKey}}"
+  ></map>
+  <view class="bottom_view">
+    <view class="play_btn_view">
+      <image
+        bindtap="__e"
+        data-event-opts="{{[ [ 'tap',[ [ 'clickPlay',['$event'] ] ] ] ]}}"
+        mode="aspectFit"
+        src="{{isPlaying?'../../static/images/icon_route_stop.png':'../../static/images/icon_route_play.png'}}"
+        style="width: 60rpx; height: 60rpx"
+      ></image>
+    </view>
+    <view class="slider_content_view">
+      <view class="slider_progress_view">
+        <text style="width: 60rpx; height: 60rpx">进度</text>
+        <cu-progress
+          activeColor="#0693FF"
+          bind:__l="__l"
+          bind:dragged="__e"
+          bind:dragging="__e"
+          class="progress"
+          data-event-opts="{{[ [ '^dragging',[ ['sliderChanging'] ] ],[ '^dragged',[ ['sliderChange'] ] ] ]}}"
+          handleSize="0"
+          max="{{maxValue}}"
+          noActiveColor="#E1E1E1"
+          strokeWidth="30"
+          value="{{playIndex}}"
+          vueId="906713c0-1"
+          width="66vw"
+        ></cu-progress>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="verify-body">
+    <image
+      class="verify-img"
+      src="../asserts/images/userCenter_faceVerify.png"
+    ></image>
+    <view class="verify-text">请正对手机，确保光线充足</view>
+    <button bindtap="bindfaceVerifyTap" class="faceVerify-btn">开始刷脸</button>
+  </view>
+</view>

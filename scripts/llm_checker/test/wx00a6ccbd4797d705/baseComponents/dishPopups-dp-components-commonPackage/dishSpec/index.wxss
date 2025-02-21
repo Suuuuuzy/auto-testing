@@ -1,0 +1,77 @@
+.grid.data-v-7539d83d {
+  display: grid;
+}
+.dish-spec.data-v-7539d83d {
+  grid-gap: 20rpx 20rpx;
+  grid-template-columns: repeat(3, 1fr);
+}
+.dish-spec .h100p.data-v-7539d83d {
+  height: 100%;
+}
+.dish-spec .cook-wrap.data-v-7539d83d {
+  border: 2rpx solid;
+  border-radius: 6rpx;
+}
+.dish-spec .cook-wrap .img-box.data-v-7539d83d {
+  box-sizing: border-box;
+  font-size: 0;
+  padding-bottom: 100%;
+  width: 100%;
+}
+.dish-spec .cook-wrap .img-box .image.data-v-7539d83d {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.dish-spec .cook-wrap .img-box .guQingTip.data-v-7539d83d {
+  background-color: rgba(0, 0, 0, 0.2);
+  bottom: 0;
+  height: 48rpx;
+  line-height: 48rpx;
+  width: 100%;
+}
+.dish-spec .cook-wrap .img-box .limit.data-v-7539d83d {
+  border-radius: 0 0 6rpx 0;
+  left: 0;
+  line-height: 32rpx;
+  padding: 0 12rpx;
+  top: 0;
+}
+.dish-spec .cook-wrap .content.data-v-7539d83d {
+  padding: 14rpx 0 20rpx;
+}
+.dish-spec .singleBtn.data-v-7539d83d {
+  height: 36rpx;
+  right: -10rpx;
+  top: -10rpx;
+  width: 36rpx;
+}
+.dish-spec .singleBtn .iconfont.data-v-7539d83d {
+  left: 0;
+  top: 0;
+}
+.dish-spec-no-image.data-v-7539d83d {
+  grid-gap: 26rpx 26rpx;
+  grid-auto-flow: row dense;
+  grid-template-columns: repeat(2, 1fr);
+}
+.dish-spec-no-image .item.data-v-7539d83d {
+  border: 1px solid #ddd;
+  border-radius: 8rpx;
+  height: 68rpx;
+  line-height: normal;
+  padding: 0 20rpx;
+}
+.dish-spec-no-image .sellout-tag.data-v-7539d83d {
+  background-image: url(https://cdnpic.wuuxiang.com/msgjDecorationImg/guqingbg.png);
+}
+.dish-spec-no-image .for-sale.data-v-7539d83d {
+  border: 2rpx solid;
+  border-radius: 4rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  padding: 0 6rpx;
+  right: 8rpx;
+  top: -14rpx;
+  z-index: 1;
+}

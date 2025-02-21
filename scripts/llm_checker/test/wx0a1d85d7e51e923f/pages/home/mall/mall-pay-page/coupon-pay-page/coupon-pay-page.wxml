@@ -1,0 +1,166 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<import src="/pages/template/coupon/coupon-item.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view wx:if="{{payedPage}}">
+    <view class="margin-tb-sm payed-bg bg-img padding-xs" style="margin-left:25rpx">
+        <view class="text-center">
+            <text>{{Str.paySuccessed[lanIndex]}}</text>
+        </view>
+        <view class="text-center ">
+            <i class="iconfont icon-coupon_icon_5" style="font-size:50rpx"></i>
+        </view>
+        <view class="text-center">
+            <text class="text-black text-block text-lg">{{isUy?shop.uy_name:shop.ch_name}}</text>
+        </view>
+        <view class="margin-sm solid-bottom padding-xs">
+            <view class="flex justify-between">
+                <view>
+                    <text>{{Str.orderAmount[lanIndex]}}</text>
+                </view>
+                <view>
+                    <text class="text-xl text-block text-price">{{payedData.order.total_fee}}</text>
+                </view>
+            </view>
+            <view class="flex justify-between">
+                <view>
+                    <text>{{Str.couponAmount[lanIndex]}}</text>
+                </view>
+                <view>-<text class="text-xl text-pink text-price">{{payedData.order.actual_discount_fee}}</text>
+                </view>
+            </view>
+            <view class="flex justify-between">
+                <view>
+                    <text>{{Str.payedTime[lanIndex]}}</text>
+                </view>
+                <view>
+                    <text class="text-sm text-gray">{{payedData.order.created_at}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="padding-lr-sm">
+            <view class="flex justify-between">
+                <view>
+                    <text class="text-lg text-black">{{Str.actulyPayed[lanIndex]}}</text>
+                </view>
+                <view>
+                    <text class="text-xl text-block text-price">{{payedData.order.actual_fee}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="margin-top-sm">
+            <view class="margin-top-xs " wx:for="{{payedData.coupon}}">
+                <template is="couponItem" data="{{item:item,Str:Str,lanIndex:lanIndex,isUy:isUy,index:index}}"></template>
+            </view>
+        </view>
+    </view>
+    <template is="footer" data></template>
+</view>
+<view wx:else>
+    <view class="tap-page">
+        <view class="cu-list menu sm-border margin-top-sm">
+            <view class="cu-item">
+                <view class="content">
+                    <view>
+                        <text class="text-gray text-lg text-black">{{isUy?shop.uy_name:shop.ch_name}}</text>
+                    </view>
+                </view>
+                <view class="action">
+                    <view class="cu-avatar round lg" style="background-image:url({{ossImage+shop.icon_url+'?x-oss-process=image/resize,m_lfit,h_200,w_200'}})"></view>
+                </view>
+            </view>
+        </view>
+        <view class="margin-xs bg-white" style="border-radius:20rpx 20rpx 0rpx 0rpx">
+            <view class="cu-list menu sm-border">
+                <view class="cu-item">
+                    <view>
+                        <view class="text-lg">{{Str.allAmount[lanIndex]}}</view>
+                        <view class="cu-form-group margin-top">
+                            <view class="title">
+                                <text class="text-xxl text-price text-red"></text>
+                            </view>
+                            <input bindblur="inputBlur" bindfocus="inputFocus" bindinput="inputChange" disabled="{{hasOrder}}" focus="{{amountFocus}}" placeholder="{{Str.inputAmount[lanIndex]}}" style="font-size:36rpx" type="digit" value="{{allAmount}}"></input>
+                        </view>
+                    </view>
+                </view>
+                <view class="cu-item">
+                    <view class="padding-tb-xs">
+                        <view class="flex justify-between" style="width:650rpx">
+                            <view class="text-lg">
+                                <text class="icon-title text-pink margin-right-xs"></text> {{Str.couponAmount[lanIndex]}} </view>
+                            <view>-<text class="text-price text-pink text-xl text-bold">{{couponAmount}}</text>
+                            </view>
+                        </view>
+                        <view class="flex justify-between">
+                            <view class="text-lg">
+                                <text class="icon-title text-pink  margin-right-xs"></text> {{Str.actulyPayed[lanIndex]}} </view>
+                            <view>
+                                <text class="text-price text-black text-xl text-bold">{{actulyAmount}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="cu-item">
+                    <view class="padding-tb-xs">
+                        <view class="flex justify-between" style="width:650rpx">
+                            <view>
+                                <text class="text-black text-bold text-xl">{{Str.couponCart[lanIndex]}}</text>
+                            </view>
+                            <view>
+                                <view bindtap="allChekChange">
+                                    <text class="margin-lr-xs">{{Str.select[lanIndex]}}</text>
+                                    <text class="icon-{{allChecked?'roundcheckfill':'round'}} text-xxl text-{{allChecked?'pink':'grey'}}" style="font-size:50rpx"></text>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="flex justify-between">
+                            <view>
+                                <view class="rtl" wx:if="{{isUy}}">
+                                    <text>تاللانغىنى </text>
+                                    <text class="text-pink text-lg"> {{selectedCartCount}} </text>
+                                    <text>تال</text>
+                                </view>
+                                <view wx:else>
+                                    <text>已选</text>
+                                    <text class="text-pink text-lg">{{selectedCartCount}}</text>
+                                    <text>张</text>
+                                </view>
+                            </view>
+                            <view>
+                                <view class="rtl" wx:if="{{isUy}}">
+                                    <text>ئەڭ يوقىرى ئېتىبار</text>
+                                    <text class="text-pink text-lg">{{maxCouponAmount}}</text>
+                                    <text>يۈەن</text>
+                                </view>
+                                <view wx:else>
+                                    <text>最高抵扣</text>
+                                    <text class="text-pink text-lg"> {{maxCouponAmount}} </text>
+                                    <text>元</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="bg-white padding-xs margin-xs" wx:if="{{coupon.length>0}}">
+            <view class="margin-tb-xs " wx:for="{{coupon}}">
+                <template is="couponItem" data="{{item:item,Str:Str,lanIndex:lanIndex,isUy:isUy,hasSelected:true,index:index}}"></template>
+            </view>
+        </view>
+        <view class="margin-xl padding-xl text-center" style="margin-top:100px" wx:else>
+            <text class="text-gray">{{Str.noCouponCart[lanIndex]}}</text>
+        </view>
+    </view>
+    <view class="weui-footer weui-footer_fixed-bottom" style="bottom:{{confirmBottom}}px">
+        <view class="bg-white margin-top text-center padding">
+            <view class="text-center">
+                <button bindtap="subBtn" class="cu-btn block bg-pink lg"> {{Str.confirmPay[lanIndex]}} </button>
+            </view>
+        </view>
+    </view>
+</view>
+<view style="position:fixed;right:50%; bottom:50%;">
+    <template is="lan" data></template>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

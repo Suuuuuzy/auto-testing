@@ -1,0 +1,25 @@
+@import "/components/vant/common/index.wxss";
+.van-rate {
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  user-select: none;
+}
+.van-rate__item {
+  padding: 0 2px;
+  padding: 0 var(--rate-horizontal-padding, 2px);
+  position: relative;
+}
+.van-rate__icon {
+  display: block;
+  font-size: 20px;
+  font-size: var(--rate-icon-size, 20px);
+  height: 1em;
+}
+.van-rate__icon--half {
+  left: 2px;
+  left: var(--rate-horizontal-padding, 2px);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 0.5em;
+}

@@ -1,0 +1,18 @@
+{
+  "component": true,
+  "usingComponents": {
+    "block-model": "/pages/dishPopups-tc-pop-blockModel-commonPackage/index",
+    "img-text-model": "/pages/dishPopups-tc-pop-imgTextModel-commonPackage/index",
+    "pure-text-model": "/pages/dishPopups-tc-pop-pureTextModel-commonPackage/index",
+    "bundle-model": "/pages/dishPopups-tc-pop-bundleModel-commonPackage/index",
+    "random-model": "/pages/dishPopups-tc-pop-randomModel-commonPackage/index",
+    "send-coupon": "plugin://wxf3f436ba9bd4be7b/send-coupon"
+  },
+  "componentPlaceholder": {
+    "block-model": "view",
+    "img-text-model": "view",
+    "pure-text-model": "view",
+    "bundle-model": "view",
+    "random-model": "view"
+  }
+}

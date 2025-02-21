@@ -1,0 +1,23 @@
+<view
+  ariaRole="option"
+  class="{{classPrefix}} {{classPrefix}}--{{theme}} {{classPrefix}}--{{size}} class {{prefix}}-class "
+  style="{{_._style( [style,customStyle] )}}"
+>
+  <slot name="content" wx:if="{{content!=='default'}}"></slot>
+  <slot wx:if="{{content!=='default'}}"></slot>
+  <block wx:elif="{{theme=='default'&&!splitWithUnit}}"
+    >{{formattedTime}}</block
+  >
+  <block wx:else>
+    <block wx:for="{{timeRange}}" wx:key="index">
+      <text class="{{classPrefix}}__item {{prefix}}-class-count"
+        >{{this.format( timeData[ timeRange[index] ] )}}</text
+      >
+      <text
+        class="{{classPrefix}}__split {{classPrefix}}__split--{{splitWithUnit?'text':'dot'}} {{prefix}}-class-split"
+        wx:if="{{splitWithUnit||timeRange.length-1!==index}}"
+        >{{splitWithUnit?timeDataUnit[ timeRange[index] ]:':'}}</text
+      >
+    </block>
+  </block>
+</view>

@@ -1,0 +1,30 @@
+<import src="/pages/template/error-page/error-page.wxml"></import>
+<import src="/pages/template/shop-item/shop-item.wxml"></import>
+<view class="tap-page" wx:if="{{result&&!errorPage}}">
+    <view class="cu-bar bg-white search solid-top">
+        <navigator class="search-form radius" url="/pages/shop-home/shop-search/shop-search">
+            <text class="icon-search"></text>
+            <input bindconfirm="searchConfirm" confirmType="search" placeholder="请输入店铺名称" type="text"></input>
+        </navigator>
+    </view>
+    <view class="margin-xs bg-white radius padding-xs" wx:if="{{result.mallType}}">
+        <view class="grid col-5">
+            <view bindtap="shopMenuClick" class="padding-sm text-center" data-item="{{item}}" wx:for="{{result.mallType}}">
+                <view>
+                    <image mode="scaleToFill" src="{{item.img_url}}" style="width:70rpx;height:70rpx"></image>
+                </view>
+                <view class="text-black text-xs text-center">{{isUy?item.uy_name:item.ch_name}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="{{result.setting.is_open==1&&item.is_open==1?'':'grayscale'}} margin-lr-xs margin-bottom-xs" wx:for="{{result.shops.data}}" wx:key="index">
+        <template is="_shopListItem" data="{{isUy:isUy,Str:Str,lanIndex:lanIndex,item:item,ossImage:ossImage,navUrl:'/pages/home/mall/mall-home'}}"></template>
+    </view>
+    <view>
+        <view class="weui-loadmore weui-loadmore_line">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line" style="background-color:#f1f1f1"> {{Str.noContent[lanIndex]}}</view>
+        </view>
+    </view>
+</view>
+<template is="errorPage" data="{{ content:Str.opratingError[lanIndex],retryStr:Str.retryAgain[lanIndex] }}" wx:if="{{errorPage}}"></template>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

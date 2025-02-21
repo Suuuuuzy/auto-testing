@@ -1,0 +1,133 @@
+<view class="invite-tab-page data-v-5b0fc7c4">
+  <u-navbar
+    background="{{background}}"
+    bind:__l="__l"
+    borderBottom="{{false}}"
+    class="data-v-5b0fc7c4"
+    isBack="{{false}}"
+    title="邀约"
+    titleBold="{{true}}"
+    titleColor="#000"
+    vueId="1cedb092-1"
+  ></u-navbar>
+  <view class="ad-content data-v-5b0fc7c4" wx:if="{{$root.g0>0}}">
+    <u-swiper
+      bind:__l="__l"
+      bind:click="__e"
+      borderRadius="10"
+      class="data-v-5b0fc7c4"
+      data-event-opts="{{[ [ '^click',[ ['handleClick'] ] ] ]}}"
+      height="200"
+      list="{{ads}}"
+      name="picUrl"
+      vueId="1cedb092-2"
+    ></u-swiper>
+  </view>
+  <view class="tabs-home-container data-v-5b0fc7c4">
+    <view
+      class="tabs-sticky data-v-5b0fc7c4"
+      style="{{'top:'+totalHeight+'px'+';'}}"
+    >
+      <view class="tabs-view data-v-5b0fc7c4">
+        <view
+          bindtap="__e"
+          class="{{['item-tab','data-v-5b0fc7c4',current===0?'active':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'checkTab',[0] ] ] ] ]}}"
+          >最新</view
+        >
+        <view
+          bindtap="__e"
+          class="{{['item-tab','data-v-5b0fc7c4',current===1?'active':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'checkTab',[1] ] ] ] ]}}"
+          >关注</view
+        >
+      </view>
+      <view
+        bindtap="__e"
+        class="filter-warp data-v-5b0fc7c4"
+        data-event-opts="{{[ [ 'tap',[ [ 'handleNavigater',['/pages/subPages/search/index?current='+current] ] ] ] ]}}"
+      >
+        <image
+          class="data-v-5b0fc7c4"
+          mode="widthFix"
+          src="http://image.fanglinxq.com/assets/icons/search.png"
+        ></image>
+        <text class="filter-name data-v-5b0fc7c4"
+          >{{query.cityName||'不限'}}</text
+        >
+      </view>
+    </view>
+    <item-invite
+      bind:__l="__l"
+      bind:setparams="__e"
+      class="data-v-5b0fc7c4"
+      data-event-opts="{{[ [ '^setparams',[ ['setparams'] ] ] ]}}"
+      dataList="{{dataList}}"
+      vueId="1cedb092-3"
+      wx:if="{{current===0}}"
+    ></item-invite>
+    <item-invite
+      bind:__l="__l"
+      class="data-v-5b0fc7c4"
+      dataList="{{focusList}}"
+      vueId="1cedb092-4"
+      wx:if="{{current===1}}"
+    ></item-invite>
+    <u-divider
+      bind:__l="__l"
+      class="data-v-5b0fc7c4"
+      color="#8629F5"
+      halfWidth="80"
+      vueId="1cedb092-5"
+      vueSlots="{{['default']}}"
+      wx:if="{{loading}}"
+    >
+      <u-loading
+        bind:__l="__l"
+        class="data-v-5b0fc7c4"
+        color="#8629F5"
+        show="{{true}}"
+        vueId="{{'1cedb092-6'+','+'1cedb092-5'}}"
+      ></u-loading>
+      <text class="loading-text data-v-5b0fc7c4">加载中...</text>
+    </u-divider>
+    <view class="empty-view data-v-5b0fc7c4" wx:if="{{$root.g1}}">
+      <u-empty
+        bind:__l="__l"
+        class="data-v-5b0fc7c4"
+        iconSize="300"
+        src="http://image.fanglinxq.com/assets/without.png"
+        text="暂无数据"
+        vueId="1cedb092-7"
+      ></u-empty>
+    </view>
+  </view>
+  <view
+    bindtap="__e"
+    class="push-btn data-v-5b0fc7c4"
+    data-event-opts="{{[ [ 'tap',[ [ 'toPush',['$event'] ] ] ] ]}}"
+  >
+    <image
+      class="data-v-5b0fc7c4"
+      mode="widthFix"
+      src="http://image.fanglinxq.com/assets/push.png"
+    ></image>
+  </view>
+  <auth-check
+    bind:__l="__l"
+    bind:input="__e"
+    class="data-v-5b0fc7c4"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','isAuthVisible','$event',[] ] ] ] ] ]}}"
+    value="{{isAuthVisible}}"
+    vueId="1cedb092-8"
+  ></auth-check>
+  <perfect-popup
+    bind:__l="__l"
+    bind:setVisble="__e"
+    class="data-v-5b0fc7c4"
+    data-event-opts="{{[ [ '^setVisble',[ ['setperfect'] ] ] ]}}"
+    isShow="{{isPerfect}}"
+    vueId="1cedb092-9"
+    wx:if="{{isPerfect}}"
+  ></perfect-popup>
+</view>

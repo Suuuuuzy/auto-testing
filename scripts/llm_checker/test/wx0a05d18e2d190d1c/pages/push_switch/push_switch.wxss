@@ -1,0 +1,80 @@
+.empty_page {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+  margin: 0 auto;
+  z-index: 9999;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+}
+.iv_logo_style {
+  margin-top: 300rpx;
+  margin-left: 285rpx;
+  width: 220rpx;
+  height: 220rpx;
+}
+.tv_msg_style {
+  text-align: center;
+  padding: 20rpx;
+  width: 350rpx;
+  margin-left: 200rpx;
+  color: #666;
+}
+.tabs {
+  -webkit-box-flex: 1;
+  flex: 1;
+  -webkit-box-orient: vertical;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #fff;
+}
+.scroll-h,
+.tabs {
+  -webkit-box-direction: normal;
+}
+.scroll-h {
+  width: 750rpx;
+  height: 80rpx;
+  -webkit-box-orient: horizontal;
+  flex-direction: row;
+}
+.uni-tab-item {
+  display: inline-block;
+  padding-left: 34rpx;
+  padding-right: 34rpx;
+}
+.uni-tab-item,
+.uni-tab-item-title {
+  flex-wrap: nowrap;
+}
+.uni-tab-item-title {
+  color: #555;
+  font-size: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  white-space: nowrap;
+}
+.uni-tab-item-title-active {
+  color: #007aff;
+}
+.swiper-item {
+  flex: 1;
+  -webkit-box-orient: horizontal;
+  flex-direction: row;
+}
+.scroll-v,
+.swiper-item {
+  -webkit-box-flex: 1;
+  -webkit-box-direction: normal;
+}
+.scroll-v {
+  flex: 1;
+  -webkit-box-orient: vertical;
+  flex-direction: column;
+  width: 750rpx;
+}

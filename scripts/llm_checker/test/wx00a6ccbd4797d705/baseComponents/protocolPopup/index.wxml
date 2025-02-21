@@ -1,0 +1,96 @@
+<wxpopup bind:__l="__l" bind:close="__e" class="data-v-6c903123" closeable="{{true}}" data-event-opts="{{[ [ '^close',[ ['closePoup2'] ] ] ]}}" position="bottom" round="{{true}}" show="{{show}}" vueId="0e8bc369-1" vueSlots="{{['default']}}">
+    <view class="appleAuthWrap _div data-v-6c903123" style="{{'max-height:'+popupMaxHeight+'px; overflow: auto;'+';'}}">
+        <view class="f32 ptb30r pb10 _div data-v-6c903123" wx:if="{{appName}}">
+            <label class="pr10 _span data-v-6c903123">{{appName}}</label>
+            <label class="_span data-v-6c903123">申请使用</label>
+        </view>
+        <view class="titleStyle f24 _div data-v-6c903123" wx:if="{{phoneNum}}">获取你的手机号码</view>
+        <view class="operation flex _div data-v-6c903123" wx:if="{{phoneNum}}">
+            <view class="f28 _div data-v-6c903123">{{phoneNum}}</view>
+        </view>
+        <view class="flexBetweenCenter userInfoItem _div data-v-6c903123">
+            <view class="f36 fw fc0 _div data-v-6c903123">会员头像</view>
+            <view class="imgWrap pr _div data-v-6c903123" slot="pic">
+                <image class="logo data-v-6c903123" mode="aspectFill" src="{{baseInfo.avatarUrl}}"></image>
+                <view class="changeAvatar f18 pr _div data-v-6c903123">
+                    <label class="iconfont icon-huantouxiang f28 _span data-v-6c903123"></label>换头像<choose-avatar bind:__l="__l" bind:onChange="__e" class="data-v-6c903123 vue-ref" data-event-opts="{{[ [ '^onChange',[ ['onChange'] ] ] ]}}" data-ref="chooseAvatar" picType="2" vueId="{{'0e8bc369-2'+','+'0e8bc369-1'}}"></choose-avatar>
+                </view>
+            </view>
+        </view>
+        <view class="flexBetweenCenter userInfoItem _div data-v-6c903123">
+            <view class="f36 fw fc0 _div data-v-6c903123">昵称</view>
+            <view class="tr _div data-v-6c903123">
+                <input bindinput="__e" class="data-v-6c903123" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','nickName','$event',[] ],['baseInfo'] ] ] ] ]}}" maxlength="{{10}}" placeholder="请输入昵称" type="nickname" value="{{baseInfo.nickName}}"></input>
+            </view>
+        </view>
+        <view class="flexBetweenCenter userInfoItem _div data-v-6c903123" wx:if="{{popupSet.openBirthDay}}">
+            <view class="f36 fw fc0 _div data-v-6c903123">生日</view>
+            <view bindtap="__e" class="_div data-v-6c903123" data-event-opts="{{[ [ 'tap',[ [ 'showBirthdayPopupFun',['$event'] ] ] ] ]}}">{{''+birthday+''}}</view>
+        </view>
+        <view class="flexBetweenCenter userInfoItem _div data-v-6c903123" wx:if="{{popupSet.openSex}}">
+            <view class="f36 fw fc0 _div data-v-6c903123">性别</view>
+            <view class="flexBetween sexbtn _div data-v-6c903123">
+                <view bindtap="__e" class="_div data-v-6c903123" data-event-opts="{{[ [ 'tap',[ [ 'sexChange',[1] ] ] ] ]}}">
+                    <label class="{{['iconfont','','_span','data-v-6c903123',sex===1?'icon-yixuanzhong':'icon-weixuanzhong']}}" style="{{'color:'+(sex===1?themeColor:'#ddd')+';'}}"></label>
+                    <label class="ml20r _span data-v-6c903123">先生</label>
+                </view>
+                <view bindtap="__e" class="ml30 _div data-v-6c903123" data-event-opts="{{[ [ 'tap',[ [ 'sexChange',[2] ] ] ] ]}}">
+                    <label class="{{['iconfont','','_span','data-v-6c903123',sex===2?'icon-yixuanzhong':'icon-weixuanzhong']}}" style="{{'color:'+(sex===2?themeColor:'#ddd')+';'}}"></label>
+                    <label class="ml20r _span data-v-6c903123">女士</label>
+                </view>
+            </view>
+        </view>
+        <view class="flexBetweenCenter userInfoItem _div data-v-6c903123" wx:if="{{$root.g0}}">
+            <view class="f36 fw fc0 _div data-v-6c903123">设置卡密码</view>
+            <view bindtap="__e" class="fc6 _div data-v-6c903123" data-event-opts="{{[ [ 'tap',[ [ 'setPswPopupFun',['$event'] ] ] ] ]}}" wx:if="{{!endPsw}}">请设置密码<label class="vertical-align-middle iconfont icon-xiangyou _span data-v-6c903123"></label>
+            </view>
+            <view bindtap="__e" class="_div data-v-6c903123" data-event-opts="{{[ [ 'tap',[ [ 'setPswPopupFun',['$event'] ] ] ] ]}}" wx:else>{{''+endPsw2+''}}<label class="vertical-align-top iconfont icon-xiangyou _span data-v-6c903123"></label>
+            </view>
+        </view>
+        <view class="flexBetweenCenter userInfoItem _div data-v-6c903123" wx:if="{{invitationCodeFlg}}">
+            <view class="f36 fw fc0 _div data-v-6c903123">邀请码</view>
+            <input bindinput="__e" class="invitationCode tr data-v-6c903123" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','invitationCode','$event',[] ] ] ] ] ]}}" disabled="{{hasinvitationCode}}" placeholder="如有邀请码请输入" placeholderClass="placeholder" value="{{invitationCode}}"></input>
+        </view>
+        <identification-mc bind:__l="__l" bind:complate="__e" bind:selectMcid="__e" class="data-v-6c903123" context="{{context}}" data-event-opts="{{[ [ '^selectMcid',[ ['selectMcid'] ] ],[ '^complate',[ ['getMdDataComplate'] ] ] ]}}" itemTitleStyle="{{itemTitleStyle}}" layout="{{3}}" locationAuth="{{true}}" textColor="{{btnColor}}" themeColor="{{themeColor}}" vueId="{{'0e8bc369-3'+','+'0e8bc369-1'}}" wx:if="{{!hasinvitationCode&&!mcId&&show&&wechatRegisterShopMode}}"></identification-mc>
+        <view class="readIt f36 _div data-v-6c903123" wx:if="{{protocolFlg}}">
+            <view catchtap="__e" class="{{['f36','inline','_div','data-v-6c903123',true?'iconfont':'',!isAccept?'icon-fangxingweixuanzhong':'',isAccept?'icon-fangxingxuanzhongfill':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeCheckBox',['$event'] ] ] ] ]}}" style="{{'color:'+themeColor+';'}}"></view>我已认真阅读并接受<view catchtap="__e" class="inline _div data-v-6c903123" data-event-opts="{{[ [ 'tap',[ [ 'cardPopupOpen',[1] ] ] ] ]}}" style="{{'color:'+themeColor+';'}}" wx:if="{{protocolTitle}}">{{'《'+protocolTitle+'》'}}</view>
+            <view catchtap="__e" class="inline _div data-v-6c903123" data-event-opts="{{[ [ 'tap',[ [ 'cardPopupOpen',[2] ] ] ] ]}}" style="{{'color:'+themeColor+';'}}" wx:if="{{protocolTitle2}}">{{'、《'+protocolTitle2+'》'}}</view>
+            <view catchtap="__e" class="inline _div data-v-6c903123" data-event-opts="{{[ [ 'tap',[ [ 'cardPopupOpen',[3] ] ] ] ]}}" style="{{'color:'+themeColor+';'}}" wx:if="{{protocolTitle3}}">{{'、《'+protocolTitle3+'》'}}</view>
+            <view catchtap="__e" class="inline _div data-v-6c903123" data-event-opts="{{[ [ 'tap',[ [ 'cardPopupOpen',[4] ] ] ] ]}}" style="{{'color:'+themeColor+';'}}" wx:if="{{protocolTitle4}}">{{'、《'+protocolTitle4+'》'}}</view>
+        </view>
+        <button catchtap="__e" class="br50 sureBtn f32 data-v-6c903123" data-event-opts="{{[ [ 'tap',[ [ 'sureAuth',['$event'] ] ] ] ]}}" disabled="{{disabled}}" style="{{'background-color:'+(!disabled?themeColor:'#bfbfbf')+';'+'color:'+(!disabled?btnColor:'#fff')+';'}}">{{sureAuthTxt}}</button>
+        <wxpopup bind:__l="__l" bind:close="__e" class="data-v-6c903123" closeable="{{true}}" data-event-opts="{{[ [ '^close',[ ['hideBirthdayPopupFun'] ] ] ]}}" position="bottom" round="{{true}}" show="{{showBirthdayPopup}}" vueId="{{'0e8bc369-4'+','+'0e8bc369-1'}}" vueSlots="{{['default']}}">
+            <view class="p30r _div data-v-6c903123">
+                <view class="tc fw f32 pb20 _div data-v-6c903123">请选择生日</view>
+                <view class="pickerWrap data-v-6c903123">
+                    <picker-view bindchange="__e" class="picker-view data-v-6c903123" data-event-opts="{{[ [ 'change',[ [ 'bindChange',['$event'] ] ] ] ]}}" indicatorStyle="{{indicatorStyle}}" value="{{birthdayVal}}">
+                        <picker-view-column class="data-v-6c903123">
+                            <view class="columnItem f28 data-v-6c903123" wx:for="{{years}}" wx:key="index">{{item}}</view>
+                        </picker-view-column>
+                        <picker-view-column class="data-v-6c903123">
+                            <view class="columnItem f28 data-v-6c903123" wx:for="{{months}}" wx:key="index">{{item+'月'}}</view>
+                        </picker-view-column>
+                        <picker-view-column class="data-v-6c903123">
+                            <view class="columnItem f28 data-v-6c903123" wx:for="{{days}}" wx:key="index">{{item+'日'}}</view>
+                        </picker-view-column>
+                    </picker-view>
+                </view>
+                <button catchtap="__e" class="br50 sureBtn f32 data-v-6c903123" data-event-opts="{{[ [ 'tap',[ [ 'changeBirthday',['$event'] ] ] ] ]}}" style="{{'background-color:'+themeColor+';'+'color:'+btnColor+';'}}">保存</button>
+            </view>
+        </wxpopup>
+        <wxpopup bind:__l="__l" bind:close="__e" class="data-v-6c903123" closeable="{{true}}" data-event-opts="{{[ [ '^close',[ ['HidePswPopupFun'] ] ] ]}}" position="bottom" round="{{true}}" show="{{setPswPopup}}" vueId="{{'0e8bc369-5'+','+'0e8bc369-1'}}" vueSlots="{{['default']}}">
+            <view class="p30r _div data-v-6c903123">
+                <view class="tc fw f32 pb20 _div data-v-6c903123">设置卡密码</view>
+                <view class="flexAlignCenter pswItem _div data-v-6c903123">
+                    <label class="title _span data-v-6c903123">密码</label>
+                    <input bindinput="__e" class="flexGrow1 data-v-6c903123" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','newPassword','$event',[] ] ] ] ] ]}}" maxlength="6" placeholder="请输入密码(仅支持六位数字)" placeholderStyle="color: #C0C0C0" type="number" value="{{newPassword}}"></input>
+                </view>
+                <view class="flexAlignCenter pswItem mb30r _div data-v-6c903123">
+                    <label class="title _span data-v-6c903123">确认密码</label>
+                    <input bindinput="__e" class="flexGrow1 data-v-6c903123" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','newPassword2','$event',[] ] ] ] ] ]}}" maxlength="6" placeholder="确认密码(仅支持六位数字)" placeholderStyle="color: #C0C0C0" type="number" value="{{newPassword2}}"></input>
+                </view>
+                <button bindtap="__e" class="br50 sureBtn f32 data-v-6c903123" data-event-opts="{{[ [ 'tap',[ [ 'savePsw',['$event'] ] ] ] ]}}" style="{{'background-color:'+themeColor+';'+'color:'+btnColor+';'}}">保存</button>
+            </view>
+        </wxpopup>
+    </view>
+</wxpopup>

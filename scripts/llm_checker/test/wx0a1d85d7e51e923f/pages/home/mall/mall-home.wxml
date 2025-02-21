@@ -1,0 +1,1059 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<import src="/pages/template/shop-item/shop-item.wxml"></import>
+<import src="./templates/good-item.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<canvas
+  canvasId="myCanvas"
+  style="
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    width: 640rpx;
+    height: 512rpx;
+    background: #000;
+  "
+></canvas>
+<view>
+  <view
+    class="top-view"
+    id="topView"
+    style="background-image: url({{ossImage+pageData.shop.icon_url}});background-size: cover;filter: blur(25px);z-index: -1;width: 100%;height: 300rpx;"
+  ></view>
+  <view class="top-view-child" style="margin-top: -300rpx">
+    <view>
+      <view class="cu-custom" style="height:{{customBarHeight}}px">
+        <view
+          class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}"
+          style="height:{{customBarHeight}}px;padding-top:{{statusBarHeight}}px;{{bgImage?'background-image:url('+bgImage+')':''}}"
+        >
+          <view bindtap="BackPage" class="action" wx:if="{{isBack}}">
+            <text class="cuIcon-back"></text>
+            <slot name="backText"></slot>
+          </view>
+          <view
+            class="action border-custom"
+            style="width:{{Custom.width}}px;height:{{Custom.height}}px;margin-left:calc(750rpx - {{Custom.right}}px)"
+          >
+            <text bindtap="backBtn" class="cuIcon-back"></text>
+            <text bindtap="homeBtn" class="cuIcon-homefill"></text>
+          </view>
+          <view class="content" style="top:{{StatusBar}}px">
+            <slot name="content"></slot>
+          </view>
+          <slot name="right"></slot>
+        </view>
+      </view>
+    </view>
+    <view>
+      <view wx:if="{{!cartList.tableNum}}">
+        <view
+          class="bg-white solid-top padding-tb-xs margin-lr-sm margin-top-sm {{isUy?'rtl':''}}"
+          style="border-radius: 16rpx"
+        >
+          <shop-top
+            Str="{{Str}}"
+            isUy="{{isUy}}"
+            lat="{{location?location.lat:0}}"
+            lng="{{location.lng?location.lng:0}}"
+            ossImageUrl="{{ossImage}}"
+            shop="{{pageData.shop}}"
+          ></shop-top>
+        </view>
+      </view>
+      <view wx:else>
+        <view
+          class="tab-{{STabCur==0?'left':'right'}} margin-lr-sm margin-top-sm"
+        >
+          <view class="flex text-center align-center" style="height: 100rpx">
+            <view
+              bindtap="STabSelect"
+              class="cu-item flex-sub {{index==STabCur?'text-pink cur':'text-grey'}}"
+              data-id="{{index}}"
+              wx:for="{{tableInfo}}"
+            >
+              <view class="flex justify-start view-center align-center">
+                <view>
+                  <view>
+                    <i
+                      class="iconfont icon-{{item.icon}}"
+                      style="font-size: 70rpx"
+                    ></i>
+                  </view>
+                  <view
+                    class="{{index==STabCur?'text-c4':''}}"
+                    style="margin-top: -55rpx; margin-right: 25rpx"
+                  >
+                    <i
+                      class="iconfont icon-num_{{_item}} "
+                      style="font-size: 36rpx"
+                      wx:for="{{cartList.tableNums}}"
+                      wx:for-index="_index"
+                      wx:for-item="_item"
+                    ></i>
+                  </view>
+                </view>
+                <view>
+                  <text
+                    class="text-bold text-lg padding-lr-xs  {{index==STabCur?'text-black':''}} "
+                    >{{isUy?item.uy_name:item.ch_name}}</text
+                  >
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="page-color">
+    <scroll-view
+      scrollWithAnimation
+      scrollX
+      class="bg-white nav margin-top-xs {{isUy?'rtl':''}} uy-tom"
+      scrollLeft="{{(selectCatIndex-1)*60}}rpx"
+      wx:if="{{STabCur==0}}"
+    >
+      <view
+        bindtap="catClick"
+        class="nav-item {{index==selectCatIndex?'text-pink ':''}}"
+        data-id="{{index}}"
+        data-index="{{index}}"
+        data-item="{{item}}"
+        wx:for="{{pageData.shop.mall_cat}}"
+        wx:key="index"
+      >
+        <view>{{isUy?item.uy_name:item.ch_name}}</view>
+      </view>
+    </scroll-view>
+    <view class="" style="" wx:if="{{STabCur==0}}">
+      <view
+        class="VerticalBox solid-top {{isUy?'rtl':''}}"
+        wx:if="{{selectCatIndex<pageData.shop.mall_cat.length-2}}"
+      >
+        <scroll-view
+          scrollWithAnimation
+          scrollY
+          class="VerticalNav nav"
+          scrollTop="{{VerticalNavTop}}"
+          style="height:{{pageHeights.scrollHeight?pageHeights.scrollHeight+'px':'calc(100vh - 270rpx)'}}"
+        >
+          <view
+            bindtap="tabSelect"
+            class="cu-item {{index==TabCur?'text-pink cur':''}} text-cut {{isUy?'rtl':''}}  text-lg"
+            data-id="{{index}}"
+            wx:if="{{item.goods.length>0}}"
+            wx:for="{{list}}"
+            wx:key="index"
+          >
+            <view
+              class="cu-tag badge"
+              style="top: 5rpx; right: 5rpx"
+              wx:if="{{item.count}}"
+              >{{item.count}}</view
+            >
+            <text class="{{index==TabCur?'':''}}"
+              >{{isUy?item.uy_name:item.ch_name}}</text
+            >
+          </view>
+        </scroll-view>
+        <scroll-view
+          scrollWithAnimation
+          scrollY
+          bindscroll="VerticalMain"
+          class="VerticalMain"
+          scrollIntoView="main-{{MainCur}}"
+          style="height:{{pageHeights.scrollHeight?pageHeights.scrollHeight+'px':'calc(100vh - 270rpx)'}} "
+          wx:if="{{pageData.shop.show_type==0||pageData.shop.show_type==1}}"
+        >
+          <view
+            class="solid-top"
+            id="main-{{index}}"
+            style="padding-bottom: {{index==list.length-1?'120':'0'}}rpx;"
+            wx:if="{{item.goods.length>0}}"
+            wx:for="{{list}}"
+            wx:key="index"
+          >
+            <view class="cu-bar bg-white" style="min-height: 90rpx">
+              <view class="action" style="margin-left: 10rpx">
+                <text class="" wx:if="{{!item.icon}}"></text>
+                <i class="padding-right-xs">
+                  <i
+                    class="iconfont icon-{{item.icon}} text-pink"
+                    style="font-size: 50rpx"
+                  ></i>
+                </i>
+                <text class="uy-tom">{{isUy?item.uy_name:item.ch_name}}</text>
+              </view>
+            </view>
+            <view
+              key="indexx"
+              wx:if="{{item.goods.length>0}}"
+              wx:for="{{item.goods}}"
+              wx:for-index="indexx"
+              wx:for-item="_item"
+            >
+              <template
+                is="good-item"
+                data="{{item:_item,isUy:isUy,isOpen:pageData.shop.is_open==1?true:false,index:index,_index:indexx,Str:Str,lanIndex:lanIndex}}"
+              ></template>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+      <view wx:else>
+        <view
+          wx:if="{{pageData.shop.mall_cat[selectCatIndex].id==-1&&shopEvaluationData}}"
+        >
+          <scroll-view
+            class="margin-bottom"
+            scrollY="true"
+            style="height: calc(100vh - 300rpx)"
+          >
+            <view>
+              <view
+                class="bg-white flex padding-lr-sm padding-tb-xs margin-top-sm align-center"
+              >
+                <view class="flex-sub text-center">
+                  <view class="text-xxl text-pink" style="font-size: 32rpx"
+                    >{{shopEvaluationData.all.shopStar?shopEvaluationData.all.shopStar:5}}</view
+                  >
+                  <view class="text-sm">{{Str._shopEvaluation[lanIndex]}}</view>
+                </view>
+                <view class="flex-twice solid-right">
+                  <view class="flex justify-start text-center align-center">
+                    <view
+                      class="padding-right-sm text-sm"
+                      style="min-width: 120rpx"
+                      >{{Str.taste[lanIndex]}}</view
+                    >
+                    <view>
+                      <text
+                        class="cuIcon-favorfill text-sm text-{{shopEvaluationData.all.goodStar>index?'c4':'gray'}}"
+                        style="font-size: 24rpx"
+                        wx:for="{{5}}"
+                        wx:key="index"
+                      ></text>
+                      <text class="padding-left-sm text-lg text-pink"
+                        >{{shopEvaluationData.all.goodStar}}</text
+                      >
+                    </view>
+                  </view>
+                  <view class="flex justify-start text-center align-center">
+                    <view
+                      class="padding-right-sm text-sm"
+                      style="min-width: 120rpx"
+                      >{{Str._package[lanIndex]}}</view
+                    >
+                    <text
+                      class="cuIcon-favorfill text-{{shopEvaluationData.all.packageStar>index?'c4':'gray'}}"
+                      style="font-size: 24rpx"
+                      wx:for="{{5}}"
+                      wx:key="index"
+                    ></text>
+                    <text class="padding-left-sm text-lg text-pink"
+                      >{{shopEvaluationData.all.packageStar}}</text
+                    >
+                  </view>
+                </view>
+                <view class="flex-sub text-align text-center">
+                  <view class="text-xxl" style="font-size: 36rpx"
+                    >{{shopEvaluationData.deliveryScore}}</view
+                  >
+                  <view class="text-sm text-gray"
+                    >{{Str.deliveryEvaluation[lanIndex]}}</view
+                  >
+                </view>
+              </view>
+              <view class="bg-white margin-top-sm padding-sm {{isUy?'rtl':''}}">
+                <view>
+                  <view
+                    bindtap="evaluationTypeClick"
+                    class="padding-lr padding-tb-xs margin-right-sm margin-bottom-sm bg-{{index==evluationTypeIndex?'pink':'gray'}} {{isUy?'rtl':''}}"
+                    data-index="{{index}}"
+                    data-item="{{item}}"
+                    data-title="{{isUy?item.uy_name:item.ch_name}}"
+                    style="display: inline-block; border-radius: 16rpx"
+                    wx:for="{{evaluationTypes}}"
+                    wx:key="index"
+                  >
+                    <text class="">{{isUy?item.uy_name:item.ch_name}}</text>
+                    <text>({{item.count}})</text>
+                  </view>
+                </view>
+              </view>
+              <view
+                class="bg-white solid-bottom"
+                wx:for="{{shopEvaluationData.evaluation.data}}"
+                wx:key="index"
+              >
+                <view class="flex  justify-start padding-sm {{isUy?'rtl':''}}">
+                  <view>
+                    <view
+                      class="cu-avatar round lg"
+                      style="background-image:url({{item.user.avatar_url?item.user.avatar_url:'https://etwarjan.oss-cn-zhangjiakou.aliyuncs.com/logo/anonymous_avatar.png'}});"
+                    ></view>
+                  </view>
+                  <view class="padding-lr-sm" style="width: 100%">
+                    <view class="flex justify-between padding-lr-sm">
+                      <view>
+                        <view class="text-black text-cut" style="width: 250rpx"
+                          >{{item.user.nick_name?item.user.nick_name:Str._uknown[lanIndex]}}</view
+                        >
+                        <view class="flex align-center justify-start">
+                          <view>
+                            <text
+                              class="cuIcon-favorfill  text-sm {{item.shop_common_star<=_index?'text-gray':'text-c4'}}"
+                              style="font-size: 24rpx"
+                              wx:for="{{5}}"
+                              wx:for-index="_index"
+                              wx:for-item="_item"
+                              wx:key="_index"
+                            ></text>
+                          </view>
+                          <view
+                            class="bg-gray text-sm radius padding-lr-xs margin-left"
+                            style="border-radius: 12rpx"
+                            >{{isUy?item.goods[0].mall_good.uy_name:item.goods[0].mall_good.ch_name}}</view
+                          >
+                        </view>
+                      </view>
+                      <view>
+                        <view class="text-grey text-xs"
+                          >{{item.created_at}}</view
+                        >
+                      </view>
+                    </view>
+                    <view
+                      class="padding-tb-sm"
+                      wx:if="{{item.shop_text_evaluation||item.evaluation_img1_ul}}"
+                    >
+                      <view
+                        class=" text-black {{isUy?'rtl':''}} text-{{isUy?'right':'left'}} uy-tom"
+                        wx:if="{{item.shop_text_evaluation}}"
+                        >{{item.shop_text_evaluation}}</view
+                      >
+                      <view wx:if="{{item.evaluation_img1_ul}}">
+                        <image
+                          mode="aspectFill"
+                          src="{{ossImage+item.evaluation_img1_ul}}"
+                          style="
+                            width: 180rpx;
+                            height: 180rpx;
+                            border-radius: 12rpx;
+                          "
+                        ></image>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+        <view
+          class="cu-list menu margin-top sm-border"
+          wx:if="{{pageData.shop.mall_cat[selectCatIndex].id==0}}"
+        >
+          <view
+            bindtap="btnCall"
+            class="cu-item {{isUy?'rtl':''}}"
+            data-phone="{{pageData.shop.contact_phone}}"
+          >
+            <view class="content">
+              <view class="flex align-center">
+                <image
+                  class="shop-desc-img"
+                  src="/resource/images/shop/common/shop_desc_1.png"
+                ></image>
+                <text class="padding-lr-xs text-lg text-black"
+                  >{{pageData.shop.contact_phone}}</text
+                >
+              </view>
+            </view>
+          </view>
+          <view bindtap="clickShopLocation" class="cu-item {{isUy?'rtl':''}}">
+            <view class="content">
+              <view class="flex align-center">
+                <image
+                  class="shop-desc-img"
+                  src="/resource/images/shop/common/shop_desc_2.png"
+                ></image>
+                <text class="padding-lr-xs text-lg text-black"
+                  >{{isUy?pageData.shop.uy_address:pageData.shop.ch_address}}</text
+                >
+              </view>
+            </view>
+          </view>
+          <navigator
+            class="cu-item {{isUy?'rtl':''}}"
+            url="./shop-certificate-page/shop-certificate-page?title={{Str.shopIds[lanIndex]}}&shopId={{cartList.shop.id}}&type=0"
+          >
+            <view class="content">
+              <view class="flex align-center">
+                <image
+                  class="shop-desc-img"
+                  src="/resource/images/shop/common/shop_desc_3.png"
+                ></image>
+                <text class="padding-lr-xs text-lg text-black"
+                  >{{Str.shopIds[lanIndex]}}</text
+                >
+              </view>
+            </view>
+          </navigator>
+          <navigator
+            class="cu-item {{isUy?'rtl':''}}"
+            url="./shop-certificate-page/shop-certificate-page?title={{Str.shopCondition[lanIndex]}}&shopId={{cartList.shop.id}}&type=1"
+          >
+            <view class="content">
+              <view class="flex align-center">
+                <image
+                  class="shop-desc-img"
+                  src="/resource/images/shop/common/shop_desc_4.png"
+                ></image>
+                <text class="padding-lr-xs text-lg text-black"
+                  >{{Str.shopCondition[lanIndex]}}</text
+                >
+              </view>
+            </view>
+          </navigator>
+          <view class="cu-item {{isUy?'rtl':''}}">
+            <view class="content">
+              <view class="flex align-center">
+                <image
+                  class="shop-desc-img"
+                  src="/resource/images/shop/common/shop_desc_5.png"
+                ></image>
+                <text class="padding-lr-xs text-lg text-black"
+                  >{{Str.shoppingTime[lanIndex]}}</text
+                >
+              </view>
+            </view>
+            <view class="action">
+              <text
+                >{{pageData.shop.start_time}}~{{pageData.shop.end_time}}</text
+              >
+            </view>
+          </view>
+          <view class="cu-item {{isUy?'rtl':''}}">
+            <view class="content">
+              <view class="flex align-center">
+                <image
+                  class="shop-desc-img"
+                  src="/resource/images/shop/common/shop_desc_6.png"
+                ></image>
+                <text class="padding-lr-xs text-lg text-black"
+                  >{{Str.deliveryType[lanIndex]}}</text
+                >
+              </view>
+            </view>
+            <view class="action">
+              <text>{{Str.etewarDelivery[lanIndex]}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="margin-xs" wx:if="{{STabCur==1}}">
+      <view
+        class="cu-list grid col-3 no-border radius shadow"
+        wx:if="{{shopServiceData}}"
+      >
+        <view
+          class="cu-item text-center"
+          wx:for="{{shopServiceData.serviceType}}"
+        >
+          <view class="">
+            <button
+              bindtap="callServiceBtn"
+              data-item="{{item}}"
+              plain="true"
+              style="
+                border: 0;
+                background-color: white;
+                margin: 0rpx;
+                padding: 0rpx;
+              "
+            >
+              <image
+                class=""
+                mode="aspectFit"
+                src="{{item.img_url}}"
+                style="width: 150rpx; height: 150rpx"
+              ></image>
+            </button>
+          </view>
+          <view class="text-df" style="margin-top: -10rpx"
+            >{{isUy?item.uy_name:item.ch_name}}</view
+          >
+        </view>
+      </view>
+      <view class="cu-list menu sm-border margin-top radius">
+        <view class="cu-item" wx:for="{{shopServiceData.serviceLog}}">
+          <view class="content">
+            <view class="flex justify-start">
+              <view>
+                <i
+                  class="iconfont icon-info-notification margin-right-xs text-pink"
+                  style="font-size: 70rpx"
+                ></i>
+              </view>
+              <view>
+                <view>
+                  <text>{{isUy?item.type.uy_name:item.type.ch_name}}</text>
+                </view>
+                <view
+                  class="{{isUy?'rtl':''}} text-gray text-sm text-left"
+                  wx:if="{{item.time}}"
+                  >{{item.time}}</view
+                >
+              </view>
+            </view>
+          </view>
+          <view class="action text-center">
+            <view class="text-c4">
+              <i
+                class="iconfont icon-num_{{_item}}"
+                style="font-size: 44rpx"
+                wx:for="{{item.tableNums}}"
+                wx:for-item="_item"
+              ></i>
+            </view>
+            <view>
+              <text class="text-sm">{{item.created_at}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view
+  class="tabbar cu-bar foot margin-bottom text-center"
+  style="border-radius: 50rpx; padding-bottom: 0; min-height: 100rpx"
+  wx:if="{{STabCur==0&&selectCatIndex<pageData.shop.mall_cat.length-2}}"
+>
+  <view wx:if="{{cartList.shop.is_open==1}}">
+    <view
+      class="g-bg margin-lr-sm padding-lr-sm"
+      wx:if="{{cartList.shopCoupons&&cartList.shopCoupons.length>0&&cartList.shop.is_open==1}}"
+    >
+      <view class="rtl flex justify-center" wx:if="{{isUy}}">
+        <view wx:if="{{cartList.discountAmount>0}}">
+          <price price="{{cartList.discountAmount}}" priceUnit="yuan"></price>
+          <text>يۈەن ئېتىبار قىلىندى</text>
+        </view>
+        <view wx:for="{{cartList.shopCoupons}}" wx:key="index">
+          <view wx:if="{{!cartList.shopCouponSelectedItem}}">
+            <view wx:if="{{index==0}}">
+              <text>يەنە</text>
+              <price
+                price="{{item.coupon_limit-cartList.actualPrice}}"
+                priceUnit="yuan"
+              ></price>
+              <text>يۈەنلىك سېتىۋالسىڭىز</text>
+              <text>{{item.coupon_amount}}</text>
+              <text>يۈەن ئېتىبار</text>
+            </view>
+          </view>
+          <view wx:else>
+            <view
+              wx:if="{{cartList.shopCouponSelectedItem.id==item.id&&index<cartList.shopCoupons.length-1}}"
+            >
+              <text>،</text>
+              <text>يەنە</text>
+              <text
+                >{{cartList.shopCoupons[index+1].coupon_limit-cartList.actualPrice}}</text
+              >
+              <text>يۈەنلىك سېتىۋالسىڭىز</text>
+              <text>{{cartList.shopCoupons[index+1].coupon_amount}}</text>
+              <text>يۈەن ئېتىبار</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="rtl flex justify-center" wx:else>
+        <view wx:if="{{cartList.discountAmount>0}}">
+          <text>已优惠</text>
+          <text>{{cartList.discountAmount}}</text>
+          <text>元</text>
+        </view>
+        <view wx:for="{{cartList.shopCoupons}}" wx:key="index">
+          <view wx:if="{{!cartList.shopCouponSelectedItem}}">
+            <view wx:if="{{index==0}}">
+              <text>再买</text>
+              <text>{{item.coupon_limit-cartList.actualPrice}}</text>
+              <text>优惠</text>
+              <text>{{item.coupon_amount}}</text>
+              <text>元</text>
+            </view>
+          </view>
+          <view wx:else>
+            <view
+              wx:if="{{cartList.shopCouponSelectedItem.id==item.id&&index<cartList.shopCoupons.length-1}}"
+            >
+              <text>،</text>
+              <text>再买</text>
+              <text
+                >{{cartList.shopCoupons[index+1].coupon_limit-cartList.actualPrice}}</text
+              >
+              <text>优惠</text>
+              <text>{{cartList.shopCoupons[index+1].coupon_amount}}</text>
+              <text>元</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="flex justify-between align-center margin-left-xs bg-black"
+      style="border-radius: 50rpx"
+    >
+      <view class="margin-lr-sm flex">
+        <view bindtap="showDetail" class="flex" style="margin-top: -40rpx">
+          <image
+            mode="scaleToFill"
+            src="/resource/images/common/cart_box_{{cartList.allCount?'':'dark'}}.png"
+            style="width: 90rpx; height: 90rpx"
+          ></image>
+          <view
+            class="bg-red"
+            style="
+              border-radius: 200rpx;
+              height: 28rpx;
+              padding: 0rpx 10rpx;
+              font-size: 20rpx;
+              margin-left: -30rpx;
+              margin-top: 10rpx;
+            "
+            wx:if="{{cartList.allCount}}"
+          >
+            {{cartList.allCount}}
+          </view>
+        </view>
+        <view class="text-center" style="min-width: 300rpx">
+          <view bindtap="showDetail">
+            <view>
+              <view>
+                <view wx:if="{{cartList.shop.is_open}}">
+                  <price
+                    decimalSmaller
+                    class="uy-tom text-sm"
+                    fill="{{cartList.totalPrice>cartList.actualPrice?false:true}}"
+                    price="{{cartList.totalPrice}}"
+                    priceUnit="yuan"
+                    type="delthrough"
+                    wx:if="{{cartList.totalPrice>cartList.actualPrice}}"
+                  ></price>
+                  <text>&nbsp;</text>
+                  <price
+                    decimalSmaller
+                    fill
+                    class="uy-tom text-lg padding-lr-xs"
+                    price="{{cartList.actualPrice}}"
+                    priceUnit="yuan"
+                    type="main"
+                  ></price>
+                </view>
+              </view>
+              <view
+                class=""
+                style="margin-top:{{isUy?'-10':0}}rpx"
+                wx:if="{{cartList.shop.is_open}}"
+              >
+                <view
+                  class="{{isUy?'rtl':''}} text-sm text-gray"
+                  wx:if="{{pageData.shop.can_delivery&&!cartList.tableNum}}"
+                >
+                  <view wx:if="{{pageData.deliveryFee&&cartList.allPrice==0}}">
+                    <text class="text-sm"
+                      >{{isUy?pageData.deliveryFee['uy_remark']:pageData.deliveryFee['ch_remark']}}</text
+                    >
+                  </view>
+                  <view wx:else>
+                    <text>{{Str.deliveryFee[lanIndex]}}</text>
+                    <text
+                      class="text-price text-white"
+                      wx:if="{{cartList.discountDeliveryFee>0}}"
+                      >{{cartList.deliveryFee-cartList.discountDeliveryFee}}</text
+                    >
+                    <text
+                      class="text-price text-gray {{cartList.discountDeliveryFee>0?'delete-txt':''}}"
+                      >{{cartList.deliveryFee}}</text
+                    >
+                  </view>
+                </view>
+                <view class="{{isUy?'rtl':''}}" wx:if="{{cartList.tableNum}}">
+                  <text class="text-blue text-xl padding-lr-xs"
+                    >{{cartList.tableNum}}</text
+                  >
+                  <text>{{Str.table[lanIndex]}}</text>
+                </view>
+                <view wx:else></view>
+              </view>
+              <view wx:else>
+                <text class="text-sm text-grey"
+                  >{{Str.notService[lanIndex]}}</text
+                >
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view
+        class="bg-{{cartList.shop.starting_price-cartList.allPrice<=0?'pink':'black'}}  flex align-center"
+        style="
+          min-width: 300rpx;
+          min-height: 100rpx;
+          border-radius: 0rpx 48rpx 48rpx 0rpx;
+        "
+        wx:if="{{cartList.shop.is_open}}"
+      >
+        <view
+          class="{{isUy?'rtl':''}} text-center"
+          style="min-width: 300rpx"
+          wx:if="{{cartList.allPrice==0}}"
+        >
+          <price
+            decimalSmaller
+            fill
+            class="uy-tom text-lg padding-lr-xs"
+            price="{{cartList.shop.starting_price}}"
+            priceUnit="yuan"
+            type="main"
+          ></price>
+          <text>{{Str._startPrice[lanIndex]}}</text>
+        </view>
+        <view
+          bindtap="{{cartList.shop.starting_price-cartList.allPrice<=0&&cartList.shop.is_open?'_subBtn':''}}"
+          class="text-center text-lg"
+          style="min-width: 300rpx"
+          wx:elif="{{cartList.shop.starting_price-cartList.allPrice<=0}}"
+        >
+          {{Str.buy[lanIndex]}}
+        </view>
+        <view class="text-center text-sm" style="min-width: 300rpx" wx:else>
+          <view class="{{isUy?'rtl':''}}" wx:if="{{isUy}}">
+            <text>{{Str.also[lanIndex]}} </text>
+            <text class="padding-lr-xs text-price">{{lakeFee}}</text>
+            <text>{{Str.yuan[lanIndex]}} </text>
+            <text>{{Str.lack[lanIndex]}} </text>
+          </view>
+          <view wx:else>
+            <text>{{Str.also[lanIndex]}}</text>
+            <text>{{Str.lack[lanIndex]}}</text>
+            <text class="text-pink padding-lr-xs" wx:if="{{cartList.shop}}"
+              >{{lakeFee}}</text
+            >
+            <text>{{Str.yuan[lanIndex]}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="text-center flex justify-center" style="width: 750rpx" wx:else>
+    <view
+      class="text-center bg-black flex justify-center align-center"
+      style="min-height: 100rpx; width: 95%; border-radius: 8rpx"
+    >
+      <view class="text-lg text-grey uy-tom">{{Str.notService[lanIndex]}}</view>
+    </view>
+  </view>
+</view>
+<view
+  animation="{{bottomDialogAnimationData}}"
+  bindtap="hideModal"
+  class="cu-modal bottom-modal {{modalName=='detailModal'?'show':''}}"
+  style="margin-bottom: 140rpx"
+  wx:if="{{cartList.cartItems.length>0}}"
+>
+  <view
+    catchtap
+    class="cu-dialog bg-white"
+    style="min-height: 400rpx; border-radius: 30rpx 30rpx 0rpx 0rpx"
+  >
+    <view class="padding-sm bg-white solid-top" style="">
+      <view class="text-center uy-tom">{{Str.details[lanIndex]}}</view>
+      <view class="flex justify-between">
+        <view>
+          <view wx:if="{{cartList.packingFee>0}}">
+            <text>{{Str._packingFee[lanIndex]}}</text>
+            <text class="text-price">{{cartList.packingFee}}</text>
+          </view>
+        </view>
+        <view bindtap="cleanCart" class="flex align-center">
+          <text class="icon icon-delete"></text>
+          <text>{{Str.cleanCart[lanIndex]}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="cu-list menu solid-top solid-bottom sm-border">
+      <view class="cu-item" wx:for="{{cartList.cartItems}}" wx:key="index">
+        <view class="content">
+          <view class="flex">
+            <view class="flex-treble text-sm text-left">
+              <view class="flex justify-start align-center">
+                <view class="padding-xs">
+                  <image
+                    src="{{item.item.img_url+'?x-oss-process=image/resize,m_lfit,h_150,w_150'}}"
+                    style="width: 70rpx; height: 70rpx"
+                  ></image>
+                </view>
+                <view>
+                  <view class="text-bold text-black uy-tom"
+                    >{{isUy?item.item.uy_name:item.item.ch_name}}</view
+                  >
+                  <view
+                    class="flex justify-start"
+                    wx:if="{{item.specificationIndexs}}"
+                  >
+                    <view
+                      wx:for="{{item.specificationIndexs}}"
+                      wx:for-index="_index"
+                      wx:for-item="_item"
+                    >
+                      <view class="padding-lr-xs text-sm">
+                        {{isUy?item.specificationItems[ _item[0] ].items[
+                        _item[1] ].uy_name:item.specificationItems[ _item[0]
+                        ].items[ _item[1] ].ch_name}}
+                      </view>
+                    </view>
+                  </view>
+                  <view>
+                    <price
+                      decimalSmaller
+                      class="{{item.is_activity==1?'text-sm ':'text-lg text-pink'}}"
+                      price="{{(item.specificationIndexs?item.amount:item.item.price)*item.count}}"
+                      priceUnit="yuan"
+                      type="{{item.is_activity==1?'delthrough':'main'}}"
+                    ></price>
+                    <price
+                      decimalSmaller
+                      class="text-bold text-red text-lg"
+                      price="{{(item.specificationIndexs?item.amount:item.item.activity_price)*item.count}}"
+                      priceUnit="yuan"
+                      wx:if="{{item.is_activity==1}}"
+                    ></price>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="flex-sub text-right flex align-center">
+              <i
+                bindtap="removeBtn"
+                class="iconfont icon-Remove padding-right-sm text-pink"
+                data-_index="{{item.indexx}}"
+                data-cindex="{{index}}"
+                data-index="{{item.index}}"
+                data-item="{{item.item}}"
+                style="font-size: 50rpx"
+                wx:if="{{item.count>0}}"
+              ></i>
+              <text class="t" wx:if="{{item.count>0}}"> {{item.count}}</text>
+              <i
+                bindtap="addBtn"
+                class="iconfont icon-add1 padding-left-sm text-pink"
+                data-_index="{{item.indexx}}"
+                data-cindex="{{index}}"
+                data-index="{{item.index}}"
+                data-item="{{item.item}}"
+                style="font-size: 50rpx"
+              ></i>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view
+  bindtap="hideModal"
+  class="cu-modal {{modalName=='shopClosed'?'show':''}}"
+>
+  <view
+    class="cu-dialog"
+    style="
+      border-radius: 10px 10px 60px 60px;
+      width: 600rpx;
+      background-color: transparent;
+    "
+  >
+    <view
+      class="bg-img"
+      style="
+        background-image: url('https://yeltapan.oss-cn-zhangjiakou.aliyuncs.com/public/uploads/images/QQ20200627-0.png');
+        height: 600rpx;
+      "
+    >
+      <view class="cu-bar justify-end text-white">
+        <view bindtap="hideModal" class="action">
+          <text class="icon-close"></text>
+        </view>
+      </view>
+    </view>
+    <view class="cu-bar" style="margin-top: -80rpx">
+      <view
+        bindtap="hideModal"
+        class="action margin-0 flex-sub solid-left text-cyan padding-bottom"
+      >
+        {{Str.shopRestinng[lanIndex]}}
+      </view>
+    </view>
+  </view>
+</view>
+<view
+  bindtap="hideModal"
+  class="cu-modal {{modalName=='showSpecification'?'show':''}}"
+  wx:if="{{goodSpecificationItem&&goodSpecificationItem.item}}"
+>
+  <view catchtap class="cu-dialog" style="background-color: transparent">
+    <view class="bg-white" style="min-height: 400rpx">
+      <view class="padding-sm text-lg solid-bottom  {{isUy?'rtl':''}} bg-pink">
+        <text class="text-bold text-white uy-tom"
+          >{{isUy?goodSpecificationItem.item.uy_name:goodSpecificationItem.item.ch_name}}
+        </text>
+      </view>
+      <view class="padding-sm">
+        <view wx:for="{{goodSpecificationItem.items}}">
+          <view class="padding-bottom-xs">
+            <view
+              class="text-black {{isUy?'text-right':'text-left'}} padding-lr-sm padding-tb-xs uy-tom"
+              >{{isUy?item.type.uy_name:item.type.ch_name}}</view
+            >
+            <view class="flex justify-start {{isUy?'rtl':''}}">
+              <view
+                class="padding-xs"
+                wx:for="{{item.items}}"
+                wx:for-index="_index"
+                wx:for-item="_item"
+              >
+                <view
+                  bindtap="selectTagItem"
+                  class="cu-capsule radius ltr"
+                  data-_index="{{_index}}"
+                  data-index="{{index}}"
+                >
+                  <view
+                    class="cu-tag bg-{{_item.selected==1?'pink':'black'}} uy"
+                  >
+                    <view class="padding-lr-xs"></view
+                    >{{isUy?_item.uy_name:_item.ch_name}}
+                  </view>
+                  <view
+                    class="cu-tag line-{{_item.selected==1?'pink':'gray'}}"
+                    wx:if="{{_item.price>0}}"
+                  >
+                    <text class="text-price">{{_item.price}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view
+        class="bg-gray flex justify-start align-center padding-sm {{isUy?'rtl':''}} "
+        style="min-height: 80rpx"
+      >
+        <view>{{Str.selected[lanIndex]}}</view>
+        <view>
+          <text decode="true">&nbsp;</text> :<text decode="true">&nbsp;</text>
+        </view>
+        <view wx:for="{{goodSpecificationItem.items}}">
+          <view wx:for="{{item.items}}" wx:for-item="_item">
+            <view
+              class="text-sm text-black padding-lr-xs uy-tom text-bold"
+              wx:if="{{_item.selected}}"
+            >
+              {{isUy?_item.uy_name:_item.ch_name}}
+            </view>
+          </view>
+        </view>
+      </view>
+      <view
+        class="bg-white flex justify-between padding-lr-sm align-center"
+        style="min-height: 100rpx"
+      >
+        <view class="padding-lr-sm">
+          <text class="text-black">{{Str.amount[lanIndex]}}</text>
+          <text decode="true">&nbsp;</text>
+          <text>:</text>
+          <text decode="true">&nbsp;</text>
+          <text class="text-price text-xl text-red"
+            >{{goodSpecificationItem.amount}}</text
+          >
+        </view>
+        <view>
+          <view
+            bindtap="addSpecificationItemBtn"
+            class="bg-pink padding-lr-sm radius"
+            style="border-radius: 12rpx; padding: 5rpx 20rpx"
+            wx:if="{{goodSpecificationItem.count==0}}"
+          >
+            <text class="icon icon-add"></text>
+            <text>{{Str.addCart[lanIndex]}}</text>
+          </view>
+          <view wx:else>
+            <i
+              bindtap="specificationRemoveBtn"
+              class="iconfont icon-Remove padding-right-sm text-pink"
+              data-index="{{index}}"
+              data-indexx="{{_index}}"
+              data-item="{{_item}}"
+              style="font-size: 50rpx"
+            ></i>
+            <text class="text-lg" wx:if="{{goodSpecificationItem.count>0}}">
+              {{goodSpecificationItem.count}}</text
+            >
+            <i
+              bindtap="addSpecificationItemBtn"
+              class="iconfont icon-add1 padding-left-sm text-pink"
+              data-icon="{{_item.img_url+'?x-oss-process=image/resize,m_lfit,h_150,w_150'}}"
+              data-index="{{index}}"
+              data-indexx="{{_index}}"
+              data-item="{{_item}}"
+              style="font-size: 50rpx"
+            ></i>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view
+  style="position: fixed; right: 300rpx; bottom: 200rpx"
+  wx:if="{{cartList.tableNum}}"
+>
+  <template is="lan" data></template>
+</view>
+<dialog
+  cancel="{{Str.forgetIt[lanIndex]}}"
+  confirm="{{Str.confirm[lanIndex]}}"
+  id="dialog"
+  isInput="{{dialogIsInput}}"
+  title="{{dialogContent}}"
+  type="normal"
+></dialog>
+<good-pop
+  bind:addBtn="addBtn"
+  bind:removeBtn="removeBtn"
+  data-_index="{{selectGoodItem._index}}"
+  data-index="{{selectGoodItem.index}}"
+  data-item="{{selectGoodItem.item}}"
+  isOpen="{{pageData.shop.is_open==1?true:false}}"
+  isUy="{{isUy}}"
+  item="{{selectGoodItem}}"
+  visible="{{showGood}}"
+></good-pop>
+<t-dialog
+  bind:confirm="closeDialog"
+  content="{{Str.unloginWarn[lanIndex]}}"
+  visible="{{showUnloginDialog}}"
+>
+  <view class="padding-bottom padding-lr view-center" slot="confirm-btn">
+    <button bind:tap="loginBtn" class="cu-btn bg-pink padding-lr-xl">
+      {{Str.confirm[lanIndex]}}
+    </button>
+  </view>
+</t-dialog>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

@@ -1,0 +1,17 @@
+<view
+  class="_div data-v-066bfd56"
+  wx:if="{{calcDiscount&&calcDiscount.discountAmount>0}}"
+>
+  <view class="hyPrice mb4r formula _div data-v-066bfd56"
+    >{{'¥ '+calcDiscount.seledItemsOriginalPrice}}<label
+      class="priceName _span data-v-066bfd56"
+      >(原价)</label
+    >{{'- ¥ '+calcDiscount.discountAmount}}<label
+      class="priceName _span data-v-066bfd56"
+      >(套餐优惠)</label
+    >{{'= ￥'+calcDiscount.finalAmount}}<label
+      class="daoshouPrice _span data-v-066bfd56"
+      >到手价</label
+    >
+  </view>
+</view>

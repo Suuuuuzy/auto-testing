@@ -1,0 +1,20 @@
+<view class="tab-bar" hidden="{{!showFlag}}">
+  <view
+    bindtap="switchTab"
+    class="tab-bar-item"
+    data-index="{{index}}"
+    data-path="{{item.pagePath}}"
+    wx:for="{{list}}"
+    wx:key="index"
+  >
+    <image
+      class="{{index===1?'tab_homeImg':''}} switchTabImg"
+      src="{{selected===index?item.selectedIconPath:item.iconPath}}"
+    ></image>
+    <view
+      class="switchTabText"
+      style="color: {{selected===index?selectedColor:color}}"
+      >{{item.text}}</view
+    >
+  </view>
+</view>

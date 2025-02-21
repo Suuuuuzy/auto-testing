@@ -1,0 +1,145 @@
+.container {
+  height: 100%;
+}
+#businessTodo-main {
+  padding-top: 79rpx;
+  height: 100%;
+  box-sizing: border-box;
+}
+.businessTodo-filter {
+  height: 69rpx;
+  border-bottom: 1px solid #ededed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 36rpx;
+  font-size: 28rpx;
+  color: #010101;
+}
+.filter-item.filter-this {
+  color: #3579fb;
+}
+.businessTodo-filter .filter-item {
+  display: flex;
+  align-items: flex-end;
+  padding-top: 11rpx;
+}
+.businessTodo-filter image {
+  width: 24rpx;
+  height: 22rpx;
+  margin-left: 4rpx;
+  margin-bottom: 6rpx;
+}
+.businessTodo-filter .integratedSort {
+  width: 18rpx;
+  height: 10rpx;
+  margin-bottom: 10rpx;
+}
+.businessTodo-list {
+  padding: 30rpx 24rpx 30rpx 36rpx;
+  padding-top: 17rpx;
+}
+.businessTodo-list .list-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 113rpx;
+  overflow: hidden;
+  color: #353535;
+  font-size: 28rpx;
+  box-shadow: 0 5rpx 8.3rpx 1.7rpx rgba(0, 0, 0, 0.08);
+  margin-top: 40rpx;
+  box-sizing: border-box;
+}
+.list-item .business-sort {
+  position: absolute;
+  top: 0;
+  width: 126rpx;
+  height: 6rpx;
+  background-color: transparent;
+  border-right: 24rpx solid transparent;
+  border-bottom: 24rpx solid transparent;
+  border-left: 24rpx solid transparent;
+}
+.list-item .business-sortTitle {
+  position: absolute;
+  top: 0;
+  color: #fff;
+  font-size: 16rpx;
+  line-height: 24rpx;
+}
+.list-item .business-itemName {
+  width: 100%;
+  padding-top: 8rpx;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.businessTodo-filterCont {
+  height: calc(100% - 71rpx);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.businessTodo-filterCont .filterCont-list {
+  background-color: #fff;
+  font-size: 28rpx;
+  color: #b2b2b2;
+}
+.filterCont-list .filterCont-item {
+  padding: 0 36rpx;
+}
+.filterCont-item .filterCont-fiterName {
+  line-height: 88rpx;
+}
+.filterCont-item .filterCont-item_li {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 24rpx;
+}
+.filterCont-item_li text {
+  width: 23%;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f3f4f6;
+  margin-right: 2%;
+  margin-bottom: 2%;
+}
+.filterCont-item_li text:nth-child(4n + 4) {
+  margin-right: 0;
+}
+.filterCont-item_li text.active {
+  color: #fff;
+  background-color: #3579fb;
+}
+.businessTodo-filterCont .filterCont-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 36rpx;
+}
+.filterCont-btns button {
+  flex: 1;
+  height: 107rpx;
+  line-height: 107rpx;
+  font-size: 30rpx;
+  border-radius: 0;
+  margin-top: 46rpx;
+  margin-bottom: 20rpx;
+}
+.filterCont-btns button + button {
+  margin-left: 20rpx;
+}
+.filterCont-btns .resetBtn {
+  color: #000;
+  background-color: transparent;
+  border: 1px solid #e6e6e6;
+}
+.filterCont-btns .submitBtn {
+  color: #fff;
+  background-color: #3579fb;
+}

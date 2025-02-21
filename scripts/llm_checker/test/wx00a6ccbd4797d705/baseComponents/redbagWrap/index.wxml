@@ -1,0 +1,14 @@
+<redbag-common-package
+  bind:__l="__l"
+  bind:cartNextStep="__e"
+  bind:get="__e"
+  bind:getCouponBack="__e"
+  bind:init="__e"
+  class="vue-ref"
+  context="{{context}}"
+  data-event-opts="{{[ [ '^init',[ ['redBagInit'] ] ],[ '^cartNextStep',[ ['cartNextStep'] ] ],[ '^getCouponBack',[ ['getCouponBack'] ] ],[ '^get',[ [ 'resetDishConnextStep',['stop'] ] ] ] ]}}"
+  data-ref="redbag"
+  dataSet="{{dataSet}}"
+  vueId="16f3bd98-1"
+  wx:if="{{componentReady}}"
+></redbag-common-package>

@@ -1,0 +1,384 @@
+<view class="container data-v-6349aa54">
+  <view class="my-head data-v-6349aa54">
+    <view
+      bindtap="__e"
+      class="my-head-img data-v-6349aa54"
+      data-event-opts="{{[ [ 'tap',[ [ 'goNext',['/pages/wode/personalInfo?name='+userInfo.name+'&icon='+userInfo.icon+'&img='+userInfo.iconUrlSmall] ] ] ] ]}}"
+      style="float: left"
+    >
+      <image class="data-v-6349aa54" src="{{userInfo.iconUrlSmall}}"></image>
+    </view>
+    <view class="my-info ml30 data-v-6349aa54" style="float: left">
+      <view
+        class="fwb-500 mt30 flexible aItem-center text-333 data-v-6349aa54"
+        style="font-size: 36rpx"
+      >
+        <view
+          bindtap="__e"
+          class="data-v-6349aa54"
+          data-event-opts="{{[ [ 'tap',[ [ 'goNext',['/pages/wode/personalInfo?name='+userInfo.name+'&icon='+userInfo.icon+'&img='+userInfo.iconUrlSmall] ] ] ] ]}}"
+          >{{userInfo.name?userInfo.name:'--'}}</view
+        >
+        <view
+          bindtap="__e"
+          class="my-tb flexible jc-center aItem-center ml0 data-v-6349aa54"
+          data-event-opts="{{[ [ 'tap',[ ['syncUserInfo'] ] ] ]}}"
+          wx:if="{{uniPlatform!='mp-weixin'}}"
+        >
+          <uni-icons
+            bind:__l="__l"
+            class="data-v-6349aa54"
+            color="#333"
+            type="loop"
+            vueId="bae1c640-1"
+          ></uni-icons>
+        </view>
+      </view>
+      <view
+        bindtap="__e"
+        class="f24 fwb-400 mt10 text-muted flexible aItem-center data-v-6349aa54"
+        data-event-opts="{{[ [ 'tap',[ [ 'copyUserId',['$event'] ] ] ] ]}}"
+        >{{'用户ID：'+(userInfo.id?userInfo.id:'--')+''}}<image
+          class="copy_ic ml0 data-v-6349aa54"
+          src="/static/img/ic_copy.png"
+        ></image>
+      </view>
+    </view>
+  </view>
+  <view
+    class="{{['chongzhi-con','data-v-6349aa54',!userInfo.activityStatus?'chongzhi-con-normal':'']}}"
+    wx:if="{{userInfo.bannerUrl&&userInfo.iosPay}}"
+  >
+    <view
+      bindtap="__e"
+      class="chongzhi data-v-6349aa54"
+      data-event-opts="{{[ [ 'tap',[ [ 'goNext',['/pages/wode/topup?coin='+userInfo.coin+'&bonus='+userInfo.bonus] ] ] ] ]}}"
+    >
+      <image
+        class="img_vip data-v-6349aa54"
+        src="{{userInfo.bannerUrl}}"
+      ></image>
+      <view
+        class="chongzhi-btn f-tac text-fff f26 data-v-6349aa54"
+        hidden="{{!!userInfo.vip}}"
+        >立即开通VIP</view
+      >
+      <view
+        class="chongzhi-btn f-tac text-fff f26 xufei-btn data-v-6349aa54"
+        hidden="{{!userInfo.vip}}"
+        >立即续费</view
+      >
+      <view
+        class="chongzhi-time f-tac text-fff f26 data-v-6349aa54"
+        hidden="{{!userInfo.vip}}"
+        >{{(userInfo.vipExpiresTime?userInfo.vipExpiresTime:'--')+'到期'}}</view
+      >
+    </view>
+  </view>
+  <view
+    class="my-list data-v-6349aa54"
+    wx:if="{{userInfo.bannerUrl&&userInfo.iosPay}}"
+  >
+    <view
+      bindtap="__e"
+      class="my-item flexible aItem-center data-v-6349aa54"
+      data-event-opts="{{[ [ 'tap',[ [ 'goNext',['/pages/wode/topup?coin='+userInfo.coin+'&bonus='+userInfo.bonus] ] ] ] ]}}"
+    >
+      <view class="f28 text-333 fwb-400 flex data-v-6349aa54">我的书币</view>
+      <view class="flexible aItem-center data-v-6349aa54">
+        <image
+          class="ic_b data-v-6349aa54"
+          src="/static/img/ic_b@2x.png"
+        ></image>
+        <view class="coin-count ml0 data-v-6349aa54">{{userInfo.coin}}</view>
+        <view class="f22 text-999 data-v-6349aa54">书币</view>
+        <view class="coin-count ml30 data-v-6349aa54">{{userInfo.bonus}}</view>
+        <view class="f22 text-999 data-v-6349aa54">赠币</view>
+        <uni-icons
+          bind:__l="__l"
+          class="icon ml0 data-v-6349aa54"
+          color="#999"
+          type="forward"
+          vueId="bae1c640-2"
+        ></uni-icons>
+      </view>
+    </view>
+  </view>
+  <view class="mt24 my-list data-v-6349aa54">
+    <view
+      bindtap="__e"
+      class="my-item flexible aItem-center data-v-6349aa54"
+      data-event-opts="{{[ [ 'tap',[ [ 'goNext',['/pages/wode/readRecord'] ] ] ] ]}}"
+    >
+      <image class="data-v-6349aa54" src="/static/img/ic_read.png"></image>
+      <view class="f28 text-333 fwb-400 ml20 flex data-v-6349aa54"
+        >阅读记录</view
+      >
+      <uni-icons
+        bind:__l="__l"
+        class="icon data-v-6349aa54"
+        type="forward"
+        vueId="bae1c640-3"
+      ></uni-icons>
+    </view>
+    <view
+      bindtap="__e"
+      class="my-item flexible aItem-center data-v-6349aa54"
+      data-event-opts="{{[ [ 'tap',[ [ 'goNext',['/pages/wode/corePay'] ] ] ] ]}}"
+      wx:if="{{userInfo.iosPay}}"
+    >
+      <image class="data-v-6349aa54" src="/static/img/ic_money.png"></image>
+      <view class="f28 text-333 fwb-400 ml20 flex data-v-6349aa54"
+        >充值历史</view
+      >
+      <uni-icons
+        bind:__l="__l"
+        class="icon data-v-6349aa54"
+        type="forward"
+        vueId="bae1c640-4"
+      ></uni-icons>
+    </view>
+    <view
+      bindtap="__e"
+      class="my-item flexible aItem-center data-v-6349aa54"
+      data-event-opts="{{[ [ 'tap',[ [ 'goNext',['/pages/wode/coinsRecord'] ] ] ] ]}}"
+      wx:if="{{userInfo.iosPay}}"
+    >
+      <image class="data-v-6349aa54" src="/static/img/ic_zb.png"></image>
+      <view class="f28 text-333 fwb-400 ml20 flex data-v-6349aa54"
+        >赠币记录</view
+      >
+      <uni-icons
+        bind:__l="__l"
+        class="icon data-v-6349aa54"
+        type="forward"
+        vueId="bae1c640-5"
+      ></uni-icons>
+    </view>
+    <view
+      bindtap="__e"
+      class="my-item flexible aItem-center data-v-6349aa54"
+      data-event-opts="{{[ [ 'tap',[ [ 'goNext',['/pages/wode/consumeList'] ] ] ] ]}}"
+      wx:if="{{userInfo.iosPay}}"
+    >
+      <image class="data-v-6349aa54" src="/static/img/ic_watch.png"></image>
+      <view class="f28 text-333 fwb-400 ml20 flex data-v-6349aa54"
+        >消费历史</view
+      >
+      <uni-icons
+        bind:__l="__l"
+        class="icon data-v-6349aa54"
+        type="forward"
+        vueId="bae1c640-6"
+      ></uni-icons>
+    </view>
+  </view>
+  <view class="mt24 my-list data-v-6349aa54">
+    <view
+      bindtap="__e"
+      class="my-item flexible aItem-center data-v-6349aa54"
+      data-event-opts="{{[ [ 'tap',[ [ 'goNext',['/pages/wode/consume'] ] ] ] ]}}"
+      wx:if="{{userInfo.showIncome}}"
+    >
+      <image class="data-v-6349aa54" src="/static/img/ic_shouyi.png"></image>
+      <view class="f28 text-333 fwb-400 ml20 flex data-v-6349aa54"
+        >收益提现</view
+      >
+      <uni-icons
+        bind:__l="__l"
+        class="icon data-v-6349aa54"
+        type="forward"
+        vueId="bae1c640-7"
+      ></uni-icons>
+    </view>
+    <view
+      bindtap="__e"
+      class="my-item flexible aItem-center data-v-6349aa54"
+      data-event-opts="{{[ [ 'tap',[ [ 'goNext',['/pages/wode/invitationCode'] ] ] ] ]}}"
+    >
+      <image class="data-v-6349aa54" src="/static/img/ic_share.png"></image>
+      <view class="f28 text-333 fwb-400 ml20 flex data-v-6349aa54">邀请码</view>
+      <uni-icons
+        bind:__l="__l"
+        class="icon data-v-6349aa54"
+        type="forward"
+        vueId="bae1c640-8"
+      ></uni-icons>
+    </view>
+    <view
+      bindtap="__e"
+      class="my-item flexible aItem-center data-v-6349aa54"
+      data-event-opts="{{[ [ 'tap',[ [ 'goNext',['/pages/wode/plan'] ] ] ] ]}}"
+      wx:if="{{uniPlatform=='mp-toutiao'}}"
+    >
+      <image class="data-v-6349aa54" src="/static/img/ic_plan@2x.png"></image>
+      <view class="f28 text-333 fwb-400 ml20 flex flexible data-v-6349aa54"
+        >推广计划</view
+      >
+      <uni-icons
+        bind:__l="__l"
+        class="icon data-v-6349aa54"
+        type="forward"
+        vueId="bae1c640-9"
+      ></uni-icons>
+    </view>
+    <view
+      bindtap="__e"
+      class="my-item flexible aItem-center data-v-6349aa54"
+      data-event-opts="{{[ [ 'tap',[ [ 'copyconcentration',['https://docs.qq.com/sheet/DYVNwaVJZV2ZxTWl3?tab=vcq2cg&scode='] ] ] ] ]}}"
+      wx:if="{{userInfo.type>1}}"
+    >
+      <image class="data-v-6349aa54" src="/static/img/ic_sd@2x.png"></image>
+      <view class="f28 text-333 fwb-400 ml20 flex flexible data-v-6349aa54"
+        >推文书单</view
+      >
+      <view class="f26 data-v-6349aa54" style="color: #6787a0"
+        >点击复制书单链接</view
+      >
+    </view>
+    <view
+      bindtap="__e"
+      class="my-item flexible aItem-center data-v-6349aa54"
+      data-event-opts="{{[ [ 'tap',[ ['bindaccount'] ] ] ]}}"
+      wx:if="{{userInfo.type>1}}"
+    >
+      <image class="data-v-6349aa54" src="/static/img/ic_h5.png"></image>
+      <view class="f28 text-333 fwb-400 ml20 flex flexible data-v-6349aa54"
+        >博主网页版</view
+      >
+      <uni-icons
+        bind:__l="__l"
+        class="icon data-v-6349aa54"
+        type="forward"
+        vueId="bae1c640-10"
+      ></uni-icons>
+    </view>
+  </view>
+  <view class="mt24 my-list data-v-6349aa54">
+    <button
+      class="my-item flexible aItem-center data-v-6349aa54"
+      data-im-id="{{imId}}"
+      hoverClass="none"
+      openType="{{imId=='0'?'contact':'im'}}"
+      wx:if="{{uniPlatform=='mp-toutiao'}}"
+    >
+      <image class="data-v-6349aa54" src="/static/img/ic_service.png"></image>
+      <view class="f28 text-333 fwb-400 ml20 flex data-v-6349aa54"
+        >联系客服</view
+      >
+      <uni-icons
+        bind:__l="__l"
+        class="icon data-v-6349aa54"
+        type="forward"
+        vueId="bae1c640-11"
+      ></uni-icons>
+    </button>
+    <button
+      class="my-item flexible aItem-center data-v-6349aa54"
+      hoverClass="none"
+      openType="openProfile"
+      user="2722728955"
+      wx:if="{{uniPlatform=='mp-kuaishou'}}"
+    >
+      <image class="data-v-6349aa54" src="/static/img/ic_service.png"></image>
+      <view class="f28 text-333 fwb-400 ml20 flex data-v-6349aa54"
+        >联系客服</view
+      >
+      <uni-icons
+        bind:__l="__l"
+        class="icon data-v-6349aa54"
+        type="forward"
+        vueId="bae1c640-12"
+      ></uni-icons>
+    </button>
+    <button
+      bindtap="__e"
+      class="my-item flexible aItem-center data-v-6349aa54"
+      data-event-opts="{{[ [ 'tap',[ [ 'goNext',['/pages/wode/contact?userId='+userInfo.id] ] ] ] ]}}"
+      wx:if="{{uniPlatform=='mp-weixin'}}"
+    >
+      <image class="data-v-6349aa54" src="/static/img/ic_service.png"></image>
+      <view class="f28 text-333 fwb-400 ml20 flex data-v-6349aa54"
+        >联系客服</view
+      >
+      <uni-icons
+        bind:__l="__l"
+        class="icon data-v-6349aa54"
+        type="forward"
+        vueId="bae1c640-13"
+      ></uni-icons>
+    </button>
+    <view
+      bindtap="__e"
+      class="my-item flexible aItem-center data-v-6349aa54"
+      data-event-opts="{{[ [ 'tap',[ [ 'goNext',['/pages/wode/notice?userId='+userInfo.id] ] ] ] ]}}"
+    >
+      <image
+        class="ic_inform data-v-6349aa54"
+        src="/static/img/ic_inform@2x.png"
+      ></image>
+      <view class="f28 text-333 fwb-400 ml20 flex flexible data-v-6349aa54"
+        >通知公告<view
+          class="tip_unread data-v-6349aa54"
+          wx:if="{{noticeCount}}"
+        ></view>
+      </view>
+      <uni-icons
+        bind:__l="__l"
+        class="icon data-v-6349aa54"
+        type="forward"
+        vueId="bae1c640-14"
+      ></uni-icons>
+    </view>
+    <view
+      bindtap="__e"
+      class="my-item flexible aItem-center data-v-6349aa54"
+      data-event-opts="{{[ [ 'tap',[ [ 'goNext',['/pages/wode/setting'] ] ] ] ]}}"
+    >
+      <image
+        class="ic_inform data-v-6349aa54"
+        src="/static/img/ic_sz.png"
+      ></image>
+      <view class="f28 text-333 fwb-400 ml20 flex flexible data-v-6349aa54"
+        >设置</view
+      >
+      <uni-icons
+        bind:__l="__l"
+        class="icon data-v-6349aa54"
+        type="forward"
+        vueId="bae1c640-15"
+      ></uni-icons>
+    </view>
+  </view>
+  <uni-popup
+    bind:__l="__l"
+    class="sync-pop data-v-6349aa54 vue-ref"
+    data-ref="syncpopup"
+    vueId="bae1c640-16"
+    vueSlots="{{['default']}}"
+  >
+    <view class="sync-pop-con f-tac data-v-6349aa54">
+      <view class="f30 text-000 fwb-500 sync-pop-title data-v-6349aa54"
+        >{{'同步'+(uniPlatform=='mp-toutiao'?'抖音':uniPlatform=='mp-kuaishou'?'快手':'微信')+'账号信息'}}</view
+      >
+      <view class="f28 text-333 fwb-400 mt24 data-v-6349aa54"
+        >允许同步后能有更好的追剧体验！</view
+      >
+      <view class="flexible sync-pop-opr data-v-6349aa54">
+        <view
+          bindtap="__e"
+          class="flex f30 text-muted data-v-6349aa54"
+          data-event-opts="{{[ [ 'tap',[ [ 'hidePop',['$event'] ] ] ] ]}}"
+          >取消</view
+        >
+        <view
+          bindtap="__e"
+          class="flex f30 data-v-6349aa54"
+          data-event-opts="{{[ [ 'tap',[ [ 'syncFun',['$event'] ] ] ] ]}}"
+          style="color: #fa739a; border-right: none"
+          >确认</view
+        >
+      </view>
+    </view>
+  </uni-popup>
+</view>

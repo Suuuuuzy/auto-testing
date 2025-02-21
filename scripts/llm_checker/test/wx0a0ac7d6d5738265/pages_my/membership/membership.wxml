@@ -1,0 +1,29 @@
+<view>
+  <view class="header">
+    <view style="{{'padding-top:'+a}}"></view>
+    <view class="navBar" style="{{'height:'+c}}">
+      <image
+        bindtap="{{b}}"
+        mode=""
+        src="https://yiningjiayou.com/yn/ynxcx/home.png"
+        style="width: 50rpx; height: 50rpx; z-index: 2"
+      ></image>
+      <text style="padding-right: 36rpx"></text>
+    </view>
+  </view>
+  <view class="{{['z-pop',i]}}" wx:if="{{d}}">
+    <image class="img" mode="" src="{{e}}"></image>
+    <view class="z-ts">
+      <image
+        class="lvicon"
+        mode="scaleToFill"
+        src="https://yiningjiayou.com/yn/ynxcx/hjvip.png"
+      ></image>
+      <text class="ts">{{f}}</text>
+    </view>
+    <text class="z-lv">{{g}}</text>
+    <view bindtap="{{h}}" class="z-btn">
+      <text class="txt">确认</text>
+    </view>
+  </view>
+</view>

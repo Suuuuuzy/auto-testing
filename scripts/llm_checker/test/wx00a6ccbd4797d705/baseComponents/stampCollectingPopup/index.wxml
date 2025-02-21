@@ -1,0 +1,28 @@
+<view class="_div data-v-f18fb15e">
+  <weixin-popup
+    bind:__l="__l"
+    bind:close="__e"
+    class="data-v-f18fb15e"
+    closeOnClickOverlay="{{false}}"
+    closeable="{{true}}"
+    customStyle="border-radius: 10px;background: none;"
+    data-event-opts="{{[ [ '^close',[ ['close'] ] ] ]}}"
+    position="center"
+    show="{{showPopup}}"
+    vueId="aadd63f0-1"
+    vueSlots="{{['default']}}"
+  >
+    <view class="stampCollectingPopup _div data-v-f18fb15e">
+      <image
+        class="stampCollectingPopupbg _img data-v-f18fb15e"
+        src="https://cdnpic.wuuxiang.com/msgjDecorationImg/stampCollectingPopupbg.png"
+      ></image>
+      <view
+        bindtap="__e"
+        class="kljx _div data-v-f18fb15e"
+        data-event-opts="{{[ [ 'tap',[ [ 'beforgo',['$event'] ] ] ] ]}}"
+        >快来揭晓</view
+      >
+    </view>
+  </weixin-popup>
+</view>

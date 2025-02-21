@@ -1,0 +1,59 @@
+<zym-paging
+  bind:__l="__l"
+  bindloadData="{{j}}"
+  bindreFresh="{{i}}"
+  uI="1cf91228-0"
+  uP="{{k}}"
+  uS="{{['item']}}"
+  wx:if="{{k}}"
+>
+  <view slot="item">
+    <view class="list" wx:for="{{a}}" wx:key="j">
+      <view class="center" style="{{'opacity:'+h}}">
+        <view class="cleft">
+          <text class="moneyc" wx:if="{{b}}">￥{{item.a}}</text>
+          <text class="title">{{c}}</text>
+        </view>
+        <view class="cright">
+          <view class="cclum">
+            <view class="">
+              <text class="blig" wx:if="{{d}}">{{item.b}}</text>
+              <text class="blig" wx:if="{{e}}">车牌：{{item.c}}</text>
+            </view>
+            <text class="toolp">{{item.d}}</text>
+            <text class="huise">有效期限至：{{item.e}}</text>
+          </view>
+          <view bindtap="{{item.g}}" class="fc couponStatus mt20" wx:if="{{f}}"
+            >{{item.f}}</view
+          >
+          <view bindtap="{{item.i}}" class="fc couponStatus mt20" wx:if="{{g}}"
+            >{{item.h}}</view
+          >
+        </view>
+      </view>
+    </view>
+  </view>
+</zym-paging>
+<view>
+  <view bindtouchmove="{{m}}" class="mask" hidden="{{!l}}"></view>
+  <view class="modal-container" hidden="{{!p}}">
+    <view class="modal-header">洗车注意事项</view>
+    <view class="modal-content">
+      <view class="heis"> <text class="hs">1. 车辆</text>限高2米</view>
+      <view class="heis"> <text class="hs">2. 挂</text>空挡（N），松刹车</view>
+      <view class="heis"> <text class="hs">3.</text> 不要熄火，关闭启停</view>
+      <view class="heis">
+        <text class="hs">4. </text>收起后视镜、车窗和天线</view
+      >
+      <view class="heis"> <text class="hs">5. </text>关闭雨刷</view>
+    </view>
+    <view class="modal-footer">
+      <button bindtap="{{n}}" class="cancel-button" style="border: none">
+        取消
+      </button>
+      <button bindtap="{{o}}" class="start-button" style="border: none">
+        开始洗车
+      </button>
+    </view>
+  </view>
+</view>

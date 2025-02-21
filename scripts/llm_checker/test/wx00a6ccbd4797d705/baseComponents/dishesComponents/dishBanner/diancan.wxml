@@ -1,0 +1,152 @@
+<view
+  class="{{['banner','_div','data-v-2a162bbc','banner'+bannerInfo.storeLayout]}}"
+  wx:if="{{bannerInfo.openBanner&&(bannerInfo.bannerFile.length||bannerInfo.bannerAdScheme.length)}}"
+>
+  <advert-components
+    advert="{{advert}}"
+    bind:__l="__l"
+    bind:adClickToPage="__e"
+    bind:dishAd="__e"
+    class="data-v-2a162bbc"
+    currentPageHasDish="{{true}}"
+    data-event-opts="{{[ [ '^dishAd',[ ['dishAd'] ] ],[ '^adClickToPage',[ ['adClickToPage'] ] ] ]}}"
+    overspreadX="{{true}}"
+    pageControlToPage="{{true}}"
+    vueId="872746cc-1"
+    wx:if="{{bannerInfo.bannerType==2&&advert}}"
+  ></advert-components>
+  <image
+    alt
+    class="bannerImg _img data-v-2a162bbc"
+    src="{{bannerInfo.bannerFile[0]&&bannerInfo.bannerFile[0]['resUrl']}}"
+    wx:else
+  ></image>
+  <store-layout1
+    bannerInfo="{{bannerInfo}}"
+    bind:__l="__l"
+    class="data-v-2a162bbc"
+    context="{{context}}"
+    isDeliveryFee="{{isDeliveryFee}}"
+    ready="{{ready}}"
+    vueId="872746cc-2"
+    vueSlots="{{['tableno']}}"
+    wx:if="{{bannerInfo.storeLayout===1}}"
+  >
+    <view class="flexCenter mt10r _div data-v-2a162bbc" slot="tableno">
+      <slot name="tableno"></slot>
+      <view class="ml20r _div data-v-2a162bbc">
+        <slot name="countdown"></slot>
+      </view>
+    </view>
+  </store-layout1>
+  <block wx:else>
+    <store-layout2
+      bannerInfo="{{bannerInfo}}"
+      bind:__l="__l"
+      class="data-v-2a162bbc"
+      context="{{context}}"
+      isDeliveryFee="{{isDeliveryFee}}"
+      ready="{{ready}}"
+      vueId="872746cc-3"
+      vueSlots="{{['tableno']}}"
+      wx:if="{{bannerInfo.storeLayout===2}}"
+    >
+      <view class="flexCenter mt10r _div data-v-2a162bbc" slot="tableno">
+        <slot name="tableno"></slot>
+        <view class="ml20r _div data-v-2a162bbc">
+          <slot name="countdown"></slot>
+        </view>
+      </view>
+    </store-layout2>
+    <block wx:else>
+      <store-layout3
+        bannerInfo="{{bannerInfo}}"
+        bind:__l="__l"
+        class="data-v-2a162bbc"
+        context="{{context}}"
+        isDeliveryFee="{{isDeliveryFee}}"
+        ready="{{ready}}"
+        vueId="872746cc-4"
+        vueSlots="{{['tableno']}}"
+        wx:if="{{bannerInfo.storeLayout===3}}"
+      >
+        <view class="flexAlignCenter mt10r _div data-v-2a162bbc" slot="tableno">
+          <slot name="tableno"></slot>
+          <view class="ml20r _div data-v-2a162bbc">
+            <slot name="countdown"></slot>
+          </view>
+        </view>
+      </store-layout3>
+      <block wx:else>
+        <store-layout4
+          bannerInfo="{{bannerInfo}}"
+          bind:__l="__l"
+          class="data-v-2a162bbc"
+          context="{{context}}"
+          isDeliveryFee="{{isDeliveryFee}}"
+          ready="{{ready}}"
+          vueId="872746cc-5"
+          vueSlots="{{['tableno']}}"
+          wx:if="{{bannerInfo.storeLayout===4}}"
+        >
+          <view
+            class="flexAlignCenter mt10r _div data-v-2a162bbc"
+            slot="tableno"
+          >
+            <slot name="tableno"></slot>
+            <view class="ml20r _div data-v-2a162bbc">
+              <slot name="countdown"></slot>
+            </view>
+          </view>
+        </store-layout4>
+        <block wx:else>
+          <store-layout6
+            bannerInfo="{{bannerInfo}}"
+            bind:__l="__l"
+            class="data-v-2a162bbc"
+            context="{{context}}"
+            isDeliveryFee="{{isDeliveryFee}}"
+            ready="{{ready}}"
+            vueId="872746cc-6"
+            vueSlots="{{['tableno']}}"
+            wx:if="{{bannerInfo.storeLayout===6}}"
+          >
+            <view slot="tableno">
+              <slot name="tableno"></slot>
+              <slot name="countdown"></slot>
+            </view>
+          </store-layout6>
+          <block wx:else>
+            <store-layout7
+              bannerInfo="{{bannerInfo}}"
+              bind:__l="__l"
+              class="data-v-2a162bbc"
+              context="{{context}}"
+              isDeliveryFee="{{isDeliveryFee}}"
+              ready="{{ready}}"
+              vueId="872746cc-7"
+              vueSlots="{{['countdown']}}"
+              wx:if="{{bannerInfo.storeLayout===7}}"
+            >
+              <slot name="countdown" slot="countdown"></slot>
+            </store-layout7>
+          </block>
+        </block>
+      </block>
+    </block>
+  </block>
+  <view
+    class="{{['bannerDisplay','_div','data-v-2a162bbc',bannerInfo.storeLayout=='6'?'bannerWidth':'']}}"
+    wx:if="{{bannerInfo.takeout.enable}}"
+  >
+    <waidai-wrap
+      bind:__l="__l"
+      bind:changeWaidai="__e"
+      class="data-v-2a162bbc"
+      data-event-opts="{{[ [ '^changeWaidai',[ ['changeWaidai'] ] ] ]}}"
+      initobj="{{bannerInfo}}"
+      vueId="872746cc-8"
+    ></waidai-wrap>
+  </view>
+  <slot></slot>
+</view>

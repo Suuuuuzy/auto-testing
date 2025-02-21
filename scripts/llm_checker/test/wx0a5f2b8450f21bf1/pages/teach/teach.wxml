@@ -1,0 +1,9 @@
+<view
+  bindtap="__e"
+  data-event-opts="{{[ [ 'tap',[ [ 'change',['$event'] ] ] ] ]}}"
+>
+  <image
+    src="{{imageList[curIndex]}}"
+    style="width: 100%; height: 100vh"
+  ></image>
+</view>

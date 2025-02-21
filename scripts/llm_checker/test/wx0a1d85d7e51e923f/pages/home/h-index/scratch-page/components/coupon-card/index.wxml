@@ -1,0 +1,31 @@
+<ui-coupon-card
+  bind:tap="gotoDetail"
+  currency="{{couponDTO.currency||''}}"
+  desc="{{couponDTO.desc||''}}"
+  ruleDesc="{{couponDTO.ruleDesc||''}}"
+  status="{{couponDTO.status||''}}"
+  tag="{{couponDTO.tag||''}}"
+  timeLimit="{{couponDTO.timeLimit||''}}"
+  title="{{couponDTO.title||''}}"
+  type="{{couponDTO.type||''}}"
+  value="{{couponDTO.value||'0'}}"
+>
+  <view class="coupon-btn-slot" slot="operator">
+    <view wx:if="{{!isReceived}}">
+      <t-button
+        bind:tap="btnClick"
+        disabled="{{!canUse}}"
+        shape="rectangle"
+        size="extra-small"
+        style="font-family: 'UKIJ Tuz Tom'"
+        tClass="coupon-btn-{{btnTheme}}"
+        theme="{{btnTheme}}"
+        variant="outline"
+        >{{btnText}}
+      </t-button>
+    </view>
+    <view wx:else>
+      <text>{{btnText}}</text>
+    </view>
+  </view>
+</ui-coupon-card>

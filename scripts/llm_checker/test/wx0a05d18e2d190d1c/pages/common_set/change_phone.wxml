@@ -1,0 +1,12 @@
+<view>
+    <form bindsubmit="__e" data-event-opts="{{[ [ 'submit',[ [ 'form_submit',['$event'] ] ] ] ]}}">
+        <view class="flex_center_x">
+            <input bindinput="__e" class="input_style" data-event-opts="{{[ [ 'input',[ [ 'input_change1',['$event'] ] ] ] ]}}" disabled="{{is_verify}}" name="phone" placeholder="请输入新手机号码" value="{{user_phone}}"></input>
+        </view>
+        <view class="flex_center_x">
+            <input bindinput="__e" class="input_style" data-event-opts="{{[ [ 'input',[ [ 'input_change2',['$event'] ] ] ] ]}}" name="code" placeholder="请输入验证码" value="{{verify_code}}"></input>
+            <text bindtap="__e" class="gl_size_s code_style" data-event-opts="{{[ [ 'tap',[ [ 'click_verify_code',['$event'] ] ] ] ]}}">{{code_msg}}</text>
+        </view>
+        <button class="gl_btn_oval" formType="submit" style="margin-top:200rpx;" type="warn">{{is_verify?'下一步':'确定'}}</button>
+    </form>
+</view>

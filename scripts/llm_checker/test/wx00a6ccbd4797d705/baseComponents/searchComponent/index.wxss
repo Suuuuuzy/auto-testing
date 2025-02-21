@@ -1,0 +1,55 @@
+.serach {
+  background-color: #fff;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+  margin: 30rpx;
+  padding: 20rpx;
+}
+.serach,
+.serach .content {
+  align-items: center;
+  display: flex;
+}
+.serach .content {
+  background: #fff;
+  height: 50rpx;
+  overflow: hidden;
+  padding: 14rpx;
+  transition: all 0.2s linear;
+  width: calc(100% - 150rpx);
+}
+.serach .content .content-box {
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+.serach .content .content-box.center {
+  justify-content: center;
+}
+.serach .content .content-box .input {
+  height: 50rpx;
+  line-height: 50rpx;
+  max-width: 100%;
+  transition: all 0.2s linear;
+  width: 100%;
+}
+.serach .content .content-box .input.center {
+  width: 200rpx;
+}
+.serach .content .content-box .input.sub {
+  color: grey;
+  width: auto;
+}
+.serach .content .content-box .iconguanbi {
+  color: #999;
+}
+.serach .back {
+  border: 1px solid;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  margin-left: 30rpx;
+  padding: 5rpx 0;
+  text-align: center;
+  width: 120rpx;
+}

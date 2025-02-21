@@ -1,0 +1,104 @@
+<block wx:if="{{list.length>0}}">
+  <view class="task-box">
+    <view class="sign-box share">
+      <navigator class="left1" hoverClass="on" url="./share/share">
+        <image class="im" mode="" src="/images/icon-hb.png"></image>
+        <view class="l">
+          <view class="title">邀请好友得现金</view>
+          <view class="share-box">
+            <view class="left">
+              <view class="">
+                有效邀请 : <text>{{userinfo.share_count}}人</text>
+                <image
+                  bind:tap="onShowMsg"
+                  data-img="https://apis.ddfans.com/bian/public/static/image/qsy/sharemsg/yxyq.jpg"
+                  mode="widthFix"
+                  src="/images/icon-xq.png"
+                ></image>
+              </view>
+              <view class="">
+                获得佣金 : <text>￥{{userinfo.total_price}}</text>
+                <view class="jb">[{{userinfo.share_grade}}]</view>
+                <image
+                  bind:tap="onShowMsg"
+                  data-img="https://apis.ddfans.com/bian/public/static/image/qsy/sharemsg/hydj.jpg"
+                  mode="widthFix"
+                  src="/images/icon-xq.png"
+                ></image>
+              </view>
+              <view class="">
+                可以提现 :
+                <navigator class="text" hoverClass="no" url="./cash"
+                  >￥{{userinfo.price}} [立即提现]</navigator
+                >
+                <image
+                  bind:tap="onShowMsg"
+                  data-img="https://apis.ddfans.com/bian/public/static/image/qsy/sharemsg/fytx.jpg"
+                  mode="widthFix"
+                  src="/images/icon-xq.png"
+                ></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+      <view class="right">
+        <view class="title">
+          <view></view>
+          <view bindtap="showShareMsg" class="share-msg-btn">
+            邀请规则 <image mode="" src="/images/icon-xq.png"></image>
+          </view>
+        </view>
+        <button>
+          <navigator hoverClass="no" url="./sc?parent_id={{userinfo.id}}"
+            >立即邀请</navigator
+          >
+        </button>
+      </view>
+    </view>
+  </view>
+  <view class="msg-share"
+    >注意：邀请用户必须是首次打开使用此小程序，曾经使用过均不记录为有效用户。</view
+  >
+  <view class="user-list-bg">
+    <view class="user-list-box">
+      <view class="title">有效用户</view>
+      <view class="list">
+        <view class="item" wx:for="{{list}}">
+          <view class="id">ID:{{item.id}}</view>
+          <view class="zc">注册:{{item.addtime}}</view>
+          <view class="hy">{{item.level?'会 员':'非会员'}}</view>
+          <view class="yj"
+            >佣金:￥{{item.share_price?item.share_price:'0'}}</view
+          >
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="invest-bg" wx:if="{{shareMsg}}">
+    <view class="invest-box">
+      <view bindtap="hideShareMsg" class="btn close">
+        <image src="/images/icon-x.png"></image>
+      </view>
+      <view class="h1">邀请规则</view>
+      <view
+        class="p"
+        style="
+          text-align: left;
+          margin-top: 20rpx;
+          font-size: 26rpx;
+          font-weight: initial;
+        "
+      >
+        <view> 1.成功邀请有效用户一人，获得10枚无印豆。</view>
+        <view>2.成功邀请有效用户一人，可按等级获得分佣。</view>
+        <view> 3.最终解析权归本平台所有。</view>
+      </view>
+    </view>
+  </view>
+</block>
+<view class="user-list-bg" wx:else>
+  <view class="user-list-box">
+    <view class="title">暂未开放</view>
+  </view>
+</view>

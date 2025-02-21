@@ -1,0 +1,89 @@
+<view class="_div data-v-99e46a92">
+  <weixin-popup
+    bind:__l="__l"
+    bind:close="__e"
+    class="data-v-99e46a92"
+    closeOnClickOverlay="{{false}}"
+    customStyle="background: none"
+    data-event-opts="{{[ [ '^close',[ ['closePoup'] ] ] ]}}"
+    position="center"
+    show="{{show}}"
+    vueId="768ecfa6-1"
+    vueSlots="{{['default']}}"
+    zIndex="{{1100}}"
+  >
+    <view
+      class="{{['data-v-99e46a92',btnRadio==1?'tr':'tl']}}"
+      wx:if="{{hasSaveBtn}}"
+    >
+      <navigator class="data-v-99e46a92" openType="exit" target="miniProgram">
+        <view class="close_box _div data-v-99e46a92">
+          <label
+            class="iconfont icon-cha close_icon _span data-v-99e46a92"
+          ></label>
+        </view>
+      </navigator>
+    </view>
+    <view class="{{['data-v-99e46a92',btnRadio==1?'tr':'tl']}}" wx:else>
+      <view
+        bindtap="__e"
+        class="close_box _div data-v-99e46a92"
+        data-event-opts="{{[ [ 'tap',[ [ 'closePoup',['$event'] ] ] ] ]}}"
+      >
+        <label
+          class="iconfont icon-cha close_icon _span data-v-99e46a92"
+        ></label>
+      </view>
+    </view>
+    <view
+      class="serviceAgreementPopup servermiddle _div data-v-99e46a92"
+      style="{{'width:'+windowWidth+'px'+';'+'padding-bottom:'+(hasSaveBtn?'90px':0)+';'}}"
+    >
+      <view class="tc cardPopupTitle _div data-v-99e46a92"
+        >《会员服务协议》</view
+      >
+      <view
+        class="cardPopupCon _div data-v-99e46a92"
+        style="{{'max-height:'+windowHeight+'px'+';'}}"
+      >
+        <rich-text
+          class="data-v-99e46a92"
+          nodes="{{protocolText}}"
+          space="nbsp"
+          style="word-break: break-word; white-space: pre-wrap"
+        ></rich-text>
+      </view>
+      <view class="cardPopupFooter _div data-v-99e46a92" wx:if="{{hasSaveBtn}}">
+        <view
+          bindtap="__e"
+          class="greeText _div data-v-99e46a92"
+          data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+        >
+          <label
+            class="pr5 _span data-v-99e46a92"
+            style="{{'color:'+themeColor+';'}}"
+          >
+            <view
+              class="iconfont icon-fangxingxuanzhongfill _i data-v-99e46a92"
+              wx:if="{{greefwxy}}"
+            ></view>
+            <view
+              class="iconfont icon-fangxingweixuanzhong _i data-v-99e46a92"
+              wx:else
+            ></view>
+          </label>
+          <label class="_span data-v-99e46a92"
+            >我已认真阅读并同意《会员服务协议》</label
+          >
+        </view>
+        <view
+          bindtap="__e"
+          class="gree _div data-v-99e46a92"
+          data-event-opts="{{[ [ 'tap',[ [ 'updateProtocol',['$event'] ] ] ] ]}}"
+          style="{{'background:'+(greefwxy?themeColor:'#ddd')+';'}}"
+          >同意确认</view
+        >
+      </view>
+    </view>
+  </weixin-popup>
+</view>

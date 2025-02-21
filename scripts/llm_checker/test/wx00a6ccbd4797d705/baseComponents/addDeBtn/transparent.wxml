@@ -1,0 +1,37 @@
+<view
+  bindtap="__e"
+  class="{{['_div','data-v-de3e13d4','add-de-btn-transparent',trueNum?'flexContentBetween':'flexContentCenter']}}"
+  data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+  style="{{'background-color:'+(isTransparent?'':set.transparentThemeColor)+';'+'height:'+set.size+'px'+';'+'line-height:'+set.size+'px'+';'}}"
+>
+  <block wx:if="{{trueNum}}">
+    <view
+      catchtap="__e"
+      class="btn minus _div data-v-de3e13d4"
+      data-event-opts="{{[ [ 'tap',[ [ 'minus',['$event'] ] ] ] ]}}"
+      style="{{$root.s0}}"
+      >-</view
+    >
+    <input-num
+      bind:__l="__l"
+      bind:click="__e"
+      bind:input="__e"
+      bind:shift="__e"
+      class="f28 data-v-de3e13d4"
+      customStyle="{{'width: '+set.inputSize+'px'}}"
+      data-event-opts="{{[ [ '^input',[ ['printNewNum'] ] ],[ '^click',[ ['inputClick'] ] ],[ '^shift',[ ['shift'] ] ] ]}}"
+      precision="{{precision}}"
+      style="padding: 8rpx 10rpx"
+      value="{{trueNum}}"
+      vueId="6da4057f-1"
+    ></input-num>
+  </block>
+  <view
+    catchtap="__e"
+    class="btn plus _div data-v-de3e13d4"
+    data-event-opts="{{[ [ 'tap',[ [ 'plus',['$event'] ] ] ] ]}}"
+    id="plus"
+    style="{{$root.s1}}"
+    >+</view
+  >
+</view>

@@ -1,0 +1,74 @@
+<view class="dub-page">
+  <cu-custom
+    bgColor="bg-gradual-blue"
+    bind:__l="__l"
+    isBack="{{true}}"
+    vueId="2e637200-1"
+    vueSlots="{{['content']}}"
+  >
+    <view slot="backText">返回</view>
+    <view slot="content">文字配音助手</view>
+  </cu-custom>
+  <view class="content">
+    <textarea
+      bindblur="onBlur"
+      bindinput="setText"
+      maxlength="300"
+      placeholder="请输入配音所需要的文本"
+      value="{{text}}"
+    ></textarea>
+    <view class="tool">
+      <view>
+        <text bindtap="insertStop">插入停顿</text>
+        <text bindtap="append">粘贴文本</text>
+        <text bindtap="clear">清除输入</text>
+      </view>
+      <text>{{text.length}}/300</text>
+    </view>
+    <view class="dub-flex">
+      <view bindtap="userSelect" class="flex-item">
+        <text>发音人</text>
+        <image
+          alt=""
+          src="../../static/img/people.png"
+          srcset=""
+          style="width: 80rpx; height: 80rpx"
+        ></image>
+        <text class="select-status"
+          >{{personInfo.suit}}：{{personInfo.name}}</text
+        >
+      </view>
+      <view bindtap="userSpeed" class="flex-item">
+        <text>语速</text>
+        <image
+          alt=""
+          src="../../static/img/speed.png"
+          srcset=""
+          style="width: 80rpx; height: 80rpx"
+        ></image>
+        <text class="select-status">{{sepeed[selectSpeedIndex]}}</text>
+      </view>
+      <view bindtap="userController" class="flex-item">
+        <text>音量</text>
+        <image
+          alt=""
+          src="../../static/img/controller.png"
+          srcset=""
+          style="width: 80rpx; height: 80rpx"
+        ></image>
+        <text class="select-status">{{controller[selectControllerIndex]}}</text>
+      </view>
+    </view>
+    <view class="tips">
+      <text
+        >温馨提示：规范使用标点符号更利于标准的配音。选择正确的分类才能正确完成配音，否责会无法完成配音</text
+      >
+    </view>
+    <view bindtap="history" class="link">
+      <text>历史记录</text>
+    </view>
+    <view class="position-button">
+      <view bindtap="toPullSelect">立即生成</view>
+    </view>
+  </view>
+</view>

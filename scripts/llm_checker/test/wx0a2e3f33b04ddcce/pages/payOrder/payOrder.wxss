@@ -1,0 +1,125 @@
+page {
+  background-color: #efefef;
+}
+.pay-order {
+  height: -webkit-max-content;
+  height: max-content;
+  padding: 10px;
+}
+.money {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px 0 hsla(0, 0%, 89%, 0.5);
+  flex-direction: column;
+  height: 105px;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+  padding: 0 11px;
+}
+.money,
+.money-top {
+  display: -webkit-flex;
+  display: flex;
+}
+.money-top {
+  font-size: 16px;
+  justify-content: space-between;
+}
+.total-price {
+  background-clip: text;
+  background-image: linear-gradient(146deg, #fc8c40 -5%, #fd5475 104%);
+  color: transparent;
+}
+.money-bottom {
+  color: #666;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 14px;
+  justify-content: space-between;
+}
+.order-content {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px 0 hsla(0, 0%, 89%, 0.5);
+  height: -webkit-max-content;
+  height: max-content;
+  padding: 18px 11px 15px;
+}
+.company {
+  color: #666;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.split-line {
+  background-color: #eee;
+  height: 1px;
+}
+.order-bottom {
+  display: -webkit-flex;
+  display: flex;
+  margin-top: 15px;
+}
+.dish-image {
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  margin-right: 12rpx;
+  overflow: hidden;
+}
+.dish-image,
+.image {
+  height: 120rpx;
+  width: 120rpx;
+}
+.image {
+  object-fit: contain;
+}
+.order-bottom-right {
+  flex: 1;
+  flex-direction: column;
+}
+.order-bottom-right,
+.order-text {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+}
+.text1 {
+  color: #333;
+  font-size: 14px;
+}
+.text2 {
+  color: #999;
+  font-size: 12px;
+}
+.buttons {
+  bottom: 20px;
+  left: 50%;
+  position: fixed;
+  transform: translateX(-50%);
+  width: -webkit-max-content;
+  width: max-content;
+}
+.buttonB {
+  border-radius: 16px;
+  box-shadow: 0 3px 6px 0 hsla(0, 0%, 89%, 0.5);
+  cursor: pointer;
+  display: inline-block;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  width: 120px;
+}
+.button1 {
+  background-color: #fff;
+  color: #666;
+  margin-right: 40px;
+}
+.button2 {
+  background-image: linear-gradient(146deg, #fc8c40 -5%, #fd5475 104%);
+  color: #fff;
+}
+.button3 {
+  background-color: #d2d2d2;
+  color: #fff;
+}

@@ -1,0 +1,77 @@
+.hongBei-pageE {
+  background: rgba(204, 125, 67, 0.2);
+  border-radius: 100rpx;
+  box-sizing: border-box;
+  height: 60rpx;
+  overflow: hidden;
+  padding: 0 18rpx !important;
+}
+.noticeWrapE {
+  color: #111;
+  height: 30px;
+}
+.noticeWrap,
+.noticeWrapE {
+  position: relative;
+  width: 100%;
+}
+.noticeWrap {
+  color: #333;
+}
+.noticeMsg {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.noticeMsgIcon {
+  margin-right: 10rpx;
+  width: 40rpx;
+}
+.noticeMsgIcon .text {
+  color: #fabe00;
+}
+.swiperE {
+  height: 30px;
+  width: 100%;
+}
+.nowrapE {
+  line-height: 30px;
+}
+.swiper {
+  height: 30rpx;
+  line-height: 24rpx;
+  width: 100%;
+}
+.noticeMsgE {
+  color: #333;
+  display: inline-block;
+  line-height: 30px;
+  padding-right: 70rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.noticeMsgE,
+.nowrap {
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: left;
+  width: 100%;
+}
+.nowrap {
+  align-items: center;
+  display: flex;
+  vertical-align: middle;
+}
+.niticeDetile {
+  background-color: #f8f8f8;
+  border-radius: 10rpx;
+  min-height: 510rpx;
+  padding: 30rpx 40rpx;
+  width: 560rpx;
+}
+.img {
+  display: block;
+  flex-shrink: 0;
+  height: 30rpx;
+  margin-right: 20rpx;
+  width: 30rpx;
+}

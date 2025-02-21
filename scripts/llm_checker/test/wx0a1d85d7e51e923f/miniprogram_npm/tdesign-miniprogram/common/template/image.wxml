@@ -1,0 +1,22 @@
+<template name="image">
+  <t-image
+    bind:error="{{binderror}}"
+    bind:load="{{bindload}}"
+    class="{{class}}"
+    customStyle="{{customStyle||''}}"
+    data-custom="{{dataset||null}}"
+    error="{{error||'default'}}"
+    height="{{height||''}}"
+    lazy="{{lazy||false}}"
+    loading="{{count||'default'}}"
+    mode="{{mode||'scaleToFill'}}"
+    shape="{{shape||'square'}}"
+    showMenuByLongpress="{{showMenuByLongpress||false}}"
+    src="{{src||''}}"
+    style="{{style||''}}"
+    tClass="{{tClass}}"
+    tClassLoad="{{tClassLoad}}"
+    webp="{{webp||false}}"
+    width="{{width||''}}"
+  ></t-image>
+</template>

@@ -1,0 +1,223 @@
+<view>
+  <scroll-view
+    class="record_date_style"
+    scrollIntoView="{{scrollIntoId}}"
+    scrollLeft="120"
+    scrollX="true"
+  >
+    <view
+      bindtap="__e"
+      class="scroll-view-item_H"
+      data-event-opts="{{[ [ 'tap',[ [ 'click_upDate_viewFun',['$0'],[ [ ['mDayDates','',index] ] ] ] ] ] ]}}"
+      id="{{'date'+item[$orig].date}}"
+      wx:for="{{$root.l0}}"
+      wx:key="index"
+    >
+      <view class="mdate_view_style">
+        <text style="font-size: 30rpx; color: #353535">{{item.g0}}</text>
+        <text style="font-size: 24rpx; color: #666666"
+          >{{item[$orig].totalMileage+'KM'}}</text
+        >
+        <view
+          class="{{[item[$orig].selected?'date_line_style':'view_hidde']}}"
+        ></view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="select_date_image_style">
+    <image
+      bindtap="__e"
+      data-event-opts="{{[ [ 'tap',[ [ 'open',['$event'] ] ] ] ]}}"
+      mode="aspectFit"
+      src="../../static/images/icon_date.png"
+      style="width: 80rpx; height: 80rpx; padding-left: 20rpx"
+    ></image>
+  </view>
+  <view class="selectday_detailinfo_view_style">
+    <uni-grid
+      bind:__l="__l"
+      column="{{2}}"
+      showBorder="{{false}}"
+      square="{{false}}"
+      vueId="5152b800-1"
+      vueSlots="{{['default']}}"
+    >
+      <uni-grid-item
+        bind:__l="__l"
+        vueId="{{'5152b800-2'+','+'5152b800-1'}}"
+        vueSlots="{{['default']}}"
+      >
+        <view class="grid-item-box">
+          <view class="grid_item_imageview_style">
+            <image
+              class="grid_item_image_style"
+              mode="aspectFit"
+              src="../../static/images/icon_driver_record_1.png"
+            ></image>
+          </view>
+          <view class="grid_item_textview_style">
+            <text class="grid_text_title_style"
+              >{{$root.g1+'小时'+$root.g2+'分'}}</text
+            >
+            <text class="grid_text_subitle_style">行驶时间</text>
+          </view>
+        </view>
+      </uni-grid-item>
+      <uni-grid-item
+        bind:__l="__l"
+        vueId="{{'5152b800-3'+','+'5152b800-1'}}"
+        vueSlots="{{['default']}}"
+      >
+        <view class="grid-item-box">
+          <view class="grid_item_imageview_style">
+            <image
+              class="grid_item_image_style"
+              mode="aspectFit"
+              src="../../static/images/icon_driver_record_2.png"
+            ></image>
+          </view>
+          <view class="grid_item_textview_style">
+            <text class="grid_text_title_style"
+              >{{selectDateItem.totalMileage+'KM'}}</text
+            >
+            <text class="grid_text_subitle_style">今日里程</text>
+          </view>
+        </view>
+      </uni-grid-item>
+      <uni-grid-item
+        bind:__l="__l"
+        vueId="{{'5152b800-4'+','+'5152b800-1'}}"
+        vueSlots="{{['default']}}"
+      >
+        <view class="grid-item-box">
+          <view class="grid_item_imageview_style">
+            <image
+              class="grid_item_image_style"
+              mode="aspectFit"
+              src="../../static/images/icon_driver_record_3.png"
+            ></image>
+          </view>
+          <view class="grid_item_textview_style">
+            <text class="grid_text_title_style"
+              >{{selectDateItem.avgSpeed+'KM/H'}}</text
+            >
+            <text class="grid_text_subitle_style">平均速度</text>
+          </view>
+        </view>
+      </uni-grid-item>
+      <uni-grid-item
+        bind:__l="__l"
+        vueId="{{'5152b800-5'+','+'5152b800-1'}}"
+        vueSlots="{{['default']}}"
+      >
+        <view class="grid-item-box">
+          <view class="grid_item_imageview_style">
+            <image
+              class="grid_item_image_style"
+              mode="aspectFit"
+              src="../../static/images/icon_driver_record_4.png"
+            ></image>
+          </view>
+          <view class="grid_item_textview_style">
+            <text class="grid_text_title_style"
+              >{{selectDateItem.maxSpeed+'KM/H'}}</text
+            >
+            <text class="grid_text_subitle_style">最高速度</text>
+          </view>
+        </view>
+      </uni-grid-item>
+    </uni-grid>
+  </view>
+  <empty-view
+    bind:__l="__l"
+    class="{{[showEmpty?'empty_sytle':'view_hidde']}}"
+    msg="{{emptyMsg}}"
+    vueId="5152b800-6"
+    vueSlots="{{['default']}}"
+    >{{emptyMsg}}</empty-view
+  >
+  <scroll-view
+    class="page_record_style"
+    scrollY="{{!showDetailDialog}}"
+    style="{{'height:'+scroll_height+'px ;'}}"
+  >
+    <view wx:for="{{$root.l1}}" wx:key="index">
+      <view class="item_style">
+        <view
+          bindtap="__e"
+          data-event-opts="{{[ [ 'tap',[ [ 'delete_record',['$0',index],[ [ ['record','',index] ] ] ] ] ] ]}}"
+        >
+          <view class="view_x">
+            <view class="view_x">
+              <image
+                class="mileage_style"
+                src="../../static/images/icon_meileage.png"
+              ></image>
+              <view class="text_content_style"
+                >{{item[$orig].totalMileage+'KM'}}</view
+              >
+            </view>
+            <view class="view_x">
+              <image
+                class="mileage_style"
+                src="../../static/images/icon_time.png"
+              ></image>
+              <view class="text_content_style"
+                >{{item.g3+'小时'+item.g4+'分'}}</view
+              >
+            </view>
+            <view class="view_x">
+              <view class="detail_info_avgimg_text_style">平均</view>
+              <view class="text_content_style"
+                >{{item[$orig].avgSpeed+'KM/H'}}</view
+              >
+            </view>
+            <view class="view_x">
+              <view class="detail_info_maximg_text_style">最高</view>
+              <view class="text_content_style"
+                >{{item[$orig].maxSpeed+'KM/H'}}</view
+              >
+            </view>
+          </view>
+          <view class="view_x" style="margin-top: 10rpx">
+            <image
+              class="circle_style"
+              src="../../static/images/icon_circle_start.png"
+            ></image>
+            <view class="time_text_style">{{item[$orig].beginTime}}</view>
+          </view>
+          <view class="address_text_style">{{item[$orig].beginAddress}}</view>
+          <view class="view_x">
+            <image
+              class="circle_style"
+              src="../../static/images/icon_circle_end.png"
+            ></image>
+            <view class="time_text_style">{{item[$orig].endTime}}</view>
+          </view>
+          <view class="address_text_style">{{item[$orig].endAddress}}</view>
+        </view>
+        <view
+          bindtap="__e"
+          class="drive_look_style"
+          data-event-opts="{{[ [ 'tap',[ [ 'click_recordFun',['$event'] ] ] ] ]}}"
+          data-record="{{item[$orig]}}"
+          >轨迹查看>></view
+        >
+      </view>
+    </view>
+  </scroll-view>
+  <uni-calendar
+    bind:__l="__l"
+    bind:confirm="__e"
+    class="vue-ref"
+    data-event-opts="{{[ [ '^confirm',[ ['confirm'] ] ] ]}}"
+    data-ref="calendar"
+    date="{{info.date}}"
+    endDate="{{info.endDate}}"
+    insert="{{info.insert}}"
+    lunar="{{info.lunar}}"
+    range="{{info.range}}"
+    startDate="{{info.startDate}}"
+    vueId="5152b800-7"
+  ></uni-calendar>
+</view>

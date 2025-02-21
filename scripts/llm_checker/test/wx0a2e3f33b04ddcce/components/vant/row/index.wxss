@@ -1,0 +1,6 @@
+@import "/components/vant/common/index.wxss";
+.van-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}

@@ -1,0 +1,48 @@
+<view class="container">
+  <view class="usercenter-license">
+    <view class="license-title">
+      <text class="license-title_text">所有证照</text>
+    </view>
+    <view class="license-content">
+      <view class="license-content-left">
+        <view class="license-left_ul">
+          <view
+            bindtap="bindLicenseListTap"
+            class="license-left_ul_li {{activeIndex==index?'license-active':''}}"
+            data-idx="{{index}}"
+            wx:for="{{licenseList}}"
+            wx:key="*this"
+            >{{item.themeType}}</view
+          >
+        </view>
+      </view>
+      <view class="license-content-right">
+        <view class="license-right_ul">
+          <view
+            class="license-right_ul_item"
+            style="display: {{activeIndex==index?'flex':'none'}}"
+            wx:for="{{licenseList}}"
+          >
+            <view class="noData" hidden="{{item.file.length!=0}}"
+              >暂无证照</view
+            >
+            <view
+              bindtap="bindLicenseImgTap"
+              class="license-right_imgCont"
+              data-idx="{{fileIndex}}"
+              wx:for="{{item.file}}"
+              wx:for-index="fileIndex"
+              wx:for-item="fileItem"
+            >
+              <image
+                class="license-right_img"
+                mode="aspectFill"
+                src="{{fileItem.url}}"
+              ></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

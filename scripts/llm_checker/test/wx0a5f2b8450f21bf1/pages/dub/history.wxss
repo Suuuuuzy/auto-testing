@@ -1,0 +1,28 @@
+.container {
+  background-color: #fff;
+  border-radius: 10rpx;
+  margin: 20rpx;
+}
+.data-item {
+  align-items: center;
+  border-bottom: 1rpx solid #eee;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: flex;
+  height: 70px;
+  justify-content: space-between;
+  padding: 20rpx;
+}
+.item-title {
+  font-size: 32rpx;
+}
+.item-time,
+.item-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 480rpx;
+}
+.item-time {
+  font-size: 26rpx;
+}

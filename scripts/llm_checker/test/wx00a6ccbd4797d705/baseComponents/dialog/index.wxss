@@ -1,0 +1,68 @@
+.wuxiang-fade-in.data-v-16d0897c {
+  animation: fade-data-v-16d0897c 0.3s ease-in-out;
+}
+@keyframes fade-data-v-16d0897c {
+  from {
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.wuxiang-dialog-shadow.data-v-16d0897c {
+  background: rgba(0, 0, 0, 0.6);
+  height: 100vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.wuxiang-dialog.data-v-16d0897c {
+  align-items: center;
+  background: #fff;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 300rpx;
+  overflow: hidden;
+  position: relative;
+  width: 600rpx;
+}
+.wuxiang-dialog .wuxiang-dialog-top.data-v-16d0897c {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.wuxiang-dialog .wuxiang-dialog-title.data-v-16d0897c {
+  color: #333;
+  margin: 20rpx 0;
+}
+.wuxiang-dialog .wuxiang-dialog-buttons.data-v-16d0897c {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.wuxiang-dialog .wuxiang-dialog-button.data-v-16d0897c {
+  -webkit-tap-highlight-color: transparent;
+  background: #fff;
+  border: 1rpx solid;
+  border-radius: 50rpx;
+  box-sizing: border-box;
+  display: block;
+  line-height: 2.8;
+  margin-bottom: 30rpx;
+  overflow: hidden;
+  padding: 0 60rpx;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  width: 45%;
+}
+.wuxiang-dialog .flex-row-reverse.data-v-16d0897c {
+  flex-direction: row-reverse;
+}

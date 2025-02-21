@@ -1,0 +1,76 @@
+.privacy_popup.data-v-6222cf54 {
+  align-items: center;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: -webkit-transform 0.3s ease-in;
+  transition: transform 0.3s ease-in;
+  transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
+  width: 560rpx;
+  z-index: 1000;
+}
+.privacy_popup_desc.data-v-6222cf54 {
+  color: #333;
+  font-size: 26rpx;
+  line-height: 56rpx;
+  padding-top: 88rpx;
+  width: 476rpx;
+}
+.privacy_popup_btns.data-v-6222cf54 {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 72rpx 0 52rpx;
+  width: 476rpx;
+}
+.message-btn.data-v-6222cf54 {
+  flex: 1;
+  font-size: 24rpx;
+  font-weight: 500;
+  height: 82rpx;
+  line-height: 82rpx;
+  position: relative;
+  text-align: center;
+  width: 224rpx;
+}
+.default_btn.data-v-6222cf54 {
+  border: 1rpx solid #000;
+  box-sizing: border-box;
+  color: #000;
+  margin-right: 26rpx;
+}
+.primary_btn.data-v-6222cf54 {
+  background: #bca790;
+  color: #fff;
+}
+.agree_btn.data-v-6222cf54 {
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.privacy_popup.active.data-v-6222cf54 {
+  transform: translate(-50%, -50%) scale(1);
+}
+.page.data-v-6222cf54 {
+  background-color: #000;
+  display: none;
+  height: 100%;
+  left: 0;
+  opacity: 0.5;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+.page.active.data-v-6222cf54 {
+  display: block;
+}

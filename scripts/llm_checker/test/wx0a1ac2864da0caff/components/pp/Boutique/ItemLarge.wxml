@@ -1,0 +1,25 @@
+<view
+  bindtap="__e"
+  class="{{['boutique-item-big','_div','data-v-7aac7366',mid?'boutique-item-mid':'']}}"
+  data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+>
+  <view class="panel _div data-v-7aac7366" wx:if="{{item.thumb}}">
+    <image
+      class="pic _img data-v-7aac7366"
+      mode="aspectFill"
+      src="{{item.thumb}}"
+    ></image>
+  </view>
+  <view class="boutique-item-title _div data-v-7aac7366">{{item.name}}</view>
+  <view
+    class="boutique-item-title-address _div data-v-7aac7366"
+    wx:if="{{item.address||item.more}}"
+  >
+    <view class="_div data-v-7aac7366" wx:if="{{item.address}}"
+      >{{item.address}}</view
+    >
+    <view class="_div data-v-7aac7366" wx:if="{{item.more}}"
+      >{{item.more}}</view
+    >
+  </view>
+</view>

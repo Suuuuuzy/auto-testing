@@ -1,0 +1,40 @@
+<movable-area
+  class="t-conversation-item-container"
+  wx:if="{{conversation.conversationID}}"
+>
+  <view
+    bindchange="__e"
+    class="t-conversation-item"
+    damping="100"
+    data-event-opts="{{[ [ 'change',[ [ 'handleTouchMove',['$event'] ] ] ] ]}}"
+    direction="horizontal"
+    x="{{xScale}}"
+  >
+    <view class="avatar-box">
+      <image
+        binderror="__e"
+        class="t-conversation-item-avatar"
+        data-event-opts="{{[ [ 'error',[ [ 'handleImageError',['$event'] ] ] ] ]}}"
+        mode="aspectFill"
+        src="{{$root.m0}}"
+      ></image>
+    </view>
+    <view class="t-conversation-item-content">
+      <label class="tui-conversation-item-name">{{$root.f0}}</label>
+      <view class="tui-conversation-lastMessage"
+        >{{''+(conversation.lastMessage.type==='TIMCustomElem'?'['+$root.m1+']':conversation.lastMessage.messageForShow)+''}}</view
+      >
+    </view>
+    <view class="t-conversation-item-info">
+      <view class="sub-time">{{$root.f1}}</view>
+      <u-badge
+        absolute="{{false}}"
+        bind:__l="__l"
+        count="{{conversation.unreadCount}}"
+        offset="{{[20,10]}}"
+        type="error"
+        vueId="54ecdd74-1"
+      ></u-badge>
+    </view>
+  </view>
+</movable-area>

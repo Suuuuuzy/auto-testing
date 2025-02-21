@@ -1,0 +1,2 @@
+# /media/dataj/wechat-devtools-linux/wechat-web-devtools-linux-nodebug/bin/wechat-devtools-cli auto --project "/media/dataj/wechat-devtools-linux/testing/auto-testing/data/newcrawl/pkg_unpack/wx66a90900db27b9ae" --auto-port 9222
+python /media/dataj/wechat-devtools-linux/testing/auto-testing/data/data_utils/single_preprocess.py /media/dataj/wechat-devtools-linux/testing/auto-testing/data/newcrawl/pkg_unpack/wx66a90900db27b9ae

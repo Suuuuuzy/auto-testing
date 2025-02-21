@@ -1,0 +1,116 @@
+.bg {
+  position: fixed;
+  width: 100%;
+  z-index: 0;
+}
+.payResult {
+  background-color: #efefef;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100%;
+  padding-top: 25px;
+}
+.result {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.result-icon {
+  height: 40px;
+  margin-right: 16px;
+  position: relative;
+  vertical-align: middle;
+  width: 40px;
+  z-index: 1;
+}
+.title {
+  color: #fff;
+  display: inline-block;
+  font-size: 19px;
+  transform: translateY(5px);
+}
+.tip {
+  color: #fff;
+  font-size: 12px;
+  line-height: 28px;
+  opacity: 0.8;
+}
+.content {
+  background-color: #fff;
+  filter: drop-shadow(0 0 4px rgba(226, 226, 226, 0.5));
+  height: 160px;
+  margin: 45px 17px 0;
+}
+.content:before {
+  background-color: #030096;
+  border-radius: 5px;
+  box-shadow: 0-7px 15px 0 rgba(0, 0, 0, 0.5);
+  content: "";
+  display: inline-block;
+  height: 10px;
+  opacity: 0.14;
+  position: relative;
+  top: -8px;
+  transform: translateX(-2%);
+  width: 104%;
+}
+.split-line {
+  background-color: #eaeaea;
+  height: 1px;
+  margin-bottom: 20px;
+  margin-left: 15px;
+  margin-top: 20px;
+  width: calc(100% - 30px);
+}
+.text1 {
+  font-size: 28px;
+  text-align: center;
+}
+.text2,
+.text3 {
+  color: #999;
+  font-size: 12px;
+  padding-left: 19px;
+}
+.text3 {
+  margin-top: 10px;
+}
+.buttonB {
+  background-color: #fff;
+  border-radius: 16px;
+  bottom: 200px;
+  box-shadow: 0 3px 6px 0 hsla(0, 0%, 89%, 0.5);
+  color: #666;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  width: 120px;
+}
+.buttonB,
+.footer {
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+.footer {
+  bottom: 48px;
+  width: -webkit-max-content;
+  width: max-content;
+}
+.end-line {
+  background-color: #c6c6c6;
+  height: 1px;
+  width: 91px;
+}
+.end-line,
+.end-text {
+  display: inline-block;
+}
+.end-text {
+  color: #bbb;
+  font-size: 12px;
+  margin: 0 22px;
+  transform: translateY(3px);
+}

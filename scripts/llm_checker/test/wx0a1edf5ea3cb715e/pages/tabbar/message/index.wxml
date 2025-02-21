@@ -1,0 +1,221 @@
+<view class="message-page-container data-v-29735803">
+  <u-navbar
+    background="{{background}}"
+    bind:__l="__l"
+    borderBottom="{{false}}"
+    class="data-v-29735803"
+    isBack="{{false}}"
+    title="消息"
+    titleBold="{{true}}"
+    titleColor="#000"
+    vueId="7a996218-1"
+  ></u-navbar>
+  <image
+    class="home-bg data-v-29735803"
+    mode="widthFix"
+    src="http://image.fanglinxq.com/assets/home-bg.png"
+  ></image>
+  <view class="top-types data-v-29735803">
+    <view class="top-notice data-v-29735803" wx:if="{{showTip}}">
+      <u-notice-bar
+        bgColor="#F3ECFF"
+        bind:__l="__l"
+        class="data-v-29735803"
+        color="#A578F0"
+        duration="{{3500}}"
+        list="{{[tips.title]}}"
+        mode="horizontal"
+        vueId="7a996218-2"
+      ></u-notice-bar>
+      <view
+        bindtap="__e"
+        class="click-btn data-v-29735803"
+        data-event-opts="{{[ [ 'tap',[ [ 'jump',['$0'],['tips.url'] ] ] ] ]}}"
+        wx:if="{{tips.url}}"
+        >立即关注</view
+      >
+    </view>
+    <view class="main-chat-warp data-v-29735803">
+      <view
+        bindtap="__e"
+        class="item-chat-type data-v-29735803"
+        data-event-opts="{{[ [ 'tap',[ [ 'jumpRecomand',['$event'] ] ] ] ]}}"
+      >
+        <view class="icon-type data-v-29735803">
+          <u-badge
+            absolute="{{true}}"
+            bind:__l="__l"
+            class="badge-right data-v-29735803"
+            count="{{recommandCount}}"
+            offset="{{[20,10]}}"
+            type="error"
+            vueId="7a996218-3"
+          ></u-badge>
+          <image
+            class="data-v-29735803"
+            mode="widthFix"
+            src="http://image.fanglinxq.com/assets/re-dot.png"
+          ></image>
+        </view>
+        <text class="data-v-29735803">靠谱推荐</text>
+      </view>
+      <view
+        bindtap="__e"
+        class="item-chat-type data-v-29735803"
+        data-event-opts="{{[ [ 'tap',[ [ 'handleNavigater',['/pages/subPages/inviteNotice/index'] ] ] ] ]}}"
+      >
+        <view class="icon-type data-v-29735803">
+          <u-badge
+            absolute="{{true}}"
+            bind:__l="__l"
+            class="badge-right data-v-29735803"
+            count="{{inviteNum}}"
+            offset="{{[20,10]}}"
+            type="error"
+            vueId="7a996218-4"
+          ></u-badge>
+          <image
+            class="data-v-29735803"
+            mode="widthFix"
+            src="http://image.fanglinxq.com/assets/icons/invite-message.png"
+          ></image>
+        </view>
+        <text class="data-v-29735803">邀约通知</text>
+      </view>
+      <view
+        bindtap="__e"
+        class="item-chat-type data-v-29735803"
+        data-event-opts="{{[ [ 'tap',[ [ 'handleNavigater',['/pages/subPages/groupChat/index'] ] ] ] ]}}"
+      >
+        <view class="icon-type data-v-29735803">
+          <image
+            class="data-v-29735803"
+            mode="widthFix"
+            src="http://image.fanglinxq.com/assets/icons/city.png"
+          ></image>
+        </view>
+        <text class="data-v-29735803">同城群聊</text>
+      </view>
+    </view>
+  </view>
+  <view class="main-list-warp data-v-29735803">
+    <view class="message-list data-v-29735803">
+      <view
+        bindtap="__e"
+        class="sys-message data-v-29735803"
+        data-event-opts="{{[ [ 'tap',[ [ 'handleNavigater',['/pages/subPages/sysNotice/index'] ] ] ] ]}}"
+      >
+        <image
+          class="data-v-29735803"
+          mode="widthFix"
+          src="http://image.fanglinxq.com/assets/icons/message.png"
+        ></image>
+        <view class="center-warp data-v-29735803">系统通知</view>
+        <u-badge
+          absolute="{{true}}"
+          bind:__l="__l"
+          class="data-v-29735803"
+          count="{{sysInfo}}"
+          offset="{{[20,10]}}"
+          type="error"
+          vueId="7a996218-5"
+        ></u-badge>
+      </view>
+      <view
+        bindtap="__e"
+        class="sys-message data-v-29735803"
+        data-event-opts="{{[ [ 'tap',[ [ 'handleNavigater',['/pages/subPages/profitNotice/index'] ] ] ] ]}}"
+      >
+        <image
+          class="data-v-29735803"
+          mode="widthFix"
+          src="http://image.fanglinxq.com/assets/icons/profit.png"
+        ></image>
+        <view class="center-warp data-v-29735803">收益通知</view>
+        <u-badge
+          absolute="{{true}}"
+          bind:__l="__l"
+          class="badge-right data-v-29735803"
+          count="{{profit}}"
+          offset="{{[20,10]}}"
+          type="error"
+          vueId="7a996218-6"
+        ></u-badge>
+      </view>
+    </view>
+    <u-button
+      bind:__l="__l"
+      bind:click="__e"
+      class="data-v-29735803"
+      customStyle="{{customStyle}}"
+      data-event-opts="{{[ [ '^click',[ ['toLogin'] ] ] ]}}"
+      ripple="{{true}}"
+      shape="square"
+      type="primary"
+      vueId="7a996218-7"
+      vueSlots="{{['default']}}"
+      wx:if="{{userInfo&&userInfo.vipLevel===-1}}"
+      >立即登录</u-button
+    >
+    <view class="scroll-box data-v-29735803">
+      <view class="uni-list margintop-bar data-v-29735803">
+        <u-swipe-action
+          bind:__l="__l"
+          bind:click="__e"
+          bind:open="__e"
+          class="data-v-29735803"
+          data-event-opts="{{[ [ '^click',[ ['hanldeclick'] ] ],[ '^open',[ ['open'] ] ] ]}}"
+          index="{{index}}"
+          options="{{options}}"
+          show="{{item.show}}"
+          vueId="{{'7a996218-8-'+index}}"
+          vueSlots="{{['default']}}"
+          wx:for="{{conversationList}}"
+          wx:key="conversationID"
+        >
+          <view
+            bindtap="__e"
+            class="data-v-29735803"
+            data-event-opts="{{[ [ 'tap',[ [ 'handleRoute',['$0'],[ [ ['conversationList','conversationID',item.conversationID] ] ] ] ] ] ]}}"
+          >
+            <t-u-i-conversation-item
+              bind:__l="__l"
+              class="data-v-29735803"
+              conversation="{{item}}"
+              data-type="{{item.type}}"
+              vueId="{{'7a996218-9-'+index+','+'7a996218-8-'+index}}"
+            ></t-u-i-conversation-item>
+          </view>
+        </u-swipe-action>
+      </view>
+    </view>
+  </view>
+  <auth-check
+    bind:__l="__l"
+    bind:input="__e"
+    class="data-v-29735803"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','isAuthVisible','$event',[] ] ] ] ] ]}}"
+    value="{{isAuthVisible}}"
+    vueId="7a996218-10"
+  ></auth-check>
+  <weixin-code
+    bind:__l="__l"
+    bind:input="__e"
+    class="data-v-29735803"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','isShowCode','$event',[] ] ] ] ] ]}}"
+    value="{{isShowCode}}"
+    vueId="7a996218-11"
+  ></weixin-code>
+  <canvas
+    canvasId="myQrcode"
+    class="canvas-code data-v-29735803"
+    style="
+      background: #fff;
+      width: 150px;
+      height: 150px;
+      display: block;
+      left: -800rpx;
+      position: absolute;
+    "
+  ></canvas>
+</view>

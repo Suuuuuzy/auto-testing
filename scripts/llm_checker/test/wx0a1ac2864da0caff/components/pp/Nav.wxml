@@ -1,0 +1,58 @@
+<view
+  class="{{['nav-top','_div','data-v-4d1f6152',value?'active':'',white?'white':'',fixed?'fixed':'',transparent?'transparent':'',noTouch?'no-touch':'']}}"
+>
+  <view
+    class="nav-top-placeholder _div data-v-4d1f6152"
+    style="{{'height:'+(placeholder?placeholder+'px':navigationBarHeightPlaceholder+'px')+';'}}"
+  ></view>
+  <view class="nav-top-inner _div data-v-4d1f6152">
+    <view class="nav-title _div data-v-4d1f6152" wx:if="{{logo}}">
+      <view class="nav-title-logo _div data-v-4d1f6152">
+        <image
+          class="pic _img data-v-4d1f6152"
+          src="/static/img/logo-s.svg"
+        ></image>
+      </view>
+    </view>
+    <block wx:else>
+      <view class="nav-title _div data-v-4d1f6152" wx:if="{{title}}"
+        >{{title}}</view
+      >
+    </block>
+    <block wx:if="{{back}}">
+      <view
+        class="icon-back-out _div data-v-4d1f6152"
+        wx:if="{{transparent&&!noCircle}}"
+      >
+        <view class="icon-back _div data-v-4d1f6152">
+          <image
+            class="pic _img data-v-4d1f6152"
+            src="/static/img/icon-back.svg"
+          ></image>
+        </view>
+      </view>
+      <block wx:else>
+        <view
+          class="icon-back _div data-v-4d1f6152"
+          wx:if="{{transparent&&noCircle}}"
+        >
+          <image
+            class="pic _img data-v-4d1f6152"
+            src="/static/img/icon-back-black.svg"
+          ></image>
+        </view>
+        <view class="icon-back _div data-v-4d1f6152" wx:else>
+          <image
+            class="pic _img data-v-4d1f6152"
+            src="/static/img/icon-back.svg"
+          ></image>
+        </view>
+      </block>
+      <view
+        bindtap="__e"
+        class="nav-left-hover _div data-v-4d1f6152"
+        data-event-opts="{{[ [ 'tap',[ [ 'backTo',['$event'] ] ] ] ]}}"
+      ></view>
+    </block>
+  </view>
+</view>

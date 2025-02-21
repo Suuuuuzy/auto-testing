@@ -1,0 +1,222 @@
+<view class="msg-new">
+    <view class="text">点击右上角添加到我的小程序，随时使用</view>
+    <view class="img">
+        <image src="/images/icon-top.png"></image>
+    </view>
+</view>
+<view class="btn-box2">
+    <view class="btn">
+        <view class="videos" wx:if="{{video.length>0&&type==1}}">
+            <view class="video" wx:for="{{video}}">
+                <video controls="{{false}}" enableProgressGesture="{{false}}" showCenterPlayBtn="{{false}}" showFullscreenBtn="{{false}}" showPlayBtn="{{false}}" src="{{item.tempFilePath}}"></video>
+                <view bindtap="onClose" class="close" data-i="{{index}}">
+                    <image src="/images/icon-fill.png"></image>
+                </view>
+                <block wx:if="{{index==video.length-1}}">
+                    <view class="progress" wx:if="{{item.src}}">
+                        <view style="background: #52B53E; width:{{progress}};height:100%"></view>
+                    </view>
+                    <view class="progress2" wx:else> {{progress}} </view>
+                </block>
+                <view class="progress" wx:else>
+                    <view style="background: #52B53E; width:100%;height:100%"></view>
+                </view>
+            </view>
+        </view>
+        <view class="links" wx:elif="{{video.length>0&&type==2}}">
+            <view class="item" wx:for="{{video}}">
+                <view class="k">{{index+1}}</view>
+                <view class="link">{{item.src}}</view>
+                <image bindtap="onClose" class="btn" data-i="{{index}}" src="/images/icon-x.png"></image>
+            </view>
+        </view>
+        <input bindblur="onInput" class="input" placeholder="请“粘贴/上传“需要剪辑的视频，最多5个" value="{{input}}" wx:else></input>
+        <view class="btns">
+            <view class="left">
+                <view bindtap="onCopy" class="it" wx:if="{{type!=1}}"> 粘贴链接 </view>
+                <view bindtap="openSelect" class="it" wx:if="{{type!=2}}"> 本地视频 </view>
+            </view>
+            <view bindtap="clearData" class="it right"> 清空 </view>
+        </view>
+    </view>
+    <view class="vip-select-box ">
+        <block wx:for="{{handleClass}}" wx:for-item="it">
+            <view class="title">{{it.title}}<navigator class="history" hoverClass="on" url="/pages/history/history?type=2" wx:if="{{index==0}}">
+                    <image src="/images/icon-list.png"></image> 等待列表 </navigator>
+            </view>
+            <view class="vip-select-list">
+                <view bindtap="vipHandleClass" class="item  btn" data-i="{{index}}" wx:if="{{it.type=='1'}}" wx:for="{{it.data}}">
+                    <view class="img {{item.state?'on':''}}">
+                        <image src="/images/icon-selected{{item.state?'':'-'}}.png"></image>
+                    </view>
+                    <view class="text">{{item.msg}}</view>
+                </view>
+                <block wx:if="{{it.type==2}}" wx:for="{{it.data}}">
+                    <block wx:if="{{item=='water'}}">
+                        <view bindtap="onWater" class="item  btn" wx:if="{{video.length<2&&type!=2}}">
+                            <view class="img {{isWater?'on':''}}">
+                                <image src="/images/icon-selected{{isWater?'':'-'}}.png"></image>
+                            </view>
+                            <view class="text">手动水印打码</view>
+                            <image capture-catch:tap="onShowMsg" class="xq" data-img="https://apis.ddfans.com/bian/public/static/image/qsy/msg/water2.jpg" src="/images/icon-xq.png"></image>
+                        </view>
+                        <view bindtap="onWater" class="item  btn" wx:if="{{video.length<2&&type!=2}}">
+                            <view class="img {{isWater?'on':''}}">
+                                <image src="/images/icon-selected{{isWater?'':'-'}}.png"></image>
+                            </view>
+                            <view class="text">字幕框选去除</view>
+                            <image capture-catch:tap="onShowMsg" class="xq" data-img="https://apis.ddfans.com/bian/public/static/image/qsy/msg/water2.jpg" src="/images/icon-xq.png"></image>
+                        </view>
+                    </block>
+                    <block wx:elif="{{item=='cut'}}">
+                        <view bindtap="onCut" class="item  btn" wx:if="{{video.length<2&&type!=2}}">
+                            <view class="img {{isCut?'on':''}}">
+                                <image src="/images/icon-selected{{isCut?'':'-'}}.png"></image>
+                            </view>
+                            <view class="text">视频时长截取</view>
+                            <image capture-catch:tap="onShowMsg" class="xq" data-img="https://apis.ddfans.com/bian/public/static/image/qsy/msg/cutout.jpg" src="/images/icon-xq.png"></image>
+                        </view>
+                    </block>
+                    <view bindtap="vipHandle" class="item  btn" data-i="{{item}}" wx:else>
+                        <view class="img {{viphandle[item].state?'on':''}}">
+                            <image src="/images/icon-selected{{viphandle[item].state?'':'-'}}.png"></image>
+                        </view>
+                        <view class="text">{{viphandle[item].msg}}</view>
+                        <image capture-catch:tap="onShowMsg" class="xq" data-img="https://apis.ddfans.com/bian/public/static/image/qsy/msg/{{viphandle[item].code}}.jpg" src="/images/icon-xq.png" wx:if="{{viphandle[item].code!='md5'}}"></image>
+                    </view>
+                </block>
+            </view>
+        </block>
+        <view class="title">添加视频水印</view>
+        <view class="vip-select-list">
+            <view bind:tap="onAddWater" class="item btn">
+                <view class="img">
+                    <image mode="heightFix" src="/images/icon-add-water.png"></image>
+                </view>
+                <view class="text">添加编辑水印</view>
+                <image capture-catch:tap="onShowMsg" class="xq" data-img="https://apis.ddfans.com/bian/public/static/image/qsy/msg/.jpg" src="/images/icon-xq.png"></image>
+            </view>
+        </view>
+        <view class="water-list">
+            <view bind:tap="onSelectIcon" class="item" data-id="{{it.id}}" wx:for="{{icon_list}}" wx:for-item="it">
+                <image class="bg" mode="aspectFill" src="/images/icon-add-water-bg.png"></image>
+                <image class="img" mode="aspectFit" src="{{it.icon}}" style="opacity: {{it.opacity}};"></image>
+                <image class="x" src="/images/icon-add-water-on.png" wx:if="{{icon_id==it.id}}"></image>
+            </view>
+        </view>
+        <block wx:if="{{picturelist.length>0}}">
+            <view class="title">添加视频去重画框</view>
+            <view class="huakuang-box">
+                <block wx:for="{{picturelist}}">
+                    <view bind:tap="onClearPicture" class="it" wx:if="{{picture_i==index&&picture_i!==''}}">
+                        <image class="img" mode="aspectFill" src="https://47oss.ddfans.com/douyin/huakuang/{{item.url}}.jpg"></image>
+                        <image class="x" src="/images/icon-add-water-on.png"></image>
+                    </view>
+                    <view bind:tap="onSelectPicture" class="it" data-i="{{index}}" wx:elif="{{item.form==0}}">
+                        <image class="img" mode="aspectFill" src="https://47oss.ddfans.com/douyin/huakuang/{{item.url}}.jpg"></image>
+                    </view>
+                    <navigator class="it" url="./huakuang/word?id={{item.id}}" wx:else>
+                        <image class="img" mode="aspectFill" src="https://47oss.ddfans.com/douyin/huakuang/{{item.url}}.jpg"></image>
+                    </navigator>
+                </block>
+                <navigator class="it more" url="./huakuang/index">
+                    <view>
+                        <image class="icon" mode="widthFix" src="/images/icon-more.png"></image>
+                    </view>
+                </navigator>
+            </view>
+        </block>
+        <view class="vip-box">
+            <button bindtap="onSubmit" class="vip-select-ok on">立即编辑 <image src="/images/icon-btn.png"></image>
+            </button>
+        </view>
+    </view>
+</view>
+<view class="handle-msg" wx:if="{{!isSeo}}"> 提示:视频体积不能超过1000MB{{timeLimit?'，不超过'+timeLimit+'分钟':''}}
+</view>
+<view class="other" wx:if="{{problem.length>0}}">
+    <view class="h1">常见问题</view>
+    <view bindtap="goHtml" class="item" data-url="{{item.url}}" wx:for="{{problem}}"> {{item.title}} <image class="img" mode="" src="/images/icon-you.png"></image>
+    </view>
+</view>
+<view class="ad-ok-bg" wx:if="{{bottom_btn}}"></view>
+<view class="bottom-btn" style="bottom:{{bottom_btn?0:'-100%'}};">
+    <view class="box">
+        <view bindtap="selectImg" class="item" data-type="0">
+            <image src="/images/icon-wj.png"></image>
+            <view class="h1">手机相册</view>
+            <view class="span">本地相册视频</view>
+        </view>
+        <view bindtap="selectImg" class="item" data-type="1">
+            <image src="/images/icon-wx.png"></image>
+            <view class="h1">微信文件</view>
+            <view class="span">从聊天里选择</view>
+        </view>
+    </view>
+    <view bindtap="closeSelect" class="clear">取消</view>
+</view>
+<view class="ad-ok-bg" wx:if="{{showHistory}}">
+    <view class="ad-ok">
+        <view class="msg">
+            <view class="title">已提交</view>
+            <view>视频处理需要一定时间，请耐心等候</view>
+            <block wx:if="{{isMsg}}"> 处理完成后以微信消息通知您 </block>
+            <block wx:else> 处理完成后请点击<text style="color: #f00;">'历史记录'</text>查看 </block>
+            <view wx:if="{{return.error>0}}">失败原因链接或视频格式不支持或文件过大</view>
+            <view>提交成功<text style="color: #f00;">{{return.okNum}}</text>个 失败<text style="color: #f00;">{{return.error}}</text>个</view>
+            <view>今日剩余去重次数 <text style="color: #f00;">{{return.count}}</text>
+            </view>
+        </view>
+        <view class="history-btn">
+            <view bindtap="goHistory" class="it left">查看进度</view>
+            <view bindtap="closeHistory" class="it right">确认</view>
+        </view>
+    </view>
+</view>
+<view class="ad-ok-bg2" wx:if="{{adState||error!=''}}">
+    <view class="ad-ok2">
+        <view class="msg" wx:if="{{error}}">{{error}}</view>
+        <view class="msg" wx:else>
+            <view>本次提交需 <text>-{{money}}枚无印豆</text>
+            </view> 账号无印豆余额：<text>{{userinfo.money}}枚</text>
+        </view>
+        <view class="btn-box">
+            <view bindtap="noAd" class="btn pay" wx:if="{{userinfo.level=='0'}}">
+                <image src="/images/icon-vip.png"></image>
+                <text>{{error==''?'':'开通'}}会员</text>
+            </view>
+            <view bindtap="_postEdit" class="btn" wx:if="{{error==''}}">
+                <image src="/images/icon-v.png"></image>
+                <text>提交</text>
+            </view>
+        </view>
+        <image bindtap="isHideAd" class="msg-close" src="/images/msg-close.png"></image>
+    </view>
+</view>
+<view class="ad-ok-bg" wx:if="{{showPrivacy}}">
+    <view class="ad-ok">
+        <view class="msg" style="text-align: left;padding:20rpx 25rpx;color: #333;">
+            <view>在你使用【{{name}}】服务之前，请仔细阅读<text bindtap="openPrivacy" style="color:#085BFE;">《{{name}}小程序隐私保护指引》</text> 如你同意<text bindtap="openPrivacy" style="color:#085BFE;">《{{name}}小程序隐私保护指引》</text>，请点击"同意"开始使用{{name}}</view>
+        </view>
+        <view class="history-btn">
+            <button bindtap="exitMini" class="it left" style="background-color: #E8E9E9;color:#B8B5B5">拒绝</button>
+            <button bindagreeprivacyauthorization="handleAgreePrivacyAuthorization" class="it right" id="agree-btn" openType="agreePrivacyAuthorization">同意</button>
+        </view>
+    </view>
+</view>
+<view class="ad-ok-bg" style="display:{{adMsgState?'block':'none'}}">
+    <view class="ad-box {{adMsgState?'on':''}}">
+        <view class="ad-box-after" style="width:{{progress}}"></view>
+        <view class="msg">上传时请屏幕常亮别切后台 {{msgtitle}} {{progress}}...</view>
+        <view class="ad" wx:if="{{adMsgState&&!isSeo&&isAd}}">
+            <swiper autoplay="true" circular="true" duration="200" interval="5000" style="height:320rpx" wx:if="{{adStates==1}}">
+                <swiper-item bindtap="To" data-appid="{{item.appid}}" data-path="{{item.path}}" data-type="app" wx:for="{{imgUrls}}">
+                    <image class="slide-image" src="{{item.icon}}" style="width:640rpx; height:320rpx"></image>
+                </swiper-item>
+            </swiper>
+            <block wx:else>
+                <ad unitId="{{ad_banner}}" wx:if="{{ad_banner}}"></ad>
+            </block>
+        </view>
+    </view>
+</view>

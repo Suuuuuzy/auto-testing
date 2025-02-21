@@ -1,0 +1,24 @@
+<import src="../common/template/icon.wxml"></import>
+<view
+  bind:tap="handleClick"
+  class="{{className}} class {{prefix}}-class"
+  style="{{_._style( [tagStyle,style,customStyle] )}}"
+>
+  <view ariaHidden="{{true}}" class="{{classPrefix}}__icon">
+    <template
+      is="icon"
+      data="{{tClass:prefix+'-icon',..._icon}}"
+      wx:if="{{_icon}}"
+    ></template>
+    <slot name="icon"></slot>
+  </view>
+  <view class="{{classPrefix}}__text">
+    <slot></slot>
+  </view>
+  <template
+    is="icon"
+    data="{{class:classPrefix+'__icon-close',tClass:prefix+'-icon',bindclick:'handleClose',ariaRole:'button',ariaLabel:'关闭',..._closable}}"
+    wx:if="{{_closable}}"
+  ></template>
+  <slot name="closable" wx:else></slot>
+</view>

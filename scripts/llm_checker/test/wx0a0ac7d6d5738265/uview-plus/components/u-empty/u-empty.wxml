@@ -1,0 +1,20 @@
+<view class="u-empty data-v-99902092" style="{{j}}" wx:if="{{a}}">
+  <u-icon
+    bind:__l="__l"
+    class="data-v-99902092"
+    uI="99902092-0"
+    uP="{{c}}"
+    wx:if="{{b}}"
+  ></u-icon>
+  <image
+    class="data-v-99902092"
+    mode="widthFix"
+    src="{{f}}"
+    style="{{'width:'+d+';'+'height:'+e}}"
+    wx:else
+  ></image>
+  <text class="u-empty__text data-v-99902092" style="{{h}}">{{g}}</text>
+  <view class="u-empty__wrap data-v-99902092" wx:if="{{i}}">
+    <slot></slot>
+  </view>
+</view>

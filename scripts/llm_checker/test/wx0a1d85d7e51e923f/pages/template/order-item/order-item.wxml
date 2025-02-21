@@ -1,0 +1,343 @@
+<template name="groupItem">
+  <navigator
+    class="bg-white padding-lr padding-tb-xs"
+    url="/pages/order/order-detail/group-order-detail/group-order-detail?id={{item.id}}&title={{Str.orderDetail[lanIndex]}}"
+  >
+    <view class="flex justify-between padding-tb {{isUy?'rtl':''}}">
+      <view class="text-black text-bold text-lg">
+        <text>{{isUy?item.shop.uy_name:item.shop.ch_name}}</text>
+        <text>-</text>
+        <text
+          >{{isUy?item.goods[0].group_good.uy_name:item.goods[0].group_good.ch_name}}</text
+        >
+      </view>
+      <view>
+        <text wx:if="{{item.pay_state==0}}">{{Str.unpayed[lanIndex]}}</text>
+        <text wx:if="{{item.pay_state!=0&&item.order_state==0}}"
+          >{{Str.waitUsed[lanIndex]}}</text
+        >
+        <text wx:if="{{item.pay_state!=0&&item.order_state==2}}"
+          >{{Str.completed[lanIndex]}}</text
+        >
+        <text wx:if="{{item.pay_state!=0&&item.order_state==-2}}"
+          >{{Str.canceld[lanIndex]}}</text
+        >
+      </view>
+    </view>
+    <view class="flex {{isUy?'rtl':''}}">
+      <view
+        class="bg-img radius"
+        style="background-image: url({{item.goods[0].group_good.images[0].img_url}}); width: 150rpx; height: 150rpx;"
+      ></view>
+      <view class="padding-lr-sm text-lg">
+        <view class="flex">
+          <text class="text-black">{{Str.takeOrderTime[lanIndex]}}</text>
+          <text class="padding-lr-xs">:</text>
+          <view class="ltr">{{item.created_at}}</view>
+        </view>
+        <view>
+          <text>{{Str.quantity[lanIndex]}}</text>
+          <text class="padding-lr-xs">:</text>
+          <text>{{item.goods[0].count}}</text>
+        </view>
+        <view>
+          <text>{{Str.actualyPayed[lanIndex]}}</text>
+          <text class="padding-lr-xs">:</text>
+          <text>{{item.actual_fee}}</text>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</template>
+<template name="orderItem">
+  <view class="cu-list menu sm-border">
+    <navigator
+      class="cu-item"
+      style="border-bottom: 4rpx dashed #ddd; padding-left: 10rpx"
+      url="/pages/order/order-detail/order-detail?id={{item.id}}&title={{Str.orderDetail[lanIndex]}}"
+    >
+      <view class="content text-left">
+        <view>
+          <i
+            class="cu-tag text-c4 bg-white uy radius lg text-lg uy-tom"
+            wx:if="{{item.order_type==0}}"
+          >
+            <i
+              class="iconfont icon-order_type_{{item.table_num==0?'1':'2'}} text-c4 "
+              style="font-size: 40rpx"
+            ></i>
+            {{Str.takeMeal[lanIndex]}}
+          </i>
+          <i
+            class="cu-tag text-c4 bg-white uy-tom uy radius lg text-lg"
+            wx:elif="{{item.order_type==1}}"
+          >
+            <i
+              class="iconfont icon-order_type_{{item.table_num==0?'1':'2'}} text-c4"
+              style="font-size: 40rpx"
+            ></i>
+            {{Str.takeTable[lanIndex]}}
+          </i>
+          <i
+            class="cu-tag text-c4 bg-white uy-tom uy radius lg text-lg"
+            wx:elif="{{item.order_type==2}}"
+          >
+            <i
+              class="iconfont icon-order_type_{{item.table_num==0?'1':'2'}} text-c4"
+              style="font-size: 40rpx"
+            ></i>
+            {{Str.scanPay[lanIndex]}}
+          </i>
+          <i
+            class="cu-tag text-c4 bg-white uy-tom uy radius lg text-lg"
+            wx:elif="{{item.order_type==2}}"
+          >
+            <i
+              class="iconfont icon-order_type_{{item.table_num==0?'1':'2'}} text-c4"
+              style="font-size: 40rpx"
+            ></i>
+            {{Str.scanPay[lanIndex]}}
+          </i>
+          <i
+            class="cu-tag g-text uy-tom bg-white uy radius lg text-lg"
+            wx:elif="{{item.order_type==3}}"
+          >
+            {{Str.pickup[lanIndex]}}
+          </i>
+          <i
+            class="cu-tag text-blue bg-white uy radius lg text-lg"
+            wx:elif="{{item.order_type==4}}"
+          >
+            {{Str.purchasing[lanIndex]}}
+          </i>
+        </view>
+        <view
+          class="padding-left margin-bottom-xs"
+          wx:if="{{item.errand_type}}"
+        >
+          <text class="cu-tag uy-tom line-pink radius"
+            >{{isUy?item.errand_type.uy_name:item.errand_type.ch_name}}</text
+          >
+        </view>
+        <view
+          class="margin-bottom-xs text-{{isUy?'right':'left'}}"
+          wx:if="{{item.order_type==4}}"
+        >
+          <text
+            class="cu-tag uy-tom line-pink radius"
+            wx:if="{{item.delivery_type==1}}"
+            >{{Str.designatedAddress[lanIndex]}}</text
+          >
+          <text class="cu-tag uy-tom line-pink radius" wx:else
+            >{{Str.nearbyAddress[lanIndex]}}</text
+          >
+        </view>
+        <view
+          class="{{isUy?'rtl':''}} margin-left"
+          wx:if="{{item.table_num&&item.order_type==1}}"
+        >
+          <i
+            class="iconfont icon-num_{{_item}}"
+            style="font-size: 44rpx"
+            wx:if="{{item.tableNums}}"
+            wx:for="{{item.tableNums}}"
+            wx:for-item="_item"
+          ></i>
+          <i class="text-xl text-c4" wx:if="{{!item.tableNums}}"
+            >{{item.table_num}}</i
+          >
+        </view>
+        <view
+          class="margin-left margin-bottom-xs"
+          wx:if="{{item.take_food_way&&item.take_food_way!=3}}"
+        >
+          <view class="cu-tag line-pink radius uy"
+            >{{item.take_food_way==1?Str.eatInShop[lanIndex]:Str.takeFood[lanIndex]}}</view
+          >
+        </view>
+      </view>
+      <view class="action text-center">
+        <view wx:if="{{item.pay_type==1}}">
+          <text class="text-lg text-green uy-tom"
+            >{{Str.weixin[lanIndex]}}</text
+          >
+        </view>
+        <view wx:if="{{item.pay_type==2}}">
+          <text class="text-red text-lg uy-tom">{{Str.cash[lanIndex]}}</text>
+        </view>
+        <view wx:if="{{item.pay_type==3}}">
+          <text class="text-lg text-blue uy-tom">{{Str.alipay[lanIndex]}}</text>
+        </view>
+        <view>
+          <text class="text-yellow uy-tom" wx:if="{{item.pay_state==0}}"
+            >{{Str.unpayed[lanIndex]}}</text
+          >
+          <text class="text-cyan text-sm" wx:if="{{item.pay_state==1}}"
+            >{{Str.payed[lanIndex]}}</text
+          >
+          <text class="text-grey text-sm" wx:if="{{item.pay_state==-1}}"
+            >{{Str.canceld[lanIndex]}}</text
+          >
+        </view>
+        <view>
+          <text
+            class="text-price {{item.actual_fee>0&&item.total_fee>item.actual_fee?'delete-txt text-gray':'text-lg text-red uy-tom'}}"
+            >{{item.total_fee}}</text
+          >
+          <text decode="true">&nbsp;</text>
+          <text
+            class="text-lg text-price text-red uy-tom"
+            wx:if="{{item.actual_fee>0&&item.total_fee>item.actual_fee}}"
+            >{{item.actual_fee}}</text
+          >
+        </view>
+      </view>
+    </navigator>
+    <navigator
+      class="cu-item dashed-top"
+      style="border-bottom: 0rpx dashed #ddd"
+      url="/pages/order/order-detail/order-detail?id={{item.id}}&title={{Str.orderDetail[lanIndex]}}"
+      wx:if="{{item.start_address||item.shop}}"
+    >
+      <view class="content sm">
+        <view class="flex justify-start">
+          <view class="padding-right" wx:if="{{item.shop}}">
+            <view
+              class="cu-avatar radius margin-right-xs"
+              style="background-image:url({{ossImage+item.shop.icon_url+'?x-oss-process=image/resize,m_lfit,h_100,w_100'}});"
+            ></view>
+            <text class="text-lg" wx:if="{{item.shop}}"
+              >{{isUy?item.shop.uy_name:item.shop.ch_name}}</text
+            >
+          </view>
+          <view
+            class="flex justify-start align-center"
+            wx:if="{{item.start_address}}"
+          >
+            <view class="padding-right-sm">
+              <image
+                src="/resource/images/common/take.png"
+                style="width: 35rpx; height: 35rpx"
+              ></image>
+            </view>
+            <view>
+              <view class="uy-tom text-balck">
+                <text wx:if="{{item.start_address.search_address}}">
+                  {{item.start_address.search_address.name}} / </text
+                >{{item.start_address.house_number}}</view
+              >
+              <view class="text-gray text-sm"
+                >{{item.start_address.contact_name}}
+                {{item.start_address.contact_phone}}</view
+              >
+            </view>
+          </view>
+        </view>
+      </view>
+    </navigator>
+    <navigator
+      class="cu-item dashed-top"
+      style="border-bottom: 2rpx dashed #ddd"
+      url="/pages/order/order-detail/order-detail?id={{item.id}}&title={{Str.orderDetail[lanIndex]}}"
+      wx:if="{{item.end_address}}"
+    >
+      <view class="content sm">
+        <view class="flex justify-start">
+          <view class="padding-right-sm">
+            <image
+              src="/resource/images/common/received.png"
+              style="width: 35rpx; height: 35rpx"
+            ></image>
+          </view>
+          <view>
+            <view class="uy-tom text-balck">
+              <text wx:if="{{item.end_address.search_address}}">
+                {{item.end_address.search_address.name}} / </text
+              >{{item.end_address.house_number}}</view
+            >
+            <view class="text-gray text-sm"
+              >{{item.end_address.contact_name}}
+              {{item.end_address.contact_phone}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </navigator>
+    <view class="cu-item" wx:if="{{item.delivery&&item.order_state==1}}">
+      <view class="content">
+        <text class="icon-titles text-pink"></text>
+        <text class="text-sm padding-right-sm"
+          >{{Str.deliveryMan[lanIndex]}}</text
+        >
+        <button
+          bindtap="callPhone"
+          class="cu-btn sm bg-pink radius shadow"
+          data-phone="{{item.delivery.phone}}"
+        >
+          <text class="icon-phone"></text>{{item.delivery.phone}}
+        </button>
+      </view>
+    </view>
+    <view class="cu-item" wx:if="{{item.order_no}}">
+      <view class="content">
+        <text>{{item.order_no}}</text> /
+        <text class="text-gray">{{item.id}}</text>
+      </view>
+      <view class="action">
+        <text
+          class="text-bold text-xl text-blue"
+          wx:if="{{item.sequence_number}}"
+          >{{item.sequence_number}}</text
+        >
+      </view>
+    </view>
+    <view
+      class="cu-item text-center"
+      wx:if="{{item.text_remark&&item.text_remark.length>1}}"
+    >
+      <view class="uy-tom text-sm">{{item.text_remark}}</view>
+    </view>
+    <view class="cu-item">
+      <view class="content text-grey text-sm">
+        <text class="text-sm">{{item.created_at}}</text>
+      </view>
+      <view class="action">
+        <view class="flex justify-start align-center">
+          <text
+            class="text-cyan text-sm padding-lr-xs"
+            wx:if="{{item.pay_state==0&&item.times&&item.pay_type==0}}"
+            >{{item.times}}</text
+          >
+          <button
+            bindtap="payBtn"
+            class="cu-btn bg-pink radius"
+            data-item="{{item}}"
+            wx:if="{{item.order_state==0&&item.pay_state==0&&item.times&&item.pay_type==0}}"
+          >
+            {{Str.pay[lanIndex]}}
+          </button>
+          <view
+            class="text-cyan"
+            wx:if="{{item.order_state==0&&(item.pay_state==1||item.pay_type==2)}}"
+          >
+            {{Str.waitingForOrder[lanIndex]}}</view
+          >
+          <view class="text-cyan" wx:if="{{item.order_state==1}}"
+            >{{Str.inDelivery[lanIndex]}}</view
+          >
+          <view class="text-cyan" wx:if="{{item.order_state==2}}"
+            >{{Str.completed[lanIndex]}}</view
+          >
+          <button
+            bindtap="evaluationBtn"
+            class="cu-btn line-c4 radius margin-lr-xs"
+            data-item="{{item}}"
+            wx:if="{{showComment&&item.comment_count==0&&item.order_state==2}}"
+          >
+            {{Str.evaluation[lanIndex]}}
+          </button>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,148 @@
+.box {
+  display: block;
+}
+.active {
+  display: block;
+}
+#page3 {
+  overflow-x: hidden;
+  position: relative;
+}
+#msg {
+  background: #f3f3f3;
+  color: #656565;
+  font-size: 24rpx;
+  padding-top: 8px;
+  text-align: center;
+}
+.resultimgbox {
+  background-color: #f3f3f3;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 76px;
+  margin: 8px;
+  margin: 0;
+  padding-bottom: 4px;
+  padding: 10px 8px 8px;
+  position: relative;
+}
+.result {
+  display: block;
+  width: 100%;
+}
+.moregame-btn {
+  margin-bottom: 60px;
+  margin-top: 20px;
+  text-align: center;
+}
+.more-game {
+  background-clip: padding-box;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42;
+  margin-bottom: 0;
+  padding: 6px 12px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: top;
+  white-space: nowrap;
+}
+.savetipbox {
+  bottom: 0;
+  height: 48px;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+}
+.savebox {
+  background-color: #ff4303;
+  box-sizing: border-box;
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 48px;
+  padding-right: 0;
+  text-align: center;
+  width: 100%;
+}
+.savebox image {
+  height: 20px;
+  margin-bottom: -3px;
+  margin-right: 2px;
+  width: 20px;
+}
+.normalstartbtn {
+  display: -webkit-flex;
+  display: flex;
+}
+.start {
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+  padding: 12px 10px;
+}
+.normalstartbtn .start {
+  background: #fabf11;
+  color: #fff;
+  margin: 13px 0 0;
+  text-align: center;
+  width: 100%;
+}
+.normalstartbtn button {
+  line-height: normal;
+  margin-left: 8% !important;
+}
+.normalstartbtn {
+  padding: 12px 10px 0;
+}
+#collect-box {
+  justify-content: center;
+  padding: 0 10px;
+}
+#collect-box,
+.collect {
+  display: -webkit-flex;
+  display: flex;
+}
+.collect {
+  align-items: flex-end;
+  font-size: 26rpx;
+  justify-content: flex-end;
+  line-height: 45rpx;
+  margin: 30rpx 0;
+  width: 50%;
+}
+.collect image {
+  height: 45rpx;
+  margin-right: 5rpx;
+  width: 45rpx;
+}
+button.collect {
+  background: initial;
+  padding: 0;
+}
+button.collect::after,
+button.collect::before {
+  display: none;
+}
+.collect.tougao image {
+  height: 32rpx;
+  margin-right: 10rpx;
+  width: 32rpx;
+}
+.collect.back {
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: 8%;
+}
+.ad-ok2 .btn-box {
+  justify-content: center;
+}

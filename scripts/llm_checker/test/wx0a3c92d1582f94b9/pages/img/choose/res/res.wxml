@@ -1,0 +1,32 @@
+<view class="box active" id="page3">
+  <view class="page3">
+    <view class="resultimgbox">
+      <view class="" id="savetipsbox" style="display: none">
+        <view class="savetip"></view>
+        <view>长按图片</view>
+        <view>即可保存到相册</view>
+      </view>
+      <image
+        bindtap="showImg"
+        class="result"
+        data-bind="showImg"
+        id="result"
+        mode="widthFix"
+        src="{{imgshow}}"
+      ></image>
+    </view>
+    <view class="start normalstartbtn">
+      <view bindtap="saveImg" class="start save" id="submitbtn">保存相册</view>
+    </view>
+    <view class="msg">
+      <text>拼图处理使用手机本地计算，不上云不存储用完即焚</text>
+    </view>
+  </view>
+  <view></view>
+</view>
+<ad
+  adTheme="white"
+  adType="video"
+  unitId="{{ad_video}}"
+  wx:if="{{!isSeo}}"
+></ad>

@@ -1,0 +1,34 @@
+.page {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: #eee;
+}
+.hint_style {
+  width: 80%;
+  line-height: 90rpx;
+  color: #999;
+  text-align: center;
+  margin-left: 10%;
+  font-size: 28;
+  padding: 15rpx;
+}
+.guide_img_style {
+  width: 100%;
+  background: #fff;
+}
+.icon_style {
+  height: 80rpx;
+  width: 80rpx;
+}
+.btn_style {
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  margin-top: 20rpx;
+  width: 80%;
+}

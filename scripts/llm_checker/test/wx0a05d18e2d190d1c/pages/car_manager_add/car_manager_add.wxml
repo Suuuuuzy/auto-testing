@@ -1,0 +1,35 @@
+<view>
+    <view class="page">
+        <view class="add_car_row">
+            <view class="add_car_content">*车牌号码</view>
+            <input bindinput="__e" class="{{[showBrandView?'view_hide':'add_car_input']}}" data-event-opts="{{[ [ 'input',[ [ 'input_plate_no',['$event'] ] ] ] ]}}" name="车牌号码" placeholder="请输入您的车牌号" type="text" value="{{plateNo}}"></input>
+        </view>
+        <view class="add_car_row">
+            <view class="add_car_content">*车辆品牌</view>
+            <view bindtap="__e" class="add_car_input" data-event-opts="{{[ [ 'tap',[ [ 'select_car_pp',['$event'] ] ] ] ]}}">{{brand_1==''?'点击选择':brand_1.name}}</view>
+        </view>
+        <view class="add_car_row">
+            <view class="add_car_content">*车系</view>
+            <view bindtap="__e" class="add_car_input" data-event-opts="{{[ [ 'tap',[ [ 'select_car_cx',['$event'] ] ] ] ]}}">{{brand_2==''?'点击选择':brand_2.name}}</view>
+        </view>
+        <view class="add_car_row">
+            <view class="add_car_content">*车型</view>
+            <view bindtap="__e" class="add_car_input" data-event-opts="{{[ [ 'tap',[ [ 'select_car_model',['$event'] ] ] ] ]}}">{{brand_3==''?'点击选择':brand_3.name}}</view>
+        </view>
+        <view class="add_car_row">
+            <view class="add_car_content">车架号(VIN码)</view>
+            <input bindinput="__e" class="{{[showBrandView?'view_hide':'add_car_input']}}" data-event-opts="{{[ [ 'input',[ [ 'input_vin_no',['$event'] ] ] ] ]}}" name="车架号" placeholder="请输入VIN码" type="text" value="{{vinNo}}"></input>
+        </view>
+        <view class="add_car_row">
+            <view class="add_car_content">发动机号</view>
+            <input bindinput="__e" class="{{[showBrandView?'view_hide':'add_car_input']}}" data-event-opts="{{[ [ 'input',[ [ 'input_engine_no',['$event'] ] ] ] ]}}" name="发动机号" placeholder="请输入发动机号码" type="text" value="{{engineNo}}"></input>
+        </view>
+        <button bindtap="__e" class="btn_confirm_style" data-event-opts="{{[ [ 'tap',[ [ 'confirm_sel_brandFun',['$event'] ] ] ] ]}}" type="warn">确定</button>
+        <scroll-view class="{{[showBrandView?'full_page':'view_hide']}}" scrollY="true">
+            <view bindtap="__e" class="item_layout_style" data-event-opts="{{[ [ 'tap',[ [ 'select_brand',['$event'] ] ] ] ]}}" data-value="{{item}}" wx:for="{{brandList}}" wx:key="index">
+                <image class="logo_style" mode="aspectFit" src="{{item.logo}}" wx:if="{{item.logo!=''&&item.logo!=undefined}}"></image>
+                <text style="font-size:28rpx;color:#666;width:auto;flex-grow:1;text-align:left;padding-left:80rpx;">{{item.name}}</text>
+            </view>
+        </scroll-view>
+    </view>
+</view>

@@ -1,0 +1,37 @@
+<view
+  ariaDescribedby="{{descriptionID}}"
+  ariaLabelledby="{{labelID}}"
+  ariaRole="{{ariaRole||'option'}}"
+  class="{{this.getBadgeOuterClass( {shape:shape} )}} class {{prefix}}-class"
+  style="{{_._style( [style,customStyle] )}}"
+>
+  <view
+    ariaHidden="true"
+    class="{{classPrefix}}__content {{prefix}}-class-content"
+    id="{{labelID}}"
+  >
+    <slot class="{{classPrefix}}__content-slot" wx:if="{{!content}}"></slot>
+    <text class="{{classPrefix}}__content-text" wx:else>{{content}}</text>
+  </view>
+  <view
+    ariaHidden="true"
+    ariaLabel="{{ariaLabel||_.getBadgeAriaLabel( {dot:dot,count:count,maxCount:maxCount} )}}"
+    class="{{this.getBadgeInnerClass( {dot:dot,size:size,shape:shape,count:count} )}} {{prefix}}-has-count {{prefix}}-class-count"
+    id="{{descriptionID}}"
+    style="{{this.getBadgeStyles( {color:color,offset:offset} )}}"
+    wx:if="{{this.isShowBadge( {dot:dot,count:count,showZero:showZero} )}}"
+  >
+    <view
+      class="t-badge__ribbon--before"
+      style="{{color?'border-color: '+color:''}}"
+      wx:if="{{shape=='ribbon'}}"
+    ></view>
+    {{this.getBadgeValue( {dot:dot,count:count,maxCount:maxCount} )}}
+    <view
+      class="t-badge__ribbon--after"
+      style="{{color?'border-color: '+color:''}}"
+      wx:if="{{shape=='ribbon'}}"
+    ></view>
+  </view>
+  <slot name="count"></slot>
+</view>

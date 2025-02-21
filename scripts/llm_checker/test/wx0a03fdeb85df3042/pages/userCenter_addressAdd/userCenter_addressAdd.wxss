@@ -1,0 +1,165 @@
+.container {
+  background-color: #f3f4f6;
+}
+.placeholderClass {
+  color: #aaa;
+}
+.requiredField:before {
+  top: 35rpx;
+}
+#addressAdd-location {
+  padding: 15rpx 0;
+}
+.location-cont {
+  background-color: #fff;
+  height: 88rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  color: #fe0036;
+}
+.location-cont image {
+  width: 37rpx;
+  height: 37rpx;
+  margin-right: 10rpx;
+}
+.form-top,
+.form-bottom {
+  padding-left: 30rpx;
+  background-color: #fff;
+  font-size: 30rpx;
+}
+.section {
+  position: relative;
+  height: 107rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.section + .section {
+  border-top: 1rpx solid #eeeeee;
+}
+.section label {
+  min-width: 210rpx;
+  color: #666666;
+}
+.section input,
+.section picker {
+  flex: 1;
+  height: 100%;
+}
+.section picker {
+  text-align: right;
+  padding-right: 20rpx;
+}
+picker .region-picker {
+  height: 107rpx;
+  display: flex;
+  align-items: center;
+}
+.section.detailAddress {
+  height: 168rpx;
+}
+.section.detailAddress textarea {
+  width: 100%;
+  height: 90rpx;
+}
+.section.toDefault {
+  margin-top: 15rpx;
+  padding-right: 20rpx;
+  border-top: 0;
+  height: 131rpx;
+}
+.toDefault switch {
+  zoom: 0.8;
+}
+#addressAdd-option {
+  height: 145rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+}
+.addressAdd_btns {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0 20rpx;
+}
+.address_completeBtn {
+  height: 92rpx;
+  line-height: 92rpx;
+  width: 100%;
+  border-radius: 0;
+  background-color: #ff6262;
+  font-size: 34rpx;
+  color: #fff;
+}
+.topic {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 24rpx;
+  border-top: 1rpx solid #eeeeee;
+}
+.topic label {
+  min-width: 100rpx;
+}
+.topic-detail-default {
+  display: flex;
+}
+.topic-commonStyle {
+  width: 120rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  margin: 0 10rpx 24rpx 10rpx;
+  border-radius: 20rpx;
+  border: 1rpx solid #eeeeee;
+  color: #000;
+  box-sizing: border-box;
+}
+.topicChoose input,
+.topicChoose {
+  color: #fff !important;
+  background-color: #4f90f7 !important;
+}
+.noCustomize image {
+  width: 24rpx;
+  height: 24rpx;
+}
+.topic-detail-customize .customize {
+  display: flex;
+  width: auto;
+  border: 0;
+  overflow: hidden;
+}
+.customize input {
+  background-color: #f6f6f6;
+  color: #000;
+  width: 400rpx;
+  height: 100%;
+  line-height: 50rpx;
+}
+.customize.inputWidth {
+  width: 220rpx;
+}
+.customize button {
+  width: 80rpx;
+  height: 100%;
+  line-height: 50rpx;
+  background: #eaeae9;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 0;
+  border-radius: 0;
+}
+.customize button:after {
+  border: 0;
+}
+.customize button.topicConfirm {
+  background: linear-gradient(to right, #df4127, #eb6031);
+  background: -webkit-linear-gradient(right, #df4127, #eb6031);
+}

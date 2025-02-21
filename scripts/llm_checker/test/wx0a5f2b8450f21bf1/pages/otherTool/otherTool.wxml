@@ -1,0 +1,96 @@
+<view>
+  <cu-custom
+    bgColor="bg-gradual-blue"
+    bind:__l="__l"
+    isBack="{{false}}"
+    vueId="6616ff2e-1"
+    vueSlots="{{['content']}}"
+  >
+    <view slot="content">其他工具</view>
+  </cu-custom>
+  <view
+    bindtap="__e"
+    class="codeWrap padding-sm"
+    data-event-opts="{{[ [ 'tap',[ [ 'bannerClick',[index] ] ] ] ]}}"
+    wx:for="{{zibannerList}}"
+    wx:key="index"
+  >
+    <image alt class="codeImg" mode="scaleToFill" src="{{item.imgUrl}}"></image>
+    <view class="codeWord">
+      <view class="keyWord _p">{{item.title}}</view>
+      <view class="_p">{{item.xcxdec}}</view>
+    </view>
+  </view>
+  <view>
+    <view
+      bindtap="__e"
+      class="codeWrap padding-sm"
+      data-event-opts="{{[ [ 'tap',[ [ 'toPage',[8] ] ] ] ]}}"
+      wx:if="{{wenanpeiyin==1}}"
+    >
+      <image
+        alt
+        class="codeImg"
+        mode="scaleToFill"
+        src="/static/img/batch.png"
+      ></image>
+      <view class="codeWord">
+        <view class="keyWord _p">短视频文案提取</view>
+        <view class="_p">短视频文案提取、本地视频文案提取</view>
+      </view>
+    </view>
+    <view
+      bindtap="__e"
+      class="codeWrap padding-sm"
+      data-event-opts="{{[ [ 'tap',[ [ 'toPage',[9] ] ] ] ]}}"
+      wx:if="{{wenanpeiyin==1}}"
+    >
+      <image
+        alt
+        class="codeImg"
+        mode="scaleToFill"
+        src="/static/img/music-3.png"
+      ></image>
+      <view class="codeWord">
+        <view class="keyWord _p">文字配音小工具</view>
+        <view class="_p">一款文字转语音AI智能配音</view>
+      </view>
+    </view>
+    <view
+      bindtap="__e"
+      class="codeWrap padding-sm"
+      data-event-opts="{{[ [ 'tap',[ [ 'toPage',[1] ] ] ] ]}}"
+      wx:if="{{gzgzh==0}}"
+    >
+      <image
+        alt
+        class="codeImg"
+        mode="scaleToFill"
+        src="/static/img/md5-1.png"
+      ></image>
+      <view class="codeWord">
+        <view class="keyWord _p">视频MD5值修改</view>
+        <view class="_p">可以有效解决视频的唯一性，防重检测</view>
+      </view>
+    </view>
+    <view
+      bindtap="__e"
+      class="codeWrap padding-sm"
+      data-event-opts="{{[ [ 'tap',[ [ 'toPage',[7] ] ] ] ]}}"
+    >
+      <image
+        alt
+        class="codeImg"
+        mode="scaleToFill"
+        src="/static/img/share.png"
+      ></image>
+      <view class="codeWord">
+        <view class="keyWord _p">小程序分享二维码</view>
+        <view class="_p">觉得不错的话 可以保存本小程序二维码 分享给朋友哦</view>
+      </view>
+    </view>
+  </view>
+  <view class="pic-padding">
+    <ad adTheme="white" adType="video" unitId="{{ad}}" wx:if="{{ad}}"></ad>
+  </view>
+</view>

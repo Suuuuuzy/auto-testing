@@ -1,0 +1,51 @@
+.t-float-left {
+  float: left;
+}
+.t-float-right {
+  float: right;
+}
+@-webkit-keyframes tdesign-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes tdesign-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.hotspot-expanded.relative {
+  position: relative;
+}
+.hotspot-expanded::after {
+  bottom: 0;
+  content: "";
+  display: block;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: scale(1.5);
+}
+.t-grid {
+  background-color: var(
+    --td-grid-bg-color,
+    var(--td-bg-color-container, var(--td-font-white-1, #fff))
+  );
+  overflow: hidden;
+  position: relative;
+}
+.t-grid__content {
+  width: auto;
+}
+.t-grid--card {
+  border-radius: var(--td-grid-card-radius, var(--td-radius-large, 18rpx));
+  margin: 0 32rpx;
+  overflow: hidden;
+}

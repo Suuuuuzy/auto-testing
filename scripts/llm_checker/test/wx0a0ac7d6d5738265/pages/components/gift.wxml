@@ -1,0 +1,56 @@
+<view class="giftIndex data-v-5f3f81b4">
+  <view class="gift-title data-v-5f3f81b4">
+    <text class="data-v-5f3f81b4">商城</text>
+    <view bindtap="{{b}}" class="gift-order data-v-5f3f81b4">
+      <image class="icon data-v-5f3f81b4" mode="" src="{{a}}"></image>
+      <text class="order-txt data-v-5f3f81b4">商品订单</text>
+    </view>
+  </view>
+  <view class="gift-list data-v-5f3f81b4">
+    <scroll-view
+      class="data-v-5f3f81b4"
+      scrollY="true"
+      style="max-height: 61vh"
+    >
+      <view class="listview data-v-5f3f81b4" wx:if="{{c}}">
+        <view
+          bindtap="{{item.i}}"
+          class="gift-item data-v-5f3f81b4"
+          wx:for="{{d}}"
+          wx:key="h"
+        >
+          <view class="name data-v-5f3f81b4">{{item.a}}</view>
+          <view class="gift-jz data-v-5f3f81b4">
+            价值
+            <text class="jz-txtdr data-v-5f3f81b4"> ¥{{item.b}}</text>高端礼品
+          </view>
+          <image
+            class="gift-icon data-v-5f3f81b4"
+            mode=""
+            src="{{item.c}}"
+          ></image>
+          <view class="price data-v-5f3f81b4">
+            <text class="now data-v-5f3f81b4">￥{{item.d}}</text>
+            <text class="old data-v-5f3f81b4">库存：{{item.e}}</text>
+          </view>
+          <u-button
+            bind:__l="__l"
+            class="data-v-5f3f81b4"
+            uI="{{item.f}}"
+            uP="{{item.g}}"
+            wx:if="{{item.g}}"
+          ></u-button>
+        </view>
+      </view>
+      <view class="data-v-5f3f81b4" wx:else>
+        <u-empty
+          bind:__l="__l"
+          class="data-v-5f3f81b4"
+          uI="5f3f81b4-1"
+          uP="{{e}}"
+          wx:if="{{e}}"
+        ></u-empty>
+      </view>
+    </scroll-view>
+  </view>
+</view>

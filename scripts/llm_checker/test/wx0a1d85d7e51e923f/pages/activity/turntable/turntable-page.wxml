@@ -1,0 +1,115 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view class="">
+  <view
+    class="uy-tom text-c4"
+    style="
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 34rpx;
+      margin-bottom: 10rpx;
+    "
+  >
+    {{awardsConfig.option}}
+  </view>
+  <view
+    class="uy-tom"
+    style="
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      margin-bottom: 44rpx;
+      color: #1078e7;
+      font-size: 30rpx;
+    "
+  >
+    {{s_awards}}
+  </view>
+  <zhuanpan
+    awardsConfig="{{awardsConfig}}"
+    bind:myAwards="getAwards"
+    bind:myData="getData"
+    bind:startZhuan="startZhuan"
+    fastJuedin="{{fastJuedin}}"
+    id="zhuanpan"
+    musicflg="{{musicflg}}"
+    repeat="{{repeat}}"
+    size="{{size}}"
+    zhuanpanArr="{{arrData}}"
+  ></zhuanpan>
+  <view style="margin-top: 20rpx"></view>
+  <view
+    class="text-center {{isUy?'rtl':''}} text-black text-lg uy-tom"
+    wx:if="{{isUy}}"
+  >
+    <text> سىزنىڭ يەنە </text>
+    <text class="text-xxl text-red"> {{chanceCount}} </text>
+    <text>قىتىم پۇرسىتىڭىز بار</text>
+  </view>
+  <view class="text-center text-black text-lg" wx:else>
+    <text> 你还有 </text>
+    <text class="text-xxl text-red"> {{chanceCount}} </text>
+    <text>几次机会</text>
+  </view>
+</view>
+<view>
+  <view class="tab-{{STabCur==0?'left':'right'}} margin-lr-sm margin-top-sm">
+    <view class="flex text-center align-center" style="height: 100rpx">
+      <view
+        bindtap="STabSelect"
+        class="cu-item flex-sub {{index==STabCur?'text-pink cur':'text-grey'}}"
+        data-id="{{index}}"
+        wx:for="{{tableInfo}}"
+      >
+        <view class="flex justify-start view-center align-center">
+          <view>
+            <view>
+              <i
+                class="iconfont icon-{{item.icon}}"
+                style="font-size: 70rpx"
+              ></i>
+            </view>
+          </view>
+          <view>
+            <text
+              class="text-bold text-lg padding-lr-xs  {{index==STabCur?'text-black':''}} "
+              >{{isUy?item.uy_name:item.ch_name}}</text
+            >
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-list menu sm-border bg-white margin-sm">
+    <view class="cu-item" style="padding: 0 10rpx" wx:for="{{giftResult}}">
+      <view class="content">
+        <view class="flex align-center justify-start">
+          <image
+            mode="fit-center"
+            src="{{_baseImageUrl+item.info.img_url}}"
+            style="width: 80rpx; height: 80rpx"
+          ></image>
+          <text class="text-green">{{item.user.phone}}</text>
+          <text class="text-red">{{item.info.uy_name}}</text>
+        </view>
+      </view>
+      <view class="action">
+        <view class="text-pink">
+          <i class="iconfont icon-turntable_tab_1" style="font-size: 50rpx"></i>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<dialog
+  cancel="{{Str.cancel[lanIndex]}}"
+  confirm="{{Str.iKnow[lanIndex]}}"
+  content="{{dialogContent}}"
+  id="dialog"
+  isInput="{{dialogIsInput}}"
+  title="{{Str.warning[lanIndex]}}"
+  type="error"
+></dialog>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

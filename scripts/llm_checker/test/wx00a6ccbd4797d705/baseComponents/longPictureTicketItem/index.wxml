@@ -1,0 +1,254 @@
+<view
+  class="{{['ticketItemLong','pr','_div',shadow&&'shadowBg',ticketUseType]}}"
+  style="{{'height:'+height001+';'}}"
+>
+  <view
+    bindtap="__e"
+    class="openSelection pa _div"
+    data-event-opts="{{[ [ 'tap',[ [ 'check',['$0'],['realData'] ] ] ] ]}}"
+    wx:if="{{openSelection&&realData.usableNum&&realData.usableNum==1}}"
+  >
+    <label
+      class="iconfont icon-yixuanzhong fz36 _span"
+      style="{{'color:'+color+';'}}"
+      wx:if="{{choice}}"
+    ></label>
+    <label
+      class="iconfont icon-weixuanzhong fz36 _span"
+      style="{{'color:'+color+';'}}"
+      wx:else
+    ></label>
+  </view>
+  <view
+    class="openSelectionAdd pa flexCenter _div"
+    wx:if="{{openSelection&&realData.usableNum&&realData.usableNum>1}}"
+  >
+    <view
+      bindtap="__e"
+      class="iconfont icon-jianqu ml19 fz36 _div"
+      data-event-opts="{{[ [ 'tap',[ [ 'reduce',['$0'],['realData'] ] ] ] ]}}"
+      style="{{'color:'+color+';'}}"
+    ></view>
+    <label class="ml19 f28 _span">{{realData.addAfterAmount}}</label>
+    <view
+      bindtap="__e"
+      class="iconfont icon-jiashang ml19 fz36 _div"
+      data-event-opts="{{[ [ 'tap',[ [ 'add',['$0'],['realData'] ] ] ] ]}}"
+      style="{{'color:'+color+';'}}"
+    ></view>
+  </view>
+  <view class="openSelectionAdd pa flexCenter _div">
+    <slot name="selectBtn"></slot>
+  </view>
+  <view
+    bindtap="__e"
+    class="{{['ticket_left','pr','bcf','_div',!shadow&&'tallTypeLeft']}}"
+    data-event-opts="{{[ [ 'tap',[ [ 'goDetail',['$0'],['realData'] ] ] ] ]}}"
+  >
+    <view class="picBox pr _div">
+      <label class="{{['tipStyle','unUsefulBgColorFc9','_span',type.class]}}"
+        >{{type.name}}</label
+      >
+      <image
+        alt
+        class="diyPic"
+        mode="aspectFill"
+        src="{{realData.longPic?realData.longPic:'https://cdnpic.wuuxiang.com/msgjDecorationImg/newtTicketBg202303081344.png'}}"
+      ></image>
+      <slot name="clickAddShopCoupon"></slot>
+    </view>
+    <view
+      class="{{['ticketNum','unUsefulBgColorFc9','_div',type.class]}}"
+      wx:if="{{realData.usableNum&&realData.usableNum>1}}"
+      >{{''+realData.usableNum+'张'}}</view
+    >
+    <view
+      class="{{['ticketNum','unUsefulBgColorFc9','_div',type.class]}}"
+      wx:if="{{realData.couponCnt&&realData.couponCnt>1&&!realData.usableNum}}"
+      >{{''+realData.couponCnt+'张'}}</view
+    >
+    <view
+      class="rule _div"
+      wx:if="{{ticketUseType!='unUseful'&&(realData.isDateLimit==1||realData.isAllscenario==0||!noDetail||coustomDetail)}}"
+    >
+      <view
+        class="_div"
+        wx:if="{{realData.isDateLimit==1&&realData.isAllscenario==0}}"
+        >部分时段可用、部分场景可用<label
+          class="mr10r ml10r _span"
+          wx:if="{{!noDetail}}"
+          >|</label
+        >
+      </view>
+      <block wx:else>
+        <view class="_div" wx:if="{{realData.isDateLimit==1}}"
+          >部分时段可用<label class="mr10r ml10r _span" wx:if="{{!noDetail}}"
+            >|</label
+          >
+        </view>
+        <block wx:else>
+          <view class="_div" wx:if="{{realData.isAllscenario==0}}"
+            >部分场景可用<label class="mr10r ml10r _span" wx:if="{{!noDetail}}"
+              >|</label
+            >
+          </view>
+        </block>
+      </block>
+      <view class="ticket_goDetail _div" wx:if="{{!noDetail}}"
+        >查看详情<label class="iconfont icon-right _span"></label>
+      </view>
+      <slot name="detail"></slot>
+    </view>
+    <block wx:else>
+      <view
+        class="rule _div"
+        wx:if="{{ticketUseType=='unUseful'&&unUsefulNumInfo}}"
+      >
+        <label class="f24 iconfont icon-tishi _span"></label>
+        <label class="_span">{{unUsefulNumInfo}}</label>
+      </view>
+    </block>
+    <view class="sawtooth sawtooth-left pa _div" wx:if="{{!shadow}}"></view>
+  </view>
+  <view
+    class="{{['ticket_right','bcf','_div',tearTheTicket?'tearTheTicket':'',openSelection&&'pd80',!shadow&&'tallTypeRight']}}"
+  >
+    <view
+      class="reduceStyle _div"
+      wx:if="{{realData.deductValueType==1&&realData.type==3}}"
+      >券后价格</view
+    >
+    <view
+      class="reduceStyle _div"
+      wx:if="{{realData.deductValueType==1&&realData.type==5}}"
+      >{{''+$root.f0+''}}</view
+    >
+    <view
+      class="ticket_right_content _div"
+      style="{{'color:'+color+';'}}"
+      wx:if="{{realData.type==1&&realData.value!=null}}"
+    >
+      <label class="iconStyle unUsefulColorFc9 _span">￥</label>
+      <label class="ticketValue unUsefulColorFc9 _span"
+        >{{realData.value}}</label
+      >
+    </view>
+    <view
+      class="ticket_right_content _div"
+      style="{{'color:'+color+';'}}"
+      wx:if="{{realData.type==1&&realData.value==null}}"
+    >
+      <label
+        class="f32 fw600 unUsefulBgColorFc9 _span"
+        style="{{'color:'+color+';'}}"
+        >随机</label
+      >
+    </view>
+    <view
+      class="ticket_right_content _div"
+      style="{{'color:'+color+';'}}"
+      wx:if="{{realData.type==2}}"
+    >
+      <label
+        class="f32 fw600 unUsefulColorFc9 _span"
+        style="{{'color:'+color+';'}}"
+        wx:if="{{realData.value==0}}"
+        >免费</label
+      >
+      <block wx:else>
+        <label class="ticketValue unUsefulColorFc9 _span"
+          >{{realData.value}}</label
+        >
+        <label class="iconStyle unUsefulColorFc9 _span" style="top: 4rpx"
+          >折</label
+        >
+      </block>
+    </view>
+    <view
+      class="ticket_right_content _div"
+      style="{{'color:'+color+';'}}"
+      wx:if="{{realData.type==3}}"
+    >
+      <label
+        class="f32 fw600 unUsefulColorFc9 _span"
+        style="{{'color:'+color+';'}}"
+        wx:if="{{realData.deductValueType!=1&&realData.value==0||realData.deductValueType==1&&realData.deductToValue==0}}"
+        >免费</label
+      >
+      <block wx:else>
+        <label
+          class="iconStyle unUsefulColorFc9 _span"
+          style="{{'color:'+color+';'}}"
+          >￥</label
+        >
+        <label
+          class="ticketValue unUsefulColorFc9 _span"
+          style="{{'color:'+color+';'}}"
+          >{{realData.deductValueType==1?realData.deductToValue:realData.value}}</label
+        >
+      </block>
+    </view>
+    <view class="ticket_right_content _div" wx:if="{{realData.type==4}}">
+      <label class="f32 fw600 _span" style="{{'color:'+color+';'}}">赠品</label>
+    </view>
+    <view class="ticket_right_content _div" wx:if="{{realData.type==5}}">
+      <label
+        class="iconfont icon-mianfei freeIcon unUsefulColorFc9 _span"
+        style="{{'color:'+color+';'}}"
+        wx:if="{{realData.deductValueType==1&&realData.deductToValue==0}}"
+      ></label>
+      <block wx:else>
+        <label
+          class="iconStyle unUsefulColorFc9 _span"
+          style="{{'color:'+color+';'}}"
+          >￥</label
+        >
+        <label
+          class="ticketValue unUsefulColorFc9 _span"
+          style="{{'color:'+color+';'}}"
+          >{{realData.deductValueType==1?realData.deductToValue:realData.value}}</label
+        >
+      </block>
+    </view>
+    <view
+      class="ticket_rule dateStr _div"
+      wx:if="{{timeRage&&timeRage.dateStr}}"
+    >
+      <view class="{{['_div',redTips&&'redTipsLong unUsefulBgColorFc9']}}">
+        <rich-text nodes="{{timeRage.dateStr}}"></rich-text>
+      </view>
+    </view>
+    <view
+      class="ticket_rule timeStr _div"
+      wx:if="{{timeRage&&timeRage.timeStr}}"
+    >
+      <view class="{{['_div',redTips&&'redTipsLong unUsefulBgColorFc9']}}"
+        >{{timeRage.timeStr}}</view
+      >
+    </view>
+    <view
+      class="zwBtn _div"
+      wx:if="{{(!showUseBtn||ticketUseType=='unUseful')&&!openSelection}}"
+    ></view>
+    <block wx:else>
+      <form-id-wrap
+        bind:__l="__l"
+        bind:fire="__e"
+        data-event-opts="{{[ [ '^fire',[ [ 'useNow',['$0'],['realData'] ] ] ] ]}}"
+        tmplIds="{{tmplIds}}"
+        vueId="402fb108-1"
+        vueSlots="{{['default']}}"
+        wx:if="{{!(!showUseBtn||ticketUseType=='unUseful')}}"
+      >
+        <view
+          bindtap="__e"
+          class="btn _div"
+          data-event-opts="{{[ [ 'tap',[ [ 'formIdWrapClick',['$event'] ] ] ] ]}}"
+          style="{{'background:'+color+';'+'color:'+bntColor+';'}}"
+          >立即使用</view
+        >
+      </form-id-wrap>
+    </block>
+    <view class="sawtooth sawtooth-right pa _div" wx:if="{{!shadow}}"></view>
+  </view>
+</view>

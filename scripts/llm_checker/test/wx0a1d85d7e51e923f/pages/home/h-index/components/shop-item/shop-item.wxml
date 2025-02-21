@@ -1,0 +1,271 @@
+<template name="deliveryDiscountTxt">
+  <view wx:if="{{isUy}}">
+    <text>كىرادىن </text>
+    <text>{{discountAmount}}</text>
+    <text>يۈەن ئېتىبار قىلىندى</text>
+  </view>
+  <view wx:else>
+    <text>已优惠</text>
+    <text>{{discountAmount}}</text>
+    <text>元配送费</text>
+  </view>
+</template>
+<template name="shopCouponTxtItem">
+  <view class="rtl" wx:if="{{isUy}}">
+    <text>{{item['coupon_limit']}}</text>
+    <text>يۈەنگە يەتسە</text>
+    <text>{{item['coupon_amount']}}</text>
+    <text> ئېتىبار</text>
+  </view>
+  <view wx:else>
+    <text>满{{item['coupon_limit']}}减{{item['coupon_amount']}}</text>
+  </view>
+</template>
+<template name="shopCouponTxt">
+  <view
+    class="text-xs padding-lr-xs radius {{_index%2==0?'r-bg':'g-bg'}} margin-right-xs"
+    style="white-space: nowrap; display: inline-block; line-height: 35rpx"
+    wx:if="{{coupons&&_index<(showAll==1?6:showCount>0?showCount:isUy?1:2)}}"
+    wx:for="{{coupons}}"
+    wx:for-index="_index"
+    wx:for-item="_item"
+    wx:key="_index"
+  >
+    <template is="shopCouponTxtItem" data="{{isUy:isUy,item:_item}}"></template>
+  </view>
+</template>
+<template name="deliveryCouponTxt">
+  <view
+    class="text-xs padding-lr-xs radius g-bg margin-right-xs"
+    style="line-height: 35rpx; white-space: nowrap; display: inline-block"
+  >
+    <view class="rtl" wx:if="{{isUy}}">
+      <text class=""
+        >{{shop['delivery_fee']-shop['activity_delivery_fee'][0]['activity_delivery_fee']}}</text
+      >
+      <text>يۈەن كىرا كېمەيتىش</text>
+    </view>
+    <view wx:else>
+      <text>立减</text>
+      <text
+        >{{shop['delivery_fee']-shop['activity_delivery_fee'][0]['activity_delivery_fee']}}</text
+      >
+      <text>元配送费</text>
+    </view>
+  </view>
+</template>
+<view
+  class="bg-white {{isUy?'rtl':''}} padding-xs"
+  style="border-radius: 16rpx"
+  url="{{navUrl}}?shopId={{item.id}}&title={{isUy?item.uy_name:item.ch_name}}"
+>
+  <view class="">
+    <navigator
+      class="flex"
+      url="{{navUrl}}?shopId={{item.id}}&title={{isUy?item.uy_name:item.ch_name}}"
+    >
+      <view class="{{item.is_closing==1?'grayscale':''}}">
+        <t-image
+          class="shop-img"
+          shape="round"
+          src="{{ossImage+item.icon_url}}"
+        ></t-image>
+      </view>
+      <view class="padding-lr-sm shop-name">
+        <image
+          mode="widthFix"
+          src="/resource/images/shop/common/new_shop.png"
+          style="width: 100rpx; height: 100rpx; position: absolute; left: 10rpx"
+          wx:if="{{item.is_new>0}}"
+        ></image>
+        <view>
+          <view
+            class="text-cut {{isUy?'rtl text-right uy-tom text-lg':'text-left'}}  text-bold text-black"
+            style="width: 500rpx; color: #070c20"
+            >{{isUy?item.uy_name:item.ch_name}}</view
+          >
+        </view>
+        <view class="flex justify-between align-center">
+          <view class="" wx:if="{{1}}">
+            <view class="flex {{isUy?'uy-tom':''}} text-sm shop-sub-title">
+              <view>
+                <view
+                  class="flex justify-start padding-0 align-center"
+                  style="height: 40rpx"
+                >
+                  <view>
+                    <text class="icon cuIcon-favorfill text-c4"></text>
+                    <text class="text-c4">{{item.stars}}</text>
+                  </view>
+                  <view class="padding-lr-sm">
+                    <text class="padding-lr-xs"
+                      >{{Str.monthBuyed[lanIndex]}}</text
+                    >
+                    <text class="">{{item.sales_count}}</text>
+                  </view>
+                  <view
+                    class="bg-gray margin-lr-xs"
+                    style="height: 20rpx; width: 2rpx"
+                    wx:if="{{item.is_24h}}"
+                  ></view>
+                  <view class="text-pink" wx:if="{{item.is_24h}}">24H</view>
+                </view>
+                <view
+                  class="flex justify-satrt align-center"
+                  style="height: 40rpx"
+                >
+                  <view class="">
+                    <text class="">{{Str.startPrice[lanIndex]}}</text>
+                    <text class="text-price text-df"
+                      >{{item.starting_price}}</text
+                    >
+                  </view>
+                  <view
+                    class="bg-gray margin-lr-xs"
+                    style="height: 20rpx; width: 2rpx"
+                  ></view>
+                  <view class="">
+                    <text class="">{{Str.deliveryFee[lanIndex]}}</text>
+                    <text
+                      class="text-price text-c4 text-df"
+                      wx:if="{{item['activity_delivery_fee']&&item['activity_delivery_fee'].length>0}}"
+                      >{{item['activity_delivery_fee'][0]['activity_delivery_fee']}}</text
+                    >
+                    <text
+                      class="text-price  {{item['activity_delivery_fee']&&item['activity_delivery_fee'].length>0?'delete-txt text-sm':'text-df'}}"
+                      >{{item.delivery_fee}}</text
+                    >
+                  </view>
+                </view>
+                <view class="flex justify-start margin-top-xs align-center">
+                  <view
+                    class="cu-tag line-c4 sm radius uy-tom tag"
+                    wx:if="{{_index<2}}"
+                    wx:for="{{item.types}}"
+                    wx:for-index="_index"
+                    wx:for-item="_item"
+                    wx:key="_index"
+                  >
+                    {{isUy?_item.uy_name:_item.ch_name}}
+                  </view>
+                  <view
+                    class="cu-tag bg-pink sm radius uy-tom tag"
+                    wx:if="{{item.activity_goods_count>0}}"
+                  >
+                    {{Str.couponPrice[lanIndex]}}
+                  </view>
+                </view>
+                <view
+                  class="margin-top-xs"
+                  style="overflow: hidden; width: 420rpx"
+                >
+                  <template
+                    is="deliveryCouponTxt"
+                    data="{{isUy:isUy,shop:item}}"
+                    wx:if="{{item['activity_delivery_fee']&&item['activity_delivery_fee'].length>0}}"
+                  ></template>
+                  <template
+                    is="shopCouponTxt"
+                    data="{{coupons:item['coupons'],isUy:isUy,showAll:0,showCount:item['activity_delivery_fee'].length>0?isUy?1:2:isUy?2:3}}"
+                    wx:if="{{item['coupons']&&item['coupons'].length>0}}"
+                  ></template>
+                  <text
+                    class="icon-unfold"
+                    wx:if="{{item['coupons'].length>0}}"
+                  ></text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="">
+            <view class="text-center">
+              <view class="text-bold uy-tom">
+                <text class="cuIcon-location"></text>
+              </view>
+              <view>
+                <view>
+                  <text
+                    class="text-bold text-black uy-tom text-sm"
+                    wx:if="{{item.distance&&item.distance!=-1}}"
+                    >{{item.distance}}</text
+                  >
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </navigator>
+    <view class="flex justify-end padding-lr-sm" wx:if="{{!canArrive}}">
+      <view class="text-sm text-red {{isUy?'uy-tom':''}}">
+        <text>{{Str.isNotDelivery[lanIndex]}}</text>
+      </view>
+    </view>
+    <view
+      class="flex justify-end padding-lr-sm"
+      wx:elif="{{item.recommendToYou==1}}"
+    >
+      <view
+        class="text-sm text-white {{isUy?'uy-tom':''}} padding-lr-xs radius g-bg"
+      >
+        <text>{{Str.recommendToYou[lanIndex]}}</text>
+        <text>&nbsp;</text>
+        <text class="cuIcon-appreciate"></text>
+      </view>
+    </view>
+    <view
+      class="scroll_box bg-white margin-top-sm"
+      style="border-radius: 0 0 16rpx 16rpx"
+      wx:if="{{goods.length>0}}"
+    >
+      <scroll-view
+        scrollX
+        class="scroll-view_x"
+        style="width: auto; overflow: hidden"
+      >
+        <navigator
+          class="item_list flex align-start"
+          style="border-radius: 15rpx; background-color: white"
+          url="/pages/home/mall/mall-home?shopId={{item.id}}&goodId={{_item.id}}"
+          wx:for="{{goods}}"
+          wx:for-item="_item"
+          wx:key="index"
+        >
+          <view>
+            <image
+              mode="aspectFill"
+              src="{{_item.img_url+'?x-oss-process=image/resize,w_600'}}"
+              style="border-radius: 16rpx 16rpx 5rpx 5rpx"
+            ></image>
+          </view>
+          <view class="flex justify-between">
+            <view
+              class="text-black text-sm margin-right-xs text-cut {{isUy?'rtl uy-tom':''}} text-text-center"
+              style="width: 180rpx; margin-top: 0rpx"
+            >
+              {{isUy?_item.uy_name:_item.ch_name}}
+            </view>
+            <view></view>
+          </view>
+          <view style="margin-top: 0rpx">
+            <view class="flex align-center">
+              <price
+                decimalSmaller
+                class="text-lg text-bold padding-left-xs uy-tom text-red"
+                price="{{_item.activity_price}}"
+                priceUnit="yuan"
+              ></price>
+              <price
+                decimalSmaller
+                class="padding-left-xs text-sm"
+                price="{{_item.price}}"
+                priceUnit="yuan"
+                type="delthrough"
+              ></price>
+            </view>
+          </view>
+        </navigator>
+      </scroll-view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,129 @@
+<view class="audio_center data-v-2f3f1529">
+  <view class="audio_center_cover data-v-2f3f1529">
+    <image
+      class="audio_center_cover_img data-v-2f3f1529"
+      mode="aspectFill"
+      src="{{audioCover}}"
+    ></image>
+  </view>
+  <view class="audio_name data-v-2f3f1529">{{audioTitle}}</view>
+  <view class="audio_author data-v-2f3f1529">{{audioAuthor}}</view>
+  <view class="audio_center_right flexible data-v-2f3f1529">
+    <image
+      class="ic_jian data-v-2f3f1529"
+      src="../../static/ic_jian@2x.png"
+    ></image>
+    <view class="single data-v-2f3f1529" wx:if="{{$root.m0=='string'}}">
+      <slider
+        activeColor="{{activeColor}}"
+        backgroundColor="{{backgroundColor}}"
+        bindchange="__e"
+        blockSize="12"
+        class="data-v-2f3f1529"
+        data-event-opts="{{[ [ 'change',[ [ 'sliderChange',['$event'] ] ] ] ]}}"
+        max="{{maxSliderIndex}}"
+        value="{{sliderIndex}}"
+      ></slider>
+    </view>
+    <image
+      class="ic_jia data-v-2f3f1529"
+      src="../../static/ic_jia@2x.png"
+    ></image>
+  </view>
+  <view class="audioTime data-v-2f3f1529">
+    <view class="time data-v-2f3f1529">{{''+timeTxt+''}}</view>
+    <view class="time data-v-2f3f1529">{{''+sliderTxt+''}}</view>
+  </view>
+  <view class="audio-control data-v-2f3f1529">
+    <view
+      bindtap="__e"
+      class="audio-control-item audio_AIns data-v-2f3f1529"
+      data-event-opts="{{[ [ 'tap',[ [ 'toRead',['$event'] ] ] ] ]}}"
+    >
+      <image
+        class="control-btn data-v-2f3f1529"
+        src="../../static/ic_read.png"
+      ></image>
+      <view class="audio-control-title data-v-2f3f1529">去阅读</view>
+    </view>
+    <view
+      bindtap="__e"
+      class="audio-control-item audio_AIns data-v-2f3f1529"
+      data-event-opts="{{[ [ 'tap',[ [ 'clickVoice',[1] ] ] ] ]}}"
+    >
+      <image
+        class="control-btn data-v-2f3f1529"
+        src="../../static/ic_AIgs.png"
+        wx:if="{{isTone==2}}"
+      ></image>
+      <image
+        class="control-btn data-v-2f3f1529"
+        src="../../static/ic_AIgs1.png"
+        wx:if="{{isTone==1}}"
+      ></image>
+      <view
+        class="audio-control-title data-v-2f3f1529"
+        style="{{'color:'+(isTone==1?'#999':'#333')+';'}}"
+        >AI女声</view
+      >
+    </view>
+    <view
+      bindtap="__e"
+      class="audio-control-item audio_play data-v-2f3f1529"
+      data-event-opts="{{[ [ 'tap',[ [ 'clickAudio',['$event'] ] ] ] ]}}"
+    >
+      <image
+        class="control-play ic_bf data-v-2f3f1529"
+        src="../../static/ic_bf@2x.png"
+        wx:if="{{!audio_status}}"
+      ></image>
+      <image
+        class="control-pause ic_zt data-v-2f3f1529"
+        src="../../static/ic_zt@2x.png"
+        wx:if="{{audio_status}}"
+      ></image>
+    </view>
+    <view
+      bindtap="__e"
+      class="audio-control-item audio_AIns data-v-2f3f1529"
+      data-event-opts="{{[ [ 'tap',[ [ 'clickVoice',[2] ] ] ] ]}}"
+    >
+      <image
+        class="control-btn data-v-2f3f1529"
+        src="../../static/ic_AIbs.png"
+        wx:if="{{isTone==1}}"
+      ></image>
+      <image
+        class="control-btn data-v-2f3f1529"
+        src="../../static/ic_AIbs1.png"
+        wx:if="{{isTone==2}}"
+      ></image>
+      <view
+        class="audio-control-title data-v-2f3f1529"
+        style="{{'color:'+(isTone==2?'#999':'#333')+';'}}"
+        >AI男声</view
+      >
+    </view>
+    <view
+      bindtap="__e"
+      class="audio-control-item audio_AIns data-v-2f3f1529"
+      data-event-opts="{{[ [ 'tap',[ [ 'addShelfFun',['$event'] ] ] ] ]}}"
+    >
+      <image
+        class="control-btn data-v-2f3f1529"
+        src="../../static/ic_shujia.png"
+        wx:if="{{!isUserShelf}}"
+      ></image>
+      <image
+        class="control-btn data-v-2f3f1529"
+        src="../../static/ic_shujia_act.png"
+        wx:if="{{isUserShelf}}"
+      ></image>
+      <view
+        class="audio-control-title data-v-2f3f1529"
+        style="{{'color:'+(isUserShelf?'#999':'#333')+';'}}"
+        >{{isUserShelf?'已在书架':'加入书架'}}</view
+      >
+    </view>
+  </view>
+</view>

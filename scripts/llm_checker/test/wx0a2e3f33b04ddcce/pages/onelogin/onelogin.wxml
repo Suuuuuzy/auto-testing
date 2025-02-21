@@ -1,0 +1,46 @@
+<view class="mcontainer">
+  <view class="main">
+    <view class="user-info">
+      <image class="user-image" src="/assets/img/logo.png"></image>
+      <view class="account">火瞳刷脸消费</view>
+    </view>
+    <view class="info">
+      <van-button
+        bindclick="routerToAuthTY"
+        class="buttonA"
+        color="linear-gradient(to right, #71BCFF, #4980F9)"
+        disabled="{{!agree}}"
+        size="large"
+        type="primary"
+        wx:if="{{showOneLogin}}"
+        >移动一键登录</van-button
+      >
+      <van-button
+        bindclick="toLogin"
+        class="buttonA"
+        color="linear-gradient(to right, #71BCFF, #4980F9)"
+        disabled="{{!agree}}"
+        size="large"
+        type="primary"
+        >手机验证码登录</van-button
+      >
+      <view class="box" wx:if="{{!showOneLogin}}"></view>
+      <view class="privacy">
+        <label class="radio">
+          <checkbox checked="{{agree}}"></checkbox>
+        </label>
+        <text>登录即同意 </text>
+        <text bindtap="toPrivacy" class="navigator">隐私条款</text>、<text
+          bindtap="toContact"
+          class="navigator"
+          >用户协议</text
+        >
+        <view class="tip"
+          >此小程序为使用火瞳人脸识别机进行企业内部福利管理的企业，提供菜谱查看、消费记录查看等服务，请确认后登录。</view
+        >
+      </view>
+    </view>
+  </view>
+  <van-toast id="van-toast"></van-toast>
+</view>
+<auth-dialog></auth-dialog>

@@ -1,0 +1,57 @@
+<import src="../common/template/icon.wxml"></import>
+<button
+  appParameter="{{appParameter}}"
+  ariaLabel="{{ariaLabel}}"
+  bind:agreeprivacyauthorization="agreeprivacyauthorization"
+  bind:chooseavatar="chooseavatar"
+  bind:contact="contact"
+  bind:error="error"
+  bind:getphonenumber="getphonenumber"
+  bind:getuserinfo="getuserinfo"
+  bind:launchapp="launchapp"
+  bind:opensetting="opensetting"
+  catch:tap="handleTap"
+  class="class {{className}}"
+  data-custom="{{customDataset}}"
+  formType="{{disabled||loading?'':type}}"
+  hoverClass="{{disabled||loading?'':hoverClass||classPrefix+'--hover'}}"
+  hoverStartTime="{{hoverStartTime}}"
+  hoverStayTime="{{hoverStayTime}}"
+  hoverStopPropagation="{{hoverStopPropagation}}"
+  id="{{tId}}"
+  lang="{{lang}}"
+  openType="{{disabled||loading?'':openType}}"
+  sendMessageImg="{{sendMessageImg}}"
+  sendMessagePath="{{sendMessagePath}}"
+  sendMessageTitle="{{sendMessageTitle}}"
+  sessionFrom="{{sessionFrom}}"
+  showMessageCard="{{showMessageCard}}"
+  style="{{_._style( [style,customStyle] )}}"
+>
+  <template
+    is="icon"
+    data="{{class:classPrefix+'__icon',tClass:prefix+'-class-icon',ariaHidden:true,name:iconName,...iconData}}"
+    wx:if="{{iconName||_.isNoEmptyObj(iconData)}}"
+  ></template>
+  <t-loading
+    loading
+    delay="{{loadingProps.delay||0}}"
+    duration="{{loadingProps.duration||800}}"
+    indicator="{{loadingProps.indicator||true}}"
+    inheritColor="{{loadingProps.inheritColor||true}}"
+    layout="{{loadingProps.layout||'horizontal'}}"
+    pause="{{loadingProps.pause||false}}"
+    progress="{{loadingProps.progress||0}}"
+    reverse="{{loadingProps.reverse||false}}"
+    size="{{loadingProps.size||'40rpx'}}"
+    tClass="{{classPrefix}}__loading {{classPrefix}}__loading--wrapper"
+    tClassIndicator="{{classPrefix}}__loading--indicator {{prefix}}-class-loading"
+    text="{{loadingProps.text||''}}"
+    theme="{{loadingProps.theme||'circular'}}"
+    wx:if="{{loading}}"
+  ></t-loading>
+  <view class="{{classPrefix}}__content">
+    <slot name="content"></slot>{{content}}<slot></slot>
+  </view>
+  <slot name="suffix"></slot>
+</button>

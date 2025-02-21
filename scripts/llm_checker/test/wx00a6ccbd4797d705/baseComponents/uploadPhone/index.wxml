@@ -1,0 +1,15 @@
+<view
+  catchtap="__e"
+  class="{{['dhtcCompont','_div','data-v-7df6e9b2',[btClass=='rzbtn1'?'btn1wh':''],btClass]}}"
+  data-event-opts="{{[ [ 'tap',[ [ 'nope',['$event'] ] ] ] ]}}"
+  style="{{$root.s0}}"
+>
+  <button
+    bindgetphonenumber="__e"
+    catchtap="__e"
+    class="{{['button','data-v-7df6e9b2',btClass]}}"
+    data-event-opts="{{[ [ 'tap',[ [ 'nope',['$event'] ] ] ],[ 'getphonenumber',[ [ 'getPhoneNumber',['$event'] ] ] ] ]}}"
+    openType="getPhoneNumber"
+    size="mini"
+  ></button>
+</view>

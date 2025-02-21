@@ -1,0 +1,148 @@
+<view class="w100 data-v-603ae11e">
+  <scroll-view
+    class="data-v-603ae11e"
+    scrollY="true"
+    style="{{'max-height:'+c}}"
+  >
+    <view class="w100 data-v-603ae11e">
+      <view
+        bindtap="{{item.s}}"
+        class="{{['cardlist','data-v-603ae11e',item.p&&'cdbg',item.q&&'ptbg']}}"
+        wx:for="{{a}}"
+        wx:key="r"
+      >
+        <view class="cardName data-v-603ae11e">
+          <view class="c_name data-v-603ae11e">
+            <text class="phone cname data-v-603ae11e" wx:if="{{item.a}}"
+              >{{item.b}}</text
+            >
+          </view>
+          <view class="c_name data-v-603ae11e">
+            <view class="c_phone data-v-603ae11e" wx:if="{{item.c}}">
+              <image
+                class="data-v-603ae11e"
+                mode=""
+                src="{{item.d}}"
+                style="
+                  width: 28rpx;
+                  height: 28rpx;
+                  opacity: 0.8;
+                  margin-right: 8rpx;
+                "
+              ></image>
+              <text class="phone data-v-603ae11e">{{item.e}}</text>
+            </view>
+            <view class="data-v-603ae11e">
+              <text class="phone data-v-603ae11e" wx:if="{{item.f}}"
+                >ID:{{item.g}}</text
+              >
+            </view>
+          </view>
+          <view class="cardbtns data-v-603ae11e">
+            <view class="updatebtns data-v-603ae11e">
+              <view
+                catchtap="{{item.i}}"
+                class="card-btns pwbtn data-v-603ae11e"
+                wx:if="{{item.h}}"
+              >
+                修改密码
+              </view>
+              <view
+                catchtap="{{item.k}}"
+                class="card-btns pwbtn data-v-603ae11e"
+                wx:if="{{item.j}}"
+              >
+                设置密码
+              </view>
+            </view>
+            <view catchtap="{{item.l}}" class="card-btn data-v-603ae11e">
+              充值
+            </view>
+          </view>
+        </view>
+        <view class="cardAmn data-v-603ae11e">
+          <view class="cardAmntxt data-v-603ae11e"> 油卡余额 </view>
+          <view class="camn data-v-603ae11e">
+            <text class="camn-txt data-v-603ae11e">{{item.m}}</text>
+            <view class="detail data-v-603ae11e">
+              <text catchtap="{{item.n}}" class="detail-txt data-v-603ae11e"
+                >优惠详情</text
+              >
+              <u-icon
+                bind:__l="__l"
+                class="data-v-603ae11e"
+                uI="{{item.o}}"
+                uP="{{b}}"
+                wx:if="{{b}}"
+              ></u-icon>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <u-popup
+    bind:__l="__l"
+    bindclose="{{k}}"
+    class="data-v-603ae11e"
+    uI="603ae11e-1"
+    uP="{{l}}"
+    uS="{{['d']}}"
+    wx:if="{{l}}"
+  >
+    <view class="couponbox data-v-603ae11e">
+      <view class="couponbox-top data-v-603ae11e">
+        <text class="couponbox-top-title data-v-603ae11e">优惠详情</text>
+        <u-icon
+          bind:__l="__l"
+          bindclick="{{d}}"
+          class="data-v-603ae11e"
+          uI="603ae11e-2,603ae11e-1"
+          uP="{{e}}"
+          wx:if="{{e}}"
+        ></u-icon>
+      </view>
+      <u-line
+        bind:__l="__l"
+        class="data-v-603ae11e"
+        uI="603ae11e-3,603ae11e-1"
+        uP="{{f}}"
+        wx:if="{{f}}"
+      ></u-line>
+      <view class="couponbox-info data-v-603ae11e" wx:if="{{g}}">
+        <view class="couponbox-info-toast data-v-603ae11e">
+          此油卡包含以下优惠
+        </view>
+        <view
+          class="couponbox-info-item data-v-603ae11e"
+          wx:for="{{h}}"
+          wx:for-item="t"
+          wx:key="f"
+        >
+          <text class="type data-v-603ae11e" style="{{'background:'+t.b}}"
+            >{{t.a}}</text
+          >
+          <view class="cop data-v-603ae11e"
+            >每升优惠 <text class="yhje data-v-603ae11e">￥{{t.c}}</text>
+            <text class="data-v-603ae11e">有效时段：{{t.d}}-{{t.e}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="couponbox-info data-v-603ae11e" wx:else>
+        <view class="couponbox-info-toast data-v-603ae11e">
+          未查询到优惠信息
+        </view>
+      </view>
+      <u-button
+        bind:__l="__l"
+        catchclick="{{i}}"
+        class="data-v-603ae11e"
+        uI="603ae11e-4,603ae11e-1"
+        uP="{{j}}"
+        uS="{{['d']}}"
+        wx:if="{{j}}"
+        >确认</u-button
+      >
+    </view>
+  </u-popup>
+</view>

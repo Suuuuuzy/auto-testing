@@ -1,0 +1,146 @@
+<view class="container flexible flex-direction">
+  <view class="stack-header">
+    <view class="f36 mt30">书库榜单</view>
+    <view class="f24 mt15">用户最爱的TOP100小说</view>
+    <view
+      bindtap="__e"
+      class="search flexible aItem-center mt24"
+      data-event-opts="{{[ [ 'tap',[ [ 'goNext',['/pages/shucheng/search'] ] ] ] ]}}"
+    >
+      <image class="_img" src="{{$root.m0}}"></image>
+      <view class="flex ml0 text-muted f24">搜索书名/口令码</view>
+    </view>
+  </view>
+  <view class="tab-card" wx:if="{{$root.g0}}">
+    <view class="text-999 f26">分类</view>
+    <scroll-view
+      class="tab-scroll"
+      scrollWithAnimation="{{true}}"
+      scrollX="true"
+    >
+      <view class="tab-scroll_box">
+        <view
+          bindtap="__e"
+          class="{{['tab-scroll_item',sort==tag.value?'tab-act':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'sortChangeTab',['$0'],[ [ ['sortList','',index,'value'] ] ] ] ] ] ]}}"
+          wx:for="{{sortList}}"
+          wx:for-item="tag"
+          >{{''+tag.desc+''}}</view
+        >
+      </view>
+    </scroll-view>
+  </view>
+  <view class="tab-card" wx:if="{{$root.g1}}">
+    <view class="text-999 f26">排序</view>
+    <scroll-view
+      class="tab-scroll"
+      scrollWithAnimation="{{true}}"
+      scrollX="true"
+    >
+      <view class="tab-scroll_box">
+        <view
+          bindtap="__e"
+          class="{{['tab-scroll_item',order==tag.value?'tab-act':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'orderChangeTab',['$0'],[ [ ['orderList','',index,'value'] ] ] ] ] ] ]}}"
+          wx:for="{{orderList}}"
+          wx:for-item="tag"
+          >{{''+tag.desc+''}}</view
+        >
+      </view>
+    </scroll-view>
+  </view>
+  <view class="stack-steps" wx:if="{{$root.g2}}">
+    <view class="f22">昨日销量爆款小说</view>
+  </view>
+  <view class="stack-steps" wx:if="{{$root.g3}}">
+    <view class="f22">昨日上新潜力小说</view>
+  </view>
+  <scroll-view
+    bindscroll="__e"
+    bindscrolltolower="__e"
+    class="app-container flex"
+    data-event-opts="{{[ [ 'scroll',[ [ 'scroll',['$event'] ] ] ],[ 'scrolltolower',[ [ 'scrollLower',['$event'] ] ] ] ]}}"
+    scrollTop="{{scrollTop}}"
+    scrollWithAnimation="{{true}}"
+    scrollY="true"
+  >
+    <view class="bookList-con" wx:if="{{$root.g4}}">
+      <view
+        bindtap="__e"
+        class="book-item mb30 flexible"
+        data-event-opts="{{[ [ 'tap',[ [ 'iswxReader',['$0','detail'],[ [ ['homeList','',index] ] ] ] ] ] ]}}"
+        wx:for="{{$root.l2}}"
+        wx:for-item="home"
+      >
+        <view class="{{['book-index',index<3?'top3':'']}}"
+          >{{''+(index+1<10?'0'+index+1:index+1)+''}}</view
+        >
+        <view class="book-cover ml15">
+          <custom-img
+            bind:__l="__l"
+            class="book-cover-img"
+            iclass="book-cover-img"
+            src="{{home[$orig].iconUrlSmall}}"
+            vueId="{{'0a20c02e-1-'+index}}"
+            wx:if="{{home[$orig].iconUrlSmall}}"
+          ></custom-img>
+          <image
+            class="book-cover-img"
+            mode="scaleToFill"
+            src="{{home[$orig].imgUrl}}"
+            wx:if="{{home[$orig].imgUrl}}"
+          ></image>
+        </view>
+        <view class="book-detail flex">
+          <view class="book-title text-hidden-1 mt10"
+            >{{home[$orig].name}}</view
+          >
+          <view class="book-desc mt15">{{''+home[$orig].introduce+''}}</view>
+          <view class="book-tags flexible mt40" wx:if="{{home[$orig].tags}}">
+            <view
+              class="{{['book-tags-item',index==0?'green-btn':'red-btn']}}"
+              wx:if="{{index<2}}"
+              wx:for="{{home.l0}}"
+              wx:for-item="tag"
+              >{{tag}}</view
+            >
+          </view>
+          <view
+            class="book-tags flexible mt40"
+            wx:if="{{home[$orig].book&&home[$orig].book.tags}}"
+          >
+            <view
+              class="{{['book-tags-item',index==0?'green-btn':'red-btn']}}"
+              wx:if="{{index<2}}"
+              wx:for="{{home.l1}}"
+              wx:for-item="tag"
+              >{{tag}}</view
+            >
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="book-no-data f28 text-666" wx:if="{{$root.g5}}"
+      >暂无更多数据！</view
+    >
+    <nodata
+      bind:__l="__l"
+      class="posCen"
+      imgtype="watch"
+      vueId="0a20c02e-2"
+      vueSlots="{{['datatitle']}}"
+      wx:if="{{$root.g6}}"
+    >
+      <view slot="datatitle">
+        <view class="data-info f24">暂无数据哦！</view>
+      </view>
+    </nodata>
+  </scroll-view>
+  <image
+    catchtap="__e"
+    class="icon-top"
+    data-event-opts="{{[ [ 'tap',[ [ 'toTop',['$event'] ] ] ] ]}}"
+    src="/static/img/ic_top.png"
+    wx:if="{{isShowIconTop}}"
+  ></image>
+</view>

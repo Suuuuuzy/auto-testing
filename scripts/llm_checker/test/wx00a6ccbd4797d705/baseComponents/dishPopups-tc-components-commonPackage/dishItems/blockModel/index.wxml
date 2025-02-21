@@ -1,0 +1,22 @@
+<view class="_div data-v-3967cd8e" style="overflow: hidden; padding: 0 22rpx">
+  <view
+    class="blocksWrap _div data-v-3967cd8e"
+    wx:for="{{group.tcGrpItem}}"
+    wx:for-index="i"
+    wx:key="i"
+  >
+    <view
+      class="colorCheckBtn btnStyle longpressWrap _div data-v-3967cd8e"
+      style="{{'margin:'+'16rpx 0px'+';'}}"
+      wx:if="{{item.randomShow}}"
+    >
+      <view
+        bindtap="__e"
+        class="btnInStyle noLongTapSelect f24 flexCenter _div data-v-3967cd8e"
+        data-event-opts="{{[ [ 'tap',[ [ 'addDeDish',['$0','$1'],[ [ ['group.tcGrpItem','',i] ],'group' ] ] ] ] ]}}"
+        style="{{'background-color:'+(item.mrCount>0?themeColor:'#fff')+';'+'border-color:'+(item.mrCount>0?themeColor:'#DCDCDC')+';'+'color:'+(item.mrCount>0?'#fff':'#666')+';'}}"
+        >{{''+item.itemName+item.addPriceText+''}}</view
+      >
+    </view>
+  </view>
+</view>

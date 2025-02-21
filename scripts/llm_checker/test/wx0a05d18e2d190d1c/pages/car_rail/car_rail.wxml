@@ -1,0 +1,18 @@
+<view class="page">
+    <map bindmarkertap="__e" circles="{{circles}}" data-event-opts="{{[ [ 'markertap',[ [ 'markerTapFun',['$event'] ] ] ] ]}}" id="myMap" latitude="{{centerLat}}" longitude="{{centerLng}}" markers="{{markers}}" showLocation="{{true}}" style="{{'width:'+maxWidth+'px;height:'+maxHeight+'px;'}}" subkey="{{mapKey}}">
+        <cover-view class="location_btn_layout_sytle">
+            <cover-image bindtap="__e" class="location_btn_image_style" data-event-opts="{{[ [ 'tap',[ [ 'chooseCarRailFun',['$event'] ] ] ] ]}}" mode="aspectFit" src="../../static/images/rail_set.png"></cover-image>
+        </cover-view>
+    </map>
+    <uni-popup bind:__l="__l" class="vue-ref" data-ref="showinput" maskClick="{{false}}" type="top" vueId="75b6eea0-1" vueSlots="{{['default']}}">
+        <view class="uni-tip">
+            <text class="uni-tip-title">设置围栏</text>
+            <text class="uni-tip-message">电子围栏半径（KM)</text>
+            <input bindinput="__e" class="radius_input_style input_style" data-event-opts="{{[ [ 'input',[ [ 'input_fence_radiueFun',['$event'] ] ] ] ]}}" placeholder="输入围栏半径" type="number" value="{{alert_phone_value}}"></input>
+            <view class="uni-tip-group-button">
+                <text bindtap="__e" class="uni-tip-button" data-event-opts="{{[ [ 'tap',[ [ 'cancelInputRadius',['$event'] ] ] ] ]}}">取消</text>
+                <text bindtap="__e" class="uni-tip-button" data-event-opts="{{[ [ 'tap',[ [ 'sureInputRadius',['$event'] ] ] ] ]}}">确定</text>
+            </view>
+        </view>
+    </uni-popup>
+</view>

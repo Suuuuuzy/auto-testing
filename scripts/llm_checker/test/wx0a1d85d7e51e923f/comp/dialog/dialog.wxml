@@ -1,0 +1,38 @@
+<view class="cu-modal {{isShow?'show':''}}" wx:if="{{type=='normal'}}">
+    <view class="cu-dialog">
+        <view class="cu-bar bg-white justify-end" wx:if="{{hasTitle}}">
+            <view class="content">{{title}}</view>
+            <view bindtap="cancelModel" class="action">
+                <text class="icon-close text-red"></text>
+            </view>
+        </view>
+        <view class="padding-xl" wx:if="{{isInput||content}}">
+            <view class="cu-form-group margin-top" wx:if="{{isInput}}">
+                <input bindinput="bindInput" class="bg-white" value="{{inputValue}}"></input>
+            </view>
+            <text wx:else>{{content}}</text>
+        </view>
+        <view class="cu-bar bg-white justify-end">
+            <view class="action">
+                <button bindtap="cancelModel" class="cu-btn line-red text-red">
+                    <text class="icon-close"></text>{{cancel}}</button>
+                <button bindtap="confirmModel" class="cu-btn bg-pink margin-left" disabled="{{isInput&&!inputValue}}">
+                    <text class="icon-check"></text>{{confirm}}</button>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="cu-modal {{isShow?'show':''}}" wx:if="{{type=='error'}}">
+    <view class="cu-dialog">
+        <view class="cu-bar bg-white justify-end" wx:if="{{hasTitle}}">
+            <view class="content">{{title}}</view>
+            <view bindtap="cancelModal" class="action">
+                <text class="icon-close text-red"></text>
+            </view>
+        </view>
+        <view class="padding-xl bg-white text-black {{contentClass}}"> {{content}} </view>
+        <view class="cu-bar bg-white">
+            <view bindtap="confirmModel" class="action margin-0 flex-sub text-green solid-left">{{confirm}}</view>
+        </view>
+    </view>
+</view>

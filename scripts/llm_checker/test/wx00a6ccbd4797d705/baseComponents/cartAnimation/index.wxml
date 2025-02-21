@@ -1,0 +1,9 @@
+<view class="data-v-0636178d">
+  <view
+    class="good_box data-v-0636178d"
+    hidden="{{!!item.hide_good_box}}"
+    style="{{'left:'+item.bus_x+'px'+';'+'top:'+item.bus_y+'px'+';'+'background:'+themeColor+';'}}"
+    wx:for="{{linePosArr}}"
+    wx:key="index"
+  ></view>
+</view>

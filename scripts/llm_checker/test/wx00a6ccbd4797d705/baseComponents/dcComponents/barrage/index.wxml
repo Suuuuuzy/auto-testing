@@ -1,0 +1,27 @@
+<view
+  class="barrage _div data-v-30338e2a"
+  hidden="{{!showHeadFlag}}"
+  style="{{'top:'+top+'px'+';'}}"
+>
+  <view
+    class="{{['_div','data-v-30338e2a','barrage__track barrage__track--top'+index]}}"
+    wx:for="{{$root.l1}}"
+    wx:for-item="track"
+    wx:key="index"
+  >
+    <view
+      class="barrage__item--box f12 _div data-v-30338e2a"
+      id="{{'barrage-'+index+'-'+i}}"
+      style="{{'display:'+(barrage[$orig].finish?'none':'flex')+';'}}"
+      wx:for="{{track.l0}}"
+      wx:for-index="i"
+      wx:for-item="barrage"
+      wx:key="i"
+    >
+      <label class="barrage__item--itemName _span data-v-30338e2a"
+        >{{barrage[$orig].itemName+'
+        '+(barrage[$orig].operate==1?'+':'-')+barrage.m0}}</label
+      >
+    </view>
+  </view>
+</view>

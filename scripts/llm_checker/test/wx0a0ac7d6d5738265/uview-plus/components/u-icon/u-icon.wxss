@@ -1,0 +1,68 @@
+scroll-view.data-v-42cc84bd,
+swiper-item.data-v-42cc84bd,
+view.data-v-42cc84bd {
+  align-content: flex-start;
+  align-items: stretch;
+  display: -webkit-flex;
+  display: flex;
+  flex-basis: auto;
+  flex-direction: column;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+@font-face {
+  font-family: uicon-iconfont;
+  src: url(https://at.alicdn.com/t/font_2225171_8kdcwk4po24.ttf)
+    format("truetype");
+}
+.u-icon.data-v-42cc84bd {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+}
+.u-icon--left.data-v-42cc84bd {
+  align-items: center;
+  flex-direction: row-reverse;
+}
+.u-icon--right.data-v-42cc84bd {
+  align-items: center;
+  flex-direction: row;
+}
+.u-icon--top.data-v-42cc84bd {
+  flex-direction: column-reverse;
+  justify-content: center;
+}
+.u-icon--bottom.data-v-42cc84bd {
+  flex-direction: column;
+  justify-content: center;
+}
+.u-icon__icon.data-v-42cc84bd {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  font-family: uicon-iconfont;
+  position: relative;
+}
+.u-icon__icon--primary.data-v-42cc84bd {
+  color: #3c9cff;
+}
+.u-icon__icon--success.data-v-42cc84bd {
+  color: #5ac725;
+}
+.u-icon__icon--error.data-v-42cc84bd {
+  color: #f56c6c;
+}
+.u-icon__icon--warning.data-v-42cc84bd {
+  color: #f9ae3d;
+}
+.u-icon__icon--info.data-v-42cc84bd {
+  color: #909399;
+}
+.u-icon__img.data-v-42cc84bd {
+  height: auto;
+  will-change: transform;
+}
+.u-icon__label.data-v-42cc84bd {
+  line-height: 1;
+}

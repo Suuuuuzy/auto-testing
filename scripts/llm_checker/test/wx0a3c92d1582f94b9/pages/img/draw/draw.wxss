@@ -1,0 +1,133 @@
+page {
+  background: #000;
+  height: 100%;
+}
+.cropper-wrapper {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  height: calc(100% - 180rpx);
+  justify-content: space-between;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: relative;
+}
+.cropper-buttons {
+  background-color: #f3f3f3;
+  box-sizing: border-box;
+  color: #fff;
+  display: -webkit-flex;
+  display: flex;
+  padding: 0 20rpx;
+  width: 100%;
+  z-index: 999999;
+}
+.cropper-buttons .getCropperImage,
+.cropper-buttons .upload {
+  background-color: #f3f3f3;
+  box-sizing: border-box;
+  display: block;
+  flex: 1;
+  margin: 10px 0;
+  text-align: center;
+}
+.cropper-buttons .upload text {
+  background-color: #fabf11;
+  margin-right: 8.5px;
+}
+.cropper-buttons .getCropperImage text,
+.cropper-buttons .upload text {
+  border-radius: 6px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  padding: 12px 0;
+  text-align: center;
+}
+.cropper-buttons .getCropperImage text {
+  background-color: #00c800;
+  box-sizing: border-box;
+  height: 100%;
+  margin-left: 8.5px;
+}
+#img {
+  margin: 0 auto;
+}
+#draw {
+  left: 50%;
+  opacity: 0.6;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.msg {
+  background: #b6b6b6;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 23rpx;
+  justify-content: center;
+  justify-items: center;
+  padding: 15rpx 0;
+  text-align: center;
+}
+.msg image {
+  height: 25rpx;
+  margin-right: 10rpx;
+  margin-top: 5rpx;
+  width: 25rpx;
+}
+#bottom {
+  background-color: #f3f3f3;
+  bottom: 0;
+  padding-bottom: 10rpx;
+  position: fixed;
+  width: 100%;
+}
+.ad-box {
+  background: #fff;
+  border-radius: 25rpx;
+  left: 50%;
+  overflow: hidden;
+  padding: 10rpx 20rpx 20rpx;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 640rpx;
+  z-index: 9999999999;
+}
+.ad-box .line {
+  background: #a0e75a;
+  content: "";
+  display: block;
+  height: 5rpx;
+  left: -100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.ad-box .line.on {
+  animation: adBox 10s ease 0.5s 1 forwards;
+}
+.ad-box .msg2 {
+  color: #555;
+  font-size: 28rpx;
+  line-height: 80rpx;
+}
+@-webkit-keyframes adBox {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: -0.1%;
+  }
+}
+@keyframes adBox {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: -0.1%;
+  }
+}

@@ -1,0 +1,21 @@
+<view
+  class="bcrgba pr mcInfo flexBetween _div data-v-5d5ff37e"
+  style="min-height: 130rpx"
+>
+  <image class="mcLogo _img data-v-5d5ff37e" src="{{bannerInfo.logo}}"></image>
+  <view class="_div data-v-5d5ff37e">
+    <view class="mcName fw f40 _div data-v-5d5ff37e"
+      >{{bannerInfo.mcName}}</view
+    >
+    <view class="c6 f24 _div data-v-5d5ff37e"
+      >{{bannerInfo.mcDetailAddress}}</view
+    >
+    <view class="flexAlignCenter mt20r _div data-v-5d5ff37e">
+      <view class="mcTableno mr20r _div data-v-5d5ff37e"
+        >{{'桌位：'+bannerInfo.tableName}}</view
+      >
+      <slot name="countdown"></slot>
+    </view>
+    <slot></slot>
+  </view>
+</view>

@@ -1,0 +1,19 @@
+{
+  "navigationBarTitleText": "消息",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "u-navbar": "/node-modules/uview-ui/components/u-navbar/u-navbar",
+    "u-notice-bar": "/node-modules/uview-ui/components/u-notice-bar/u-notice-bar",
+    "u-badge": "/node-modules/uview-ui/components/u-badge/u-badge",
+    "u-button": "/node-modules/uview-ui/components/u-button/u-button",
+    "u-swipe-action": "/node-modules/uview-ui/components/u-swipe-action/u-swipe-action",
+    "t-u-i-conversation-item": "/pages/tabbar/message/components/tui-conversation/conversation-item/index",
+    "avatar": "/components/Avatar",
+    "auth-check": "/components/AuthCheck",
+    "rechage-popup": "/components/RechagePopup",
+    "weixin-code": "/components/WxCode",
+    "weixin-popup": "/components/WxPopup",
+    "perfect-popup": "/components/PerfectPopup",
+    "confirm-popup": "/components/ConfirmPopup"
+  }
+}

@@ -1,0 +1,26 @@
+<view class="_div data-v-450deb51">
+  <weixin-popup
+    bind:__l="__l"
+    bind:close="__e"
+    class="data-v-450deb51"
+    closeOnClickOverlay="{{false}}"
+    closeable="{{true}}"
+    customStyle="border-radius: 10px;background: none;"
+    data-event-opts="{{[ [ '^close',[ ['hidePopup'] ] ] ]}}"
+    position="center"
+    show="{{showPopup}}"
+    vueId="679fd307-1"
+    vueSlots="{{['default']}}"
+  >
+    <view
+      bindtap="__e"
+      class="blindBoxPopup _div data-v-450deb51"
+      data-event-opts="{{[ [ 'tap',[ [ 'beforgo',['$event'] ] ] ] ]}}"
+    >
+      <image
+        class="blindBoxPopupBg _img data-v-450deb51"
+        src="{{pageInfo.checkOutPicUrl}}"
+      ></image>
+    </view>
+  </weixin-popup>
+</view>

@@ -1,0 +1,72 @@
+.refresh_btn_style {
+  color: #fff;
+  background-color: #1e9eff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+.text_style {
+  text-align: center;
+}
+.location_layout_style {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+  width: 690rpx;
+  height: 200rpx;
+  background-color: #000;
+  opacity: 0.6;
+  border-radius: 8rpx;
+}
+.plate_number_style {
+  padding-left: 30rpx;
+  padding-top: 20rpx;
+  height: 50rpx;
+  text-align: left;
+  line-height: 50rpx;
+  font-size: 32rpx;
+  color: #fff;
+}
+.location_address_style {
+  display: block;
+  white-space: pre-wrap;
+  margin-left: 30rpx;
+  text-align: left;
+  line-height: 35rpx;
+  color: #fff;
+  font-size: 26rpx;
+}
+.location_btn_image_style {
+  width: 80rpx;
+  height: 80rpx;
+  right: 20rpx;
+  position: fixed;
+}
+.location_drive_record_style {
+  position: relative;
+  top: 20rpx;
+  right: 20rpx;
+}
+.drive_record_btn_style {
+  width: 80rpx;
+  height: 80rpx;
+}
+.text_xcjl_style {
+  color: #fff;
+  line-height: 80rpx;
+  z-index: 10;
+  text-align: center;
+  padding-right: 20rpx;
+}

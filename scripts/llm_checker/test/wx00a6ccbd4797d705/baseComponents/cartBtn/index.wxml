@@ -1,0 +1,325 @@
+<view
+  class="{{['cartBtnWrap','data-v-769644e2','layout'+layout,layout==8&&cartNum<=0?'hidden-half':'']}}"
+>
+  <slot name="manjian"></slot>
+  <view
+    bindtap="__e"
+    class="{{['cart','fcf','layoutContent','data-v-769644e2','layout'+layout,layout==1||layout==3?'flexAlignCenter':'flexBetween']}}"
+    data-event-opts="{{[ [ 'tap',[ [ 'clickshowCartInfo',['$event'] ] ] ] ]}}"
+    id="cart"
+    style="{{'width:'+(page=='pageD'&&layout==3?'440rpx':'')+';'+'margin-bottom:'+bottom+'px'+';'+'height:'+(layout=='9'?'108rpx':'')+';'+'background-color:'+(layout=='9'?'#000000':layout!='1'&&layout!='6'?allBgColor:'')+';'}}"
+  >
+    <auth-btn
+      appType="{{appType}}"
+      bind:__l="__l"
+      bind:authBegin="__e"
+      bind:authComplate="__e"
+      bind:isNeedAuth="__e"
+      bind:userRejectAuth="__e"
+      class="data-v-769644e2"
+      context="{{context}}"
+      data-event-opts="{{[ [ '^authComplate',[ [ 'authComplate',['$event',false] ] ] ],[ '^authBegin',[ ['authBegin'] ] ],[ '^isNeedAuth',[ ['isNeedAuth'] ] ],[ '^userRejectAuth',[ ['userRejectAuthHandle'] ] ] ]}}"
+      isAuthBiz="{{true}}"
+      isOpenForceAuth="{{isOpenForceAuth}}"
+      style="{{authBtnStyle}}"
+      vueId="88c2ec7e-1"
+      wx:if="{{!userRejectAuth&&(!useRequiredbtn||layout==3)&&isOpenForceAuth&&needAuth}}"
+    ></auth-btn>
+    <upload-phone
+      bind:__l="__l"
+      bind:finish="__e"
+      btHW="{{btHW}}"
+      class="data-v-769644e2"
+      data-event-opts="{{[ [ '^finish',[ [ 'disComplete',['updatePhone'] ] ] ] ]}}"
+      isVip="{{isVip}}"
+      vueId="88c2ec7e-2"
+      wx:if="{{context==='DC'}}"
+    ></upload-phone>
+    <view
+      class="flexAlignCenter data-v-769644e2"
+      style="flex: 1; height: 100%"
+      wx:if="{{layout==9}}"
+    >
+      <view
+        catchtap="__e"
+        class="layout9-coupon data-v-769644e2"
+        data-event-opts="{{[ [ 'tap',[ [ 'toCouponPopup',['$event'] ] ] ] ]}}"
+      >
+        <view class="data-v-769644e2">优惠卡券</view>
+        <view class="data-v-769644e2">{{cartCouponCount+'张'}}</view>
+        <view class="layout9-line data-v-769644e2"></view>
+      </view>
+      <view
+        catchtap="__e"
+        class="pr data-v-769644e2"
+        data-event-opts="{{[ [ 'tap',[ [ 'toFastFoodPopup',['$event'] ] ] ] ]}}"
+      >
+        <image
+          animation="{{animationData}}"
+          class="carticon layout9-image _img data-v-769644e2"
+          id="plus"
+          src="{{cartIconImg}}"
+          wx:if="{{cartIconImg}}"
+        ></image>
+        <image
+          animation="{{animationData}}"
+          class="carticon layout9-image _img data-v-769644e2"
+          id="plus"
+          src="https://cdnpic.wuuxiang.com/msgjDecorationImg/cartbtnIconlayout9.png"
+          wx:if="{{!cartIconImg}}"
+        ></image>
+        <view class="layout9-cartNums data-v-769644e2" wx:if="{{cartNum>0}}"
+          >{{cartNum}}</view
+        >
+      </view>
+      <view class="flexAlignCenter data-v-769644e2">
+        <slot name="cartTxtInfo"></slot>
+      </view>
+      <view
+        catchtap="__e"
+        class="layout9-right flexAlignCenter data-v-769644e2"
+        data-event-opts="{{[ [ 'tap',[ [ 'disComplete',['$event'] ] ] ] ]}}"
+        style="{{'background:'+themeColor+';'}}"
+        >{{''+sureBtnTxt.txt+''}}</view
+      >
+    </view>
+    <block wx:else>
+      <view
+        catchtap="__e"
+        class="{{['cartIconWrap','flexCenter','border-radius-circle','pr','data-v-769644e2',context!=='DC'?'boxShadow1':'']}}"
+        data-event-opts="{{[ [ 'tap',[ [ 'toFastFoodPopup',['$event'] ] ] ] ]}}"
+        wx:if="{{cartIconImg&&layout!=7}}"
+      >
+        <image
+          animation="{{animationData}}"
+          class="carticon _img data-v-769644e2"
+          id="plus"
+          src="{{cartIconImg}}"
+        ></image>
+        <view
+          class="cartNums border-radius-circle fcf pa bc1 f20 flexCenter data-v-769644e2"
+          hidden="{{!(cartNum>0)}}"
+          style="{{'background-color:'+cartNumsBgColor+';'}}"
+          wx:if="{{cartNumsType=='1'}}"
+          >{{cartNum}}</view
+        >
+        <block wx:else>
+          <view
+            class="cartNums border-radius-circle pa bcf f20 flexCenter data-v-769644e2"
+            hidden="{{!(cartNum>0)}}"
+            style="{{'border:'+'1px solid '+themeColor+';'+'color:'+themeColor+';'}}"
+            wx:if="{{cartNumsType=='2'}}"
+            >{{cartNum}}</view
+          >
+        </block>
+      </view>
+      <block wx:else>
+        <view
+          catchtap="__e"
+          class="cartIconWrap flexCenter border-radius-circle pr data-v-769644e2"
+          data-event-opts="{{[ [ 'tap',[ [ 'toFastFoodPopup',['$event'] ] ] ] ]}}"
+          wx:if="{{cartIconImg||layout==7}}"
+        >
+          <image
+            animation="{{animationData}}"
+            class="carticon _img data-v-769644e2"
+            id="plus"
+            src="{{cartIconImg}}"
+            style="width: 128rpx"
+            wx:if="{{cartIconImg}}"
+          ></image>
+          <image
+            animation="{{animationData}}"
+            class="carticon _img data-v-769644e2"
+            id="plus"
+            src="https://cdnpic.wuuxiang.com/msgjDecorationImg/cartbtnIcon.png"
+            style="width: 100rpx"
+            wx:if="{{!cartIconImg}}"
+          ></image>
+          <view
+            class="cartNums border-radius-circle pa bc1 f20 flexCenter data-v-769644e2"
+            hidden="{{!(cartNum>0)}}"
+            style="{{'background-color:'+themeColor+';'}}"
+            wx:if="{{cartNumsType=='1'}}"
+            >{{cartNum}}</view
+          >
+          <block wx:else>
+            <view
+              class="cartNums border-radius-circle pa bcf f20 flexCenter data-v-769644e2"
+              hidden="{{!(cartNum>0)}}"
+              style="{{'border:'+'1px solid '+themeColor+';'+'color:'+themeColor+';'}}"
+              wx:if="{{cartNumsType=='2'}}"
+              >{{cartNum}}</view
+            >
+          </block>
+        </view>
+        <block wx:else>
+          <view
+            catchtap="__e"
+            class="data-v-769644e2"
+            data-event-opts="{{[ [ 'tap',[ [ 'toFastFoodPopup',['$event'] ] ] ] ]}}"
+            style="position: relative"
+            wx:if="{{layout==8}}"
+          >
+            <label
+              class="{{['iconfont','f52','_span','data-v-769644e2',context=='ZT'?'icon-ziti':'',context=='WM'?'icon-waimai':'']}}"
+              style="{{'color:'+themeColor+';'+'font-size:'+'80rpx'+';'+'margin-left:'+'30rpx'+';'+'position:'+'relative'+';'+'bottom:'+'2rpx'+';'}}"
+            ></label>
+            <view
+              class="pageE-num border-radius-circle data-v-769644e2"
+              hidden="{{!(cartNum>0)}}"
+              >{{cartNum}}</view
+            >
+          </view>
+          <view
+            catchtap="__e"
+            class="{{['cartIconWrap','flexCenter','border-radius-circle','pr','boxShadow','data-v-769644e2',context!=='DC'?'boxShadow1':'']}}"
+            data-event-opts="{{[ [ 'tap',[ [ 'toFastFoodPopup',['$event'] ] ] ] ]}}"
+            style="{{'background-color:'+(layout==6?'':iconBgcolor)+';'}}"
+            wx:else
+          >
+            <block wx:if="{{layout!=6}}">
+              <view
+                animation="{{animationData}}"
+                class="iconfont icon-gouwuche f52 data-v-769644e2"
+                id="plus"
+              ></view>
+              <view
+                class="cartNums border-radius-circle pa bc1 f20 flexCenter data-v-769644e2"
+                hidden="{{!(cartNum>0)}}"
+                style="{{'background-color:'+(layout==7?themeColor:cartNumsBgColor)+';'}}"
+                wx:if="{{cartNumsType=='1'}}"
+                >{{cartNum}}</view
+              >
+              <block wx:else>
+                <view
+                  class="cartNums border-radius-circle pa bcf f20 flexCenter data-v-769644e2"
+                  hidden="{{!(cartNum>0)}}"
+                  style="{{'border:'+'1px solid '+themeColor+';'+'color:'+themeColor+';'}}"
+                  wx:if="{{cartNumsType=='2'}}"
+                  >{{cartNum}}</view
+                >
+              </block>
+            </block>
+            <block wx:if="{{layout==6}}">
+              <view class="_div data-v-769644e2">
+                <view
+                  animation="{{animationData}}"
+                  class="iconfont icon-gouwuche f52 data-v-769644e2"
+                  id="plus"
+                ></view>
+                <view class="f24 _div data-v-769644e2">购物车</view>
+              </view>
+              <view
+                class="cartNums border-radius-circle pa bc1 f24 flexCenter data-v-769644e2"
+                hidden="{{!(cartNum>0)}}"
+                style="{{'background-color:'+themeColor+';'+'color:'+textColor+';'}}"
+                wx:if="{{cartNumsType=='1'}}"
+                >{{cartNum}}</view
+              >
+              <block wx:else>
+                <view
+                  class="cartNums border-radius-circle pa bcf f24 flexCenter data-v-769644e2"
+                  hidden="{{!(cartNum>0)}}"
+                  style="{{'border:'+'1px solid '+themeColor+';'+'color:'+themeColor+';'}}"
+                  wx:if="{{cartNumsType=='2'}}"
+                  >{{cartNum}}</view
+                >
+              </block>
+            </block>
+          </view>
+        </block>
+      </block>
+    </block>
+    <block wx:if="{{layout!='1'&&layout!='6'&&layout!='9'}}">
+      <view
+        catchtap="__e"
+        class="_div data-v-769644e2"
+        data-event-opts="{{[ [ 'tap',[ [ 'toFastFoodPopup',['$event'] ] ] ] ]}}"
+        style="width: 100%"
+      >
+        <slot name="cartTxtInfo"></slot>
+      </view>
+      <view
+        catchtap="__e"
+        class="mr5 xiangyou data-v-769644e2"
+        data-event-opts="{{[ [ 'tap',[ [ 'disComplete',['$event'] ] ] ] ]}}"
+        wx:if="{{layout=='3'}}"
+      >
+        <label
+          class="iconfont icon-xiangyou fc9 _span data-v-769644e2"
+          style="{{'color:'+(layout=='3'?arrowIconColor:'')+';'}}"
+        ></label>
+      </view>
+      <view
+        catchtap="__e"
+        class="cartButton flexCenter data-v-769644e2"
+        data-event-opts="{{[ [ 'tap',[ [ 'disComplete',['$event'] ] ] ] ]}}"
+        style="{{'background-color:'+btnBgcolor+';'+'color:'+(label=='3'?'#ffffff':btnTxtColor)+';'+'font-size:'+btnFontSize+';'+'height:'+(layout=='2'?'98rpx':'104rpx')+';'}}"
+        wx:if="{{layout!='3'&&layout!='7'&&layout!='8'}}"
+        >{{''+sureBtnTxt.txt+''}}</view
+      >
+      <view
+        catchtap="__e"
+        class="cartButton cartButton-seven flexCenter data-v-769644e2"
+        data-event-opts="{{[ [ 'tap',[ [ 'disComplete',['$event'] ] ] ] ]}}"
+        style="{{'background-color:'+btnBgcolor+';'+'color:'+(label=='3'?'#ffffff':btnTxtColor)+';'+'font-size:'+btnFontSize+';'}}"
+        wx:if="{{layout=='7'}}"
+        >{{sureBtnTxt.txt+''}}</view
+      >
+      <view
+        catchtap="__e"
+        class="cartButton cartButton-eight data-v-769644e2"
+        data-event-opts="{{[ [ 'tap',[ [ 'disComplete',['$event'] ] ] ] ]}}"
+        style="{{'background:linear-gradient(90deg, '+themeColor+'99'+' 0%,'+themeColor+' 100%);'}}"
+        wx:if="{{layout=='8'}}"
+        >{{sureBtnTxt.txt}}</view
+      >
+    </block>
+    <block wx:if="{{layout==6}}">
+      <view
+        catchtap="__e"
+        class="sendCodeAddBtn _div data-v-769644e2"
+        data-event-opts="{{[ [ 'tap',[ [ 'scanCodeAddDish',['$event'] ] ] ] ]}}"
+        style="{{'background-color:'+themeColor+';'+'color:'+btnTxtColor+';'}}"
+      >
+        <label class="iconfont icon-saomiao _span data-v-769644e2"></label>
+        <label class="saomaTxt _span data-v-769644e2">扫码加菜</label>
+      </view>
+      <view class="dianhaola tc _div data-v-769644e2">
+        <label class="iconfont icon-dianhaole _span data-v-769644e2"></label>
+        <view class="_div data-v-769644e2">点好了</view>
+      </view>
+    </block>
+    <view
+      catchtap="__e"
+      class="vipAgainReduce data-v-769644e2"
+      data-event-opts="{{[ [ 'tap',[ [ 'cardLevelUp',['$event'] ] ] ] ]}}"
+      style="{{'bottom: '+75+bottom+'px'}}"
+      wx:if="{{topTips}}"
+    >
+      <slot name="topTips"></slot>
+      <view class="triangle_border_down _div data-v-769644e2"></view>
+      <auth-btn
+        appType="{{appType}}"
+        bind:__l="__l"
+        bind:authBegin="__e"
+        bind:authComplate="__e"
+        bind:isNeedAuth="__e"
+        class="vipAuthBtn data-v-769644e2"
+        context="{{context}}"
+        data-event-opts="{{[ [ '^authComplate',[ [ 'authComplate',['$event',true] ] ] ],[ '^authBegin',[ ['authBegin'] ] ],[ '^isNeedAuth',[ ['isNeedAuth'] ] ] ]}}"
+        isAuthBiz="{{true}}"
+        isOpenForceAuth="{{isOpenForceAuth}}"
+        vueId="88c2ec7e-3"
+        wx:if="{{!isVip}}"
+      ></auth-btn>
+    </view>
+    <view
+      catchtap="__e"
+      class="to-order-detail data-v-769644e2"
+      data-event-opts="{{[ [ 'tap',[ [ 'disComplete',['$event'] ] ] ] ]}}"
+      wx:if="{{layout==3}}"
+    ></view>
+  </view>
+</view>

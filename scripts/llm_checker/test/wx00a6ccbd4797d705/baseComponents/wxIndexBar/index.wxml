@@ -1,0 +1,5 @@
+<view class="_div" id="wrapperHao" style="{{wrapperStyle}}">
+  <view class="wx-index-bar _div">
+    <slot></slot>
+  </view>
+</view>

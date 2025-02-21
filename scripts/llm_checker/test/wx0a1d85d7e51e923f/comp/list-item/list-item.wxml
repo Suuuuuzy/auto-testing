@@ -1,0 +1,13 @@
+<view
+  class="flex justify-between bg-white align-center {{isUy?'rtl':''}} padding-lr"
+  style="min-height: 100rpx"
+>
+  <view>
+    <slot name="content"></slot>
+  </view>
+  <view class="flex">
+    <slot name="action"></slot>
+    <text class="padding-lr-sm" wx:if="{{hasArrow==1}}"></text>
+    <text class="icon-{{isUy?'back':'right'}}" wx:if="{{hasArrow==1}}"></text>
+  </view>
+</view>

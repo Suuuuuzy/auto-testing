@@ -1,0 +1,124 @@
+.container {
+  position: relative;
+}
+.placeHolderClass {
+  color: #999;
+}
+.container .verified-topImg {
+  position: absolute;
+  right: 0rpx;
+  top: 50rpx;
+  width: 305rpx;
+  height: 307rpx;
+  z-index: 10;
+}
+.verified-top {
+  position: relative;
+  height: 317rpx;
+  background: linear-gradient(to right, #3996ff, #395eff);
+  overflow: hidden;
+}
+.verified-top .verified-bgImg {
+  width: 250rpx;
+  height: 275rpx;
+  position: absolute;
+  top: 42rpx;
+  left: 0;
+}
+.verified-top .top-title {
+  position: relative;
+  padding-top: 117rpx;
+  padding-left: 29rpx;
+  width: 283rpx;
+  height: 60rpx;
+  z-index: 1;
+}
+.top-title image {
+  width: 100%;
+  height: 100%;
+}
+.verified-body {
+  position: relative;
+  margin: 0 29rpx;
+  margin-top: -83rpx;
+  padding: 4rpx 65rpx 41rpx;
+  background-color: #fff;
+  box-shadow: 1.48rpx 1.34rpx 32rpx 0 rgba(7, 44, 108, 0.2);
+  z-index: 2;
+}
+.verified-body .verified-item {
+  height: 113rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #dddddd;
+  font-size: 28rpx;
+  margin-top: 36rpx;
+}
+.verified-item image {
+  max-width: 32rpx;
+  max-height: 31rpx;
+  padding-left: 15rpx;
+  padding-right: 27rpx;
+}
+.verified-item .verified-item-input {
+  flex: 1;
+  padding-right: 50rpx;
+}
+.getVerificationCode .inputCode {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.getVerificationCode .getCodeBtn {
+  position: relative;
+  font-size: 24rpx;
+  color: #3967ff;
+  width: 140rpx;
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+}
+.getCodeBtn.disabledClass {
+  color: #999;
+}
+.getVerificationCode .getCodeBtn::before {
+  content: "";
+  width: 1rpx;
+  height: 32rpx;
+  background-color: #ddd;
+  position: absolute;
+  top: 15rpx;
+  left: -13rpx;
+}
+button::after {
+  border: 0;
+}
+button:active {
+  opacity: 0.7;
+}
+.verified-body .next {
+  margin-top: 118rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 50rpx;
+  background: linear-gradient(to left, #395eff, #3996ff);
+  font-size: 36rpx;
+  color: #fff;
+}
+.verified-authorization {
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.verified-authorization .authorization-camera {
+  width: 32rpx;
+  height: 32rpx;
+}
+.verified-authorization .openSettingBtn {
+  padding-left: 5rpx;
+  background-color: transparent;
+  font-size: 24rpx;
+  color: #999;
+}

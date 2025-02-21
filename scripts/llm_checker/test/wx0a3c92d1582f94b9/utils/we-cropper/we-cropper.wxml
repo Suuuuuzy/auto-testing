@@ -1,0 +1,20 @@
+<template name="we-cropper">
+  <canvas
+    bindtouchend="touchEnd"
+    bindtouchmove="touchMove"
+    bindtouchstart="touchStart"
+    canvasId="{{id}}"
+    class="cropper"
+    disableScroll="true"
+    style="width:{{width}}px;height:{{height}}px;background-color: rgba(0, 0, 0, 0.8)"
+  ></canvas>
+  <canvas
+    bindtouchend="touchEnd"
+    bindtouchmove="touchMove"
+    bindtouchstart="touchStart"
+    canvasId="face"
+    class="cropper"
+    disableScroll="true"
+    style="width:{{width}}px;height:{{height}}px;top:0;left:0;position:absolute"
+  ></canvas>
+</template>

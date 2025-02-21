@@ -1,0 +1,5 @@
+<view
+  class="bottom-info-bar tc f24 c3 _div data-v-4562c932"
+  wx:if="{{showEquityCard}}"
+  >{{'权益卡优惠，代金券已省'+equityCardPreferential+'元'}}</view
+>

@@ -1,0 +1,92 @@
+.t-conversation-item-container {
+  background-color: #fff;
+  height: 130rpx;
+  width: 100vw;
+}
+.t-conversation-item {
+  align-items: center;
+  border-bottom: 2rpx solid #eef0f3;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: flex;
+  height: 130rpx;
+  justify-content: space-between;
+  left: 0;
+  padding: 0 32rpx;
+}
+.avatar-box {
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  position: relative;
+}
+.t-conversation-item-avatar {
+  border-radius: 50%;
+  height: 80rpx;
+  overflow: auto;
+  position: relative;
+  width: 80rpx;
+}
+.t-conversation-item-content {
+  flex: 1;
+  padding-left: 20rpx;
+}
+.t-conversation-item-info {
+  align-items: flex-end;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  height: 85rpx;
+  justify-content: space-between;
+}
+.t-conversation-item-info .sub-time {
+  color: #979798;
+  font-size: 24rpx;
+  margin-bottom: 8rpx;
+  white-space: nowrap;
+}
+.t-conversation-delete,
+.t-error {
+  background-color: #fa3534;
+  color: #fff;
+}
+.t-conversation-delete {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 30rpx;
+  height: 130rpx;
+  justify-content: center;
+  line-height: 130rpx;
+  margin-left: 32rpx;
+  width: 144rpx;
+}
+.tui-conversation-item-name {
+  color: #000;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  line-height: 53rpx;
+}
+.tui-conversation-lastMessage {
+  color: #979798;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  max-width: 450rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.unread {
+  background-color: red;
+  border-radius: 16rpx;
+  color: #fff;
+  height: 15px;
+  padding: 0 10rpx;
+  position: absolute;
+  right: 0rpx;
+  top: -10rpx;
+}
+.read-text {
+  font-size: 10px;
+  line-height: 15px;
+}

@@ -1,0 +1,42 @@
+<view class="container">
+  <view id="declareSuccess-top">
+    <image
+      class="topBg"
+      src="../asserts/images/declareProcess_topBg.png"
+    ></image>
+    <view class="top-cont">
+      <text class="top-title">{{title}}</text>
+      <text class="dots-green">预</text>
+      <text class="dots-yellow">申</text>
+    </view>
+  </view>
+  <view id="declareSuccess-body">
+    <image
+      class="declareSuccess_icon"
+      src="../asserts/images/declareSuccess_icon.png"
+    ></image>
+    <view class="declareSuccess-info"
+      >{{draftFlag?'暂存成功！':'提交成功！'}}</view
+    >
+    <view class="declareSuccess-detail" hidden="{{!draftFlag}}"
+      >您的业务已成功暂存，可在
+      <text bindtap="bindUserCenterTap" class="detailColor"
+        >【首页-个人中心-我的申报】</text
+      >查看项目暂存情况。
+    </view>
+    <view class="declareSuccess-detail" hidden="{{draftFlag}}">
+      <view>您申请的{{engineeName}}业务已成功提交，</view>
+      <view
+        >申报业务号为<text class="detailColor">{{declareSN}}</text
+        >，我们将在3个工作日内完成项目预审工作， 您可在<text
+          bindtap="bindUserCenterTap"
+          class="detailColor"
+          >【首页-个人中心-我的申报】</text
+        >查看项目办理进度。
+      </view>
+    </view>
+    <view class="countDown">
+      系统将于<text class="restTime">{{restTime}}S</text>后返回
+    </view>
+  </view>
+</view>

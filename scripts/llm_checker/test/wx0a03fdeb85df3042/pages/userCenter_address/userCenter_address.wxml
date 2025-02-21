@@ -1,0 +1,80 @@
+<view class="container">
+  <view hidden="{{addressFlag}}" id="address_none">
+    <view class="address_none_top">
+      <image
+        class="address_none_icon"
+        src="../asserts/images/address_none.png"
+      ></image>
+      <text>您还没有设置地址</text>
+    </view>
+  </view>
+  <view hidden="{{!addressFlag}}" id="address_body">
+    <view
+      bindtap="bindAddressListTap"
+      class="addressList"
+      data-address="{{item.province}}{{item.city}}{{item.country}}{{item.address}}"
+      data-idx="{{item.id}}"
+      wx:for="{{addressList}}"
+      wx:key="id"
+    >
+      <view class="addressList-top">
+        <view class="address-name">
+          <text>{{item.receiverName}}</text>
+          <text>{{item.mobile}}</text>
+          <text class="address-topic" hidden="{{!item.theme}}"
+            >{{item.theme}}</text
+          >
+        </view>
+        <view class="address-detail">
+          <text
+            >{{item.province}}{{item.city}}{{item.country}}{{item.address}}</text
+          >
+        </view>
+        <view class="address-isDefault default" wx:if="{{item.flag}}">
+          <image
+            class="addressDefaultIcon"
+            src="../asserts/images/address_default.png"
+          ></image>
+        </view>
+      </view>
+      <view class="addressList-bottom">
+        <view
+          class="isDefault"
+          style="visibility: {{item.flag?'visible':'hidden'}};"
+        >
+          <image src="../asserts/images/address_default2.png"></image>
+          <text>已设为默认</text>
+        </view>
+        <view class="address-operation">
+          <view
+            bindtap="addressEditTap"
+            class="address-edit"
+            data-idx="{{item.id}}"
+          >
+            <image
+              mode="aspectFit"
+              src="../asserts/images/address_edit.png"
+            ></image>
+            <text>编辑</text>
+          </view>
+          <view
+            bindtap="addressDelTap"
+            class="address-del"
+            data-idx="{{item.id}}"
+          >
+            <image
+              mode="aspectFit"
+              src="../asserts/images/address_del.png"
+            ></image>
+            <text>删除</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="address_bottom">
+    <view class="address_btns">
+      <button bindtap="addAddressTap" class="address_addBtn">新增地址</button>
+    </view>
+  </view>
+</view>

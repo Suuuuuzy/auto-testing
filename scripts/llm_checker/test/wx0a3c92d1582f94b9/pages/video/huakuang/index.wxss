@@ -1,0 +1,45 @@
+.huakuang-box {
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20rpx auto 40rpx;
+  width: 680rpx;
+}
+.huakuang-box .it {
+  border-radius: 10rpx;
+  margin-bottom: 30rpx;
+  margin-left: 20rpx;
+  position: relative;
+  width: 214rpx;
+}
+.huakuang-box .it:nth-child(3n + 1) {
+  margin-left: 0;
+}
+.huakuang-box .it .img {
+  border-radius: 10rpx;
+  display: block;
+  height: 380rpx;
+  width: 100%;
+}
+.huakuang-box .it .x {
+  display: block;
+  height: 30rpx;
+  position: absolute;
+  right: -10rpx;
+  top: -10rpx;
+  width: 30rpx;
+}
+.huakuang-box .it.more {
+  align-items: center;
+  background-color: #eac771;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 24rpx;
+  justify-content: center;
+}
+.huakuang-box .it .icon {
+  display: block;
+  height: 60rpx;
+  margin: 0 auto 20rpx;
+  width: 60rpx;
+}

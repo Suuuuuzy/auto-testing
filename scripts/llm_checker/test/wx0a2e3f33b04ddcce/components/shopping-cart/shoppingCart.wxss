@@ -1,0 +1,195 @@
+.wrapper {
+  bottom: 10rpx;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  position: fixed;
+  width: 100%;
+  z-index: 200;
+}
+.shopping-cart {
+  background-color: #f9f9f9;
+  border-radius: 50rpx;
+  box-shadow: 0 3rpx 10rpx 0 hsla(0, 0%, 40%, 0.24);
+  height: 100rpx;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.cart-left,
+.shopping-cart {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+}
+.cart-left {
+  margin-left: 43rpx;
+}
+.cart-image {
+  width: 70rpx;
+}
+.badge {
+  background-image: linear-gradient(180deg, #fd5a6f, #fd6962);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 12px;
+  height: 32rpx;
+  left: -15rpx;
+  line-height: 32rpx;
+  position: relative;
+  text-align: center;
+  top: -15rpx;
+  width: 32rpx;
+}
+.total-price {
+  color: #fd5475;
+  font-size: 22px;
+  margin-left: 15px;
+}
+.cart-right {
+  align-items: center;
+  background-image: linear-gradient(146deg, #fc8c40 -5%, #fd5475 104%);
+  color: #fff;
+  display: -webkit-flex;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 200rpx;
+}
+.cart-popup {
+  margin-bottom: 120rpx;
+  padding: 0 32rpx;
+}
+.popup-header {
+  align-items: center;
+  border-bottom: 1px solid #eaeaea;
+  color: #666;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 24rpx;
+  font-weight: 600;
+  height: 100rpx;
+  justify-content: space-between;
+}
+.clear-image {
+  height: 20rpx;
+  margin-right: 7rpx;
+  width: 20rpx;
+}
+.cart-list {
+  font-size: 13px;
+  max-height: 500rpx;
+  min-height: 150rpx;
+  overflow-y: auto;
+  overflow-y: scroll;
+}
+.no-data {
+  color: #999;
+  font-size: 30rpx;
+  margin-top: 40rpx;
+  text-align: center;
+}
+.dish {
+  display: -webkit-flex;
+  display: flex;
+  padding: 40rpx 0;
+}
+.splitline {
+  background-color: #eaeaea;
+  box-sizing: border-box;
+  height: 1px;
+  padding: 0 12rpx;
+}
+.dish-image {
+  border-radius: 4px;
+  overflow: hidden;
+}
+.dish-image,
+.image {
+  height: 200rpx;
+  width: 200rpx;
+}
+.image {
+  object-fit: contain;
+}
+.dish-info {
+  display: -webkit-flex;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 16rpx;
+  position: relative;
+}
+.name {
+  color: #333;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.pickupInfo {
+  line-height: 16px;
+}
+.inventory,
+.pickupInfo {
+  color: #999;
+  font-size: 12px;
+}
+.limit {
+  background: #fff4e8;
+  color: #ff9a1c;
+  float: right;
+  font-size: 10px;
+  padding: 4px;
+}
+.price-stepper {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+}
+.price {
+  color: #fc721f;
+  font-weight: 700;
+}
+.stepper {
+  transform: translateY(3px);
+}
+.stepper-input {
+  background-color: #fff !important;
+  color: #3a7efd !important;
+}
+.stepper-plus {
+  background-color: #3a7efd !important;
+  color: #fff !important;
+}
+.stepper-minus,
+.stepper-plus {
+  height: 36rpx !important;
+  padding: 3rpx !important;
+  width: 36rpx !important;
+}
+.stepper-minus {
+  background-color: #fff !important;
+  border: 2rpx solid #3a7efd !important;
+  border-radius: 10rpx !important;
+  color: #3a7efd !important;
+}
+.stepper-plus::before {
+  height: 2px !important;
+  width: 12px !important;
+}
+.stepper-plus::after {
+  height: 12px !important;
+  width: 2px !important;
+}
+.stepper-minus::before {
+  height: 2px !important;
+  width: 12px !important;
+}
+.stepper-minus::after {
+  height: 12px !important;
+  width: 2px !important;
+}
+.van-stepper__input {
+  height: 36rpx !important;
+  transform: translateY(-6rpx) !important;
+}

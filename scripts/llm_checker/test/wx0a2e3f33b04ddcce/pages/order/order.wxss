@@ -1,0 +1,106 @@
+page {
+  background-color: #efefef;
+}
+.van-tab--active {
+  font-weight: 600;
+}
+.card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px 0 hsla(0, 0%, 89%, 0.5);
+  cursor: pointer;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  height: 300rpx;
+  margin: 10px;
+  padding: 15px 10px;
+}
+.card4 {
+  height: 260rpx;
+}
+.card-top {
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-bottom,
+.card-top {
+  display: -webkit-flex;
+  display: flex;
+}
+.card-bottom {
+  flex: 1;
+}
+.split-line {
+  background-color: #eee;
+  height: 1px;
+  margin: 10px 0;
+}
+.dish-image {
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  margin-right: 12rpx;
+  overflow: hidden;
+}
+.dish-image,
+.image {
+  height: 120rpx;
+  width: 120rpx;
+}
+.image {
+  object-fit: contain;
+}
+.card-bottom-right {
+  flex: 1;
+  flex-direction: column;
+}
+.card-bottom-right,
+.card-text {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+}
+.card-text {
+  align-items: center;
+}
+.card-text-top {
+  margin-bottom: 10rpx;
+}
+.text1 {
+  color: #666;
+  font-size: 14px;
+}
+.text2 {
+  color: #3a7efd;
+  font-size: 13px;
+}
+.text3 {
+  color: #999;
+  font-size: 12px;
+}
+.text4,
+.text5 {
+  color: #333;
+  font-size: 14px;
+}
+.text5 {
+  font-weight: 600;
+  text-align: right;
+}
+.paying {
+  background-clip: text;
+  background-image: linear-gradient(146deg, #fc8c40 -5%, #fd5475 104%);
+  color: transparent;
+}
+.refund {
+  color: #333;
+  font-size: 13px;
+}
+.card-buttons {
+  align-self: flex-end;
+}
+.card-button {
+  font-weight: 400 !important;
+  height: 48rpx !important;
+  width: 148rpx !important;
+}

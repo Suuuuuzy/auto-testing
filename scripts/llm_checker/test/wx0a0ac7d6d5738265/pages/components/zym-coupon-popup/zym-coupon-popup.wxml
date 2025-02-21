@@ -1,0 +1,42 @@
+<u-popup
+  bind:__l="__l"
+  bindclose="{{k}}"
+  class="r data-v-79bad9c1"
+  uI="79bad9c1-0"
+  uP="{{l}}"
+  uR="coupon_pop"
+  uS="{{['d']}}"
+  wx:if="{{l}}"
+>
+  <view class="{{['coupon_pop','data-v-79bad9c1',i]}}">
+    <image class="bg data-v-79bad9c1" src="{{a}}"></image>
+    <view class="title data-v-79bad9c1">{{b}}</view>
+    <view class="content data-v-79bad9c1">{{c}}</view>
+    <scroll-view class="data-v-79bad9c1" scrollY="true">
+      <view class="sview data-v-79bad9c1">
+        <view class="con_box data-v-79bad9c1" wx:for="{{d}}" wx:key="f">
+          <view class="box_a data-v-79bad9c1">
+            <view class="box_a_a data-v-79bad9c1">
+              <text class="data-v-79bad9c1">￥</text>
+              <text class="data-v-79bad9c1">{{item.a}}</text>
+            </view>
+            <text class="box_a_b data-v-79bad9c1" wx:if="{{e}}"
+              >满{{item.b}}可用</text
+            >
+          </view>
+          <view class="box_b data-v-79bad9c1"></view>
+          <view class="box_c data-v-79bad9c1">
+            <view class="box_c_1 data-v-79bad9c1">{{item.c}}</view>
+            <view class="box_c_2 data-v-79bad9c1">有效期: {{item.d}}</view>
+            <view class="box_c_3 data-v-79bad9c1">{{item.e}}</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <view class="note data-v-79bad9c1">领取后可在我的优惠券中查看</view>
+    <view bindtap="{{h}}" class="btn data-v-79bad9c1">
+      <image class="bg data-v-79bad9c1" src="{{f}}"></image>
+      <text class="data-v-79bad9c1">{{g}}</text>
+    </view>
+  </view>
+</u-popup>

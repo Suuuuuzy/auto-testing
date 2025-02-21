@@ -1,0 +1,48 @@
+<view class="delivery-detail">
+  <view class="dish-image">
+    <image
+      class="image"
+      mode="aspectFit"
+      src="{{detailData.item.attach[0].originalUrl?detailData.item.attach[0].originalUrl:defaultFoodUrl}}"
+    ></image>
+  </view>
+  <view class="content">
+    <view class="dish-info">
+      <view class="name">{{detailData.item.name}}</view>
+      <view class="inventory">库存：{{detailData.item.inventory}}</view>
+      <view class="pickupInfo"
+        >提货：{{detailData.pickupInfo.startDate}}
+        {{detailData.pickupInfo.startTime.length===2?detailData.pickupInfo.startTime+':00':detailData.pickupInfo.startTime}}-{{detailData.pickupInfo.endTime.length===2?detailData.pickupInfo.endTime+':00':detailData.pickupInfo.endTime}}</view
+      >
+      <view class="limit">每人次限购{{detailData.limit}}件</view>
+      <view class="price-count">
+        <view class="price">￥{{detailData.item.price}}</view>
+        <view class="stepper">
+          <van-stepper
+            disableInput
+            integer
+            catch:change="changeCount"
+            customClass="stepper-box"
+            inputClass="stepper-input"
+            max="{{detailData.max}}"
+            min="0"
+            minusClass="stepper-minus"
+            plusClass="stepper-plus"
+            value="{{detailData.count}}"
+          ></van-stepper>
+        </view>
+      </view>
+    </view>
+    <view class="description-section">
+      <view class="title">商品描述</view>
+      <view class="description"
+        >{{detailData.item.description?detailData.item.description:''}}</view
+      >
+    </view>
+  </view>
+  <shopping-cart
+    bindchangecart="onChangeCart"
+    bindremovecart="onRemoveCart"
+    id="shopping-cart"
+  ></shopping-cart>
+</view>

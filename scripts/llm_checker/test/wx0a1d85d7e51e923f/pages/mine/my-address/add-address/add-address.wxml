@@ -1,0 +1,55 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view class="tap-page">
+    <view class="bg-white padding-top">
+        <view class="cu-list menu solids-top-sm solids-bottom">
+            <view bindtap="selectAddress" class="cu-item arrow" url="map-address/map-address?title={{Str.address[lanIndex]}}&isVolunteer={{isVolunteer}}">
+                <view class="content">
+                    <view>
+                        <text class="text-black text-bold"> {{Str.shippingAddress[lanIndex]}}</text>
+                        <text class="padding-left" wx:if="{{selectLocation||itemData}}">
+                            <text class="icon-location"></text>
+                            <text class="text-black">{{selectLocation?selectLocation.name:itemData?itemData[0].title:''}}</text>
+                        </text>
+                        <text class="padding-left" wx:if="{{mSelectAddress}}">{{isUy?mSelectAddress.uy_name:mSelectAddress.name}}</text>
+                        <text class="text-gray padding-left" wx:if="{{!(selectLocation||itemData||mSelectAddress)}}">{{Str.clickSelectAddress[lanIndex]}}</text>
+                    </view>
+                    <view class="text-gray text-sm"></view>
+                </view>
+            </view>
+        </view>
+        <view class="cu-form-group" style="min-height:80rpx">
+            <view class="title">
+                <text class="text-black text-bold">{{Str.houseNum[lanIndex]}}</text>
+            </view>
+            <input bindinput="inputHouseNum" focus="{{inputFocus.house}}" placeholder="{{Str.inputHouseNum[lanIndex]}}" value="{{formData.houseNum}}"></input>
+        </view>
+        <view class="cu-form-group" style="min-height:80rpx">
+            <view class="title">
+                <text class="text-black text-bold">{{Str.receiver[lanIndex]}}</text>
+            </view>
+            <input bindinput="inputContactName" focus="{{inputFocus.name}}" placeholder="{{Str.inputContactPerson[lanIndex]}}" value="{{formData.contactName}}"></input>
+        </view>
+        <view class="cu-form-group" style="min-height:80rpx solid-top">
+            <view class="title">
+                <text class="text-black text-bold">{{Str.uPhone[lanIndex]}}</text>
+            </view>
+            <input bindinput="inputPhone" focus="{{inputFocus.phone}}" placeholder="{{Str.inputPhone[lanIndex]}}" type="number" value="{{formData.contactPhone}}"></input>
+            <text bindtap="cleanPhone" class="icon-roundclose" wx:if="{{formData.contactPhone}}"></text>
+        </view>
+    </view>
+    <view class=" padding">
+        <view class="margin">
+            <form bindsubmit="subBtn" reportSubmit="true">
+                <button class="cu-btn bg-pink radius shadow-blur lg block margin-lr" formType="submit">{{Str.save[lanIndex]}}</button>
+            </form>
+        </view>
+        <view class="margin-bottom margin-lr" wx:if="{{isEditing}}">
+            <form bindsubmit="deleteBtn" reportSubmit="true">
+                <button class="cu-btn line-gray lg radius shadow block margin-lr" formType="submit">{{Str.deleteAddress[lanIndex]}}</button>
+            </form>
+        </view>
+    </view>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

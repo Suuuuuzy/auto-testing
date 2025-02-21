@@ -1,0 +1,30 @@
+<view
+  bind:transitionend="onTransitionEnd"
+  class="{{_.cls( classPrefix,[placement] )}} {{transitionClass}} class {{prefix}}-class"
+  style="{{_._style( [popup.getPopupStyles(zIndex),style,customStyle] )}}"
+  wx:if="{{realVisible}}"
+>
+  <view
+    bind:touchmove="{{popup.onContentTouchMove}}"
+    class="{{classPrefix}}__content {{prefix}}-class-content"
+    data-prevention="{{preventScrollThrough||(overlayProps?!!overlayProps.preventScrollThrough:false)}}"
+  >
+    <slot name="content"></slot>
+    <slot></slot>
+    <view bind:tap="handleClose" class="{{classPrefix}}__close">
+      <t-icon name="close" size="64rpx" wx:if="{{closeBtn}}"></t-icon>
+      <slot class="{{classPrefix}}-slot" name="close-btn"></slot>
+    </view>
+  </view>
+</view>
+<t-overlay
+  backgroundColor="{{overlayProps&&overlayProps.backgroundColor||''}}"
+  bind:tap="handleOverlayClick"
+  customStyle="{{overlayProps&&overlayProps.style||''}}"
+  duration="{{overlayProps&&overlayProps.duration||300}}"
+  id="popup-overlay"
+  preventScrollThrough="{{preventScrollThrough||(overlayProps?!!overlayProps.preventScrollThrough:false)}}"
+  visible="{{visible}}"
+  zIndex="{{overlayProps&&overlayProps.zIndex||11000}}"
+  wx:if="{{showOverlay}}"
+></t-overlay>

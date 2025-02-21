@@ -1,0 +1,70 @@
+<view class="data-v-22b84109" style="height: 100%">
+  <zym-paging
+    bind:__l="__l"
+    bindloadData="{{d}}"
+    bindreFresh="{{c}}"
+    class="data-v-22b84109"
+    uI="22b84109-0"
+    uP="{{e}}"
+    uS="{{['item']}}"
+    wx:if="{{e}}"
+  >
+    <view slot="item">
+      <view class="gift-item data-v-22b84109" wx:for="{{a}}" wx:key="q">
+        <view class="Ltime data-v-22b84109" wx:if="{{item.a}}">{{item.b}}</view>
+        <view bindtap="{{item.p}}" class="ordlist data-v-22b84109">
+          <view class="listTop data-v-22b84109">
+            <view class="tleft data-v-22b84109">
+              <view class="tname data-v-22b84109"
+                >订单号： <text class="gunNo data-v-22b84109">{{item.c}}</text>
+              </view>
+              <text class="{{['data-v-22b84109',item.e]}}">{{item.d}}</text>
+            </view>
+            <text class="time data-v-22b84109">{{item.f}}</text>
+          </view>
+          <u-line
+            bind:__l="__l"
+            class="data-v-22b84109"
+            uI="{{item.g}}"
+            uP="{{b}}"
+            wx:if="{{b}}"
+          ></u-line>
+          <view class="center data-v-22b84109">
+            <image
+              class="cleft data-v-22b84109"
+              mode=""
+              src="{{item.h}}"
+            ></image>
+            <view class="cright data-v-22b84109">
+              <view class="cclum data-v-22b84109">
+                <view class="data-v-22b84109">
+                  <text class="blig data-v-22b84109">{{item.i}}</text>
+                </view>
+                <text class="data-v-22b84109">价值 ¥{{item.j}} 高端礼品</text>
+              </view>
+            </view>
+          </view>
+          <view class="listbtm data-v-22b84109">
+            <view class="paymony data-v-22b84109">
+              <text class="gift-rebiul data-v-22b84109">
+                立返¥{{item.k}}加油金
+              </text>
+              <view class="data-v-22b84109">
+                实付：<text class="blig data-v-22b84109"> ￥{{item.l}}</text>
+              </view>
+            </view>
+            <view class="data-v-22b84109" wx:if="{{item.m}}">
+              <u-button
+                bind:__l="__l"
+                class="data-v-22b84109"
+                uI="{{item.n}}"
+                uP="{{item.o}}"
+                wx:if="{{item.o}}"
+              ></u-button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </zym-paging>
+</view>

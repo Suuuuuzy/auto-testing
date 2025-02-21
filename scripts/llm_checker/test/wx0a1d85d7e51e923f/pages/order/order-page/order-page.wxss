@@ -1,0 +1,5 @@
+@import "/app.wxss";
+.cu-list.menu.sm-border > .cu-item:after {
+  left: 30rpx;
+  width: calc(200% - 120rpx);
+}

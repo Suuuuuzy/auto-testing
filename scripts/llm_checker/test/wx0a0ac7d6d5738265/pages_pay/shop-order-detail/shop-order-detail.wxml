@@ -1,0 +1,130 @@
+<view class="shopinfopage data-v-565b76e0">
+  <zym-navigation
+    bind:__l="__l"
+    class="data-v-565b76e0"
+    uI="565b76e0-0"
+    uP="{{a}}"
+    wx:if="{{a}}"
+  ></zym-navigation>
+  <u-skeleton
+    bind:__l="__l"
+    class="data-v-565b76e0"
+    uI="565b76e0-1"
+    uP="{{z}}"
+    uS="{{['d']}}"
+    wx:if="{{z}}"
+  >
+    <view class="infoBox data-v-565b76e0">
+      <view class="info_state data-v-565b76e0">
+        <image
+          class="imgicon data-v-565b76e0"
+          mode=""
+          src="{{c}}"
+          wx:if="{{b}}"
+        ></image>
+        <image
+          class="imgicon data-v-565b76e0"
+          mode=""
+          src="{{e}}"
+          wx:if="{{d}}"
+        ></image>
+        <text class="data-v-565b76e0">{{f}}</text>
+      </view>
+      <view class="barcode data-v-565b76e0" wx:if="{{g}}">
+        <zym-qrcode
+          bind:__l="__l"
+          class="data-v-565b76e0"
+          uI="565b76e0-2,565b76e0-1"
+          uP="{{h}}"
+          wx:if="{{h}}"
+        ></zym-qrcode>
+        <text class="toast-txt data-v-565b76e0"
+          >请将上二维码码出示给工作人员核销</text
+        >
+      </view>
+      <view class="gift-item data-v-565b76e0">
+        <view class="ordlist data-v-565b76e0">
+          <view class="listTop data-v-565b76e0">
+            <view class="tleft data-v-565b76e0">
+              <view class="tname data-v-565b76e0">
+                订单号：<text class="gunNo data-v-565b76e0">{{i}}</text>
+              </view>
+              <text class="{{['data-v-565b76e0',k]}}">{{j}}</text>
+            </view>
+            <text class="time data-v-565b76e0">{{l}}</text>
+          </view>
+          <u-line
+            bind:__l="__l"
+            class="data-v-565b76e0"
+            uI="565b76e0-3,565b76e0-1"
+            uP="{{m}}"
+            wx:if="{{m}}"
+          ></u-line>
+          <view class="center data-v-565b76e0">
+            <image class="cleft data-v-565b76e0" mode="" src="{{n}}"></image>
+            <view class="cright data-v-565b76e0">
+              <view class="cclum data-v-565b76e0">
+                <view class="data-v-565b76e0">
+                  <text class="blig data-v-565b76e0">{{o}}</text>
+                </view>
+                <text class="data-v-565b76e0">价值 ¥{{p}} 高端礼品</text>
+              </view>
+            </view>
+          </view>
+          <view class="listbtm data-v-565b76e0">
+            <view class="paymony data-v-565b76e0">
+              <text class="gift-rebiul data-v-565b76e0" wx:if="{{q}}">
+                立返¥{{r}}加油金
+              </text>
+              <view class="data-v-565b76e0">
+                实付： <text class="blig data-v-565b76e0"> ￥{{s}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="gift-content data-v-565b76e0">
+          <view class="content-title data-v-565b76e0"> 礼包内容 </view>
+          <view class="gift-item data-v-565b76e0" wx:for="{{t}}" wx:key="e">
+            <view class="item-name data-v-565b76e0">{{item.a}} {{item.b}}</view>
+            <view class="item-info data-v-565b76e0">
+              <view class="data-v-565b76e0">
+                <text class="item-price-type data-v-565b76e0">零售价：</text>
+                <text class="item-price data-v-565b76e0">￥{{item.c}}</text>
+              </view>
+              <text class="item-num data-v-565b76e0">x{{item.d}}</text>
+            </view>
+          </view>
+          <view class="gift-rules data-v-565b76e0">
+            <view
+              class="rule-info mb24 data-v-565b76e0"
+              wx:for="{{v}}"
+              wx:for-item="rul"
+              wx:key="d"
+            >
+              <view class="rule-top data-v-565b76e0">
+                <text class="rule-price-type data-v-565b76e0">{{rul.a}} </text>
+                <text class="rule-price data-v-565b76e0">x{{rul.b}}</text>
+              </view>
+              <view class="data-v-565b76e0">
+                <text class="rule-num data-v-565b76e0">加油金总计：</text>
+                <text class="rule-price data-v-565b76e0">￥{{rul.c}}</text>
+              </view>
+            </view>
+            <u-line
+              bind:__l="__l"
+              class="data-v-565b76e0"
+              uI="565b76e0-4,565b76e0-1"
+              uP="{{w}}"
+              wx:if="{{w}}"
+            ></u-line>
+            <view class="rule mt24 data-v-565b76e0">
+              <view class="rule-title data-v-565b76e0"> 使用规则 </view>
+              <view class="rule-date data-v-565b76e0"> 有效期至{{x}}</view>
+              <view class="rule-detail data-v-565b76e0">{{y}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </u-skeleton>
+</view>

@@ -1,0 +1,122 @@
+{
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "plugins": {
+    "WechatSI": {
+      "version": "0.3.5",
+      "provider": "wx069ba97219f66d99",
+      "subpackage": "__APP__"
+    }
+  },
+  "preloadRule": { "pages/index/index": { "packages": ["cssp"] } },
+  "requiredPrivateInfos": ["chooseLocation"],
+  "tabBar": {
+    "custom": true,
+    "color": "#303030",
+    "selectedColor": "#3159fa",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/tab_applications/tab_applications",
+        "text": "应用服务",
+        "iconPath": "pages/asserts/images/tabbar-more2.png",
+        "selectedIconPath": "pages/asserts/images/tabbar-more_h2.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "",
+        "iconPath": "pages/asserts/images/tabbar-home.png",
+        "selectedIconPath": "pages/asserts/images/tabbar-home.png"
+      },
+      {
+        "pagePath": "pages/userCenter/userCenter",
+        "text": "我的",
+        "iconPath": "pages/asserts/images/tabbar-user2.png",
+        "selectedIconPath": "pages/asserts/images/tabbar-user_h2.png"
+      }
+    ]
+  },
+  "subPackages": [
+    {
+      "name": "cssp",
+      "root": "packageA/",
+      "pages": [
+        "login/login",
+        "applicationCenter/applicationCenter",
+        "applicationMessage/applicationMessage",
+        "applicationUsercenter/applicationUsercenter",
+        "toApprovalList/toApprovalList",
+        "toApproval/toApproval",
+        "toApproval/uploadMaterials",
+        "toApprovalForward/toApprovalForward",
+        "toApprovalForward-pickLeaf/toApprovalForward-pickLeaf",
+        "toApprovalForward-pickRoot/toApprovalForward-pickRoot",
+        "approvalFeedback/approvalFail",
+        "approvalFeedback/approvalSuccess",
+        "approvingList/approvingList",
+        "approving/approving",
+        "globalSearch/globalSearch",
+        "globalSearchResult/globalSearchResult",
+        "leaveList/leaveList",
+        "leaveInfo/leaveInfo",
+        "leaveListRequest/leaveListRequest",
+        "leaveApproval/leaveApproval",
+        "leaveApproval/leaveApprovalReturn",
+        "leaveApprovalList/leaveApprovalList",
+        "personnelOnDuty/personnelOnDuty",
+        "ThreeColorRegulatory/ThreeColorRegulatory"
+      ]
+    },
+    {
+      "name": "cstool",
+      "root": "tools/",
+      "pages": [
+        "scanCode/scanCode",
+        "scanRoomCard/scanRoomCard",
+        "FaceRecognition/FaceRecognition",
+        "EstateFaceCheck/EstateFaceCheck",
+        "EstateFaceCheckVerify/EstateFaceCheckVerify",
+        "ScanCodeResult/ScanCodeResult"
+      ]
+    },
+    {
+      "name": "aNetTools",
+      "root": "aNetTools/",
+      "pages": ["LoginByMini/index", "OptimalAging/OptimalAging"]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "pages": [
+    "pages/index/index",
+    "pages/index_applicationList/index_applicationList",
+    "pages/webView/webView",
+    "pages/businessTodo/businessTodo",
+    "pages/businessTodo/businessTodo_detail",
+    "pages/businessTodo/businessTodo_detailList",
+    "pages/businessTodo_declareNote/businessTodo_declareNote",
+    "pages/businessTodo_declareProcess/businessTodo_declareProcess",
+    "pages/businessTodo_declareProcessDetail/businessTodo_declareProcessDetail",
+    "pages/businessTodo_declareProcessDetail/businessTodo_uploadMaterials",
+    "pages/businessTodo_declareSuccess/businessTodo_declareSuccess",
+    "pages/businessProgress/businessProgress",
+    "pages/businessReservation/businessReservation",
+    "pages/businessReservation/businessReservation_detail",
+    "pages/userCenter/userCenter",
+    "pages/userCenter_verified/userCenter_preVerify",
+    "pages/userCenter_verified/userCenter_verify",
+    "pages/userCenter_declaration/userCenter_declaration",
+    "pages/userCenter_address/userCenter_address",
+    "pages/userCenter_addressAdd/userCenter_addressAdd",
+    "pages/userCenter_license/userCenter_license",
+    "pages/external_verified/external_verified",
+    "pages/tab_applications/tab_applications"
+  ]
+}

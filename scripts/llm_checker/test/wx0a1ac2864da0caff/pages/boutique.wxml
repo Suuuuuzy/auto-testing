@@ -1,0 +1,144 @@
+<view class="container _div data-v-097ee5e6">
+  <scroll-view
+    class="content data-v-097ee5e6"
+    enableBackToTop="{{true}}"
+    scrollY="{{true}}"
+    wx:if="{{detail}}"
+  >
+    <view
+      class="_div data-v-097ee5e6"
+      style="{{'height:'+navigationBarHeightPlaceholder+'px'+';'}}"
+    ></view>
+    <view class="boutique-logo-out _div data-v-097ee5e6">
+      <view class="boutique-logo-large _div data-v-097ee5e6">
+        <image
+          class="pic _img data-v-097ee5e6"
+          src="/static/img/logo-large.png"
+        ></image>
+      </view>
+    </view>
+    <view
+      class="{{['boutique-visit-out','_div','data-v-097ee5e6',previewVideo?'is-video':'']}}"
+      wx:if="{{detail.view}}"
+    >
+      <view class="panel _div data-v-097ee5e6" wx:if="{{previewVideo}}">
+        <video
+          autoplay="{{true}}"
+          class="pic data-v-097ee5e6"
+          loop="{{true}}"
+          muted="{{true}}"
+          objectFit="cover"
+          showMuteBtn="{{true}}"
+          src="{{previewVideo}}"
+        ></video>
+      </view>
+      <view
+        bindtap="__e"
+        class="panel _div data-v-097ee5e6"
+        data-event-opts="{{[ [ 'tap',[ [ 'toView',['$event'] ] ] ] ]}}"
+        wx:else
+      >
+        <image
+          class="pic _img data-v-097ee5e6"
+          mode="aspectFill"
+          src="{{previewThumb}}"
+        ></image>
+      </view>
+      <view
+        bindtap="__e"
+        class="boutique-visit-text-out _div data-v-097ee5e6"
+        data-event-opts="{{[ [ 'tap',[ [ 'toView',['$event'] ] ] ] ]}}"
+      >
+        <view class="icon-boutique _div data-v-097ee5e6">
+          <image
+            class="pic _img data-v-097ee5e6"
+            src="/static/img/icon-boutique.svg"
+          ></image>
+        </view>
+        <view class="_div data-v-097ee5e6"
+          >{{detail.isService?'参观客服中心':'参观源邸'}}</view
+        >
+      </view>
+    </view>
+    <view class="boutique-title _div data-v-097ee5e6">{{detail.name}}</view>
+    <view class="boutique-detail-out _div data-v-097ee5e6">
+      <view
+        bindtap="__e"
+        class="boutique-address _div data-v-097ee5e6"
+        data-event-opts="{{[ [ 'tap',[ [ 'showLocation',['$event'] ] ] ] ]}}"
+        >{{detail.address}}</view
+      >
+      <view
+        bindtap="__e"
+        class="boutique-location _div data-v-097ee5e6"
+        data-event-opts="{{[ [ 'tap',[ [ 'showLocation',['$event'] ] ] ] ]}}"
+      >
+        <view class="icon-more _div data-v-097ee5e6">
+          <image
+            class="pic _img data-v-097ee5e6"
+            src="/static/img/icon-move.svg"
+          ></image>
+        </view>
+        <view class="_div data-v-097ee5e6">导航</view>
+      </view>
+      <view class="boutique-phone _div data-v-097ee5e6" wx:if="{{detail.time}}">
+        <view class="_div data-v-097ee5e6">{{'营业时间：'+detail.time}}</view>
+      </view>
+      <view
+        bindtap="__e"
+        class="boutique-phone-btn _div data-v-097ee5e6"
+        data-event-opts="{{[ [ 'tap',[ [ 'callPhone',['$event'] ] ] ] ]}}"
+        wx:if="{{detail.phone}}"
+      >
+        <view class="icon-phone _div data-v-097ee5e6">
+          <image
+            class="pic _img data-v-097ee5e6"
+            src="/static/img/icon-phone.svg"
+          ></image>
+        </view>
+        <view class="_div data-v-097ee5e6">电话</view>
+      </view>
+    </view>
+    <view class="btn-bottom-inner _div data-v-097ee5e6"></view>
+    <view
+      class="_div data-v-097ee5e6"
+      style="{{'height:'+navigationBarHeightPlaceholder+'px'+';'}}"
+    ></view>
+  </scroll-view>
+  <view
+    class="btn-bottom _div data-v-097ee5e6"
+    wx:if="{{detail&&detail.can_book}}"
+  >
+    <view class="btn-bottom-inner _div data-v-097ee5e6">
+      <view
+        bindtap="__e"
+        class="btn-bottom-btn _div data-v-097ee5e6"
+        data-event-opts="{{[ [ 'tap',[ [ 'toBook',['$event'] ] ] ] ]}}"
+        >立即预约</view
+      >
+    </view>
+    <view
+      class="btn-bottom-gap _div data-v-097ee5e6"
+      style="{{'height:'+navigationBarHeightPlaceholder+'px'+';'}}"
+    ></view>
+  </view>
+  <pp-nav
+    back="{{true}}"
+    bind:__l="__l"
+    class="data-v-097ee5e6"
+    noCircle="{{true}}"
+    placeholder="{{navigationBarHeightPlaceholder}}"
+    transparent="{{true}}"
+    value="{{true}}"
+    vueId="fb706c6e-1"
+  ></pp-nav>
+  <pp-nav
+    back="{{true}}"
+    bind:__l="__l"
+    class="data-v-097ee5e6"
+    logo="{{true}}"
+    placeholder="{{navigationBarHeightPlaceholder}}"
+    value="{{false}}"
+    vueId="fb706c6e-2"
+  ></pp-nav>
+</view>

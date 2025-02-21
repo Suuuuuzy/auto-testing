@@ -1,0 +1,28 @@
+<weixin-popup
+  bind:__l="__l"
+  bind:close="__e"
+  class="data-v-249b0516"
+  closeIconPosition="{{closePosition=='1'?'top-right':'out-top-left'}}"
+  closeOnClickOverlay="{{true}}"
+  closeable="{{true}}"
+  data-event-opts="{{[ [ '^close',[ ['hidePopup'] ] ] ]}}"
+  position="center"
+  round="{{true}}"
+  show="{{show}}"
+  vueId="984ad2a4-1"
+  vueSlots="{{['default']}}"
+>
+  <view
+    class="npart-popup__centent _div data-v-249b0516"
+    style="{{'width:'+mw+';'}}"
+  >
+    <view class="npart-popup__title f28 _div data-v-249b0516"
+      >参与此活动的菜品有:</view
+    >
+    <view class="npart-popup__list f24 _div data-v-249b0516">
+      <label class="_span data-v-249b0516" wx:for="{{npartList}}" wx:key="index"
+        >{{item+'；'}}</label
+      >
+    </view>
+  </view>
+</weixin-popup>

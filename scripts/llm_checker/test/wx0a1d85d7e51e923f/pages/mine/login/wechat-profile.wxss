@@ -1,0 +1,16 @@
+.avatar-wrapper {
+  border-radius: 8px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  padding: 0;
+  width: 56px !important;
+}
+.avatar {
+  display: block;
+  height: 56px;
+  width: 56px;
+}
+.container {
+  display: -webkit-flex;
+  display: flex;
+}

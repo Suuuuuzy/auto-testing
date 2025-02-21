@@ -1,0 +1,14 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<button bind:chooseavatar="onChooseAvatar" class="avatar-wrapper" openType="chooseAvatar">
+    <image class="avatar" src="{{avatarUrl}}"></image>
+</button>
+<view class="cu-form-group margin-top">
+    <view class="title">{{Str.nickName[lanIndex]}}</view>
+    <input bindinput="nickNameInput" placeholder="{{Str.inputNickName[lanIndex]}}" type="nickname"></input>
+</view>
+<view class="padding text-center margin-top">
+    <button bindtap="subBtn" class="cu-btn bg-pink padding-lr-xl" disabled="{{!(nickName.length>2&&hasAvatar==1)}}">{{Str.save[lanIndex]}}</button>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

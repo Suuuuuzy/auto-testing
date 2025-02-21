@@ -1,0 +1,45 @@
+<navBar
+  back="{{true}}"
+  bindback="handlerGobackClick"
+  bindhome="handlerGohomeClick"
+  home="{{false}}"
+  title="菜品评价"
+></navBar>
+<view class="page">
+  <view class="placeholder"></view>
+  <view class="rateDetail">
+    <view class="totalRecords">
+      <text class="totalRecords-in">{{dishName}}</text>
+    </view>
+    <view class="rate">
+      <van-rate
+        allowHalf
+        bind:change="changeScore"
+        value="{{score}}"
+      ></van-rate>
+      <view>{{scoreText}}</view>
+    </view>
+    <view>
+      <van-field
+        autosize
+        showWordLimit
+        border="{{false}}"
+        inputClass="textarea"
+        label=""
+        maxlength="100"
+        value="{{message}}"
+        placeholder="菜品好不好吃，写点什么分享一下吧~"
+        type="textarea"
+      ></van-field>
+    </view>
+  </view>
+  <van-button
+    block
+    round
+    bind:tap="grade"
+    class="buttonB"
+    color="#456AFF"
+    type="primary"
+    >发表评价</van-button
+  >
+</view>

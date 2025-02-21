@@ -1,0 +1,187 @@
+<view class="home-container">
+  <u-navbar
+    background="{{background}}"
+    bind:__l="__l"
+    borderBottom="{{false}}"
+    class="{{[!isSticky?'home-navbar':'']}}"
+    isBack="{{false}}"
+    title="芳邻"
+    titleBold="{{true}}"
+    titleColor="#000"
+    vueId="7f347608-1"
+  ></u-navbar>
+  <image
+    class="home-bg"
+    mode="widthFix"
+    src="http://image.fanglinxq.com/assets/home-bg.png"
+  ></image>
+  <view class="top-star">
+    <view class="star-title">
+      <image
+        mode="widthFix"
+        src="http://image.fanglinxq.com/assets/icons/star.png"
+      ></image>
+      <text class="star-text">靠谱咖位</text>
+    </view>
+    <scroll-view class="top-scroll-content" scrollX="{{true}}">
+      <view class="top-scroll-list">
+        <view
+          bindtap="__e"
+          class="add"
+          data-event-opts="{{[ [ 'tap',[ [ 'handleUp',['$event'] ] ] ] ]}}"
+        >
+          <image
+            mode="widthFix"
+            src="http://image.fanglinxq.com/assets/icons/home-add.png"
+          ></image>
+          <text class="add-text">我要上位</text>
+        </view>
+        <view
+          bindtap="__e"
+          class="item-star"
+          data-event-opts="{{[ [ 'tap',[ [ 'handleNavigater',['/pages/user/details/index?id='+item[$orig].id] ] ] ] ]}}"
+          wx:for="{{$root.l0}}"
+          wx:for-index="i"
+          wx:key="i"
+        >
+          <view class="avatar-warp">
+            <u-image
+              bind:__l="__l"
+              height="95rpx"
+              mode="aspectFill"
+              shape="circle"
+              src="{{item.m0}}"
+              vueId="{{'7f347608-2-'+i}}"
+              width="95rpx"
+            ></u-image>
+          </view>
+          <image
+            class="tip"
+            mode="widthFix"
+            src="{{'http://image.fanglinxq.com/assets/icons/level'+item[$orig].vipLevel+'.png'}}"
+            wx:if="{{item[$orig].sex===1&&item[$orig].vipLevel>2}}"
+          ></image>
+          <block wx:else>
+            <image
+              class="tip"
+              mode="widthFix"
+              src="http://image.fanglinxq.com/assets/icons/goddess.png"
+              wx:if="{{item[$orig].sex===2&&item[$orig].isRealAuth===1}}"
+            ></image>
+          </block>
+          <text class="star-name">{{item[$orig].nickname}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="tabs-home-container">
+    <view
+      class="{{['tabs-sticky',isSticky?'raiusNone':'']}}"
+      style="{{'top:'+totalHeight+'px'+';'}}"
+    >
+      <view class="tabs-view">
+        <view
+          bindtap="__e"
+          class="{{['item-tab',current===0?'active':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'checkTab',[0] ] ] ] ]}}"
+          >推荐</view
+        >
+        <view
+          bindtap="__e"
+          class="{{['item-tab',current===1?'active':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'checkTab',[1] ] ] ] ]}}"
+          >附近</view
+        >
+      </view>
+      <view
+        bindtap="__e"
+        class="filter-warp"
+        data-event-opts="{{[ [ 'tap',[ [ 'handleNavigater',['/pages/user/exactFilter/index?current='+current] ] ] ] ]}}"
+      >
+        <image
+          mode="widthFix"
+          src="http://image.fanglinxq.com/assets/icons/filter.png"
+        ></image>
+        <text class="filter-name" wx:if="{{current===0}}"
+          >{{recommendQuery.cityName||'全国'}}</text
+        >
+        <text class="filter-name" wx:else>{{nearQuery.cityName||'全国'}}</text>
+      </view>
+    </view>
+    <user
+      bind:__l="__l"
+      current="{{current}}"
+      data-custom-hidden="{{!(current===0)}}"
+      dataList="{{rlist}}"
+      vueId="7f347608-3"
+    ></user>
+    <user
+      bind:__l="__l"
+      current="{{current}}"
+      data-custom-hidden="{{!(current===1)}}"
+      dataList="{{nlist}}"
+      vueId="7f347608-4"
+    ></user>
+    <u-divider
+      bind:__l="__l"
+      color="#8629F5"
+      halfWidth="80"
+      vueId="7f347608-5"
+      vueSlots="{{['default']}}"
+      wx:if="{{loading}}"
+    >
+      <u-loading
+        bind:__l="__l"
+        color="#8629F5"
+        show="{{true}}"
+        vueId="{{'7f347608-6'+','+'7f347608-5'}}"
+      ></u-loading>
+      <text class="loading-text">加载中...</text>
+    </u-divider>
+    <view class="nullloacation" wx:if="{{current===1&&!isAuth}}">
+      <image
+        mode="widthFix"
+        src="http://image.fanglinxq.com/assets/without.png"
+      ></image>
+      <view
+        bindtap="__e"
+        class="auth-btn"
+        data-event-opts="{{[ [ 'tap',[ ['reOpen'] ] ] ]}}"
+        >获取位置信息</view
+      >
+    </view>
+    <view class="empty-view" wx:if="{{$root.g0}}">
+      <u-empty
+        bind:__l="__l"
+        iconSize="300"
+        src="http://image.fanglinxq.com/assets/without.png"
+        text="暂无数据"
+        vueId="7f347608-7"
+      ></u-empty>
+    </view>
+  </view>
+  <hello-popup
+    bind:__l="__l"
+    bind:setVisble="__e"
+    data-event-opts="{{[ [ '^setVisble',[ ['setVisble'] ] ] ]}}"
+    isShow="{{isShow}}"
+    vueId="7f347608-8"
+    wx:if="{{isShow}}"
+  ></hello-popup>
+  <u-mask
+    bind:__l="__l"
+    bind:click="__e"
+    data-event-opts="{{[ [ '^click',[ ['e0'] ] ] ]}}"
+    show="{{showGift}}"
+    vueId="7f347608-9"
+    vueSlots="{{['default']}}"
+  >
+    <image
+      catchtap="__e"
+      class="gift-img"
+      data-event-opts="{{[ [ 'tap',[ ['exchangeReward'] ] ] ]}}"
+      mode="widthFix"
+      src="{{userInfo.sex===1?'http://image.fanglinxq.com/assets/boy.gif':'http://image.fanglinxq.com/assets/girl.gif'}}"
+    ></image>
+  </u-mask>
+</view>

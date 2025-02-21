@@ -1,0 +1,42 @@
+.page {
+  height: 100%;
+}
+.content {
+  background-color: #fff;
+  padding: 0 30rpx;
+}
+.content,
+.top {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+}
+.top {
+  background-image: linear-gradient(135deg, #3680fd, #7659fc);
+  margin-top: 15rpx;
+  width: 100%;
+}
+.bottom {
+  margin-top: 60rpx;
+  width: 100%;
+}
+.text1 {
+  font-size: 14px;
+}
+.text1,
+.text2 {
+  color: #f0f0f0;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+  text-align: center;
+}
+.text2 {
+  font-size: 12px;
+}
+.text3 {
+  color: #999;
+  font-size: 13px;
+  margin-top: 20rpx;
+  text-align: center;
+}

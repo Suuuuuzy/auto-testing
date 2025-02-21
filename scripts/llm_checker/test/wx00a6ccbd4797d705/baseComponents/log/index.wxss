@@ -1,0 +1,55 @@
+.logWrap {
+  background: #fff;
+  position: relative;
+  text-align: left;
+  z-index: 999999999;
+}
+.localKeys,
+.logContent,
+.logContent2,
+.logOpration,
+.logTimeContent {
+  height: 300px;
+  overflow: auto;
+}
+.logsaoma {
+  bottom: 50px;
+  left: 10px;
+  position: fixed;
+  z-index: 999999999999;
+}
+.activeLog {
+  color: red;
+}
+.logsaoma {
+  font-size: 30px;
+}
+.logContainer {
+  background-color: #fff;
+  height: 95%;
+  left: 5px;
+  overflow: auto;
+  position: fixed;
+  top: 50px;
+  width: 95%;
+  z-index: 9999999;
+}
+.logItemTitle {
+  word-wrap: break-word;
+  margin-top: 10rpx;
+}
+.logContent {
+  max-height: 400px;
+  overflow: auto;
+}
+.logContent2 {
+  max-height: 300px;
+  overflow: auto;
+}
+.logTimeContent {
+  max-height: 200px;
+  overflow: auto;
+}
+.logItems {
+  margin-top: 10px;
+}

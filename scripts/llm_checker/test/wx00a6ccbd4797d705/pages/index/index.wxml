@@ -1,0 +1,77 @@
+<view
+  bindtap="__e"
+  class="authorizeWrap _div data-v-74247ad8"
+  data-event-opts="{{[ [ 'tap',[ [ 'openDebug',['$event'] ] ] ] ]}}"
+  style="{{'height:'+screenHeight+'px'+';'}}"
+>
+  <block wx:if="{{openFlag}}">
+    <image
+      class="_img data-v-74247ad8"
+      mode="aspectFill"
+      src="{{path}}"
+      style="{{'width:100%;'+'height:'+screenHeight+'px'+';'}}"
+    ></image>
+    <view
+      bindtap="__e"
+      class="countdownWrapper flex _div data-v-74247ad8"
+      data-event-opts="{{[ [ 'tap',[ [ 'click',['$event'] ] ] ] ]}}"
+      style="{{'top:'+navigateBarHeight+10+'px'+';'}}"
+      wx:if="{{showCountdown}}"
+    >
+      <countdown
+        bind:__l="__l"
+        bind:finish="__e"
+        class="data-v-74247ad8 vue-ref"
+        countdownType="{{1}}"
+        data-event-opts="{{[ [ '^finish',[ ['onFinish'] ] ] ]}}"
+        data-ref="countdown"
+        time="{{time}}"
+        vueId="8dd740cc-1"
+      ></countdown>
+      <label class="_span data-v-74247ad8">S（跳过）</label>
+    </view>
+  </block>
+  <view class="loadLayoutWrap _div data-v-74247ad8">
+    <view class="partA flexAlignCenter _div data-v-74247ad8">
+      <view class="round _div data-v-74247ad8"></view>
+      <view class="ml30 _div data-v-74247ad8">
+        <view class="listO BgColor radius10 _div data-v-74247ad8"></view>
+        <view class="listT BgColor radius10 mt20r _div data-v-74247ad8"></view>
+      </view>
+    </view>
+    <view class="mt86r flexBetween _div data-v-74247ad8">
+      <view class="blockL BgColor radius10 _div data-v-74247ad8"></view>
+      <view class="blockR _div data-v-74247ad8">
+        <view class="blockRo BgColor radius10 _div data-v-74247ad8"></view>
+        <view
+          class="blockRt BgColor radius10 mt30r _div data-v-74247ad8"
+        ></view>
+      </view>
+    </view>
+    <view class="partC mt86r radius10 flexAround BgColor _div data-v-74247ad8">
+      <view
+        class="_div data-v-74247ad8"
+        wx:for="{{3}}"
+        wx:for-index="idx"
+        wx:for-item="i"
+        wx:key="idx"
+      >
+        <view class="partC_o BgColor2 radius10 _div data-v-74247ad8"></view>
+        <view
+          class="partC_t BgColor2 mt15 radius10 _div data-v-74247ad8"
+        ></view>
+      </view>
+    </view>
+    <view class="partD flexBetween mt86r _div data-v-74247ad8">
+      <view
+        class="roundItem BgColor _div data-v-74247ad8"
+        wx:for="{{4}}"
+        wx:for-index="idx"
+        wx:for-item="i"
+        wx:key="idx"
+      ></view>
+    </view>
+    <view class="partE BgColor _div data-v-74247ad8"></view>
+  </view>
+  <log bind:__l="__l" class="data-v-74247ad8" vueId="8dd740cc-2"></log>
+</view>

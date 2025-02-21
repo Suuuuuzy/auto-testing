@@ -1,0 +1,109 @@
+<view class="wx_login_index data-v-aeef7574">
+  <view class="box data-v-aeef7574">
+    <image class="gs_logo data-v-aeef7574" src="{{a}}"></image>
+    <view class="text1 data-v-aeef7574"> 永盛石化 </view>
+    <view class="text2 data-v-aeef7574"> 授权登录后，即可正常使用功能哦~ </view>
+  </view>
+  <u-popup
+    bind:__l="__l"
+    class="data-v-aeef7574"
+    uI="aeef7574-0"
+    uP="{{o}}"
+    uS="{{['d']}}"
+    wx:if="{{o}}"
+  >
+    <view class="login_popbox data-v-aeef7574">
+      <view class="poptitle data-v-aeef7574">
+        <image class="img data-v-aeef7574" src="{{b}}"></image>
+        <text class="txt data-v-aeef7574">永盛石化</text>
+      </view>
+      <u-line
+        bind:__l="__l"
+        class="data-v-aeef7574"
+        uI="aeef7574-1,aeef7574-0"
+        uP="{{c}}"
+        wx:if="{{c}}"
+      ></u-line>
+      <view class="titleBox data-v-aeef7574"> 温馨提示 </view>
+      <view class="pText data-v-aeef7574">
+        尊敬的用户，欢迎使用永泰小程序，为确保您能正常使用小程序功能，请您仔细阅读并充分理解《用户服务条款》及《用户隐私协议》。
+      </view>
+      <view class="ystg data-v-aeef7574">
+        <view bindtap="{{e}}" class="radiocheck data-v-aeef7574">
+          <radio
+            checked="{{d}}"
+            class="data-v-aeef7574"
+            color="rgba(6, 185, 192, 1)"
+            style="transform: scale(0.7)"
+          ></radio>
+          我已阅读并同意
+        </view>
+        <view class="data-v-aeef7574">
+          <text bindtap="{{f}}" class="readText data-v-aeef7574">
+            《用户服务条款》
+          </text>
+          、
+          <text bindtap="{{g}}" class="readText data-v-aeef7574">
+            《用户隐私使用协议》 </text
+          >。
+        </view>
+      </view>
+      <view class="bottomBtn_box data-v-aeef7574">
+        <u-button
+          bind:__l="__l"
+          bindclick="{{h}}"
+          class="data-v-aeef7574"
+          uI="aeef7574-2,aeef7574-0"
+          uP="{{i}}"
+          uS="{{['d']}}"
+          wx:if="{{i}}"
+        >
+          不同意
+        </u-button>
+        <u-button
+          bind:__l="__l"
+          bindgetphonenumber="{{k}}"
+          class="data-v-aeef7574"
+          uI="aeef7574-3,aeef7574-0"
+          uP="{{l}}"
+          uS="{{['d']}}"
+          wx:if="{{j}}"
+        >
+          同意并授权
+        </u-button>
+        <u-button
+          bind:__l="__l"
+          bindclick="{{m}}"
+          class="data-v-aeef7574"
+          uI="aeef7574-4,aeef7574-0"
+          uP="{{n||''}}"
+          uS="{{['d']}}"
+          wx:else
+        >
+          同意并授权
+        </u-button>
+      </view>
+    </view>
+  </u-popup>
+  <view class="wx_login_btn data-v-aeef7574">
+    <button
+      bindtap="{{p}}"
+      class="moreDownload data-v-aeef7574"
+      style="
+        background: rgba(6, 185, 192, 1);
+        width: 100%;
+        color: white;
+        margin-bottom: 20rpx;
+      "
+    >
+      手机号登录/注册
+    </button>
+    <button
+      bindtap="{{q}}"
+      class="data-v-aeef7574"
+      style="color: rgba(6, 185, 192, 1)"
+    >
+      取消
+    </button>
+  </view>
+</view>

@@ -1,0 +1,86 @@
+<u-popup
+  bind:__l="__l"
+  bind:input="__e"
+  borderRadius="30"
+  class="data-v-0db393bc"
+  data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','isShow','$event',[] ] ] ] ] ]}}"
+  mode="center"
+  value="{{isShow}}"
+  vueId="3a9ab6bb-1"
+  vueSlots="{{['default']}}"
+>
+  <view class="home-popup-container data-v-0db393bc">
+    <image
+      class="pop-bg data-v-0db393bc"
+      mode="widthFix"
+      src="http://image.fanglinxq.com/assets/home-pop.png"
+    ></image>
+    <image
+      bindtap="__e"
+      class="close-btn data-v-0db393bc"
+      data-event-opts="{{[ [ 'tap',[ [ 'closed',['$event'] ] ] ] ]}}"
+      mode="widthFix"
+      src="http://image.fanglinxq.com/assets/icons/close.png"
+    ></image>
+    <view class="user-list-warp data-v-0db393bc">
+      <block wx:if="{{sex===1}}">
+        <view
+          class="{{['item-user-girl','data-v-0db393bc',(i+1)%4===0?'sideGril':'']}}"
+          wx:for="{{$root.l0}}"
+          wx:for-index="i"
+          wx:key="i"
+        >
+          <u-image
+            bind:__l="__l"
+            class="data-v-0db393bc"
+            height="100rpx"
+            mode="aspectFill"
+            shape="circle"
+            src="{{item.m0}}"
+            vueId="{{'3a9ab6bb-2-'+i+','+'3a9ab6bb-1'}}"
+            width="100rpx"
+          ></u-image>
+          <image
+            class="girl-tip data-v-0db393bc"
+            mode="widthFix"
+            src="http://image.fanglinxq.com/assets/icons/goddess.png"
+            wx:if="{{item[$orig].isRealAuth}}"
+          ></image>
+          <text class="u-name data-v-0db393bc">{{item[$orig].nickname}}</text>
+        </view>
+      </block>
+      <block wx:else>
+        <view
+          class="{{['item-user-man','data-v-0db393bc',(i+1)%4===0?'sideMan':'']}}"
+          wx:for="{{$root.l1}}"
+          wx:for-index="i"
+          wx:key="i"
+        >
+          <u-image
+            bind:__l="__l"
+            class="user-man data-v-0db393bc"
+            height="100rpx"
+            mode="aspectFill"
+            shape="circle"
+            src="{{item.m1}}"
+            vueId="{{'3a9ab6bb-3-'+i+','+'3a9ab6bb-1'}}"
+            width="100rpx"
+          ></u-image>
+          <image
+            class="boy-cover data-v-0db393bc"
+            mode="widthFix"
+            src="{{'http://image.fanglinxq.com/assets/icons/man-model-'+item[$orig].vipLevel+'.png?imageView2/1/w/'+138+'/h/'+140+'/q/75'}}"
+            wx:if="{{item[$orig].vipLevel>2}}"
+          ></image>
+          <text class="u-name data-v-0db393bc">{{item[$orig].nickname}}</text>
+        </view>
+      </block>
+    </view>
+    <view
+      bindtap="__e"
+      class="action data-v-0db393bc"
+      data-event-opts="{{[ [ 'tap',[ [ 'handleClick',['$event'] ] ] ] ]}}"
+      >一键打招呼</view
+    >
+  </view>
+</u-popup>

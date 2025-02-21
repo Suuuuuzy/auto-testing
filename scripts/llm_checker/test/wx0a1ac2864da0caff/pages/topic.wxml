@@ -1,0 +1,65 @@
+<view class="container _div data-v-fd6d4946">
+  <scroll-view
+    class="common-scroll data-v-fd6d4946"
+    enableBackToTop="{{true}}"
+    scrollY="{{true}}"
+    style="{{'top:'+navigationBarHeight+'px'+';'}}"
+  >
+    <view class="{{['topic-top','_div','data-v-fd6d4946',showMore?'more':'']}}">
+      <view class="topic-title _div data-v-fd6d4946">2024年新款</view>
+      <view class="topic-pic _div data-v-fd6d4946">
+        <image
+          class="pic _img data-v-fd6d4946"
+          mode="aspectFill"
+          src="http://cdn.impdigital.cn/patek/0408-inner.png"
+        ></image>
+      </view>
+      <view class="topic-divider _div data-v-fd6d4946"></view>
+    </view>
+    <view class="topic-list _div data-v-fd6d4946">
+      <view
+        class="topic-list-line _div data-v-fd6d4946"
+        wx:for="{{dataList}}"
+        wx:key="index"
+      >
+        <view
+          bindtap="__e"
+          class="topic-list-line-item _div data-v-fd6d4946"
+          data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+          data-event-params="{{itemInner:itemInner}}"
+          wx:for="{{item}}"
+          wx:for-index="indexInner"
+          wx:for-item="itemInner"
+          wx:key="indexInner"
+        >
+          <view class="topic-list-line-item-pic _div data-v-fd6d4946">
+            <image
+              class="pic _img data-v-fd6d4946"
+              lazyLoad="{{true}}"
+              mode="aspectFit"
+              src="{{itemInner.articleImages}}"
+            ></image>
+          </view>
+          <view class="topic-list-line-item-code _div data-v-fd6d4946"
+            >{{itemInner.reference}}</view
+          >
+          <view class="topic-list-line-item-detail _div data-v-fd6d4946"
+            >{{itemInner.caseMaterial}}</view
+          >
+          <view class="topic-list-line-item-title _div data-v-fd6d4946"
+            >{{itemInner.collection}}</view
+          >
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <pp-nav
+    back="{{true}}"
+    bind:__l="__l"
+    class="data-v-fd6d4946"
+    fixed="{{true}}"
+    logo="{{true}}"
+    placeholder="{{navigationBarHeightPlaceholder}}"
+    vueId="8aa58e80-1"
+  ></pp-nav>
+</view>

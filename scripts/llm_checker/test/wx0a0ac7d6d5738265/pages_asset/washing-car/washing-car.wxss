@@ -1,0 +1,90 @@
+.warp {
+  font-family: myfontB;
+  width: 750rpx;
+}
+.content {
+  margin-top: 50rpx;
+  width: 100%;
+}
+.content .washtime {
+  align-items: flex-start;
+  background: #fff;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  height: 236rpx;
+  justify-content: flex-start;
+  opacity: 1;
+  padding: 32rpx;
+}
+.content .washtime .timetxt {
+  color: #3e414d;
+  font-size: 34rpx;
+  font-weight: 500;
+  letter-spacing: 0rpx;
+  line-height: 47.6rpx;
+  text-align: left;
+}
+.content .washtime .time {
+  justify-content: flex-start;
+  margin-top: 20rpx;
+  width: 422rpx;
+}
+.content .washtime .time,
+.content .washtime .time .bg {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  height: 100rpx;
+  opacity: 1;
+}
+.content .washtime .time .bg {
+  background: linear-gradient(231.44deg, #bce8e7, #63dae0);
+  border-radius: 4rpx 0rpx, 0rpx, 4rpx;
+  color: #fffeed;
+  justify-content: center;
+  padding: 24rpx;
+  width: 102rpx;
+}
+.content .washtime .time .bg,
+.content .washtime .time .maohao {
+  font-size: 52rpx;
+  font-weight: 700;
+  letter-spacing: 0rpx;
+  line-height: 52rpx;
+}
+.content .washtime .time .maohao {
+  color: #06b9c0;
+  text-align: left;
+  vertical-align: top;
+}
+.content .autowashnotice {
+  align-items: flex-start;
+  background: #fff;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  height: 712rpx;
+  margin-top: 20rpx;
+  opacity: 1;
+  padding: 32rpx;
+}
+.content .autowashnotice .notice {
+  color: #3e414d;
+  font-size: 34rpx;
+  font-weight: 500;
+  letter-spacing: 0rpx;
+  line-height: 47.6rpx;
+  text-align: left;
+  vertical-align: top;
+}
+.content .autowashnotice .notice-item {
+  color: #8a8d99;
+  font-size: 28rpx;
+  font-weight: 400;
+  letter-spacing: 0rpx;
+  line-height: 42rpx;
+  margin: 20rpx 0 0 20rpx;
+  text-align: left;
+  vertical-align: top;
+}

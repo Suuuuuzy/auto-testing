@@ -1,0 +1,110 @@
+<view class="{{['_div','data-v-16028948','popType'+popType]}}">
+  <view class="_div data-v-16028948" wx:if="{{showTcDiscountFormula}}">
+    <view class="pdr4 hyPrice mb4r formula _div data-v-16028948"
+      >{{'¥ '+addCartBar.curStdPrice}}<label
+        class="priceName _span data-v-16028948"
+        >(原价)</label
+      >{{'- ¥ '+tcYouHui}}<label class="priceName _span data-v-16028948"
+        >(套餐优惠)</label
+      >{{'= ￥'+processedPrice.active.price}}<label
+        class="daoshouPrice _span data-v-16028948"
+        >到手价</label
+      >
+    </view>
+  </view>
+  <view
+    class="{{['flex','fw500','centerFlex','_div','data-v-16028948',popType==1?'f24':'',popType==2?'f32':'']}}"
+    wx:else
+  >
+    <view class="hyPrice mb4r pr _div data-v-16028948">
+      <view
+        class="tips flexCenter pa _div data-v-16028948"
+        wx:if="{{addCartBar.sideDishHasDiscount}}"
+      >
+        <text class="fcf f22 data-v-16028948">最终价格请参考购物车</text>
+      </view>
+      <block wx:if="{{priceLabelStyle==1}}">
+        <view class="f40 flexShrink0 _div data-v-16028948"
+          >{{'￥'+processedPrice.active.price}}</view
+        >
+        <view
+          class="dishPrice__tip vip _div data-v-16028948"
+          wx:if="{{processedPrice.active.priceType==2}}"
+        >
+          <label class="triangle _span data-v-16028948"></label
+          >{{''+processedPrice.active.priceName+''}}</view
+        >
+        <block wx:else>
+          <view
+            class="dishPrice__tip promotion _div data-v-16028948"
+            wx:if="{{processedPrice.active.priceType==3}}"
+          >
+            <label class="triangle _span data-v-16028948"></label
+            >{{''+processedPrice.active.priceName+''}}</view
+          >
+          <block wx:else>
+            <view
+              class="eqPrice f18 flex _div data-v-16028948"
+              wx:if="{{processedPrice.active.priceType=='EQ'&&addCartBar.equityCardItemData.discountType!='3'}}"
+            >
+              <view
+                class="box flexAlignCenter fcf _div data-v-16028948"
+                style="{{'background:'+addCartBar.themeColor+';'}}"
+              >
+                <label
+                  class="_span data-v-16028948"
+                  wx:if="{{addCartBar.equityCardItemData.discountType=='1'}}"
+                  >{{addCartBar.equityCardItemData.discountValue+'折'}}</label
+                >
+                <label
+                  class="_span data-v-16028948"
+                  wx:if="{{addCartBar.equityCardItemData.discountType=='2'}}"
+                  >一口价</label
+                >
+              </view>
+              <view
+                class="box flexAlignCenter right flex1 _div data-v-16028948"
+                style="{{'color:'+addCartBar.themeColor+';'+'background:'+'linear-gradient(270deg, '+addCartBar.themeColor+'40'+' 0%, '+addCartBar.themeColor+'1A'+' 100%)'+';'}}"
+              >
+                <view class="ellipsis1 _div data-v-16028948"
+                  >{{processedPrice.active.extraMsg.eqLimit}}</view
+                >
+              </view>
+            </view>
+          </block>
+        </block>
+      </block>
+      <view class="info-price-item _div data-v-16028948" wx:else>
+        <view class="price-item-left-style2 _div data-v-16028948">
+          <label class="left-money _span data-v-16028948">￥</label
+          >{{processedPrice.active.price}}</view
+        >
+        <view
+          class="price-item-right-style2 _div data-v-16028948"
+          wx:if="{{processedPrice.active.priceType==2||processedPrice.active.priceType==3}}"
+        >
+          <label class="right-style2 _span data-v-16028948"
+            >{{processedPrice.active.priceName}}</label
+          >
+        </view>
+        <view
+          class="price-item-right-style3 _div data-v-16028948"
+          wx:if="{{processedPrice.active.priceType=='EQ'&&addCartBar.equityCardItemData.discountType!='3'}}"
+        >
+          <view class="quanyi-icon _div data-v-16028948">
+            <view class="iconfont icon-quanyi _i data-v-16028948"></view>
+          </view>
+          <view class="ellipsis-1 ml6rpx mr12rpx _div data-v-16028948"
+            >{{''+processedPrice.active.extraMsg.eqLimit+''}}</view
+          >
+        </view>
+      </view>
+    </view>
+    <view
+      class="{{['textOver','pdl4','unused','mb4r','_div','data-v-16028948',popType==2?'unused-line':'']}}"
+      wx:for="{{processedPrice.inactive}}"
+      wx:key="index"
+      >{{'￥'+item.price+(item.priceName?'('+item.priceName+')':'')+''}}</view
+    >
+  </view>
+</view>

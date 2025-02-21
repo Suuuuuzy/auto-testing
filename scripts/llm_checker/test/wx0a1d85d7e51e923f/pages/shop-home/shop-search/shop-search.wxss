@@ -1,0 +1,16 @@
+@import "/pages/home/home.wxss";
+.lately-main {
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+.lately-main .chunk {
+  background: #f5f5f5;
+  border-radius: 8.5rpx;
+  color: #666;
+  display: inline-block;
+  font-size: 24rpx;
+  line-height: 20rpx;
+  margin-bottom: 26rpx;
+  margin-right: 16rpx;
+  padding: 20rpx 24rpx;
+}

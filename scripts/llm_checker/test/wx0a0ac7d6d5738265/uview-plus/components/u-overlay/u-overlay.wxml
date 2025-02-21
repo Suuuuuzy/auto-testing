@@ -1,0 +1,11 @@
+<u-transition
+  bind:__l="__l"
+  bindclick="{{a}}"
+  class="data-v-666e728b"
+  uI="666e728b-0"
+  uP="{{b}}"
+  uS="{{['d']}}"
+  wx:if="{{b}}"
+>
+  <slot></slot>
+</u-transition>

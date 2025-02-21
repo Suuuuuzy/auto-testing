@@ -1,0 +1,41 @@
+<view>
+  <scroll-view
+    bind:refresher-refresh="{{e}}"
+    bindscrolltolower="{{d}}"
+    lowerThreshold="{{100}}"
+    scrollY="true"
+    style="{{'max-height:'+c}}"
+  >
+    <view
+      bindtap="{{consume.h}}"
+      class="list"
+      wx:for="{{a}}"
+      wx:for-item="consume"
+      wx:key="i"
+    >
+      <view class="create-time" wx:if="{{consume.a}}">{{consume.b}}</view>
+      <view class="list-bot">
+        <view class="type-time">
+          <view class="type">{{consume.c}}</view>
+          <view class="time">{{consume.d}}</view>
+        </view>
+        <view class="consumeamn">
+          <text style="color: rgba(41, 43, 51, 1)" wx:if="{{consume.e}}"
+            >+{{consume.f}}元</text
+          >
+          <text style="color: rgba(232, 79, 79, 1)" wx:else
+            >{{consume.g}}元</text
+          >
+        </view>
+      </view>
+    </view>
+    <view>
+      <u-loadmore
+        bind:__l="__l"
+        uI="ea98f734-0"
+        uP="{{b}}"
+        wx:if="{{b}}"
+      ></u-loadmore>
+    </view>
+  </scroll-view>
+</view>

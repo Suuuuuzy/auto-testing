@@ -1,0 +1,84 @@
+<view
+  class="banner _div data-v-7115a9f4"
+  style="{{'background:'+'transparent'+';'}}"
+  wx:if="{{bannerInfo.openBanner&&(bannerInfo.bannerFile.length||bannerInfo.bannerAdScheme.length)}}"
+>
+  <view class="pr _div data-v-7115a9f4">
+    <view class="_div data-v-7115a9f4" wx:if="{{storeLayout!=5}}">
+      <view class="_div data-v-7115a9f4" wx:if="{{bannerInfo.bannerType==2}}">
+        <advert-components
+          advert="{{advert}}"
+          bind:__l="__l"
+          bind:adClickToPage="__e"
+          bind:dishAd="__e"
+          class="data-v-7115a9f4"
+          currentPageHasDish="{{true}}"
+          data-event-opts="{{[ [ '^adClickToPage',[ ['adClickToPage'] ] ],[ '^dishAd',[ ['dishAd'] ] ] ]}}"
+          overspreadX="{{true}}"
+          pageControlToPage="{{true}}"
+          vueId="029789f8-1"
+          wx:if="{{advert}}"
+        ></advert-components>
+      </view>
+      <image
+        alt
+        class="bannerImg _img data-v-7115a9f4"
+        src="{{bannerInfo.bannerFile[0]&&bannerInfo.bannerFile[0]['resUrl']}}"
+        wx:else
+      ></image>
+    </view>
+    <store-layout1
+      bannerInfo="{{bannerInfo}}"
+      bind:__l="__l"
+      class="data-v-7115a9f4"
+      context="{{context}}"
+      isDeliveryFee="{{isDeliveryFee}}"
+      ready="{{ready}}"
+      vueId="029789f8-2"
+      wx:if="{{storeLayout===1}}"
+    ></store-layout1>
+    <store-layout2
+      bannerInfo="{{bannerInfo}}"
+      bind:__l="__l"
+      class="data-v-7115a9f4"
+      context="{{context}}"
+      isDeliveryFee="{{isDeliveryFee}}"
+      ready="{{ready}}"
+      vueId="029789f8-3"
+      wx:if="{{storeLayout===2}}"
+    ></store-layout2>
+    <store-layout3
+      bannerInfo="{{bannerInfo}}"
+      bind:__l="__l"
+      class="data-v-7115a9f4 vue-ref"
+      context="{{context}}"
+      data-ref="storeLayout"
+      isDeliveryFee="{{isDeliveryFee}}"
+      ready="{{ready}}"
+      vueId="029789f8-4"
+      wx:if="{{storeLayout===3}}"
+    ></store-layout3>
+    <store-layout4
+      bannerInfo="{{bannerInfo}}"
+      bind:__l="__l"
+      class="data-v-7115a9f4 vue-ref"
+      context="{{context}}"
+      data-ref="storeLayout"
+      isDeliveryFee="{{isDeliveryFee}}"
+      ready="{{ready}}"
+      vueId="029789f8-5"
+      wx:if="{{storeLayout===4}}"
+    ></store-layout4>
+    <store-layout5
+      bind:__l="__l"
+      class="data-v-7115a9f4"
+      vueId="029789f8-6"
+      wx:if="{{storeLayout===5}}"
+    ></store-layout5>
+    <view
+      class="_div data-v-7115a9f4"
+      style="{{'height:'+placeHolderHeight+'rpx'+';'}}"
+    ></view>
+  </view>
+  <slot></slot>
+</view>

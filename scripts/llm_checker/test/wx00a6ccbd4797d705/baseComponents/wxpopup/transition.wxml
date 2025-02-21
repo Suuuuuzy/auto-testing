@@ -1,0 +1,10 @@
+<view
+  bindtap="__e"
+  bindtransitionend="__e"
+  class="{{['_div','wx-transition custom-class '+customClass+' '+classes]}}"
+  data-event-opts="{{[ [ 'tap',[ [ 'onClick',['$event'] ] ] ],[ 'transitionend',[ [ 'onTransitionEnd',['$event'] ] ] ] ]}}"
+  style="{{computedStyle}}"
+  wx:if="{{inited}}"
+>
+  <slot></slot>
+</view>

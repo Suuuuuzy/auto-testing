@@ -1,0 +1,81 @@
+.page {
+  height: 100%;
+}
+.placeholder {
+  height: 20rpx;
+}
+.noRate,
+.placeholder {
+  background-color: #f6f6f6;
+}
+.noRate {
+  height: 100%;
+  text-align: center;
+}
+.noRate-img {
+  margin-top: 130px;
+}
+.noRate-text1 {
+  color: #697785;
+  font-weight: 500;
+}
+.noRate-text2 {
+  color: #a6adb4;
+}
+.rateDetail {
+  background-color: #fff;
+  padding: 0 30rpx;
+}
+.totalRecords {
+  align-items: center;
+  border-bottom: 1px solid #e2e2e2;
+  border-radius: 2px;
+  display: -webkit-flex;
+  display: flex;
+  height: 46px;
+}
+.totalRecords-in {
+  background-color: #daefff;
+  color: #338aff;
+  font-size: 12px;
+  padding: 3px 7px;
+}
+.detail-card {
+  border-bottom: 1px solid #eaeaea;
+  margin: 10rpx;
+  padding: 25rpx 0;
+}
+.detail-in {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+}
+.text1 {
+  color: #333;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+.text2 {
+  line-height: 32rpx;
+}
+.text2,
+.text3 {
+  color: #999;
+  font-size: 24rpx;
+  margin-top: 15rpx;
+}
+.text3 {
+  word-wrap: normal;
+  white-space: pre-line;
+  word-break: break-all;
+}
+.score {
+  color: #ffab00;
+  font-size: 12px;
+}
+.buttonB {
+  bottom: 20rpx;
+  position: fixed;
+  width: 100%;
+}

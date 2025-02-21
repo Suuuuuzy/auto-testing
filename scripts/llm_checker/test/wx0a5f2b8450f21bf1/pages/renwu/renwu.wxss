@@ -1,0 +1,122 @@
+page {
+  background: #eee;
+}
+.ad {
+  border-radius: 12rpx;
+  margin: 5rpx 15rpx 0;
+  overflow: hidden;
+}
+.task-header-container {
+  border-radius: 6px;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  margin: 5rpx 0 0 15rpx;
+  padding: 12px;
+}
+.task-header-container .title {
+  color: #222;
+  font-size: 22px;
+  font-weight: 500;
+}
+.task-header-container .subtitle {
+  color: #47494b;
+  font-size: 12px;
+}
+.task-container .task {
+  background: #fff;
+  border-radius: 6px;
+  justify-content: space-between;
+  margin: 0 15rpx 10px;
+  padding: 12px;
+}
+.task-container .infoscontainer .info,
+.task-container .task {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+}
+.task-container .infoscontainer .info {
+  margin-bottom: 6px;
+}
+.task-container .infoscontainer .tag {
+  background-image: linear-gradient(135deg, #fb6c4e, #f94b45);
+}
+.task-container .infoscontainer .tag,
+.task-container .infoscontainer .tag1 {
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px 1px rgba(249, 75, 69, 0.2);
+  color: #fff;
+  font-size: 11px;
+  margin-right: 6px;
+  padding: 1px 4px;
+}
+.task-container .infoscontainer .tag1 {
+  background-image: linear-gradient(135deg, #32bbfb, #24e3ff);
+}
+.task-container .infoscontainer .title {
+  color: #222;
+  font-size: 15px;
+  font-weight: 500;
+}
+.task-container .infoscontainer .expebar {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+}
+.task-container .infoscontainer .expebar .exp {
+  background-color: #ddf1fd;
+  border: 2px solid #5baff7;
+  border-radius: 50px;
+  color: #5baff7;
+  font-size: 8px;
+  font-weight: 600;
+  margin-right: 4px;
+  padding: 0 2px;
+}
+.task-container .infoscontainer .expebar .value {
+  color: #717376;
+  font-size: 12px;
+}
+.task-container .button {
+  align-items: center;
+  background: linear-gradient(135deg, #ffbd00, #ffd000);
+  border: 0;
+  border-radius: 50px;
+  box-sizing: border-box;
+  color: #222;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0;
+  outline: none;
+  padding: 5px 14px;
+  white-space: nowrap;
+}
+.task-container .button.highlight {
+  background: linear-gradient(90deg, #4393fc, #4ac0fc);
+  color: #fff;
+}
+.task-container .button.done {
+  background: #f6f7f9;
+  color: #717376;
+}
+.task-container .button::after {
+  border: 0;
+}
+.task-container .button text {
+  line-height: 1.4em;
+}
+.task-container .taskItem {
+  border-bottom: 1rpx solid #fff;
+  padding-bottom: 15px;
+}
+.task-container .taskItem .mainP {
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom: 14px;
+}
+.task-container .taskItem .imgWrap {
+  margin-right: 20rpx;
+}

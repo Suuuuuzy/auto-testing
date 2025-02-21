@@ -1,0 +1,52 @@
+<navBar
+  back="{{false}}"
+  background="#fff"
+  bindback="handlerGobackClick"
+  bindhome="handlerGohomeClick"
+  home="{{true}}"
+  title="火瞳企业消费管理平台"
+></navBar>
+<view class="container">
+  <view class="main">
+    <image class="background" src="/assets/img/homeBg.png"></image>
+    <van-panel wx:for="{{mycardData}}" wx:key="id">
+      <view class="panel-header" slot="header">
+        <view class="header-info">
+          <view class="company-name">{{item.companyName}}</view>
+          <view class="company-sub">NO.{{item.cardId}}</view>
+        </view>
+        <image
+          class="status"
+          src="/assets/img/state{{item.cardState}}.png"
+        ></image>
+      </view>
+      <view class="money">
+        <view class="money-info">可使用金额（元）</view>
+        <view class="money-count">{{item.totalFee}}</view>
+        <image
+          bind:tap="toQrcode"
+          class="qrcode"
+          data-item="{{item}}"
+          src="/assets/img/qrcode.png"
+          wx:if="{{item.qrcodeFlag==='0'}}"
+        ></image>
+      </view>
+      <view class="footer" slot="footer">
+        <view bindtap="goDetails" class="footer-button" data-id="{{item.id}}">
+          <image class="footer-icon" src="/assets/img/detailBtn.png"></image
+          >账单</view
+        >
+        <view class="seperate"></view>
+        <view bindtap="goRecharge" class="footer-button" data-id="{{item.id}}">
+          <image class="footer-icon" src="/assets/img/rechargeBtn.png"></image
+          >充值</view
+        >
+        <view class="seperate"></view>
+        <view bindtap="goHongbao" class="footer-button" data-id="{{item.id}}">
+          <image class="footer-icon" src="/assets/img/hongbaoBtn.png"></image
+          >红包明细</view
+        >
+      </view>
+    </van-panel>
+  </view>
+</view>

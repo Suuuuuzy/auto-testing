@@ -1,0 +1,33 @@
+<view class="u-loadmore data-v-2cfb9006" style="{{l+';'+m}}">
+  <u-line
+    bind:__l="__l"
+    class="data-v-2cfb9006"
+    uI="2cfb9006-0"
+    uP="{{b}}"
+    wx:if="{{a}}"
+  ></u-line>
+  <view class="{{[i,'u-loadmore__content','data-v-2cfb9006']}}">
+    <view class="u-loadmore__content__icon-wrap data-v-2cfb9006" wx:if="{{c}}">
+      <u-loading-icon
+        bind:__l="__l"
+        class="data-v-2cfb9006"
+        uI="2cfb9006-1"
+        uP="{{d}}"
+        wx:if="{{d}}"
+      ></u-loading-icon>
+    </view>
+    <text
+      bindtap="{{h}}"
+      class="{{['u-line-1','data-v-2cfb9006',g]}}"
+      style="{{f}}"
+      >{{e}}</text
+    >
+  </view>
+  <u-line
+    bind:__l="__l"
+    class="data-v-2cfb9006"
+    uI="2cfb9006-2"
+    uP="{{k}}"
+    wx:if="{{j}}"
+  ></u-line>
+</view>

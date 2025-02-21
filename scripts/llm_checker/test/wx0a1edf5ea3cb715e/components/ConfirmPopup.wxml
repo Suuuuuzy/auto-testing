@@ -1,0 +1,40 @@
+<u-popup
+  bind:__l="__l"
+  bind:close="__e"
+  bind:input="__e"
+  borderRadius="30"
+  class="data-v-c81836c4"
+  closeIconColor="#fff"
+  closeable="{{true}}"
+  data-event-opts="{{[ [ '^close',[ ['close'] ] ],[ '^input',[ [ '__set_model',[ '','visible','$event',[] ] ] ] ] ]}}"
+  maskCloseAble="{{false}}"
+  mode="center"
+  value="{{visible}}"
+  vueId="54131b3f-1"
+  vueSlots="{{['default']}}"
+>
+  <view class="home-popup-container data-v-c81836c4">
+    <view class="pop-top data-v-c81836c4">{{title}}</view>
+    <view class="u-text data-v-c81836c4">
+      <text class="data-v-c81836c4" wx:if="{{text}}">{{text}}</text>
+      <slot></slot>
+    </view>
+    <view class="pop-actions data-v-c81836c4">
+      <view
+        bindtap="__e"
+        class="action data-v-c81836c4"
+        data-event-opts="{{[ [ 'tap',[ [ 'onClickCancel',['$event'] ] ] ] ]}}"
+        >{{cancelText}}</view
+      >
+      <view
+        bindtap="__e"
+        class="action data-v-c81836c4"
+        data-event-opts="{{[ [ 'tap',[ [ 'onClickConfirm',['$event'] ] ] ] ]}}"
+        >{{confirmText}}</view
+      >
+    </view>
+    <view class="pop-tips data-v-c81836c4" wx:if="{{tipsText}}"
+      >{{''+tipsText+''}}</view
+    >
+  </view>
+</u-popup>

@@ -1,0 +1,65 @@
+<view class="warp data-v-b4144dd3">
+  <zym-navigation
+    bind:__l="__l"
+    class="data-v-b4144dd3"
+    uI="b4144dd3-0"
+    uP="{{a}}"
+    wx:if="{{a}}"
+  ></zym-navigation>
+  <view class="recharge-vip data-v-b4144dd3">
+    <view class="consume-list data-v-b4144dd3">
+      <zym-paging
+        bind:__l="__l"
+        class="data-v-b4144dd3"
+        uI="b4144dd3-1"
+        uP="{{c}}"
+        uS="{{['item']}}"
+        wx:if="{{c}}"
+      >
+        <view slot="item">
+          <view
+            bindtap="{{item.k}}"
+            class="cardlist-item data-v-b4144dd3"
+            wx:for="{{b}}"
+            wx:key="j"
+          >
+            <view class="ficon data-v-b4144dd3"> 队 </view>
+            <view class="cardName data-v-b4144dd3">
+              <view class="c_name data-v-b4144dd3">
+                <view class="data-v-b4144dd3">
+                  <text class="phone cname data-v-b4144dd3" wx:if="{{item.a}}"
+                    >{{item.b}}</text
+                  >
+                </view>
+                <view class="plate data-v-b4144dd3" wx:if="{{item.c}}">
+                  <text class="data-v-b4144dd3">{{item.d}}</text>
+                </view>
+              </view>
+              <view class="c_name data-v-b4144dd3">
+                <view class="c_phone data-v-b4144dd3" wx:if="{{item.e}}">
+                  <image
+                    class="data-v-b4144dd3"
+                    mode=""
+                    src="{{item.f}}"
+                    style="
+                      width: 28rpx;
+                      height: 28rpx;
+                      opacity: 0.8;
+                      margin-right: 8rpx;
+                    "
+                  ></image>
+                  <text class="phone data-v-b4144dd3">{{item.g}}</text>
+                </view>
+                <view class="data-v-b4144dd3">
+                  <text class="phone data-v-b4144dd3" wx:if="{{item.h}}"
+                    >管理员:{{item.i}}</text
+                  >
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </zym-paging>
+    </view>
+  </view>
+</view>

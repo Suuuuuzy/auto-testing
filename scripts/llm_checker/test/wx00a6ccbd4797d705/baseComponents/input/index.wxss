@@ -1,0 +1,46 @@
+.wuxiang-input_wrapper {
+  align-items: center;
+  background-color: #fff;
+  box-sizing: border-box;
+  color: #333;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 28rpx;
+  line-height: 48rpx;
+  padding: 20rpx 30rpx;
+  position: relative;
+  width: 100%;
+}
+.wuxiang-input_wrapper .wuxiang-input_title,
+.wuxiang-input_wrapper .wuxiang-input_value {
+  flex: 1;
+}
+.wuxiang-input_wrapper .wuxiang-input_value {
+  overflow: hidden;
+  text-align: right;
+  vertical-align: middle;
+}
+.wuxiang-input_wrapper .wuxiang-input_body {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+}
+.wuxiang-input_wrapper .wuxiang-input_input {
+  background-color: initial;
+  border: 0;
+  box-sizing: border-box;
+  display: block;
+  height: 48rpx;
+  line-height: inherit;
+  margin: 0;
+  min-height: 48rpx;
+  padding: 0;
+  resize: none;
+  text-align: left;
+  width: 100%;
+}
+.wuxiang-input_wrapper .wuxiang-input_lefticon,
+.wuxiang-input_wrapper .wuxiang-input_righticon {
+  text-align: center;
+  width: 60rpx;
+}

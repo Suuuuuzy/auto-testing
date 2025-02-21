@@ -1,0 +1,153 @@
+._a {
+  color: #366092;
+  display: inline;
+  padding: 1.5px 0;
+  word-break: break-all;
+}
+._hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+._img {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+}
+.interlayer {
+  align-content: inherit;
+  align-items: inherit;
+  display: inherit;
+  flex-direction: inherit;
+  flex-wrap: inherit;
+  justify-content: inherit;
+  white-space: inherit;
+  width: 100%;
+}
+._b,
+._strong {
+  font-weight: 700;
+}
+._blockquote,
+._div,
+._li,
+._ol,
+._p,
+._ul {
+  display: block;
+}
+._code {
+  font-family: monospace;
+}
+._del {
+  text-decoration: line-through;
+}
+._em,
+._i {
+  font-style: italic;
+}
+._h1 {
+  font-size: 2em;
+}
+._h2 {
+  font-size: 1.5em;
+}
+._h3 {
+  font-size: 1.17em;
+}
+._h5 {
+  font-size: 0.83em;
+}
+._h6 {
+  font-size: 0.67em;
+}
+._h1,
+._h2,
+._h3,
+._h4,
+._h5,
+._h6 {
+  display: block;
+  font-weight: 700;
+}
+._image {
+  display: block;
+  height: 360px;
+  margin-top: -360px;
+  opacity: 0;
+  width: 100%;
+}
+._ins {
+  text-decoration: underline;
+}
+._li {
+  flex: 1;
+  width: 0;
+}
+._ol-bef {
+  margin-right: 5px;
+  text-align: right;
+  width: 36px;
+}
+._ul-bef {
+  display: block;
+  line-height: normal;
+  margin: 0 12px 0 23px;
+}
+._ol-bef,
+._ul-bef {
+  flex: none;
+  user-select: none;
+}
+._ul-p1 {
+  height: 0.3em;
+  line-height: 0.3em;
+  overflow: hidden;
+  width: 0.3em;
+}
+._ul-p1,
+._ul-p2 {
+  display: inline-block;
+}
+._ul-p2 {
+  border: 0.05em solid #000;
+  border-radius: 50%;
+  height: 0.23em;
+  width: 0.23em;
+}
+._q::after,
+._q::before {
+  content: '"';
+}
+._sub {
+  vertical-align: sub;
+}
+._sub,
+._sup {
+  font-size: smaller;
+}
+._sup {
+  vertical-align: super;
+}
+.__bdi,
+.__bdo,
+.__rt,
+.__ruby,
+._video {
+  display: inline-block;
+}
+._video {
+  background-color: #000;
+  height: 225px;
+  position: relative;
+  width: 300px;
+}
+._video::after {
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+  border-width: 15px 0 15px 30px;
+  content: "";
+  left: 50%;
+  margin: -15px 0 0-15px;
+  position: absolute;
+  top: 50%;
+}

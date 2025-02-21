@@ -1,0 +1,47 @@
+<view
+  class="class {{prefix}}-class {{classPrefix}} {{classPrefix+'--'+layout}}"
+  style="{{_._style( [style,customStyle,!text?'width: '+_.addUnit(size)+'; height: '+_.addUnit(size):'',show?'':'display: none',inheritColor?'color: inherit':''] )}}"
+>
+  <view
+    ariaLabel="{{ariaLabel||text||'加载中'}}"
+    ariaRole="{{ariaRole||'img'}}"
+    class="{{prefix}}-class-indicator {{classPrefix}}__spinner {{classPrefix}}__spinner--{{theme}} {{reverse?'reverse':''}}"
+    style="width: {{_.addUnit(size)}}; height: {{_.addUnit(size)}}; {{inheritColor?'color: inherit;':''}} {{indicator?'':'display: none;'}} {{duration?'animation-duration: '+duration/1000+'s;':''}} animation-play-state: {{pause?'paused':'running'}};"
+    wx:if="{{indicator}}"
+  >
+    <view
+      class="{{classPrefix}}__dot"
+      wx:if="{{theme==='spinner'}}"
+      wx:for="{{12}}"
+      wx:key="index"
+    ></view>
+    <view
+      class="{{classPrefix}}__circular"
+      wx:if="{{theme==='circular'}}"
+    ></view>
+    <block wx:if="{{theme==='dots'}}">
+      <view
+        class="{{classPrefix}}__dot"
+        style="{{duration?'animation-duration: '+duration/1000+'s; animation-delay:'+0+'s;':''}} animation-play-state: {{pause?'paused':'running'}};"
+      ></view>
+      <view
+        class="{{classPrefix}}__dot"
+        style="{{duration?'animation-duration: '+duration/1000+'s; animation-delay:'+duration*1/3000+'s;':''}} animation-play-state: {{pause?'paused':'running'}};"
+      ></view>
+      <view
+        class="{{classPrefix}}__dot"
+        style="{{duration?'animation-duration: '+duration/1000+'s; animation-delay:'+duration*2/3000+'s;':''}} animation-play-state: {{pause?'paused':'running'}};"
+      ></view>
+    </block>
+    <slot name="indicator"></slot>
+  </view>
+  <view
+    ariaHidden="{{indicator}}"
+    ariaLabel="{{ariaLabel||text}}"
+    class="{{_.cls( classPrefix+'__text',[layout] )}} {{prefix}}-class-text"
+  >
+    <block wx:if="{{text}}">{{text}}</block>
+    <slot name="text"></slot>
+    <slot></slot>
+  </view>
+</view>

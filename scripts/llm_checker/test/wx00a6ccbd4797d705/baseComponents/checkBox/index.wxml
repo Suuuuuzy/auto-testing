@@ -1,0 +1,11 @@
+<view
+  catchtap="__e"
+  class="{{['colorCheck','_div',disable?'disClick':'']}}"
+  data-event-opts="{{[ [ 'tap',[ ['checkChange'] ] ] ]}}"
+>
+  <label
+    class="{{['_span',checkFlag=='1'?'icon-yuanxingxuanzhongfill':'icon-yuanxingweixuanzhong','iconfont']}}"
+    style="{{'color:'+(checkFlag=='1'?color:'#ccc')+';'+'font-size:'+(size?size+'rpx':'50rpx')+';'}}"
+  ></label>
+  <slot></slot>
+</view>

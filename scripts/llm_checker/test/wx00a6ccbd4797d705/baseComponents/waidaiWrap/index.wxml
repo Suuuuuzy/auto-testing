@@ -1,0 +1,258 @@
+<view class="_div data-v-c8580df0">
+  <view class="_div data-v-c8580df0" style="text-align: right">
+    <view
+      class="_div data-v-c8580df0"
+      style="padding-right: 20rpx; display: inline-flex"
+      wx:if="{{mode!='yd'&&initobj.takeout.enable&&initobj.takeout.takeoutType=='1'}}"
+    >
+      <view
+        class="container _div data-v-c8580df0"
+        style="{{'border-color:'+themeColor+';'}}"
+      >
+        <view
+          bindtap="__e"
+          class="{{['tab','_div','data-v-c8580df0',waiDaiFlg==0?'selected':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'changeWaiDaiFlg',[0] ] ] ] ]}}"
+          style="{{'background:'+(waiDaiFlg==0?themeColor:'#fff')+';'}}"
+          >堂食</view
+        >
+        <view
+          bindtap="__e"
+          class="{{['tab','_div','data-v-c8580df0',waiDaiFlg==1?'selected':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'changeWaiDaiFlg',[1] ] ] ] ]}}"
+          style="{{'background:'+(waiDaiFlg==1?themeColor:'#fff')+';'}}"
+          >外带</view
+        >
+      </view>
+    </view>
+  </view>
+  <view class="_div data-v-c8580df0" wx:if="{{initobj.takeout.enable}}">
+    <view class="_div data-v-c8580df0" wx:if="{{initobj.openBanner}}">
+      <view
+        class="sec-takeout-style _div data-v-c8580df0"
+        wx:if="{{mode!='yd'&&initobj.takeout.takeoutType=='2'&&initobj.storeLayout=='6'}}"
+      >
+        <view class="location _div data-v-c8580df0">
+          <view
+            bindtap="__e"
+            class="_div data-v-c8580df0"
+            data-event-opts="{{[ [ 'tap',[ [ 'changeWaiDaiFlg',[0] ] ] ] ]}}"
+            style="
+              display: inline-block;
+              vertical-align: -webkit-baseline-middle;
+            "
+          >
+            <view
+              class="iconfont icon-yuanxingxuanzhongfill _i data-v-c8580df0"
+              style="{{'color:'+(waiDaiFlg==0?themeColor:'#99999999')+';'}}"
+            ></view>
+          </view>
+          <image
+            bindtap="__e"
+            class="_img data-v-c8580df0"
+            data-event-opts="{{[ [ 'tap',[ [ 'changeWaiDaiFlg',[0] ] ] ] ]}}"
+            src="{{initobj.takeout.tangshiedUrl}}"
+            wx:if="{{initobj.takeout.tangshiedUrl&&waiDaiFlg==0}}"
+          ></image>
+          <image
+            bindtap="__e"
+            class="_img data-v-c8580df0"
+            data-event-opts="{{[ [ 'tap',[ [ 'changeWaiDaiFlg',[0] ] ] ] ]}}"
+            src="{{initobj.takeout.tangshiUrl}}"
+            wx:if="{{initobj.takeout.tangshiUrl&&waiDaiFlg==1}}"
+          ></image>
+          <view
+            bindtap="__e"
+            class="clearicon data-v-c8580df0"
+            data-event-opts="{{[ [ 'tap',[ [ 'changeWaiDaiFlg',[0] ] ] ] ]}}"
+            wx:if="{{!initobj.takeout.tangshiedUrl&&waiDaiFlg==0}}"
+          >
+            <label
+              class="iconfont icon-tangshi iconWaidaiTangshi _span data-v-c8580df0"
+              style="{{'color:'+(waiDaiFlg==0?themeColor:'#99999999')+';'}}"
+            ></label>
+          </view>
+          <view
+            bindtap="__e"
+            class="clearicon data-v-c8580df0"
+            data-event-opts="{{[ [ 'tap',[ [ 'changeWaiDaiFlg',[0] ] ] ] ]}}"
+            wx:if="{{!initobj.takeout.tangshiUrl&&waiDaiFlg==1}}"
+          >
+            <label
+              class="iconfont icon-tangshi iconWaidaiTangshi _span data-v-c8580df0"
+              style="{{'color:'+(waiDaiFlg==0?themeColor:'#99999999')+';'}}"
+            ></label>
+          </view>
+        </view>
+        <view class="takeout _div data-v-c8580df0">
+          <view
+            class="_div data-v-c8580df0"
+            style="
+              display: inline-block;
+              vertical-align: -webkit-baseline-middle;
+            "
+          >
+            <view
+              bindtap="__e"
+              class="iconfont icon-yuanxingxuanzhongfill _i data-v-c8580df0"
+              data-event-opts="{{[ [ 'tap',[ [ 'changeWaiDaiFlg',[1] ] ] ] ]}}"
+              style="{{'color:'+(waiDaiFlg==1?themeColor:'#99999999')+';'}}"
+            ></view>
+          </view>
+          <image
+            bindtap="__e"
+            class="_img data-v-c8580df0"
+            data-event-opts="{{[ [ 'tap',[ [ 'changeWaiDaiFlg',[1] ] ] ] ]}}"
+            src="{{initobj.takeout.waidaiedUrl}}"
+            wx:if="{{initobj.takeout.waidaiedUrl&&waiDaiFlg==1}}"
+          ></image>
+          <image
+            bindtap="__e"
+            class="_img data-v-c8580df0"
+            data-event-opts="{{[ [ 'tap',[ [ 'changeWaiDaiFlg',[1] ] ] ] ]}}"
+            src="{{initobj.takeout.waidaiUrl}}"
+            wx:if="{{initobj.takeout.waidaiUrl&&waiDaiFlg==0}}"
+          ></image>
+          <view
+            bindtap="__e"
+            class="clearicon data-v-c8580df0"
+            data-event-opts="{{[ [ 'tap',[ [ 'changeWaiDaiFlg',[1] ] ] ] ]}}"
+            wx:if="{{!initobj.takeout.waidaiedUrl&&waiDaiFlg==1}}"
+          >
+            <label
+              class="iconfont icon-waidai iconWaidaiTangshi _span data-v-c8580df0"
+              style="{{'color:'+(waiDaiFlg==1?themeColor:'#99999999')+';'}}"
+            ></label>
+          </view>
+          <view
+            bindtap="__e"
+            class="clearicon data-v-c8580df0"
+            data-event-opts="{{[ [ 'tap',[ [ 'changeWaiDaiFlg',[1] ] ] ] ]}}"
+            wx:if="{{!initobj.takeout.waidaiUrl&&waiDaiFlg==0}}"
+          >
+            <label
+              class="iconfont icon-waidai iconWaidaiTangshi _span data-v-c8580df0"
+              style="{{'color:'+(waiDaiFlg==1?themeColor:'#99999999')+';'}}"
+            ></label>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="_div data-v-c8580df0" wx:if="{{initobj.takeout.enable}}">
+    <view
+      class="_div data-v-c8580df0"
+      wx:if="{{initobj.openBanner&&initobj.storeLayout!='6'||!initobj.openBanner}}"
+    >
+      <view
+        class="sec-takeout-style sec-tc _div data-v-c8580df0"
+        wx:if="{{mode!='yd'&&initobj.takeout.takeoutType=='2'}}"
+      >
+        <view class="location _div data-v-c8580df0">
+          <view
+            bindtap="__e"
+            class="_div data-v-c8580df0"
+            data-event-opts="{{[ [ 'tap',[ [ 'changeWaiDaiFlg',[0] ] ] ] ]}}"
+            style="
+              display: inline-block;
+              vertical-align: -webkit-baseline-middle;
+            "
+          >
+            <view
+              class="iconfont icon-yuanxingxuanzhongfill _i data-v-c8580df0"
+              style="{{'color:'+(waiDaiFlg==0?themeColor:'#99999999')+';'}}"
+            ></view>
+          </view>
+          <image
+            bindtap="__e"
+            class="_img data-v-c8580df0"
+            data-event-opts="{{[ [ 'tap',[ [ 'changeWaiDaiFlg',[0] ] ] ] ]}}"
+            src="{{initobj.takeout.tangshiedUrl}}"
+            wx:if="{{initobj.takeout.tangshiedUrl&&waiDaiFlg==0}}"
+          ></image>
+          <image
+            bindtap="__e"
+            class="_img data-v-c8580df0"
+            data-event-opts="{{[ [ 'tap',[ [ 'changeWaiDaiFlg',[0] ] ] ] ]}}"
+            src="{{initobj.takeout.tangshiUrl}}"
+            wx:if="{{initobj.takeout.tangshiUrl&&waiDaiFlg==1}}"
+          ></image>
+          <view
+            bindtap="__e"
+            class="clearicon data-v-c8580df0"
+            data-event-opts="{{[ [ 'tap',[ [ 'changeWaiDaiFlg',[0] ] ] ] ]}}"
+            wx:if="{{!initobj.takeout.tangshiUrl&&waiDaiFlg==1}}"
+          >
+            <label
+              class="iconfont icon-tangshi iconWaidaiTangshiLogo _span data-v-c8580df0"
+              style="{{'color:'+(waiDaiFlg==0?themeColor:'#99999999')+';'}}"
+            ></label>
+          </view>
+          <view
+            bindtap="__e"
+            class="clearicon data-v-c8580df0"
+            data-event-opts="{{[ [ 'tap',[ [ 'changeWaiDaiFlg',[0] ] ] ] ]}}"
+            wx:if="{{!initobj.takeout.tangshiedUrl&&waiDaiFlg==0}}"
+          >
+            <label
+              class="iconfont icon-tangshi iconWaidaiTangshiLogo _span data-v-c8580df0"
+              style="{{'color:'+(waiDaiFlg==0?themeColor:'#99999999')+';'}}"
+            ></label>
+          </view>
+        </view>
+        <view class="takeout _div data-v-c8580df0">
+          <view
+            class="_div data-v-c8580df0"
+            style="
+              display: inline-block;
+              vertical-align: -webkit-baseline-middle;
+            "
+          >
+            <view
+              bindtap="__e"
+              class="iconfont icon-yuanxingxuanzhongfill _i data-v-c8580df0"
+              data-event-opts="{{[ [ 'tap',[ [ 'changeWaiDaiFlg',[1] ] ] ] ]}}"
+              style="{{'color:'+(waiDaiFlg==1?themeColor:'#99999999')+';'}}"
+            ></view>
+          </view>
+          <image
+            bindtap="__e"
+            class="_img data-v-c8580df0"
+            data-event-opts="{{[ [ 'tap',[ [ 'changeWaiDaiFlg',[1] ] ] ] ]}}"
+            src="{{initobj.takeout.waidaiUrl}}"
+            wx:if="{{initobj.takeout.waidaiUrl&&waiDaiFlg==0}}"
+          ></image>
+          <image
+            bindtap="__e"
+            class="_img data-v-c8580df0"
+            data-event-opts="{{[ [ 'tap',[ [ 'changeWaiDaiFlg',[1] ] ] ] ]}}"
+            src="{{initobj.takeout.waidaiedUrl}}"
+            wx:if="{{initobj.takeout.waidaiedUrl&&waiDaiFlg==1}}"
+          ></image>
+          <view
+            bindtap="__e"
+            class="clearicon data-v-c8580df0"
+            data-event-opts="{{[ [ 'tap',[ [ 'changeWaiDaiFlg',[1] ] ] ] ]}}"
+            wx:if="{{!initobj.takeout.waidaiedUrl&&waiDaiFlg==1}}"
+          >
+            <label
+              class="iconfont icon-waidai iconWaidaiTangshi _span data-v-c8580df0"
+              style="{{'color:'+(waiDaiFlg==1?themeColor:'#99999999')+';'}}"
+            ></label>
+          </view>
+          <view
+            bindtap="__e"
+            class="clearicon data-v-c8580df0"
+            data-event-opts="{{[ [ 'tap',[ [ 'changeWaiDaiFlg',[1] ] ] ] ]}}"
+            wx:if="{{!initobj.takeout.waidaiUrl&&waiDaiFlg==0}}"
+          >
+            <label
+              class="iconfont icon-waidai iconWaidaiTangshi _span data-v-c8580df0"
+              style="{{'color:'+(waiDaiFlg==1?themeColor:'#99999999')+';'}}"
+            ></label>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

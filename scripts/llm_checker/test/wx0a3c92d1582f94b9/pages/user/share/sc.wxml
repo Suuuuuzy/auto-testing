@@ -1,0 +1,26 @@
+<view class="msg-share"
+  >注意：邀请用户必须是首次打开使用此小程序，曾经使用过均不记录为有效用户。</view
+>
+<view class="img-box">
+  <image class="img" mode="widthFix" src="{{code}}"></image>
+  <view bind:tap="onCopy" class="msg-box">
+    <view class="msg">
+      <text>{{appid}}</text>
+      <view>
+        <text>/pages/watermark/watermark?parent_id={{parent_id}}</text>
+      </view>
+    </view>
+    <view class="m">点击文字复制</view>
+  </view>
+</view>
+<view class="btns-box">
+  <view class="t">分享到</view>
+  <view class="btn-box">
+    <button openType="share">
+      <image mode="widthFix" src="/images/icon-wx.png"></image>微信好友
+    </button>
+    <button bind:tap="onSaveImg">
+      <image mode="widthFix" src="/images/icon-wj.png"></image>保存图片
+    </button>
+  </view>
+</view>

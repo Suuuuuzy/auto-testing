@@ -1,0 +1,51 @@
+<view class="logWrap _div" wx:if="{{debug}}">
+    <view bindtap="__e" class="_div" data-event-opts="{{[ [ 'tap',[ [ 'showlogContent',[true] ] ] ] ]}}" hidden="{{!!show}}">
+        <label class="iconfont icon-saomiao logsaoma _span"></label>
+    </view>
+    <view class="logContainer _div" hidden="{{!show}}">
+        <view class="logOpration _div">
+            <view class="_p" style="color:red;">{{'打包模板:'+proTempalte}}</view>
+            <view class="_p" style="color:red;">{{'程序打包时间: '+publishTime}}</view>
+            <view class="_p" style="color:red;">{{'灰度版本: '+headerVersion}}</view>
+            <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'showlogContent',[false] ] ] ] ]}}" size="mini">缩小</button>
+            <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'showTotalLogs',['$event'] ] ] ] ]}}" size="mini">查看接口日志</button>
+            <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'openOrgDebug',['$event'] ] ] ] ]}}" size="mini">开启原生调试</button>
+            <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'clearStoreData',['$event'] ] ] ] ]}}" size="mini">清理本地缓存数据</button>
+            <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'getConfig2',['$event'] ] ] ] ]}}" size="mini">微信小程序读取cofig</button>
+            <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'getPrivacySetting',['$event'] ] ] ] ]}}" size="mini">查看微信协议是否需要授权</button>
+            <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'getStoreData',['$event'] ] ] ] ]}}" size="mini">查看本地存储数据</button>
+            <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'getRlog',['$event'] ] ] ] ]}}" size="mini">运行时日志</button>
+            <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'showStore',['$event'] ] ] ] ]}}" size="mini">命名空间缓存</button>
+            <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'closeDebug',['$event'] ] ] ] ]}}" size="mini">关闭调试</button>
+            <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'changeToken',['$event'] ] ] ] ]}}" size="mini">修改token</button>
+            <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'changeTokenTime',['$event'] ] ] ] ]}}" size="mini">修改token过期时间(关闭小程序重新进入生效)</button>
+            <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'sendLog',['$event'] ] ] ] ]}}" size="mini">发送日志</button>
+            <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'showPackage',['$event'] ] ] ] ]}}" size="mini">打包设置项</button>
+        </view>
+        <view class="_div">
+            <view class="_p">模拟进入业务</view>
+            <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','mcid','$event',[] ] ] ] ] ]}}" placeholder="门店" value="{{mcid}}"></input>
+            <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','tableno','$event',[] ] ] ] ] ]}}" placeholder="桌号" value="{{tableno}}"></input>
+            <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'entryModel',[1] ] ] ] ]}}" size="mini">进入点餐</button>
+            <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'entryModel',[2] ] ] ] ]}}" size="mini">进入外卖</button>
+            <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'entryModel',[3] ] ] ] ]}}" size="mini">进入自提</button>
+        </view>
+        <view class="_div">
+            <view class="_p">网络字体模拟</view>
+            <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'downloadFont',[66331] ] ] ] ]}}" size="mini">元古</button>
+        </view>
+        <view class="_div">
+            <view class="_p">网络字体模拟</view>
+            <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'downloadFont',[114174] ] ] ] ]}}" size="mini">瑭所</button>
+        </view>
+        <view class="localKeys _div">
+            <view class="_div" wx:for="{{localKeys}}" wx:key="index">
+                <label class="{{['_span',index==localkeyIndex?'activeLog':'']}}">{{item}}</label>
+                <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'getLocalData',['$0',index],[ [ ['localKeys','',index] ] ] ] ] ] ]}}" size="mini">获取</button>
+            </view>
+        </view>
+        <view class="logValue _div">
+            <textarea bindinput="__e" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','logValue','$event',[] ] ] ] ] ]}}" hidden="{{!logValue}}" maxlength="-1" style="width:95%;height:300px;overflow:auto;" value="{{logValue}}"></textarea>
+        </view>
+    </view>
+</view>

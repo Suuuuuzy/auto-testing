@@ -1,0 +1,90 @@
+<view class="pr h100p _div data-v-5e6b4db2">
+  <view class="cookWrap tc h100p flexColumn _div data-v-5e6b4db2">
+    <view
+      bindtap="__e"
+      class="imgBox pr _div data-v-5e6b4db2"
+      data-event-opts="{{[ [ 'tap',[ [ 'changeCook',['$event'] ] ] ] ]}}"
+      style="{{'border-color:'+(cookNum>0?themeColor:'transparent')+';'}}"
+    >
+      <image
+        class="image pa data-v-5e6b4db2"
+        mode="aspectFill"
+        src="{{cookData.taFileName}}"
+      ></image>
+      <view
+        class="guQingTip pa tc fcf f22 _div data-v-5e6b4db2"
+        wx:if="{{cookData.guqingFlg==1}}"
+        >{{''+guQingText+''}}</view
+      >
+      <view class="imgSelBorder pa _div data-v-5e6b4db2"></view>
+    </view>
+    <view
+      class="content flexColumn flex1 _div data-v-5e6b4db2"
+      style="{{'border-color:'+(cookNum>0?themeColor:'transparent')+';'}}"
+    >
+      <view class="ellipsis2 fc3 f28 cookName _div data-v-5e6b4db2"
+        >{{cookData.name}}</view
+      >
+      <view
+        class="addPrice fc3 f22 flexCenter _div data-v-5e6b4db2"
+        wx:if="{{cookData.addPr>0}}"
+      >
+        <view class="_div data-v-5e6b4db2">{{'+'+cookData.addPr+'元'}}</view>
+        <view
+          class="ml10r _div data-v-5e6b4db2"
+          wx:if="{{isVipDisScale<1||isNextVipDisScale<1}}"
+        >
+          <label
+            class="iconfont icon-hui f24 _span data-v-5e6b4db2"
+            style="{{'color:'+themeColor+';'}}"
+          ></label>
+          <label class="_span data-v-5e6b4db2" wx:if="{{isVipDisScale<1}}"
+            >{{'+'+$root.m0+'元'}}</label
+          >
+          <label class="_span data-v-5e6b4db2" wx:if="{{isNextVipDisScale<1}}"
+            >{{'+'+$root.m1+'元'}}</label
+          >
+        </view>
+      </view>
+      <view
+        class="flexCenter _div data-v-5e6b4db2"
+        style="margin-top: auto"
+        wx:if="{{cookData.addPr>0&&cookGroup.selectModel==1&&cookNum>0&&cookData.guqingFlg==0}}"
+      >
+        <add-de-btn
+          bind:__l="__l"
+          bind:inputChange="__e"
+          bind:inputClick="__e"
+          bind:minusFun="__e"
+          bind:plusFun="__e"
+          bind:shift="__e"
+          class="data-v-5e6b4db2"
+          data-event-opts="{{[ [ '^plusFun',[ [ 'addDelCookStyle',['add'] ] ] ],[ '^minusFun',[ [ 'addDelCookStyle',['del'] ] ] ],[ '^inputClick',[ [ 'inputClick',['$event'] ] ] ],[ '^inputChange',[ [ 'inputCookStyle',['$event'] ] ] ],[ '^shift',[ [ 'shift',['$event'] ] ] ] ]}}"
+          maxNum="{{999}}"
+          minNum="{{0}}"
+          set="{{themeColor:themeColor,size:size,inputSize:28,dishBtnShape:1}}"
+          trueNum="{{cookNum}}"
+          vueId="2f919a7e-1"
+        ></add-de-btn>
+      </view>
+    </view>
+  </view>
+  <view
+    bindtap="__e"
+    class="pa singleBtn _div data-v-5e6b4db2"
+    data-event-opts="{{[ [ 'tap',[ [ 'changeCook',['$event'] ] ] ] ]}}"
+    wx:if="{{cookData.guqingFlg==0}}"
+  >
+    <view class="pa iconfont iconshixinyuan fcf _div data-v-5e6b4db2"></view>
+    <view
+      class="pa iconfont icon-yixuanzhong _div data-v-5e6b4db2"
+      style="{{'color:'+themeColor+';'}}"
+      wx:if="{{cookNum>0}}"
+    ></view>
+    <view
+      class="pa iconfont icon-weixuanzhong _div data-v-5e6b4db2"
+      style="{{'color:'+themeColor+';'}}"
+      wx:else
+    ></view>
+  </view>
+</view>

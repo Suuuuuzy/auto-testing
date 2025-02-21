@@ -1,0 +1,49 @@
+<view class="orderDetail">
+  <view class="order-header">
+    <view class="header-text">
+      <text class="text1">{{orderInfo.companyName}}</text>
+      <text class="text2 paying" wx:if="{{orderState===1}}"
+        >{{orderStateFormatter}}</text
+      >
+      <text class="text2" wx:else
+        >{{orderStateFormatter}}<text wx:if="{{orderState===6}}"
+          >￥{{refund?refund.refundPrice:0}}</text
+        >
+      </text>
+    </view>
+    <view class="header-text" wx:if="{{orderState===1}}">
+      <text class="text3">订单即将关闭，建议尽快付款</text>
+      <van-count-down
+        class="text3"
+        format="剩余 HH:mm"
+        time="{{countDown}}"
+      ></van-count-down>
+    </view>
+  </view>
+  <view class="order-content">
+    <view class="order-item" wx:for="{{orderItemDetail}}" wx:key="orderItemId">
+      <view class="order-item-header">
+        <text class="text4">{{item.itemName}}</text>
+        <text class="text5">￥{{item.itemPrice}}</text>
+      </view>
+      <view class="text6">x{{item.itemCount}}</view>
+      <view class="text7">所属日期：{{item.date}}</view>
+      <view class="text8">提货时间：{{item.pickupInfo}}</view>
+      <view class="split-line"></view>
+    </view>
+    <view class="order-total"
+      >总计：￥{{orderDetail?orderDetail.price:''}}</view
+    >
+  </view>
+  <view class="order-footer">
+    <view class="text9"
+      >订单编号：{{orderDetail?orderDetail.orderSerialNo:''}}</view
+    >
+    <view class="text9"
+      >下单时间：{{orderDetail?orderDetail.createTime:''}}</view
+    >
+    <view class="text10" wx:if="{{orderState===2}}"
+      >支付时间：{{orderDetail?orderDetail.updateTime:''}}</view
+    >
+  </view>
+</view>

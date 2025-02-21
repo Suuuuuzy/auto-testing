@@ -1,0 +1,130 @@
+<view class="container _div data-v-11c9c040">
+  <scroll-view
+    class="content data-v-11c9c040"
+    enableBackToTop="{{true}}"
+    scrollY="{{true}}"
+    wx:if="{{detail}}"
+  >
+    <view
+      class="_div data-v-11c9c040"
+      style="{{'height:'+navigationBarHeightPlaceholder+'px'+';'}}"
+    ></view>
+    <view class="boutique-logo-out _div data-v-11c9c040">
+      <view class="boutique-logo-large _div data-v-11c9c040">
+        <image
+          class="pic _img data-v-11c9c040"
+          src="/static/img/logo-large.png"
+        ></image>
+      </view>
+    </view>
+    <view
+      class="boutique-visit-out _div data-v-11c9c040"
+      wx:if="{{detail.view}}"
+    >
+      <view class="panel _div data-v-11c9c040">
+        <image
+          class="pic _img data-v-11c9c040"
+          mode="aspectFill"
+          src="{{previewThumb}}"
+        ></image>
+      </view>
+      <view class="boutique-visit-shadow _div data-v-11c9c040"></view>
+      <view class="boutique-title _div data-v-11c9c040"
+        >{{detail.name+'服务预约'}}</view
+      >
+    </view>
+    <view class="form-out _div data-v-11c9c040">
+      <view class="form-title _div data-v-11c9c040">选择日期和时间</view>
+      <view class="form-input-out _div data-v-11c9c040">
+        <view class="form-line _div data-v-11c9c040">
+          <view class="form-label _div data-v-11c9c040"
+            >选择预约日期<label class="_span data-v-11c9c040">*</label>
+          </view>
+          <view class="form-day-out _div data-v-11c9c040">
+            <view
+              bindtap="__e"
+              class="{{['form-day-item','_div','data-v-11c9c040',nowMonth===item.title?'active':'']}}"
+              data-event-opts="{{[ [ 'tap',[ [ 'chooseMonth',['$0'],[ [ ['monthList','month',item.month] ] ] ] ] ] ]}}"
+              wx:for="{{monthList}}"
+              wx:for-index="__i0__"
+              wx:key="month"
+              >{{item.title}}</view
+            >
+          </view>
+          <view class="form-calendar _div data-v-11c9c040">
+            <view class="sign-calendar-title _div data-v-11c9c040">
+              <view class="_div data-v-11c9c040">日</view>
+              <view class="_div data-v-11c9c040">一</view>
+              <view class="_div data-v-11c9c040">二</view>
+              <view class="_div data-v-11c9c040">三</view>
+              <view class="_div data-v-11c9c040">四</view>
+              <view class="_div data-v-11c9c040">五</view>
+              <view class="_div data-v-11c9c040">六</view>
+            </view>
+            <pp-calendar
+              begin="{{start}}"
+              bind:__l="__l"
+              bind:select="__e"
+              class="data-v-11c9c040 vue-ref"
+              data-event-opts="{{[ [ '^select',[ ['selectCalendar'] ] ] ]}}"
+              data-ref="calendar"
+              disabled="{{disabled}}"
+              end="{{end}}"
+              vueId="cb6421da-1"
+              wx:if="{{nowMonth}}"
+            ></pp-calendar>
+          </view>
+        </view>
+        <view class="form-line form-line-time _div data-v-11c9c040">
+          <view class="form-label _div data-v-11c9c040"
+            >选择预约时间<label class="_span data-v-11c9c040">*</label>
+          </view>
+          <view class="form-time-out _div data-v-11c9c040">
+            <view
+              bindtap="__e"
+              class="{{['form-time','_div','data-v-11c9c040',item.time===nowTime?'active':'',!item.active?'disable':'']}}"
+              data-event-opts="{{[ [ 'tap',[ [ 'chooseTime',['$0'],[ [ ['timeList','',__i1__] ] ] ] ] ] ]}}"
+              wx:for="{{timeList}}"
+              wx:for-index="__i1__"
+              wx:key="*this"
+              >{{item.time}}</view
+            >
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="boutique-map-gap _div data-v-11c9c040"></view>
+    <view class="btn-bottom-inner _div data-v-11c9c040"></view>
+    <view
+      class="_div data-v-11c9c040"
+      style="{{'height:'+navigationBarHeightPlaceholder+'px'+';'}}"
+    ></view>
+  </scroll-view>
+  <view
+    class="btn-bottom _div data-v-11c9c040"
+    wx:if="{{detail&&detail.can_book}}"
+  >
+    <view class="btn-bottom-inner _div data-v-11c9c040">
+      <view
+        bindtap="__e"
+        class="btn-bottom-btn _div data-v-11c9c040"
+        data-event-opts="{{[ [ 'tap',[ [ 'submitForm',['$event'] ] ] ] ]}}"
+        >确认并预约</view
+      >
+    </view>
+    <view
+      class="btn-bottom-gap _div data-v-11c9c040"
+      style="{{'height:'+navigationBarHeightPlaceholder+'px'+';'}}"
+    ></view>
+  </view>
+  <pp-nav
+    back="{{true}}"
+    bind:__l="__l"
+    class="data-v-11c9c040"
+    noCircle="{{true}}"
+    placeholder="{{navigationBarHeightPlaceholder}}"
+    transparent="{{true}}"
+    value="{{true}}"
+    vueId="cb6421da-2"
+  ></pp-nav>
+</view>

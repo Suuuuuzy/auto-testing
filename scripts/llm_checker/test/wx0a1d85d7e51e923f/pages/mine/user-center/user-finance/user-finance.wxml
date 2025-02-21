@@ -1,0 +1,104 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view class="bg-white padding margin-sm " style="border-radius:20rpx;min-height:250rpx">
+    <view class="flex align-center" style="min-height:160rpx">
+        <view class="flex-sub {{isUy?'rtl':''}} text-center">
+            <view>
+                <text class="text-xl">{{Str.balance[lanIndex]}} ({{Str.yuan[lanIndex]}})</text>
+            </view>
+            <view class="text-xl text-pink text-price">{{result?result.all:0}}</view>
+        </view>
+        <view class="flex-sub text-right">
+            <view>
+                <button bindtap="widthdrawBtn" class="cu-btn {{showWithdraw?'line-red':'bg-pink'}} bg-pink radius shadow padding-lr-xl" disabled="{{!(result&&result.all>=1)}}" style="border-radius:16rpx">{{showWithdraw?Str.cancel[lanIndex]:Str.withDraw[lanIndex]}}</button>
+            </view>
+        </view>
+    </view>
+    <view class="flex justify-between " wx:if="{{!showWithdraw}}">
+        <view class="text-gray">{{Str.visitCount[lanIndex]}}</view>
+        <view class="text-gray">
+            <text class="icon-attention padding-lr-xs"></text>{{result?result.visitCount:0}}</view>
+    </view>
+    <view class="flex justify-between" wx:else>
+        <view class="padding-xs bg-white radius" style="width:500rpx; border:1rpx solid #aaa;border-radius:12rpx">
+            <input bindinput="withdrawInput" data-type="3" focus="{{focuses.inputAmount}}" placeholder="{{Str.inputAmount[lanIndex]}}" style="font-size:32rpx;" type="number" value="{{withdrawValue}}"></input>
+        </view>
+        <view class="margin-left">
+            <button bindtap="confirmBtn" class="cu-btn bg-pink  radius shadow padding-lr-xl" disabled="{{!withdrawValue||withdrawValue>result.all}}">{{Str.confirm[lanIndex]}}</button>
+        </view>
+    </view>
+</view>
+<view class="text-center {{isUy?'rtl':''}} padding-sm text-blue" wx:if="{{1}}">{{Str.userFinanceWarn[lanIndex]}}</view>
+<view class="margin-sm cu-list menu">
+    <view bindtap="recommendBtn" class="cu-item arrow" style="border-radius:10rpx" url="./my-recommend/my-recommend">
+        <view class="content">
+            <text class="icon-moneybag"></text>{{Str.iRecommend[lanIndex]}}</view>
+    </view>
+</view>
+<view class="cu-list menu sm-border margin-sm" style="border-radius:16rpx" wx:for="{{result.data}}" wx:key="index">
+    <view class="cu-item">
+        <view class="content">
+            <text class="text-sm text-gray">{{item.created_at}}</text>
+        </view>
+        <view class="action">
+            <text class="text-{{item.amount>0?'green':'red'}} text-xl">
+                <text>
+                    <text wx:if="{{item.amount>0}}">+</text>{{item.amount}}</text>
+            </text>
+        </view>
+    </view>
+    <view class="cu-item" wx:if="{{item.shop}}">
+        <view class="content">
+            <view class="flex justify start">
+                <view class="cu-avatar round" style="background-image:url({{ossImage+item.shop.icon_url+'?x-oss-process=image/resize,m_lfit,h_100,w_100'}});"></view>
+                <view class="padding-xs">
+                    <text>{{isUy?item.shop.uy_name:item.shop.ch_name}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="action"></view>
+    </view>
+</view>
+<view class="cu-modal {{modalName=='aboutGetMoney'?'show':''}}">
+    <view class="cu-dialog">
+        <view class="cu-bar bg-white justify-end">
+            <view class="content">{{Str.howGetMoney[lanIndex]}}</view>
+            <view bindtap="hideModal" class="action">
+                <text class="icon-close text-red"></text>
+            </view>
+        </view>
+        <view class="padding-xl {{isUy?'rtl':''}}"> {{Str.aboutGetMoney[lanIndex]}} </view>
+        <view class="cu-bar bg-white">
+            <view bindtap="iKonwBtn" class="action margin-0 flex-sub text-green solid-left">{{Str.iKnow[lanIndex]}}</view>
+        </view>
+    </view>
+</view>
+<view class="cu-modal {{modalName=='advertDialog'?'show':''}}">
+    <view class="cu-dialog">
+        <view class="cu-bar bg-white justify-end">
+            <view class="content">{{Str.advertMoney[lanIndex]}}</view>
+            <view bindtap="hideModal" class="action">
+                <text class="icon-close text-red"></text>
+            </view>
+        </view>
+        <view class="padding-xl"> {{Str.advertMoneyDetail[lanIndex]}} </view>
+        <view class="cu-bar bg-white">
+            <view bindtap="advertConfitm" class="action margin-0 flex-sub text-green solid-left">{{Str.iKnow[lanIndex]}}</view>
+            <view bindtap="hideModal" class="action margin-0 flex-sub  solid-left">{{Str.forgetIt[lanIndex]}}</view>
+        </view>
+    </view>
+</view>
+<view class="weui-footer weui-footer_fixed-bottom" style="bottom:0" wx:if="{{result&&result.showAdvert_&&hasVideoAdd}}">
+    <view class="margin-top text-center padding-xs shadow ">
+        <view class="flex">
+            <view bindtap="startAdvert" class="flex-sub text-center">
+                <image src="/resource/images/common/video_advert.png" style="width: 60rpx;height:60rpx;"></image>
+            </view>
+            <view class="flex-sub"></view>
+            <view class="flex-sub"></view>
+            <view class="flex-sub"></view>
+        </view>
+    </view>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

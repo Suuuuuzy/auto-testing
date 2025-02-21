@@ -1,0 +1,16 @@
+@import "/components/vant/common/index.wxss";
+.van-tab__pane,
+:host {
+  box-sizing: border-box;
+}
+.van-tab__pane {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+}
+.van-tab__pane--active {
+  height: auto;
+}
+.van-tab__pane--inactive {
+  height: 0;
+  overflow: visible;
+}

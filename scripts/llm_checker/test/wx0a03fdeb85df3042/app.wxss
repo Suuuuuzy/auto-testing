@@ -1,0 +1,259 @@
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+page {
+  overflow-y: scroll;
+}
+page,
+.page {
+  height: 100%;
+  min-height: max-content;
+  background-color: #f8fbff;
+  box-sizing: border-box;
+}
+.textRight {
+  text-align: right;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clearfix:after {
+  content: "";
+  display: inline-block;
+  clear: both;
+}
+.cell {
+  display: table-cell;
+  width: 9999px;
+}
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.searchBtns {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  height: 125rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 29rpx;
+}
+.submit-btn {
+  height: 87rpx;
+  line-height: 87rpx;
+  background-color: #3295f9;
+  color: #fff;
+  flex: 1;
+  font-size: 32rpx;
+}
+.submit-btn-hover {
+  background-color: #2d86de;
+}
+.index-search {
+  padding-top: 18rpx;
+  padding-bottom: 18rpx;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  left: 26rpx;
+  right: 26rpx;
+}
+.search-main {
+  border-radius: 5rpx;
+  padding: 0 40rpx;
+  height: 90rpx;
+  background-color: #fff;
+}
+.search-icon {
+  float: left;
+  margin-top: calc((90rpx - 30rpx) / 2);
+  color: rgba(255, 255, 255, 0.8);
+}
+.index-input {
+  color: #333;
+  padding-left: 10px;
+  height: 90rpx;
+  vertical-align: baseline;
+}
+.search-placeholder {
+  color: #c5c9d9;
+  font-size: 26rpx;
+  letter-spacing: 0.1em;
+}
+.noData {
+  text-align: center;
+}
+.scroll-tips {
+  text-align: center;
+  background-color: #fff;
+  line-height: 70rpx;
+  font-size: 30rpx;
+}
+.failTips {
+  min-height: 59rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff8080;
+  font-size: 28rpx;
+  text-align: center;
+}
+page {
+  height: 100%;
+  box-sizing: border-box;
+}
+.container {
+  min-height: 100%;
+  box-sizing: border-box;
+}
+button:after {
+  border: 0;
+}
+.searchSection {
+  position: fixed;
+  top: 0;
+  left: 0rpx;
+  right: 0rpx;
+  background-color: #fff;
+  z-index: 1000;
+}
+.searchSection-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8rpx 30rpx 13rpx 30rpx;
+  background-color: #f3f4f6;
+  border-radius: 29rpx;
+  height: 58rpx;
+  padding-left: 30rpx;
+}
+.searchInput {
+  flex: 1;
+  padding-left: 15rpx;
+}
+.footer {
+  font-size: 24rpx;
+  color: #c3c3c3;
+  text-align: center;
+}
+.searchPlaceholder {
+  font-size: 26rpx;
+  color: #b2b2b2;
+  letter-spacing: 0.1em;
+}
+.search-cancelIcon {
+  height: 100%;
+  padding-right: 24rpx;
+  display: flex;
+  align-items: center;
+}
+.common-list {
+  margin-top: 38rpx;
+  background-color: #fff;
+  padding: 18rpx 40rpx 25rpx 40rpx;
+  box-shadow: 0 2rpx 14.88rpx 1.12rpx rgba(173, 173, 173, 0.19);
+}
+.commonList-title {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  color: #333;
+  margin-bottom: 18rpx;
+  border-bottom: 2rpx solid #d2d2d2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.commonList-detail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 20rpx;
+  color: #666666;
+  line-height: 42rpx;
+}
+.commonList-detail view {
+  width: 50%;
+}
+.commonList-detail .toApproval {
+  color: #00a2ff;
+}
+.commonList-detail .refuse {
+  color: #fd0000;
+}
+.commonList-detail .approved {
+  color: #53d53a;
+}
+.commonList-detail .undeclared {
+  color: #ffc232;
+}
+.common-tabTitle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  color: #7e7e7e;
+}
+.common-tabTitle .sidebar {
+  position: absolute;
+  bottom: 0;
+  width: 82rpx;
+  height: 4rpx;
+  background-color: #1e8bdd;
+}
+.common-tabTitle view {
+  text-align: center;
+  flex: 1;
+}
+.common-tabTitle .navbar-this {
+  color: #1e8bdd;
+}
+.noData {
+  text-align: center;
+  color: #666;
+}
+.dots-green,
+.dots-yellow {
+  flex-shrink: 0;
+  display: inline-block;
+  width: 32rpx;
+  height: 29rpx;
+  border-radius: 4rpx;
+  font-size: 20rpx;
+  line-height: 29rpx;
+  color: #fff;
+  text-align: center;
+}
+.dots-green {
+  background-color: #0fe295;
+}
+.dots-yellow {
+  background-color: #f6bf00;
+}
+.necessaryMaterial {
+  height: 30rpx;
+  line-height: 30rpx;
+  padding: 0 14rpx;
+  background-color: #f95d5f;
+  font-size: 20rpx;
+  color: #ffffff;
+}
+.requiredField:before {
+  content: "*";
+  color: #f95d5f;
+  position: absolute;
+  left: -18rpx;
+}
+.commonHoverClass {
+  opacity: 0.7;
+}

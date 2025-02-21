@@ -1,0 +1,104 @@
+<template name="deliveryCouponTxt">
+  <view class="rtl" wx:if="{{isUy}}">
+    <text class=""
+      >{{shop['delivery_fee']-shop['activity_delivery_fee'][0]['activity_delivery_fee']}}</text
+    >
+    <text>يۈەن كىرا كېمەيتىش</text>
+  </view>
+  <view wx:else>
+    <text>立减</text>
+    <text
+      >{{shop['delivery_fee']-shop['activity_delivery_fee'][0]['activity_delivery_fee']}}</text
+    >
+    <text>元配送费</text>
+  </view>
+</template>
+<template name="shopCouponTxtItem">
+  <view class="rtl" wx:if="{{isUy}}">
+    <text>{{item['coupon_limit']}}</text>
+    <text>يۈەنگە يەتسە</text>
+    <text>{{item['coupon_amount']}}</text>
+    <text> ئېتىبار</text>
+  </view>
+  <view wx:else>
+    <text>满{{item['coupon_limit']}}减{{item['coupon_amount']}}</text>
+  </view>
+</template>
+<view>
+  <view class="flex">
+    <view class="padding-xs">
+      <t-image
+        class="shop-img"
+        height="100rpx"
+        mode="aspectFill"
+        src="{{shop?ossImageUrl+shop.icon_url:''}}"
+        style="border-radius: 6rpx"
+        width="100rpx"
+      ></t-image>
+    </view>
+    <view class="padding-xs">
+      <view>
+        <text class="uy-tom text-black text-lg"
+          >{{isUy?shop.uy_name:shop.ch_name}}</text
+        >
+      </view>
+      <view class="flex align-center">
+        <view class="flex align-center">
+          <text class="cuIcon-favorfill text-yellow"></text>
+          <text>&nbsp;</text>
+          <text class="text-yellow text-lg">{{star}}</text>
+        </view>
+        <view class="divider bg-gray" wx:if="{{distance}}"></view>
+        <view class="flex align-center" wx:if="{{distance}}">
+          <t-icon name="location"></t-icon>
+          <text>&nbsp;</text>
+          <text class="text-black">{{distance}}</text>
+        </view>
+        <view class="divider bg-gray" wx:if="{{shop.arrive_time}}"></view>
+        <view class="flex align-center" wx:if="{{shop.arrive_time}}">
+          <t-icon name="time"></t-icon>
+          <text>&nbsp;</text>
+          <text class="text-black">{{shop.arrive_time}}</text>
+          <text class="uy-tom text-sm padding-lr-xs"
+            >{{Str.minut[lanIndex]}}</text
+          >
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="flex padding-bottom-sm align-center padding-lr-sm">
+    <t-icon name="notification" size="36rpx"></t-icon>
+    <text>&nbsp;&nbsp;</text>
+    <view class="notice flex align-center">
+      <text class="r" style="--color:--pink;--loop:{{isUy?'loop':'_loop'}}"
+        >{{isUy?shop.uy_warn:shop.ch_warn}}</text
+      >
+    </view>
+  </view>
+  <view
+    class="scroll-tag-box padding-lr-sm padding-bottom-xs"
+    wx:if="{{shop.coupons.length>0||shop['activity_delivery_fee'].length>0}}"
+  >
+    <scroll-view>
+      <view
+        class="uy-tom"
+        wx:if="{{shop['activity_delivery_fee']&&shop['activity_delivery_fee'].length>0}}"
+      >
+        <t-tag theme="success" variant="outline">
+          <template
+            is="deliveryCouponTxt"
+            data="{{isUy:isUy,shop:shop}}"
+          ></template>
+        </t-tag>
+      </view>
+      <view class="padding-lr-xs uy-tom" key="index" wx:for="{{shop.coupons}}">
+        <t-tag theme="danger" variant="outline">
+          <template
+            is="shopCouponTxtItem"
+            data="{{isUy:isUy,item:item}}"
+          ></template>
+        </t-tag>
+      </view>
+    </scroll-view>
+  </view>
+</view>

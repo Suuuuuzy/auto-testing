@@ -1,0 +1,12 @@
+<t-image
+  binderror="onError"
+  bindload="onLoad"
+  error="{{loadFailed}}"
+  lazy="{{lazyLoad}}"
+  loading="{{loading}}"
+  mode="{{mode}}"
+  showMenuByLongpress="{{showMenuByLongpress}}"
+  src="{{Utils.getSrc( {src:src,thumbWidth:thumbWidth||0,thumbHeight:thumbHeight||0,systemInfo:systemInfo,webp:webp,mode:mode} )}}"
+  tClass="t-class"
+  tClassLoad="t-class-load"
+></t-image>

@@ -1,0 +1,169 @@
+function addUnit(value) {
+  var REGEXP = getRegExp("^-?\x5cd+(.\x5cd+)?$");
+  if (value == null) {
+    return undefined;
+  }
+  return REGEXP.test("" + value) ? value + "px" : value;
+}
+function isString(string) {
+  return string && string.constructor === "String";
+}
+function isArray(array) {
+  return array && array.constructor === "Array";
+}
+function isObject(obj) {
+  return obj && obj.constructor === "Object";
+}
+var isNoEmptyObj = function (obj) {
+  return isObject(obj) && JSON.stringify(obj) !== "{}";
+};
+function includes(arr, value) {
+  if (!arr || !isArray(arr)) return false;
+  var i = 0;
+  var len = arr.length;
+  for (; i < len; i++) {
+    if (
+      arr[
+        ((nt_0 = i),
+        null == nt_0 ? undefined : "number" === typeof nt_0 ? nt_0 : "" + nt_0)
+      ] === value
+    )
+      return true;
+  }
+  return false;
+}
+function cls(base, arr) {
+  var res = [base];
+  var i = 0;
+  for (var size = arr.length; i < size; i++) {
+    var item =
+      arr[
+        ((nt_1 = i),
+        null == nt_1 ? undefined : "number" === typeof nt_1 ? nt_1 : "" + nt_1)
+      ];
+    if (item && item.constructor === "Array") {
+      var key =
+        arr[
+          ((nt_2 = i),
+          null == nt_2
+            ? undefined
+            : "number" === typeof nt_2
+            ? nt_2
+            : "" + nt_2)
+        ][0];
+      var value =
+        arr[
+          ((nt_3 = i),
+          null == nt_3
+            ? undefined
+            : "number" === typeof nt_3
+            ? nt_3
+            : "" + nt_3)
+        ][1];
+      if (value) {
+        res.push(base + "--" + key);
+      }
+    } else if (typeof item === "string" || typeof item === "number") {
+      if (item) {
+        res.push(base + "--" + item);
+      }
+    }
+  }
+  return res.join(" ");
+}
+function getBadgeAriaLabel(options) {
+  var maxCount = options.maxCount || 99;
+  if (options.dot) {
+    return "有新的消息";
+  }
+  if (options.count === "...") {
+    return "有很多消息";
+  }
+  if (isNaN(options.count)) {
+    return options.count;
+  }
+  var str1 = "有" + maxCount + "+条消息";
+  var str2 = "有" + options.count + "条消息";
+  return Number(options.count) > maxCount ? str1 : str2;
+}
+function endsWith(str, endStr) {
+  return str.slice(-endStr.length) === endStr ? str : str + endStr;
+}
+function keys(obj) {
+  return JSON.stringify(obj)
+    .replace(getRegExp("{|}|\x22", "g"), "")
+    .split(",")
+    .map(function (item) {
+      return item.split(":")[0];
+    });
+}
+function kebabCase(str) {
+  return str
+    .replace(getRegExp("[A-Z]", "g"), function (ele) {
+      return "-" + ele;
+    })
+    .toLowerCase();
+}
+function _style(styles) {
+  if (isArray(styles)) {
+    return styles
+      .filter(function (item) {
+        return item != null && item !== "";
+      })
+      .map(function (item) {
+        return isArray(item) ? _style(item) : endsWith(item, ";");
+      })
+      .join(" ");
+  }
+  if (isObject(styles)) {
+    return keys(styles)
+      .filter(function (key) {
+        return (
+          styles[
+            ((nt_5 = key),
+            null == nt_5
+              ? undefined
+              : "number" === typeof nt_5
+              ? nt_5
+              : "" + nt_5)
+          ] != null &&
+          styles[
+            ((nt_6 = key),
+            null == nt_6
+              ? undefined
+              : "number" === typeof nt_6
+              ? nt_6
+              : "" + nt_6)
+          ] !== ""
+        );
+      })
+      .map(function (key) {
+        return [
+          kebabCase(key),
+          [
+            styles[
+              ((nt_7 = key),
+              null == nt_7
+                ? undefined
+                : "number" === typeof nt_7
+                ? nt_7
+                : "" + nt_7)
+            ],
+          ],
+        ].join(":");
+      })
+      .join(";");
+  }
+  return styles;
+}
+module.exports = {
+  addUnit: addUnit,
+  isString: isString,
+  isArray: isArray,
+  isObject: isObject,
+  isNoEmptyObj: isNoEmptyObj,
+  includes: includes,
+  cls: cls,
+  getBadgeAriaLabel: getBadgeAriaLabel,
+  _style: _style,
+};

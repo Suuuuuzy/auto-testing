@@ -1,0 +1,15 @@
+<view class="choose-product _div data-v-60c31a78">
+  <view
+    class="product-add _div data-v-60c31a78"
+    style="{{'height:'+set.size+'px'+';'+'line-height:'+set.size+'px'+';'}}"
+  >
+    <view class="product-add__content _div data-v-60c31a78">
+      <view
+        catchtap="__e"
+        class="{{['product-add__plus','iconfont','_div','data-v-60c31a78','icon-jiashang']}}"
+        data-event-opts="{{[ [ 'tap',[ [ 'plus',['$event'] ] ] ] ]}}"
+        style="{{'top:'+top+'px'+';'+'height:'+set.size+'px'+';'+'line-height:'+set.size+'px'+';'+'width:'+set.size+'px'+';'+'color:'+(maxNum<=trueNum?'#cccccc':set.themeColor)+';'+'font-size:'+set.size*32/22+'px'+';'}}"
+      ></view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,163 @@
+<view class="container _div data-v-26bef452">
+  <scroll-view
+    class="common-scroll data-v-26bef452"
+    enableBackToTop="{{true}}"
+    scrollY="{{true}}"
+    style="{{'top:'+navigationBarHeight+'px'+';'}}"
+  >
+    <view class="treasure-bg _div data-v-26bef452">
+      <image
+        class="pic _img data-v-26bef452"
+        src="/static/img/treasure-bg.jpg"
+      ></image>
+    </view>
+    <view class="{{['topic-top','_div','data-v-26bef452',showMore?'more':'']}}">
+      <view class="topic-title _div data-v-26bef452">珍稀工艺系列</view>
+      <view class="topic-pic _div data-v-26bef452">
+        <image
+          class="pic _img data-v-26bef452"
+          mode="aspectFill"
+          src="http://cdn.impdigital.cn/patek/img/banner_treasure.jpg"
+        ></image>
+      </view>
+      <view class="topic-more-title _div data-v-26bef452">当代收藏系列</view>
+      <view class="topic-more-detail _div data-v-26bef452"
+        >百达翡丽承袭日内瓦的优良制表传统，致力于传承并发扬历史悠久、珍稀精湛的时计装饰工艺。每年，百达翡丽都会打造多款限量发售、甚至独一无二的珍稀工艺时计，展现百达翡丽丰富而独特的灵感源泉。百达翡丽的现代珍稀工艺系列囊括腕表、怀表和圆顶座钟，采用各式各样的珍稀装饰工艺，彰显别具一格的非凡魅力。</view
+      >
+      <view
+        bindtap="__e"
+        class="topic-arrow-down _div data-v-26bef452"
+        data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+      >
+        <image
+          class="pic _img data-v-26bef452"
+          src="/static/img/arrow-down-round.svg"
+        ></image>
+      </view>
+      <view class="treasure-topic-title _div data-v-26bef452">腕表</view>
+      <view class="treasure-topic-detail _div data-v-26bef452"
+        >独特的经典腕表系列，于细微中尽显非凡的珍稀工艺。</view
+      >
+      <view class="topic-divider _div data-v-26bef452"></view>
+    </view>
+    <view class="topic-list _div data-v-26bef452">
+      <view
+        class="topic-list-line _div data-v-26bef452"
+        wx:for="{{dataList}}"
+        wx:key="index"
+      >
+        <view
+          bindtap="__e"
+          class="topic-list-line-item topic-list-line-item-mid _div data-v-26bef452"
+          data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}"
+          data-event-params="{{itemInner:itemInner}}"
+          wx:for="{{item}}"
+          wx:for-index="indexInner"
+          wx:for-item="itemInner"
+          wx:key="indexInner"
+        >
+          <view class="topic-list-line-item-pic _div data-v-26bef452">
+            <image
+              class="pic _img data-v-26bef452"
+              lazyLoad="{{true}}"
+              mode="aspectFit"
+              src="{{itemInner.articleImages}}"
+            ></image>
+          </view>
+          <view class="topic-list-line-item-code _div data-v-26bef452"
+            >{{itemInner.articleRef}}</view
+          >
+          <view class="topic-list-line-item-detail _div data-v-26bef452"
+            >{{itemInner.otherModelsTitle}}</view
+          >
+        </view>
+      </view>
+    </view>
+    <view class="topic-more-top _div data-v-26bef452">
+      <view class="treasure-topic-title _div data-v-26bef452">怀表</view>
+      <view class="treasure-topic-detail _div data-v-26bef452"
+        >怀表凸显博大精深的珍稀制表工艺，至今依然深受收藏家青睐。</view
+      >
+      <view class="topic-divider _div data-v-26bef452"></view>
+    </view>
+    <view class="topic-list _div data-v-26bef452">
+      <view
+        class="topic-list-line _div data-v-26bef452"
+        wx:for="{{dataListH}}"
+        wx:key="index"
+      >
+        <view
+          bindtap="__e"
+          class="topic-list-line-item topic-list-line-item-mid _div data-v-26bef452"
+          data-event-opts="{{[ [ 'tap',[ [ 'e2',['$event'] ] ] ] ]}}"
+          data-event-params="{{itemInner:itemInner}}"
+          wx:for="{{item}}"
+          wx:for-index="indexInner"
+          wx:for-item="itemInner"
+          wx:key="indexInner"
+        >
+          <view class="topic-list-line-item-pic _div data-v-26bef452">
+            <image
+              class="pic _img data-v-26bef452"
+              lazyLoad="{{true}}"
+              mode="aspectFit"
+              src="{{itemInner.articlesBackWhite}}"
+            ></image>
+          </view>
+          <view class="topic-list-line-item-code _div data-v-26bef452"
+            >{{itemInner.articleRef}}</view
+          >
+          <view class="topic-list-line-item-detail _div data-v-26bef452"
+            >{{itemInner.otherModelsTitle}}</view
+          >
+        </view>
+      </view>
+    </view>
+    <view class="topic-more-top _div data-v-26bef452">
+      <view class="treasure-topic-title _div data-v-26bef452">圆顶座钟</view>
+      <view class="treasure-topic-detail _div data-v-26bef452"
+        >圆顶座钟丰富的空间成为工匠发挥技艺的完美舞台。</view
+      >
+      <view class="topic-divider _div data-v-26bef452"></view>
+    </view>
+    <view class="topic-list _div data-v-26bef452">
+      <view
+        class="topic-list-line _div data-v-26bef452"
+        wx:for="{{dataListZ}}"
+        wx:key="index"
+      >
+        <view
+          class="topic-list-line-item topic-list-line-item-mid _div data-v-26bef452"
+          wx:for="{{item}}"
+          wx:for-index="indexInner"
+          wx:for-item="itemInner"
+          wx:key="indexInner"
+        >
+          <view class="topic-list-line-item-pic _div data-v-26bef452">
+            <image
+              class="pic _img data-v-26bef452"
+              lazyLoad="{{true}}"
+              mode="aspectFit"
+              src="{{itemInner.articleImages}}"
+            ></image>
+          </view>
+          <view class="topic-list-line-item-code _div data-v-26bef452"
+            >{{itemInner.articleRef}}</view
+          >
+          <view class="topic-list-line-item-detail _div data-v-26bef452"
+            >{{itemInner.otherModelsTitle}}</view
+          >
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <pp-nav
+    back="{{true}}"
+    bind:__l="__l"
+    class="data-v-26bef452"
+    fixed="{{true}}"
+    logo="{{true}}"
+    placeholder="{{navigationBarHeightPlaceholder}}"
+    vueId="8b5a1544-1"
+  ></pp-nav>
+</view>

@@ -1,0 +1,31 @@
+<template name="lan">
+  <view
+    bindtap="switchLan"
+    class="bg-img {{isUy?'lan-uy-bg':'lan-ch-bg'}}"
+    style="border-radius: 50rpx"
+  ></view>
+</template>
+<template name="noContent">
+  <view clas="weui-loadmore weui-loadmore_line">
+    <view
+      class="weui-loadmore__tips weui-loadmore__tips_in-line"
+      style="background-color: #f1f1f1"
+      >{{content}}</view
+    >
+  </view>
+</template>
+<template name="footer">
+  <view class="weui-footer margin">
+    <view class="weui-footer__links">
+      <navigator class="weui-footer__link text-lg" url="">EteWar</navigator>
+    </view>
+    <view class="text-sm">V1.1.62</view>
+    <navigator
+      appId="wx8beb5d54926e53e5"
+      class="weui-footer__link text-df"
+      openType="navigate"
+      target="miniProgram"
+      >Copyright © 2019~2024 新疆欧奇拉电子商务有限公司</navigator
+    >
+  </view>
+</template>

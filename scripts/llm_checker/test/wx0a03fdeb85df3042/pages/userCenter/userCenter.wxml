@@ -1,0 +1,97 @@
+<view class="container">
+  <view id="userCenter-top">
+    <image class="topBg" src="../asserts/images/userCenter_topBg.png"></image>
+    <view class="top-cont">
+      <view class="top-cont_left">
+        <view class="left_userAvatarUrl">
+          <image
+            src="{{userinfo?'../asserts/images/usercenter_loggedHead.png':'../asserts/images/usercenter_unloggedHead.png'}}"
+          ></image>
+        </view>
+        <view class="left_userNickName">
+          <view wx:if="{{isVerified}}">
+            <text>{{realName}}</text>
+            <text class="mobile"
+              >{{util.desensitization(userinfo.mobile)}}</text
+            >
+          </view>
+          <open-data type="userNickName" wx:else></open-data>
+          <view class="verified">
+            <view class="verified-true" wx:if="{{isVerified}}">
+              <image
+                src="../asserts/images/userCenter_verifiedIcon.png"
+              ></image>
+              <text>已实名认证</text>
+            </view>
+            <text wx:else>未实名认证</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view id="userCenter-body">
+    <view class="userCenter-nav">
+      <view class="nav-cont">
+        <view
+          bindtap="navListTap"
+          class="nav-cont-item"
+          data-idx="{{item.navListId}}"
+          wx:for="{{navList}}"
+          wx:key="navListId"
+        >
+          <image mode="aspectFit" src="{{item.navIcon}}"></image>
+          <text>{{item.navText}}</text>
+        </view>
+      </view>
+    </view>
+    <view
+      bindtap="bindVerifiedTap"
+      class="userCenter-verified"
+      hidden="{{isVerified}}"
+    >
+      <image
+        class="verifiedBg"
+        src="../asserts/images/userCenter_verifiedBg.png"
+      ></image>
+      <view class="verified-left">
+        <image src="../asserts/images/userCenter_verifiedIconBig.png"></image>
+        <view class="verified-left_cont">
+          <text class="verified-left_cont_title">用户实名认证</text>
+          <text>使用部分业务办理和查询功能，需进行人脸实名认证</text>
+        </view>
+      </view>
+      <view class="verified-right">
+        <image src="../asserts/images/userCenter_arrowWhite.png"></image>
+      </view>
+    </view>
+    <view class="userCenter-applicationList">
+      <view
+        bindtap="applicationListTap"
+        class="applicationList-item"
+        data-idx="{{item.applicationId}}"
+        wx:for="{{applicationList}}"
+        wx:key="applicationId"
+      >
+        <view class="applicationList-left">
+          <image mode="aspectFit" src="{{item.applicationListIcon}}"></image>
+          <view class="applicationList_cont">
+            <text
+              class="applicationList_cont_title {{index==4?'applicationList_cont_unbindTitle':''}}"
+              >{{item.applicationListTitle}}</text
+            >
+            <text>{{item.applicationListSubTitle}}</text>
+          </view>
+        </view>
+        <view class="verified-right">
+          <image
+            src="{{index==4?'../asserts/images/index_redArrow.png':'../asserts/images/index_rightArrow.png'}}"
+          ></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="footer">
+    <view>主办单位：常熟市数据局 备案序号：苏ICP备2024121663号</view>
+  </view>
+</view>
+<wxs module="util" src="../asserts/util.wxs" />

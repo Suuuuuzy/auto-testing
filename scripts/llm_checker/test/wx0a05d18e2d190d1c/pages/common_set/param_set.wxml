@@ -1,0 +1,66 @@
+<view>
+    <view class="content_style">
+        <view class="param_item_style" wx:if="{{enable_ip}}">
+            <view class="gl_size_m gl_color_title center_y">服务器</view>
+            <view class="param_input_item">
+                <input class="param_input_style" disabled="false" placeholder="服务器名称" type="text" value="{{param_ip}}"></input>
+                <image bindtap="__e" class="param_icon_style" data-event-opts="{{[ [ 'tap',[ [ 'query_param',[1] ] ] ] ]}}" mode="aspectFill" src="../../static/images/param_search.png"></image>
+            </view>
+            <image bindtap="__e" class="param_icon_style" data-event-opts="{{[ [ 'tap',[ [ 'edit_param',[1] ] ] ] ]}}" mode="aspectFill" src="../../static/images/param_edit.png"></image>
+        </view>
+        <view class="param_item_style" wx:if="{{enable_port}}">
+            <view class="gl_size_m gl_color_title center_y">端口</view>
+            <view class="param_input_item">
+                <input class="param_input_style" disabled="false" placeholder="取值范围0-65535" type="text" value="{{param_port}}"></input>
+                <image bindtap="__e" class="param_icon_style" data-event-opts="{{[ [ 'tap',[ [ 'query_param',[2] ] ] ] ]}}" mode="aspectFill" src="../../static/images/param_search.png"></image>
+            </view>
+            <image bindtap="__e" class="param_icon_style" data-event-opts="{{[ [ 'tap',[ [ 'edit_param',[2] ] ] ] ]}}" mode="aspectFill" src="../../static/images/param_edit.png"></image>
+        </view>
+        <view class="param_item_style" wx:if="{{enable_apn}}">
+            <view class="gl_size_m gl_color_title center_y">APN</view>
+            <view class="param_input_item">
+                <input class="param_input_style" disabled="false" type="text" value="{{param_apn}}"></input>
+                <image bindtap="__e" class="param_icon_style" data-event-opts="{{[ [ 'tap',[ [ 'query_param',[3] ] ] ] ]}}" mode="aspectFill" src="../../static/images/param_search.png"></image>
+            </view>
+            <image bindtap="__e" class="param_icon_style" data-event-opts="{{[ [ 'tap',[ [ 'edit_param',[3] ] ] ] ]}}" mode="aspectFill" src="../../static/images/param_edit.png"></image>
+        </view>
+        <view class="param_item_style" wx:if="{{enable_apn_name}}">
+            <view class="gl_size_m gl_color_title center_y">APN用户名</view>
+            <view class="param_input_item">
+                <input class="param_input_style" disabled="false" type="text" value="{{param_apn_name}}"></input>
+                <image bindtap="__e" class="param_icon_style" data-event-opts="{{[ [ 'tap',[ [ 'query_param',[4] ] ] ] ]}}" mode="aspectFill" src="../../static/images/param_search.png"></image>
+            </view>
+            <image bindtap="__e" class="param_icon_style" data-event-opts="{{[ [ 'tap',[ [ 'edit_param',[4] ] ] ] ]}}" mode="aspectFill" src="../../static/images/param_edit.png"></image>
+        </view>
+        <view class="param_item_style" wx:if="{{enable_apn_pwd}}">
+            <view class="gl_size_m gl_color_title center_y">APN密码</view>
+            <view class="param_input_item">
+                <input class="param_input_style" disabled="false" type="text" value="{{param_apn_pwd}}"></input>
+                <image bindtap="__e" class="param_icon_style" data-event-opts="{{[ [ 'tap',[ [ 'query_param',[5] ] ] ] ]}}" mode="aspectFill" src="../../static/images/param_search.png"></image>
+            </view>
+            <image bindtap="__e" class="param_icon_style" data-event-opts="{{[ [ 'tap',[ [ 'edit_param',[5] ] ] ] ]}}" mode="aspectFill" src="../../static/images/param_edit.png"></image>
+        </view>
+        <view class="param_item_style" wx:if="{{enable_ble_name}}">
+            <view class="gl_size_m gl_color_title center_y">蓝牙名称</view>
+            <view class="param_input_item">
+                <input class="param_input_style" disabled="false" type="text" value="{{param_ble_name}}"></input>
+                <image bindtap="__e" class="param_icon_style" data-event-opts="{{[ [ 'tap',[ [ 'query_param',[6] ] ] ] ]}}" mode="aspectFill" src="../../static/images/param_search.png"></image>
+            </view>
+            <image bindtap="__e" class="param_icon_style" data-event-opts="{{[ [ 'tap',[ [ 'edit_param',[6] ] ] ] ]}}" mode="aspectFill" src="../../static/images/param_edit.png"></image>
+        </view>
+        <view style="display:flex;flex-direction:row;justify-content:space-between;margin-top:140rpx;">
+            <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'query_all',['$event'] ] ] ] ]}}" type="primary">查询支持功能</button>
+            <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'restart_gps',['$event'] ] ] ] ]}}" type="warn">重启GPS</button>
+        </view>
+    </view>
+    <uni-popup bind:__l="__l" class="vue-ref" data-ref="showinput" maskClick="{{false}}" type="top" vueId="4a10709e-1" vueSlots="{{['default']}}">
+        <view class="uni-tip">
+            <text class="uni-tip-title">{{param_title}}</text>
+            <input bindinput="__e" class="radius_input_style" data-event-opts="{{[ [ 'input',[ [ 'input_param',['$event'] ] ] ] ]}}" placeholder="{{param_hint}}" type="text" value="{{param_content}}"></input>
+            <view class="uni-tip-group-button">
+                <text bindtap="__e" class="uni-tip-button" data-event-opts="{{[ [ 'tap',[ [ 'cancel_input',['$event'] ] ] ] ]}}">取消</text>
+                <text bindtap="__e" class="uni-tip-button" data-event-opts="{{[ [ 'tap',[ ['set_param'] ] ] ]}}">确定</text>
+            </view>
+        </view>
+    </uni-popup>
+</view>

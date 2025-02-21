@@ -1,0 +1,49 @@
+<view class="vx_login_index data-v-34e40291">
+  <header
+    bind:__l="__l"
+    class="data-v-34e40291"
+    uI="34e40291-0"
+    uP="{{a}}"
+    wx:if="{{a}}"
+  ></header>
+  <view class="infobox data-v-34e40291">
+    <view class="infoTitle data-v-34e40291"> 登录 </view>
+    <u--form
+      bind:__l="__l"
+      class="r data-v-34e40291"
+      uI="34e40291-1"
+      uP="{{f}}"
+      uR="formref"
+      uS="{{['d']}}"
+      wx:if="{{f}}"
+    >
+      <u-form-item
+        bind:__l="__l"
+        class="data-v-34e40291"
+        uI="34e40291-2,34e40291-1"
+        uP="{{d}}"
+        uS="{{['d']}}"
+        wx:if="{{d}}"
+      >
+        <u--input
+          bind:__l="__l"
+          bindupdateModelValue="{{b}}"
+          class="data-v-34e40291"
+          uI="34e40291-3,34e40291-2"
+          uP="{{c}}"
+          wx:if="{{c}}"
+        ></u--input>
+      </u-form-item>
+    </u--form>
+  </view>
+  <view class="wx_login_btn data-v-34e40291">
+    <u-button
+      bind:__l="__l"
+      bindclick="{{g}}"
+      class="data-v-34e40291"
+      uI="34e40291-4"
+      uP="{{h}}"
+      wx:if="{{h}}"
+    ></u-button>
+  </view>
+</view>

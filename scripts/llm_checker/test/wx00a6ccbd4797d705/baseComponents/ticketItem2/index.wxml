@@ -1,0 +1,247 @@
+<view
+  class="{{['ticketItems','p20r','radius16r','bcf','pr','overflow-hidden','_div','data-v-3fd38838',ticketUseType]}}"
+>
+  <view
+    class="openSelection _div data-v-3fd38838"
+    wx:if="{{openSelection&&ticketData.usableNum&&ticketData.usableNum==1}}"
+  >
+    <label
+      class="iconfont icon-yixuanzhong _span data-v-3fd38838"
+      style="{{'color:'+themeColor+';'}}"
+      wx:if="{{choice}}"
+    ></label>
+    <label
+      class="iconfont icon-weixuanzhong _span data-v-3fd38838"
+      style="{{'color:'+themeColor+';'}}"
+      wx:else
+    ></label>
+  </view>
+  <view class="openSelectionAdd _div data-v-3fd38838">
+    <slot name="selectBtn"></slot>
+  </view>
+  <view
+    class="openSelectionAdd _div data-v-3fd38838"
+    wx:if="{{openSelection&&ticketData.usableNum&&ticketData.usableNum>1}}"
+  >
+    <view
+      catchtap="__e"
+      class="iconfont icon-jianqu displayInlineBlock ml20r fz36 _div data-v-3fd38838"
+      data-event-opts="{{[ [ 'tap',[ [ 'reduce',['$0'],['ticketData'] ] ] ] ]}}"
+      style="{{'color:'+themeColor+';'}}"
+    ></view>
+    <label class="displayInlineBlock ml20r fz36 _span data-v-3fd38838"
+      >{{ticketData.addAfterAmount}}</label
+    >
+    <view
+      catchtap="__e"
+      class="iconfont icon-jiashang displayInlineBlock ml20r fz36 _div data-v-3fd38838"
+      data-event-opts="{{[ [ 'tap',[ [ 'add',['$0'],['ticketData'] ] ] ] ]}}"
+      style="{{'color:'+themeColor+';'}}"
+    ></view>
+  </view>
+  <view class="flex _div data-v-3fd38838">
+    <view class="pr _div data-v-3fd38838">
+      <image
+        class="headPic display-block flexShrink0 data-v-3fd38838"
+        mode="aspectFill"
+        src="{{headPic}}"
+        style="{{headPicStyle}}"
+      ></image>
+      <slot name="clickAddShopCoupon"></slot>
+    </view>
+    <view class="flexGrow1 _div data-v-3fd38838">
+      <view class="pr _div data-v-3fd38838">
+        <slot name="clickAddShopCoupon2"></slot>
+        <view class="f30 fw _div data-v-3fd38838">{{ticketData.title}}</view>
+        <view
+          class="pt5 pb5 ticketMoney ticketValue fw f52 _div data-v-3fd38838"
+          wx:if="{{showPriceAreaFlg}}"
+        >
+          <view
+            class="ticket_right_content _div data-v-3fd38838"
+            wx:if="{{ticketData.type==1&&ticketData.valueType==1}}"
+            >随机</view
+          >
+          <view
+            class="ticket_right_content _div data-v-3fd38838"
+            wx:if="{{ticketData.type==1&&ticketData.valueType!=1}}"
+          >
+            <label
+              class="iconStyle f32 iconfont icon-qianfuhao _span data-v-3fd38838"
+            ></label>
+            <label class="ticketValue _span data-v-3fd38838"
+              >{{ticketData.value}}</label
+            >
+          </view>
+          <view
+            class="ticket_right_content _div data-v-3fd38838"
+            wx:if="{{ticketData.type==2}}"
+          >
+            <label class="ticketValue _span data-v-3fd38838"
+              >{{ticketData.value}}</label
+            >
+            <label class="iconStyle f32 _span data-v-3fd38838" style="top: 4rpx"
+              >折</label
+            >
+          </view>
+          <view
+            class="ticket_right_content _div data-v-3fd38838"
+            wx:if="{{ticketData.type==3}}"
+          >
+            <label
+              class="iconStyle f32 iconfont icon-qianfuhao _span data-v-3fd38838"
+            ></label>
+            <label class="ticketValue _span data-v-3fd38838"
+              >{{ticketData.deductValueType==1?ticketData.deductToValue:ticketData.value}}</label
+            >
+            <label
+              class="redTips fwnormal ml10r _span data-v-3fd38838"
+              wx:if="{{ticketData.deductValueType==1}}"
+              >券后价格</label
+            >
+          </view>
+          <view
+            class="ticket_right_content _div data-v-3fd38838"
+            wx:if="{{ticketData.type==5}}"
+          >
+            <block
+              wx:if="{{ticketData.deductValueType==1&&ticketData.deductToValue||ticketData.value}}"
+            >
+              <label
+                class="iconStyle f32 iconfont icon-qianfuhao _span data-v-3fd38838"
+              ></label>
+              <label class="ticketValue _span data-v-3fd38838"
+                >{{ticketData.deductValueType==1?ticketData.deductToValue:ticketData.value}}</label
+              >
+            </block>
+            <label
+              class="redTips fwnormal _span data-v-3fd38838"
+              wx:if="{{ticketData.deductValueType==1}}"
+              >{{$root.f0}}</label
+            >
+          </view>
+          <label class="tipStyle fwnormal _span data-v-3fd38838"
+            >{{tipStyle.name}}</label
+          >
+        </view>
+        <view class="hidePrice60 _div data-v-3fd38838" wx:else>
+          <label class="tipStyle displayInlineBlock _span data-v-3fd38838"
+            >{{tipStyle.name}}</label
+          >
+        </view>
+        <view class="fc9 f24 _div data-v-3fd38838" wx:if="{{timeRage}}">
+          <view
+            class="{{['_div','data-v-3fd38838',redTips?'redTips displayInlineBlock':null]}}"
+            >{{timeRage}}</view
+          >
+        </view>
+        <slot name="detail"></slot>
+      </view>
+      <view
+        catchtap="__e"
+        class="fc9 f24 flexAlignCenter useRuleBtn _div data-v-3fd38838"
+        data-event-opts="{{[ [ 'tap',[ [ 'showDetail',['$event'] ] ] ] ]}}"
+        wx:if="{{!noDetail&&ticketUseType!='unUseful'&&useRulesFlg}}"
+      >
+        <label class="_span data-v-3fd38838">使用规则</label>
+        <label
+          class="iconfont icon-shang _span data-v-3fd38838"
+          wx:if="{{showDetailFlg}}"
+        ></label>
+        <label class="iconfont icon-xia _span data-v-3fd38838" wx:else></label>
+      </view>
+      <view
+        class="f24 fc9 _div data-v-3fd38838"
+        wx:if="{{ticketUseType=='unUseful'}}"
+      >
+        <label class="f24 iconfont icon-tishi _span data-v-3fd38838"></label>
+        <label class="_span data-v-3fd38838">{{unUsefulNumInfo}}</label>
+      </view>
+    </view>
+  </view>
+  <view
+    class="ticketNum tc fcf pa f24 _div data-v-3fd38838"
+    wx:if="{{ticketData.usableNum&&ticketData.usableNum>1}}"
+    >{{''+ticketData.usableNum+'张'}}</view
+  >
+  <view
+    class="ticketNum tc fcf pa f24 _div data-v-3fd38838"
+    wx:if="{{ticketData.couponCnt&&ticketData.couponCnt>1&&!ticketData.usableNum}}"
+    >{{''+ticketData.couponCnt+'张'}}</view
+  >
+  <view
+    class="yaoqingchengjiu _div data-v-3fd38838"
+    wx:if="{{ticketData.campaignTypeId==28}}"
+  >
+    <label class="iconfont icon-yaoqingchengjiu _span data-v-3fd38838"></label>
+  </view>
+  <view
+    class="yaoqingchengjiu _div data-v-3fd38838"
+    wx:if="{{ticketData.sourceType==22}}"
+  >
+    <label
+      class="iconfont icon-quanyikazhuanxiang _span data-v-3fd38838"
+    ></label>
+  </view>
+  <view
+    class="ticketdetail mt20r pt20r fc6 f24 _div data-v-3fd38838"
+    wx:if="{{showDetailFlg}}"
+  >
+    <view class="flex _div data-v-3fd38838">
+      <label class="title _span data-v-3fd38838">有效期限:</label>
+      <label class="text _span data-v-3fd38838"
+        >{{ticketdetailInfo.timeRange}}</label
+      >
+    </view>
+    <view
+      class="flex _div data-v-3fd38838"
+      wx:if="{{ticketdetailInfo.useThreshold}}"
+    >
+      <label class="title _span data-v-3fd38838">使用门槛:</label>
+      <label class="ticketTime text _span data-v-3fd38838"
+        >{{ticketdetailInfo.useThreshold}}</label
+      >
+    </view>
+    <view
+      class="flex _div data-v-3fd38838"
+      wx:if="{{ticketdetailInfo.applicableTime}}"
+    >
+      <label class="title _span data-v-3fd38838">适用时段:</label>
+      <label class="text _span data-v-3fd38838"
+        >{{ticketdetailInfo.applicableTime}}</label
+      >
+    </view>
+    <view
+      class="flex _div data-v-3fd38838"
+      wx:if="{{ticketdetailInfo.sceneTxt}}"
+    >
+      <label class="title _span data-v-3fd38838">适用场景:</label>
+      <view class="text _div data-v-3fd38838"
+        >{{ticketdetailInfo.sceneTxt}}</view
+      >
+    </view>
+    <view
+      class="flex _div data-v-3fd38838"
+      wx:if="{{ticketdetailInfo.usageRestrictions}}"
+    >
+      <label class="title _span data-v-3fd38838">使用限制:</label>
+      <label class="text _span data-v-3fd38838"
+        >{{ticketdetailInfo.usageRestrictions+'不可用'}}</label
+      >
+    </view>
+    <view
+      class="flex _div data-v-3fd38838"
+      wx:if="{{ticketdetailInfo.useCounts}}"
+    >
+      <label class="title _span data-v-3fd38838">张数限制:</label>
+      <label class="text _span data-v-3fd38838"
+        >{{ticketdetailInfo.useCounts}}</label
+      >
+    </view>
+    <view class="flex _div data-v-3fd38838">
+      <label class="title _span data-v-3fd38838">适用门店:</label>
+      <label class="text _span data-v-3fd38838">指定门店适用</label>
+    </view>
+  </view>
+  <slot name="shopTicket"></slot>
+</view>

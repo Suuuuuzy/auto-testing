@@ -1,0 +1,28 @@
+<view class="box active" id="page1" wx:if="{{showState&&userinfo.price>0}}">
+    <view class="page1-inputbox">
+        <form bindsubmit="onSubmit">
+            <view class="input-box">
+                <view class="inputlist">
+                    <view class="short-inputname">支付宝账号：</view>
+                    <view class="short-input">
+                        <input class="input input-name" id="father-name" name="mobile" placeholderClass="placeholder" value="{{mobile}}"></input>
+                    </view>
+                </view>
+                <view class="inputlist">
+                    <view class="short-inputname">账号名称：</view>
+                    <view class="short-input">
+                        <input class="input input-name" id="father-name" name="name" placeholderClass="placeholder" value="{{name}}"></input>
+                    </view>
+                </view>
+            </view>
+            <view class="money-box">
+                <view class="h1">提现金额：￥{{userinfo.price}}</view>
+                <view class="m">仔细核对账号和账号名称，一旦操作成功无法退回</view>
+            </view>
+            <view class="start normalstartbtn">
+                <button class="start" formType="submit" id="submitbtn">确认提交</button>
+            </view>
+        </form>
+    </view>
+</view>
+<view wx:else> 暂未开放</view>

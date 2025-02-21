@@ -1,0 +1,43 @@
+<view class="wrap data-v-c06eef55">
+  <zym-navigation
+    bind:__l="__l"
+    class="data-v-c06eef55"
+    uI="c06eef55-0"
+    uP="{{a}}"
+    wx:if="{{a}}"
+  ></zym-navigation>
+  <scroll-view
+    bind:refresher-refresh="{{d}}"
+    bindscrolltolower="{{c}}"
+    class="data-v-c06eef55"
+    lowerThreshold="{{100}}"
+    scrollY="{{true}}"
+    style="margin-top: 50rpx"
+  >
+    <view class="list data-v-c06eef55" wx:for="{{b}}" wx:key="e">
+      <view class="center data-v-c06eef55">
+        <view class="cleft fdc data-v-c06eef55">
+          <text class="moneyc data-v-c06eef55">￥{{item.a}}</text>
+          <text class="f28 ctxt data-v-c06eef55">加油券</text>
+        </view>
+        <view class="cright data-v-c06eef55">
+          <view class="cclum data-v-c06eef55">
+            <view class="data-v-c06eef55">
+              <text class="blig data-v-c06eef55">{{item.b}}券</text>
+            </view>
+            <view class="progress-box data-v-c06eef55">
+              <text class="Intagartxt data-v-c06eef55">{{item.c}}</text>
+              <text class="data-v-c06eef55">积分可兑换</text>
+            </view>
+          </view>
+          <view class="data-v-c06eef55">
+            <view bindtap="{{item.d}}" class="fc mt20 data-v-c06eef55">
+              去兑换
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="data-v-c06eef55" style="height: 160rpx"></view>
+  </scroll-view>
+</view>

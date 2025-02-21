@@ -1,0 +1,31 @@
+<view class="data-v-81cebbc1">
+  <view class="header data-v-81cebbc1">
+    <view class="data-v-81cebbc1" style="{{'padding-top:'+a}}"></view>
+    <view class="navBar data-v-81cebbc1" style="{{'height:'+d}}">
+      <view bindtap="{{c}}" class="right_icon data-v-81cebbc1">
+        <u-icon
+          bind:__l="__l"
+          class="data-v-81cebbc1"
+          uI="81cebbc1-0"
+          uP="{{b}}"
+          wx:if="{{b}}"
+        ></u-icon>
+      </view>
+      <text class="data-v-81cebbc1" style="padding-right: 36rpx">
+        支付完成
+      </text>
+      <text class="data-v-81cebbc1"></text>
+    </view>
+  </view>
+  <view class="payover data-v-81cebbc1">
+    <image
+      class="overimg data-v-81cebbc1"
+      mode=""
+      src="https://yiningjiayou.com/yn/ynxcx/payok.png"
+    ></image>
+    <text class="tok data-v-81cebbc1">付款成功</text>
+  </view>
+  <view class="data-v-81cebbc1">
+    <button bindtap="{{e}}" class="footer data-v-81cebbc1">完成</button>
+  </view>
+</view>

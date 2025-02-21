@@ -1,0 +1,187 @@
+<view class="order">
+  <van-tabs
+    animated
+    sticky
+    swipeable
+    active="{{active}}"
+    background="#F9F9F9"
+    bind:change="changeTab"
+    color="#3A7EFD"
+  >
+    <van-tab name="1" title="未支付">
+      <view
+        bind:tap="toDetail"
+        class="card"
+        data-item="{{item}}"
+        wx:for="{{orderList}}"
+        wx:key="orderId"
+      >
+        <view class="card-top">
+          <view class="card-text card-text-top">
+            <text class="text1">{{item.companyName}}</text>
+            <text class="text2 paying">等待支付</text>
+          </view>
+          <view class="card-text">
+            <text class="text3" wx:if="{{item.countDown>0}}"
+              >订单即将关闭，建议尽快付款</text
+            >
+            <text class="text3" wx:else>订单已关闭</text>
+            <van-count-down
+              class="text3"
+              format="剩余 HH:mm"
+              time="{{item.countDown}}"
+            ></van-count-down>
+          </view>
+        </view>
+        <view class="split-line"></view>
+        <view class="card-bottom">
+          <view class="dish-image">
+            <image
+              class="image"
+              mode="aspectFit"
+              src="{{item.attach[0].shrinkUrl?item.attach[0].shrinkUrl:defaultFoodUrl}}"
+            ></image>
+          </view>
+          <view class="card-bottom-right">
+            <view class="card-text">
+              <text class="text4">{{item.title}}</text>
+              <text class="text5">￥{{item.price}}</text>
+            </view>
+            <view class="card-buttons">
+              <van-button
+                round
+                catch:tap="cancel"
+                customClass="card-button"
+                data-item="{{item}}"
+                size="small"
+                type="default"
+                >取消订单</van-button
+              >
+              <van-button
+                round
+                catch:tap="pay"
+                color="linear-gradient(146deg,#fc8c40 -5%, #fd5475 104%)"
+                customClass="card-button"
+                data-item="{{item}}"
+                size="small"
+                style="margin-left: 14px"
+                type="default"
+                >立即支付</van-button
+              >
+            </view>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab name="2" title="已支付">
+      <view
+        bind:tap="toDetail"
+        class="card"
+        data-item="{{item}}"
+        wx:for="{{orderList}}"
+        wx:key="orderId"
+      >
+        <view class="card-top">
+          <view class="card-text card-text-top">
+            <text class="text1">{{item.companyName}}</text>
+            <text class="text2">已支付</text>
+          </view>
+          <view class="card-text">
+            <text class="text3">下单时间：{{item.orderTime}}</text>
+          </view>
+        </view>
+        <view class="split-line"></view>
+        <view class="card-bottom">
+          <view class="dish-image">
+            <image
+              class="image"
+              mode="aspectFit"
+              src="{{item.attach[0].shrinkUrl?item.attach[0].shrinkUrl:defaultFoodUrl}}"
+            ></image>
+          </view>
+          <view class="card-bottom-right">
+            <view class="card-text">
+              <text class="text4">{{item.title}}</text>
+              <text class="text5">￥{{item.price}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab name="6" title="已退款">
+      <view
+        bind:tap="toDetail"
+        class="card"
+        data-item="{{item}}"
+        wx:for="{{orderList}}"
+        wx:key="orderId"
+      >
+        <view class="card-top">
+          <view class="card-text card-text-top">
+            <text class="text1">{{item.companyName}}</text>
+            <text class="text2">已退款</text>
+          </view>
+          <view class="card-text">
+            <text class="text3">下单时间：{{item.orderTime}}</text>
+            <text class="refund"
+              >{{item.refund?'-￥'+item.refund.refundPrice:0}}</text
+            >
+          </view>
+        </view>
+        <view class="split-line"></view>
+        <view class="card-bottom">
+          <view class="dish-image">
+            <image
+              class="image"
+              mode="aspectFit"
+              src="{{item.attach[0].shrinkUrl?item.attach[0].shrinkUrl:defaultFoodUrl}}"
+            ></image>
+          </view>
+          <view class="card-bottom-right">
+            <view class="card-text">
+              <text class="text4">{{item.title}}</text>
+              <text class="text5">￥{{item.price}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab name="3" title="已取消">
+      <view
+        bind:tap="toDetail"
+        class="card card4"
+        data-item="{{item}}"
+        wx:for="{{orderList}}"
+        wx:key="orderId"
+      >
+        <view class="card-top">
+          <view class="card-text">
+            <text class="text1">{{item.companyName}}</text>
+            <text class="text2">已取消</text>
+          </view>
+        </view>
+        <view class="split-line"></view>
+        <view class="card-bottom">
+          <view class="dish-image">
+            <image
+              class="image"
+              mode="aspectFit"
+              src="{{item.attach[0].shrinkUrl?item.attach[0].shrinkUrl:defaultFoodUrl}}"
+            ></image>
+          </view>
+          <view class="card-bottom-right">
+            <view class="card-text">
+              <text class="text4">{{item.title}}</text>
+              <text class="text5">￥{{item.price}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+  <view
+    style="margin-top: 40px; text-align: center"
+    wx:if="{{orderList.length===0}}"
+    >暂无订单</view
+  >
+</view>

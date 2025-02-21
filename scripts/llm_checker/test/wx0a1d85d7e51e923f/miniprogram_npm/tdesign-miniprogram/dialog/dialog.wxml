@@ -1,0 +1,66 @@
+<import src="../common/template/button.wxml"></import>
+<import src="../common/template/icon.wxml"></import>
+<t-popup
+  bind:visible-change="overlayClick"
+  class="class"
+  closeOnOverlayClick="{{closeOnOverlayClick}}"
+  name="dialog"
+  overlayProps="{{overlayProps}}"
+  placement="center"
+  preventScrollThrough="{{preventScrollThrough}}"
+  showOverlay="{{showOverlay}}"
+  style="{{_._style( [style,customStyle] )}}"
+  tClass="{{classPrefix}}__wrapper"
+  visible="{{visible}}"
+  zIndex="{{zIndex}}"
+>
+  <view class="{{classPrefix}} {{prefix}}-class" slot="content">
+    <slot name="top"></slot>
+    <view
+      bind:tap="onClose"
+      class="{{classPrefix}}__close-btn"
+      wx:if="{{closeBtn}}"
+    >
+      <template
+        is="icon"
+        data="{{name:'close',size:22,...closeBtn}}"
+        wx:if="{{_.isObject(closeBtn)}}"
+      ></template>
+      <t-icon name="close" size="22" wx:else></t-icon>
+    </view>
+    <view class="{{classPrefix}}__content {{prefix}}-class-content">
+      <view class="{{classPrefix}}__header" wx:if="{{title}}">{{title}}</view>
+      <slot name="title"></slot>
+      <view class="{{classPrefix}}__body" wx:if="{{content}}">
+        <text class="{{classPrefix}}__body-text">{{content}}</text>
+      </view>
+      <slot name="content"></slot>
+    </view>
+    <slot name="middle"></slot>
+    <view
+      class="{{_.cls( classPrefix+'__footer',[ ['column',buttonLayout==='vertical'],['full',buttonVariant=='text'&&actions.length==0] ] )}}"
+    >
+      <block wx:if="{{actions}}">
+        <template
+          is="button"
+          data="{{block:true,type:'action',extra:index,externalClass:prefix+'-class-action',class:this.getActionClass(classPrefix,buttonLayout),...item}}"
+          wx:for="{{actions}}"
+          wx:key="index"
+        ></template>
+      </block>
+      <slot name="actions"></slot>
+      <template
+        is="button"
+        data="{{type:'cancel',..._cancel}}"
+        wx:if="{{_cancel}}"
+      ></template>
+      <slot name="cancel-btn"></slot>
+      <template
+        is="button"
+        data="{{type:'confirm',theme:'primary',..._confirm}}"
+        wx:if="{{_confirm}}"
+      ></template>
+      <slot name="confirm-btn"></slot>
+    </view>
+  </view>
+</t-popup>

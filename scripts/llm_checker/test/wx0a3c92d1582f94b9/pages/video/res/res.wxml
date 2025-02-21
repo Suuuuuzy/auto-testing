@@ -1,0 +1,37 @@
+<view class="box active" id="page3" style="margin-bottom: 60rpx">
+  <view class="page3" wx:if="{{imgshow}}">
+    <view class="resultimgbox">
+      <video autoplay="true" class="result" src="{{imgshow}}"></video>
+    </view>
+    <view class="start normalstartbtn">
+      <view bindtap="isAd" class="start save" data-bind="saveImg" id="submitbtn"
+        >保存相册</view
+      >
+    </view>
+  </view>
+</view>
+<view class="ad-ok-bg2" wx:if="{{adState||errormoney!=''}}">
+  <view class="ad-ok2">
+    <view class="msg" wx:if="{{errormoney}}">{{errormoney}}</view>
+    <view class="msg" wx:else>
+      <view>本次保存需 <text>-1枚无印豆</text> </view> 账号无印豆余额：<text
+        >{{userinfo.money}}枚</text
+      >
+    </view>
+    <view class="btn-box">
+      <view bindtap="noAd" class="btn pay" wx:if="{{userinfo.level=='0'}}">
+        <image src="/images/icon-vip.png"></image>
+        <text>{{errormoney==''?'':'开通'}}会员</text>
+      </view>
+      <view bindtap="adShow" class="btn" wx:if="{{errormoney==''}}">
+        <image src="/images/icon-v.png"></image>
+        <text>保存</text>
+      </view>
+    </view>
+    <image
+      bindtap="isHideAd"
+      class="msg-close"
+      src="/images/msg-close.png"
+    ></image>
+  </view>
+</view>

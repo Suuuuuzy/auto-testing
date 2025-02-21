@@ -1,0 +1,38 @@
+<view>
+  <view
+    bindtap="__e"
+    class="item_layout_style"
+    data-event-opts="{{[ [ 'tap',[ [ 'bind_or_unbind_gps',['$event'] ] ] ] ]}}"
+  >
+    <view class="title_style">手机控车</view>
+    <image
+      class="right_allow_style"
+      mode="aspectFit"
+      src="../../static/images/icon_allow_right.png"
+    ></image>
+  </view>
+  <view
+    bindtap="__e"
+    class="item_layout_style"
+    data-event-opts="{{[ [ 'tap',[ [ 'bind_or_unbind_ble',['$event'] ] ] ] ]}}"
+  >
+    <view class="title_style">蓝牙控车</view>
+    <image
+      class="right_allow_style"
+      mode="aspectFit"
+      src="../../static/images/icon_allow_right.png"
+    ></image>
+  </view>
+  <view
+    bindtap="__e"
+    class="item_layout_style"
+    data-event-opts="{{[ [ 'tap',[ [ 'bind_or_unbind_key',['$event'] ] ] ] ]}}"
+  >
+    <view class="title_style">液晶钥匙</view>
+    <image
+      class="right_allow_style"
+      mode="aspectFit"
+      src="../../static/images/icon_allow_right.png"
+    ></image>
+  </view>
+</view>

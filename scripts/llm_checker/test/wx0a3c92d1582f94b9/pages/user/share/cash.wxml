@@ -1,0 +1,24 @@
+<block wx:if="{{showState==true}}">
+  <view bind:tap="onSubmit" class="btn">立即提现</view>
+  <view class="list">
+    <view class="item" wx:for="{{list}}">
+      <view
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        "
+        >状态：
+        <view style="color: #ffb400" wx:if="{{item.status==1}}">已打款</view>
+        <view style="color: #f00" wx:elif="{{item.status==2}}">已驳回</view>
+        <view style="color: #f00" wx:else>申请中</view>
+      </view>
+      <view>提现支付宝账号：{{item.mobile}}</view>
+      <view>提现户名：{{item.name}}</view>
+      <view>提现金额：￥{{item.price}}</view>
+      <view>提现时间：{{item.addtime}}</view>
+      <view>截至{{item.addtime}} 之前用户佣金均以结算</view>
+    </view>
+  </view>
+</block>
+<view wx:else> 暂未开放</view>

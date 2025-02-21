@@ -1,0 +1,71 @@
+<view>
+  <view class="uni-list" style="margin-top: 20rpx">
+    <view
+      bindtap="__e"
+      class="uni-list-cell uni-list-cell-pd"
+      data-event-opts="{{[ [ 'tap',[ [ 'click_account_safe',['$event'] ] ] ] ]}}"
+      style="margin-top: 5rpx"
+    >
+      <image
+        class="gl_icon_size gl_margin_lr"
+        mode="aspectFit"
+        src="../../static/images/icon_account_safe.png"
+      ></image>
+      <view class="uni-list-cell-db gl_color_title">账号安全</view>
+      <text class="uni-icon gl_color_desc"></text>
+    </view>
+    <view
+      bindtap="__e"
+      class="uni-list-cell uni-list-cell-pd"
+      data-event-opts="{{[ [ 'tap',[ [ 'click_sound_set',['$event'] ] ] ] ]}}"
+      style="margin-top: 5rpx"
+    >
+      <image
+        class="gl_icon_size gl_margin_lr"
+        mode="aspectFit"
+        src="../../static/images/icon_sound.png"
+      ></image>
+      <view class="uni-list-cell-db gl_color_title">声音</view>
+      <text class="uni-icon gl_color_desc"></text>
+    </view>
+    <view
+      bindtap="__e"
+      class="uni-list-cell uni-list-cell-pd"
+      data-event-opts="{{[ [ 'tap',[ [ 'click_param_set',['$event'] ] ] ] ]}}"
+      style="margin-top: 5rpx"
+    >
+      <image
+        class="gl_icon_size gl_margin_lr"
+        mode="aspectFit"
+        src="../../static/images/icon_ble_param.png"
+      ></image>
+      <view class="uni-list-cell-db gl_color_title">参数设置</view>
+      <text class="uni-icon gl_color_desc"></text>
+    </view>
+    <view class="uni-list-cell uni-list-cell-pd" style="margin-top: 5rpx">
+      <image
+        class="gl_icon_size gl_margin_lr"
+        mode="aspectFit"
+        src="../../static/images/icon_car_color.png"
+      ></image>
+      <view class="uni-list-cell-db gl_color_title">车辆切换为白色</view>
+      <switch
+        bindchange="__e"
+        checked="{{carColorWhite}}"
+        data-event-opts="{{[ [ 'change',[ [ 'change_car_colorFun',['$event'] ] ] ] ]}}"
+      ></switch>
+    </view>
+  </view>
+  <official-account
+    binderror="__e"
+    bindload="__e"
+    data-event-opts="{{[ [ 'load',[ [ 'bindload',['$event'] ] ] ],[ 'error',[ [ 'binderror',['$event'] ] ] ] ]}}"
+    style="width: 600rpx; height: 168rpx"
+  ></official-account>
+  <view
+    bindtap="__e"
+    class="gl_color_title login_out_sytle gl_size_h"
+    data-event-opts="{{[ [ 'tap',[ [ 'click_login_out',['$event'] ] ] ] ]}}"
+    >退出登录</view
+  >
+</view>

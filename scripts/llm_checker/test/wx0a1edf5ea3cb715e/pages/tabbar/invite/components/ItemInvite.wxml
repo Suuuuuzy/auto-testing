@@ -1,0 +1,242 @@
+<view class="invite-full-list data-v-7db5010e">
+  <view
+    class="item-invite data-v-7db5010e"
+    wx:for="{{$root.l0}}"
+    wx:for-index="i"
+    wx:key="i"
+  >
+    <view class="invite-info-warp data-v-7db5010e">
+      <avatar
+        avatarSize="{{68}}"
+        bind:__l="__l"
+        class="data-v-7db5010e"
+        detail="{{true}}"
+        size="{{80}}"
+        src="{{item[$orig].user_avatar}}"
+        uid="{{item[$orig].userId}}"
+        vipLevel="{{item[$orig].user_vipLevel}}"
+        vueId="{{'691f668f-1-'+i}}"
+      ></avatar>
+      <view class="mid-info data-v-7db5010e">
+        <view class="top-view data-v-7db5010e">
+          <text class="name data-v-7db5010e"
+            >{{item[$orig].user_nickname}}</text
+          >
+          <view
+            class="{{['tip','data-v-7db5010e',item[$orig].user_sex===1?'mantips':'']}}"
+          >
+            <image
+              class="data-v-7db5010e"
+              mode="widthFix"
+              src="{{'http://image.fanglinxq.com/assets/icons/'+(item[$orig].user_sex===1?'man':'woman')+'.svg'}}"
+            ></image>
+            <text class="data-v-7db5010e" wx:if="{{item[$orig].user_age}}"
+              >{{item[$orig].user_age}}</text
+            >
+          </view>
+          <image
+            class="is-auth-icon data-v-7db5010e"
+            mode="widthFix"
+            src="http://image.fanglinxq.com/assets/icons/goddess.png"
+            wx:if="{{item[$orig].user_sex===2&&item[$orig].user_isRealAuth===1}}"
+          ></image>
+          <image
+            class="tip-icon data-v-7db5010e"
+            mode="widthFix"
+            src="{{'http://image.fanglinxq.com/assets/icons/level'+item[$orig].user_vipLevel+'.png'}}"
+            wx:if="{{item[$orig].user_sex===1&&item[$orig].user_vipLevel>2}}"
+          ></image>
+        </view>
+        <text class="pub-time data-v-7db5010e">{{item.m0}}</text>
+      </view>
+      <image
+        catchtap="__e"
+        class="more-icon data-v-7db5010e"
+        data-event-opts="{{[ [ 'tap',[ [ 'openMore',['$0',i],[ [ ['dataList','',i] ] ] ] ] ] ]}}"
+        mode="widthFix"
+        src="http://image.fanglinxq.com/assets/icons/more.svg"
+      ></image>
+    </view>
+    <view
+      class="invite-word data-v-7db5010e"
+      wx:if="{{item[$orig].description}}"
+      >{{item[$orig].description+''}}</view
+    >
+    <view class="priview data-v-7db5010e">
+      <view class="price data-v-7db5010e">{{item[$orig].price+'币'}}</view>
+      <view class="left data-v-7db5010e">
+        <image
+          class="data-v-7db5010e"
+          mode="widthFix"
+          src="http://image.fanglinxq.com/assets/icons/d-lng.png"
+        ></image>
+        <text class="data-v-7db5010e">{{item[$orig].provinceName}}</text>
+        <text class="data-v-7db5010e">{{item[$orig].cityName}}</text>
+      </view>
+      <view class="right data-v-7db5010e">
+        <view class="type-tags data-v-7db5010e">
+          <image
+            class="data-v-7db5010e"
+            mode="widthFix"
+            src="{{dot.selectImage}}"
+            wx:for="{{item[$orig].labelsInfo}}"
+            wx:for-index="i"
+            wx:for-item="dot"
+            wx:key="i"
+          ></image>
+        </view>
+        <view class="time-im data-v-7db5010e">
+          <image
+            class="data-v-7db5010e"
+            mode="widthFix"
+            src="http://image.fanglinxq.com/assets/icons/d-time.png"
+          ></image>
+          <text class="data-v-7db5010e">{{item[$orig].rentalTime}}</text>
+        </view>
+        <view class="des-im data-v-7db5010e">
+          <image
+            class="data-v-7db5010e"
+            mode="widthFix"
+            src="http://image.fanglinxq.com/assets/icons/d-heart.png"
+          ></image>
+          <text
+            class="data-v-7db5010e"
+            wx:for="{{item[$orig].labelsInfo}}"
+            wx:for-index="i"
+            wx:for-item="label"
+            wx:key="i"
+            >{{label.name}}</text
+          >
+        </view>
+      </view>
+    </view>
+    <view
+      class="img-list data-v-7db5010e"
+      wx:if="{{item[$orig].videoUrl===null}}"
+    >
+      <block wx:if="{{item[$orig].status===1}}">
+        <u-image
+          bind:__l="__l"
+          borderRadius="10"
+          catch:click="__e"
+          class="{{['item-img','data-v-7db5010e',(index+1)%3===0?'right-side':'']}}"
+          data-event-opts="{{[ [ '^click',[ [ 'previewImg',['$0',index],[ [ ['dataList','',i,'pictures'] ] ] ] ] ] ]}}"
+          height="220rpx"
+          src="{{img}}"
+          vueId="{{'691f668f-2-'+i+'-'+index}}"
+          width="220rpx"
+          wx:for="{{item[$orig].pictures}}"
+          wx:for-item="img"
+          wx:key="index"
+        ></u-image>
+      </block>
+      <image
+        class="auth-img data-v-7db5010e"
+        mode="widthFix"
+        src="{{'http://image.fanglinxq.com/assets/'+(item[$orig].status===0?'ing-img':'fail-img')+'.png'}}"
+        wx:else
+      ></image>
+    </view>
+    <view class="data-v-7db5010e" wx:if="{{item[$orig].videoUrl!=null}}">
+      <view
+        class="video-content data-v-7db5010e"
+        wx:if="{{item[$orig].videoUrl&&item[$orig].status===1}}"
+      >
+        <video
+          class="data-v-7db5010e"
+          controls="{{true}}"
+          src="{{item[$orig].videoUrl}}"
+        ></video>
+      </view>
+      <view class="img-list data-v-7db5010e" wx:else>
+        <image
+          class="auth-img data-v-7db5010e"
+          mode="widthFix"
+          src="{{'http://image.fanglinxq.com/assets/'+(item[$orig].status===0?'ing-video':'fail-video')+'.png'}}"
+        ></image>
+      </view>
+    </view>
+    <view class="bottom-actions data-v-7db5010e">
+      <view class="b-left data-v-7db5010e">
+        <button
+          catchtap="__e"
+          class="item-b data-v-7db5010e"
+          data-event-opts="{{[ [ 'tap',[ [ 'setShare',['$0'],[ [ ['dataList','',i] ] ] ] ] ] ]}}"
+          data-id="{{item[$orig].userId}}"
+          data-img="{{item[$orig].pictures[0]}}"
+          data-title="{{item[$orig].description}}"
+          lang="zh_CN"
+          openType="share"
+          plain="true"
+        >
+          <image
+            class="data-v-7db5010e"
+            mode="widthFix"
+            src="http://image.fanglinxq.com/assets/icons/d-share.png"
+          ></image
+          >分享
+        </button>
+        <view
+          catchtap="__e"
+          class="{{['item-b','data-v-7db5010e',item[$orig].like_relation_id?'isLike':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'handleLike',['$0',i],[ [ ['dataList','',i] ] ] ] ] ] ]}}"
+        >
+          <image
+            class="data-v-7db5010e"
+            mode="widthFix"
+            src="http://image.fanglinxq.com/assets/icons/d-liked.png"
+            wx:if="{{item[$orig].like_relation_id}}"
+          ></image>
+          <image
+            class="data-v-7db5010e"
+            mode="widthFix"
+            src="http://image.fanglinxq.com/assets/icons/d-like.png"
+            wx:else
+          ></image
+          >{{''+item[$orig].likeNumber+''}}</view
+        >
+      </view>
+      <image
+        catchtap="__e"
+        class="invite-act data-v-7db5010e"
+        data-event-opts="{{[ [ 'tap',[ [ 'jumpDetail',['$0'],[ [ ['dataList','',i] ] ] ] ] ] ]}}"
+        mode="widthFix"
+        src="{{item[$orig].sex==1?'http://image.fanglinxq.com/assets/icons/invited_man.png':'http://image.fanglinxq.com/assets/icons/invie.png'}}"
+        wx:if="{{userInfo.id!==item[$orig].userId}}"
+      ></image>
+    </view>
+    <u-gap
+      bgColor="#F6F7FC"
+      bind:__l="__l"
+      class="data-v-7db5010e"
+      height="4"
+      vueId="{{'691f668f-3-'+i}}"
+    ></u-gap>
+  </view>
+  <auth-check
+    bind:__l="__l"
+    bind:input="__e"
+    class="data-v-7db5010e"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','isAuthVisible','$event',[] ] ] ] ] ]}}"
+    value="{{isAuthVisible}}"
+    vueId="691f668f-4"
+  ></auth-check>
+  <perfect-popup
+    bind:__l="__l"
+    bind:setVisble="__e"
+    class="data-v-7db5010e"
+    data-event-opts="{{[ [ '^setVisble',[ ['setperfect'] ] ] ]}}"
+    isShow="{{isPerfect}}"
+    vueId="691f668f-5"
+  ></perfect-popup>
+  <actions-popup
+    bind:__l="__l"
+    bind:closePup="__e"
+    bind:input="__e"
+    bind:onShield="__e"
+    class="data-v-7db5010e"
+    data-event-opts="{{[ [ '^closePup',[ ['closePup'] ] ],[ '^onShield',[ ['hanldeShield'] ] ],[ '^input',[ [ '__set_model',[ '','isOpend','$event',[] ] ] ] ] ]}}"
+    value="{{isOpend}}"
+    vueId="691f668f-6"
+  ></actions-popup>
+</view>

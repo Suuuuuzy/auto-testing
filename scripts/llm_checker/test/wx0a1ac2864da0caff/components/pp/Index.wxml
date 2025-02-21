@@ -1,0 +1,569 @@
+<view
+  class="{{['content','content-panel-index','_div','data-v-17705679',value?'active':'']}}"
+  wx:if="{{placeholder>=0}}"
+>
+  <scroll-view
+    bindscroll="__e"
+    class="content data-v-17705679"
+    data-event-opts="{{[ [ 'scroll',[ [ 'scrollPage',['$event'] ] ] ] ]}}"
+    enableBackToTop="{{true}}"
+    scrollY="{{true}}"
+  >
+    <view
+      class="_div data-v-17705679"
+      style="{{'height:'+placeholder+'px'+';'}}"
+    ></view>
+    <view class="index-logo-gap _div data-v-17705679"></view>
+    <view class="index-logo _div data-v-17705679">
+      <image
+        class="pic _img data-v-17705679"
+        src="/static/img/logo.png"
+      ></image>
+    </view>
+    <view class="index-search-out _div data-v-17705679">
+      <view
+        bindtap="__e"
+        class="index-search-bar _div data-v-17705679"
+        data-event-opts="{{[ [ 'tap',[ [ 'toSearch',['$event'] ] ] ] ]}}"
+      >
+        <view class="icon-search _div data-v-17705679">
+          <image
+            class="pic _img data-v-17705679"
+            src="/static/img/icon-search.svg"
+          ></image>
+        </view>
+        <view class="input placeholder _div data-v-17705679"
+          >百达翡丽型号或关键字</view
+        >
+      </view>
+    </view>
+    <view class="index-banner _div data-v-17705679">
+      <swiper
+        autoplay="{{true}}"
+        bindchange="__e"
+        circular="{{true}}"
+        class="content data-v-17705679"
+        data-event-opts="{{[ [ 'change',[ [ 'changeSwiper',['$event'] ] ] ] ]}}"
+      >
+        <swiper-item
+          bindtap="__e"
+          class="panel data-v-17705679"
+          data-event-opts="{{[ [ 'tap',[ [ 'jumpBanner',['$0',index],[ [ ['banner','',index] ] ] ] ] ] ]}}"
+          wx:for="{{banner}}"
+          wx:key="index"
+        >
+          <view
+            class="content _div data-v-17705679"
+            wx:if="{{item.source==='video'}}"
+          >
+            <video
+              autoplay="{{true}}"
+              class="content content-video active data-v-17705679"
+              controls="{{false}}"
+              enableProgressGesture="{{false}}"
+              id="{{'video'+index}}"
+              loop="{{true}}"
+              muted="{{true}}"
+              objectFit="cover"
+              showCenterPlayBtn="{{false}}"
+              showFullscreenBtn="{{false}}"
+              showPlayBtn="{{false}}"
+              showProgress="{{false}}"
+              src="{{item.url}}"
+            ></video>
+          </view>
+          <block wx:else>
+            <view
+              class="content _div data-v-17705679"
+              wx:if="{{item.source==='pic'}}"
+            >
+              <image
+                class="pic _img data-v-17705679"
+                mode="aspectFill"
+                src="{{item.url}}"
+              ></image>
+            </view>
+          </block>
+          <view class="index-swiper-shadow _div data-v-17705679"></view>
+          <view
+            class="{{['index-swiper-text-out','_div','data-v-17705679',item.id==1?'special':'']}}"
+          >
+            <view class="index-swiper-text _div data-v-17705679">
+              <view class="_div data-v-17705679">{{item.title}}</view>
+              <view class="_div data-v-17705679" wx:if="{{item.title_sub}}"
+                >{{item.title_sub}}</view
+              >
+            </view>
+            <view
+              class="index-swiper-view _div data-v-17705679"
+              wx:if="{{item.btn}}"
+              >{{item.btn}}</view
+            >
+          </view>
+        </swiper-item>
+      </swiper>
+      <view class="index-banner-dot _div data-v-17705679" wx:if="{{$root.g0}}">
+        <view
+          class="{{['_div','data-v-17705679',index===nowBanner?'active':'']}}"
+          wx:for="{{banner}}"
+          wx:key="index"
+        ></view>
+      </view>
+    </view>
+    <view class="index-panel _div data-v-17705679">
+      <view class="title-top _div data-v-17705679">百达翡丽新款</view>
+      <view class="title-sub _div data-v-17705679">百达翡丽2024年新款腕表</view>
+      <view class="index-watch-swiper _div data-v-17705679">
+        <swiper
+          bindchange="__e"
+          circular="{{true}}"
+          class="content data-v-17705679"
+          current="{{currentNew}}"
+          data-event-opts="{{[ [ 'change',[ [ 'changeProductSwiper',['$event'] ] ] ] ]}}"
+          nextMargin="80rpx"
+          previousMargin="80rpx"
+          wx:if="{{newWatch&&currentNew>=0}}"
+        >
+          <swiper-item
+            class="swiper-watch-item data-v-17705679"
+            wx:for="{{newWatch}}"
+            wx:key="index"
+          >
+            <view class="swiper-watch-panel _div data-v-17705679">
+              <view class="swiper-watch-panel-top _div data-v-17705679"></view>
+              <view class="swiper-watch-code _div data-v-17705679"
+                >{{item.reference}}</view
+              >
+              <view class="swiper-watch-sub _div data-v-17705679"
+                >{{item.caseMaterial}}</view
+              >
+              <view class="swiper-watch-detail _div data-v-17705679"
+                >{{item.collection}}</view
+              >
+              <view
+                bindtap="__e"
+                class="content _div data-v-17705679"
+                data-event-opts="{{[ [ 'tap',[ [ 'toProductInner',['$0'],[ [ ['newWatch','',index] ] ] ] ] ] ]}}"
+              ></view>
+              <view class="swiper-watch-btn-out _div data-v-17705679">
+                <view
+                  bindtap="__e"
+                  class="swiper-watch-btn _div data-v-17705679"
+                  data-event-opts="{{[ [ 'tap',[ [ 'likeThis',['$0'],[ [ ['newWatch','',index] ] ] ] ] ] ]}}"
+                >
+                  <image
+                    class="pic _img data-v-17705679"
+                    src="/static/img/icon-like.svg"
+                    wx:if="{{!item.liked}}"
+                  ></image>
+                  <image
+                    class="pic _img data-v-17705679"
+                    src="/static/img/icon-like-fill.svg"
+                    wx:else
+                  ></image>
+                </view>
+                <view class="swiper-watch-btn _div data-v-17705679">
+                  <image
+                    class="pic _img data-v-17705679"
+                    src="/static/img/icon-share.svg"
+                  ></image>
+                  <button
+                    class="a-top data-v-17705679"
+                    data-index="{{index}}"
+                    openType="share"
+                  ></button>
+                </view>
+              </view>
+            </view>
+            <view
+              bindtap="__e"
+              class="swiper-watch-pic _div data-v-17705679"
+              data-event-opts="{{[ [ 'tap',[ [ 'toProductInner',['$0'],[ [ ['newWatch','',index] ] ] ] ] ] ]}}"
+            >
+              <image
+                class="pic _img data-v-17705679"
+                mode="aspectFit"
+                src="{{item.articleImages}}"
+              ></image>
+            </view>
+          </swiper-item>
+        </swiper>
+      </view>
+      <view
+        bindtap="__e"
+        class="index-watch-swiper-btn _div data-v-17705679"
+        data-event-opts="{{[ [ 'tap',[ [ 'exploreMore',['$event'] ] ] ] ]}}"
+        >探索更多新款</view
+      >
+      <view class="index-panel-divider _div data-v-17705679"></view>
+    </view>
+    <view class="index-panel _div data-v-17705679">
+      <view class="title-top _div data-v-17705679">百达翡丽腕表</view>
+      <view class="title-sub _div data-v-17705679">按分类找到您的腕表</view>
+      <view class="index-category-out _div data-v-17705679">
+        <view class="index-category-top _div data-v-17705679">
+          <view
+            bindtap="__e"
+            class="index-category-top-item _div data-v-17705679"
+            data-event-opts="{{[ [ 'tap',[ [ 'toMan',['$event'] ] ] ] ]}}"
+          >
+            <view class="panel _div data-v-17705679">
+              <image
+                class="pic _img data-v-17705679"
+                mode="aspectFill"
+                src="/static/img/index-watch-1.jpg"
+              ></image>
+            </view>
+            <view class="index-category-top-item-text _div data-v-17705679"
+              >男士腕表</view
+            >
+          </view>
+          <view
+            bindtap="__e"
+            class="index-category-top-item _div data-v-17705679"
+            data-event-opts="{{[ [ 'tap',[ [ 'toWoman',['$event'] ] ] ] ]}}"
+          >
+            <view class="panel _div data-v-17705679">
+              <image
+                class="pic _img data-v-17705679"
+                mode="aspectFill"
+                src="/static/img/index-watch-2.jpg"
+              ></image>
+            </view>
+            <view class="index-category-top-item-text _div data-v-17705679"
+              >女士腕表</view
+            >
+          </view>
+        </view>
+        <view
+          bindtap="__e"
+          class="index-category-bottom _div data-v-17705679"
+          data-event-opts="{{[ [ 'tap',[ [ 'toAll',['$event'] ] ] ] ]}}"
+        >
+          <view class="panel _div data-v-17705679">
+            <image
+              class="pic _img data-v-17705679"
+              mode="aspectFill"
+              src="/static/img/index-watch-3.jpg"
+            ></image>
+          </view>
+          <view class="index-category-top-item-text _div data-v-17705679"
+            >所有表款</view
+          >
+        </view>
+      </view>
+      <view class="index-panel-divider _div data-v-17705679"></view>
+    </view>
+    <view class="index-panel _div data-v-17705679">
+      <view class="title-top _div data-v-17705679">时计系列</view>
+      <view class="title-sub _div data-v-17705679">百达翡丽热门时计系列</view>
+      <view class="index-time-swiper-out _div data-v-17705679">
+        <swiper class="content data-v-17705679" nextMargin="210rpx">
+          <swiper-item
+            bindtap="__e"
+            class="index-time-swiper-item data-v-17705679"
+            data-event-opts="{{[ [ 'tap',[ [ 'toCollection',['超级复杂功能时计'] ] ] ] ]}}"
+          >
+            <view class="index-time-swiper-item-panel _div data-v-17705679">
+              <view class="index-time-swiper-item-title _div data-v-17705679"
+                >超级复杂功能时计</view
+              >
+              <view class="index-time-swiper-item-count _div data-v-17705679"
+                >{{watchTypeCount['超级复杂功能时计']+'个款型'}}</view
+              >
+              <view class="index-time-more _div data-v-17705679">
+                <view class="arrow-more _div data-v-17705679">
+                  <image
+                    class="pic _img data-v-17705679"
+                    src="/static/img/arrow-more.svg"
+                  ></image>
+                </view>
+              </view>
+            </view>
+            <view class="index-time-pic _div data-v-17705679">
+              <image
+                class="pic _img data-v-17705679"
+                mode="aspectFit"
+                src="https://cdn.impdigital.cn/patek/cjfz-white.png"
+              ></image>
+            </view>
+          </swiper-item>
+          <swiper-item
+            bindtap="__e"
+            class="index-time-swiper-item data-v-17705679"
+            data-event-opts="{{[ [ 'tap',[ [ 'toCollection',['复杂功能时计'] ] ] ] ]}}"
+          >
+            <view class="index-time-swiper-item-panel _div data-v-17705679">
+              <view class="index-time-swiper-item-title _div data-v-17705679"
+                >复杂功能时计</view
+              >
+              <view class="index-time-swiper-item-count _div data-v-17705679"
+                >{{watchTypeCount['复杂功能时计']+'个款型'}}</view
+              >
+              <view class="index-time-more _div data-v-17705679">
+                <view class="arrow-more _div data-v-17705679">
+                  <image
+                    class="pic _img data-v-17705679"
+                    src="/static/img/arrow-more.svg"
+                  ></image>
+                </view>
+              </view>
+            </view>
+            <view class="index-time-pic _div data-v-17705679">
+              <image
+                class="pic _img data-v-17705679"
+                mode="aspectFit"
+                src="https://cdn.impdigital.cn/patek/fz-white.png"
+              ></image>
+            </view>
+          </swiper-item>
+          <swiper-item
+            bindtap="__e"
+            class="index-time-swiper-item data-v-17705679"
+            data-event-opts="{{[ [ 'tap',[ [ 'toCollection',['Calatrava'] ] ] ] ]}}"
+          >
+            <view class="index-time-swiper-item-panel _div data-v-17705679">
+              <view class="index-time-swiper-item-title _div data-v-17705679"
+                >Calatrava</view
+              >
+              <view class="index-time-swiper-item-count _div data-v-17705679"
+                >{{watchTypeCount['Calatrava']+'个款型'}}</view
+              >
+              <view class="index-time-more _div data-v-17705679">
+                <view class="arrow-more _div data-v-17705679">
+                  <image
+                    class="pic _img data-v-17705679"
+                    src="/static/img/arrow-more.svg"
+                  ></image>
+                </view>
+              </view>
+            </view>
+            <view class="index-time-pic _div data-v-17705679">
+              <image
+                class="pic _img data-v-17705679"
+                mode="aspectFit"
+                src="https://cdn.impdigital.cn/patek/calatrava-white.png"
+              ></image>
+            </view>
+          </swiper-item>
+          <swiper-item
+            bindtap="__e"
+            class="index-time-swiper-item data-v-17705679"
+            data-event-opts="{{[ [ 'tap',[ [ 'toCollection',['Gondolo'] ] ] ] ]}}"
+          >
+            <view class="index-time-swiper-item-panel _div data-v-17705679">
+              <view class="index-time-swiper-item-title _div data-v-17705679"
+                >Gondolo</view
+              >
+              <view class="index-time-swiper-item-count _div data-v-17705679"
+                >{{watchTypeCount['Gondolo']+'个款型'}}</view
+              >
+              <view class="index-time-more _div data-v-17705679">
+                <view class="arrow-more _div data-v-17705679">
+                  <image
+                    class="pic _img data-v-17705679"
+                    src="/static/img/arrow-more.svg"
+                  ></image>
+                </view>
+              </view>
+            </view>
+            <view class="index-time-pic _div data-v-17705679">
+              <image
+                class="pic _img data-v-17705679"
+                mode="aspectFit"
+                src="https://cdn.impdigital.cn/patek/gondolo-white.png"
+              ></image>
+            </view>
+          </swiper-item>
+          <swiper-item
+            bindtap="__e"
+            class="index-time-swiper-item data-v-17705679"
+            data-event-opts="{{[ [ 'tap',[ [ 'toCollection',['Golden Ellipse'] ] ] ] ]}}"
+          >
+            <view class="index-time-swiper-item-panel _div data-v-17705679">
+              <view class="index-time-swiper-item-title _div data-v-17705679"
+                >Golden Ellipse</view
+              >
+              <view class="index-time-swiper-item-count _div data-v-17705679"
+                >{{watchTypeCount['Golden Ellipse']+'个款型'}}</view
+              >
+              <view class="index-time-more _div data-v-17705679">
+                <view class="arrow-more _div data-v-17705679">
+                  <image
+                    class="pic _img data-v-17705679"
+                    src="/static/img/arrow-more.svg"
+                  ></image>
+                </view>
+              </view>
+            </view>
+            <view class="index-time-pic _div data-v-17705679">
+              <image
+                class="pic _img data-v-17705679"
+                mode="aspectFit"
+                src="https://cdn.impdigital.cn/patek/golden-white.png"
+              ></image>
+            </view>
+          </swiper-item>
+          <swiper-item
+            bindtap="__e"
+            class="index-time-swiper-item data-v-17705679"
+            data-event-opts="{{[ [ 'tap',[ [ 'toCollection',['Nautilus'] ] ] ] ]}}"
+          >
+            <view class="index-time-swiper-item-panel _div data-v-17705679">
+              <view class="index-time-swiper-item-title _div data-v-17705679"
+                >Nautilus</view
+              >
+              <view class="index-time-swiper-item-count _div data-v-17705679"
+                >{{watchTypeCount['Nautilus']+'个款型'}}</view
+              >
+              <view class="index-time-more _div data-v-17705679">
+                <view class="arrow-more _div data-v-17705679">
+                  <image
+                    class="pic _img data-v-17705679"
+                    src="/static/img/arrow-more.svg"
+                  ></image>
+                </view>
+              </view>
+            </view>
+            <view class="index-time-pic _div data-v-17705679">
+              <image
+                class="pic _img data-v-17705679"
+                mode="aspectFit"
+                src="https://cdn.impdigital.cn/patek/nautilus-white.png"
+              ></image>
+            </view>
+          </swiper-item>
+          <swiper-item
+            bindtap="__e"
+            class="index-time-swiper-item data-v-17705679"
+            data-event-opts="{{[ [ 'tap',[ [ 'toCollection',['Aquanaut'] ] ] ] ]}}"
+          >
+            <view class="index-time-swiper-item-panel _div data-v-17705679">
+              <view class="index-time-swiper-item-title _div data-v-17705679"
+                >Aquanaut</view
+              >
+              <view class="index-time-swiper-item-count _div data-v-17705679"
+                >{{watchTypeCount['Aquanaut']+'个款型'}}</view
+              >
+              <view class="index-time-more _div data-v-17705679">
+                <view class="arrow-more _div data-v-17705679">
+                  <image
+                    class="pic _img data-v-17705679"
+                    src="/static/img/arrow-more.svg"
+                  ></image>
+                </view>
+              </view>
+            </view>
+            <view class="index-time-pic _div data-v-17705679">
+              <image
+                class="pic _img data-v-17705679"
+                mode="aspectFit"
+                src="https://cdn.impdigital.cn/patek/aquanaut-white.png"
+              ></image>
+            </view>
+          </swiper-item>
+          <swiper-item
+            bindtap="__e"
+            class="index-time-swiper-item data-v-17705679"
+            data-event-opts="{{[ [ 'tap',[ [ 'toCollection',['Twenty~4'] ] ] ] ]}}"
+          >
+            <view class="index-time-swiper-item-panel _div data-v-17705679">
+              <view class="index-time-swiper-item-title _div data-v-17705679"
+                >Twenty~4</view
+              >
+              <view class="index-time-swiper-item-count _div data-v-17705679"
+                >{{watchTypeCount['Twenty~4']+'个款型'}}</view
+              >
+              <view class="index-time-more _div data-v-17705679">
+                <view class="arrow-more _div data-v-17705679">
+                  <image
+                    class="pic _img data-v-17705679"
+                    src="/static/img/arrow-more.svg"
+                  ></image>
+                </view>
+              </view>
+            </view>
+            <view class="index-time-pic _div data-v-17705679">
+              <image
+                class="pic _img data-v-17705679"
+                mode="aspectFit"
+                src="https://cdn.impdigital.cn/patek/twenty4-white.png"
+              ></image>
+            </view>
+          </swiper-item>
+          <swiper-item
+            bindtap="__e"
+            class="index-time-swiper-item data-v-17705679"
+            data-event-opts="{{[ [ 'tap',[ [ 'toCollection',['怀表'] ] ] ] ]}}"
+          >
+            <view class="index-time-swiper-item-panel _div data-v-17705679">
+              <view class="index-time-swiper-item-title _div data-v-17705679"
+                >怀表</view
+              >
+              <view class="index-time-swiper-item-count _div data-v-17705679"
+                >{{watchTypeCount['怀表']+'个款型'}}</view
+              >
+              <view class="index-time-more _div data-v-17705679">
+                <view class="arrow-more _div data-v-17705679">
+                  <image
+                    class="pic _img data-v-17705679"
+                    src="/static/img/arrow-more.svg"
+                  ></image>
+                </view>
+              </view>
+            </view>
+            <view class="index-time-pic _div data-v-17705679">
+              <image
+                class="pic _img data-v-17705679"
+                mode="aspectFit"
+                src="https://static.patek.com/images/articles/face_white/150/973J_010@2x.jpg"
+              ></image>
+            </view>
+          </swiper-item>
+        </swiper>
+      </view>
+      <view
+        bindtap="__e"
+        class="index-watch-swiper-btn _div data-v-17705679"
+        data-event-opts="{{[ [ 'tap',[ [ 'toCollectionAll',['$event'] ] ] ] ]}}"
+        >所有时计系列</view
+      >
+      <view class="index-panel-divider _div data-v-17705679"></view>
+    </view>
+    <view class="index-jump-bottom _div data-v-17705679">
+      <view
+        bindtap="__e"
+        class="index-jump _div data-v-17705679"
+        data-event-opts="{{[ [ 'tap',[ [ 'jumpBoutique',['$event'] ] ] ] ]}}"
+      >
+        <view class="panel _div data-v-17705679">
+          <image
+            class="pic _img data-v-17705679"
+            mode="aspectFill"
+            src="/static/img/index-jump.jpg"
+          ></image>
+        </view>
+        <view class="index-jump-title _div data-v-17705679"
+          >百达翡丽尊享服务</view
+        >
+        <view class="index-jump-title-sub _div data-v-17705679"
+          >遍布全球的百达翡丽客户服务中心</view
+        >
+      </view>
+    </view>
+    <view
+      class="_div data-v-17705679"
+      style="{{'height:'+placeholder+'px'+';'}}"
+    ></view>
+  </scroll-view>
+  <pp-nav
+    bind:__l="__l"
+    bind:input="__e"
+    class="data-v-17705679"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','showNav','$event',[] ] ] ] ] ]}}"
+    logo="{{true}}"
+    placeholder="{{placeholder}}"
+    value="{{showNav}}"
+    vueId="11d77e28-1"
+  ></pp-nav>
+</view>

@@ -1,0 +1,64 @@
+<map
+  bindupdated="__e"
+  data-event-opts="{{[ [ 'updated',[ [ 'map_updated',['$event'] ] ] ] ]}}"
+  id="myMap"
+  latitude="{{centerLat}}"
+  longitude="{{centerLng}}"
+  markers="{{marker}}"
+  showLocation="true"
+  style="{{'width:'+maxWidth+'px;height:'+maxHeight+'px;'}}"
+  subkey="{{mapKey}}"
+>
+  <cover-view
+    class="location_layout_style"
+    wx:if="{{resultList!=''&is_ready&!is_outof_service}}"
+  >
+    <cover-view style="width: 530rpx">
+      <cover-view class="plate_number_style">{{resultList.plateNo}}</cover-view>
+      <cover-view class="location_address_style">{{address}}</cover-view>
+      <cover-view class="location_address_style"
+        >{{'定位时间：'+resultList.gpsTime}}</cover-view
+      >
+    </cover-view>
+    <cover-view
+      style="
+        width: 165rpx;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      "
+    >
+      <cover-view
+        catchtap="__e"
+        class="text_xcjl_style gl_size_h"
+        data-event-opts="{{[ [ 'tap',[ [ 'onClickCarDriveRecordFun',['$event'] ] ] ] ]}}"
+        hoverStopPropagation="true"
+        >行车记录</cover-view
+      >
+      <cover-view
+        catchtap="__e"
+        class="text_xcjl_style gl_size_h"
+        data-event-opts="{{[ [ 'tap',[ [ 'click_navigate',['$event'] ] ] ] ]}}"
+        >人车导航</cover-view
+      >
+    </cover-view>
+  </cover-view>
+  <view wx:if="{{resultList!=''&is_ready&!is_outof_service}}">
+    <cover-image
+      bindtap="__e"
+      class="location_btn_image_style"
+      data-event-opts="{{[ [ 'tap',[ [ 'click_car_center',['$event'] ] ] ] ]}}"
+      mode="aspectFit"
+      src="../../static/images/car_location.png"
+      style="margin-top: 200rpx"
+    ></cover-image>
+    <cover-image
+      bindtap="__e"
+      class="location_btn_image_style"
+      data-event-opts="{{[ [ 'tap',[ [ 'onClickCarRailFun',['$event'] ] ] ] ]}}"
+      mode="aspectFit"
+      src="../../static/images/car_rail.png"
+      style="margin-top: 300rpx"
+    ></cover-image>
+  </view>
+</map>

@@ -1,0 +1,35 @@
+.page_style {
+  width: 100%;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  flex-direction: column;
+}
+.item_layout_style,
+.page_style {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-direction: normal;
+}
+.item_layout_style {
+  background-color: #fff;
+  -webkit-box-orient: horizontal;
+  flex-direction: row;
+  height: 100rpx;
+  -webkit-box-align: center;
+  align-items: center;
+  justify-items: center;
+  border: 1px #e5e5e5;
+  border-style: none none solid;
+}
+.title_style {
+  color: #353535;
+  font-size: 30rpx;
+  margin-left: 30rpx;
+}
+.right_allow_style {
+  width: 32rpx;
+  height: 32rpx;
+  right: 60rpx;
+  position: absolute;
+}

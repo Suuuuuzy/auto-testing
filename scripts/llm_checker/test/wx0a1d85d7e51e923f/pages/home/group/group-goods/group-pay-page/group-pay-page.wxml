@@ -1,0 +1,141 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view class="bg-white margin-lr-xs margin-tb-sm">
+  <view class="bg-white padding-sm flex {{isUy?'rtl':''}}">
+    <view
+      class="bg-img radius"
+      style="height: 140rpx; width: 140rpx;background-image: url({{goodItem.images[0].img_url}});"
+    ></view>
+    <view class="padding-lr-sm">
+      <view class="text-bold text-black">
+        {{isUy?goodItem.uy_name:goodItem.ch_name}}
+      </view>
+      <view class="flex justify-between" style="width: 510rpx">
+        <view>
+          <view>
+            <text class="cu-tag uy bg-white sm text-cyan"
+              >{{Str.canUseDuringBuisness[lanIndex]}}</text
+            >
+            <text class="cu-tag uy sm text-green bg-white solid-left"
+              >{{Str.supportPickup[lanIndex]}}</text
+            >
+            <text></text>
+          </view>
+          <view>
+            <price
+              decimalSmaller
+              class="text-bold text-red uy-tom text-xl"
+              price="{{goodItem.activity_price}}"
+              priceUnit="yuan"
+            ></price>
+            <text>&nbsp;</text>
+            <price
+              decimalSmaller
+              class=""
+              price="{{goodItem.price}}"
+              priceUnit="yuan"
+              type="delthrough"
+            ></price>
+          </view>
+        </view>
+        <view class="flex">
+          <view
+            bindtap="removeBtn"
+            class="add-icon {{formData.goodCount==1?'grayscale':''}}"
+          >
+            <image src="/resource/images/shop/common/remove.png"></image>
+          </view>
+          <view class="padding-lr-sm text-lg">{{formData.goodCount}}</view>
+          <view bindtap="addBtn" class="add-icon">
+            <image src="/resource/images/shop/common/add.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="solid-top">
+    <item isUy="{{isUy}}">
+      <view slot="content">
+        <view class="flex align-center">
+          <i
+            class="iconfont icon-hongbao text-red"
+            style="font-size: 40rpx"
+          ></i>
+          <text decode="true">&nbsp;&nbsp;</text>
+          <text>{{Str.hongbao[lanIndex]}}</text>
+          <text> / </text>
+          <text>{{Str.couponCart[lanIndex]}}</text>
+        </view>
+      </view>
+      <view class="text-sm" slot="action">{{Str.noUsed[lanIndex]}}</view>
+    </item>
+  </view>
+  <view class="solid-top padding-lr padding-tb-sm">
+    <view class="flex justify-end">
+      <view>
+        <text class="text-black text-lg">{{Str.couponPercent[lanIndex]}} </text>
+        <text decode="true">&nbsp;</text>
+        <price
+          decimalSmaller
+          fill
+          class="text-red text-xl"
+          price="{{formData.discountFee}}"
+          priceUnit="yuan"
+          >{{formData.actualFee}}</price
+        >
+      </view>
+      <text decode="true">&nbsp;&nbsp;&nbsp;</text>
+      <view class="">
+        <text class="text-black text-lg">{{Str.shopSum[lanIndex]}}</text>
+        <text decode="true">&nbsp;</text>
+        <price
+          decimalSmaller
+          fill
+          class="text-red text-xl"
+          price="{{formData.actualFee}}"
+          priceUnit="yuan"
+          >{{formData.actualFee}}</price
+        >
+      </view>
+    </view>
+  </view>
+  <view></view>
+</view>
+<view class="cu-bar tabbar bg-white shadow foot">
+  <view class="flex-sub flex" style="min-height: 100rpx">
+    <view class="flex-treble bg-white flex justify-center align-center">
+      <view>
+        <view class="flex align-center {{isUy?'rtl':''}}">
+          <text class="text-red">{{Str._allAmount[lanIndex]}}</text>
+          <text class="padding-lr-xs"> : </text>
+          <price
+            decimalSmaller
+            fill
+            class="text-red text-xl"
+            price="{{formData.actualFee}}"
+            priceUnit="yuan"
+            >{{formData.actualFee}}</price
+          >
+          <text decode="true">&nbsp;</text>
+          <price
+            decimalSmaller
+            fill
+            class=""
+            price="{{formData.totalFee}}"
+            priceUnit="yuan"
+            type="delthrough"
+            >{{formData.totalFee}}</price
+          >
+        </view>
+      </view>
+    </view>
+    <view
+      bind:tap="subBtn"
+      class="flex-twice bg-cyan flex align-center justify-center"
+    >
+      <view class="text-lg text-bold uy-tom">{{Str.pay[lanIndex]}}</view>
+    </view>
+  </view>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

@@ -1,0 +1,88 @@
+<t-popup
+  bind:visible-change="onVisibleChange"
+  placement="center"
+  visible="{{visible}}"
+>
+  <view class="block">
+    <view>
+      <t-image
+        height="500rpx"
+        mode="aspectFill"
+        src="{{good.img_url}}"
+        style="border-radius: 12rpx 12rpx 0 0"
+        width="600rpx"
+      ></t-image>
+    </view>
+    <view
+      class="flex justify-between {{isUy?'rtl':''}} padding-tb-xs padding-lr-sm align-center"
+    >
+      <view class="{{isUy?'rtl':''}}  uy-tom padding-lr-xs text-lg"
+        >{{isUy?good.uy_name:good.ch_name}}</view
+      >
+      <button
+        class="cu-btn"
+        data-item="{{good}}"
+        openType="share"
+        plain="true"
+        style="border: 0; background-color: white; margin: 0rpx; padding: 0rpx"
+      >
+        <t-icon name="share" size="40rpx"></t-icon>
+      </button>
+    </view>
+    <view class="flex justify-between padding-lr-sm margin-tb-sm">
+      <view>
+        <price
+          decimalSmaller
+          class="text-xl text-red text-bold"
+          price="{{good.activity_price}}"
+          priceUnit="yuan"
+          type="main"
+          wx:if="{{good.isActivity>0}}"
+        ></price>
+        <text>&nbsp;</text>
+        <price
+          decimalSmaller
+          class="{{good.isActivity>0?'text-sm text-gray':'text-xl text-red text-bold'}}"
+          lineThroughWidth="0.08em"
+          price="{{good.price}}"
+          priceUnit="yuan"
+          type="{{good.isActivity>0?'delthrough':'main'}}"
+        ></price>
+      </view>
+      <view>
+        <view
+          class="flex align-center justify-end"
+          wx:if="{{isOpen&&good.good_specification.length==0}}"
+        >
+          <i
+            bindtap="removeBtn"
+            class="iconfont icon-Remove padding-right-sm text-pink"
+            data-_index="{{_index}}"
+            data-index="{{index}}"
+            data-item="{{good}}"
+            data-type="2"
+            style="font-size: 50rpx"
+            wx:if="{{num>0}}"
+          ></i>
+          <text class="text-lg" wx:if="{{num>0}}"> {{num}}</text>
+          <i
+            bindtap="addBtn"
+            class="iconfont icon-add1 padding-left-sm text-pink"
+            data-_index="{{_index}}"
+            data-index="{{index}}"
+            data-item="{{good}}"
+            data-type="2"
+            style="font-size: 50rpx"
+          ></i>
+        </view>
+      </view>
+    </view>
+    <t-icon
+      bind:tap="popOnClose"
+      color="#fff"
+      name="close-circle"
+      size="32"
+      tClass="close-btn"
+    ></t-icon>
+  </view>
+</t-popup>

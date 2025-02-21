@@ -1,0 +1,141 @@
+<view class="index data-v-e2c29b21">
+  <view class="header data-v-e2c29b21" style="{{'padding-top:'+y}}">
+    <view class="topBox data-v-e2c29b21" style="{{'height:'+b}}">
+      <image alt="logo" class="text data-v-e2c29b21" src="{{a}}"></image>
+    </view>
+    <view class="infoBox data-v-e2c29b21">
+      <view class="leftBox data-v-e2c29b21">
+        <image
+          alt="头像"
+          bindtap="{{c}}"
+          class="avatar data-v-e2c29b21"
+          src="{{d}}"
+        ></image>
+        <view class="info data-v-e2c29b21">
+          <view
+            bindtap="{{h}}"
+            class="text1 nickName data-v-e2c29b21"
+            wx:if="{{e}}"
+          >
+            <image alt="等级" class="grade data-v-e2c29b21" src="{{f}}"></image>
+            <text class="data-v-e2c29b21">{{g}}</text>
+          </view>
+          <view class="text2 data-v-e2c29b21" wx:if="{{i}}">
+            <view bindtap="{{m}}" class="carflex data-v-e2c29b21" wx:if="{{j}}">
+              <text class="carNum mr20 data-v-e2c29b21">共{{k}}辆 </text>
+              <text class="addCarBtn data-v-e2c29b21">{{l}}</text>
+            </view>
+            <view bindtap="{{n}}" class="addCarBtn data-v-e2c29b21" wx:else>
+              <text
+                class="data-v-e2c29b21"
+                style="font-size: 40rpx; padding-right: 8rpx"
+                >+</text
+              >
+              <text class="data-v-e2c29b21"> 绑定车牌</text>
+            </view>
+          </view>
+          <view class="text2 data-v-e2c29b21" wx:if="{{o}}">
+            <text bindtap="{{p}}" class="addCarBtn data-v-e2c29b21"
+              >登录/注册</text
+            >
+          </view>
+        </view>
+      </view>
+    </view>
+    <view bindtap="{{x}}" class="vipBox data-v-e2c29b21">
+      <view class="leftBox data-v-e2c29b21">
+        <image
+          class="vipIcon data-v-e2c29b21"
+          mode=""
+          src="{{r}}"
+          wx:if="{{q}}"
+        ></image>
+        <text class="{{['text','data-v-e2c29b21',t&&'pttxt',v&&'hjtxt']}}"
+          >{{s}}</text
+        >
+      </view>
+      <view class="rightBox data-v-e2c29b21">
+        <text class="text data-v-e2c29b21">我的权益</text>
+        <image alt="左箭头" class="arrow data-v-e2c29b21" src="{{w}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class="myAssets data-v-e2c29b21">
+    <view class="list fsb data-v-e2c29b21">
+      <view bindtap="{{A}}" class="item data-v-e2c29b21">
+        <view class="text1 data-v-e2c29b21">{{z}}</view>
+        <text class="text2 data-v-e2c29b21">优惠券</text>
+      </view>
+      <view bindtap="{{C}}" class="item data-v-e2c29b21">
+        <view class="text1 data-v-e2c29b21">{{B}}</view>
+        <text class="text2 data-v-e2c29b21">加油卡</text>
+      </view>
+      <view bindchange="{{E}}" bindtap="{{F}}" class="item data-v-e2c29b21">
+        <view class="text1 data-v-e2c29b21">{{D}}</view>
+        <text class="text2 data-v-e2c29b21">余额</text>
+      </view>
+    </view>
+  </view>
+  <view class="plate-toast data-v-e2c29b21" wx:if="{{G}}">
+    <view bindtap="{{O}}" class="fsb gopay data-v-e2c29b21" hidden="{{!N}}">
+      <view class="fdc data-v-e2c29b21">
+        <text class="title data-v-e2c29b21">您有订单加油中</text>
+        <view class="odetail data-v-e2c29b21"
+          >{{H}} 号枪
+          <text class="oiltype data-v-e2c29b21" style="{{'color:'+J}}"
+            >{{I}}</text
+          >
+          <text class="ml20 data-v-e2c29b21">{{K}}L</text>
+        </view>
+      </view>
+      <view class="data-v-e2c29b21" style="display: flex">
+        <view class="goto data-v-e2c29b21">
+          <text class="data-v-e2c29b21">￥{{L}}</text>
+          <text class="data-v-e2c29b21" style="font-size: 38rpx">去查看</text>
+        </view>
+        <image
+          class="data-v-e2c29b21"
+          mode=""
+          src="{{M}}"
+          style="width: 54rpx; height: 58rpx"
+        ></image>
+      </view>
+    </view>
+    <view bindtap="{{W}}" class="fsb gopay data-v-e2c29b21" hidden="{{!V}}">
+      <view class="fdc data-v-e2c29b21">
+        <text class="title data-v-e2c29b21">您有订单待支付</text>
+        <view class="odetail data-v-e2c29b21"
+          >{{P}} 号枪
+          <text class="oiltype data-v-e2c29b21" style="{{'color:'+R}}"
+            >{{Q}}</text
+          >
+          <text class="ml20 data-v-e2c29b21">{{S}}L</text>
+        </view>
+      </view>
+      <view class="data-v-e2c29b21" style="display: flex">
+        <view class="goto data-v-e2c29b21">
+          <text class="data-v-e2c29b21">￥{{T}}</text>
+          <text class="data-v-e2c29b21" style="font-size: 38rpx">去付款</text>
+        </view>
+        <image
+          class="data-v-e2c29b21"
+          mode=""
+          src="{{U}}"
+          style="width: 54rpx; height: 58rpx"
+        ></image>
+      </view>
+    </view>
+  </view>
+  <view class="myPayType data-v-e2c29b21">
+    <slot name="contai"></slot>
+  </view>
+  <zym-coupon-popup
+    bind:__l="__l"
+    bindgetClick="{{Y}}"
+    class="r data-v-e2c29b21"
+    uI="e2c29b21-0"
+    uP="{{Z}}"
+    uR="newCoupon"
+    wx:if="{{Z}}"
+  ></zym-coupon-popup>
+</view>

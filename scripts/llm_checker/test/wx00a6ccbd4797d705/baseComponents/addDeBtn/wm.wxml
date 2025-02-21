@@ -1,0 +1,83 @@
+<view class="choose-product _div data-v-0f960cf6">
+  <view
+    catchtap="__e"
+    class="{{['special-add','_div','data-v-0f960cf6',set.isWoods?'woods':'']}}"
+    data-event-opts="{{[ [ 'tap',[ [ 'plus',['$event'] ] ] ] ]}}"
+    id="plus"
+    style="{{'background-color:'+set.themeColor+';'+'height:'+set.size+'px'+';'+'line-height:'+set.size+'px'+';'}}"
+    wx:if="{{trueNum==0&&(!minusDisable?minNum>1:false)}}"
+    >{{''+minNum+(unit.length===1?unit:'份')+'起点'}}</view
+  >
+  <block wx:else>
+    <view
+      catchtap="__e"
+      class="{{['special-add','_div','data-v-0f960cf6',set.isWoods?'woods':'']}}"
+      data-event-opts="{{[ [ 'tap',[ [ 'plus',['$event'] ] ] ] ]}}"
+      id="plus"
+      style="{{'background-color:'+set.themeColor+';'+'height:'+(set.size?set.size+'px':'56rpx')+';'+'line-height:'+(set.size?set.size+'px':'56rpx')+';'+'position:'+'relative'+';'}}"
+      wx:if="{{set.isShowPop}}"
+      >选规格<view
+        class="sku-true-num _div data-v-0f960cf6"
+        style="{{'background-color:'+set.themeColor+';'}}"
+        wx:if="{{trueNum>0}}"
+        >{{trueNum}}</view
+      >
+    </view>
+    <block wx:else>
+      <view
+        catchtap="__e"
+        class="special-add woodsInZero _div data-v-0f960cf6"
+        data-event-opts="{{[ [ 'tap',[ [ 'plus',['$event'] ] ] ] ]}}"
+        wx:if="{{set.isWoods&&trueNum==0}}"
+      >
+        <view
+          class="product-add__plus iconfont icon-jiahao _div data-v-0f960cf6"
+          id="plus"
+        ></view>
+      </view>
+      <view class="product-add _div data-v-0f960cf6" wx:else>
+        <view class="product-add__content _div data-v-0f960cf6">
+          <view
+            catchtap="__e"
+            class="{{['product-add__minus','iconfont','icon-jianhao','_i','data-v-0f960cf6','btn-size'+addBtnSize,trueNum<=set.min||minusDisable?disable:'']}}"
+            data-event-opts="{{[ [ 'tap',[ [ 'minus',['$event'] ] ] ] ]}}"
+            style="{{$root.s0}}"
+          ></view>
+          <view
+            bindtap="__e"
+            class="product-add__input _div data-v-0f960cf6"
+            data-event-opts="{{[ [ 'tap',[ [ 'minus',['$event'] ] ] ] ]}}"
+            style="{{'font-size:'+set.size*14/22+'px'+';'+'display:'+(trueNum?'block':'none')+';'+'color:'+(set.isWoods?set.themeColor:'')+';'+'width:'+set.inputSize+'px'+';'}}"
+            wx:if="{{set.isShowPop}}"
+            >{{''+trueNum+''}}</view
+          >
+          <view
+            class="product-add__input _div data-v-0f960cf6"
+            style="{{'width:'+set.inputSize+'px;display:'+(trueNum?'block':'none')+';color:'+(set.isWoods?set.themeColor:'')}}"
+            wx:else
+          >
+            <input-num
+              bind:__l="__l"
+              bind:click="__e"
+              bind:input="__e"
+              bind:shift="__e"
+              class="data-v-0f960cf6"
+              customStyle="{{'width:'+set.inputSize+'px'}}"
+              data-event-opts="{{[ [ '^input',[ ['printNewNum'] ] ],[ '^click',[ ['inputClick'] ] ],[ '^shift',[ ['shift'] ] ] ]}}"
+              precision="{{precision}}"
+              value="{{trueNum}}"
+              vueId="9b71b256-1"
+            ></input-num>
+          </view>
+          <view
+            catchtap="__e"
+            class="{{['product-add__plus','iconfont','icon-jiahao','_i','data-v-0f960cf6','btn-size'+addBtnSize]}}"
+            data-event-opts="{{[ [ 'tap',[ [ 'plus',['$event'] ] ] ] ]}}"
+            id="plus"
+            style="{{'background-color:'+(maxNum<=trueNum?'#cccccc':set.themeColor)+';'}}"
+          ></view>
+        </view>
+      </view>
+    </block>
+  </block>
+</view>

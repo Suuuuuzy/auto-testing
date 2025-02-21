@@ -1,0 +1,4 @@
+<view class="box">
+  <view bindtap="onComment" class="btn"> 立即评价 </view>
+  <view class="msg"> 会员ID：{{userinfo.id}} </view>
+</view>

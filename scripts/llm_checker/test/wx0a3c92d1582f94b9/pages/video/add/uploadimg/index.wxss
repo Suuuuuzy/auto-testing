@@ -1,0 +1,70 @@
+.cropper-wrapper,
+page {
+  background-color: #e5e5e5;
+}
+.cropper-wrapper {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  justify-content: space-between;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: relative;
+}
+#scannerCanvas {
+  left: -100%;
+  position: absolute;
+  top: 0;
+}
+.cropper-buttons {
+  background-color: #f3f3f3;
+  bottom: 0;
+  box-sizing: border-box;
+  color: #fff;
+  display: -webkit-flex;
+  display: flex;
+  left: 0;
+  padding: 0 10px;
+  position: absolute;
+  width: 100%;
+  z-index: 99999999;
+}
+.cropper-buttons .getCropperImage,
+.cropper-buttons .upload {
+  background-color: #f3f3f3;
+  box-sizing: border-box;
+  display: block;
+  flex: 1;
+  margin: 10px 0;
+  text-align: center;
+}
+.cropper-buttons .upload .text {
+  background-color: #fabf11;
+  margin-right: 8.5px;
+}
+.cropper-buttons .getCropperImage .text,
+.cropper-buttons .upload .text {
+  border-radius: 6px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  padding: 12px 0;
+  text-align: center;
+}
+.cropper-buttons .getCropperImage .text {
+  background-color: #00c800;
+  box-sizing: border-box;
+  height: 100%;
+  margin-left: 8.5px;
+}
+#icon-rl {
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+}

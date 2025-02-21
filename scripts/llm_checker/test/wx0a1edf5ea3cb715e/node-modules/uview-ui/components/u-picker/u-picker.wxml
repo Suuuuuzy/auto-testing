@@ -1,0 +1,244 @@
+<u-popup
+  bind:__l="__l"
+  bind:close="__e"
+  bind:input="__e"
+  class="data-v-7d35bc53"
+  data-event-opts="{{[ [ '^close',[ ['close'] ] ],[ '^input',[ [ '__set_model',[ '','value','$event',[] ] ] ] ] ]}}"
+  length="auto"
+  maskCloseAble="{{maskCloseAble}}"
+  mode="bottom"
+  popup="{{false}}"
+  safeAreaInsetBottom="{{safeAreaInsetBottom}}"
+  value="{{value}}"
+  vueId="18c799e6-1"
+  vueSlots="{{['default']}}"
+  zIndex="{{uZIndex}}"
+>
+  <view class="u-datetime-picker data-v-7d35bc53">
+    <view
+      catchtouchmove="__e"
+      class="u-picker-header data-v-7d35bc53"
+      data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ] ]}}"
+    >
+      <view
+        bindtap="__e"
+        class="u-btn-picker u-btn-picker--tips data-v-7d35bc53"
+        data-event-opts="{{[ [ 'tap',[ [ 'getResult',['cancel'] ] ] ] ]}}"
+        hoverClass="u-opacity"
+        hoverStayTime="{{150}}"
+        style="{{'color:'+cancelColor+';'}}"
+        >{{cancelText}}</view
+      >
+      <view class="u-picker__title data-v-7d35bc53">{{title}}</view>
+      <view
+        catchtap="__e"
+        catchtouchmove="__e"
+        class="u-btn-picker u-btn-picker--primary data-v-7d35bc53"
+        data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ],[ 'tap',[ [ 'getResult',['confirm'] ] ] ] ]}}"
+        hoverClass="u-opacity"
+        hoverStayTime="{{150}}"
+        style="{{'color:'+(moving?cancelColor:confirmColor)+';'}}"
+        >{{''+confirmText+''}}</view
+      >
+    </view>
+    <view class="u-picker-body data-v-7d35bc53">
+      <picker-view
+        bindchange="__e"
+        bindpickend="__e"
+        bindpickstart="__e"
+        class="u-picker-view data-v-7d35bc53"
+        data-event-opts="{{[ [ 'change',[ [ 'change',['$event'] ] ] ],[ 'pickstart',[ [ 'pickstart',['$event'] ] ] ],[ 'pickend',[ [ 'pickend',['$event'] ] ] ] ]}}"
+        value="{{valueArr}}"
+        wx:if="{{mode=='region'}}"
+      >
+        <picker-view-column
+          class="data-v-7d35bc53"
+          wx:if="{{!reset&&params.province}}"
+        >
+          <view
+            class="u-column-item data-v-7d35bc53"
+            wx:for="{{provinces}}"
+            wx:key="index"
+          >
+            <view class="u-line-1 data-v-7d35bc53">{{item.label}}</view>
+          </view>
+        </picker-view-column>
+        <picker-view-column
+          class="data-v-7d35bc53"
+          wx:if="{{!reset&&params.city}}"
+        >
+          <view
+            class="u-column-item data-v-7d35bc53"
+            wx:for="{{citys}}"
+            wx:key="index"
+          >
+            <view class="u-line-1 data-v-7d35bc53">{{item.label}}</view>
+          </view>
+        </picker-view-column>
+        <picker-view-column
+          class="data-v-7d35bc53"
+          wx:if="{{!reset&&params.area}}"
+        >
+          <view
+            class="u-column-item data-v-7d35bc53"
+            wx:for="{{areas}}"
+            wx:key="index"
+          >
+            <view class="u-line-1 data-v-7d35bc53">{{item.label}}</view>
+          </view>
+        </picker-view-column>
+      </picker-view>
+      <block wx:else>
+        <picker-view
+          bindchange="__e"
+          bindpickend="__e"
+          bindpickstart="__e"
+          class="u-picker-view data-v-7d35bc53"
+          data-event-opts="{{[ [ 'change',[ [ 'change',['$event'] ] ] ],[ 'pickstart',[ [ 'pickstart',['$event'] ] ] ],[ 'pickend',[ [ 'pickend',['$event'] ] ] ] ]}}"
+          value="{{valueArr}}"
+          wx:if="{{mode=='time'}}"
+        >
+          <picker-view-column
+            class="data-v-7d35bc53"
+            wx:if="{{!reset&&params.year}}"
+          >
+            <view
+              class="u-column-item data-v-7d35bc53"
+              wx:for="{{years}}"
+              wx:key="index"
+              >{{''+item+''}}<text
+                class="u-text data-v-7d35bc53"
+                wx:if="{{showTimeTag}}"
+                >年</text
+              >
+            </view>
+          </picker-view-column>
+          <picker-view-column
+            class="data-v-7d35bc53"
+            wx:if="{{!reset&&params.month}}"
+          >
+            <view
+              class="u-column-item data-v-7d35bc53"
+              wx:for="{{$root.l0}}"
+              wx:key="index"
+              >{{''+item.m0+''}}<text
+                class="u-text data-v-7d35bc53"
+                wx:if="{{showTimeTag}}"
+                >月</text
+              >
+            </view>
+          </picker-view-column>
+          <picker-view-column
+            class="data-v-7d35bc53"
+            wx:if="{{!reset&&params.day}}"
+          >
+            <view
+              class="u-column-item data-v-7d35bc53"
+              wx:for="{{$root.l1}}"
+              wx:key="index"
+              >{{''+item.m1+''}}<text
+                class="u-text data-v-7d35bc53"
+                wx:if="{{showTimeTag}}"
+                >日</text
+              >
+            </view>
+          </picker-view-column>
+          <picker-view-column
+            class="data-v-7d35bc53"
+            wx:if="{{!reset&&params.hour}}"
+          >
+            <view
+              class="u-column-item data-v-7d35bc53"
+              wx:for="{{$root.l2}}"
+              wx:key="index"
+              >{{''+item.m2+''}}<text
+                class="u-text data-v-7d35bc53"
+                wx:if="{{showTimeTag}}"
+                >时</text
+              >
+            </view>
+          </picker-view-column>
+          <picker-view-column
+            class="data-v-7d35bc53"
+            wx:if="{{!reset&&params.minute}}"
+          >
+            <view
+              class="u-column-item data-v-7d35bc53"
+              wx:for="{{$root.l3}}"
+              wx:key="index"
+              >{{''+item.m3+''}}<text
+                class="u-text data-v-7d35bc53"
+                wx:if="{{showTimeTag}}"
+                >分</text
+              >
+            </view>
+          </picker-view-column>
+          <picker-view-column
+            class="data-v-7d35bc53"
+            wx:if="{{!reset&&params.second}}"
+          >
+            <view
+              class="u-column-item data-v-7d35bc53"
+              wx:for="{{$root.l4}}"
+              wx:key="index"
+              >{{''+item.m4+''}}<text
+                class="u-text data-v-7d35bc53"
+                wx:if="{{showTimeTag}}"
+                >秒</text
+              >
+            </view>
+          </picker-view-column>
+        </picker-view>
+        <block wx:else>
+          <picker-view
+            bindchange="__e"
+            bindpickend="__e"
+            bindpickstart="__e"
+            class="u-picker-view data-v-7d35bc53"
+            data-event-opts="{{[ [ 'change',[ [ 'change',['$event'] ] ] ],[ 'pickstart',[ [ 'pickstart',['$event'] ] ] ],[ 'pickend',[ [ 'pickend',['$event'] ] ] ] ]}}"
+            value="{{valueArr}}"
+            wx:if="{{mode=='selector'}}"
+          >
+            <picker-view-column class="data-v-7d35bc53" wx:if="{{!reset}}">
+              <view
+                class="u-column-item data-v-7d35bc53"
+                wx:for="{{$root.l5}}"
+                wx:key="index"
+              >
+                <view class="u-line-1 data-v-7d35bc53">{{item.m5}}</view>
+              </view>
+            </picker-view-column>
+          </picker-view>
+          <block wx:else>
+            <picker-view
+              bindchange="__e"
+              bindpickend="__e"
+              bindpickstart="__e"
+              class="u-picker-view data-v-7d35bc53"
+              data-event-opts="{{[ [ 'change',[ [ 'change',['$event'] ] ] ],[ 'pickstart',[ [ 'pickstart',['$event'] ] ] ],[ 'pickend',[ [ 'pickend',['$event'] ] ] ] ]}}"
+              value="{{valueArr}}"
+              wx:if="{{mode=='multiSelector'}}"
+            >
+              <picker-view-column
+                class="data-v-7d35bc53"
+                wx:if="{{!reset}}"
+                wx:for="{{$root.l7}}"
+                wx:key="index"
+              >
+                <view
+                  class="u-column-item data-v-7d35bc53"
+                  wx:for="{{item.l6}}"
+                  wx:for-index="index1"
+                  wx:for-item="item1"
+                  wx:key="index1"
+                >
+                  <view class="u-line-1 data-v-7d35bc53">{{item1.m6}}</view>
+                </view>
+              </picker-view-column>
+            </picker-view>
+          </block>
+        </block>
+      </block>
+    </view>
+  </view>
+</u-popup>

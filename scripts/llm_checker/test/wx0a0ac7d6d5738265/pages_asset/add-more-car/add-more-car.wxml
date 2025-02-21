@@ -1,0 +1,73 @@
+<view class="wrap data-v-2c0a6641">
+  <zym-navigation
+    bind:__l="__l"
+    class="data-v-2c0a6641"
+    uI="2c0a6641-0"
+    uP="{{a}}"
+    wx:if="{{a}}"
+  ></zym-navigation>
+  <view class="formsid data-v-2c0a6641" style="padding-top: 50rpx">
+    <view class="container data-v-2c0a6641">
+      <text class="plate-color data-v-2c0a6641">车牌颜色</text>
+      <view class="button-group data-v-2c0a6641">
+        <button
+          bindtap="{{c}}"
+          class="{{['data-v-2c0a6641','button','blue',b]}}"
+        >
+          蓝牌
+        </button>
+        <button
+          bindtap="{{e}}"
+          class="{{['data-v-2c0a6641','button','yellow',d]}}"
+        >
+          黄牌
+        </button>
+        <button
+          bindtap="{{g}}"
+          class="{{['data-v-2c0a6641','button','black',f]}}"
+        >
+          黑牌
+        </button>
+        <button
+          bindtap="{{i}}"
+          class="{{['data-v-2c0a6641','button','green',h]}}"
+        >
+          绿牌
+        </button>
+      </view>
+    </view>
+    <view class="item data-v-2c0a6641">
+      <view class="mb20 mt20 data-v-2c0a6641">请绑定车牌号</view>
+      <view class="carids data-v-2c0a6641">
+        <plate
+          bind:__l="__l"
+          bindmyPlateChange="{{j}}"
+          class="data-v-2c0a6641"
+          uI="2c0a6641-1"
+          uP="{{k}}"
+          wx:if="{{k}}"
+        ></plate>
+      </view>
+      <text class="errmsg data-v-2c0a6641">{{l}}</text>
+    </view>
+    <view class="footer data-v-2c0a6641">
+      <button
+        bindtap="{{m}}"
+        class="fbtn data-v-2c0a6641"
+        style="background-color: rgba(6, 185, 192, 1); color: white"
+      >
+        确认
+      </button>
+      <button
+        bindtap="{{n}}"
+        class="fbtn data-v-2c0a6641"
+        style="
+          background: rgba(250, 250, 252, 1);
+          color: rgba(192, 194, 204, 1);
+        "
+      >
+        取消
+      </button>
+    </view>
+  </view>
+</view>

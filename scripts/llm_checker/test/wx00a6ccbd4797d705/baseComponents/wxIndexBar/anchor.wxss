@@ -1,0 +1,14 @@
+.wx-index-anchor--active {
+  color: #07c160;
+  color: var(--index-anchor-active-text-color, #07c160);
+  left: 0;
+  right: 0;
+}
+.markName {
+  border: 1px solid #333;
+  border-radius: 24px;
+  color: #333;
+  font-size: 14px;
+  margin-bottom: 20rpx;
+  padding: 10rpx 30rpx;
+}

@@ -1,0 +1,173 @@
+<view class="warp data-v-b4c3559c">
+  <zym-navigation
+    bind:__l="__l"
+    class="data-v-b4c3559c"
+    uI="b4c3559c-0"
+    uP="{{a}}"
+    wx:if="{{a}}"
+  ></zym-navigation>
+  <u-skeleton
+    bind:__l="__l"
+    class="data-v-b4c3559c"
+    uI="b4c3559c-1"
+    uP="{{y}}"
+    uS="{{['d']}}"
+    wx:if="{{y}}"
+  >
+    <view class="recharge-vip data-v-b4c3559c">
+      <view class="recharge data-v-b4c3559c">
+        <view class="ficon data-v-b4c3559c"> 附 </view>
+        <view class="recharge-money data-v-b4c3559c">
+          <view class="c_name data-v-b4c3559c">
+            <view class="data-v-b4c3559c">
+              <text class="cname data-v-b4c3559c" wx:if="{{b}}">{{c}}</text>
+            </view>
+            <view class="plate data-v-b4c3559c" wx:if="{{d}}">
+              <text class="data-v-b4c3559c">{{e}}</text>
+            </view>
+          </view>
+          <view class="c_name data-v-b4c3559c">
+            <view class="c_phone data-v-b4c3559c">
+              <image
+                class="data-v-b4c3559c"
+                mode=""
+                src="{{f}}"
+                style="
+                  width: 28rpx;
+                  height: 28rpx;
+                  opacity: 0.8;
+                  margin-right: 8rpx;
+                "
+              ></image>
+              <text class="phone data-v-b4c3559c">{{g}}</text>
+            </view>
+            <view class="data-v-b4c3559c" wx:if="{{h}}">
+              <text class="phone data-v-b4c3559c">ID:{{i}}</text>
+            </view>
+          </view>
+          <view class="cardbtns data-v-b4c3559c">
+            <view class="updatebtns data-v-b4c3559c">
+              <view catchtap="{{j}}" class="card-btns data-v-b4c3559c">
+                修改手机号
+              </view>
+              <view
+                catchtap="{{l}}"
+                class="card-btns pwbtn data-v-b4c3559c"
+                wx:if="{{k}}"
+              >
+                修改密码
+              </view>
+              <view
+                catchtap="{{n}}"
+                class="card-btns pwbtn data-v-b4c3559c"
+                wx:if="{{m}}"
+              >
+                忘记密码
+              </view>
+              <view
+                catchtap="{{p}}"
+                class="card-btns pwbtn data-v-b4c3559c"
+                wx:if="{{o}}"
+              >
+                设置密码
+              </view>
+            </view>
+          </view>
+          <view class="recharge-bag fsb data-v-b4c3559c">
+            <view class="amn-rss fdc data-v-b4c3559c">
+              <view class="amn data-v-b4c3559c"> 司机卡余额 </view>
+              <view class="amnnum data-v-b4c3559c">{{q}}</view>
+            </view>
+          </view>
+          <view bindtap="{{s}}" class="toback data-v-b4c3559c">
+            <image class="lt_icon data-v-b4c3559c" mode="" src="{{r}}"></image>
+            <text class="backtxt data-v-b4c3559c">返回主卡</text>
+          </view>
+        </view>
+      </view>
+      <view class="consume-list data-v-b4c3559c">
+        <view class="oilcard data-v-b4c3559c">
+          <text class="textline data-v-b4c3559c">消费记录</text>
+        </view>
+        <scroll-view
+          bind:refresher-refresh="{{x}}"
+          bindscrolltolower="{{w}}"
+          class="data-v-b4c3559c"
+          lowerThreshold="{{100}}"
+          scrollY="true"
+          style="max-height: 50vh"
+        >
+          <view
+            bindtap="{{consume.s}}"
+            class="list data-v-b4c3559c"
+            wx:for="{{t}}"
+            wx:for-item="consume"
+            wx:key="t"
+          >
+            <view class="create-time data-v-b4c3559c" wx:if="{{consume.a}}"
+              >{{consume.b}}</view
+            >
+            <view
+              class="{{['order-id','data-v-b4c3559c',consume.f&&'order-id-bg']}}"
+            >
+              <text class="con_num data-v-b4c3559c">订单号：{{consume.c}}</text>
+              <text class="{{['cash','data-v-b4c3559c',consume.e&&'refund']}}"
+                >{{consume.d}}</text
+              >
+            </view>
+            <view class="con_name data-v-b4c3559c">
+              <view class="con_car data-v-b4c3559c" wx:if="{{consume.g}}">
+                <text class="data-v-b4c3559c">{{consume.h}}</text>
+              </view>
+              <view
+                class="con_car data-v-b4c3559c"
+                style="background-color: rgba(232, 130, 130, 1)"
+              >
+                <text class="data-v-b4c3559c"
+                  >{{consume.i}} | {{consume.j}}/升</text
+                >
+              </view>
+              <view class="con_num data-v-b4c3559c">
+                <text class="data-v-b4c3559c">ID:{{consume.k}}</text>
+              </view>
+            </view>
+            <view class="list-bot data-v-b4c3559c">
+              <view class="type-time data-v-b4c3559c">
+                <view class="type data-v-b4c3559c">{{consume.l}}号枪 </view>
+                <view class="time data-v-b4c3559c">{{consume.m}}</view>
+              </view>
+              <view class="consumeamn data-v-b4c3559c">
+                <view class="fsb data-v-b4c3559c">
+                  <text class="money data-v-b4c3559c">￥{{consume.n}}</text>
+                  <text
+                    class="data-v-b4c3559c"
+                    style="color: rgba(232, 79, 79, 1); font-weight: 700"
+                    wx:if="{{consume.o}}"
+                    >+￥{{consume.p}}元</text
+                  >
+                  <text
+                    class="data-v-b4c3559c"
+                    style="color: rgba(41, 43, 51, 1); font-weight: 700"
+                    wx:else
+                  >
+                    -￥{{consume.q}}元</text
+                  >
+                </view>
+                <text class="totaloil data-v-b4c3559c">{{consume.r}}升</text>
+              </view>
+            </view>
+          </view>
+          <view class="data-v-b4c3559c">
+            <u-loadmore
+              bind:__l="__l"
+              class="data-v-b4c3559c"
+              uI="b4c3559c-2,b4c3559c-1"
+              uP="{{v}}"
+              wx:if="{{v}}"
+            ></u-loadmore>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </u-skeleton>
+</view>

@@ -1,0 +1,31 @@
+<view class="_div data-v-31e06442">
+  <wxpopup
+    bind:__l="__l"
+    bind:close="__e"
+    class="data-v-31e06442"
+    closeOnClickOverlay="{{false}}"
+    closeable="{{true}}"
+    customStyle="border-radius: 26rpx 26rpx 0rpx 0rpx"
+    data-event-opts="{{[ [ '^close',[ ['hidePopup'] ] ] ]}}"
+    position="bottom"
+    show="{{show}}"
+    vueId="eb8470dc-1"
+    vueSlots="{{['default']}}"
+  >
+    <view
+      class="content bcf data-v-31e06442"
+      style="{{'padding-bottom:'+'calc(env(safe-area-inset-bottom) + '+tabbarHeight+'px)'+';'}}"
+    >
+      <view class="tc fc3 f32 fw800 mt40r pb20 _div data-v-31e06442"
+        >商家详情</view
+      >
+      <store-mes
+        bind:__l="__l"
+        class="data-v-31e06442"
+        context="{{context}}"
+        source="popup"
+        vueId="{{'eb8470dc-2'+','+'eb8470dc-1'}}"
+      ></store-mes>
+    </view>
+  </wxpopup>
+</view>

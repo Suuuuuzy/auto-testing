@@ -1,0 +1,76 @@
+.choose-product.data-v-60c31a78 {
+  position: relative;
+  text-align: right;
+}
+.choose-product .product-add.data-v-60c31a78 {
+  background-color: #fff;
+  border-radius: 100px;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  will-change: width;
+}
+.choose-product .product-add .product-add__content.data-v-60c31a78 {
+  display: flex;
+  float: left;
+}
+.choose-product .product-add .product-add__input.data-v-60c31a78,
+.choose-product .product-add .product-add__minus.data-v-60c31a78,
+.choose-product .product-add .product-add__plus.data-v-60c31a78 {
+  display: block;
+  float: left;
+}
+.choose-product .product-add .product-add__input.data-v-60c31a78 {
+  color: #666;
+  resize: none;
+}
+.choose-product .product-add .product-add__minus.data-v-60c31a78,
+.choose-product .product-add .product-add__plus.data-v-60c31a78 {
+  position: relative;
+  top: 1px;
+  vertical-align: middle;
+}
+.choose-product .product-add .product-add__minus.data-v-60c31a78:before,
+.choose-product .product-add .product-add__plus.data-v-60c31a78:before {
+  font-size: 70%;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  top: -1px;
+}
+.choose-product .product-add .product-add__minus.disable.data-v-60c31a78,
+.choose-product .product-add .product-add__plus.disable.data-v-60c31a78 {
+  color: #a2a2a2 !important;
+}
+.choose-product .product-add .product-add__input.data-v-60c31a78 {
+  border-width: 0 1px;
+  text-align: center;
+}
+.choose-product .product-add__plus--suggest.data-v-60c31a78,
+.choose-product .product-add__plus.data-v-60c31a78 {
+  border-radius: 100px;
+  right: 0;
+  top: 0;
+}
+.choose-product .product-add__plus--suggest.data-v-60c31a78 {
+  border: 1px solid #a2a2a2;
+  border-radius: 5px;
+  color: #a2a2a2;
+  height: 100%;
+  min-width: 50px;
+  text-align: center;
+  width: 100%;
+}
+.choose-product .special-add.data-v-60c31a78 {
+  border-radius: 50px;
+  color: #fff;
+  display: inline-block;
+  font-size: 28rpx;
+  padding: 0 24rpx;
+  position: relative;
+  white-space: nowrap;
+  width: auto;
+}
+.choose-product .special-add.woods.data-v-60c31a78 {
+  font-size: 20rpx;
+}

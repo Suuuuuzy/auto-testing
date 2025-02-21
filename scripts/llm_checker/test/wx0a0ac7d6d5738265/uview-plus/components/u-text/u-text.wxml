@@ -1,0 +1,66 @@
+<view
+  bindtap="{{J}}"
+  class="{{['u-text','data-v-7ced952d']}}"
+  style="{{'margin:'+H+';'+'justify-content:'+I}}"
+  wx:if="{{a}}"
+>
+  <text
+    class="{{['data-v-7ced952d','u-text__price',c]}}"
+    style="{{d}}"
+    wx:if="{{b}}"
+    >￥</text
+  >
+  <view class="u-text__prefix-icon data-v-7ced952d" wx:if="{{e}}">
+    <u-icon
+      bind:__l="__l"
+      class="data-v-7ced952d"
+      uI="7ced952d-0"
+      uP="{{f}}"
+      wx:if="{{f}}"
+    ></u-icon>
+  </view>
+  <u-link
+    bind:__l="__l"
+    class="data-v-7ced952d"
+    uI="7ced952d-1"
+    uP="{{h}}"
+    wx:if="{{g}}"
+  ></u-link>
+  <button
+    appParameter="{{A}}"
+    bindcontact="{{o}}"
+    binderror="{{q}}"
+    bindgetphonenumber="{{p}}"
+    bindgetuserinfo="{{n}}"
+    bindlaunchapp="{{r}}"
+    bindopensetting="{{s}}"
+    class="u-reset-button u-text__value data-v-7ced952d"
+    data-index="{{l}}"
+    lang="{{t}}"
+    openType="{{m}}"
+    sendMessageImg="{{y}}"
+    sendMessagePath="{{x}}"
+    sendMessageTitle="{{w}}"
+    sessionFrom="{{v}}"
+    showMessageCard="{{z}}"
+    style="{{k}}"
+    wx:elif="{{i}}"
+  >
+    {{j}}
+  </button>
+  <text
+    class="{{['u-text__value','data-v-7ced952d',D,E]}}"
+    style="{{C}}"
+    wx:else
+    >{{B}}</text
+  >
+  <view class="u-text__suffix-icon data-v-7ced952d" wx:if="{{F}}">
+    <u-icon
+      bind:__l="__l"
+      class="data-v-7ced952d"
+      uI="7ced952d-2"
+      uP="{{G}}"
+      wx:if="{{G}}"
+    ></u-icon>
+  </view>
+</view>

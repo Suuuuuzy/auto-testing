@@ -1,0 +1,36 @@
+<i-message id="message"></i-message>
+<canvas
+  canvasId="canvas"
+  style="width:{{cWidth}}px;height:{{cHeight}}px; position:absolute; bottom:0rpx; left:-9999rpx;"
+></canvas>
+<view class="mode-tips"
+  >当前模式：
+  <text class="mode-tag" wx:if="{{mode=='column'}}">竖向拼接</text>
+  <text class="mode-tag" wx:if="{{mode=='smart'}}">长截图</text>
+  <text class="mode-tag" wx:if="{{mode=='row'}}">横向拼接</text>
+  <text class="mode-tag" wx:if="{{mode=='lines'}}">拼台词</text>
+</view>
+<view class="prev-container">
+  <view class="prev-part">
+    <view class="prev-image" wx:for="{{images}}">
+      <image
+        bindtap="removeImage"
+        class="del-btn"
+        src="/images/icon-btn-x.png"
+      ></image>
+      <image mode="aspectFill" src="{{item}}"></image>
+    </view>
+    <view bindtap="addImage" class="prev-image" hidden="{{images.length>=9}}">
+      <view class="add-btn">
+        <i-icon size="50" type="add"></i-icon>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="bottom-container">
+  <view class="btn-view">
+    <button bindtap="sewNow" class="{{mode=='smart'?'pink-btn':'blue-btn'}}">
+      立即拼接
+    </button>
+  </view>
+</view>

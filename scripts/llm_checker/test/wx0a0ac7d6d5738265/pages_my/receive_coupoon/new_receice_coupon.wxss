@@ -1,0 +1,207 @@
+page {
+  background: linear-gradient(180deg, #f05d35, #ffd678);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.receiceImg {
+  height: 100%;
+  width: 100%;
+}
+.mommback {
+  background: #c5c5c5 !important;
+}
+.divtitle {
+  align-items: center;
+  color: #45474d;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 32rpx;
+  font-weight: 500;
+  letter-spacing: 0rpx;
+  line-height: 46.34rpx;
+  text-align: left;
+}
+.divtitle .jianju {
+  padding: 0 24rpx;
+}
+.titleimg {
+  height: 38rpx;
+  width: 38rpx;
+}
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+.content {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  font-family: myfontB;
+  height: calc(100vh - 140rpx);
+  margin: 0 auto;
+  overflow: scroll;
+  overflow-x: hidden;
+  position: relative;
+  width: 686rpx;
+}
+.content .img {
+  height: 666rpx;
+  width: 100%;
+  z-index: 1;
+}
+.content .conpus,
+.content .img image {
+  height: 100%;
+  width: 100%;
+}
+.content .conpus {
+  border-radius: 12rpx;
+  margin-bottom: 20rpx;
+  overflow: auto;
+}
+.content .conpus .couplsit {
+  background: #fff;
+  border-radius: 12rpx;
+  height: 184rpx;
+  justify-content: flex-start;
+  margin-bottom: 10rpx;
+  padding: 2rpx;
+}
+.content .conpus .couplsit,
+.content .conpus .couplsit .ylq {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+}
+.content .conpus .couplsit .ylq {
+  border-radius: 10rpx;
+  color: #ef5a34;
+  font-size: 34rpx;
+  height: 70rpx;
+  justify-content: center;
+  padding: 23rpx;
+  transform: rotate3d(1, 1, 1, 45deg);
+}
+.content .conpus .couplsit .momm {
+  align-items: center;
+  background: linear-gradient(0.348turn, #f6b252, #ff8f40);
+  border-bottom-left-radius: 12rpx;
+  border-top-left-radius: 12rpx;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  padding: 20rpx;
+  width: 172rpx;
+}
+.content .conpus .couplsit .momm .txt {
+  color: #fffeed;
+  font-size: 52rpx;
+  font-weight: 700;
+  letter-spacing: 0rpx;
+  line-height: 52rpx;
+  text-align: left;
+  vertical-align: top;
+}
+.content .conpus .couplsit .momm .jyq {
+  color: #fffeed;
+  font-size: 28rpx;
+  font-weight: 400;
+  letter-spacing: 0rpx;
+  line-height: 39.2rpx;
+  text-align: left;
+  vertical-align: middle;
+}
+.content .conpus .couplsit .lis {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  padding: 32rpx;
+}
+.content .conpus .couplsit .lis .station {
+  color: #45474d;
+  font-size: 32rpx;
+  font-weight: 500;
+  letter-spacing: 0rpx;
+  line-height: 46.34rpx;
+  text-align: left;
+  vertical-align: middle;
+}
+.content .conpus .couplsit .lis .discount {
+  line-height: 46rpx;
+}
+.content .conpus .couplsit .lis .coupondate,
+.content .conpus .couplsit .lis .discount {
+  color: #ccc;
+  font-size: 24rpx;
+  font-weight: 400;
+  letter-spacing: 0rpx;
+  text-align: left;
+  vertical-align: middle;
+}
+.content .conpus .couplsit .lis .coupondate {
+  font-family: MyFontN;
+  line-height: 27rpx;
+}
+.content .roles {
+  align-items: center;
+  background: #fff;
+  border-radius: 20rpx;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40rpx;
+  max-height: 640rpx;
+  padding: 32rpx;
+}
+.content .roles .item {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  font-size: 26rpx;
+  line-height: 42rpx;
+}
+.content .roles .item,
+.content .roles .item .dian {
+  color: #8a8d99;
+  font-weight: 400;
+  letter-spacing: 0rpx;
+  text-align: left;
+  vertical-align: top;
+}
+.content .roles .item .dian {
+  font-size: 28rpx;
+  line-height: 39.2rpx;
+  padding-right: 19rpx;
+}
+.content .roles .item .nr {
+  padding-left: 26rpx;
+}
+.content .roles .linkstation {
+  background: #a9a9a9;
+  border-radius: 50rpx;
+  height: 60rpx;
+  width: 90%;
+}
+.content .footer,
+.content .roles .linkstation {
+  align-items: center;
+  color: #fff;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+}
+.content .footer {
+  bottom: 40rpx;
+  flex-direction: column;
+  height: 150rpx;
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+}

@@ -1,0 +1,243 @@
+<view class="container data-v-260314d4">
+  <view class="bookDeatil app-container data-v-260314d4" wx:if="{{bookInfo}}">
+    <view class="bookList-con data-v-260314d4">
+      <view class="book-item flexible data-v-260314d4">
+        <view class="book-cover data-v-260314d4">
+          <image
+            class="book-cover-img data-v-260314d4"
+            src="{{bookInfo.iconUrl}}"
+          ></image>
+        </view>
+        <view class="book-detail ml30 data-v-260314d4">
+          <view class="book-title data-v-260314d4">{{bookInfo.name}}</view>
+          <view class="book-visit f24 text-muted mt30 data-v-260314d4"
+            >{{bookInfo.finished?'已完结':'连载中'}}</view
+          >
+          <view
+            class="book-tags flexible data-v-260314d4"
+            wx:if="{{bookInfo.tags}}"
+          >
+            <view
+              class="{{['book-tags-item','green-btn','data-v-260314d4',index==0?'green-btn':'red-btn']}}"
+              wx:if="{{index<2}}"
+              wx:for="{{$root.l0}}"
+              wx:for-item="tag"
+              >{{tag}}</view
+            >
+          </view>
+        </view>
+      </view>
+      <image
+        bindtap="__e"
+        class="img_share data-v-260314d4"
+        data-event-opts="{{[ [ 'tap',[ [ 'showPopup',['$event'] ] ] ] ]}}"
+        src="{{shareMoneyIcom}}"
+        wx:if="{{showShareMoney}}"
+      ></image>
+    </view>
+    <view class="common-con data-v-260314d4" wx:if="{{bookInfo}}">
+      <view class="label_title mt30 data-v-260314d4">
+        <view class="label mr10 flexible aItem-center data-v-260314d4"
+          >精选内容<view class="f24 text-666 mt5 data-v-260314d4"
+            >(长按3秒可复制)</view
+          >
+        </view>
+        <view
+          bindlongpress="__e"
+          class="concentration-con data-v-260314d4"
+          data-event-opts="{{[ [ 'longpress',[ [ 'copyconcentration',['$0','$1'],['bookInfo.introduce','freeChapterContent'] ] ] ] ]}}"
+          wx:if="{{freeChapterContent}}"
+          >{{freeChapterContent}}</view
+        >
+      </view>
+    </view>
+  </view>
+  <view class="bookDeatil_line data-v-260314d4"></view>
+  <view class="common-con data-v-260314d4" wx:if="{{bookInfo}}">
+    <view
+      class="label_title flexible aItem-center jc-between mt30 data-v-260314d4"
+    >
+      <view class="label mr10 data-v-260314d4">猜你喜欢</view>
+      <view
+        bindtap="__e"
+        class="flexible aItem-center data-v-260314d4"
+        data-event-opts="{{[ [ 'tap',[ ['getbookshelf'] ] ] ]}}"
+      >
+        <view class="f24 text-muted mr10 data-v-260314d4">换一换</view>
+        <view class="my-tb data-v-260314d4">
+          <uni-icons
+            bind:__l="__l"
+            class="data-v-260314d4"
+            color="#999"
+            type="loop"
+            vueId="13a62058-1"
+          ></uni-icons>
+        </view>
+      </view>
+    </view>
+    <view
+      class="common-List guankanList flexible flex-flow mt30 data-v-260314d4"
+    >
+      <view
+        bindtap="__e"
+        class="common-item mt20 data-v-260314d4"
+        data-event-opts="{{[ [ 'tap',[ [ 'getRecommendcid',['$0'],[ [ ['recommend','',__i0__,'id'] ] ] ] ] ] ]}}"
+        wx:for="{{recommend}}"
+        wx:for-index="__i0__"
+        wx:for-item="rec"
+      >
+        <image
+          bindload="__e"
+          class="book-cover data-v-260314d4"
+          data-event-opts="{{[ [ 'load',[ [ 'onSuccessImg',['$0'],[ [ ['recommend','',__i0__] ] ] ] ] ] ]}}"
+          hidden="{{!rec.imgUrl}}"
+          mode="scaleToFill"
+          src="{{rec.imgUrl}}"
+        ></image>
+        <view
+          class="common-item-title f28 text-333 f-fwb-500 mt20 text-hidden-1 data-v-260314d4"
+          >{{rec.name}}</view
+        >
+      </view>
+    </view>
+  </view>
+  <view
+    class="detail_footer flexible aItem-center data-v-260314d4"
+    wx:if="{{bookInfo}}"
+  >
+    <view
+      bindtap="__e"
+      class="add_shelf data-v-260314d4"
+      data-event-opts="{{[ [ 'tap',[ ['addShelfFun'] ] ] ]}}"
+      wx:if="{{!isExistShelf}}"
+    >
+      <image
+        class="ic_shujia data-v-260314d4"
+        src="/static/img/ic_shujia.png"
+      ></image>
+      <view class="f20 data-v-260314d4">加入书架</view>
+    </view>
+    <view
+      class="add_shelf add_shelf_ok data-v-260314d4"
+      wx:if="{{isExistShelf}}"
+    >
+      <image
+        class="ic_shujia data-v-260314d4"
+        src="/static/img/ic_shujia_act.png"
+      ></image>
+      <view class="f20 data-v-260314d4">已在书架</view>
+    </view>
+    <view
+      bindtap="__e"
+      class="readbtn flex data-v-260314d4"
+      data-event-opts="{{[ [ 'tap',[ [ 'iswxReader',['$0','chapter'],['bookInfo'] ] ] ] ]}}"
+      >{{hisChapter?'继续阅读':'开始阅读'}}</view
+    >
+  </view>
+  <uni-popup
+    animation="{{false}}"
+    bind:__l="__l"
+    class="changepopup data-v-260314d4 vue-ref"
+    data-ref="changepopup"
+    ismaskShow="{{true}}"
+    maskClick="{{true}}"
+    vueId="13a62058-2"
+    vueSlots="{{['default']}}"
+  >
+    <view class="share-box data-v-260314d4">
+      <image
+        class="data-v-260314d4"
+        src="/static/img/img_bg_pop@2x.png"
+      ></image>
+      <button
+        bindtap="__e"
+        class="{{['data-v-260314d4',indexBtn==1?'check-btn':'']}}"
+        data-event-opts="{{[ [ 'tap',[ [ 'buttonChange',[1] ] ] ] ]}}"
+      >
+        复制分享口令
+      </button>
+      <button
+        bindtap="__e"
+        class="{{['data-v-260314d4',indexBtn==2?'check-btn':'']}}"
+        data-event-opts="{{[ [ 'tap',[ [ 'buttonChange',[2] ] ] ] ]}}"
+        wx:if="{{uniPlatform=='mp-toutiao'}}"
+      >
+        制作视频挂载
+      </button>
+      <button
+        bindtap="__e"
+        class="{{['data-v-260314d4',indexBtn==3?'check-btn':'']}}"
+        data-event-opts="{{[ [ 'tap',[ [ 'buttonChange',[3] ] ] ] ]}}"
+        wx:if="{{uniPlatform=='mp-toutiao'}}"
+      >
+        制作图文挂载
+      </button>
+      <button
+        bindtap="__e"
+        class="{{['data-v-260314d4',indexBtn==6?'check-btn':'']}}"
+        data-event-opts="{{[ [ 'tap',[ [ 'buttonChange',[6] ] ] ] ]}}"
+        wx:if="{{uniPlatform=='mp-kuaishou'}}"
+      >
+        挂载推广
+      </button>
+      <view
+        bindtap="__e"
+        class="sure-btn data-v-260314d4"
+        data-event-opts="{{[ [ 'tap',[ [ 'submitBtn',['$event'] ] ] ] ]}}"
+      >
+        <image class="data-v-260314d4" src="/static/img/btn_ok@2x.png"></image>
+        <view class="f28 text-fff fwb-500 data-v-260314d4">确定</view>
+      </view>
+    </view>
+  </uni-popup>
+  <uni-popup
+    animation="{{false}}"
+    bind:__l="__l"
+    class="resultpopup data-v-260314d4 vue-ref"
+    data-ref="resultpopup"
+    ismaskShow="{{true}}"
+    maskClick="{{true}}"
+    vueId="13a62058-3"
+    vueSlots="{{['default']}}"
+  >
+    <view class="result-box data-v-260314d4">
+      <image
+        class="bg-image data-v-260314d4"
+        src="/static/img/img_bg_m@2x.png"
+      ></image>
+      <image
+        class="code-image data-v-260314d4"
+        mode="aspectFit"
+        src="{{codeSrc}}"
+      ></image>
+      <view class="text data-v-260314d4" wx:if="{{uniPlatform=='mp-toutiao'}}">
+        <view
+          class="f28 text-333 fwb-400 data-v-260314d4"
+          wx:if="{{indexBtn==2}}"
+          >视频已生成</view
+        >
+        <view
+          class="f28 text-333 fwb-400 data-v-260314d4"
+          wx:if="{{indexBtn==3}}"
+          >图文已生成</view
+        >
+        <view class="f28 text-333 fwb-400 data-v-260314d4"
+          >使用抖音扫一扫挂载</view
+        >
+      </view>
+      <view class="text data-v-260314d4" wx:if="{{uniPlatform=='mp-kuaishou'}}">
+        <view class="f28 text-333 fwb-400 data-v-260314d4"
+          >打开快手扫一扫,点击右上角···里"发快手"挂载</view
+        >
+      </view>
+      <view
+        bindtap="__e"
+        class="sure-btn data-v-260314d4"
+        data-event-opts="{{[ [ 'tap',[ [ 'imgTost',['$event'] ] ] ] ]}}"
+      >
+        <image class="data-v-260314d4" src="/static/img/btn_ok@2x.png"></image>
+        <view class="f28 text-fff fwb-500 data-v-260314d4">截屏保存</view>
+      </view>
+    </view>
+  </uni-popup>
+</view>

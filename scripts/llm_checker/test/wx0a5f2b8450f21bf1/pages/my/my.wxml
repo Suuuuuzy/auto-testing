@@ -1,0 +1,57 @@
+<view>
+    <cu-custom bgColor="bg-gradual-blue" bind:__l="__l" isBack="{{false}}" vueId="2e637200-1" vueSlots="{{['content']}}">
+        <view slot="content">个人中心</view>
+    </cu-custom>
+    <view class="container">
+        <view class="header">
+            <image class="headerIcon" src="{{avatarUrl}}" wx:if="{{avatarUrl}}"></image>
+            <image class="headerIcon" src="/static/img/login.png" wx:if="{{!avatarUrl}}"></image>
+            <view class="info">
+                <view class="row">
+                    <text class="nickname" wx:if="{{nickName}}">{{nickName}} </text>
+                    <text class="nickname" wx:if="{{!nickName}}"></text>
+                    <view class="cu-tag round bg-blue sm">
+                        <view class="cu-tag round bg-blue sm">{{userType==0?'普通用户':userType=='1'?'VIP会员':'会员已到期'}}</view>
+                    </view>
+                    <view bindtap="tapuid" class="cu-tag round bg-orange sm">{{'UID：'+uid}}</view>
+                </view>
+                <view wx:if="{{freeType==3&&userType==1}}">
+                    <text>会员有效期至：{{endTime}}</text>
+                </view>
+                <view wx:if="{{!isLogin}}">点击登录更精彩</view>
+                <view class="sub_title" wx:else>{{'当前剩余解析次数：'+keyong}}</view>
+            </view>
+        </view>
+        <view></view>
+        <button bindtap="toujiance" class="custom_button" wx:if="{{!isLogin}}"></button>
+        <view class="order_status" wx:if="{{gzgzh==0}}">
+            <view bindtap="page" class="status" data-index="{{index}}" wx:for="{{status}}" wx:key="index">
+                <image class="icon" mode="aspectFill" src="{{item.url}}"></image>
+                <text>{{item.name}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="center_menu">
+        <view bindtap="toPage" class="menu_item" data-index="{{index}}" wx:for="{{menus}}" wx:key="index">
+            <image mode="aspectFill" src="{{item.icon}}"></image>
+            <text wx:if="{{index==0}}">客服微信：{{author}} [点击复制]</text>
+            <text wx:if="{{index==1&&autoDownload}}">自动下载功能当前状态:[已开启]</text>
+            <text wx:if="{{index==1&&!autoDownload}}">自动下载功能当前状态:[已关闭]</text>
+        </view>
+    </view>
+    <view class="active cu-form-group" wx:if="{{freeType==3}}">
+        <form catchsubmit="formSubmit">
+            <input bindinput="kamima" name="input" placeholder="输入你的激活码"></input>
+        </form>
+        <button bindtap="activityCode" class="cu-btn bg-green shadow" style="width: 210rpx;">在线验证</button>
+    </view>
+    <view class="padding-sm flex flex-direction" style="margin-top: 20rpx;">
+        <button class="cu-btn" openType="contact" style="background:#16A7F8;color:white;">在线客服</button>
+    </view>
+    <view class="main">
+        <text>版权归平台所有，本程序不保存任何视频及图片。</text>
+    </view>
+    <view class="pic-padding">
+        <ad adTheme="white" adType="video" unitId="{{myAd}}" wx:if="{{myAd}}"></ad>
+    </view>
+</view>

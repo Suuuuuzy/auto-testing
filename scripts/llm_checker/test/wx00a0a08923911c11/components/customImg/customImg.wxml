@@ -1,0 +1,14 @@
+<view
+  class="{{['data-v-c9631636',canPreview?'customImg':'customImg isloading']}}"
+>
+  <image
+    binderror="__e"
+    bindload="__e"
+    class="{{['data-v-c9631636',iclass]}}"
+    data-event-opts="{{[ [ 'error',[ [ 'onImageError',['$event'] ] ] ],[ 'load',[ [ 'onImageLoad',['$event'] ] ] ] ]}}"
+    fadeShow="{{true}}"
+    lazyLoad="{{true}}"
+    mode="{{mode}}"
+    src="{{image}}"
+  ></image>
+</view>

@@ -1,0 +1,109 @@
+<view
+  class="{{['ticketItem','_div',unUseful&&!(ticketData.wechatMerchantApply&&ticketData.merchantAddableNum>0)?'unuseful':'',unExpired?'unExpired':'']}}"
+  style="{{$root.s0}}"
+  wx:if="{{showTicket}}"
+>
+  <view class="ticket_left _div" style="{{!showPriceArea?'width:100%':''}}">
+    <view class="picBox pr _div" wx:if="{{!hideImg}}">
+      <label class="{{['tipStyle','_span',ticketType.class]}}"
+        >{{ticketType.name}}</label
+      >
+      <view class="picBoxModel _div"></view>
+      <image
+        alt
+        class="diyPic"
+        mode="aspectFill"
+        src="{{ticketData.headPic?ticketData.headPic:ticketData.ticketType==5?'https://cdnpic.wuuxiang.com/msgjDecorationImg/freePic.png':'https://cdnpic.wuuxiang.com/msgjDecorationImg/quanHead.jpg'}}"
+      ></image>
+    </view>
+    <view class="ticket_text _div">
+      <view class="ticket_text_cont _div">
+        <view class="ticket_name _div">
+          <label class="ticketTitle _span">{{ticketData.kindName}}</label>
+        </view>
+        <view class="ticket_date _div">
+          <view class="{{['_div',redTips?'redTips':null]}}">{{timeRage}}</view>
+        </view>
+        <view class="ticket_note _div" wx:if="{{$root.m0}}">
+          <view class="menkanTitle _div"
+            >{{'每满'+ticketData.frequencyMoney+'元可用1张'}}</view
+          >
+        </view>
+        <view
+          class="ticket_date _div"
+          style="line-height: 30px"
+          wx:if="{{ticketData.isDateLimit==1}}"
+          >部分时段不可用</view
+        >
+      </view>
+      <view class="ticket_goDetail _div" wx:if="{{!noDetail}}"
+        >查看详情<label class="iconfont icon-right _span"></label>
+      </view>
+    </view>
+  </view>
+  <view class="ticket_right _div" wx:if="{{showPriceArea}}">
+    <view
+      class="ticket_right_content _div"
+      wx:if="{{ticketData.ticketType==1}}"
+    >
+      <label class="iconStyle _span">￥</label>
+      <label class="ticketValue _span">{{ticketData.kindmoney}}</label>
+    </view>
+    <view
+      class="ticket_right_content _div"
+      wx:if="{{ticketData.ticketType==2}}"
+    >
+      <label class="ticketValue _span">{{ticketData.kindmoney}}</label>
+      <label class="iconStyle _span" style="top: 4rpx">折</label>
+    </view>
+    <view
+      class="ticket_right_content _div"
+      wx:if="{{ticketData.ticketType==3}}"
+    >
+      <label
+        class="{{['reduceStyle','_span',customHeight?'reduceStyle_custom':'']}}"
+        wx:if="{{ticketData.deductValueType==1}}"
+        >券后价格</label
+      >
+      <label class="iconStyle _span">￥</label>
+      <label class="ticketValue _span"
+        >{{ticketData.deductValueType==1?ticketData.deductToValue:ticketData.kindmoney}}</label
+      >
+    </view>
+    <view
+      class="ticket_right_content _div"
+      wx:if="{{ticketData.ticketType==5}}"
+    >
+      <label class="reduceStyle _span" wx:if="{{ticketData.deductValueType==1}}"
+        >{{$root.f0}}</label
+      >
+      <label
+        class="iconfont icon-mianfei freeIcon _span"
+        wx:if="{{ticketData.deductValueType==1&&ticketData.deductToValue==0}}"
+      ></label>
+      <block wx:else>
+        <label class="iconStyle _span">￥</label>
+        <label class="ticketValue _span"
+          >{{ticketData.deductValueType==1?ticketData.deductToValue:ticketData.kindmoney}}</label
+        >
+      </block>
+    </view>
+    <view
+      class="shangjiaquanJihuo _div"
+      wx:if="{{ticketData.wechatMerchantApply&&ticketData.merchantAddableNum>0}}"
+      >去激活</view
+    >
+  </view>
+  <view
+    class="{{['ticketNum','_div',ticketType.class]}}"
+    wx:if="{{ticketData.couponCnt&&ticketData.couponCnt>1}}"
+    >{{''+(unUseful||unExpired?usableNum:ticketData.couponCnt)+'张'}}</view
+  >
+  <view class="yaoqingchengjiu _div" wx:if="{{ticketData.campaignTypeId==28}}">
+    <label class="iconfont icon-yaoqingchengjiu _span"></label>
+  </view>
+  <view class="yaoqingchengjiu _div" wx:if="{{ticketData.sourceType==22}}">
+    <label class="iconfont icon-quanyikazhuanxiang _span"></label>
+  </view>
+  <slot name="shopTicket"></slot>
+</view>

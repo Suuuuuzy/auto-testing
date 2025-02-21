@@ -1,0 +1,22 @@
+<view class="{{['u-input','data-v-d372e650',I]}}" style="{{J}}">
+    <view class="u-input__content data-v-d372e650">
+        <view class="u-input__content__prefix-icon data-v-d372e650" wx:if="{{a}}">
+            <slot name="prefix" wx:if="{{$slots.prefix}}"></slot>
+            <block wx:else>
+                <u-icon bind:__l="__l" class="data-v-d372e650" uI="d372e650-0" uP="{{b}}" wx:if="{{b}}"></u-icon>
+            </block>
+        </view>
+        <view bindtap="{{C}}" class="u-input__content__field-wrapper data-v-d372e650">
+            <input adjustPosition="{{r}}" autoBlur="{{h}}" bindblur="{{y}}" bindconfirm="{{A}}" bindfocus="{{z}}" bindinput="{{x}}" bindkeyboardheightchange="{{B}}" class="u-input__content__field-wrapper__field data-v-d372e650" confirmHold="{{o}}" confirmType="{{n}}" cursor="{{f}}" cursorSpacing="{{q}}" disabled="{{i}}" focus="{{e}}" holdKeyboard="{{p}}" ignoreCompositionEvent="{{w}}" maxlength="{{j}}" password="{{v}}" placeholder="{{k}}" placeholderClass="{{m}}" placeholderStyle="{{l}}" selectionEnd="{{s}}" selectionStart="{{t}}" style="{{c}}" type="{{d}}" value="{{g}}" wx:if="{{r0}}"></input>
+        </view>
+        <view bindtap="{{F}}" class="u-input__content__clear data-v-d372e650" wx:if="{{D}}">
+            <u-icon bind:__l="__l" class="data-v-d372e650" uI="d372e650-1" uP="{{E}}" wx:if="{{E}}"></u-icon>
+        </view>
+        <view class="u-input__content__subfix-icon data-v-d372e650" wx:if="{{G}}">
+            <slot name="suffix" wx:if="{{$slots.suffix}}"></slot>
+            <block wx:else>
+                <u-icon bind:__l="__l" class="data-v-d372e650" uI="d372e650-2" uP="{{H}}" wx:if="{{H}}"></u-icon>
+            </block>
+        </view>
+    </view>
+</view>

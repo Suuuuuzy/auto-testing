@@ -1,0 +1,26 @@
+<view class="_div data-v-48990b74" style="{{$root.s0}}">
+  <view class="bcrgba pr mcInfo _div data-v-48990b74" style="{{$root.s1}}">
+    <image
+      class="mcLogo _img data-v-48990b74"
+      src="{{bannerInfo.logo}}"
+      wx:if="{{bannerInfo.logoPosition!==1}}"
+    ></image>
+    <view class="mlr30 _div data-v-48990b74">
+      <view class="mcName _div data-v-48990b74">{{bannerInfo.mcName}}</view>
+      <slot name="tableno"></slot>
+    </view>
+    <view class="banner__psqs mlr30 _div data-v-48990b74">
+      <block wx:if="{{bizType==1&&isDeliveryFee}}">
+        <view
+          class="_div data-v-48990b74"
+          wx:if="{{oneShop.startCost!==null||oneShop.takeCost!==null}}"
+          >{{'起送费￥'+(oneShop.startCost===null?'--':oneShop.startCost)+'   
+          配送费￥'+(oneShop.takeCost===null?'--':oneShop.takeCost)+''}}</view
+        >
+        <view class="_div data-v-48990b74" wx:else
+          >起送费￥ --    配送费￥ --</view
+        >
+      </block>
+    </view>
+  </view>
+</view>

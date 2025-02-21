@@ -1,0 +1,75 @@
+.warp.data-v-61795fc0 {
+  height: 100%;
+  width: 100vw;
+}
+.data-v-61795fc0::-webkit-scrollbar {
+  display: none;
+}
+.cardview.data-v-61795fc0 {
+  background: #fff;
+  border-radius: 10rpx;
+  margin: 40rpx 32rpx 0;
+  width: 686rpx;
+}
+.list.data-v-61795fc0 {
+  align-items: center;
+  border-radius: 10rpx;
+  border-top: 2rpx solid #f0f0f5;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40rpx;
+  padding: 12rpx 24rpx;
+}
+.list .create-time.data-v-61795fc0 {
+  align-items: flex-start;
+  background: #f7f8fa;
+  border-radius: 4rpx;
+  display: -webkit-flex;
+  display: flex;
+  height: 68rpx;
+  justify-content: flex-start;
+  opacity: 1;
+  padding: 16rpx;
+  width: 622rpx;
+}
+.list .list-bot.data-v-61795fc0 {
+  border-bottom: 2rpx solidrgba(240, 240, 245, 1);
+  padding: 32rpx 0;
+  width: 100%;
+}
+.list .list-bot.data-v-61795fc0,
+.list .type-time.data-v-61795fc0 {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+}
+.list .type-time.data-v-61795fc0 {
+  align-items: flex-start;
+  flex-direction: column;
+  font-size: 28rpx;
+  height: 84rpx;
+  width: 290rpx;
+}
+.list .type-time .type.data-v-61795fc0 {
+  color: #333;
+  font-weight: 500;
+  letter-spacing: 0rpx;
+  line-height: 39.2rpx;
+  text-align: left;
+}
+.list .type-time .time.data-v-61795fc0 {
+  color: #999;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 17.89px;
+  text-align: center;
+}
+.list .consumeamn.data-v-61795fc0 {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 32rpx;
+  height: 52rpx;
+  justify-content: flex-end;
+}

@@ -1,0 +1,6 @@
+<view class="page">
+    <view class="inputView">
+        <input bindinput="__e" class="add_car_input" data-event-opts="{{[ [ 'input',[ [ 'input_fun',['$event'] ] ] ] ]}}" name="详细信息" placeholder="请输入详细信息" type="text" value="{{text_value}}"></input>
+    </view>
+    <button bindtap="__e" class="btn_confirm_style" data-event-opts="{{[ [ 'tap',[ [ 'confirm_modify',['$event'] ] ] ] ]}}">确定</button>
+</view>

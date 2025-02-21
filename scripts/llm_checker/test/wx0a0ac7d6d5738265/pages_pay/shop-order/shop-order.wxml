@@ -1,0 +1,51 @@
+<view class="warp data-v-b1dc1577">
+  <zym-navigation
+    bind:__l="__l"
+    class="data-v-b1dc1577"
+    uI="b1dc1577-0"
+    uP="{{a}}"
+    wx:if="{{a}}"
+  ></zym-navigation>
+  <view class="content data-v-b1dc1577" wx:if="{{true}}">
+    <view class="tabs data-v-b1dc1577">
+      <view class="tab-bar data-v-b1dc1577">
+        <text
+          bindtap="{{c}}"
+          class="{{['tab-button','data-v-b1dc1577',b&&'active']}}"
+        >
+          待核销
+        </text>
+        <text
+          bindtap="{{e}}"
+          class="{{['tab-button','data-v-b1dc1577',d&&'active']}}"
+        >
+          已核销
+        </text>
+      </view>
+      <view class="content-area data-v-b1dc1577" wx:if="{{f}}">
+        <order-list
+          bind:__l="__l"
+          class="r data-v-b1dc1577"
+          uI="b1dc1577-1"
+          uP="{{h}}"
+          uR="refresh"
+          wx:if="{{h}}"
+        ></order-list>
+      </view>
+      <view class="content-area data-v-b1dc1577" wx:if="{{i}}">
+        <order-list
+          bind:__l="__l"
+          class="r data-v-b1dc1577"
+          uI="b1dc1577-2"
+          uP="{{k}}"
+          uR="refresh"
+          wx:if="{{k}}"
+        ></order-list>
+      </view>
+    </view>
+  </view>
+  <view class="nologin data-v-b1dc1577" wx:else>
+    <text class="text data-v-b1dc1577">您还没有登录，请先登录后查看订单</text>
+    <button bindtap="{{l}}" class="data-v-b1dc1577">登录</button>
+  </view>
+</view>

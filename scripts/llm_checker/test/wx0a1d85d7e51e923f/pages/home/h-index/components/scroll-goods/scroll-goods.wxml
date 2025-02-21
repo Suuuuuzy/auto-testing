@@ -1,0 +1,83 @@
+<view
+  class="padding-xs bg-white margin-xs radius"
+  style="border-radius: 12rpx"
+  wx:if="{{goods.length>0}}"
+>
+  <view class="cu-bar {{isUy?'rtl ':''}}" wx:if="{{title}}">
+    <view class="action">
+      <text class="icon-titles text-pink"></text>
+      <view
+        class="{{isUy?'rtl uy-tom ':'ch-font'}} text-bold   text-black  margin-lr-xs "
+      >
+        <text class="">{{title}}</text>
+      </view>
+    </view>
+    <navigator
+      bind:tap="moreClick"
+      class="action {{isUy?'padding-lr-sm':''}}"
+      url="/pages/home/shop/shop-goods/shop-goods?title={{Str.todaysCoupon[lanIndex]}}&areaId={{areaId}}"
+      wx:if="{{hasMore}}"
+    >
+      <text class="">{{subTitle}}</text>
+      <text class="cuIcon-{{isUy?'back':'right'}}"></text>
+    </navigator>
+  </view>
+  <view class="scroll_box">
+    <scroll-view
+      scrollX
+      class="scroll-view_x {{isUy?'rtl':''}}"
+      style="width: auto; overflow: hidden"
+    >
+      <navigator
+        class="item_list flex align-start"
+        style="border-radius: 15rpx; background-color: white"
+        url="/pages/home/mall/mall-home?shopId={{_item.shop.id}}&goodId={{_item.id}}"
+        wx:for="{{goods}}"
+        wx:for-item="_item"
+        wx:key="index"
+      >
+        <view>
+          <image
+            mode="aspectFill"
+            src="{{_item.img_url+'?x-oss-process=image/resize,w_600'}}"
+            style="border-radius: 16rpx 16rpx 4rpx 4rpx"
+          ></image>
+        </view>
+        <view class="flex justify-between">
+          <view
+            class="text-black margin-right-xs text-cut {{isUy?'rtl uy-tom':'ch-font'}}"
+            style="width: 180rpx; margin-top: -10rpx"
+          >
+            {{isUy?_item.uy_name:_item.ch_name}}
+          </view>
+        </view>
+        <view style="margin-top: 0rpx">
+          <view
+            class="item_h_title padding-lr-sm {{isUy?'rtl uy-tom':''}} text-black uy-tom text-left"
+            wx:if="{{0}}"
+          >
+            {{isUy?_item.uy_name:_item.ch_name}}
+          </view>
+          <view class="flex align-center">
+            <view class="">
+              <price
+                decimalSmaller
+                class="text-red text-bold text-lg uy-tom"
+                price="{{_item.activity_price}}"
+                priceUnit="yuan"
+              ></price>
+            </view>
+            <view class="padding-lr-xs">
+              <price
+                class="text-sm text-gray"
+                price="{{_item.price}}"
+                priceUnit="yuan"
+                type="delthrough"
+              ></price>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </scroll-view>
+  </view>
+</view>

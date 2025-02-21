@@ -1,0 +1,329 @@
+<view class="container _div data-v-2762f3c8">
+    <scroll-view class="content data-v-2762f3c8" enableBackToTop="{{true}}" scrollY="{{true}}" wx:if="{{detail}}">
+        <view class="_div data-v-2762f3c8" style="{{'height:'+navigationBarHeightPlaceholder+'px'+';'}}"></view>
+        <view class="boutique-logo-out _div data-v-2762f3c8">
+            <view class="boutique-logo-large _div data-v-2762f3c8">
+                <image class="pic _img data-v-2762f3c8" src="/static/img/logo-large.png"></image>
+            </view>
+        </view>
+        <view class="boutique-visit-out _div data-v-2762f3c8" wx:if="{{detail.view}}">
+            <view class="panel _div data-v-2762f3c8">
+                <video autoplay="{{true}}" class="content content-video active data-v-2762f3c8" loop="{{true}}" muted="{{true}}" objectFit="cover" showMuteBtn="{{true}}" src="{{videoUrl}}"></video>
+            </view>
+        </view>
+        <view class="form-out _div data-v-2762f3c8">
+            <view class="form-title _div data-v-2762f3c8">{{detail.name+'服务预约'}}</view>
+            <view class="form-input-out _div data-v-2762f3c8">
+                <view class="form-line _div data-v-2762f3c8">
+                    <view class="form-label _div data-v-2762f3c8">称谓<label class="_span data-v-2762f3c8">*</label>
+                    </view>
+                    <view class="form-gender-out _div data-v-2762f3c8">
+                        <view bindtap="__e" class="{{['form-gender-item','_div','data-v-2762f3c8',gender===1?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}">
+                            <view class="form-gender-dot _div data-v-2762f3c8">
+                                <view class="form-gender-dot-inner _div data-v-2762f3c8"></view>
+                            </view>
+                            <view class="form-gender-label _div data-v-2762f3c8">先生</view>
+                        </view>
+                        <view class="form-gender-item-divider _div data-v-2762f3c8">/</view>
+                        <view bindtap="__e" class="{{['form-gender-item','_div','data-v-2762f3c8',gender===2?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}">
+                            <view class="form-gender-dot _div data-v-2762f3c8">
+                                <view class="form-gender-dot-inner _div data-v-2762f3c8"></view>
+                            </view>
+                            <view class="form-gender-label _div data-v-2762f3c8">女士</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="form-line form-line-2 _div data-v-2762f3c8">
+                    <view class="form-line-half _div data-v-2762f3c8">
+                        <view class="form-label _div data-v-2762f3c8">姓<label class="_span data-v-2762f3c8">*</label>
+                        </view>
+                        <view class="form-input _div data-v-2762f3c8">
+                            <input bindchange="__e" bindinput="__e" class="input data-v-2762f3c8" data-event-opts="{{[ [ 'change',[ [ 'lastNameChange',['$event'] ] ] ],[ 'input',[ [ '__set_model',[ '','lastname','$event',[] ] ] ] ] ]}}" placeholder="姓氏" type="text" value="{{lastname}}"></input>
+                        </view>
+                    </view>
+                    <view class="form-line-half _div data-v-2762f3c8">
+                        <view class="form-label _div data-v-2762f3c8">名<label class="_span data-v-2762f3c8">*</label>
+                        </view>
+                        <view class="form-input _div data-v-2762f3c8">
+                            <input bindchange="__e" bindinput="__e" class="input data-v-2762f3c8" data-event-opts="{{[ [ 'change',[ [ 'firstNameChange',['$event'] ] ] ],[ 'input',[ [ '__set_model',[ '','firstname','$event',[] ] ] ] ] ]}}" placeholder="名字" type="text" value="{{firstname}}"></input>
+                        </view>
+                    </view>
+                </view>
+                <view class="form-line form-line-2 _div data-v-2762f3c8">
+                    <view class="form-line-half _div data-v-2762f3c8">
+                        <view class="form-label _div data-v-2762f3c8">姓（拼音）<label class="_span data-v-2762f3c8">*</label>
+                        </view>
+                        <view class="form-input _div data-v-2762f3c8">
+                            <input bindinput="__e" class="input data-v-2762f3c8" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','lastname_pinyin','$event',[] ] ] ] ] ]}}" placeholder="姓氏拼音" type="text" value="{{lastname_pinyin}}"></input>
+                        </view>
+                    </view>
+                    <view class="form-line-half _div data-v-2762f3c8">
+                        <view class="form-label _div data-v-2762f3c8">名（拼音）<label class="_span data-v-2762f3c8">*</label>
+                        </view>
+                        <view class="form-input _div data-v-2762f3c8">
+                            <input bindinput="__e" class="input data-v-2762f3c8" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','firstname_pinyin','$event',[] ] ] ] ] ]}}" placeholder="名字拼音" type="text" value="{{firstname_pinyin}}"></input>
+                        </view>
+                    </view>
+                </view>
+                <view class="form-line _div data-v-2762f3c8">
+                    <view class="form-label _div data-v-2762f3c8">手机号<label class="_span data-v-2762f3c8">*</label>
+                    </view>
+                    <view class="form-input-sms _div data-v-2762f3c8">
+                        <view class="form-input _div data-v-2762f3c8">
+                            <input bindinput="__e" class="input data-v-2762f3c8" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','phone','$event',[] ] ] ] ] ]}}" maxlength="11" placeholder="手机号" type="number" value="{{phone}}"></input>
+                        </view>
+                        <view class="form-input-auth _div data-v-2762f3c8">
+                            <view class="icon-wechat _div data-v-2762f3c8">
+                                <image class="pic _img data-v-2762f3c8" src="/static/img/icon-wechat.svg"></image>
+                            </view>
+                            <view class="_div data-v-2762f3c8">微信授权</view>
+                            <button bindgetphonenumber="__e" class="a-top data-v-2762f3c8" data-event-opts="{{[ [ 'getphonenumber',[ [ 'authPhone',['$event'] ] ] ] ]}}" openType="getPhoneNumber"></button>
+                        </view>
+                    </view>
+                </view>
+                <view class="form-line _div data-v-2762f3c8">
+                    <view class="form-label _div data-v-2762f3c8">验证码<label class="_span data-v-2762f3c8">*</label>
+                    </view>
+                    <view class="form-input _div data-v-2762f3c8">
+                        <input bindinput="__e" class="input input-code data-v-2762f3c8" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','code_sms','$event',[] ] ] ] ] ]}}" maxlength="6" placeholder="验证码" type="number" value="{{code_sms}}"></input>
+                        <view bindtap="__e" class="{{['form-input-send','_div','data-v-2762f3c8',smsStatus?'disable':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'sendSMS',['$event'] ] ] ] ]}}">{{smsText}}</view>
+                    </view>
+                </view>
+                <view class="form-line _div data-v-2762f3c8">
+                    <view class="form-label _div data-v-2762f3c8">预约人数<label class="_span data-v-2762f3c8">*</label>
+                    </view>
+                    <view class="form-input _div data-v-2762f3c8">
+                        <view class="{{['input','_div','data-v-2762f3c8',!together?'placeholder':'']}}">{{together?together:'请选择预约人数'}}</view>
+                        <view class="arrow-more _div data-v-2762f3c8">
+                            <image class="pic _img data-v-2762f3c8" src="/static/img/arrow-more-2.svg"></image>
+                        </view>
+                        <picker bindchange="__e" class="a-top data-v-2762f3c8" data-event-opts="{{[ [ 'change',[ [ 'changeTogether',['$event'] ] ] ] ]}}" mode="selector" range="{{togetherList}}">
+                            <view class="a-top _div data-v-2762f3c8"></view>
+                        </picker>
+                    </view>
+                </view>
+                <block wx:if="{{!detail.isService}}">
+                    <view class="form-line form-line-2 _div data-v-2762f3c8">
+                        <view class="form-line-three _div data-v-2762f3c8">
+                            <view class="form-label _div data-v-2762f3c8">您的地区<label class="_span data-v-2762f3c8">*</label>
+                            </view>
+                            <view class="form-input _div data-v-2762f3c8">
+                                <view class="{{['input','_div','data-v-2762f3c8',!province?'placeholder':'']}}">{{province?province:'省'}}</view>
+                                <view class="arrow-more _div data-v-2762f3c8">
+                                    <image class="pic _img data-v-2762f3c8" src="/static/img/arrow-more-2.svg"></image>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="form-line-three _div data-v-2762f3c8">
+                            <view class="form-label _div data-v-2762f3c8"></view>
+                            <view class="form-input _div data-v-2762f3c8">
+                                <view class="{{['input','_div','data-v-2762f3c8',!city?'placeholder':'']}}">{{city?city:'市'}}</view>
+                                <view class="arrow-more _div data-v-2762f3c8">
+                                    <image class="pic _img data-v-2762f3c8" src="/static/img/arrow-more-2.svg"></image>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="form-line-three _div data-v-2762f3c8">
+                            <view class="form-label _div data-v-2762f3c8"></view>
+                            <view class="form-input _div data-v-2762f3c8">
+                                <view class="{{['input','_div','data-v-2762f3c8',!district?'placeholder':'']}}">{{district?district:'区'}}</view>
+                                <view class="arrow-more _div data-v-2762f3c8">
+                                    <image class="pic _img data-v-2762f3c8" src="/static/img/arrow-more-2.svg"></image>
+                                </view>
+                            </view>
+                        </view>
+                        <picker bindchange="__e" class="a-top data-v-2762f3c8" data-event-opts="{{[ [ 'change',[ [ 'changeCity',['$event'] ] ] ] ]}}" mode="region">
+                            <view class="a-top _div data-v-2762f3c8"></view>
+                        </picker>
+                    </view>
+                    <view class="form-line form-line-2 _div data-v-2762f3c8">
+                        <view class="form-line-half _div data-v-2762f3c8">
+                            <view class="form-label _div data-v-2762f3c8">选择男女表款</view>
+                            <view bindtap="__e" class="{{['form-input','form-input-btn','_div','data-v-2762f3c8',watchGender===1?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseWatchGender',[1] ] ] ] ]}}">
+                                <view class="input _div data-v-2762f3c8">男款</view>
+                            </view>
+                        </view>
+                        <view class="form-line-half _div data-v-2762f3c8">
+                            <view class="form-label _div data-v-2762f3c8"></view>
+                            <view bindtap="__e" class="{{['form-input','form-input-btn','_div','data-v-2762f3c8',watchGender===2?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseWatchGender',[2] ] ] ] ]}}">
+                                <view class="input _div data-v-2762f3c8">女款</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="form-line form-line-2 _div data-v-2762f3c8">
+                        <view class="form-line-half _div data-v-2762f3c8">
+                            <view class="form-label _div data-v-2762f3c8">选择是否镶钻</view>
+                            <view bindtap="__e" class="{{['form-input','form-input-btn','_div','data-v-2762f3c8',gem===1?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseGem',[1] ] ] ] ]}}">
+                                <view class="input _div data-v-2762f3c8">是</view>
+                            </view>
+                        </view>
+                        <view class="form-line-half _div data-v-2762f3c8">
+                            <view class="form-label _div data-v-2762f3c8"></view>
+                            <view bindtap="__e" class="{{['form-input','form-input-btn','_div','data-v-2762f3c8',gem===2?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseGem',[2] ] ] ] ]}}">
+                                <view class="input _div data-v-2762f3c8">否</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="form-line _div data-v-2762f3c8">
+                        <view class="form-label _div data-v-2762f3c8">选择您感兴趣的功能</view>
+                        <view class="form-input _div data-v-2762f3c8">
+                            <view class="{{['input','_div','data-v-2762f3c8',!likedWatch?'placeholder':'']}}">{{likedWatch?likedWatch:'请选择感兴趣的功能'}}</view>
+                            <view class="arrow-more _div data-v-2762f3c8">
+                                <image class="pic _img data-v-2762f3c8" src="/static/img/arrow-more-2.svg"></image>
+                            </view>
+                            <picker bindchange="__e" class="a-top data-v-2762f3c8" data-event-opts="{{[ [ 'change',[ [ 'changeLikedWatchList',['$event'] ] ] ] ]}}" mode="selector" range="{{likedWatchList}}">
+                                <view class="a-top _div data-v-2762f3c8"></view>
+                            </picker>
+                        </view>
+                    </view>
+                    <view class="form-line _div data-v-2762f3c8">
+                        <view class="form-label _div data-v-2762f3c8">补充其他服务要求</view>
+                        <view class="form-input form-input-textarea _div data-v-2762f3c8">
+                            <textarea bindinput="__e" class="input data-v-2762f3c8" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','others','$event',[] ] ] ] ] ]}}" disableDefaultPadding="{{true}}" placeholder="请输入您的服务要求" value="{{others}}"></textarea>
+                        </view>
+                    </view>
+                    <view class="form-line _div data-v-2762f3c8">
+                        <view class="form-label _div data-v-2762f3c8">可选择语音记录服务要求</view>
+                        <view bindtap="__e" class="form-input form-input-play _div data-v-2762f3c8" data-event-opts="{{[ [ 'tap',[ [ 'toggleAudio',['$event'] ] ] ] ]}}" wx:if="{{audioFile}}">
+                            <view class="audio-play _div data-v-2762f3c8">
+                                <image class="pic _img data-v-2762f3c8" src="/static/img/audio-play.svg"></image>
+                            </view>
+                            <view class="audio-progress _div data-v-2762f3c8">
+                                <slider activeColor="#BCA790" backgroundColor="#e8e0d9" blockColor="#BCA790" blockSize="{{12}}" class="slider-inner data-v-2762f3c8" value="{{percent}}"></slider>
+                            </view>
+                            <view class="audio-time _div data-v-2762f3c8">{{audioDuration}}</view>
+                        </view>
+                        <view bindtouchend="__e" bindtouchstart="__e" class="{{['form-input','form-input-audio','_div','data-v-2762f3c8',recording?'recording':'']}}" data-event-opts="{{[ [ 'touchstart',[ [ 'startRecord',['$event'] ] ] ],[ 'touchend',[ [ 'finishRecord',['$event'] ] ] ] ]}}">
+                            <view class="icon-audio _div data-v-2762f3c8" wx:if="{{!recording}}">
+                                <image class="pic _img data-v-2762f3c8" src="/static/img/icon-audio.svg"></image>
+                            </view>
+                            <view class="icon-recording _div data-v-2762f3c8" wx:else>
+                                <image class="pic _img data-v-2762f3c8" src="/static/img/icon-recording.svg"></image>
+                            </view>
+                            <view class="_div data-v-2762f3c8">{{recording?'录音中':audioFile?'重新录音':'按住说话'}}</view>
+                        </view>
+                    </view>
+                </block>
+                <block wx:else>
+                    <view class="form-line form-line-2 _div data-v-2762f3c8">
+                        <view class="form-line-three _div data-v-2762f3c8">
+                            <view class="form-label _div data-v-2762f3c8">您的地区<label class="_span data-v-2762f3c8">*</label>
+                            </view>
+                            <view class="form-input _div data-v-2762f3c8">
+                                <view class="{{['input','_div','data-v-2762f3c8',!province?'placeholder':'']}}">{{province?province:'省'}}</view>
+                                <view class="arrow-more _div data-v-2762f3c8">
+                                    <image class="pic _img data-v-2762f3c8" src="/static/img/arrow-more.svg"></image>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="form-line-three _div data-v-2762f3c8">
+                            <view class="form-label _div data-v-2762f3c8"></view>
+                            <view class="form-input _div data-v-2762f3c8">
+                                <view class="{{['input','_div','data-v-2762f3c8',!city?'placeholder':'']}}">{{city?city:'市'}}</view>
+                                <view class="arrow-more _div data-v-2762f3c8">
+                                    <image class="pic _img data-v-2762f3c8" src="/static/img/arrow-more.svg"></image>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="form-line-three _div data-v-2762f3c8">
+                            <view class="form-label _div data-v-2762f3c8"></view>
+                            <view class="form-input _div data-v-2762f3c8">
+                                <view class="{{['input','_div','data-v-2762f3c8',!district?'placeholder':'']}}">{{district?district:'区'}}</view>
+                                <view class="arrow-more _div data-v-2762f3c8">
+                                    <image class="pic _img data-v-2762f3c8" src="/static/img/arrow-more.svg"></image>
+                                </view>
+                            </view>
+                        </view>
+                        <picker bindchange="__e" class="a-top data-v-2762f3c8" data-event-opts="{{[ [ 'change',[ [ 'changeCity',['$event'] ] ] ] ]}}" mode="region">
+                            <view class="a-top _div data-v-2762f3c8"></view>
+                        </picker>
+                    </view>
+                    <view class="form-line _div data-v-2762f3c8">
+                        <view class="form-label _div data-v-2762f3c8">选择服务类型<label class="_span data-v-2762f3c8">*</label>
+                        </view>
+                        <view class="form-input _div data-v-2762f3c8">
+                            <view class="{{['input','_div','data-v-2762f3c8',!service?'placeholder':'']}}">{{service?service:'请选择服务类型'}}</view>
+                            <view class="arrow-more _div data-v-2762f3c8">
+                                <image class="pic _img data-v-2762f3c8" src="/static/img/arrow-more-2.svg"></image>
+                            </view>
+                            <picker bindchange="__e" class="a-top data-v-2762f3c8" data-event-opts="{{[ [ 'change',[ [ 'changeService',['$event'] ] ] ] ]}}" mode="selector" range="{{serviceList}}">
+                                <view class="a-top _div data-v-2762f3c8"></view>
+                            </picker>
+                        </view>
+                    </view>
+                    <view class="more-info-out _div data-v-2762f3c8">
+                        <view bindtap="__e" class="more-place _div data-v-2762f3c8" data-event-opts="{{[ [ 'tap',[ [ 'openMore',['$event'] ] ] ] ]}}" wx:if="{{!showMore}}">
+                            <view class="icon-add-more _div data-v-2762f3c8">
+                                <image class="pic _img data-v-2762f3c8" src="/static/img/icon-add-more.svg"></image>
+                            </view>
+                        </view>
+                        <view class="more-form _div data-v-2762f3c8" wx:else>
+                            <view class="form-line _div data-v-2762f3c8">
+                                <view class="form-label _div data-v-2762f3c8">您的腕表序列编号</view>
+                                <view class="form-input _div data-v-2762f3c8">
+                                    <input bindinput="__e" class="input data-v-2762f3c8" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','series','$event',[] ] ] ] ] ]}}" placeholder="请输入您的腕表序列编号" type="text" value="{{series}}"></input>
+                                </view>
+                            </view>
+                            <view class="form-line _div data-v-2762f3c8">
+                                <view class="form-label _div data-v-2762f3c8">上传您的腕表证书照片</view>
+                                <view class="form-pic-out _div data-v-2762f3c8">
+                                    <view bindtap="__e" class="form-pic _div data-v-2762f3c8" data-event-opts="{{[ [ 'tap',[ [ 'removeCert',[index] ] ] ] ]}}" wx:for="{{cert}}" wx:key="index">
+                                        <image class="pic _img data-v-2762f3c8" mode="aspectFill" src="{{item}}"></image>
+                                    </view>
+                                    <view bindtap="__e" class="form-pic form-pic-add _div data-v-2762f3c8" data-event-opts="{{[ [ 'tap',[ [ 'uploadCert',['$event'] ] ] ] ]}}">
+                                        <view class="icon-add _div data-v-2762f3c8">
+                                            <image class="pic _img data-v-2762f3c8" src="/static/img/icon-add.svg"></image>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="form-line _div data-v-2762f3c8">
+                                <view class="form-label _div data-v-2762f3c8">补充其他服务要求</view>
+                                <view class="form-input form-input-textarea _div data-v-2762f3c8">
+                                    <textarea bindinput="__e" class="input data-v-2762f3c8" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','others','$event',[] ] ] ] ] ]}}" disableDefaultPadding="{{true}}" placeholder="请输入您的服务要求" value="{{others}}"></textarea>
+                                </view>
+                            </view>
+                            <view class="form-line _div data-v-2762f3c8">
+                                <view class="form-label _div data-v-2762f3c8">可选择语音记录服务要求</view>
+                                <view bindtap="__e" class="form-input form-input-play _div data-v-2762f3c8" data-event-opts="{{[ [ 'tap',[ [ 'toggleAudio',['$event'] ] ] ] ]}}" wx:if="{{audioFile}}">
+                                    <view class="audio-play _div data-v-2762f3c8">
+                                        <image class="pic _img data-v-2762f3c8" src="/static/img/audio-play.svg"></image>
+                                    </view>
+                                    <view class="audio-progress _div data-v-2762f3c8">
+                                        <slider activeColor="#BCA790" backgroundColor="#e8e0d9" blockColor="#BCA790" blockSize="{{12}}" class="slider-inner data-v-2762f3c8" value="{{percent}}"></slider>
+                                    </view>
+                                    <view class="audio-time _div data-v-2762f3c8">{{audioDuration}}</view>
+                                </view>
+                                <view bindtouchend="__e" bindtouchstart="__e" class="form-input form-input-audio _div data-v-2762f3c8" data-event-opts="{{[ [ 'touchstart',[ [ 'startRecord',['$event'] ] ] ],[ 'touchend',[ [ 'finishRecord',['$event'] ] ] ] ]}}">
+                                    <view class="icon-audio _div data-v-2762f3c8">
+                                        <image class="pic _img data-v-2762f3c8" src="/static/img/icon-audio.svg"></image>
+                                    </view>
+                                    <view class="_div data-v-2762f3c8">{{audioFile?'重新录音':'按住说话'}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+            <view bindtap="__e" class="policy-out _div data-v-2762f3c8" data-event-opts="{{[ [ 'tap',[ [ 'e2',['$event'] ] ] ] ]}}">
+                <view class="policy-check _div data-v-2762f3c8">
+                    <view class="check _div data-v-2762f3c8" wx:if="{{checked}}">
+                        <image class="pic _img data-v-2762f3c8" src="/static/img/check.png"></image>
+                    </view>
+                </view>
+                <view class="policy-text _div data-v-2762f3c8">本人已满 16 周岁，同意向百达翡丽提供本表格中的个人信息。百达翡丽可根据本人要求，对其进行处理或存档。百达翡丽已采取措施，充分保障本人的个人信息安全。<view class="_br data-v-2762f3c8"></view>欲了解更多有关百达翡丽处理客户数据的隐私政策，请浏览<label catchtap="__e" class="_span data-v-2762f3c8" data-event-opts="{{[ [ 'tap',[ [ 'toPolicy',['$event'] ] ] ] ]}}">法律声明</label>。</view>
+            </view>
+        </view>
+        <view class="boutique-map-gap _div data-v-2762f3c8"></view>
+        <view class="btn-bottom-inner _div data-v-2762f3c8"></view>
+        <view class="_div data-v-2762f3c8" style="{{'height:'+navigationBarHeightPlaceholder+'px'+';'}}"></view>
+    </scroll-view>
+    <view class="btn-bottom _div data-v-2762f3c8" wx:if="{{detail&&detail.can_book}}">
+        <view class="btn-bottom-inner _div data-v-2762f3c8">
+            <view bindtap="__e" class="btn-bottom-btn _div data-v-2762f3c8" data-event-opts="{{[ [ 'tap',[ [ 'nextBook',['$event'] ] ] ] ]}}">下一步</view>
+        </view>
+        <view class="btn-bottom-gap _div data-v-2762f3c8" style="{{'height:'+navigationBarHeightPlaceholder+'px'+';'}}"></view>
+    </view>
+    <pp-nav back="{{true}}" bind:__l="__l" class="data-v-2762f3c8" noCircle="{{true}}" placeholder="{{navigationBarHeightPlaceholder}}" transparent="{{true}}" value="{{true}}" vueId="03fcd77c-1"></pp-nav>
+    <privacy-popup bind:__l="__l" class="data-v-2762f3c8" vueId="03fcd77c-2"></privacy-popup>
+</view>

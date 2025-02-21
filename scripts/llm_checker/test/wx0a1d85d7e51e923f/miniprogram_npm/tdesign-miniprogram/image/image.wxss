@@ -1,0 +1,73 @@
+.t-float-left {
+  float: left;
+}
+.t-float-right {
+  float: right;
+}
+@-webkit-keyframes tdesign-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes tdesign-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.hotspot-expanded.relative {
+  position: relative;
+}
+.hotspot-expanded::after {
+  bottom: 0;
+  content: "";
+  display: block;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: scale(1.5);
+}
+.t-image {
+  color: var(--td-image-color, var(--td-font-gray-3, rgba(0, 0, 0, 0.4)));
+  vertical-align: top;
+}
+.t-image__mask {
+  align-items: center;
+  background-color: var(
+    --td-image-loading-bg-color,
+    var(--td-bg-color-secondarycontainer, var(--td-gray-color-1, #f3f3f3))
+  );
+  color: var(
+    --td-image-loading-color,
+    var(--td-font-gray-3, rgba(0, 0, 0, 0.4))
+  );
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+}
+.t-image--loading-text {
+  height: 0;
+  width: 0;
+}
+.t-image__common {
+  height: 100%;
+  width: 100%;
+}
+.t-image--shape-circle {
+  border-radius: 50%;
+  overflow: hidden;
+}
+.t-image--shape-round {
+  border-radius: var(--td-image-round-radius, var(--td-radius-default, 12rpx));
+  overflow: hidden;
+}
+.t-image--shape-square {
+  border-radius: 0;
+  overflow: hidden;
+}

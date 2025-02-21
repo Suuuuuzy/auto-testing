@@ -1,0 +1,227 @@
+.container {
+  position: relative;
+  background-color: #f3f4f6;
+}
+.placeholderClass {
+  color: #d5d5d5;
+}
+#declareProcess-top {
+  position: relative;
+  height: 80rpx;
+  text-align: justify;
+  z-index: 1;
+}
+#declareProcess-top .topBg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 181rpx;
+  z-index: -1;
+}
+#declareProcess-top .top-cont {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 28rpx;
+}
+.top-cont .dots-green,
+.top-cont .dots-yellow {
+  font-size: 18rpx;
+  width: 25rpx;
+  height: 25rpx;
+  line-height: 25rpx;
+  margin-left: 9rpx;
+}
+#declareProcess-body {
+  position: relative;
+  margin: 0 18rpx;
+  background-color: #fdfdfd;
+  padding-left: 26rpx;
+  font-size: 26rpx;
+  color: #7e7e7e;
+  line-height: 36rpx;
+  z-index: 1;
+}
+.body-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 41rpx;
+  padding-bottom: 32rpx;
+}
+.body-progress .progressLine {
+  width: 495rpx;
+  height: 49rpx;
+}
+.body-progress .body-progress-text {
+  width: 100%;
+  height: 61rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 24rpx;
+  color: #999999;
+  padding: 0 18rpx;
+  box-sizing: border-box;
+}
+.body-progress-text .progressLine-this {
+  color: #f95d5f;
+}
+.declareProcess-commonTitle {
+  position: relative;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 28rpx;
+  color: #0c0c0c;
+  padding-left: 25rpx;
+  padding-bottom: 12rpx;
+  margin-right: 60rpx;
+  border-bottom: 1rpx solid #bfbfbf;
+}
+.declareProcess-commonTitle:before {
+  content: "";
+  width: 7rpx;
+  height: 30rpx;
+  background-color: #f95d5f;
+  position: absolute;
+  top: 0;
+  left: 1rpx;
+}
+.fillinInfo-cont {
+  padding: 5rpx 40rpx 61rpx 10rpx;
+  font-size: 30rpx;
+}
+.fillinInfo-cont .fillinInfo-item {
+  position: relative;
+  border-bottom: 2rpx solid #e8e8e8;
+  height: 76rpx;
+  display: flex;
+  align-items: center;
+}
+.fillinInfo-item label {
+  color: #353535;
+  margin-right: 50rpx;
+  min-width: 150rpx;
+  flex-shrink: 0;
+}
+.fillinInfo-item input,
+.fillinInfo-item picker {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.materials-list {
+  padding: 5rpx 45rpx 37rpx 7rpx;
+}
+.materials-list .materials-item {
+  border-bottom: 2rpx solid #e8e8e8;
+}
+.materials-list .materials-item + .materials-item {
+  margin-top: 37rpx;
+}
+.materials-item .materials-item-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 50rpx;
+  font-size: 26rpx;
+  color: #7e7e7e;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+}
+.materials-item-name .item-name {
+  flex: 1;
+}
+.materials-item-name .necessaryMaterial {
+  margin-left: 18rpx;
+}
+.materials-item .materials-file {
+  padding: 17rpx 0;
+}
+.materials-file .materials-file_cont {
+  width: 121rpx;
+  height: 134rpx;
+  border: 2rpx dotted #cecece;
+  background-color: #fff;
+  box-shadow: 0 5rpx 8.3rpx 1.7rpx rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20rpx;
+  line-height: 20rpx;
+  color: #f95d5f;
+}
+.materials-file .materials-fileUpload {
+  background-color: transparent;
+  font-size: 22rpx;
+  line-height: 22rpx;
+  color: #c7c7c7;
+}
+.materials-file_cont image {
+  width: 53rpx;
+  height: 48rpx;
+  margin-bottom: 22rpx;
+}
+.materials-fileUpload image {
+  width: 43rpx;
+  height: 43rpx;
+  margin-bottom: 22rpx;
+}
+.materails-tips {
+  height: 49rpx;
+  line-height: 49rpx;
+  color: #f95d5f;
+}
+#declareProcess-footer {
+  height: 145rpx;
+  background-color: #fff;
+  padding: 0 15rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 58rpx;
+}
+.footer-saveDraft,
+.footer-submit {
+  flex: 1;
+  height: 92rpx;
+  line-height: 92rpx;
+  font-size: 26rpx;
+  color: #fff;
+  border-radius: 0;
+  border: 0;
+}
+.footer-saveDraft {
+  background-color: #83acc3;
+}
+.footer-submit {
+  background-color: #356ffb;
+}
+.sendEMS-radioGroup {
+  display: flex;
+  height: 76rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+.sendEMS-radioGroup radio {
+  transform: scale(0.9);
+}
+.sendEMS-radioGroup radio + radio {
+  margin-left: 15rpx;
+}
+.declareProcess-address {
+  border-top: 2rpx solid #e8e8e8;
+  padding: 20rpx 0;
+}
+.declareProcess-address .addressBtn {
+  display: inline-block;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  margin: 0;
+}

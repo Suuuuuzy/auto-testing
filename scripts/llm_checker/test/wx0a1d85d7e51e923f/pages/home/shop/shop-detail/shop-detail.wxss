@@ -1,0 +1,35 @@
+.VerticalNav.nav {
+  white-space: normal;
+  width: 200rpx;
+}
+.VerticalNav.nav .cu-item {
+  background-color: #fff;
+  border: none;
+  height: 50px;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+.VerticalNav.nav .cu-item.cur {
+  background-color: #f1f1f1;
+}
+.VerticalNav.nav .cu-item.cur::after {
+  background-color: currentColor;
+  border-radius: 10rpx 0 0 10rpx;
+  bottom: 0;
+  content: "";
+  height: 30rpx;
+  margin: auto;
+  position: absolute;
+  right: 0rpx;
+  top: 0;
+  width: 8rpx;
+}
+.VerticalBox {
+  display: -webkit-flex;
+  display: flex;
+}
+.VerticalMain {
+  background-color: #f1f1f1;
+}

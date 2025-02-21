@@ -1,0 +1,562 @@
+<view class="mine-container data-v-1a51d11f">
+  <u-navbar
+    background="{{navStyle}}"
+    bind:__l="__l"
+    borderBottom="{{false}}"
+    class="data-v-1a51d11f"
+    isBack="{{false}}"
+    title="我的"
+    titleColor="{{barTitleColor}}"
+    vueId="24ff2508-1"
+  ></u-navbar>
+  <image
+    class="home-bg data-v-1a51d11f"
+    mode="aspectFill"
+    src="http://image.fanglinxq.com/assets/home-bg.png"
+    wx:if="{{userInfo&&userInfo.vipLevel===-1}}"
+  ></image>
+  <image
+    bindtap="__e"
+    class="home-bg data-v-1a51d11f"
+    data-event-opts="{{[ [ 'tap',[ [ 'preImg',['$event'] ] ] ] ]}}"
+    mode="aspectFill"
+    src="{{$root.g0>0?photoList[current]:detail.avatar}}"
+    wx:else
+  ></image>
+  <view class="full-mine-warp data-v-1a51d11f">
+    <view class="avatar-warp data-v-1a51d11f">
+      <block wx:if="{{$root.g1>0}}">
+        <view
+          bindtap="__e"
+          class="{{['item-avatar','data-v-1a51d11f',i===current?'active':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'check',[i] ] ] ] ]}}"
+          wx:for="{{photoList}}"
+          wx:for-index="i"
+          wx:for-item="icon"
+          wx:key="i"
+        >
+          <image
+            class="img-pic data-v-1a51d11f"
+            mode="aspectFill"
+            src="{{icon}}"
+          ></image>
+          <image
+            catchtap="__e"
+            class="del-icon data-v-1a51d11f"
+            data-event-opts="{{[ [ 'tap',[ [ 'handleDel',[i] ] ] ] ]}}"
+            mode="widthFix"
+            src="/static/assets/pic-del.png"
+            wx:if="{{i===current}}"
+          ></image>
+        </view>
+      </block>
+      <view class="add-pic data-v-1a51d11f">
+        <image
+          bindtap="__e"
+          class="data-v-1a51d11f"
+          data-event-opts="{{[ [ 'tap',[ [ 'addPic',['$event'] ] ] ] ]}}"
+          mode="widthFix"
+          src="http://image.fanglinxq.com/assets/icons/add-pic.png"
+        ></image>
+      </view>
+    </view>
+    <view class="main-info-content data-v-1a51d11f">
+      <view
+        bindtap="__e"
+        class="slot-btn addBtn data-v-1a51d11f"
+        data-event-opts="{{[ [ 'tap',[ ['onUpload'] ] ] ]}}"
+        hoverClass="slot-btn__hover"
+        hoverStayTime="150"
+        slot="addBtn"
+      >
+        <avatar
+          bind:__l="__l"
+          class="data-v-1a51d11f"
+          size="{{160}}"
+          src="{{detail.avatar}}"
+          uid="{{detail.id}}"
+          vipLevel="{{detail.vipLevel}}"
+          vueId="24ff2508-2"
+        ></avatar>
+        <view class="btn-change data-v-1a51d11f">更换头像</view>
+      </view>
+      <view
+        class="right-container data-v-1a51d11f"
+        wx:if="{{userInfo&&userInfo.vipLevel!==-1}}"
+      >
+        <view class="user-nikename data-v-1a51d11f">
+          <text
+            class="{{['name','data-v-1a51d11f',detail.perfectInformation!=2?'min':'max']}}"
+            >{{detail.nickname}}</text
+          >
+          <view
+            class="{{['tip','data-v-1a51d11f',detail.sex===1?'mantips':'']}}"
+          >
+            <image
+              class="data-v-1a51d11f"
+              mode="widthFix"
+              src="{{'http://image.fanglinxq.com/assets/icons/'+(detail.sex===1?'man':'woman')+'.svg'}}"
+            ></image>
+            <text class="data-v-1a51d11f">{{detail.age?detail.age:''}}</text>
+          </view>
+        </view>
+        <view class="loaction-warp data-v-1a51d11f">
+          <view class="location data-v-1a51d11f">
+            <image
+              class="data-v-1a51d11f"
+              mode="widthFix"
+              src="http://image.fanglinxq.com/assets/icons/location.png"
+            ></image>
+            <text class="data-v-1a51d11f">{{detail.cityName||'未设置'}}</text>
+          </view>
+          <view
+            bindtap="__e"
+            class="edit-btn data-v-1a51d11f"
+            data-event-opts="{{[ [ 'tap',[ [ 'handleNavigater',['/pages/user/edit/index'] ] ] ] ]}}"
+          >
+            <text class="data-v-1a51d11f">编辑资料</text>
+            <u-icon
+              bind:__l="__l"
+              class="data-v-1a51d11f"
+              color="#DDDDDD"
+              name="arrow-right"
+              size="22"
+              vueId="24ff2508-3"
+            ></u-icon>
+            <image
+              class="tips-icon data-v-1a51d11f"
+              mode="widthFix"
+              src="http://image.fanglinxq.com/assets/icons/s-tip.png"
+              wx:if="{{detail.perfectInformation!=2}}"
+            ></image>
+          </view>
+        </view>
+        <view class="user-id data-v-1a51d11f">
+          <text class="data-v-1a51d11f">{{'ID：'+(detail.id||'-')}}</text>
+          <view
+            bindtap="__e"
+            class="copy data-v-1a51d11f"
+            data-event-opts="{{[ [ 'tap',[ [ 'copy',['$0'],['detail.id'] ] ] ] ]}}"
+            >复制</view
+          >
+        </view>
+        <view class="tags data-v-1a51d11f">
+          <view
+            class="item-tag data-v-1a51d11f"
+            wx:for="{{detail.personLabelsNameList}}"
+            wx:for-index="i"
+            wx:for-item="tag"
+            wx:key="i"
+            >{{tag.name+''}}</view
+          >
+        </view>
+        <u-gap
+          bgColor="#F6F7FC"
+          bind:__l="__l"
+          class="data-v-1a51d11f"
+          height="2"
+          vueId="24ff2508-4"
+        ></u-gap>
+        <view class="fans-houdle data-v-1a51d11f">
+          <view
+            bindtap="__e"
+            class="fans data-v-1a51d11f"
+            data-event-opts="{{[ [ 'tap',[ [ 'handleNavigater',['/pages/user/follow/index'] ] ] ] ]}}"
+          >
+            <view class="fans-count data-v-1a51d11f"
+              >{{''+(detail.fansNumber>0?detail.fansNumber:'0')+''}}<u-badge
+                absolute="{{false}}"
+                bind:__l="__l"
+                class="data-v-1a51d11f"
+                count="{{'+'+unreadFans}}"
+                size="mini"
+                type="error"
+                vueId="24ff2508-5"
+              ></u-badge>
+            </view>
+            <text class="f-label data-v-1a51d11f">粉丝</text>
+          </view>
+          <view
+            bindtap="__e"
+            class="guard data-v-1a51d11f"
+            data-event-opts="{{[ [ 'tap',[ [ 'handleNavigater',['/pages/user/guardian/index'] ] ] ] ]}}"
+          >
+            <view class="guard-lis data-v-1a51d11f">
+              <block wx:if="{{detail.kissCount>0}}">
+                <image
+                  class="icon data-v-1a51d11f"
+                  mode="aspectFill"
+                  src="{{icon.user.avatar}}"
+                  wx:for="{{kiss}}"
+                  wx:for-index="i"
+                  wx:for-item="icon"
+                  wx:key="i"
+                ></image>
+              </block>
+              <text class="data-v-1a51d11f" wx:else>0</text>
+              <u-badge
+                absolute="{{false}}"
+                bind:__l="__l"
+                class="data-v-1a51d11f"
+                count="{{'+'+unreadpers}}"
+                size="mini"
+                type="error"
+                vueId="24ff2508-6"
+              ></u-badge>
+            </view>
+            <text class="f-label data-v-1a51d11f">守护者</text>
+          </view>
+        </view>
+      </view>
+      <u-button
+        bind:__l="__l"
+        bind:click="__e"
+        class="data-v-1a51d11f"
+        customStyle="{{customStyle}}"
+        data-event-opts="{{[ [ '^click',[ ['toLogin'] ] ] ]}}"
+        ripple="{{true}}"
+        shape="square"
+        type="primary"
+        vueId="24ff2508-7"
+        vueSlots="{{['default']}}"
+        wx:else
+        >立即登录</u-button
+      >
+    </view>
+    <view
+      bindtap="__e"
+      class="share-user-content data-v-1a51d11f"
+      data-event-opts="{{[ [ 'tap',[ [ 'handleNavigater',['/pages/user/handShare/index'] ] ] ] ]}}"
+    >
+      <view class="top data-v-1a51d11f">
+        <text class="data-v-1a51d11f">分享好友助力</text>
+        <view class="icon-list data-v-1a51d11f">
+          <view
+            class="item-icon user-icon data-v-1a51d11f"
+            wx:for="{{$root.l0}}"
+            wx:for-index="i"
+            wx:for-item="uicon"
+            wx:key="i"
+          >
+            <image
+              class="icon data-v-1a51d11f"
+              mode="aspectFill"
+              src="{{uicon.avatar}}"
+            ></image>
+          </view>
+          <view
+            class="item-icon data-v-1a51d11f"
+            wx:for="{{default_icon}}"
+            wx:for-item="icon"
+            wx:key="index"
+          >
+            <image
+              class="icon data-v-1a51d11f"
+              mode="aspectFill"
+              src="http://image.fanglinxq.com/assets/icons/unknown.png"
+            ></image>
+          </view>
+        </view>
+      </view>
+      <text class="share-text data-v-1a51d11f"
+        >免费解锁VIP特权且长期赚取金币,最高可获50%的分享收益</text
+      >
+    </view>
+    <view class="member-content data-v-1a51d11f">
+      <view
+        bindtap="__e"
+        class="{{['perfct-auth','data-v-1a51d11f',detail.vipLevel>2?'isVip':'']}}"
+        data-event-opts="{{[ [ 'tap',[ [ 'handleNavigater',['/pages/user/midServe/index'] ] ] ] ]}}"
+        wx:if="{{detail.sex===1}}"
+      >
+        <view class="left-auth data-v-1a51d11f">
+          <text class="title data-v-1a51d11f">{{$root.f0}}</text>
+          <text class="label data-v-1a51d11f">会员中心</text>
+        </view>
+        <image
+          class="right-icon data-v-1a51d11f"
+          mode="widthFix"
+          src="http://image.fanglinxq.com/assets/icons/member.png"
+          wx:if="{{detail.vipLevel>2}}"
+        ></image>
+        <image
+          class="right-icon data-v-1a51d11f"
+          mode="widthFix"
+          src="http://image.fanglinxq.com/assets/icons/no-member.png"
+          wx:else
+        ></image>
+      </view>
+      <view
+        bindtap="__e"
+        class="{{['perfct-auth','data-v-1a51d11f',detail.isRealAuth===1?'isAuth':'']}}"
+        data-event-opts="{{[ [ 'tap',[ [ 'handleNavigater',['/pages/subPages/goddessAuth/index'] ] ] ] ]}}"
+        wx:else
+      >
+        <view class="left-auth data-v-1a51d11f">
+          <text class="title data-v-1a51d11f"
+            >{{detail.isRealAuth===1?'已认证':'未认证'}}</text
+          >
+          <text class="label data-v-1a51d11f">女神认证</text>
+        </view>
+        <image
+          class="right-icon data-v-1a51d11f"
+          mode="widthFix"
+          src="http://image.fanglinxq.com/assets/icons/goddness.png"
+          wx:if="{{detail.isRealAuth===1}}"
+        ></image>
+        <image
+          class="right-icon data-v-1a51d11f"
+          mode="widthFix"
+          src="http://image.fanglinxq.com/assets/icons/no-goddness.png"
+          wx:else
+        ></image>
+      </view>
+      <view
+        bindtap="__e"
+        class="wallet-member-warp data-v-1a51d11f"
+        data-event-opts="{{[ [ 'tap',[ [ 'handleNavigater',['/pages/user/wallet/index'] ] ] ] ]}}"
+      >
+        <view class="left data-v-1a51d11f">
+          <view class="amonut data-v-1a51d11f">
+            <text class="amount-value data-v-1a51d11f"
+              >{{amount.availableCoin+'币'}}</text
+            >
+            <u-badge
+              absolute="{{false}}"
+              bind:__l="__l"
+              class="data-v-1a51d11f"
+              count="{{'+'+unreadprofits}}"
+              size="mini"
+              type="error"
+              vueId="24ff2508-8"
+            ></u-badge>
+          </view>
+          <text class="n-text data-v-1a51d11f">我的钱包</text>
+        </view>
+      </view>
+    </view>
+    <view class="cell-container data-v-1a51d11f">
+      <u-cell-group
+        bind:__l="__l"
+        border="{{false}}"
+        class="data-v-1a51d11f"
+        vueId="24ff2508-9"
+        vueSlots="{{['default']}}"
+      >
+        <u-cell-item
+          arrow="{{false}}"
+          bind:__l="__l"
+          bind:click="__e"
+          borderBottom="{{false}}"
+          class="data-v-1a51d11f"
+          data-event-opts="{{[ [ '^click',[ [ 'handleNavigater',['/pages/user/photo/index'] ] ] ] ]}}"
+          title="付费影集"
+          titleStyle="{{fontSize:'30rpx',color:'#000000'}}"
+          value="上传赚金币"
+          valueStyle="{{color:'#CECECE'}}"
+          vueId="{{'24ff2508-10'+','+'24ff2508-9'}}"
+          vueSlots="{{['icon','right-icon']}}"
+        >
+          <image
+            class="cell-icon data-v-1a51d11f"
+            mode="widthFix"
+            slot="icon"
+            src="http://image.fanglinxq.com/assets/icons/cell-app.png"
+          ></image>
+          <image
+            class="arrow-right data-v-1a51d11f"
+            mode="widthFix"
+            slot="right-icon"
+            src="http://image.fanglinxq.com/assets/icons/cell-right.png"
+          ></image>
+        </u-cell-item>
+        <u-cell-item
+          arrow="{{false}}"
+          bind:__l="__l"
+          bind:click="__e"
+          borderBottom="{{false}}"
+          class="data-v-1a51d11f"
+          data-event-opts="{{[ [ '^click',[ [ 'handleNavigater',['/pages/user/wxAuth/index'] ] ] ] ]}}"
+          title="微信认证"
+          titleStyle="{{fontSize:'30rpx',color:'#000000'}}"
+          value="可获得金币收益哦"
+          valueStyle="{{color:'#CECECE'}}"
+          vueId="{{'24ff2508-11'+','+'24ff2508-9'}}"
+          vueSlots="{{['icon','right-icon']}}"
+        >
+          <view class="left-cell data-v-1a51d11f" slot="icon">
+            <image
+              class="cell-icon data-v-1a51d11f"
+              mode="widthFix"
+              src="http://image.fanglinxq.com/assets/icons/cell-wechat.png"
+            ></image>
+            <u-badge
+              absolute="{{true}}"
+              bind:__l="__l"
+              class="badge-right data-v-1a51d11f"
+              count="{{'+'+unreadWechat}}"
+              isDot="{{true}}"
+              offset="{{[0,-140]}}"
+              type="error"
+              vueId="{{'24ff2508-12'+','+'24ff2508-11'}}"
+              wx:if="{{unreadWechat>0}}"
+            ></u-badge>
+          </view>
+          <image
+            class="arrow-right data-v-1a51d11f"
+            mode="widthFix"
+            slot="right-icon"
+            src="http://image.fanglinxq.com/assets/icons/cell-right.png"
+          ></image>
+        </u-cell-item>
+        <u-cell-item
+          arrow="{{false}}"
+          bind:__l="__l"
+          bind:click="__e"
+          borderBottom="{{false}}"
+          class="data-v-1a51d11f"
+          data-event-opts="{{[ [ '^click',[ [ 'handleNavigater',['/pages/user/publishList/index'] ] ] ] ]}}"
+          title="我的发布"
+          titleStyle="{{fontSize:'30rpx',color:'#000000'}}"
+          vueId="{{'24ff2508-13'+','+'24ff2508-9'}}"
+          vueSlots="{{['icon','right-icon']}}"
+        >
+          <image
+            class="cell-icon data-v-1a51d11f"
+            mode="widthFix"
+            slot="icon"
+            src="http://image.fanglinxq.com/assets/icons/cell-pulish.png"
+          ></image>
+          <image
+            class="arrow-right data-v-1a51d11f"
+            mode="widthFix"
+            slot="right-icon"
+            src="http://image.fanglinxq.com/assets/icons/cell-right.png"
+          ></image>
+        </u-cell-item>
+        <u-cell-item
+          arrow="{{false}}"
+          bind:__l="__l"
+          bind:click="__e"
+          borderBottom="{{false}}"
+          class="data-v-1a51d11f"
+          data-event-opts="{{[ [ '^click',[ [ 'handleNavigater',['/pages/user/recharge/index'] ] ] ] ]}}"
+          title="充值芳邻币"
+          titleStyle="{{fontSize:'30rpx',color:'#000000'}}"
+          vueId="{{'24ff2508-14'+','+'24ff2508-9'}}"
+          vueSlots="{{['icon','right-icon']}}"
+        >
+          <image
+            class="cell-icon data-v-1a51d11f"
+            mode="widthFix"
+            slot="icon"
+            src="http://image.fanglinxq.com/assets/icons/cell-charge.png"
+          ></image>
+          <image
+            class="arrow-right data-v-1a51d11f"
+            mode="widthFix"
+            slot="right-icon"
+            src="http://image.fanglinxq.com/assets/icons/cell-right.png"
+          ></image>
+        </u-cell-item>
+        <u-cell-item
+          arrow="{{false}}"
+          bind:__l="__l"
+          bind:click="__e"
+          borderBottom="{{false}}"
+          class="data-v-1a51d11f"
+          data-event-opts="{{[ [ '^click',[ ['e0'] ] ] ]}}"
+          title="关注公众号"
+          titleStyle="{{fontSize:'30rpx',color:'#000000'}}"
+          value="关注后消息可同步至微信"
+          valueStyle="{{color:'#CECECE'}}"
+          vueId="{{'24ff2508-15'+','+'24ff2508-9'}}"
+          vueSlots="{{['icon','right-icon']}}"
+        >
+          <image
+            class="cell-icon data-v-1a51d11f"
+            mode="widthFix"
+            slot="icon"
+            src="http://image.fanglinxq.com/assets/icons/cell-official.png"
+          ></image>
+          <image
+            class="arrow-right data-v-1a51d11f"
+            mode="widthFix"
+            slot="right-icon"
+            src="http://image.fanglinxq.com/assets/icons/cell-right.png"
+          ></image>
+        </u-cell-item>
+        <button
+          class="cell-botton-btn data-v-1a51d11f"
+          lang="zh_CN"
+          openType="contact"
+          plain="true"
+        >
+          <view class="left-cell data-v-1a51d11f">
+            <image
+              class="cell-icon data-v-1a51d11f"
+              mode="widthFix"
+              src="http://image.fanglinxq.com/assets/icons/cell-service.png"
+            ></image>
+            <text class="cell-title-label data-v-1a51d11f">专属小秘书芳芳</text>
+          </view>
+          <view class="right-btn data-v-1a51d11f" slot="right-icon">
+            <text class="data-v-1a51d11f">在线客服</text>
+            <image
+              class="arrow-right data-v-1a51d11f"
+              mode="widthFix"
+              src="http://image.fanglinxq.com/assets/icons/cell-right.png"
+            ></image>
+          </view>
+        </button>
+        <u-cell-item
+          arrow="{{false}}"
+          bind:__l="__l"
+          bind:click="__e"
+          borderBottom="{{false}}"
+          cellShield="{{true}}"
+          class="data-v-1a51d11f"
+          data-event-opts="{{[ [ '^click',[ [ 'handleNavigater',['/pages/user/shield/index'] ] ] ] ]}}"
+          title="屏蔽名单"
+          titleStyle="{{fontSize:'30rpx',color:'#000000'}}"
+          value=""
+          vueId="{{'24ff2508-16'+','+'24ff2508-9'}}"
+          vueSlots="{{['icon','right-icon']}}"
+        >
+          <image
+            class="cell-icon data-v-1a51d11f"
+            mode="widthFix"
+            slot="icon"
+            src="http://image.fanglinxq.com/assets/icons/cell-shield.png"
+          ></image>
+          <image
+            class="arrow-right data-v-1a51d11f"
+            mode="widthFix"
+            slot="right-icon"
+            src="http://image.fanglinxq.com/assets/icons/cell-right.png"
+          ></image>
+        </u-cell-item>
+      </u-cell-group>
+    </view>
+  </view>
+  <weixin-code
+    bind:__l="__l"
+    bind:input="__e"
+    class="data-v-1a51d11f"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','isShowCode','$event',[] ] ] ] ] ]}}"
+    value="{{isShowCode}}"
+    vueId="24ff2508-17"
+  ></weixin-code>
+  <canvas
+    canvasId="myQrcode"
+    class="canvas-code data-v-1a51d11f"
+    style="
+      background: #fff;
+      width: 150px;
+      height: 150px;
+      display: block;
+      left: -800rpx;
+      position: fixed;
+    "
+  ></canvas>
+</view>

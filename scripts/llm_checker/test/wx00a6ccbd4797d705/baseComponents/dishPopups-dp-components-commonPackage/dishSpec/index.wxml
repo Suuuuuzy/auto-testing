@@ -1,0 +1,98 @@
+<view class="_div data-v-7539d83d">
+  <view class="dish-spec grid _div data-v-7539d83d" wx:if="{{showSpecImage}}">
+    <view
+      class="pr h100p _div data-v-7539d83d"
+      wx:for="{{_specList}}"
+      wx:for-index="__i0__"
+      wx:for-item="spec"
+      wx:key="unId"
+    >
+      <view
+        class="cook-wrap overflow-hidden tc h100p flexColumn _div data-v-7539d83d"
+        style="{{'border-color:'+(spec.unId===currentSpec?themeColor:'transparent')+';'}}"
+      >
+        <view
+          bindtap="__e"
+          class="img-box pr _div data-v-7539d83d"
+          data-event-opts="{{[ [ 'tap',[ [ 'changeSpec',['$0'],[ [ ['_specList','unId',spec.unId] ] ] ] ] ] ]}}"
+        >
+          <image
+            class="image pa data-v-7539d83d"
+            mode="aspectFill"
+            src="{{spec.unSmallPicFile||defaultImg}}"
+          ></image>
+          <view
+            class="limit pa fcf f20 _div data-v-7539d83d"
+            style="{{'background-color:'+themeColor+';'}}"
+            wx:if="{{spec.limitQuantityFlg&&spec.unId===currentSpec}}"
+            >{{'可售'+(spec.limitQuantity||0)+'份'}}</view
+          >
+          <view
+            class="guQingTip pa tc fcf f22 _div data-v-7539d83d"
+            wx:if="{{spec.guQingFlg==1}}"
+            >{{sellOutText}}</view
+          >
+        </view>
+        <view class="content _div data-v-7539d83d">
+          <view class="ellipsis2 fc3 f28 _div data-v-7539d83d"
+            >{{spec.unName}}</view
+          >
+        </view>
+      </view>
+      <view
+        bindtap="__e"
+        class="pa singleBtn _div data-v-7539d83d"
+        data-event-opts="{{[ [ 'tap',[ [ 'changeSpec',['$0'],[ [ ['_specList','unId',spec.unId] ] ] ] ] ] ]}}"
+        wx:if="{{spec.guQingFlg==0}}"
+      >
+        <view
+          class="pa iconfont iconshixinyuan fcf _div data-v-7539d83d"
+        ></view>
+        <view
+          class="{{['pa','iconfont','_div','data-v-7539d83d',spec.unId===currentSpec?'icon-yixuanzhong':'icon-weixuanzhong']}}"
+          style="{{'color:'+themeColor+';'}}"
+        ></view>
+      </view>
+    </view>
+  </view>
+  <view class="dish-spec-no-image grid _div data-v-7539d83d" wx:else>
+    <block
+      wx:for="{{_specList}}"
+      wx:for-index="__i1__"
+      wx:for-item="spec"
+      wx:key="unId"
+    >
+      <view
+        class="item border-box pr flexBetween sellout-tag fc9 _div data-v-7539d83d"
+        wx:if="{{spec.guQingFlg==1}}"
+      >
+        <view
+          class="{{['ellipsis1','_div','data-v-7539d83d',noImageSpecItemClass]}}"
+          >{{''+spec.unName+''}}</view
+        >
+      </view>
+      <view
+        bindtap="__e"
+        class="item border-box pr bcf flexBetween _div data-v-7539d83d"
+        data-event-opts="{{[ [ 'tap',[ [ 'changeSpec',['$0'],[ [ ['_specList','unId',spec.unId] ] ] ] ] ] ]}}"
+        style="{{'border-color:'+(spec.unId==currentSpec?themeColor:'#ddd')+';'+'background-color:'+(spec.unId==currentSpec?themeColor+'1A':'transparent')+';'}}"
+        wx:else
+      >
+        <view
+          class="{{['ellipsis1','_div','data-v-7539d83d',noImageSpecItemClass]}}"
+          style="{{'color:'+(spec.unId==currentSpec?'#333':'#666')+';'}}"
+          >{{''+spec.unName+''}}</view
+        >
+        <view
+          class="for-sale pa flexCenter bcf f18 _div data-v-7539d83d"
+          style="{{'color:'+themeColor+';'+'border-color:'+themeColor+';'}}"
+          wx:if="{{spec.limitQuantityFlg=='1'}}"
+        >
+          <label class="_span data-v-7539d83d"
+            >{{'可售'+(spec.limitQuantity||0)+'份'}}</label
+          >
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

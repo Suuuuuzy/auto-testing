@@ -1,0 +1,23 @@
+<view class="u-tabbar data-v-93f67dc2">
+  <view
+    catchtouchmove="{{b}}"
+    class="{{['u-tabbar__content','data-v-93f67dc2',c,d]}}"
+    ref="u-tabbar__content"
+    style="{{e}}"
+  >
+    <view class="u-tabbar__content__item-wrapper data-v-93f67dc2">
+      <slot></slot>
+    </view>
+    <u-safe-bottom
+      bind:__l="__l"
+      class="data-v-93f67dc2"
+      uI="93f67dc2-0"
+      wx:if="{{a}}"
+    ></u-safe-bottom>
+  </view>
+  <view
+    class="u-tabbar__placeholder data-v-93f67dc2"
+    style="{{'height:'+g}}"
+    wx:if="{{f}}"
+  ></view>
+</view>

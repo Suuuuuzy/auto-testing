@@ -1,0 +1,9 @@
+(exports._imports_0 = "/static/shopping.png"),
+  (exports._imports_0$1 = "/static/isok.png"),
+  (exports._imports_0$2 = "/pages_my/static/receiced.png"),
+  (exports._imports_0$3 = "/pages_my/static/vipbrage.png"),
+  (exports._imports_0$4 = "/static/giftorder.png"),
+  (exports._imports_0$5 = "/static/payByOilgun.png"),
+  (exports._imports_1 = "/static/shop.png"),
+  (exports._imports_1$1 = "/static/oricon.png"),
+  (exports._imports_1$2 = "/static/payByCar.png");

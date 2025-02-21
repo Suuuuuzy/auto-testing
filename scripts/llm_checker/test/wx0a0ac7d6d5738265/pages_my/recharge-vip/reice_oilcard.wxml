@@ -1,0 +1,32 @@
+<view class="oilsCard_index data-v-c6a1a269">
+  <zym-navigation
+    bind:__l="__l"
+    class="data-v-c6a1a269"
+    uI="c6a1a269-0"
+    uP="{{a}}"
+    wx:if="{{a}}"
+  ></zym-navigation>
+  <view class="oilsCardItem lqCardItem data-v-c6a1a269" wx:if="{{b}}">
+    <view class="oilsCardType data-v-c6a1a269"> 电子卡 </view>
+    <view class="oilsCardName data-v-c6a1a269">{{c}}</view>
+    <view class="carditem data-v-c6a1a269">
+      <view class="isuse data-v-c6a1a269"> 可加油品： </view>
+      <view
+        class="cardtype data-v-c6a1a269"
+        style="{{'color:'+t.c}}"
+        wx:for="{{d}}"
+        wx:for-item="t"
+        wx:key="d"
+      >
+        <view class="data-v-c6a1a269" wx:if="{{t.a}}">
+          <text class="type data-v-c6a1a269">{{t.b}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view
+    bindtap="{{f}}"
+    class="{{['lqbtn','data-v-c6a1a269',g&&'btncolor-gray']}}"
+    >{{e}}</view
+  >
+</view>

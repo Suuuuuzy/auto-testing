@@ -1,0 +1,78 @@
+.container {
+  flex-direction: column;
+  font-family: PingFangSC, PingFangSC-Regular;
+}
+.recharge {
+  padding: 20rpx;
+}
+.background {
+  background-size: 100% 100%;
+  height: 100%;
+  left: 0rpx;
+  position: absolute;
+  top: 0rpx;
+  width: 100%;
+  z-index: -1;
+}
+.user-info-main {
+  align-items: center;
+  box-sizing: border-box;
+  color: #fff;
+  display: -webkit-flex;
+  display: flex;
+  height: 220rpx;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+}
+.user-image {
+  height: 120rpx;
+  padding-right: 15px;
+  width: 100%;
+}
+.user-info {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+  font-weight: 400;
+}
+.amount {
+  color: #ffde1d;
+  font-size: 48rpx;
+  padding-bottom: 54rpx;
+}
+.main {
+  flex-direction: column;
+  height: calc(100% - 120px);
+}
+.main,
+.money-box {
+  display: -webkit-flex;
+  display: flex;
+}
+.money-box {
+  align-items: center;
+  border: 2rpx solid rgba(0, 0, 0, 0.1);
+  border-radius: 4rpx;
+  height: 120rpx;
+  justify-content: center;
+}
+.van-col {
+  margin-top: 25rpx;
+}
+.recharge-button,
+.van-button {
+  width: 100% !important;
+}
+.active {
+  border: 2rpx solid #3680fd;
+  color: #3680fd;
+}
+.van-field__placeholder {
+  color: #000 !important;
+}
+.van-field__input,
+.van-field__placeholder {
+  text-align: center !important;
+}

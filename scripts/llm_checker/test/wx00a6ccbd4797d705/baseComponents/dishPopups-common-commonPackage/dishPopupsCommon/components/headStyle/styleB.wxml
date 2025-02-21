@@ -1,0 +1,34 @@
+<view class="container pr wordBreakBreakAll _div data-v-3196e327">
+  <image-video-swiper
+    aspectRatio="{{aspectRatio}}"
+    bind:__l="__l"
+    bind:showVideo="__e"
+    class="data-v-3196e327 vue-ref"
+    data-event-opts="{{[ [ '^showVideo',[ ['getShowVideo'] ] ] ]}}"
+    data-ref="imageVideoSwiper"
+    from="styleB"
+    imgList="{{imgList}}"
+    indicator="{{true}}"
+    style="width: 100%; z-index: -1"
+    styleType="{{2}}"
+    textColor="{{btnTxtColor}}"
+    themeColor="{{themeColor}}"
+    videoUrl="{{videoUrl}}"
+    vueId="737f440d-1"
+    width="{{windowWidth-30*proportion}}"
+  ></image-video-swiper>
+  <view
+    class="sales f20 fcf _div data-v-3196e327"
+    style="{{'background:'+themeColor+';'}}"
+    wx:if="{{sales}}"
+    >{{customSalesText+': '+sales}}</view
+  >
+  <view
+    class="share fcf flexCenter _div data-v-3196e327"
+    style="{{'background:'+themeColor+';'}}"
+    wx:if="{{showShare}}"
+  >
+    <button class="shareBtn data-v-3196e327" openType="share"></button>
+    <view class="iconfont icon-fenxiang fcf _div data-v-3196e327"></view>
+  </view>
+</view>

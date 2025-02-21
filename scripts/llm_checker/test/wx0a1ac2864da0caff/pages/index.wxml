@@ -1,0 +1,124 @@
+<view
+  class="container _div data-v-6fdf6aab"
+  wx:if="{{navigationBarHeight&&navigationBarHeight>=0&&!hasQuery}}"
+>
+  <pp-index
+    bind:__l="__l"
+    bind:change="__e"
+    bind:chooseTab="__e"
+    class="data-v-6fdf6aab"
+    data-event-opts="{{[ [ '^change',[ ['changeIndexTop'] ] ],[ '^chooseTab',[ ['chooseTab'] ] ] ]}}"
+    placeholder="{{navigationBarHeightPlaceholder}}"
+    value="{{tab===1}}"
+    vueId="18efaafd-1"
+  ></pp-index>
+  <pp-watch-index
+    barHeight="{{navigationBarHeight}}"
+    bind:__l="__l"
+    class="data-v-6fdf6aab"
+    placeholder="{{navigationBarHeightPlaceholder}}"
+    value="{{tab===2}}"
+    vueId="18efaafd-2"
+  ></pp-watch-index>
+  <pp-boutique
+    barHeight="{{navigationBarHeight}}"
+    bind:__l="__l"
+    class="data-v-6fdf6aab"
+    placeholder="{{navigationBarHeightPlaceholder}}"
+    value="{{tab===4}}"
+    vueId="18efaafd-3"
+  ></pp-boutique>
+  <pp-me
+    bind:__l="__l"
+    class="data-v-6fdf6aab vue-ref"
+    data-ref="me"
+    placeholder="{{navigationBarHeightPlaceholder}}"
+    value="{{tab===3}}"
+    vueId="18efaafd-4"
+  ></pp-me>
+  <view class="{{['tab-nav-out','_div','data-v-6fdf6aab','tab-nav-out-'+tab]}}">
+    <view class="tab-nav-inner _div data-v-6fdf6aab">
+      <view
+        bindtap="__e"
+        class="{{['tab-nav-item','_div','data-v-6fdf6aab',tab===1?'active':'']}}"
+        data-event-opts="{{[ [ 'tap',[ [ 'chooseTab',[1] ] ] ] ]}}"
+      >
+        <view class="tab-nav-icon _div data-v-6fdf6aab" wx:if="{{tab===1}}">
+          <image
+            class="pic _img data-v-6fdf6aab"
+            src="/static/img/tab1-active.svg"
+          ></image>
+        </view>
+        <view class="tab-nav-icon _div data-v-6fdf6aab" wx:else>
+          <image
+            class="pic _img data-v-6fdf6aab"
+            src="/static/img/tab1.svg"
+          ></image>
+        </view>
+        <view class="tab-nav-text _div data-v-6fdf6aab">首页</view>
+      </view>
+      <view
+        bindtap="__e"
+        class="{{['tab-nav-item','_div','data-v-6fdf6aab',tab===2?'active':'']}}"
+        data-event-opts="{{[ [ 'tap',[ [ 'chooseTab',[2] ] ] ] ]}}"
+      >
+        <view class="tab-nav-icon _div data-v-6fdf6aab" wx:if="{{tab===2}}">
+          <image
+            class="pic _img data-v-6fdf6aab"
+            src="/static/img/tab2-active.svg"
+          ></image>
+        </view>
+        <view class="tab-nav-icon _div data-v-6fdf6aab" wx:else>
+          <image
+            class="pic _img data-v-6fdf6aab"
+            src="/static/img/tab2.svg"
+          ></image>
+        </view>
+        <view class="tab-nav-text _div data-v-6fdf6aab">时计系列</view>
+      </view>
+      <view
+        bindtap="__e"
+        class="{{['tab-nav-item','_div','data-v-6fdf6aab',tab===4?'active':'']}}"
+        data-event-opts="{{[ [ 'tap',[ [ 'chooseTab',[4] ] ] ] ]}}"
+      >
+        <view class="tab-nav-icon _div data-v-6fdf6aab" wx:if="{{tab===4}}">
+          <image
+            class="pic _img data-v-6fdf6aab"
+            src="/static/img/tab-shop-active.svg"
+          ></image>
+        </view>
+        <view class="tab-nav-icon _div data-v-6fdf6aab" wx:else>
+          <image
+            class="pic _img data-v-6fdf6aab"
+            src="/static/img/tab-shop.svg"
+          ></image>
+        </view>
+        <view class="tab-nav-text _div data-v-6fdf6aab">销售中心</view>
+      </view>
+      <view
+        bindtap="__e"
+        class="{{['tab-nav-item','_div','data-v-6fdf6aab',tab===3?'active':'']}}"
+        data-event-opts="{{[ [ 'tap',[ [ 'chooseTab',[3] ] ] ] ]}}"
+      >
+        <view class="tab-nav-icon _div data-v-6fdf6aab" wx:if="{{tab===3}}">
+          <image
+            class="pic _img data-v-6fdf6aab"
+            src="/static/img/tab3-active.svg"
+          ></image>
+        </view>
+        <view class="tab-nav-icon _div data-v-6fdf6aab" wx:else>
+          <image
+            class="pic _img data-v-6fdf6aab"
+            src="/static/img/tab3.svg"
+          ></image>
+        </view>
+        <view class="tab-nav-text _div data-v-6fdf6aab">我的</view>
+      </view>
+      <view class="tab-nav-line _div data-v-6fdf6aab"></view>
+    </view>
+    <view
+      class="_div data-v-6fdf6aab"
+      style="{{'height:'+navigationBarHeightPlaceholder+'px'+';'}}"
+    ></view>
+  </view>
+</view>

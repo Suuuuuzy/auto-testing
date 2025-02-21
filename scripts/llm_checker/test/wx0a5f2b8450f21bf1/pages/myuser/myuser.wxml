@@ -1,0 +1,27 @@
+<cu-custom bgColor="bg-gradual-blue" bind:__l="__l" isBack="{{true}}" vueId="2e637200-1" vueSlots="{{['content']}}">
+    <view slot="backText">返回</view>
+    <view slot="content">支付中心</view>
+</cu-custom>
+<view class="popup_userinfo_main">
+    <view class="title1">您还未登录</view>
+    <view class="title2">相关操作需要头像和昵称</view>
+    <view class="cont">
+        <view class="box">
+            <view style="width: 70rpx;">头像</view>
+            <view>
+                <button bind:chooseavatar="onChooseAvatar" class="avatar" openType="chooseAvatar">
+                    <image src="/static/img/avatarUrl.png" wx:if="{{!avatarUrl}}"></image>
+                    <image src="{{avatarUrl}}" wx:if="{{avatarUrl}}"></image>
+                </button>
+            </view>
+        </view>
+        <form catchreset="formReset" catchsubmit="submit">
+            <view class="box">
+                <view style="width: 70rpx;">昵称</view>
+                <input class="nickname" name="nickname" placeholder="请输入昵称" type="nickname"></input>
+            </view>
+            <button formType="submit" style="margin: 30rpx 0" type="primary">登 录</button>
+        </form>
+    </view>
+    <view class="btn-box"></view>
+</view>

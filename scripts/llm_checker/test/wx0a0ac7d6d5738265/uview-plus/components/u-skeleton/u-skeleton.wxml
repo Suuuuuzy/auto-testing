@@ -1,0 +1,32 @@
+<view class="u-skeleton data-v-4bb8f55e">
+  <view
+    class="u-skeleton__wrapper data-v-4bb8f55e"
+    ref="u-skeleton__wrapper"
+    style="display: flex; flex-direction: row"
+    wx:if="{{a}}"
+  >
+    <view
+      class="{{['u-skeleton__wrapper__avatar','data-v-4bb8f55e',c,d]}}"
+      style="{{'height:'+e+';'+'width:'+f}}"
+      wx:if="{{b}}"
+    ></view>
+    <view
+      class="u-skeleton__wrapper__content data-v-4bb8f55e"
+      ref="u-skeleton__wrapper__content"
+      style="flex: 1"
+    >
+      <view
+        class="{{['u-skeleton__wrapper__content__title','data-v-4bb8f55e',j]}}"
+        style="{{'width:'+h+';'+'height:'+i}}"
+        wx:if="{{g}}"
+      ></view>
+      <view
+        class="{{['u-skeleton__wrapper__content__rows','data-v-4bb8f55e',l]}}"
+        style="{{'width:'+item.b+';'+'height:'+item.c+';'+'margin-top:'+item.d}}"
+        wx:for="{{k}}"
+        wx:key="a"
+      ></view>
+    </view>
+  </view>
+  <slot wx:else></slot>
+</view>

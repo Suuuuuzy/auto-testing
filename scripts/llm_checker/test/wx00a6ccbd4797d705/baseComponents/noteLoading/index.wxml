@@ -1,0 +1,6 @@
+<view class="noteLoading _div" wx:if="{{visible}}">
+  <view class="tc _div">
+    <image class="loadingImage _img" src="{{loadingImage}}"></image>
+    <view class="noteWarning _div" wx:if="{{loadingText}}">{{$root.m0}}</view>
+  </view>
+</view>

@@ -1,0 +1,18 @@
+@import "/app.wxss";
+.block {
+  background: #fff;
+  border-radius: 16rpx;
+  height: 750rpx;
+  position: relative;
+  width: 600rpx;
+}
+.close-btn {
+  bottom: calc(-1 * (48rpx + 64rpx));
+  left: 50%;
+  margin-left: -32rpx;
+  position: absolute;
+}
+.wrapper {
+  display: block;
+  margin: 32rpx;
+}

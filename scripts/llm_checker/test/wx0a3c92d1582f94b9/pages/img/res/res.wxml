@@ -1,0 +1,73 @@
+<view class="box active" id="page3">
+  <view class="page3">
+    <view class="resultimgbox2">
+      <view class="resultimgbox">
+        <view class="water" wx:if="{{userinfo.level!=1}}">
+          <view>保存去除该水印</view>
+          <view>保存去除该水印</view>
+          <view>保存去除该水印</view>
+          <view>保存去除该水印</view>
+          <view>保存去除该水印</view>
+          <view>保存去除该水印</view>
+          <view>保存去除该水印</view>
+          <view>保存去除该水印</view>
+          <view>保存去除该水印</view>
+          <view>保存去除该水印</view>
+        </view>
+        <image
+          bindtap="isAd"
+          class="result"
+          data-bind="showImg"
+          id="result"
+          mode="widthFix"
+          src="{{imgshow}}"
+        ></image>
+      </view>
+    </view>
+    <view class="start normalstartbtn">
+      <view bindtap="isAd" class="start save" data-bind="saveImg" id="submitbtn"
+        >保存相册</view
+      >
+    </view>
+    <view id="collect-box">
+      <view bindtap="isAd" class="collect" data-bind="saveImgs">
+        <image src="/images/tubiaozhizuomoban.png"></image>
+        <text>切成九宫格保存</text>
+      </view>
+      <navigator class="collect back" delta="1" openType="navigateBack">
+        <image src="/images/zhuye-2.png"></image>
+        <text>返回上一步重做</text>
+      </navigator>
+    </view>
+  </view>
+  <view></view>
+  <canvas
+    canvasId="myCanvas"
+    style="width:{{ctx}}px;height:{{ctx}}px;position: absolute;left:-1000%;top:-1000%;"
+  ></canvas>
+</view>
+<view class="ad-ok-bg2" wx:if="{{adState||errormoney!=''}}">
+  <view class="ad-ok2">
+    <view class="msg" wx:if="{{errormoney}}">{{errormoney}}</view>
+    <view class="msg" wx:else>
+      <view>放大和保存需 <text>-2枚无印豆</text> </view> 账号无印豆余额：<text
+        >{{userinfo.money}}枚</text
+      >
+    </view>
+    <view class="btn-box">
+      <view bindtap="noAd" class="btn pay" wx:if="{{userinfo.level=='0'}}">
+        <image src="/images/icon-vip.png"></image>
+        <text>{{errormoney==''?'':'开通'}}会员</text>
+      </view>
+      <view bindtap="adShow" class="btn" wx:if="{{errormoney==''}}">
+        <image src="/images/icon-v.png"></image>
+        <text>确定</text>
+      </view>
+    </view>
+    <image
+      bindtap="isHideAd"
+      class="msg-close"
+      src="/images/msg-close.png"
+    ></image>
+  </view>
+</view>

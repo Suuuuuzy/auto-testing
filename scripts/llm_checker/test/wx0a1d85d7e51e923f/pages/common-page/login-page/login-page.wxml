@@ -1,0 +1,25 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view class="text-center" style="margin-top: 150rpx">
+  <view
+    class="cu-avatar round xl"
+    style="background-image:url({{logo_url}});"
+  ></view>
+  <view>{{Str.appName[lanIndex]}}</view>
+  <view class="margin-top-xl flex">
+    <view class="flex-sub margin-lr">
+      <button
+        bindgetphonenumber="getPhoneNumber"
+        class="cu-btn radius bg-pink shadow block lg"
+        openType="getPhoneNumber"
+      >
+        {{Str.getPhoneNumber[lanIndex]}}
+      </button>
+    </view>
+  </view>
+  <view class="text-sm text-center margin-sm text-red"
+    >{{Str.loginWarn[lanIndex]}}</view
+  >
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

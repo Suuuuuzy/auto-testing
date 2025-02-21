@@ -1,0 +1,58 @@
+.historyList {
+  background-color: #fff;
+  flex-direction: column;
+  line-height: 1;
+  margin-top: 5rpx;
+  padding: 30rpx;
+}
+.historyList,
+.historyList-hd {
+  display: -webkit-flex;
+  display: flex;
+}
+.historyList-hd {
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+.title {
+  color: red;
+  font-size: 60rpx;
+  text-align: center;
+}
+.shareWrap {
+  -webkit-box-pack: justify;
+  background: #add8e6;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  margin: 20rpx auto;
+  padding: 12rpx 26rpx;
+  width: 94%;
+}
+.fuIconWrap,
+.shareWrap {
+  -webkit-box-align: center;
+  align-items: center;
+}
+.fuIconWrap {
+  -webkit-box-pack: start;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  justify-content: flex-start;
+}
+.fuIconWrap > view {
+  font-size: 28rpx;
+  width: 80%;
+}
+.shareBtn {
+  color: #fff;
+  height: 35px;
+  line-height: inherit;
+  padding: 12rpx 30rpx;
+}
+.bg-gradual-green {
+  background-image: linear-gradient(45deg, #39b54a, #8dc63f);
+  color: #fff;
+}

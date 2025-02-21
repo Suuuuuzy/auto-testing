@@ -1,0 +1,72 @@
+.background_screen {
+  background: #000;
+  color: #fff;
+  height: 100%;
+  opacity: 0.8;
+  top: 0;
+  z-index: 999999;
+}
+.attr_box,
+.background_screen {
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+.attr_box {
+  background: #fff;
+  border-radius: 26rpx 26rpx 0 0;
+  bottom: 0;
+  padding-top: 20px;
+  z-index: 9999999;
+}
+.title {
+  color: #333;
+  font-size: 32rpx;
+  font-weight: 700;
+  text-align: center;
+}
+.des {
+  color: #666;
+  font-size: 26rpx;
+  line-height: 1.6;
+  margin-top: 30rpx;
+  text-align: justify;
+}
+.btns {
+  margin-top: 48rpx;
+}
+.btns,
+.btns .item {
+  display: -webkit-flex;
+  display: flex;
+}
+.btns .item {
+  align-items: center;
+  border: none;
+  border-radius: 16rpx;
+  box-sizing: border-box;
+  height: 80rpx;
+  justify-content: space-between;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 244rpx;
+}
+.btns .reject {
+  background: #f4f4f5;
+  color: #909399;
+}
+.btns .agree {
+  background: #07c160;
+  color: #fff;
+}
+.privacy {
+  background: #fff;
+  border-radius: 16rpx;
+  box-sizing: border-box;
+  padding: 0 48rpx 150rpx;
+}
+.link {
+  color: #07c160;
+  text-decoration: underline;
+}

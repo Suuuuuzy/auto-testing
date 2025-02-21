@@ -1,0 +1,12 @@
+.indexpages {
+  max-height: 100%;
+  position: relative;
+  width: 750rpx;
+}
+.indexpages .view-container {
+  max-height: calc(100% - 84px);
+}
+.indexpages .u-page__item__slot-icon {
+  height: 40rpx;
+  width: 40rpx;
+}

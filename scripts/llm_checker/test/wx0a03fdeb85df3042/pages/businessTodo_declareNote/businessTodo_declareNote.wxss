@@ -1,0 +1,227 @@
+.container {
+  height: 100%;
+  background-color: #f3f4f6;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+#declareNote-top {
+  position: relative;
+  height: 209rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.declareNote-top_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 321rpx;
+}
+.top-cont {
+  padding: 0 18rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+.top-cont .top-title {
+  font-size: 36rpx;
+}
+.top-cont .dots-green,
+.top-cont .dots-yellow {
+  margin-left: 11rpx;
+}
+#declareNote-body {
+  position: relative;
+  padding: 0 18rpx;
+  z-index: 1;
+  box-sizing: border-box;
+  min-height: calc(100% - 209rpx);
+  padding-bottom: 214rpx;
+}
+.declareNote-body-bg {
+  background-color: #fdfdfd;
+  padding: 19rpx 38rpx 0 38rpx;
+  min-height: calc(100% - 209rpx);
+  box-sizing: border-box;
+}
+#declareNote-body .common-tabTitle {
+  height: 80rpx;
+  border-bottom: 1rpx solid #bfbfbf;
+}
+swiper {
+  height: calc(100% - 80rpx);
+}
+.serviceGuide {
+  padding-top: 10rpx;
+  padding-bottom: 50rpx;
+}
+.serviceGuideList {
+  min-height: 77rpx;
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  padding: 18rpx 0;
+  box-sizing: border-box;
+}
+.serviceGuideList + .serviceGuideList {
+  border-top: 2rpx solid rgba(232, 232, 232, 0.3);
+}
+.serviceGuideList .serviceGuideList-left {
+  color: #7e7e7e;
+  margin-right: 45rpx;
+}
+.serviceGuideList .serviceGuideList-right {
+  color: #353535;
+  text-align: right;
+  flex: 1;
+  text-align: justify;
+}
+.serviceGuide-detail {
+  height: 164rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 14rpx;
+  background-color: #fff;
+  box-shadow: 0 5rpx 8.3rpx 1.7rpx rgba(0, 0, 0, 0.04);
+}
+.serviceGuide-detailList {
+  width: 25%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 22rpx;
+  color: #353535;
+}
+.serviceGuide-detailList + .serviceGuide-detailList::before {
+  content: "";
+  width: 2rpx;
+  height: 50rpx;
+  background-color: #e8e8e8;
+  position: absolute;
+  left: 0rpx;
+  top: 20rpx;
+}
+.serviceGuide-detailList image {
+  max-width: 43rpx;
+  max-height: 44rpx;
+  margin-bottom: 17rpx;
+}
+#delareNote-footer {
+  height: 145rpx;
+  background-color: #fff;
+  margin-top: 69rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.footer-btns {
+  height: 100%;
+  padding: 0 17rpx;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 26rpx;
+}
+.btn-reservation,
+.btn-declare {
+  flex: 1;
+  height: 92rpx;
+  line-height: 92rpx;
+  text-align: center;
+}
+.btn-reservation {
+  background-color: #00d32d;
+}
+.btn-declare {
+  background-color: #356ffb;
+}
+.serviceMaterials,
+.commonProblem {
+  height: 100%;
+}
+.serviceMaterials .noData {
+  padding: 20rpx 0;
+  font-size: 28rpx;
+}
+.serviceMaterialsList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 135rpx;
+  border-bottom: 2rpx solid #e8e8e8;
+  padding: 35rpx 0;
+  box-sizing: border-box;
+}
+.serviceMaterialsNotes {
+  display: flex;
+  flex-direction: column;
+}
+.serviceMaterialsNotes .notes-title {
+  font-size: 26rpx;
+  color: #353535;
+  margin-bottom: 12rpx;
+}
+.notes-title .materialName {
+  margin-right: 18rpx;
+}
+.serviceMaterialsNotes .notes-tip {
+  font-size: 24rpx;
+  color: #7e7e7e;
+}
+.notes-tip text + text {
+  padding-left: 26rpx;
+}
+.serviceMaterialsPreview {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 4rpx;
+  background: linear-gradient(to bottom, #01c4ff, #0077ff);
+  background: -webkit-linear-gradient(top, #01c4ff, #0077ff);
+  margin-left: 12rpx;
+}
+.serviceMaterialsPreview image {
+  width: 33rpx;
+  height: 33rpx;
+}
+.commonProblemList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 187rpx;
+  border-bottom: 2rpx solid #e8e8e8;
+  font-size: 26rpx;
+  color: #353535;
+  padding: 38rpx 0;
+  box-sizing: border-box;
+}
+.commonProblemList-question,
+.commonProblemList-answer {
+  display: flex;
+  align-items: flex-start;
+}
+.commonProblemList-question {
+  margin-bottom: 44rpx;
+}
+.commonProblemList .dots-green,
+.commonProblemList .dots-yellow {
+  flex-shrink: 0;
+  margin-right: 13rpx;
+  margin-top: 5rpx;
+}
+.noData {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  font-size: 14px;
+}

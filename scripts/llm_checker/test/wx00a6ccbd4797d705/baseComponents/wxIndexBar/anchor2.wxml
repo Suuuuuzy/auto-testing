@@ -1,0 +1,10 @@
+<view
+  class="{{['wx-index-anchor-wrapper-sec '+computedClass]}}"
+  id="{{'wxsec'+index}}"
+>
+  <view
+    class="{{[ '_div','wx-index-anchor '+(active?'wx-index-anchor--active wx-hairline--bottom':'') ]}}"
+  >
+    <slot></slot>
+  </view>
+</view>

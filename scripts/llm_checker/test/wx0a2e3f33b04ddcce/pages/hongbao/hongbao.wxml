@@ -1,0 +1,69 @@
+<navBar
+  back="{{true}}"
+  bindback="handlerGobackClick"
+  bindhome="handlerGohomeClick"
+  home="{{false}}"
+  title="红包明细"
+></navBar>
+<view class="hongbao">
+  <van-tabs
+    animated
+    sticky
+    active="{{active}}"
+    bind:click="changeTab"
+    color="#3A7EFD"
+  >
+    <van-tab name="0" title="可使用">
+      <view
+        class="hongbaoCard"
+        data-item="{{item}}"
+        wx:for="{{hongbaoList}}"
+        wx:key="redpacketId"
+      >
+        <view class="hongbaoCard-top">
+          <view class="top-left">
+            <view class="text1">{{item.balance}}</view>
+            <view class="text2">红包余额(元)</view>
+          </view>
+          <view class="top-right">
+            <view class="text3">红包充值金额：{{item.totalFee}}</view>
+            <view class="text4">充值时间：{{item.createTime}}</view>
+          </view>
+        </view>
+        <view class="hongbaoCard-bottom">
+          <text class="text5">有效期至：{{item.invalidTime}}</text>
+          <text bind:tap="toDetail" class="text6" data-item="{{item}}"
+            >使用详情 ></text
+          >
+        </view>
+      </view>
+    </van-tab>
+    <van-tab name="1" title="不可用">
+      <view
+        class="hongbaoCard"
+        data-item="{{item}}"
+        wx:for="{{hongbaoList}}"
+        wx:key="redpacketId"
+      >
+        <view class="hongbaoCard-top hongbaoCard-top2">
+          <image class="status-img" src="/assets/img/invalidState.png"></image>
+          <text class="status-text">{{item.statusText}}</text>
+          <view class="top-left">
+            <view class="text1a">{{item.balance}}</view>
+            <view class="text2">红包余额(元)</view>
+          </view>
+          <view class="top-right">
+            <view class="text3">红包充值金额：{{item.totalFee}}</view>
+            <view class="text4">充值时间：{{item.createTime}}</view>
+          </view>
+        </view>
+        <view class="hongbaoCard-bottom">
+          <text class="text5a">有效期至：{{item.invalidTime}}</text>
+          <text bind:tap="toDetail" class="text6" data-item="{{item}}"
+            >使用详情 ></text
+          >
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+</view>

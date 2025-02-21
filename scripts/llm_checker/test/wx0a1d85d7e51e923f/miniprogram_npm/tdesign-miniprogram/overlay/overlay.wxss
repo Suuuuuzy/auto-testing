@@ -1,0 +1,51 @@
+.t-float-left {
+  float: left;
+}
+.t-float-right {
+  float: right;
+}
+@-webkit-keyframes tdesign-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes tdesign-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.hotspot-expanded.relative {
+  position: relative;
+}
+.hotspot-expanded::after {
+  bottom: 0;
+  content: "";
+  display: block;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: scale(1.5);
+}
+.t-overlay {
+  background-color: var(
+    --td-overlay-bg-color,
+    var(--td-font-gray-2, rgba(0, 0, 0, 0.6))
+  );
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transition: opacity var(--td-overlay-transition-duration, 0.3s) ease;
+  width: 100%;
+}
+.t-fade-enter,
+.t-fade-leave-to {
+  opacity: 0;
+}

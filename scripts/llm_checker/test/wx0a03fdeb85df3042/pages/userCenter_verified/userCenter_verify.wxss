@@ -1,0 +1,27 @@
+.container {
+  height: 100%;
+}
+.verify-body {
+  position: relative;
+  text-align: center;
+  padding: 0 100rpx;
+}
+.verify-img {
+  width: 453rpx;
+  height: 456rpx;
+  padding-top: 194rpx;
+  padding-bottom: 77rpx;
+  margin: 0 auto;
+}
+.verify-text {
+  font-size: 36rpx;
+}
+.faceVerify-btn {
+  margin-top: 198rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 50rpx;
+  background: linear-gradient(to left, #395eff, #3996ff);
+  font-size: 36rpx;
+  color: #fff;
+}

@@ -1,0 +1,48 @@
+.v-tabs.data-v-a0adbf4e {
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
+}
+.v-tabs.tabs-fixed.data-v-a0adbf4e {
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 990;
+}
+.v-tabs__container.data-v-a0adbf4e {
+  align-items: center;
+  display: inline-flex;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+.v-tabs__container-item.data-v-a0adbf4e {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  height: 100%;
+  padding: 0 11px;
+  position: relative;
+  transition: all 0.3s;
+  white-space: nowrap;
+  z-index: 10;
+}
+.v-tabs__container-line.data-v-a0adbf4e {
+  bottom: 0;
+  position: absolute;
+  transition: all 0.3s linear;
+}
+.v-tabs__container-pills.data-v-a0adbf4e {
+  position: absolute;
+  top: 0;
+  transition: all 0.3s linear;
+  z-index: 9;
+}
+.data-v-a0adbf4e ::-webkit-scrollbar {
+  display: none;
+}
+.icon-tabs.data-v-a0adbf4e {
+  height: 60rpx;
+  width: 60rpx;
+}

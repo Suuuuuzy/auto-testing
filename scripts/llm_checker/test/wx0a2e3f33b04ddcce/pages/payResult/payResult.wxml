@@ -1,0 +1,49 @@
+<image
+  alt=""
+  class="bg"
+  src="/assets/img/pay-bg1@2x.png"
+  wx:if="{{result===1}}"
+></image>
+<image
+  alt=""
+  class="bg"
+  src="/assets/img/pay-bg2@2x.png"
+  wx:if="{{result===0}}"
+></image>
+<view :class="{failImg: result === 0}" class="payResult">
+  <view class="result">
+    <view wx:if="{{result===1}}">
+      <image
+        alt=""
+        class="result-icon"
+        src="/assets/img/pay-icon@2x.png"
+      ></image>
+      <text class="title">支付成功</text>
+    </view>
+    <view wx:if="{{result===0}}">
+      <view>
+        <image
+          alt=""
+          class="result-icon"
+          src="/assets/img/pay-icon2@2x.png"
+        ></image>
+        <text class="title">支付失败!</text>
+      </view>
+      <view class="tip">{{resultMessage}}</view>
+    </view>
+  </view>
+  <view class="content" wx:if="{{result===1}}">
+    <view class="text1">￥{{orderDetail.price}}</view>
+    <view class="split-line"></view>
+    <view class="text2">下单时间：{{orderDetail.createTime}}</view>
+    <view class="text3">订单编号：{{orderDetail.orderSerialNo}}</view>
+  </view>
+  <text bind:tap="toDelivery" class="buttonB" style="cursor: pointer"
+    >返回外卖</text
+  >
+  <view class="footer">
+    <text class="end-line"></text>
+    <text class="end-text">END</text>
+    <text class="end-line"></text>
+  </view>
+</view>

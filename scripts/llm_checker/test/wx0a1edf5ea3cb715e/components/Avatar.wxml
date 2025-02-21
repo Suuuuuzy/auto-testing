@@ -1,0 +1,25 @@
+<view
+  catchtap="__e"
+  class="custom-avatar data-v-3cc12467"
+  data-event-opts="{{[ [ 'tap',[ ['jumpDetail'] ] ] ]}}"
+  style="{{'width:'+size+'rpx'+';'+'height:'+size+'rpx'+';'}}"
+>
+  <image
+    class="boy-cover data-v-3cc12467"
+    mode="aspectFill"
+    src="{{'http://image.fanglinxq.com/assets/icons/man-model-'+vipLevel+'.png?imageView2/1/w/'+size+20+'/h/'+size+20+'/q/75'}}"
+    style="{{'width:'+size+20+'rpx'+';'+'height:'+size+20+'rpx'+';'}}"
+    wx:if="{{vipLevel>2}}"
+  ></image>
+  <u-image
+    bind:__l="__l"
+    class="{{['data-v-3cc12467',vipLevel>2?'mid-avatar':'']}}"
+    height="{{avaSize}}"
+    lazyLoad="{{true}}"
+    mode="aspectFill"
+    shape="circle"
+    src="{{avaurl}}"
+    vueId="09f47592-1"
+    width="{{avaSize}}"
+  ></u-image>
+</view>

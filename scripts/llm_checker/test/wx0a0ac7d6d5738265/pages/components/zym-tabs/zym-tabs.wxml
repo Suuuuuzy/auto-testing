@@ -1,0 +1,15 @@
+<view class="tabsbox data-v-d5cb99d6">
+  <view class="tab-bar data-v-d5cb99d6">
+    <text
+      bindtap="{{item.d}}"
+      class="{{['tab-button','data-v-d5cb99d6',item.b&&'active']}}"
+      style="{{'background:'+item.c}}"
+      wx:for="{{a}}"
+      wx:key="e"
+      >{{item.a}}</text
+    >
+  </view>
+  <view class="content-area data-v-d5cb99d6">
+    <slot name="tabcontent"></slot>
+  </view>
+</view>

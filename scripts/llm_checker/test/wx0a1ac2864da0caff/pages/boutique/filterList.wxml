@@ -1,0 +1,70 @@
+<view class="container _div data-v-a110ce32">
+  <scroll-view
+    class="content content-filter data-v-a110ce32"
+    enableBackToTop="{{true}}"
+    scrollY="{{true}}"
+  >
+    <view
+      class="filter-part-out _div data-v-a110ce32"
+      wx:for="{{nowFilter}}"
+      wx:key="index"
+    >
+      <view class="filter-part-title _div data-v-a110ce32">{{item.title}}</view>
+      <view class="filter-part-list _div data-v-a110ce32">
+        <view
+          bindtap="__e"
+          class="{{['filter-part-item','_div','data-v-a110ce32',itemInner.active?'active':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'chooseItem',['$0',indexInner,index],[ [ ['nowFilter','',index],['list','',indexInner] ] ] ] ] ] ]}}"
+          wx:for="{{item.list}}"
+          wx:for-index="indexInner"
+          wx:for-item="itemInner"
+          wx:key="indexInner"
+          >{{itemInner.title}}</view
+        >
+      </view>
+    </view>
+    <view class="filter-part-bottom _div data-v-a110ce32"></view>
+  </scroll-view>
+  <view class="filter-confirm-btn-out _div data-v-a110ce32">
+    <view class="filter-confirm-btn-inner _div data-v-a110ce32">
+      <view
+        bindtap="__e"
+        class="filter-clear _div data-v-a110ce32"
+        data-event-opts="{{[ [ 'tap',[ [ 'reset',['$event'] ] ] ] ]}}"
+        >清空</view
+      >
+      <view
+        bindtap="__e"
+        class="filter-total _div data-v-a110ce32"
+        data-event-opts="{{[ [ 'tap',[ [ 'viewProduct',['$event'] ] ] ] ]}}"
+        >{{'查看筛选结果 ('+productCount+'款)'}}</view
+      >
+    </view>
+    <view
+      class="_div data-v-a110ce32"
+      style="{{'height:'+navigationBarHeightPlaceholder+'px'+';'}}"
+    ></view>
+  </view>
+  <view class="filter-scroll-out _div data-v-a110ce32">
+    <scroll-view class="panel data-v-a110ce32" scrollX="{{true}}">
+      <view class="filter-scroll-item-gap _div data-v-a110ce32"></view>
+      <view
+        bindtap="__e"
+        class="{{['filter-scroll-item','_div','data-v-a110ce32',index===nowIndex?'active':'']}}"
+        data-event-opts="{{[ [ 'tap',[ [ 'chooseTab',['$0',index],[ [ ['filterList','',index] ] ] ] ] ] ]}}"
+        wx:for="{{filterList}}"
+        wx:key="index"
+      >
+        <view class="filter-scroll-item-text _div data-v-a110ce32"
+          >{{item.title}}</view
+        >
+        <view class="filter-scroll-item-line _div data-v-a110ce32"></view>
+        <view
+          class="filter-scroll-item-count _div data-v-a110ce32"
+          wx:if="{{item.num>0}}"
+          >{{item.num}}</view
+        >
+      </view>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,1010 @@
+<template name="deliveryDiscountTxt">
+  <view wx:if="{{isUy}}">
+    <text>كىرادىن </text>
+    <text>{{discountAmount}}</text>
+    <text>يۈەن ئېتىبار قىلىندى</text>
+  </view>
+  <view wx:else>
+    <text>已优惠</text>
+    <text>{{discountAmount}}</text>
+    <text>元配送费</text>
+  </view>
+</template>
+<template name="shopCouponTxtItem">
+  <view class="rtl" wx:if="{{isUy}}">
+    <text>{{item['coupon_limit']}}</text>
+    <text>يۈەنگە يەتسە</text>
+    <text>{{item['coupon_amount']}}</text>
+    <text> ئېتىبار</text>
+  </view>
+  <view wx:else>
+    <text>满{{item['coupon_limit']}}减{{item['coupon_amount']}}</text>
+  </view>
+</template>
+<template name="shopCouponTxt">
+  <view
+    class="text-xs padding-lr-xs radius {{_index%2==0?'r-bg':'g-bg'}} margin-right-xs"
+    style="white-space: nowrap; display: inline-block; line-height: 35rpx"
+    wx:if="{{coupons&&_index<(showAll==1?6:showCount>0?showCount:isUy?1:2)}}"
+    wx:for="{{coupons}}"
+    wx:for-index="_index"
+    wx:for-item="_item"
+    wx:key="_index"
+  >
+    <template is="shopCouponTxtItem" data="{{isUy:isUy,item:_item}}"></template>
+  </view>
+</template>
+<template name="deliveryCouponTxt">
+  <view
+    class="text-xs padding-lr-xs radius g-bg margin-right-xs"
+    style="line-height: 35rpx; white-space: nowrap; display: inline-block"
+  >
+    <view class="rtl" wx:if="{{isUy}}">
+      <text class=""
+        >{{shop['delivery_fee']-shop['activity_delivery_fee'][0]['activity_delivery_fee']}}</text
+      >
+      <text>يۈەن كىرا كېمەيتىش</text>
+    </view>
+    <view wx:else>
+      <text>立减</text>
+      <text
+        >{{shop['delivery_fee']-shop['activity_delivery_fee'][0]['activity_delivery_fee']}}</text
+      >
+      <text>元配送费</text>
+    </view>
+  </view>
+</template>
+<template name="_shopItemWithScrollGoods">
+  <navigator
+    class="radius"
+    url="{{navUrl}}?shopId={{item.id}}&title={{isUy?item.uy_name:item.ch_name}}"
+  >
+    <view
+      class="cu-list menu"
+      style="border-radius:16rpx 16rpx {{item.activity_goods.length>0?'0':'16'}}rpx {{item._goods.length>0?'0':'16'}}rpx"
+    >
+      <view class="cu-item" style="padding: 20rpx">
+        <view
+          class="cu-avatar radius xl"
+          style="background-image:url({{ossImage+item.icon_url+'?x-oss-process=image/resize,m_lfit,h_600,w_600'}});border-radius:16rpx;width:160rpx; height:160rpx"
+        >
+          <image
+            mode="widthFix"
+            src="/resource/images/shop/common/shop_activity{{isUy?'':'_ch'}}.png"
+            style="
+              width: 120rpx;
+              height: 120rpx;
+              position: absolute;
+              top: -30rpx;
+              right: -20rpx;
+            "
+            wx:if="{{item.activity_goods_count>0}}"
+          ></image>
+        </view>
+        <view class="content margin-left">
+          <view>
+            <text
+              class="text-cut {{isUy?'rtl':''}} text-left  text-sm text-black  text-lg text-bold"
+              style="width: 320rpx; color: #070c20"
+              >{{isUy?item.uy_name:item.ch_name}}</text
+            >
+          </view>
+          <view class="text-gray text-sm flex">
+            <view>
+              <view
+                class="flex justify-start padding-0 align-center"
+                style="height: 35rpx"
+              >
+                <view>
+                  <text class="icon icon-favorfill text-c4"></text>
+                  <text class="text-c4">{{item.stars}}</text>
+                </view>
+                <view class="padding-lr-sm text-sm" style="color: #413d16">
+                  <text class="padding-lr-xs"
+                    >{{Str.monthBuyed[lanIndex]}}</text
+                  >
+                  <text>{{item.sales_count}}</text>
+                </view>
+              </view>
+              <view class="flex justify-satrt" style="height: 40rpx">
+                <view class="text-xs" style="color: #413d16; font-weight: 500">
+                  <text class="">{{Str._startPrice[lanIndex]}}</text>
+                  <text class="text-price">{{item.starting_price}}</text>
+                </view>
+                <view
+                  class="padding-lr-sm text-xs"
+                  style="color: #413d16; font-weight: 500"
+                >
+                  <text class="">{{Str.deliveryFee[lanIndex]}}</text>
+                  <text class="text-price">{{item.delivery_fee}}</text>
+                </view>
+              </view>
+              <view
+                class="bg-gray cu-tag uy radius {{isUy?'rtl':''}} sm"
+                style="
+                  font-size: 24rpx;
+                  margin-left: 0rpx;
+                  margin-right: 10rpx;
+                  height: 36rpx;
+                "
+                wx:if="{{item.delivery_fee==0&&info&&info.show_info}}"
+              >
+                {{isUy?info.uy_title:info.ch_title}}
+              </view>
+              <view class="flex justify-start margin-top-xs align-center">
+                <view
+                  class="cu-tag line-c4 sm uy radius"
+                  style="
+                    font-size: 20rpx;
+                    margin-left: 0;
+                    margin-right: 10rpx;
+                    height: 32rpx;
+                  "
+                  wx:if="{{_index<2}}"
+                  wx:for="{{item.types}}"
+                  wx:for-index="_index"
+                  wx:for-item="_item"
+                >
+                  {{isUy?_item.uy_name:_item.ch_name}}
+                </view>
+                <view
+                  class="shop-percent-bg bg-img flex align-center justify-center"
+                  wx:if="{{shopPercent&&item.coupon_percent>0}}"
+                >
+                  <view class="{{isUy?'rtl':''}} flex align-center">
+                    <text class="text-c4">{{item.coupon_percent}}%</text>
+                    <text class="text-sm text-c4"
+                      >{{Str.couponPercent[lanIndex]}}</text
+                    >
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="action text-center">
+          <view>
+            <text
+              class="text-black"
+              wx:if="{{item.distance&&item.distance!=-1}}"
+              >{{item.distance}}</text
+            >
+          </view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="scroll_box bg-white"
+      style="border-radius: 0 0 16rpx 16rpx"
+      wx:if="{{item.goods.length>0}}"
+    >
+      <scroll-view
+        scrollX
+        class="scroll-view_x"
+        style="width: auto; overflow: hidden"
+      >
+        <view
+          class="item_list_ flex align-start"
+          style="border-radius: 15rpx; background-color: white"
+          url="/pages/home/mall/mall-home?shopId={{item.id}}"
+          wx:for="{{item.goods}}"
+          wx:for-item="_item"
+        >
+          <view>
+            <image
+              mode="aspectFill"
+              src="{{_item.img_url+'?x-oss-process=image/resize,w_600'}}"
+              style="border-radius: 16rpx 16rpx 4rpx 4rpx"
+            ></image>
+          </view>
+          <view class="flex justify-between">
+            <view
+              class="text-black uy-tom text-sm margin-right-xs text-cut {{isUy?'rtl':''}} text-text-center"
+              style="width: 180rpx; margin-top: 0rpx; color: #5e4f2a"
+            >
+              {{isUy?_item.uy_name:_item.ch_name}}
+            </view>
+            <view></view>
+          </view>
+          <view style="margin-top: 0rpx">
+            <view class="flex align-center text-center">
+              <view class="bg-img padding-right-xs text-center">
+                <text
+                  class="text-price text-white text-lg padding-left-xs"
+                  style="color: #ff5943"
+                  >{{_item.price}}</text
+                >
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </navigator>
+</template>
+<template name="shopItemWithScrollGoods">
+  <navigator
+    class="radius {{isUy?'rtl':''}}"
+    url="{{navUrl}}?shopId={{item.id}}&title={{isUy?item.uy_name:item.ch_name}}"
+  >
+    <view
+      class="cu-list menu"
+      style="border-radius:16rpx 16rpx {{item.activity_goods.length>0?'0':'16'}}rpx {{item._goods.length>0?'0':'16'}}rpx"
+    >
+      <view class="cu-item" style="padding: 20rpx">
+        <view
+          class="cu-avatar radius xl"
+          style="background-image:url({{ossImage+item.icon_url+'?x-oss-process=image/resize,m_lfit,h_600,w_600'}});border-radius:16rpx;width:160rpx; height:160rpx"
+        >
+          <image
+            mode="widthFix"
+            src="/resource/images/shop/common/shop_activity{{isUy?'':'_ch'}}.png"
+            style="
+              width: 120rpx;
+              height: 120rpx;
+              position: absolute;
+              top: -30rpx;
+              right: -20rpx;
+            "
+            wx:if="{{item.activity_goods_count>0}}"
+          ></image>
+        </view>
+        <view class="content margin-{{isUy?'right-sm':'left-sm'}}">
+          <view>
+            <text
+              class="text-cut {{isUy?'rtl':''}} text-{{isUy?'right':'left'}}  text-sm text-black  text-lg text-bold"
+              style="width: 320rpx; color: #070c20"
+              >{{isUy?item.uy_name:item.ch_name}}</text
+            >
+          </view>
+          <view class="text-gray flex">
+            <view>
+              <view
+                class="flex justify-start padding-0 align-center"
+                style="height: 35rpx"
+              >
+                <view class="text-df">
+                  <text class="cuIcon-favorfill text-c4"></text>
+                  <text class="text-c4">{{item.stars}}</text>
+                </view>
+                <view class="padding-lr-sm" style="color: #413d16">
+                  <text class="padding-lr-xs"
+                    >{{Str.monthBuyed[lanIndex]}}</text
+                  >
+                  <text class="text-sm">{{item.sales_count}}</text>
+                </view>
+              </view>
+              <view class="flex justify-satrt" style="height: 50rpx">
+                <view class="text-sm" style="color: #413d16; font-weight: 500">
+                  <text class="">{{Str.startPrice[lanIndex]}}</text>
+                  <text decode="true">&nbsp;</text>
+                  <text class="text-price text-c4 text-df"
+                    >{{item.starting_price}}</text
+                  >
+                </view>
+                <view
+                  class="padding-lr-sm text-sm"
+                  style="color: #413d16; font-weight: 500"
+                >
+                  <text class="">{{Str.deliveryFee[lanIndex]}}</text>
+                  <text decode="true">&nbsp;</text>
+                  <text
+                    class="text-price text-c4 text-lg"
+                    wx:if="{{item['activity_delivery_fee']&&item['activity_delivery_fee'].length>0}}"
+                    >{{item['activity_delivery_fee'][0]['activity_delivery_fee']}}</text
+                  >
+                  <text
+                    class="text-price {{item['activity_delivery_fee']&&item['activity_delivery_fee'].length>0?'delete-txt':''}}"
+                    >{{item.delivery_fee}}</text
+                  >
+                </view>
+              </view>
+              <view
+                class="bg-gray cu-tag uy radius {{isUy?'rtl':''}} sm"
+                style="
+                  font-size: 24rpx;
+                  margin-left: 0rpx;
+                  margin-right: 10rpx;
+                  height: 36rpx;
+                "
+                wx:if="{{item.delivery_fee==0&&info&&info.show_info}}"
+              >
+                {{isUy?info.uy_title:info.ch_title}}
+              </view>
+              <view class="flex justify-start margin-top-xs align-center">
+                <view
+                  class="cu-tag line-c4 uy radius"
+                  style="
+                    font-size: 24rpx;
+                    margin-left: 0;
+                    margin-right: 10rpx;
+                    height: 36rpx;
+                  "
+                  wx:if="{{_index<2}}"
+                  wx:for="{{item.types}}"
+                  wx:for-index="_index"
+                  wx:for-item="_item"
+                  wx:key="_index"
+                >
+                  {{isUy?_item.uy_name:_item.ch_name}}
+                </view>
+                <view
+                  class="shop-percent-bg bg-img flex align-center justify-center"
+                  wx:if="{{shopPercent&&item.coupon_percent>0}}"
+                >
+                  <view class="{{isUy?'rtl':''}} flex align-center">
+                    <text class="text-c4">{{item.coupon_percent}}%</text>
+                    <text class="text-sm text-c4"
+                      >{{Str.couponPercent[lanIndex]}}</text
+                    >
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="action text-center">
+          <view>
+            <text
+              class="text-black"
+              wx:if="{{item.distance&&item.distance!=-1}}"
+              >{{item.distance}}</text
+            >
+          </view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="scroll_box bg-white"
+      style="border-radius: 0 0 16rpx 16rpx"
+      wx:if="{{item.activity_goods.length>0}}"
+    >
+      <scroll-view
+        scrollX
+        class="scroll-view_x"
+        style="width: auto; overflow: hidden"
+      >
+        <view
+          class="item_list_ flex align-start"
+          style="border-radius: 15rpx; background-color: white"
+          url="/pages/home/mall/mall-home?shopId={{item.id}}"
+          wx:for="{{item.activity_goods}}"
+          wx:for-item="_item"
+          wx:key="index"
+        >
+          <view>
+            <image
+              mode="aspectFill"
+              src="{{_item.img_url+'?x-oss-process=image/resize,w_600'}}"
+              style="border-radius: 16rpx 16rpx 4rpx 4rpx"
+            ></image>
+          </view>
+          <view class="flex justify-between">
+            <view
+              class="text-black uy-tom text-sm margin-right-xs text-cut {{isUy?'rtl':''}} text-text-center"
+              style="width: 180rpx; margin-top: 0rpx; color: #5e4f2a"
+            >
+              {{isUy?_item.uy_name:_item.ch_name}}
+            </view>
+            <view></view>
+          </view>
+          <view style="margin-top: 0rpx">
+            <view class="flex align-center">
+              <price
+                decimalSmaller
+                class="text-lg padding-left-xs uy-tom text-red"
+                price="{{_item.activity_price}}"
+                priceUnit="yuan"
+              ></price>
+              <price
+                decimalSmaller
+                class="padding-left-xs text-sm"
+                price="{{_item.price}}"
+                priceUnit="yuan"
+                type="delthrough"
+              ></price>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </navigator>
+</template>
+<template name="shopItemWithGoods">
+  <navigator
+    class="radius"
+    url="{{navUrl}}?shopId={{item.id}}&title={{isUy?item.uy_name:item.ch_name}}"
+  >
+    <view
+      class="cu-list menu"
+      style="border-radius:16rpx 16rpx {{item._goods.length>0?'0':'16'}}rpx {{item._goods.length>0?'0':'16'}}rpx"
+    >
+      <view class="cu-item" style="padding: 20rpx">
+        <view
+          class="cu-avatar radius xl"
+          style="background-image:url({{ossImage+item.icon_url+'?x-oss-process=image/resize,m_lfit,h_600,w_600'}});border-radius:16rpx;width:160rpx; height:160rpx"
+        >
+          <image
+            mode="widthFix"
+            src="/resource/images/shop/common/shop_activity{{isUy?'':'_ch'}}.png"
+            style="
+              width: 120rpx;
+              height: 120rpx;
+              position: absolute;
+              top: -30rpx;
+              right: -20rpx;
+            "
+            wx:if="{{item.activity_goods_count>0}}"
+          ></image>
+        </view>
+        <view class="content margin-left">
+          <view>
+            <text
+              class="text-cut {{isUy?'rtl':''}} text-left  text-sm text-black  text-lg text-bold"
+              style="width: 320rpx; color: #070c20"
+              >{{isUy?item.uy_name:item.ch_name}}</text
+            >
+          </view>
+          <view class="text-gray text-sm flex">
+            <view>
+              <view
+                class="flex justify-start padding-0 align-center"
+                style="height: 35rpx"
+              >
+                <view>
+                  <text class="icon icon-favorfill text-c4"></text>
+                  <text class="text-c4">{{item.stars}}</text>
+                </view>
+                <view class="padding-lr-sm text-sm" style="color: #413d16">
+                  <text class="padding-lr-xs"
+                    >{{Str.monthBuyed[lanIndex]}}</text
+                  >
+                  <text>{{item.sales_count}}</text>
+                </view>
+              </view>
+              <view class="flex justify-satrt" style="height: 40rpx">
+                <view class="text-xs" style="color: #413d16; font-weight: 500">
+                  <text class="">{{Str._startPrice[lanIndex]}}</text>
+                  <text class="text-price">{{item.starting_price}}</text>
+                </view>
+                <view
+                  class="padding-lr-sm text-xs"
+                  style="color: #413d16; font-weight: 500"
+                >
+                  <text class="">{{Str.deliveryFee[lanIndex]}}</text>
+                  <text class="text-price">{{item.delivery_fee}}</text>
+                </view>
+              </view>
+              <view class="flex justify-start margin-top-xs align-center">
+                <view
+                  class="cu-tag line-c4 sm uy radius"
+                  style="
+                    font-size: 20rpx;
+                    margin-left: 0;
+                    margin-right: 10rpx;
+                    height: 32rpx;
+                  "
+                  wx:if="{{_index<2}}"
+                  wx:for="{{item.types}}"
+                  wx:for-index="_index"
+                  wx:for-item="_item"
+                >
+                  {{isUy?_item.uy_name:_item.ch_name}}
+                </view>
+                <view
+                  class="shop-percent-bg bg-img flex align-center justify-center"
+                >
+                  <view
+                    class="{{isUy?'rtl':''}} flex align-center"
+                    wx:if="{{item.coupon_percent>0}}"
+                  >
+                    <text class="text-c4">{{item.coupon_percent}}%</text>
+                    <text class="text-sm text-c4"
+                      >{{Str.couponPercent[lanIndex]}}</text
+                    >
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="action text-center">
+          <view>
+            <text
+              class="text-black"
+              wx:if="{{item.distance&&item.distance!=-1}}"
+              >{{item.distance}}</text
+            >
+          </view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="grid col-3 bg-white padding-sm solid-top"
+      style="border-radius: 0rpx 0rpx 16rpx 16rpx"
+      wx:if="{{item._goods.length>0}}"
+    >
+      <view
+        class="text-center"
+        wx:if="{{_index<3}}"
+        wx:for="{{item._goods}}"
+        wx:for-index="_index"
+        wx:for-item="_item"
+      >
+        <view>
+          <image
+            mode="aspectFill"
+            src="{{_item.img_url+'?x-oss-process=image/resize,m_lfit,h_300,w_300'}}"
+            style="width: 180rpx; height: 140rpx; border-radius: 16rpx"
+          ></image>
+          <image
+            src="/resource/images/shop/common/shop_recomend.png"
+            style="
+              z-index: 100;
+              width: 100rpx;
+              height: 100rpx;
+              top: -160rpx;
+              left: -50rpx;
+            "
+          ></image>
+        </view>
+        <view style="margin-top: -110rpx">
+          <view
+            class="text-cut {{isUy?'rtl':''}} text-black"
+            style="width: 200rpx"
+            >{{isUy?_item.uy_name:_item.ch_name}}
+          </view>
+          <view>
+            <text
+              class="text-price text-lg text-red padding-lr-xs"
+              wx:if="{{_item.time}}"
+              >{{_item.activity_price}}</text
+            >
+            <text
+              class="text-price  {{_item.time?'text-sm text-gray':'text-lg text-c4'}}"
+              style="text-decoration:{{_item.time?'line-through':''}}"
+              >{{_item.price}}</text
+            >
+          </view>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</template>
+<template name="__shopListItem">
+  <navigator
+    class="bg-white {{isUy?'rtl':''}} padding-lr-xs"
+    style="border-radius: 16rpx"
+    url="{{navUrl}}?shopId={{item.id}}&title={{isUy?item.uy_name:item.ch_name}}"
+  >
+    <view class="cu-list menu">
+      <view class="cu-item margin-tb-xs" style="padding: 5rpx">
+        <view
+          class="cu-avatar radius xl {{item.is_closing==1?'grayscale':''}}"
+          style="background-image:url({{ossImage+item.icon_url+'?x-oss-process=image/resize,m_lfit,h_400,w_400'}});border-radius:16rpx;width:180rpx; height:180rpx"
+        >
+          <view class="cu-tag badge" wx:if="{{item.cartGoodCount}}"
+            >{{item.cartGoodCount}}</view
+          >
+          <view
+            class="text-sm bg-gray text-pink"
+            style="
+              position: absolute;
+              bottom: 0rpx;
+              width: 160rpx;
+              opacity: 0.5;
+            "
+            wx:if="{{item.is_closing==1}}"
+          >
+            <text style="color: black">{{Str.isResting[lanIndex]}}</text>
+          </view>
+          <view wx:else>
+            <image
+              mode="widthFix"
+              src="/resource/images/shop/common/new_shop.png"
+              style="width:100rpx; <height:10></height:10>0rpx; position:absolute; top:-5rpx;left:-5rpx"
+              wx:if="{{item.is_new>0}}"
+            ></image>
+            <image
+              mode="widthFix"
+              src="/resource/images/shop/common/shop_activity{{isUy?'':'_ch'}}.png"
+              style="
+                width: 120rpx;
+                height: 120rpx;
+                position: absolute;
+                top: -30rpx;
+                right: -20rpx;
+              "
+              wx:if="{{item.activity_goods_count>0}}"
+            ></image>
+          </view>
+        </view>
+        <view class="content margin-{{isUy?'right':'left'}}-sm" wx:if="{{1}}">
+          <view>
+            <text
+              class="text-cut {{isUy?'rtl text-right':'text-left'}}  text-bold text-black text-lg"
+              style="width: 400rpx; color: #070c20"
+              >{{isUy?item.uy_name:item.ch_name}}</text
+            >
+          </view>
+          <view class="text-gray text-sm flex">
+            <view>
+              <view
+                class="flex justify-start padding-0 align-center"
+                style="height: 35rpx"
+              >
+                <view>
+                  <text class="icon icon-favorfill text-c4"></text>
+                  <text class="text-c4">{{item.stars}}</text>
+                </view>
+                <view class="padding-lr-sm text-xs" style="color: #413d16">
+                  <text class="padding-lr-xs text-sm"
+                    >{{Str.monthBuyed[lanIndex]}}</text
+                  >
+                  <text class="">{{item.sales_count}}</text>
+                </view>
+              </view>
+              <view
+                class="flex justify-satrt align-center"
+                style="height: 35rpx"
+              >
+                <view class="text-sm" style="color: #413d16; font-weight: 500">
+                  <text class="text-xs">{{Str.startPrice[lanIndex]}}</text>
+                  <text class="text-price text-df"
+                    >{{item.starting_price}}</text
+                  >
+                </view>
+                <view
+                  class="padding-lr-xs text-xs"
+                  style="color: #413d16; font-weight: 500"
+                >
+                  <text class="">{{Str.deliveryFee[lanIndex]}}</text>
+                  <text
+                    class="text-price text-c4 text-df"
+                    wx:if="{{item['activity_delivery_fee']&&item['activity_delivery_fee'].length>0}}"
+                    >{{item['activity_delivery_fee'][0]['activity_delivery_fee']}}</text
+                  >
+                  <text
+                    class="text-price  {{item['activity_delivery_fee']&&item['activity_delivery_fee'].length>0?'delete-txt text-sm':'text-df'}}"
+                    >{{item.delivery_fee}}</text
+                  >
+                </view>
+              </view>
+              <view
+                class="bg-gray cu-tag uy radius {{isUy?'rtl':''}} sm"
+                style="
+                  font-size: 24rpx;
+                  margin-left: 0rpx;
+                  margin-right: 10rpx;
+                  height: 36rpx;
+                "
+                wx:if="{{item.delivery_fee==0&&info&&info.show_info}}"
+              >
+                {{isUy?info.uy_title:info.ch_title}}
+              </view>
+              <view class="flex justify-start margin-top-xs align-center">
+                <view
+                  class="cu-tag line-c4 sm uy radius"
+                  style="
+                    font-size: 20rpx;
+                    margin-left: 0;
+                    margin-right: 10rpx;
+                    height: 32rpx;
+                  "
+                  wx:if="{{_index<2}}"
+                  wx:for="{{item.types}}"
+                  wx:for-index="_index"
+                  wx:for-item="_item"
+                  wx:key="_index"
+                >
+                  {{isUy?_item.uy_name:_item.ch_name}}
+                </view>
+                <view
+                  class="shop-percent-bg bg-img flex align-center justify-center"
+                  wx:if="{{showPercent}}"
+                >
+                  <view
+                    class="{{isUy?'rtl':''}} flex align-center"
+                    wx:if="{{item.coupon_percent>0}}"
+                  >
+                    <text class="text-c4">{{item.coupon_percent}}%</text>
+                    <text class="text-sm text-c4"
+                      >{{Str.couponPercent[lanIndex]}}</text
+                    >
+                  </view>
+                </view>
+              </view>
+              <view
+                class="margin-top-xs"
+                style="overflow: hidden; width: 400rpx"
+              >
+                <template
+                  is="deliveryCouponTxt"
+                  data="{{isUy:isUy,shop:item}}"
+                  wx:if="{{item['activity_delivery_fee']&&item['activity_delivery_fee'].length>0}}"
+                ></template>
+                <template
+                  is="shopCouponTxt"
+                  data="{{coupons:item['coupons'],isUy:isUy,showAll:0,showCount:item['activity_delivery_fee'].length>0?isUy?1:2:isUy?2:3}}"
+                  wx:if="{{item['coupons']&&item['coupons'].length>0}}"
+                ></template>
+                <text
+                  class="icon-unfold"
+                  wx:if="{{item['coupons'].length>0}}"
+                ></text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="action text-center">
+          <view>
+            <text class="text-sm" wx:if="{{item.distance&&item.distance!=-1}}"
+              >{{item.distance}}</text
+            >
+          </view>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</template>
+<template name="_shopListItem">
+  <navigator
+    class="bg-white {{isUy?'rtl':''}} padding-xs"
+    style="border-radius: 16rpx"
+    url="{{navUrl}}?shopId={{item.id}}&title={{isUy?item.uy_name:item.ch_name}}"
+  >
+    <view class="">
+      <view class="flex">
+        <view
+          class="cu-avatar radius xl {{item.is_closing==1?'grayscale':''}}"
+          style="background-image:url({{ossImage+item.icon_url+'?x-oss-process=image/resize,m_lfit,h_400,w_400'}});border-radius:16rpx;width:180rpx; height:180rpx"
+        >
+          <view class="cu-tag badge" wx:if="{{item.cartGoodCount}}"
+            >{{item.cartGoodCount}}</view
+          >
+          <view
+            class="text-sm bg-gray text-pink"
+            style="
+              position: absolute;
+              bottom: 0rpx;
+              width: 160rpx;
+              opacity: 0.5;
+            "
+            wx:if="{{item.is_closing==1}}"
+          >
+            <text style="color: black">{{Str.isResting[lanIndex]}}</text>
+          </view>
+          <view wx:else>
+            <image
+              mode="widthFix"
+              src="/resource/images/shop/common/new_shop.png"
+              style="width:100rpx; <height:10></height:10>0rpx; position:absolute; top:-5rpx;left:-5rpx"
+              wx:if="{{item.is_new>0}}"
+            ></image>
+            <image
+              mode="widthFix"
+              src="/resource/images/shop/common/shop_activity{{isUy?'':'_ch'}}.png"
+              style="
+                width: 120rpx;
+                height: 120rpx;
+                position: absolute;
+                top: -30rpx;
+                right: -20rpx;
+              "
+              wx:if="{{item.activity_goods_count>0}}"
+            ></image>
+          </view>
+        </view>
+        <view class="padding-lr-sm" style="width: 550rpx">
+          <view>
+            <view
+              class="text-cut {{isUy?'rtl text-right':'text-left'}}  text-bold text-black text-lg"
+              style="width: 500rpx; color: #070c20"
+              >{{isUy?item.uy_name:item.ch_name}}</view
+            >
+          </view>
+          <view class="flex justify-between align-center">
+            <view class="" wx:if="{{1}}">
+              <view class="text-gray flex">
+                <view>
+                  <view
+                    class="flex justify-start padding-0 align-center"
+                    style="height: 35rpx"
+                  >
+                    <view>
+                      <text class="icon icon-favorfill text-c4"></text>
+                      <text class="text-c4">{{item.stars}}</text>
+                    </view>
+                    <view class="padding-lr-sm text-sm" style="color: #413d16">
+                      <text class="padding-lr-xs"
+                        >{{Str.monthBuyed[lanIndex]}}</text
+                      >
+                      <text class="">{{item.sales_count}}</text>
+                    </view>
+                  </view>
+                  <view
+                    class="flex justify-satrt align-center text-sm"
+                    style="height: 35rpx"
+                  >
+                    <view class="" style="color: #413d16; font-weight: 500">
+                      <text class="">{{Str.startPrice[lanIndex]}}</text>
+                      <text class="text-price text-df"
+                        >{{item.starting_price}}</text
+                      >
+                    </view>
+                    <view
+                      class="bg-gray margin-lr-xs"
+                      style="height: 20rpx; width: 2rpx"
+                    ></view>
+                    <view class="" style="color: #413d16; font-weight: 500">
+                      <text class="">{{Str.deliveryFee[lanIndex]}}</text>
+                      <text
+                        class="text-price text-c4 text-df"
+                        wx:if="{{item['activity_delivery_fee']&&item['activity_delivery_fee'].length>0}}"
+                        >{{item['activity_delivery_fee'][0]['activity_delivery_fee']}}</text
+                      >
+                      <text
+                        class="text-price  {{item['activity_delivery_fee']&&item['activity_delivery_fee'].length>0?'delete-txt text-sm':'text-df'}}"
+                        >{{item.delivery_fee}}</text
+                      >
+                    </view>
+                  </view>
+                  <view
+                    class="bg-gray cu-tag uy radius {{isUy?'rtl':''}} sm"
+                    style="
+                      font-size: 24rpx;
+                      margin-left: 0rpx;
+                      margin-right: 10rpx;
+                      height: 36rpx;
+                    "
+                    wx:if="{{item.delivery_fee==0&&info&&info.show_info}}"
+                  >
+                    {{isUy?info.uy_title:info.ch_title}}
+                  </view>
+                  <view class="flex justify-start margin-top-xs align-center">
+                    <view
+                      class="cu-tag line-c4 sm uy radius"
+                      style="
+                        font-size: 24rpx;
+                        margin-left: 0;
+                        margin-right: 10rpx;
+                        height: 36rpx;
+                      "
+                      wx:if="{{_index<2}}"
+                      wx:for="{{item.types}}"
+                      wx:for-index="_index"
+                      wx:for-item="_item"
+                      wx:key="_index"
+                    >
+                      {{isUy?_item.uy_name:_item.ch_name}}
+                    </view>
+                    <view
+                      class="shop-percent-bg bg-img flex align-center justify-center"
+                      wx:if="{{showPercent}}"
+                    >
+                      <view
+                        class="{{isUy?'rtl':''}} flex align-center"
+                        wx:if="{{item.coupon_percent>0}}"
+                      >
+                        <text class="text-c4">{{item.coupon_percent}}%</text>
+                        <text class="text-sm text-c4"
+                          >{{Str.couponPercent[lanIndex]}}</text
+                        >
+                      </view>
+                    </view>
+                  </view>
+                  <view
+                    class="margin-top-xs"
+                    style="overflow: hidden; width: 400rpx"
+                  >
+                    <template
+                      is="deliveryCouponTxt"
+                      data="{{isUy:isUy,shop:item}}"
+                      wx:if="{{item['activity_delivery_fee']&&item['activity_delivery_fee'].length>0}}"
+                    ></template>
+                    <template
+                      is="shopCouponTxt"
+                      data="{{coupons:item['coupons'],isUy:isUy,showAll:0,showCount:item['activity_delivery_fee'].length>0?isUy?1:2:isUy?2:3}}"
+                      wx:if="{{item['coupons']&&item['coupons'].length>0}}"
+                    ></template>
+                    <text
+                      class="icon-unfold"
+                      wx:if="{{item['coupons'].length>0}}"
+                    ></text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="">
+              <view class="text-center">
+                <view class="">
+                  <text class="icon-location"></text>
+                </view>
+                <view>
+                  <text
+                    class="text-df"
+                    wx:if="{{item.distance&&item.distance!=-1}}"
+                    >{{item.distance}}</text
+                  >
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</template>
+<template name="shopListItem">
+  <navigator
+    class="bg-white padding-tb-sm margin-lr-xs margin-top-xs flex justify-start"
+    style="border-radius: 20rpx"
+    url="{{navUrl}}?shopId={{item.id}}&title={{isUy?item.uy_name:item.ch_name}}"
+  >
+    <view class="text-center padding-lr-xs">
+      <view
+        bindtap="viewImg"
+        class="cu-avatar radius bg-white"
+        data-url="{{ossImage+item.icon_url}}"
+        style="background-image:url({{ossImage+item.icon_url+'?x-oss-process=image/resize,m_lfit,h_400,w_400'}});width:200rpx; height:150rpx"
+      >
+        <view class="cu-tag badge" wx:if="{{item.cartGoodCount}}"
+          >{{item.cartGoodCount}}</view
+        >
+        <view
+          class="bg-cyan text-sm"
+          style="position: absolute; bottom: 0; width: 100%"
+          wx:if="{{item.activity_count>0}}"
+        >
+          {{Str.activity[lanIndex]}}
+        </view>
+      </view>
+    </view>
+    <view class="padding-lr-xs">
+      <view class="text-lg text-black text-bold"
+        >{{isUy?item.uy_name:item.ch_name}}</view
+      >
+      <view class="shop-title">
+        <view class="flex justify-between" style="width: 500rpx">
+          <view class="text-df">
+            <text
+              class="icon icon-favorfill text-{{index<item.star_count?'c4':'grey1'}}"
+              wx:for="{{5}}"
+              wx:for-item="_item"
+              wx:key="index"
+            ></text>
+          </view>
+          <view
+            class="{{isUy?'rtl':''}} padding-right-xs"
+            style=""
+            wx:if="{{item.distance&&item.distance!=-1}}"
+          >
+            <text
+              class="text-black"
+              wx:if="{{item.distance&&item.distance!=-1}}"
+              >{{item.distance}}</text
+            >
+          </view>
+        </view>
+      </view>
+      <view class="flex justify-between" style="width: 500rpx">
+        <view class="shop-percent-bg">
+          <view class="{{isUy?'rtl':''}}" style="color: #e17c48">
+            <text class="padding-lr-sm text-lg">{{item.shop_percent}}%</text>
+            <text>{{Str.couponPercent[lanIndex]}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="flex justify-start padding-top-xs padding-right-xs">
+        <view
+          class="cu-tag line-c4 radius sm uy"
+          wx:if="{{item.types}}"
+          wx:for="{{item.types}}"
+          wx:for-item="__item"
+        >
+          {{isUy?__item.uy_name:__item.ch_name}}
+        </view>
+      </view>
+    </view>
+  </navigator>
+</template>

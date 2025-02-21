@@ -1,0 +1,37 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view wx:if="{{pageData&&pageData.length==0}}">
+    <view class="padding-tb">
+        <view class="cu-form-group margin-top">
+            <view class="title">{{Str.salonName[lanIndex]}}</view>
+            <input bindinput="salonInput" focus="{{salonFocus}}" placeholder="{{Str.inputSalonName[lanIndex]}}"></input>
+        </view>
+        <view class="cu-form-group">
+            <view class="title">{{Str.wechat[lanIndex]}}</view>
+            <input bindinput="wechatInput" focus="{{wechatFocus}}" placeholder="{{Str.inputWechat[lanIndex]}}"></input>
+        </view>
+    </view>
+    <view class="bg-white solid-top margin padding">
+        <button bindtap="subBtn" class="cu-btn line-blue block lg radius shadow">{{Str.submit[lanIndex]}}</button>
+    </view>
+</view>
+<view wx:else>
+    <view class="cu-list menu sm-border margin-top">
+        <view class="cu-item" wx:for="{{pageData}}">
+            <view class="content">
+                <view class="">{{item.name}}</view>
+                <view>
+                    <text class="text-sm text-gray">{{item.wechat_no}}</text>
+                </view>
+            </view>
+            <view class="action">
+                <text class="text-sm text-gray">{{item.created_at}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="padding-xl text-center">
+    <text class="text-red">{{Str.contactWithYou[lanIndex]}}</text>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

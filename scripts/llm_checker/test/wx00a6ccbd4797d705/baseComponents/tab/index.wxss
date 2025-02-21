@@ -1,0 +1,49 @@
+.tabs-fixed.data-v-06159ba0 {
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 990;
+}
+.uni-tab.data-v-06159ba0 {
+  background-color: #fff;
+  display: flex;
+  font-size: 14px;
+  height: 44px;
+  line-height: 44px;
+  position: relative;
+}
+.uni-tab .uni-tab-item.data-v-06159ba0 {
+  box-sizing: border-box;
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+.uni-tab .uni-tab-scroll-item.data-v-06159ba0 {
+  padding: 0 12px;
+}
+.uni-tab .uni-tab-active.data-v-06159ba0 {
+  color: #1e9fff;
+}
+.uni-tab .uni-tab-scroll-active.data-v-06159ba0 {
+  border-bottom: 3px solid #1e9fff;
+}
+.uni-tab .uni-tab-bar.data-v-06159ba0 {
+  border-bottom: 3px solid #1e9fff;
+  bottom: 0;
+  display: block;
+  height: 3px;
+  position: absolute;
+}
+.uni-tab .uni-tab-bar-forward.data-v-06159ba0 {
+  transition: right 2s cubic-bezier(0.35, 0, 0.25, 1),
+    left 0.3s cubic-bezier(0.35, 0, 0.25, 1) 0.9s;
+}
+.uni-tab .uni-tab-bar-backward.data-v-06159ba0 {
+  transition: right 2s cubic-bezier(0.35, 0, 0.25, 1) 0.9s,
+    left 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+}
+.uni-scroll-tab.data-v-06159ba0 {
+  overflow-x: scroll;
+}

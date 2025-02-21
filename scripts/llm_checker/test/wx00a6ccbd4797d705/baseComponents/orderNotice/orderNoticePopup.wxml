@@ -1,0 +1,21 @@
+<view class="noticeWrappPopup _div">
+  <wxpopup
+    bind:__l="__l"
+    bind:close="__e"
+    closeOnClickOverlay="{{false}}"
+    closeable="{{true}}"
+    data-event-opts="{{[ [ '^close',[ ['hidePopup'] ] ] ]}}"
+    position="center"
+    round="{{true}}"
+    show="{{show}}"
+    vueId="7f118066-1"
+    vueSlots="{{['default']}}"
+  >
+    <view class="niticeDetile">
+      <view class="title tc _div">本店公告</view>
+      <view class="niticeText _div" wx:for="{{noticeList}}" wx:key="index">
+        <view class="_div">{{item}}</view>
+      </view>
+    </view>
+  </wxpopup>
+</view>

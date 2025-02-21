@@ -1,0 +1,9 @@
+<give-collect-card-box
+  bind:__l="__l"
+  bind:getDoneCollectCard="__e"
+  class="vue-ref"
+  data-event-opts="{{[ [ '^getDoneCollectCard',[ ['getDoneCollectCard'] ] ] ]}}"
+  data-ref="giveCollectBox"
+  vueId="0427c18d-1"
+  wx:if="{{componentReady}}"
+></give-collect-card-box>

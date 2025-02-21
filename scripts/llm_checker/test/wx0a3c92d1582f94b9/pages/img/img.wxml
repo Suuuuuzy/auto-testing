@@ -1,0 +1,130 @@
+<view class="msg-new">
+  <view class="text">点击右上角添加到我的小程序，随时使用</view>
+  <view class="img">
+    <image src="/images/icon-top.png"></image>
+  </view>
+</view>
+<view class="btn-box">
+  <view bindtap="openSelect" class="btn">
+    <view class="cc">
+      <view class="image">
+        <image mode="widthFix" src="/images/icon-img-btn.jpg"></image>
+      </view>
+      <view class="m">+点击上传图片</view>
+      <view class="span">涂抹不需要内容立即消除</view>
+      <image
+        class="jiaobiao"
+        mode="widthFix"
+        src="https://apis.ddfans.com/bian/public/static/image/qsy/img-jiaobiao.png"
+      ></image>
+    </view>
+  </view>
+  <view bindtap="openSelect" class="xiaoguo-box">
+    <view class="item">
+      <image
+        mode=""
+        src="https://apis.ddfans.com/bian/public/static/image/qsy/img-a1.jpg"
+      ></image>
+      <view class="t">人像消除</view>
+    </view>
+    <view class="item">
+      <image
+        mode=""
+        src="https://apis.ddfans.com/bian/public/static/image/qsy/img-a2.jpg"
+      ></image>
+      <view class="t">水印消除</view>
+    </view>
+    <view class="item">
+      <image
+        mode=""
+        src="https://apis.ddfans.com/bian/public/static/image/qsy/img-a3.jpg"
+      ></image>
+      <view class="t">照片缺陷修复</view>
+    </view>
+  </view>
+  <view bindtap="longPicSew" class="btn-view" id="smart" wx:if="{{!isSeo}}">
+    <view class="smartsew-icon item-icon"></view>
+    <view class="btn-subview">
+      <view class="btn-title"> 长截图 </view>
+      <view class="btn-desc"> 将多张截图去重拼接成一张滚动截图 </view>
+    </view>
+  </view>
+</view>
+<block wx:if="{{!isSeo}}">
+  <view class="line"></view>
+  <view class="handle-box">
+    <view class="item">
+      <view class="left">
+        <view class="img">
+          <image src="/images/icon-fx2.png"></image>
+        </view>
+        <view class="msg"> 我们的小程序不错? 分享给好友。 </view>
+      </view>
+      <button class="btn" openType="share">分享</button>
+    </view>
+  </view>
+</block>
+<view class="line"></view>
+<view class="box-title">简单教程</view>
+<view class="teach">
+  <image
+    mode="widthFix"
+    src="https://apis.ddfans.com/bian/public/static/image/qsy/111.jpg"
+  ></image>
+  <image
+    mode="widthFix"
+    src="https://apis.ddfans.com/bian/public/static/image/qsy/222.jpg"
+  ></image>
+</view>
+<view class="ad-ok-bg" wx:if="{{bottom_btn}}"></view>
+<view class="bottom-btn" style="bottom:{{bottom_btn?0:'-100%'}};">
+  <view class="box">
+    <view bindtap="selectImg" class="item" data-type="0">
+      <image src="/images/icon-wj.png"></image>
+      <view class="h1">手机相册</view>
+      <view class="span">本地相册图片</view>
+    </view>
+    <view bindtap="selectImg" class="item" data-type="1">
+      <image src="/images/icon-wx.png"></image>
+      <view class="h1">微信文件</view>
+      <view class="span">从聊天里选择</view>
+    </view>
+  </view>
+  <view bindtap="closeSelect" class="clear">取消</view>
+</view>
+<view class="ad-ok-bg" wx:if="{{showPrivacy}}">
+  <view class="ad-ok">
+    <view
+      class="msg"
+      style="text-align: left; padding: 20rpx 25rpx; color: #333"
+    >
+      <view
+        >在你使用【{{name}}】服务之前，请仔细阅读<text
+          bindtap="openPrivacy"
+          style="color: #085bfe"
+          >《{{name}}小程序隐私保护指引》</text
+        >
+        如你同意<text bindtap="openPrivacy" style="color: #085bfe"
+          >《{{name}}小程序隐私保护指引》</text
+        >，请点击"同意"开始使用{{name}}</view
+      >
+    </view>
+    <view class="history-btn">
+      <button
+        bindtap="exitMini"
+        class="it left"
+        style="background-color: #e8e9e9; color: #b8b5b5"
+      >
+        拒绝
+      </button>
+      <button
+        bindagreeprivacyauthorization="handleAgreePrivacyAuthorization"
+        class="it right"
+        id="agree-btn"
+        openType="agreePrivacyAuthorization"
+      >
+        同意
+      </button>
+    </view>
+  </view>
+</view>

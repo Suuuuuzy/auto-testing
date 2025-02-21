@@ -1,0 +1,143 @@
+<view class="pop data-v-7b98aad8">
+  <u-popup
+    bind:__l="__l"
+    bind:input="__e"
+    borderRadius="30"
+    class="data-v-7b98aad8"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','isShow','$event',[] ] ] ] ] ]}}"
+    maskCloseAble="{{false}}"
+    mode="center"
+    value="{{isShow}}"
+    vueId="0af057c6-1"
+    vueSlots="{{['default']}}"
+  >
+    <view class="home-popup-container data-v-7b98aad8">
+      <block wx:if="{{promiseWx}}">
+        <view class="pop-title data-v-7b98aad8">
+          <text class="data-v-7b98aad8">加微信好友</text>
+          <image
+            bindtap="__e"
+            class="data-v-7b98aad8"
+            data-event-opts="{{[ [ 'tap',[ [ 'closed',['$event'] ] ] ] ]}}"
+            mode="widthFix"
+            src="http://image.fanglinxq.com/assets/icons/close.png"
+          ></image>
+        </view>
+        <view
+          class="u-text data-v-7b98aad8"
+          wx:if="{{userInfo.sex===2&&!promiseWx.isBought}}"
+          >为保证Ta不被骚扰，需要解锁才能查看</view
+        >
+        <view
+          class="u-text data-v-7b98aad8"
+          wx:if="{{userInfo.sex===1&&!promiseWx.isBought}}"
+          >{{''+(userInfo.vipLevel<3?'VIP免费解锁微信':userInfo.vipLevel===3?'骑士VIP解锁微信':userInfo.vipLevel===4?'贵族VIP解锁微信':userInfo.vipLevel===5?'伯爵VIP解锁微信':'王爵VIP解锁微信')+''}}</view
+        >
+        <view class="wx-account data-v-7b98aad8">
+          <image
+            class="data-v-7b98aad8"
+            mode="widthFix"
+            src="http://image.fanglinxq.com/assets/icons/wxs.png"
+          ></image>
+          <text class="data-v-7b98aad8" wx:if="{{promiseWx.isBought}}"
+            >{{userDetail.wechat}}</text
+          >
+          <text class="data-v-7b98aad8" wx:else>{{$root.f0}}</text>
+        </view>
+        <view class="amount data-v-7b98aad8" wx:if="{{promiseWx.isBought}}"
+          >注：微信加好友时，记得备注来自芳邻星球的邻友哟！</view
+        >
+        <view class="amount data-v-7b98aad8" wx:else
+          >{{'芳邻币余额：'+amount.availableCoin}}</view
+        >
+        <view class="pop-actions data-v-7b98aad8">
+          <block wx:if="{{userInfo.sex===2}}">
+            <view
+              bindtap="__e"
+              class="action data-v-7b98aad8"
+              data-event-opts="{{[ [ 'tap',[ [ 'handleClick',['$event'] ] ] ] ]}}"
+              wx:if="{{!promiseWx.isBought}}"
+              >{{'消费'+userDetail.wechatCoin+'金币解锁'}}</view
+            >
+            <view
+              bindtap="__e"
+              class="action made data-v-7b98aad8"
+              data-event-opts="{{[ [ 'tap',[ [ 'handleNavigater',['/pages/user/handShare/index'] ] ] ] ]}}"
+              wx:if="{{!promiseWx.isBought}}"
+              >赚金币</view
+            >
+            <view
+              bindtap="__e"
+              class="action data-v-7b98aad8"
+              data-event-opts="{{[ [ 'tap',[ [ 'handleCopy',['$event'] ] ] ] ]}}"
+              wx:if="{{promiseWx.isBought}}"
+              >复制</view
+            >
+          </block>
+          <block wx:else>
+            <view
+              bindtap="__e"
+              class="action data-v-7b98aad8"
+              data-event-opts="{{[ [ 'tap',[ [ 'handleClick',['$event'] ] ] ] ]}}"
+              wx:if="{{$root.g0}}"
+              >{{'消费'+userDetail.wechatCoin+'金币解锁'}}</view
+            >
+            <view
+              bindtap="__e"
+              class="action data-v-7b98aad8"
+              data-event-opts="{{[ [ 'tap',[ [ 'handleClick',['$event'] ] ] ] ]}}"
+              wx:if="{{!promiseWx.isBought&&userInfo.vipLevel>3&&promiseWx.surplusNumber>0}}"
+              >查看</view
+            >
+            <view
+              bindtap="__e"
+              class="action made data-v-7b98aad8"
+              data-event-opts="{{[ [ 'tap',[ [ 'toVip',['$event'] ] ] ] ]}}"
+              wx:if="{{!promiseWx.isBought&&userInfo.vipLevel<3}}"
+              >升级VIP特权免费解锁</view
+            >
+            <view
+              bindtap="__e"
+              class="action data-v-7b98aad8"
+              data-event-opts="{{[ [ 'tap',[ [ 'handleCopy',['$event'] ] ] ] ]}}"
+              wx:if="{{promiseWx.isBought}}"
+              >复制</view
+            >
+          </block>
+        </view>
+        <view
+          bindtap="__e"
+          class="amount warp-text data-v-7b98aad8"
+          data-event-opts="{{[ [ 'tap',[ [ 'toVip',['$event'] ] ] ] ]}}"
+          wx:if="{{userInfo.vipLevel===3}}"
+          >升级更高VIP免费查看<text class="data-v-7b98aad8">更多!</text>
+        </view>
+        <view
+          bindtap="__e"
+          class="amount warp-text data-v-7b98aad8"
+          data-event-opts="{{[ [ 'tap',[ [ 'toVip',['$event'] ] ] ] ]}}"
+          wx:if="{{userInfo.vipLevel===4||userInfo.vipLevel===5}}"
+          >{{'今日可解锁'+promiseWx.surplusNumber+'次，升级更高VIP免费查看'}}<text
+            class="data-v-7b98aad8"
+            >更多!</text
+          >
+        </view>
+        <view
+          class="amount warp-text data-v-7b98aad8"
+          wx:if="{{userInfo.vipLevel===7}}"
+          >今日可放心解锁，随心所欲！</view
+        >
+      </block>
+      <view class="load-warp data-v-7b98aad8" wx:else>
+        <u-loading
+          bind:__l="__l"
+          class="data-v-7b98aad8"
+          color="#6b5aff"
+          mode="circle"
+          size="46"
+          vueId="{{'0af057c6-2'+','+'0af057c6-1'}}"
+        ></u-loading>
+      </view>
+    </view>
+  </u-popup>
+</view>

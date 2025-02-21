@@ -1,0 +1,72 @@
+<view class="_div data-v-ff519ed6" id="observeView">
+  <block wx:if="{{intersectionRatio}}">
+    <layout9
+      bind:__l="__l"
+      bind:add="__e"
+      bind:getNumber="__e"
+      bind:inputClick="__e"
+      bind:remove="__e"
+      bind:shift="__e"
+      bind:showBigPicModle="__e"
+      class="data-v-ff519ed6"
+      context="{{context}}"
+      data-event-opts="{{[ [ '^add',[ ['add'] ] ],[ '^remove',[ ['remove'] ] ],[ '^getNumber',[ ['getNumber'] ] ],[ '^inputClick',[ ['inputClick'] ] ],[ '^shift',[ ['shift'] ] ],[ '^showBigPicModle',[ ['showBigPicModle'] ] ] ]}}"
+      dishConfig="{{dishConfig}}"
+      dishData="{{dishData}}"
+      layout="{{layout}}"
+      vueId="0fc2ed57-1"
+      wx:if="{{showWhitchLayout==9}}"
+    ></layout9>
+    <layout23
+      bind:__l="__l"
+      bind:add="__e"
+      bind:getNumber="__e"
+      bind:inputClick="__e"
+      bind:remove="__e"
+      bind:shift="__e"
+      bind:showBigPicModle="__e"
+      class="data-v-ff519ed6"
+      context="{{context}}"
+      data-event-opts="{{[ [ '^add',[ ['add'] ] ],[ '^remove',[ ['remove'] ] ],[ '^getNumber',[ ['getNumber'] ] ],[ '^inputClick',[ ['inputClick'] ] ],[ '^shift',[ ['shift'] ] ],[ '^showBigPicModle',[ ['showBigPicModle'] ] ] ]}}"
+      dishConfig="{{dishConfig}}"
+      dishData="{{dishData}}"
+      layout="{{layout}}"
+      vueId="0fc2ed57-2"
+      wx:if="{{showWhitchLayout==23}}"
+    ></layout23>
+    <woods
+      bind:__l="__l"
+      bind:add="__e"
+      bind:getNumber="__e"
+      bind:inputClick="__e"
+      bind:remove="__e"
+      bind:shift="__e"
+      bind:showBigPicModle="__e"
+      class="data-v-ff519ed6"
+      context="{{context}}"
+      data-event-opts="{{[ [ '^add',[ ['add'] ] ],[ '^remove',[ ['remove'] ] ],[ '^getNumber',[ ['getNumber'] ] ],[ '^inputClick',[ ['inputClick'] ] ],[ '^shift',[ ['shift'] ] ],[ '^showBigPicModle',[ ['showBigPicModle'] ] ] ]}}"
+      dishConfig="{{dishConfig}}"
+      dishData="{{dishData}}"
+      layout="{{layout}}"
+      vueId="0fc2ed57-3"
+      wx:if="{{showWhitchLayout==10}}"
+    ></woods>
+  </block>
+  <view
+    class="{{['dishItem-dc','_div','data-v-ff519ed6',hasBGColor?'hasBgColor':'']}}"
+    wx:if="{{!intersectionRatio}}"
+  >
+    <view
+      class="dishItem _div data-v-ff519ed6"
+      style="{{'box-sizing:'+'border-box'+';'}}"
+    >
+      <image
+        alt
+        class="data-v-ff519ed6"
+        mode="widthFix"
+        src="{{'https://cdnpic.wuuxiang.com/msgjDecorationImg/dish_layout_skeleton'+dishLayoutSkeletonType+'.png'}}"
+        style="width: 100%"
+      ></image>
+    </view>
+  </view>
+</view>

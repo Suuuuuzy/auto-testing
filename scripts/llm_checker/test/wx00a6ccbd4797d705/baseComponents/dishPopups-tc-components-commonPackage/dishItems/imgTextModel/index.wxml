@@ -1,0 +1,155 @@
+<view class="itemContainer _div data-v-3dda0f3e">
+  <view
+    class="_div data-v-3dda0f3e"
+    wx:for="{{group.tcGrpItem}}"
+    wx:for-index="num"
+    wx:key="num"
+  >
+    <view class="plr5 _div data-v-3dda0f3e" wx:if="{{item.randomShow}}">
+      <view
+        class="item _div data-v-3dda0f3e"
+        style="{{'width:'+itemWidth+'px'+';'}}"
+      >
+        <image
+          bindtap="__e"
+          class="data-v-3dda0f3e"
+          data-event-opts="{{[ [ 'tap',[ [ 'addDeDish',['$0','$1'],[ [ ['group.tcGrpItem','',num] ],'group' ] ] ] ] ]}}"
+          mode="aspectFill"
+          src="{{item.gifName||item.smallTaFileName}}"
+          style="{{'background-color:#eeeeee;'+'width:'+itemWidth+'px'+';'+'height:'+itemWidth/4*3+'px'+';'}}"
+        ></image>
+        <view
+          class="dish-label _div data-v-3dda0f3e"
+          style="{{'width:'+itemWidth+'px'+';'}}"
+          wx:if="{{showDishLabel}}"
+        >
+          <view
+            class="label-item _div data-v-3dda0f3e"
+            wx:for="{{item.itemLabel}}"
+            wx:for-item="lable"
+            wx:key="index"
+            >{{''+lable+''}}</view
+          >
+        </view>
+        <view
+          class="limitQuantityStyle _div data-v-3dda0f3e"
+          wx:if="{{item.limitQuantityFlg&&item.guQingFlg=='0'}}"
+        >
+          <view class="iconfont icon-huo f24 _div data-v-3dda0f3e"></view>
+          <view class="f20 _div data-v-3dda0f3e"
+            >{{'可售'+(item.limitQuantity||0)+'份'}}</view
+          >
+        </view>
+        <view class="itemDetail _div data-v-3dda0f3e">
+          <view class="itemName f24 _div data-v-3dda0f3e">
+            <view
+              class="_div data-v-3dda0f3e"
+              style="{{'color:'+(item.mrCount>0?'#211f20':'#666666')+';'}}"
+            >
+              <view
+                class="iconfont icon-bi redText move _div data-v-3dda0f3e"
+                wx:if="{{item.isSel==1}}"
+              ></view
+              >{{item.itemName+(item.unId=='-1'&&showUnitName?'('+item.unitName+')':'')+''}}</view
+            >
+          </view>
+          <view
+            class="addPriceWrap f24 _div data-v-3dda0f3e"
+            wx:if="{{item.showAddPriceLine}}"
+          >
+            <view
+              class="_div data-v-3dda0f3e"
+              wx:if="{{item.addPrice>0&&(item.isShowVipAddPrice&&item.addPrice==item.vipAddPrice||!item.isShowVipAddPrice)}}"
+            >
+              <label class="_span data-v-3dda0f3e">{{'+'+item.addPrice}}</label>
+              <label class="f18 _span data-v-3dda0f3e">元</label>
+            </view>
+            <view
+              class="_div data-v-3dda0f3e"
+              wx:if="{{item.addPrice>0&&item.isShowVipAddPrice&&item.addPrice!=item.vipAddPrice}}"
+            >
+              <label class="_span data-v-3dda0f3e">{{'+'+item.addPrice}}</label>
+              <label class="f18 _span data-v-3dda0f3e">元</label>
+              <label
+                class="iconfont icon-hui f24 redText _span data-v-3dda0f3e"
+                style="margin-left: 4px"
+              ></label>
+              <label class="redText _span data-v-3dda0f3e"
+                >{{'+'+(showPriceType==2?item.vipAddPrice:item.originalVipAddPrice)+''}}<label
+                  class="f18 _span data-v-3dda0f3e"
+                  >元</label
+                >
+              </label>
+            </view>
+            <view
+              class="_div data-v-3dda0f3e"
+              wx:if="{{!item.addPrice&&item.isShowVipAddPrice&&item.addPrice!=item.vipAddPrice}}"
+            >
+              <label
+                class="iconfont icon-hui f24 redText _span data-v-3dda0f3e"
+              ></label>
+              <label class="redText _span data-v-3dda0f3e"
+                >{{'+'+(showPriceType==2?item.vipAddPrice:item.originalVipAddPrice)+''}}<label
+                  class="f18 _span data-v-3dda0f3e"
+                  >元</label
+                >
+              </label>
+            </view>
+          </view>
+          <view
+            class="f22 flex cookWrap _div data-v-3dda0f3e"
+            wx:if="{{item.showMakesLine&&dishCookMap[group.grpId]&&item.guQingFlg=='0'}}"
+          >
+            <view
+              bindtap="__e"
+              class="cookBorder tc fc9 f22 _div data-v-3dda0f3e"
+              data-event-opts="{{[ [ 'tap',[ [ 'addCookFun',['$0','$1'],[ [ ['group.tcGrpItem','',num] ],'group' ] ] ] ] ]}}"
+              style="{{'border-color:'+themeColor+';'+'color:'+themeColor+';'}}"
+              wx:if="{{dishCookMap[group.grpId]['itemList'][item.mapKey].showAddCookBtn}}"
+              >选做法</view
+            >
+            <block wx:else>
+              <view
+                bindtap="__e"
+                class="pr flex fc9 _div data-v-3dda0f3e"
+                data-event-opts="{{[ [ 'tap',[ [ 'showDelDishPop',['$0','$1'],[ [ ['group.tcGrpItem','',num] ],'group' ] ] ] ] ]}}"
+                wx:if="{{dishCookMap[group.grpId]['itemList'][item.mapKey].allCookText}}"
+              >
+                <text class="ellipsis1 data-v-3dda0f3e"
+                  >{{dishCookMap[group.grpId]['itemList'][item.mapKey].allCookText}}</text
+                >
+                <text
+                  class="ml5r f24 iconfont icon-xiangyouyuanjiantou flexShrink0 data-v-3dda0f3e"
+                ></text>
+              </view>
+            </block>
+          </view>
+          <view
+            class="addItemWrap flexBetweenCenter _div data-v-3dda0f3e"
+            style="{{'height:'+(item.guQingFlg=='1'?'32px':'')+';'}}"
+          >
+            <view
+              bindtap="__e"
+              class="{{['btnWrap','iconfont','_div','data-v-3dda0f3e',item.mrCount>0?'icon-yixuanzhong':'icon-weixuanzhong']}}"
+              data-event-opts="{{[ [ 'tap',[ [ 'addDeDish',['$0','$1'],[ [ ['group.tcGrpItem','',num] ],'group' ] ] ] ] ]}}"
+              style="{{'color:'+themeColor+';'+'font-size:'+(dishBtnShape==1?(init.dishBtnSize.size||24)+'px':'20px')+';'}}"
+              wx:if="{{item.guQingFlg=='0'}}"
+            ></view>
+            <view class="_div data-v-3dda0f3e" wx:else>
+              <label
+                class="iconfont icon-maiguangliao f52 _span data-v-3dda0f3e"
+                style="{{'color:'+themeColor+';'}}"
+                wx:if="{{item.limitQuantityFlg=='1'&&item.limitQuantity==0}}"
+              ></label>
+              <label
+                class="gqText _span data-v-3dda0f3e"
+                style="{{'color:'+themeColor+';'}}"
+                wx:else
+              ></label>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

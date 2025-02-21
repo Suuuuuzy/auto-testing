@@ -1,0 +1,26 @@
+<mescroll-body
+  bind:__l="__l"
+  bind:down="__e"
+  bind:emptyclick="__e"
+  bind:init="__e"
+  bind:scroll="__e"
+  bind:topclick="__e"
+  bind:up="__e"
+  bottom="{{bottom}}"
+  bottombar="{{bottombar}}"
+  class="vue-ref"
+  data-event-opts="{{[ [ '^init',[ ['WrapMescrollInit'] ] ],[ '^down',[ ['wrapDown'] ] ],[ '^up',[ ['wrapUp'] ] ],[ '^emptyclick',[ ['wrapEmptyClick'] ] ],[ '^topclick',[ ['wrapTopClick'] ] ],[ '^scroll',[ ['wrapScroll'] ] ] ]}}"
+  data-ref="mescrollRef"
+  down="{{down}}"
+  height="{{height}}"
+  safearea="{{safearea}}"
+  sticky="{{sticky}}"
+  top="{{top}}"
+  topbar="{{topbar}}"
+  up="{{up}}"
+  vueId="691ea869-1"
+  vueSlots="{{['default']}}"
+  wx:if="{{componentReady}}"
+>
+  <slot></slot>
+</mescroll-body>

@@ -1,0 +1,137 @@
+<view class="container">
+  <view id="declareNote-top">
+    <image
+      class="declareNote-top_bg"
+      src="../asserts/images/declareNote_topBg.png"
+    ></image>
+    <view class="top-cont">
+      <text class="top-title">{{businessInfo.businessName}}</text>
+      <text class="dots-green">预</text>
+      <text class="dots-yellow">申</text>
+    </view>
+  </view>
+  <view id="declareNote-body">
+    <view class="declareNote-body-bg">
+      <view class="common-tabTitle">
+        <view
+          bindtap="tabTitleTap"
+          class="{{tabCurrent==index?'navbar-this':''}}"
+          data-idx="{{index}}"
+          wx:for="{{tabTitle}}"
+          wx:key="*this"
+          >{{item}}</view
+        >
+        <view class="sidebar" style="left:{{titleBarLeft}}px"></view>
+      </view>
+      <view class="serviceGuide" hidden="{{tabCurrent!=0}}" scrollY="{{true}}">
+        <view class="serviceGuideList">
+          <view class="serviceGuideList-left">事项类型</view>
+          <view class="serviceGuideList-right"
+            >{{businessInfo.item.powerType}}</view
+          >
+        </view>
+        <view class="serviceGuideList">
+          <view class="serviceGuideList-left">受理机构</view>
+          <view class="serviceGuideList-right"
+            >{{businessInfo.acceptDept}}</view
+          >
+        </view>
+        <view class="serviceGuideList">
+          <view class="serviceGuideList-left">办件类型</view>
+          <view class="serviceGuideList-right"
+            >{{businessInfo.businessType}}</view
+          >
+        </view>
+        <view class="serviceGuideList">
+          <view class="serviceGuideList-left">咨询方式</view>
+          <view class="serviceGuideList-right"
+            >{{businessInfo.consultWay}}</view
+          >
+        </view>
+        <view class="serviceGuideList">
+          <view class="serviceGuideList-left">联系地址</view>
+          <view class="serviceGuideList-right"
+            >{{businessInfo.handlePlace}}</view
+          >
+        </view>
+        <view class="serviceGuideList">
+          <view class="serviceGuideList-left">办件条件</view>
+          <view class="serviceGuideList-right">{{businessInfo.condition}}</view>
+        </view>
+      </view>
+      <view class="serviceMaterials" hidden="{{tabCurrent!=1}}">
+        <view class="noData" hidden="{{businessInfo.annex.length!=0}}"
+          >暂无材料</view
+        >
+        <view
+          class="serviceMaterialsList"
+          wx:for="{{businessInfo.annex}}"
+          wx:key="id"
+        >
+          <view class="serviceMaterialsNotes">
+            <view class="notes-title">
+              <text class="materialName">{{item.fileName}}</text>
+              <text
+                class="necessaryMaterial"
+                hidden="{{item.important!='true'}}"
+                >必要材料</text
+              >
+            </view>
+            <view class="notes-tip">
+              <text>所需份数：{{item.pageNum}}份</text>
+              <text>来源渠道：{{item.fileSource}}</text>
+            </view>
+          </view>
+          <view
+            bindtap="bindMaterialPreviewTap"
+            class="serviceMaterialsPreview"
+            data-imgs="{{item.sampleAnnexs}}"
+          >
+            <image src="../asserts/images/declareNote_search.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="commonProblem" hidden="{{tabCurrent!=2}}">
+        <view class="noData" wx:if="{{commonProblemList.length==0}}"
+          >暂无信息</view
+        >
+        <view
+          class="commonProblemList"
+          wx:for="{{commonProblemList}}"
+          wx:key="*this"
+        >
+          <view class="commonProblemList-question">
+            <text class="dots-green">问</text>
+            <text>{{item.question}}</text>
+          </view>
+          <view class="commonProblemList-answer">
+            <text class="dots-yellow">答</text>
+            <text>{{item.answer}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="serviceGuide-detail" hidden="{{tabCurrent!=0}}">
+      <view
+        bindtap="serviceDetailListTap"
+        class="serviceGuide-detailList"
+        data-idx="{{item.serviceDetailListId}}"
+        hoverClass="commonHoverClass"
+        wx:for="{{serviceDetailList}}"
+        wx:key="serviceDetailListId"
+      >
+        <image mode="aspectFit" src="{{item.detailListIcon}}"></image>
+        <text wx:if="{{item.serviceDetailListId==1}}"
+          >{{businessInfo.charge}}</text
+        >
+        <text wx:else>{{item.detailListText}}</text>
+      </view>
+    </view>
+    <view id="delareNote-footer">
+      <view class="footer-btns">
+        <text bindtap="bindReservationTap" class="btn-reservation">预约</text>
+        <text bindtap="bindDeclareTap" class="btn-declare">申报</text>
+      </view>
+    </view>
+  </view>
+</view>

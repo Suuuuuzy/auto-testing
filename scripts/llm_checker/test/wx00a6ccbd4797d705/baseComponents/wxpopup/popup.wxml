@@ -1,0 +1,32 @@
+<view class="_div">
+  <overlay
+    bind:__l="__l"
+    bind:click="__e"
+    customStyle="{{overlayStyle}}"
+    data-event-opts="{{[ [ '^click',[ ['onClickOverlay'] ] ] ]}}"
+    duration="{{duration}}"
+    show="{{show}}"
+    vueId="71a71910-1"
+    vueSlots="{{['default']}}"
+    zIndex="{{index}}"
+    wx:if="{{overlay}}"
+  >
+    <label class="_span"></label>
+  </overlay>
+  <view
+    bindtransitionend="__e"
+    class="{{['_div',computedClass]}}"
+    data-event-opts="{{[ [ 'transitionend',[ [ 'onTransitionEnd',['$event'] ] ] ] ]}}"
+    style="{{computedStyle}}"
+    wx:if="{{inited}}"
+  >
+    <slot></slot>
+    <view
+      bindtap="__e"
+      class="{{['_div','iconfont icon-guanbi  wx-popup__close-icon wx-popup__close-icon--'+closeIconPosition]}}"
+      data-event-opts="{{[ [ 'tap',[ [ 'onClickCloseIcon',['$event'] ] ] ] ]}}"
+      wx:if="{{closeable&&show}}"
+    ></view>
+    <slot name="close"></slot>
+  </view>
+</view>

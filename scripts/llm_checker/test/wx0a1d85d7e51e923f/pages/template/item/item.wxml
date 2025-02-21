@@ -1,0 +1,320 @@
+<template name="good_carts">
+  <view class="cu-modal bottom-modal show">
+    <view class="cu-dialog">
+      <view class="cu-bar bg-white">
+        <view bindtap="_hideModal" class="action text-red">
+          <button class="cu-btn sm line-red">{{Str.cancel[lanIndex]}}</button>
+        </view>
+        <view bindtap="_confirmModal" class="action text-cyan">
+          <button class="cu-btn sm line-cyan">{{Str.buyNow[lanIndex]}}</button>
+        </view>
+      </view>
+      <view wx:for="{{carts}}">
+        <view class="cu-bar bg-white solid-bottom margin-top">
+          <view class="action">
+            <text class="icon-title text-cyan"></text>
+            {{isUy?item.shop.shop_uy_name:item.shop.shop_ch_name}}
+          </view>
+        </view>
+        <view wx:for="{{item.items}}" wx:for-index="_index" wx:for-item="_item">
+          <view class="cu-list menu-avatar">
+            <view class="cu-item">
+              <view
+                class="cu-avatar lg"
+                style="background-image:url({{baseImageUrl+_item.good.images[0].url}});"
+              ></view>
+              <view class="content">
+                <view class="text-grey"
+                  >{{isUy?_item.good.uy_name:_item.good.ch_name}}</view
+                >
+                <view class="text-gray text-sm flex">
+                  <text class="text-cut">
+                    <text class="text-price text-red"
+                      >{{_item.good.price}}</text
+                    >
+                  </text>
+                </view>
+              </view>
+              <view class="action">
+                <view class="text-grey text-xs"></view>
+                <view class="cu-tag round bg-grey sm">X{{_item.count}}</view>
+                <view>
+                  <button
+                    bindtap="_deleteGood"
+                    class="cu-btn bg-red sm"
+                    data-_index="{{_index}}"
+                    data-index="{{index}}"
+                  >
+                    <text class="icon-close"></text> {{Str._delete[lanIndex]}}
+                  </button>
+                </view>
+              </view>
+            </view>
+            <view class="bg-white text-left padding-left">
+              <view class="cu-tag line-cyan sm" wx:if="{{_item.sizeIndex!=-1}}"
+                >{{_item.size[_item.sizeIndex].content}}</view
+              >
+              <view class="cu-tag line-cyan sm" wx:if="{{_item.colorIndex!=-1}}"
+                >{{_item.color[_item.colorIndex].content}}</view
+              >
+              <view class="cu-tag line-cyan sm" wx:if="{{_item.otherIndex!=-1}}"
+                >{{_item.other[_item.otherIndex].content}}</view
+              >
+            </view>
+          </view>
+          <view class="cu-bar bg-white solid-bottom solid-top">
+            <view class="action"> {{Str.frightPrice[lanIndex]}} </view>
+            <view class="action">
+              <text class="text-price text-red"
+                >{{_item.good.fright_price}}</text
+              >
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+<template name="good_cart">
+  <view class="cu-modal bottom-modal show">
+    <view class="cu-dialog">
+      <view class="cu-bar bg-white">
+        <view bindtap="hideModal" class="action">
+          <button class="cu-btn sm line-red">{{Str.cancel[lanIndex]}}</button>
+        </view>
+        <view bindtap="confirmModal" class="action text-cyan">
+          <button class="cu-btn sm line-cyan">{{Str.confirm[lanIndex]}}</button>
+        </view>
+      </view>
+      <view class="padding text-left">
+        <view class="flex align-center">
+          <view class="flex-sub">
+            <view
+              class="cu-avatar radius xl"
+              style="background-image:url({{baseImageUrl+result.good.images[0].url}});"
+            ></view>
+          </view>
+          <view class="flex-treble padding-sm">
+            <view class="weui-grif__label"
+              >{{isUy?result.good.uy_name:result.good.ch_name}}</view
+            >
+            <view class="padding-sm text-red text-left">
+              ￥{{result.good.price}}
+            </view>
+          </view>
+          <view class="flex-twice">
+            <text bindtap="moveCount" class="text-xxl padding-lr">
+              <text
+                class="icon-move lg {{result.count>1?'text-red':'text-gray'}}"
+              ></text>
+            </text>
+            <text class="padding-xs">{{result.count}}</text>
+            <text bindtap="addCount" class="text-xxl padding-lr">
+              <text class="icon-roundadd text-cyan"></text>
+            </text>
+          </view>
+        </view>
+        <view class="text-df padding-sm" wx:if="{{result.size.length>0}}">
+          {{Str.size[lanIndex]}}
+        </view>
+        <view class="grid col-4 padding-sm" wx:if="{{result.size.length>0}}">
+          <view wx:for="{{result.size}}">
+            <button
+              bindtap="sizeSelect"
+              class="cu-btn sm line-{{result.sizeIndex==index?'cyan':'gray'}}"
+              data-index="{{index}}"
+            >
+              {{item.content}}
+            </button>
+          </view>
+        </view>
+        <view class="text-df padding-sm" wx:if="{{result.color.length>0}}">
+          {{Str.color[lanIndex]}}
+        </view>
+        <view class="grid col-4 padding-sm" wx:if="{{result.color.length>0}}">
+          <view wx:for="{{result.color}}">
+            <button
+              bindtap="colorSelect"
+              class="cu-btn sm line-{{result.colorIndex==index?'cyan':'gray'}}"
+              data-index="{{index}}"
+            >
+              {{item.content}}
+            </button>
+          </view>
+        </view>
+        <view class="text-df padding-sm" wx:if="{{result.other.length>0}}">
+          {{Str.otherSpecification[lanIndex]}}
+        </view>
+        <view class="grid col-4 padding-sm" wx:if="{{result.other.length>0}}">
+          <view wx:for="{{result.other}}">
+            <button
+              bindtap="otherSelect"
+              class="cu-btn sm line-{{result.otherIndex==index?'cyan':'gray'}}"
+              data-index="{{index}}"
+            >
+              {{item.content}}
+            </button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+<template name="home_goods">
+  <block wx:if="{{item.goods.length>0}}" wx:for="{{cat}}">
+    <view class="cu-bar bg-white solid-bottom margin-top">
+      <view class="action">
+        <text
+          class="icon-titles {{type=='red'?'text-red':type=='black'?'text-black':type=='cyan'?'text-cyan':''}}"
+          style="color:{{type=='white'?item.color.color_code:''}}"
+        ></text
+        >{{isUy?item.uy_name:item.ch_name}}
+      </view>
+      <view class="action">
+        <text class="text-cyan">{{more}}</text>
+      </view>
+    </view>
+    <view class="">
+      <view class="grid col-3 text-center">
+        <view
+          bindtap="goodClick"
+          class="padding-xs"
+          wx:for="{{item.goods}}"
+          wx:for-item="_item"
+        >
+          <navigator
+            url="./goods-page/good-page/good-page?id={{_item.id}}&type={{type}}"
+          >
+            <view class="bg-white" style="border-radius: 15rpx 15rpx 0rpx 0rpx">
+              <view class="padding-xs">
+                <view
+                  class="bg-img flex align-end"
+                  style="background-image: url({{baseImageUrl+_item.images[0].url+'?x-oss-process=image/resize,w_250'}});height: 220rpx;width:100%"
+                ></view>
+              </view>
+              <view class="padding-lr-xs text-left">
+                <text
+                  class="text-black weui-grid__label {{isUy?'rtl':''}}"
+                  style="font-size:{{isUy?'24':'24'}}rpx; text-align:{{isUy?'right':'left'}}"
+                  >{{isUy?_item.uy_name:_item.ch_name}}</text
+                >
+              </view>
+              <view
+                class="text-red {{isUy?'text-right':'text-left'}} padding-lr-xs"
+                >￥ {{_item.price}}</view
+              >
+            </view>
+          </navigator>
+          <view
+            class="flex bg-white align-center justify-between padding-xs"
+            wx:if="{{result.showBuy}}"
+          >
+            <view class="">
+              <button
+                bindtap="buyNow"
+                class="cu-btn sm line-red"
+                data-good="{{_item}}"
+              >
+                {{Str.buyNow[lanIndex]}}
+              </button>
+            </view>
+            <view class="">
+              <i
+                bindtap="addCart"
+                class="iconfont icon-add bg-cyan radius padding-xs text-center"
+                data-item="{{_item}}"
+                style="font-size: 28rpx"
+              ></i>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</template>
+<template name="shop_top_item">
+  <view
+    class="bg-white text-center"
+    style="background-image:url({{result?result.shop.theme?_baseImageUrl+result.shop.theme.img_url:'':''}});background-size:100% 100%;height:340rpx"
+  >
+    <view class="flex">
+      <view class="flex-sub text-left">
+        <button
+          bindgetuserinfo="getUserInfo"
+          class="cu-btn {{type=='white'?'bg-cyan':type=='red'?'bg-red':type=='black'?'bg-black':type=='cyan'?'bg-cyan':'bg-cyan'}} round  margin-xl"
+          openType="getUserInfo"
+          style="opacity: 0.7"
+        >
+          <text class="icon-people"></text> {{Str.contact[lanIndex]}}
+        </button>
+      </view>
+      <view class="flex-sub text-right">
+        <button
+          class="cu-btn {{type=='white'?'bg-cyan':type=='red'?'bg-red':type=='black'?'bg-black':type=='cyan'?'bg-cyan':'bg-cyan'}} round  margin-xl"
+          openType="share"
+          style="opacity: 0.7"
+        >
+          <text class="icon-share"></text> {{Str.share[lanIndex]}}
+        </button>
+      </view>
+    </view>
+    <view style="padding-top: 50rpx">
+      <view
+        class="flex  box {{type=='white'?'bg-white':type=='red'?'bg-red':type=='black'?'bg-black':type=='cyan'?'bg-cyan':''}} padding-lr padding-tb-lg margin-lr-lg  radius shadow-warp"
+        style="border-radius: 20rpx; opacity: 0.9"
+      >
+        <view class="flex-treble text-sm text-left"
+          >{{result?isUy?result.shop.shop_uy_name:result.shop.shop_ch_name:''}}</view
+        >
+        <view class="flex-sub" wx:if="{{result.collection==0}}">
+          <button
+            bindtap="setAttention"
+            class="cu-btn {{type=='white'?'bg-cyan':'bg-white'}} round sm"
+          >
+            {{Str.attention[lanIndex]}}
+          </button>
+        </view>
+        <view class="flex-sub" wx:else>
+          <button class="cu-btn bg-gray round sm">
+            {{Str.attentioned[lanIndex]}}
+          </button>
+        </view>
+      </view>
+    </view>
+    <view style="margin-top: -40rpx">
+      <view
+        class="cu-avatar round lg"
+        style="background-image:url({{result?result.shop.user.avatar_url:''}});"
+      ></view>
+    </view>
+  </view>
+</template>
+<template name="menu_item">
+  <view class="bg-white margin-top-lg">
+    <view
+      class="grid col-{{isUy?'3':result.shop.cat.length<4?'3':'4'}} text-center"
+    >
+      <view
+        bindtap="menuClick"
+        class="padding-sm"
+        data-item="{{item}}"
+        wx:for="{{result.shop.cat}}"
+      >
+        <view style="">
+          <i
+            class="iconfont icon-{{item.icon}} {{type=='red'?'text-red':type=='black'?'text-black':type=='cyan'?'text-cyan':''}}"
+            style="font-size:80rpx;color:{{type=='white'?item.color.color_code:''}}"
+          ></i>
+        </view>
+        <view style="margin-top: -25rpx">
+          <text
+            class=" weui-grid__label  {{isUy?'rtl':''}}"
+            style="color:gray;font-size:{{isUy?'24':'28'}}rpx"
+            >{{isUy?item.uy_name:item.ch_name}}</text
+          >
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+<template name="h_item"></template>

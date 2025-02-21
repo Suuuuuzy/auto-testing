@@ -1,0 +1,34 @@
+<u-popup
+  bind:__l="__l"
+  bind:close="__e"
+  bind:input="__e"
+  borderRadius="30"
+  class="data-v-eeb80302"
+  closeable="{{true}}"
+  data-event-opts="{{[ [ '^close',[ ['close'] ] ],[ '^input',[ [ '__set_model',[ '','isShow','$event',[] ] ] ] ] ]}}"
+  maskCloseAble="{{false}}"
+  mode="center"
+  value="{{isShow}}"
+  vueId="2d8b0f68-1"
+  vueSlots="{{['default']}}"
+>
+  <view class="home-popup-container data-v-eeb80302">
+    <image
+      class="pop-bg data-v-eeb80302"
+      mode="widthFix"
+      src="http://image.fanglinxq.com/assets/perfect-pop.png"
+    ></image>
+    <view class="u-text data-v-eeb80302">
+      <text class="data-v-eeb80302">完善你的资料</text>
+      <text class="data-v-eeb80302">让更多新朋友认识你吧！</text>
+    </view>
+    <view class="pop-actions data-v-eeb80302">
+      <view
+        bindtap="__e"
+        class="action data-v-eeb80302"
+        data-event-opts="{{[ [ 'tap',[ [ 'handleClick',['$event'] ] ] ] ]}}"
+        >完善资料</view
+      >
+    </view>
+  </view>
+</u-popup>

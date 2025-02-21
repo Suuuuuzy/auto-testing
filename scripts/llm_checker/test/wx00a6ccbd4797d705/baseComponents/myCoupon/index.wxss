@@ -1,0 +1,181 @@
+.fixed-box.data-v-470f5a40 {
+  bottom: 0;
+  height: 80vh;
+  margin: auto;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 200rpx;
+  z-index: 100;
+}
+.fixed-button.data-v-470f5a40 {
+  align-items: center;
+  display: flex;
+  height: auto;
+  justify-content: center;
+  left: unset;
+  overflow: hidden;
+  pointer-events: auto;
+  right: 0;
+  top: 90rpx;
+  width: max-content;
+  z-index: 9;
+}
+.tips.data-v-470f5a40 {
+  max-width: 70%;
+}
+.myCouponPopupBox.data-v-470f5a40 {
+  font-size: 14px;
+}
+.myCouponPopupBox .messageTxt.data-v-470f5a40 {
+  margin-top: 160rpx;
+}
+.myCouponPopupBox .myCouponPopup.data-v-470f5a40 {
+  border-radius: 8px;
+  min-height: 420rpx;
+  padding: 40px 15px 15px;
+}
+.myCouponPopupBox .overflowAuto.data-v-470f5a40 {
+  overflow: auto;
+}
+.myCouponPopupBox .close_right.data-v-470f5a40 {
+  right: 7%;
+}
+.myCouponPopupBox .close_left.data-v-470f5a40,
+.myCouponPopupBox .close_right.data-v-470f5a40 {
+  border: none;
+  height: 46px;
+  overflow: hidden;
+  padding-top: 2px;
+  position: absolute;
+  top: 7px;
+  transform: translateX(50%);
+}
+.myCouponPopupBox .close_left.data-v-470f5a40 {
+  left: -3%;
+}
+.myCouponPopupBox .close_icon.data-v-470f5a40 {
+  border-radius: 50%;
+  color: #eee;
+  color: #666;
+  font-size: 26px;
+  height: 30px;
+  line-height: 30px;
+  width: 30px;
+}
+.myCouponPopupBox .myCouponTitleR.data-v-470f5a40 {
+  left: 20px;
+  position: absolute;
+  top: 15px;
+}
+.myCouponPopupBox .myCouponTitleL.data-v-470f5a40 {
+  left: 40px;
+  position: absolute;
+  top: 15px;
+}
+.myCouponPopupBox .timeRange.data-v-470f5a40 {
+  color: #666;
+  font-size: 10px;
+  padding: 2px 0;
+}
+.myCouponPopupBox .ticketItem.data-v-470f5a40 {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  border-radius: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 0 10px;
+  position: relative;
+}
+.myCouponPopupBox .ticketItem .totalNum.data-v-470f5a40 {
+  background: #5863ca;
+  color: #fff;
+  display: inline-block;
+  font-size: 11px;
+  height: 20px;
+  line-height: 20px;
+  position: absolute;
+  right: -25px;
+  text-align: center;
+  top: 10px;
+  transform: rotate(52deg);
+  width: 80px;
+}
+.myCouponPopupBox .deductImage.data-v-470f5a40 {
+  height: 24px;
+  left: 0;
+  margin-top: 8px;
+  position: absolute;
+  width: 40px;
+  z-index: 1;
+}
+.myCouponPopupBox .priceArea.data-v-470f5a40 {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+  width: 25%;
+}
+.myCouponPopupBox .priceNum.data-v-470f5a40 {
+  font-size: 30px;
+}
+.myCouponPopupBox .qianfuhao.data-v-470f5a40 {
+  font-size: 16px;
+  margin-top: 15px;
+  padding-right: 5px;
+  position: relative;
+  right: -2px;
+  top: -3px;
+}
+.myCouponPopupBox .zengpinIcon.data-v-470f5a40 {
+  height: 70px;
+  width: 70px;
+}
+.myCouponPopupBox .conentRight.data-v-470f5a40 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+.myCouponPopupBox .conentRight .tip.data-v-470f5a40 {
+  border-radius: 5px;
+  color: #fff;
+  display: inline-block;
+  font-size: 10px;
+  padding: 3px 5px;
+}
+.myCouponPopupBox .conentRight .ticketName.data-v-470f5a40 {
+  font-size: 14px;
+  padding-left: 5px;
+}
+.myCouponPopupBox .ticket-item.data-v-470f5a40 {
+  box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.1);
+}
+.myCoupon.data-v-470f5a40 {
+  align-items: center;
+  background: hsla(0, 0%, 100%, 0.8);
+  border: 1px solid #dcdcdc;
+  border-bottom-left-radius: 60rpx;
+  border-top-left-radius: 60rpx;
+  color: #333;
+  display: flex;
+  font-size: 24rpx;
+  font-weight: 700;
+  padding: 14rpx 18rpx;
+}
+.myCoupon .youhuiIcon.data-v-470f5a40 {
+  align-items: center;
+  background: #ff4e4e;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  height: 52rpx;
+  justify-content: center;
+  margin-right: 10rpx;
+  text-align: center;
+  width: 52rpx;
+}
+.myCoupon .icon-lingyouhuiquan.data-v-470f5a40 {
+  margin-top: 1rpx;
+}

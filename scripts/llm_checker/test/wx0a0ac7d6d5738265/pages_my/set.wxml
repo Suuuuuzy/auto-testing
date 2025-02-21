@@ -1,0 +1,23 @@
+<view class="my_set">
+  <zym-navigation
+    bind:__l="__l"
+    uI="429c587c-0"
+    uP="{{a}}"
+    wx:if="{{a}}"
+  ></zym-navigation>
+  <view class="setitem">
+    <view class="item fsb">
+      <view class=""> 允许开启油卡延续扣费 </view>
+      <switch
+        bindchange="{{b}}"
+        checked="{{c}}"
+        color="#63DAE0"
+        style="transform: scale(0.7)"
+      ></switch>
+    </view>
+    <view bindtap="{{d}}" class="item fsb">
+      <text>账户资料设置</text>
+      <image src="https://yiningjiayou.com/yn/ynxcx/rightArrow.png"></image>
+    </view>
+  </view>
+</view>

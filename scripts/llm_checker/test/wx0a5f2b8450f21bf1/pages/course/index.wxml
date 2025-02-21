@@ -1,0 +1,144 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">使用教程</view>
+</cu-custom>
+<view class="pic-padding" wx:if="{{videoAdAfter}}">
+  <ad-custom unitId="{{videoAdAfter}}"></ad-custom>
+</view>
+<view class="ad">
+  <ad adTheme="white" adType="video" unitId="{{ad['ad_k']}}"></ad>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-titles text-red"></text> 第一步
+  </view>
+</view>
+<view class="cu-card dynamic no-card">
+  <view class="cu-item shadow">
+    <view class="text-content margin-top-sm">
+      打开短视频平台，找到您要去水印的短视频，点击【转发】图标，如下图
+    </view>
+    <view class="grid flex-sub padding-lr col-1">
+      <image
+        mode="widthFix"
+        src="/static/img/11.jpg"
+        style="width: 100%"
+      ></image>
+    </view>
+  </view>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-titles text-orange"></text> 第二步
+  </view>
+</view>
+<view class="cu-card dynamic no-card">
+  <view class="cu-item shadow">
+    <view class="text-content margin-top-sm">
+      点击【复制链接】按钮，如下图
+    </view>
+    <view class="grid flex-sub padding-lr col-1">
+      <image
+        mode="widthFix"
+        src="/static/img/22.jpg"
+        style="width: 100%"
+      ></image>
+    </view>
+  </view>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-titles text-blue"></text> 第三步
+  </view>
+</view>
+<view class="cu-card dynamic no-card">
+  <view class="cu-item shadow">
+    <view class="text-content margin-top-sm">
+      打开小程序，点击【粘帖】按钮把内容粘帖到文本框，然后点击【开始解析】，如下图
+    </view>
+    <view class="grid flex-sub padding-lr col-1">
+      <image
+        mode="widthFix"
+        src="/static/img/33.jpg"
+        style="width: 100%"
+      ></image>
+    </view>
+  </view>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-titles text-green"></text> 第四步
+  </view>
+</view>
+<view class="cu-card dynamic no-card margin-bottom">
+  <view class="cu-item shadow">
+    <view class="text-content margin-top-sm">
+      点击【保存视频】，到这一步后无水印的视频就保存到您的手机相册啦，如下图
+    </view>
+    <view class="grid flex-sub padding-lr col-1">
+      <image
+        mode="widthFix"
+        src="/static/img/44.jpg"
+        style="width: 100%"
+      ></image>
+    </view>
+    <view class="text-gray text-sm text-right padding"></view>
+  </view>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-titles text-green"></text>
+    由于手机系统及微信的安全机制，视频大小不能超过50M，所以超过这个大小的视频，需要解析成功后，复制无水印链接到浏览器下载
+  </view>
+</view>
+<view class="cu-card dynamic no-card margin-bottom">
+  <view class="cu-item shadow">
+    <view class="text-content margin-top-sm">
+      <span style="color: #ff0000"
+        >1.如果您是安卓手机，直接复制无水印链接，然后任意一个手机的浏览器打开即可</span
+      >
+    </view>
+    <view class="text-content margin-top-sm"
+      >2.如果您是苹果手机，需要下载软件
+      <span style="color: #ff0000">documents by readdle</span
+      >才能在浏览器中进行下载视频</view
+    >
+    <view class="text-content margin-top-sm">
+      <span style="color: #ff0000"
+        >下面是苹果手机通过浏览器下载视频的教程，安卓手机不需要看：</span
+      >
+    </view>
+    <view class="grid flex-sub padding-lr col-1">
+      <image
+        mode="widthFix"
+        src="/static/img/55.jpg"
+        style="width: 100%"
+      ></image>
+    </view>
+    <view class="text-gray text-sm text-right padding"></view>
+    <view class="grid flex-sub padding-lr col-1">
+      <image
+        mode="widthFix"
+        src="/static/img/66.jpg"
+        style="width: 100%"
+      ></image>
+    </view>
+    <view class="text-gray text-sm text-right padding"></view>
+    <view class="grid flex-sub padding-lr col-1">
+      <image
+        mode="widthFix"
+        src="/static/img/77.jpg"
+        style="width: 100%"
+      ></image>
+    </view>
+    <view class="text-gray text-sm text-right padding"></view>
+    <view class="grid flex-sub padding-lr col-1">
+      <image
+        mode="widthFix"
+        src="/static/img/88.jpg"
+        style="width: 100%"
+      ></image>
+    </view>
+    <view class="text-gray text-sm text-right padding"></view>
+  </view>
+</view>

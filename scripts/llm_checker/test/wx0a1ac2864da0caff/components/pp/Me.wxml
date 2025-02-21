@@ -1,0 +1,200 @@
+<view
+  class="{{['content','content-panel-me','_div','data-v-503e072a',value?'active':'']}}"
+  wx:if="{{placeholder>=0}}"
+>
+  <scroll-view
+    class="content data-v-503e072a"
+    enableBackToTop="{{true}}"
+    scrollY="{{true}}"
+  >
+    <view class="me-top-status _div data-v-503e072a">
+      <view
+        class="_div data-v-503e072a"
+        style="{{'height:'+placeholder+'px'+';'}}"
+      ></view>
+      <view class="me-top-status-inner _div data-v-503e072a">
+        <view class="me-top-gap _div data-v-503e072a"></view>
+        <view class="me-top-nickname _div data-v-503e072a">
+          <open-data class="data-v-503e072a" type="userNickName"></open-data>
+        </view>
+        <view class="me-top-detail _div data-v-503e072a"
+          >欢迎，百达翡丽贵宾</view
+        >
+        <view class="dec-logo _div data-v-503e072a">
+          <image
+            class="pic _img data-v-503e072a"
+            src="/static/img/dec-logo.svg"
+          ></image>
+        </view>
+        <view class="me-top-divider _div data-v-503e072a"></view>
+        <view
+          class="me-top-avatar _div data-v-503e072a"
+          style="{{'margin-top:'+placeholder+'px'+';'}}"
+        >
+          <open-data class="data-v-503e072a" type="userAvatarUrl"></open-data>
+        </view>
+      </view>
+    </view>
+    <view class="me-out _div data-v-503e072a">
+      <view class="me-wish-count-out _div data-v-503e072a">
+        <view class="me-wish-count-title _div data-v-503e072a">我的预约</view>
+        <view
+          bindtap="__e"
+          class="me-wish-count-btn _div data-v-503e072a"
+          data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+          wx:if="{{$root.g0}}"
+          >查看所有</view
+        >
+      </view>
+      <view class="me-list _div data-v-503e072a">
+        <view
+          class="me-item me-item-empty _div data-v-503e072a"
+          wx:if="{{$root.g1}}"
+        >
+          <view class="icon-time-empty _div data-v-503e072a">
+            <image
+              class="pic _img data-v-503e072a"
+              src="/static/img/icon-time-empty.svg"
+            ></image>
+          </view>
+          <view class="_div data-v-503e072a">暂无任何预约</view>
+        </view>
+        <swiper class="panel data-v-503e072a" nextMargin="150rpx" wx:else>
+          <swiper-item
+            class="me-item-inner data-v-503e072a"
+            wx:for="{{bookList}}"
+            wx:key="index"
+          >
+            <view
+              bindtap="__e"
+              class="me-item _div data-v-503e072a"
+              data-event-opts="{{[ [ 'tap',[ [ 'chooseMe',['$0'],[ [ ['bookList','',index] ] ] ] ] ] ]}}"
+            >
+              <view class="me-item-title _div data-v-503e072a"
+                >{{item.time_label}}</view
+              >
+              <view class="me-line _div data-v-503e072a">
+                <view class="icon-place-border _div data-v-503e072a">
+                  <image
+                    class="pic _img data-v-503e072a"
+                    src="/static/img/icon-place-border.svg"
+                  ></image>
+                </view>
+                <view class="_div data-v-503e072a"
+                  >{{item.detail.name||'百达翡丽北京源邸'}}</view
+                >
+              </view>
+              <view class="me-line _div data-v-503e072a">
+                <view class="icon-place-border _div data-v-503e072a">
+                  <image
+                    class="pic _img data-v-503e072a"
+                    src="/static/img/icon-phone-border.svg"
+                  ></image>
+                </view>
+                <view class="_div data-v-503e072a"
+                  >{{item.detail.phone||'+86 10 65255868'}}</view
+                >
+              </view>
+              <view class="me-view-more _div data-v-503e072a">查看详情</view>
+            </view>
+          </swiper-item>
+        </swiper>
+      </view>
+      <view class="me-wish-count-out _div data-v-503e072a">
+        <view class="me-wish-count-title _div data-v-503e072a"
+          >愿望清单<label class="_span data-v-503e072a">{{$root.g2}}</label>
+        </view>
+        <view
+          bindtap="__e"
+          class="me-wish-count-btn _div data-v-503e072a"
+          data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}"
+          wx:if="{{$root.g3}}"
+          >查看所有</view
+        >
+      </view>
+      <view class="me-wish-swiper-out _div data-v-503e072a">
+        <swiper
+          class="panel data-v-503e072a"
+          nextMargin="290rpx"
+          previousMargin="0rpx"
+        >
+          <swiper-item
+            class="me-wish-item data-v-503e072a"
+            wx:if="{{$root.g4}}"
+          >
+            <view
+              bindtap="__e"
+              class="me-wish-item-inner _div data-v-503e072a"
+              data-event-opts="{{[ [ 'tap',[ [ 'toAdd',['$event'] ] ] ] ]}}"
+            >
+              <view class="me-wish-empty _div data-v-503e072a">
+                <image
+                  class="pic _img data-v-503e072a"
+                  src="/static/img/watch-empty.png"
+                ></image>
+              </view>
+              <view class="me-wish-empty-btn _div data-v-503e072a"
+                >添加愿望清单</view
+              >
+            </view>
+          </swiper-item>
+          <swiper-item
+            class="me-wish-item data-v-503e072a"
+            wx:for="{{wishListMore}}"
+            wx:key="index"
+          >
+            <view
+              bindtap="__e"
+              class="me-wish-item-inner _div data-v-503e072a"
+              data-event-opts="{{[ [ 'tap',[ [ 'e2',['$event'] ] ] ] ]}}"
+              data-event-params="{{item:item}}"
+            >
+              <view class="me-wish-item-pic _div data-v-503e072a">
+                <image
+                  class="pic _img data-v-503e072a"
+                  mode="aspectFit"
+                  src="{{item.articleImages}}"
+                ></image>
+              </view>
+              <view class="me-wish-item-title _div data-v-503e072a"
+                >{{item.articleRef}}</view
+              >
+              <view class="me-wish-item-sub _div data-v-503e072a"
+                >{{item.caseMaterial}}</view
+              >
+              <view class="me-wish-item-detail _div data-v-503e072a"
+                >{{item.collection}}</view
+              >
+              <view class="me-wish-like _div data-v-503e072a">
+                <image
+                  class="pic _img data-v-503e072a"
+                  src="/static/img/icon-like-fill.svg"
+                ></image>
+              </view>
+              <view class="me-wish-item-more _div data-v-503e072a">
+                <view class="arrow-more _div data-v-503e072a">
+                  <image
+                    class="pic _img data-v-503e072a"
+                    src="/static/img/arrow-more.svg"
+                  ></image>
+                </view>
+              </view>
+            </view>
+          </swiper-item>
+        </swiper>
+      </view>
+    </view>
+    <view
+      class="_div data-v-503e072a"
+      style="{{'height:'+placeholder+'px'+';'}}"
+    ></view>
+  </scroll-view>
+  <pp-nav
+    bind:__l="__l"
+    class="data-v-503e072a"
+    fixed="{{true}}"
+    logo="{{true}}"
+    placeholder="{{placeholder}}"
+    vueId="d281f7ec-1"
+  ></pp-nav>
+</view>

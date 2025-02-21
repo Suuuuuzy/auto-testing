@@ -1,0 +1,181 @@
+<view class="container">
+    <view id="declareProcess-top">
+        <image class="topBg" src="../asserts/images/declareProcess_topBg.png"></image>
+        <view class="top-cont">
+            <text class="top-title">{{title}}</text>
+            <text class="dots-green">预</text>
+            <text class="dots-yellow">申</text>
+        </view>
+    </view>
+    <form action="" bindsubmit="bindInfoSubmit">
+        <view id="declareProcess-body">
+            <view class="body-progress">
+                <image class="progressLine" src="{{finishFlag?'../asserts/images/declareProcess_progress3.png':'../asserts/images/declareProcess_progress2.png'}}"></image>
+                <view class="body-progress-text">
+                    <block wx:if="{{finishFlag}}">
+                        <text class="{{index===3?'':'progressLine-this'}}" wx:for="{{progressText}}" wx:key="*this">{{item}}</text>
+                    </block>
+                    <block wx:else>
+                        <text class="{{index===2?'':'progressLine-this'}}" wx:for="{{progressText}}" wx:key="*this">{{item}}</text>
+                    </block>
+                </view>
+            </view>
+            <view class="declareProcess-fillinInfo">
+                <view class="declareProcess-commonTitle">资料填写</view>
+                <view class="fillinInfo-cont">
+                    <view class="fillinInfo-item requiredField">
+                        <label for="">申报主体类型</label>
+                        <picker bindchange="bindTypeChange" disabled="{{isDisabled}}" name="applicantType" range="{{applicantType}}" rangeKey="showValue" value="{{applicantTypeIndex}}">
+                            <view class="picker {{applicantTypeIndex!==''?'':'placeholderClass'}}">
+                                <text wx:if="{{applicantTypeIndex!==''}}">{{applicantType[applicantTypeIndex].showValue}}</text>
+                                <text wx:else>请输入申报主体类型</text>
+                            </view>
+                        </picker>
+                    </view>
+                    <view class="fillinInfo-item requiredField">
+                        <label for="">项目名称</label>
+                        <input bindinput="bindEngineeNameInput" disabled="{{isDisabled}}" name="engineeName" placeholder="请输入项目名称" placeholderClass="placeholderClass" type="text" value="{{postData.engineeName}}"></input>
+                    </view>
+                    <view class="fillinInfo-item requiredField">
+                        <label for="">项目所在区域</label>
+                        <picker bindchange="bindProjectAreaChange" disabled="{{isDisabled}}" name="projectArea" range="{{projectArea}}" rangeKey="showValue" value="{{projectAreaIndex}}">
+                            <view class="picker {{projectAreaIndex!==''?'':'placeholderClass'}}">
+                                <text wx:if="{{projectAreaIndex!==''}}">{{projectArea[projectAreaIndex].showValue}}</text>
+                                <text wx:else>请选择项目所在区域</text>
+                            </view>
+                        </picker>
+                    </view>
+                    <view class="fillinInfo-item requiredField" data-ind="{{applicantTypeIndex}}" style="display: {{applicantTypeIndex==1||applicantTypeIndex==2?'flex':'none'}};">
+                        <label for="">社会统一信用代码</label>
+                        <input bindinput="bindShxydmInput" disabled="{{isDisabled}}" name="shxydm" placeholder="请输入社会统一信用代码" placeholderClass="placeholderClass" type="text" value="{{postData.shxydm}}"></input>
+                    </view>
+                    <view class="fillinInfo-item requiredField" style="display: {{!applicantTypeIndex||applicantTypeIndex=='0'?'none':'flex'}};">
+                        <label for="">申请单位名称</label>
+                        <input bindinput="bindApplicantNameEnpInput" disabled="{{isDisabled}}" name="applicantNameEnp" placeholder="请输入申请单位名称" placeholderClass="placeholderClass" type="text" value="{{postData.applicantNameEnp}}"></input>
+                    </view>
+                    <view class="fillinInfo-item requiredField" style="display: {{!applicantTypeIndex||applicantTypeIndex=='0'?'none':'flex'}};">
+                        <label for="">法定代表人姓名</label>
+                        <input bindinput="bindOperManNameInput" disabled="{{isDisabled}}" name="operManName" placeholder="请输入法定代表人姓名" placeholderClass="placeholderClass" type="text" value="{{postData.operManName}}"></input>
+                    </view>
+                    <view class="fillinInfo-item requiredField" style="display: {{!applicantTypeIndex||applicantTypeIndex=='0'?'none':'flex'}};">
+                        <label for="">法人身份证号码</label>
+                        <input bindinput="bindOperManCodeInput" disabled="{{isDisabled}}" name="operManCode" placeholder="请输入法人身份证号码" placeholderClass="placeholderClass" type="idcard" value="{{postData.operManCode}}"></input>
+                    </view>
+                    <view class="fillinInfo-item requiredField" style="display: {{!applicantTypeIndex||applicantTypeIndex=='0'?'none':'flex'}};">
+                        <label for="">法人联系电话</label>
+                        <input bindinput="bindApplicantMobileEnpInput" disabled="{{isDisabled}}" name="applicantMobileEnp" placeholder="请输入法人联系电话" placeholderClass="placeholderClass" type="number" value="{{postData.applicantMobileEnp}}"></input>
+                    </view>
+                    <view class="fillinInfo-item requiredField" style="display: {{applicantTypeIndex==='0'?'flex':'none'}};">
+                        <label for="">申报人证件类型</label>
+                        <picker bindchange="bindIdTypeChange" disabled="{{isDisabled}}" name="applicantPaperType" range="{{applicantPaperType}}" rangeKey="showValue" value="{{applicantPaperTypeIndex}}">
+                            <view class="picker {{applicantPaperTypeIndex!==''?'':'placeholderClass'}}">
+                                <text wx:if="{{applicantPaperTypeIndex!==''}}">{{applicantPaperType[applicantPaperTypeIndex].showValue}}</text>
+                                <text wx:else>请选择申报人证件类型</text>
+                            </view>
+                        </picker>
+                    </view>
+                    <view class="fillinInfo-item requiredField" style="display: {{applicantTypeIndex=='0'?'flex':'none'}};">
+                        <label for="">申报人证件号码</label>
+                        <input bindinput="bindApplicantPaperCodeInput" disabled="{{isDisabled}}" name="applicantPaperCode" placeholder="请输入申报人证件号码" placeholderClass="placeholderClass" type="text" value="{{postData.applicantPaperCode}}"></input>
+                    </view>
+                    <view class="fillinInfo-item requiredField" style="display: {{applicantTypeIndex=='0'?'flex':'none'}};">
+                        <label for="">申报人姓名</label>
+                        <input bindinput="bindApplicantNameInput" disabled="{{isDisabled}}" name="applicantName" placeholder="请输入申报人姓名" placeholderClass="placeholderClass" type="text" value="{{postData.applicantName}}"></input>
+                    </view>
+                    <view class="fillinInfo-item requiredField" style="display: {{applicantTypeIndex=='0'?'flex':'none'}};">
+                        <label for="">申报人手机号</label>
+                        <input bindinput="bindApplicantMobileInput" disabled="{{isDisabled}}" name="applicantMobile" placeholder="请输入申报人手机号" placeholderClass="placeholderClass" type="number" value="{{postData.applicantMobile}}"></input>
+                    </view>
+                    <view class="fillinInfo-item">
+                        <label for="">申请人联系电话</label>
+                        <input bindinput="bindApplicantPhoneInput" disabled="{{isDisabled}}" name="applicantPhone" placeholder="请输入联系电话" placeholderClass="placeholderClass" type="text" value="{{postData.applicantPhone}}"></input>
+                    </view>
+                    <view class="fillinInfo-item">
+                        <label for="">申请人联系地址</label>
+                        <input bindinput="bindApplicantAddressInput" disabled="{{isDisabled}}" name="applicantAddress" placeholder="请输入联系地址" placeholderClass="placeholderClass" type="text" value="{{postData.applicantAddress}}"></input>
+                    </view>
+                    <view class="fillinInfo-item">
+                        <label for="">申请人邮政编码</label>
+                        <input bindinput="bindApplicantZipCodeInput" disabled="{{isDisabled}}" name="applicantZipCode" placeholder="请输入邮政编码" placeholderClass="placeholderClass" type="number" value="{{postData.applicantZipCode}}"></input>
+                    </view>
+                    <view class="fillinInfo-item">
+                        <label for="">申请人邮箱地址</label>
+                        <input bindinput="bindApplicantEmailInput" disabled="{{isDisabled}}" name="applicantEmail" placeholder="请输入邮箱地址" placeholderClass="placeholderClass" type="text" value="{{postData.applicantEmail}}"></input>
+                    </view>
+                    <view class="fillinInfo-item requiredField">
+                        <label for="">经办人证件类型</label>
+                        <picker bindchange="bindlinkManPaperTypeChange" disabled="{{true}}" name="linkManPaperType" range="{{linkManPaperType}}" rangeKey="showValue" value="{{linkManPaperTypeIndex}}">
+                            <view class="picker {{linkManPaperTypeIndex!==''?'':'placeholderClass'}}">
+                                <text wx:if="{{linkManPaperTypeIndex!==''}}">{{linkManPaperType[linkManPaperTypeIndex].showValue}}</text>
+                                <text wx:else>请选择经办人证件类型</text>
+                            </view>
+                        </picker>
+                    </view>
+                    <view class="fillinInfo-item requiredField">
+                        <label for="">经办人证件号码</label>
+                        <input disabled="{{true}}" name="linkManPaperCode" type="text" value="{{postData.linkManPaperCode}}"></input>
+                    </view>
+                    <view class="fillinInfo-item requiredField">
+                        <label for="">经办人姓名</label>
+                        <input disabled="{{true}}" name="linkManName" type="text" value="{{postData.linkManName}}"></input>
+                    </view>
+                    <view class="fillinInfo-item requiredField">
+                        <label for="">经办人手机号</label>
+                        <input disabled="{{true}}" name="linkManMobile" type="number" value="{{postData.linkManMobile}}"></input>
+                    </view>
+                    <view class="fillinInfo-item">
+                        <label for="">经办人邮政编码</label>
+                        <input bindinput="bindLinkManZipCodeInput" disabled="{{isDisabled}}" name="linkManZipCode" placeholder="请输入经办人邮政编码" placeholderClass="placeholderClass" type="number" value="{{postData.linkManZipCode}}"></input>
+                    </view>
+                    <view class="fillinInfo-item">
+                        <label for="">经办人联系地址</label>
+                        <input bindinput="bindLinkManAddressInput" disabled="{{isDisabled}}" name="linkManAddress" placeholder="请输入经办人联系地址" placeholderClass="placeholderClass" type="text" value="{{postData.linkManAddress}}"></input>
+                    </view>
+                </view>
+            </view>
+            <view class="declareProcess-materials">
+                <view class="declareProcess-commonTitle">申报材料</view>
+                <view class="materials-list">
+                    <view hidden="{{materialsList.length!=0}}">暂不需要申报材料</view>
+                    <view class="materials-item" wx:for="{{materialsList}}" wx:key="instanceAnnexId">
+                        <view class="materials-item-name">
+                            <text class="item-name">{{index+1}}.{{item.declareInstanceAnnexName}}</text>
+                            <text class="necessaryMaterial" hidden="{{item.important=='false'}}">必要材料</text>
+                        </view>
+                        <view class="materials-file">
+                            <view bindtap="bindFileEditTap" class="materials-file_cont" data-idx="{{item.instanceAnnexId}}" hoverClass="commonHoverClass" wx:if="{{materialsStateList[index].flag}}">
+                                <image src="../asserts/images/processDetail_file.png"></image>
+                                <text>已上传</text>
+                            </view>
+                            <view bindtap="bindFileUploadTap" class="materials-file_cont materials-fileUpload" data-idx="{{item.instanceAnnexId}}" hoverClass="commonHoverClass" wx:else>
+                                <image src="../asserts/images/processDetail_fileUpload.png"></image>
+                                <text>点击上传</text>
+                            </view>
+                        </view>
+                        <view class="materails-tips" hidden="{{!(!materialsStateList[index].flag&&item.important=='true')}}">
+                            <text>注：必要的材料请提交相应的电子文件</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="declareProcess-sendEMS">
+                <view class="declareProcess-commonTitle">EMS邮寄审批结果寄送</view>
+                <view class="sendEMS-radioGroup">
+                    <label>通过EMS邮寄获取批复结果</label>
+                    <radio-group bindchange="bindEMSRadiochange">
+                        <radio value="true">是</radio>
+                        <radio checked="{{true}}" value="false">否</radio>
+                    </radio-group>
+                </view>
+                <view class="declareProcess-address" wx:if="{{postData.isEMSSend}}">
+                    <button bindtap="bindAddressTap" class="addressBtn">点击此处选择地址</button>
+                    <input disabled="{{true}}" style="display: block;" type="text" value="{{addressDetail}}"></input>
+                </view>
+            </view>
+        </view>
+        <view id="declareProcess-footer" style="display: {{isDisabled?'none':'flex'}};">
+            <button bindtap="bindDraftTap" class="footer-saveDraft" hoverClass="commonHoverClass">保存为草稿</button>
+            <button class="footer-submit" formType="submit" hoverClass="commonHoverClass">提交</button>
+        </view>
+    </form>
+</view>

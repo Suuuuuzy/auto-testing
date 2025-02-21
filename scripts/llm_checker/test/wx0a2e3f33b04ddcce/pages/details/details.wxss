@@ -1,0 +1,90 @@
+page {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  flex: 1;
+}
+.details {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.time-picker {
+  height: 90rpx;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+.van-dropdown-menu__item {
+  background: #f6f6f6;
+  justify-content: left !important;
+}
+.panel {
+  align-items: center;
+  border-bottom: 1rpx solid #eaeaea;
+  height: 139rpx;
+  justify-content: space-between;
+  margin: 0 30rpx;
+}
+.panel,
+.panel-info {
+  display: -webkit-flex;
+  display: flex;
+}
+.panel-info {
+  flex-direction: column;
+}
+.panel-device {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 16rpx;
+}
+.device-name {
+  font-size: 32rpx;
+  padding-right: 16rpx;
+}
+.panel-status {
+  color: #999;
+  font-size: 24rpx;
+}
+.moneyRed {
+  color: #e6564e;
+}
+.moneyBlack,
+.moneyRed {
+  font-size: 32rpx;
+  font-weight: 700;
+  padding-bottom: 16rpx;
+}
+.moneyBlack {
+  color: #000;
+}
+.van-tag {
+  font-size: 20rpx !important;
+  padding: 4rpx 32rpx !important;
+}
+.van-button {
+  border-radius: 4rpx !important;
+  height: 38rpx !important;
+  padding: 0 !important;
+  width: 110rpx !important;
+}
+.van-button__text,
+.van-icon {
+  font-size: 24rpx !important;
+}
+.subInfo {
+  color: gray;
+  font-size: 30rpx;
+  padding: 40rpx 0;
+  text-align: center;
+}
+.panel-money-part {
+  text-align: end;
+}

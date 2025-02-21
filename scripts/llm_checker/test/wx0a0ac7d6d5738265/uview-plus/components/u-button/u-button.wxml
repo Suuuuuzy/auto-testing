@@ -1,0 +1,50 @@
+<button
+  appParameter="{{m}}"
+  binderror="{{y}}"
+  bindgetphonenumber="{{w}}"
+  bindgetuserinfo="{{x}}"
+  bindlaunchapp="{{A}}"
+  bindopensetting="{{z}}"
+  bindtap="{{E}}"
+  class="{{['u-button','u-reset-button','data-v-5b42f52d',F]}}"
+  data-name="{{r}}"
+  formType="{{k}}"
+  hoverClass="{{B}}"
+  hoverStartTime="{{i}}"
+  hoverStayTime="{{j}}"
+  hoverStopPropagation="{{n}}"
+  lang="{{q}}"
+  openType="{{l}}"
+  sendMessageImg="{{t}}"
+  sendMessagePath="{{p}}"
+  sendMessageTitle="{{o}}"
+  sessionFrom="{{s}}"
+  showMessageCard="{{v}}"
+  style="{{C+';'+D}}"
+>
+  <block wx:if="{{a}}">
+    <u-loading-icon
+      bind:__l="__l"
+      class="data-v-5b42f52d"
+      uI="5b42f52d-0"
+      uP="{{b}}"
+      wx:if="{{b}}"
+    ></u-loading-icon>
+    <text class="u-button__loading-text data-v-5b42f52d" style="{{d}}"
+      >{{c}}</text
+    >
+  </block>
+  <block wx:else>
+    <u-icon
+      bind:__l="__l"
+      class="data-v-5b42f52d"
+      uI="5b42f52d-1"
+      uP="{{f}}"
+      wx:if="{{e}}"
+    ></u-icon>
+    <slot wx:if="{{$slots.d}}"></slot>
+    <text class="u-button__text data-v-5b42f52d" style="{{h}}" wx:else
+      >{{g}}</text
+    >
+  </block>
+</button>

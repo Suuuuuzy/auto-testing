@@ -1,0 +1,215 @@
+<view class="warp data-v-4e14259e">
+  <zym-navigation
+    bind:__l="__l"
+    class="data-v-4e14259e"
+    uI="4e14259e-0"
+    uP="{{a}}"
+    wx:if="{{a}}"
+  ></zym-navigation>
+  <view class="Paycontent data-v-4e14259e">
+    <view class="Map-MIn data-v-4e14259e">
+      <text class="data-v-4e14259e">您在：{{b}}</text>
+      <image class="Mapicon data-v-4e14259e" mode="" src="{{c}}"></image>
+    </view>
+    <form class="payForm data-v-4e14259e">
+      <view class="guns fsb data-v-4e14259e">
+        <view class="fc data-v-4e14259e">
+          <image class="gimg data-v-4e14259e" src="{{d}}"></image>
+          <text class="txt data-v-4e14259e"> 枪号</text>
+        </view>
+        <text
+          bindtap="{{g}}"
+          class="inputNumber data-v-4e14259e"
+          style="{{'color:'+f}}"
+          >{{e}}</text
+        >
+      </view>
+      <view class="oilGunOrderIdber fsb data-v-4e14259e">
+        <view class="fc data-v-4e14259e">
+          <image class="gimg data-v-4e14259e" src="{{h}}"></image>
+          <text class="txt data-v-4e14259e">金额</text>
+        </view>
+        <view class="data-v-4e14259e" hidden="{{!j}}">
+          <text class="f30 hs data-v-4e14259e">实付：</text>
+          <text class="totalColor data-v-4e14259e">￥{{i}}</text>
+        </view>
+      </view>
+      <view
+        bindtap="{{l}}"
+        class="btn data-v-4e14259e"
+        hidden="{{!k}}"
+        style="
+          background: rgba(240, 254, 255, 1);
+          border: none;
+          color: rgba(6, 185, 192, 1);
+        "
+      >
+        <text class="data-v-4e14259e">点击获取金额</text>
+      </view>
+    </form>
+    <view class="item data-v-4e14259e"></view>
+  </view>
+  <u-popup
+    bind:__l="__l"
+    bindclose="{{t}}"
+    class="data-v-4e14259e"
+    uI="4e14259e-1"
+    uP="{{v}}"
+    uS="{{['d']}}"
+    wx:if="{{v}}"
+  >
+    <view class="popbox data-v-4e14259e">
+      <view class="selectOli fsb fc data-v-4e14259e">
+        <view class="selectleft data-v-4e14259e">
+          <view bindtap="{{o}}" class="freshs data-v-4e14259e">
+            <image
+              class="{{[m&&'rotate-image','refreshimg','data-v-4e14259e']}}"
+              src="{{n}}"
+            ></image>
+            <text class="f36 data-v-4e14259e"> 刷新</text>
+          </view>
+          <text class="f36 data-v-4e14259e" style="text-align: center">
+            选择油枪号</text
+          >
+        </view>
+        <image
+          bindtap="{{q}}"
+          class="gunimg data-v-4e14259e"
+          src="{{p}}"
+        ></image>
+      </view>
+      <u-line
+        bind:__l="__l"
+        class="data-v-4e14259e"
+        uI="4e14259e-2,4e14259e-1"
+        uP="{{r}}"
+        wx:if="{{r}}"
+      ></u-line>
+      <scroll-view
+        class="data-v-4e14259e"
+        scrollY="true"
+        style="height: 55vh; padding-bottom: 24px"
+      >
+        <view class="gun-list data-v-4e14259e">
+          <view
+            bindtap="{{it.g}}"
+            class="gun-item fdc data-v-4e14259e"
+            style="{{'background-color:'+it.e}}"
+            wx:for="{{s}}"
+            wx:for-item="it"
+            wx:key="f"
+          >
+            <text class="guntxt data-v-4e14259e" style="{{'color:'+it.b}}"
+              >{{it.a}}</text
+            >
+            <text
+              class="txt-gun fc data-v-4e14259e"
+              style="{{'color:'+it.d+';'+'width:72rpx;height:40rpx'}}"
+              >{{it.c}}</text
+            >
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </u-popup>
+  <u-popup
+    bind:__l="__l"
+    bindclose="{{G}}"
+    class="data-v-4e14259e"
+    uI="4e14259e-3"
+    uP="{{H}}"
+    uS="{{['d']}}"
+    wx:if="{{H}}"
+  >
+    <view class="popbox data-v-4e14259e">
+      <view class="selectOli fsb fc data-v-4e14259e">
+        <view class="selectleft data-v-4e14259e">
+          <view bindtap="{{x}}" class="fc data-v-4e14259e">
+            <image class="refi data-v-4e14259e" src="{{w}}"></image>
+            <text class="f36 data-v-4e14259e"> 返回</text>
+          </view>
+          <text class="f36 data-v-4e14259e" style="text-align: center">
+            选择油枪号订单</text
+          >
+        </view>
+        <image
+          bindtap="{{z}}"
+          class="gunimg data-v-4e14259e"
+          src="{{y}}"
+        ></image>
+      </view>
+      <u-line
+        bind:__l="__l"
+        class="data-v-4e14259e"
+        uI="4e14259e-4,4e14259e-3"
+        uP="{{A}}"
+        wx:if="{{A}}"
+      ></u-line>
+      <scroll-view
+        class="order-list data-v-4e14259e"
+        scrollY="true"
+        style="height: 55vh; padding-bottom: 24px"
+        wx:if="{{B}}"
+      >
+        <view
+          bindtap="{{item.j}}"
+          class="order-item fdc fsb mb15 data-v-4e14259e"
+          wx:for="{{C}}"
+          wx:key="i"
+        >
+          <view class="fsb itemtop data-v-4e14259e">
+            <view class="data-v-4e14259e">
+              <radio
+                checked="{{item.a}}"
+                class="custom-radio data-v-4e14259e"
+                color="rgba(85, 255, 255, 1.0)"
+              ></radio>
+              <text class="txt1 data-v-4e14259e">{{item.b}}</text> 号油枪
+            </view>
+            <view class="data-v-4e14259e">
+              <text class="oilType pr10 data-v-4e14259e">{{item.c}}</text>
+              <text
+                class="oilTypecolor data-v-4e14259e"
+                style="{{'color:'+item.e}}"
+                >{{item.d}}</text
+              >
+            </view>
+          </view>
+          <view class="bbtom fsb data-v-4e14259e">
+            <text class="carid data-v-4e14259e">{{item.f}}</text>
+            <view class="fdc data-v-4e14259e">
+              <text class="txt data-v-4e14259e">￥{{item.g}}</text>
+              <text class="data-v-4e14259e">{{item.h}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="data-v-4e14259e" style="height: 60rpx"></view>
+      </scroll-view>
+      <view
+        class="f32 data-v-4e14259e"
+        style="
+          height: 61vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        "
+        wx:else
+      >
+        <text class="data-v-4e14259e" style="text-align: center"
+          >当前油枪没有可支付订单</text
+        >
+      </view>
+      <view bindtap="{{F}}" class="fc refsh data-v-4e14259e">
+        <image
+          class="{{['data-v-4e14259e',D&&'rotate-image']}}"
+          mode=""
+          src="{{E}}"
+          style="width: 50rpx; height: 50rpx"
+        ></image>
+        <text class="data-v-4e14259e" style="font-size: 18px; margin-left: 10px"
+          >刷新</text
+        >
+      </view>
+    </view>
+  </u-popup>
+</view>

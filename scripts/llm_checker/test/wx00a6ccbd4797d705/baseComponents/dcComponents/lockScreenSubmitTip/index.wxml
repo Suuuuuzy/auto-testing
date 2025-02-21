@@ -1,0 +1,16 @@
+<weixin-popup
+  bind:__l="__l"
+  customStyle="border-radius: 5px;"
+  position="center"
+  show="{{show}}"
+  vueId="10870fa7-1"
+  vueSlots="{{['default']}}"
+  zIndex="{{9999}}"
+>
+  <view class="contentWrap">
+    <image alt class="logo _img" src="{{tipInfo.avatarUrl}}"></image>
+    <view class="tipTxt _div"
+      >{{'*'+tipInfo.nickName+'* 正在提交下单...'}}</view
+    >
+  </view>
+</weixin-popup>

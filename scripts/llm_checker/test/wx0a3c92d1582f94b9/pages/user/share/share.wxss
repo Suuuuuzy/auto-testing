@@ -1,0 +1,55 @@
+@import "/pages/user/user.wxss";
+.task-box {
+  max-resolution: top 20rpx;
+  padding: 30rpx;
+}
+.share-box .left {
+  font-size: 22rpx;
+}
+.msg-share {
+  background-color: #ffb400;
+  border-radius: 10rpx;
+  color: #fff;
+  font-size: 19rpx;
+  line-height: 34rpx;
+  margin: 20rpx auto 0;
+  text-align: center;
+  width: 690rpx;
+}
+.share-box .left view {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+}
+.share-box .left image {
+  margin-left: 6rpx;
+  width: 30rpx;
+}
+.user-list-bg {
+  background-color: #fff;
+  margin-top: 20rpx;
+  padding: 30rpx;
+}
+.user-list-box .title {
+  font-size: 28rpx;
+}
+.user-list-box .list {
+  display: table;
+  font-size: 22rpx;
+  height: 80rpx;
+  margin-top: 20rpx;
+}
+.user-list-box .list .item {
+  display: table-row;
+}
+.user-list-box .list .item view {
+  display: table-cell;
+  padding: 10rpx;
+}
+.share-box .left .text {
+  color: #e84149;
+  display: inline;
+}
+.share-box .left .jb {
+  margin-left: 6rpx;
+}

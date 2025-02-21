@@ -1,0 +1,66 @@
+<view>
+  <empty
+    bind:__l="__l"
+    vueId="4b2e2838-1"
+    wx:if="{{data_list.length==0}}"
+  ></empty>
+  <scroll-view scrollY="true" style="width: 100%; height: 100%">
+    <view wx:for="{{data_list}}" wx:key="index">
+      <view
+        catchtap="__e"
+        class="item_car_notice_style"
+        data-event-opts="{{[ [ 'tap',[ [ 'click_car_notice',['$0'],[ [ ['data_list','',index] ] ] ] ] ] ]}}"
+        wx:if="{{page_data.dataType==1}}"
+      >
+        <view>
+          <view class="gl_color_title gl_size_m">{{''+item.plateNo+''}}</view>
+          <view class="gl_color_desc gl_size_m">{{''+item.alarmName+''}}</view>
+        </view>
+        <view>
+          <view class="gl_color_desc gl_size_s">{{''+item.rcvTime+''}}</view>
+          <view
+            catchtap="__e"
+            class="gl_color_title gl_size_m"
+            data-event-opts="{{[ [ 'tap',[ [ 'click_set',['$0'],[ [ ['data_list','',index] ] ] ] ] ] ]}}"
+            hoverStopPropagation="true"
+            style="
+              padding: 10rpx;
+              color: #1197ff;
+              margin-left: 80rpx;
+              z-index: 10;
+            "
+            >设置</view
+          >
+        </view>
+      </view>
+      <view
+        bindtap="__e"
+        class="item_system_notice_style"
+        data-event-opts="{{[ [ 'tap',[ [ 'click_system_notice',['$0'],['e'] ] ] ] ]}}"
+        wx:if="{{page_data.dataType==2}}"
+      >
+        <view
+          style="
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+          "
+        >
+          <view class="gl_color_title gl_size_m">{{''+item.plateNo+''}}</view>
+          <view class="gl_color_desc gl_size_s"
+            >{{''+item.releaseTime+''}}</view
+          >
+        </view>
+        <view class="gl_color_desc gl_size_m">{{''+item.content+''}}</view>
+      </view>
+      <view
+        bindtap="__e"
+        class="item_system_notice_style"
+        data-event-opts="{{[ [ 'tap',[ [ 'click_yh_notice',['$0'],['e'] ] ] ] ]}}"
+        wx:if="{{page_data.dataType==3}}"
+      >
+        <image mode="aspectFit" src="{{item.coverImage}}"></image>
+      </view>
+    </view>
+  </scroll-view>
+</view>

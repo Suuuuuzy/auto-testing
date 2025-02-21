@@ -1,0 +1,33 @@
+<view class="memberbox">
+  <zym-navigation bind:__l="__l" uI="62fd34c9-0" uS="{{['title']}}">
+    <view slot="title" style="color: white"> 我的会员 </view>
+  </zym-navigation>
+  <u-skeleton
+    bind:__l="__l"
+    uI="62fd34c9-1"
+    uP="{{g}}"
+    uS="{{['d']}}"
+    wx:if="{{g}}"
+  >
+    <view class="memberbox-card" style="{{'background:'+f}}">
+      <view class="memberbox-card-cardtop">
+        <view class="tleft">
+          <view class="txt">
+            <image class="cradWin mr20" mode="" src="{{a}}"></image>
+            <text class="txt-name" style="{{'color:'+c}}">{{b}}</text>
+          </view>
+        </view>
+        <view class="rimg">
+          <image class="vipimg" mode="" src="{{d}}"></image>
+        </view>
+      </view>
+      <view class="coupon-infobox">
+        <view class="coupon-infobox-item" wx:for="{{e}}" wx:key="d">
+          <text class="type" style="{{'background:'+item.b}}">{{item.a}}</text>
+          <text class="cop">每升优惠</text>
+          <text class="yhje">{{item.c}}</text>
+        </view>
+      </view>
+    </view>
+  </u-skeleton>
+</view>

@@ -1,0 +1,37 @@
+<view>
+  <cu-custom
+    bgColor="bg-gradual-blue"
+    bind:__l="__l"
+    isBack="{{true}}"
+    vueId="2e637200-1"
+    vueSlots="{{['content']}}"
+  >
+    <view slot="content">配音记录</view>
+  </cu-custom>
+  <view class="container">
+    <view class="pic-padding">
+      <ad
+        adTheme="white"
+        adType="video"
+        unitId="{{picToTextAd}}"
+        wx:if="{{showAd}}"
+      ></ad>
+    </view>
+    <view class="data-item" data-item="{{item}}" wx:for="{{dataList}}">
+      <view
+        style="
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 45px;
+        "
+      >
+        <view class="item-title">
+          <text>{{item.title}}</text>
+        </view>
+        <view class="item-time">{{item.url}}</view>
+      </view>
+      <view bindtap="setclip" data-url="{{item.url}}">复制链接</view>
+    </view>
+  </view>
+</view>

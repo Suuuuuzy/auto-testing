@@ -1,0 +1,28 @@
+<view class="{{['_div','data-v-06159ba0',fixed?'tabs-fixed':'']}}">
+  <view
+    class="{{['uni-tab','_div','data-v-06159ba0',scroll===true?'uni-scroll-tab':'']}}"
+    style="{{'padding:'+padding+';'}}"
+  >
+    <view
+      bindtap="__e"
+      class="{{['uni-tab-item','_div','data-v-06159ba0',index===value?'uni-tab-active':'',scroll===true?'uni-tab-scroll-item':'',index===value&&scroll===true?' uni-tab-scroll-active':'']}}"
+      data-event-opts="{{[ [ 'tap',[ [ 'itemClick',[index,'$0'],[ [ ['tabList','',index] ] ] ] ] ] ]}}"
+      style="{{'color:'+(index===value?activeColor:defaultColor)+';'+'background-color:'+bgColor+';'}}"
+      wx:for="{{tabList}}"
+      wx:for-item="tab"
+      wx:key="index"
+    >
+      <label
+        class="{{['iconfont','mr5','_span','data-v-06159ba0',tab.icon]}}"
+        wx:if="{{tab.icon!=undefined}}"
+      ></label>
+      <text class="data-v-06159ba0">{{rangeKey==''?tab:tab[rangeKey]}}</text>
+    </view>
+    <view
+      class="{{['uni-tab-bar','_div','data-v-06159ba0',back?'uni-tab-bar-backward':'uni-tab-bar-forward']}}"
+      style="{{'right:'+barRight+'%'+';'+'left:'+barLeft+'%'+';'+'border-color:'+activeColor+';'}}"
+      wx:if="{{!scroll}}"
+    ></view>
+  </view>
+  <slot></slot>
+</view>

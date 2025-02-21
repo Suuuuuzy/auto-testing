@@ -1,0 +1,15 @@
+<view class="warp data-v-0f74b3e8">
+  <zym-navigation
+    bind:__l="__l"
+    class="data-v-0f74b3e8"
+    uI="0f74b3e8-0"
+    uP="{{a}}"
+    wx:if="{{a}}"
+  ></zym-navigation>
+  <view class="pop data-v-0f74b3e8">
+    <view class="pop--listbtn data-v-0f74b3e8"> 充值金额￥{{b}}元 </view>
+    <button bindtap="{{c}}" class="ybtn data-v-0f74b3e8" type="default">
+      确认
+    </button>
+  </view>
+</view>

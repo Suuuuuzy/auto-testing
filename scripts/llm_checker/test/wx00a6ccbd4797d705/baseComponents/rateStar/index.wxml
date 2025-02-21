@@ -1,0 +1,67 @@
+<view class="data-v-7f514f40">
+  <view class="uni-rate data-v-7f514f40 vue-ref" data-ref="uni-rate">
+    <view
+      bindmouseleave="__e"
+      catchmousedown="__e"
+      catchmousemove="__e"
+      catchtouchmove="__e"
+      catchtouchstart="__e"
+      class="{{['uni-rate__icon','uni-rate__margin','data-v-7f514f40',disabled?'uni-cursor-not-allowed':'']}}"
+      data-event-opts="{{[ [ 'touchstart',[ [ 'touchstart',['$event'] ] ] ],[ 'touchmove',[ [ 'touchmove',['$event'] ] ] ],[ 'mousedown',[ [ 'mousedown',['$event',index] ] ] ],[ 'mousemove',[ [ 'mousemove',['$event',index] ] ] ],[ 'mouseleave',[ [ 'mouseleave',['$event'] ] ] ] ]}}"
+      hidden="{{!(subjectStyle!=3)}}"
+      style="{{'margin-right:'+margin+'px'+';'}}"
+      wx:for="{{stars}}"
+      wx:for-item="star"
+      wx:key="index"
+    >
+      <view
+        class="size + 'px' data-v-7f514f40"
+        style="{{'width:'+size+'px'+';'+'height:'+size+'px'+';'}}"
+      >
+        <view
+          class="{{['iconfont','data-v-7f514f40',starIcon]}}"
+          style="{{'color:'+color+';'+'font-size:'+size+'px'+';'}}"
+        ></view>
+      </view>
+      <view
+        class="uni-rate__icon-on data-v-7f514f40"
+        style="{{'width:'+star.activeWitch+';'}}"
+      >
+        <view
+          class="size + 'px' data-v-7f514f40"
+          style="{{'width:'+size+'px'+';'+'height:'+size+'px'+';'}}"
+        >
+          <view
+            class="{{['iconfont','data-v-7f514f40',starIcon]}}"
+            style="{{'color:'+(disabled?disabledColor:activeColor)+';'+'font-size:'+size+'px'+';'}}"
+          ></view>
+        </view>
+      </view>
+    </view>
+    <view
+      bindtap="__e"
+      class="{{['uni-rate__icon','uni-rate__margin','data-v-7f514f40',disabled?'uni-cursor-not-allowed':'']}}"
+      data-event-opts="{{[ [ 'tap',[ [ 'changeJj',[index] ] ] ] ]}}"
+      hidden="{{!(subjectStyle==3)}}"
+      style="{{'margin-right:'+margin+'px'+';'+'visibility:'+(subjectStyle==3&&(index==1||index==3)?'hidden':null)+';'}}"
+      wx:for="{{stars}}"
+      wx:for-item="star"
+      wx:key="index"
+    >
+      <view class="data-v-7f514f40">
+        <image
+          class="markerUrl data-v-7f514f40"
+          src="{{starIconList[index]}}"
+          style="{{'width:'+size+'px'+';'+'height:'+size+4+'px'+';'}}"
+        ></image>
+      </view>
+      <view class="uni-rate__icon-onpj data-v-7f514f40">
+        <image
+          class="markerUrl data-v-7f514f40"
+          src="{{valueJj==index?starIconList[valueJj+1]:''}}"
+          style="{{'width:'+size+'px'+';'+'height:'+size+4+'px'+';'}}"
+        ></image>
+      </view>
+    </view>
+  </view>
+</view>

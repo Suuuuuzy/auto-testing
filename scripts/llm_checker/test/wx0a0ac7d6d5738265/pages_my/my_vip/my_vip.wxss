@@ -1,0 +1,155 @@
+page {
+  background: #111 !important;
+}
+.memberbox {
+  max-height: 100vh;
+  width: 750rpx;
+}
+.memberbox-card {
+  border-radius: 4rpx;
+  height: 306rpx;
+  margin: 32rpx auto 0;
+  position: relative;
+  width: 686rpx;
+}
+.memberbox-card-cardtop {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 32rpx;
+}
+.memberbox-card-cardtop .tleft {
+  margin: 40rpx 20rpx 0 0;
+}
+.memberbox-card-cardtop .tleft .cradWin {
+  border-radius: 50%;
+  height: 36rpx;
+  width: 36rpx;
+}
+.memberbox-card-cardtop .tleft .txt {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom: 16rpx;
+}
+.memberbox-card-cardtop .tleft .txt-name {
+  color: #fff;
+  font-size: 40rpx;
+  font-weight: 400;
+  letter-spacing: 0rpx;
+  line-height: 48rpx;
+  text-align: left;
+  vertical-align: top;
+}
+.memberbox-card-cardtop .rimg {
+  position: absolute;
+  right: 0;
+  top: -40rpx;
+}
+.memberbox-card-cardtop .rimg .vipimg {
+  height: 184.14rpx;
+  width: 184.14rpx;
+}
+.memberbox-card .coupon-infobox {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 24rpx;
+}
+.memberbox-card .coupon-infobox,
+.memberbox-card .coupon-infobox-item {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+}
+.memberbox-card .coupon-infobox-item {
+  color: #fffeed;
+  justify-content: flex-start;
+  margin-top: 24rpx;
+}
+.memberbox-card .coupon-infobox-item .type {
+  color: #fffeed;
+  font-size: 28rpx;
+  font-weight: 400;
+  letter-spacing: 0rpx;
+  line-height: 28rpx;
+  padding: 8rpx 16rpx;
+  text-align: center;
+  vertical-align: middle;
+  width: 84rpx;
+}
+.memberbox-card .coupon-infobox-item .cop {
+  color: #8a8d99;
+  font-size: 28rpx;
+  font-weight: 400;
+  letter-spacing: 0rpx;
+  line-height: 31.86rpx;
+  margin: 0 16rpx;
+  text-align: left;
+  vertical-align: top;
+}
+.memberbox-card .coupon-infobox-item .yhje {
+  color: #f38172;
+  font-size: 32rpx;
+  font-weight: 400;
+  letter-spacing: 0rpx;
+  text-align: left;
+  vertical-align: top;
+}
+.hjtxt {
+  background-image: linear-gradient(128.28deg, #d9ac6c, #a86a18);
+}
+.bytxt,
+.hjtxt,
+.pttxt {
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.bytxt,
+.pttxt {
+  background-image: linear-gradient(135.7deg, #94a4b3, #6c859e);
+}
+.cardbot {
+  padding: 100rpx 32rpx 0;
+}
+.cardbot .btt {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+}
+.cardbot .process-box {
+  padding-top: 20rpx;
+}
+.duihuan {
+  border-radius: 4rpx;
+  height: 114.15rpx;
+  justify-content: space-between;
+  margin: 20rpx auto 0;
+  width: 686rpx;
+}
+.duihuan,
+.duihuan .dhbtn {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  opacity: 1;
+}
+.duihuan .dhbtn {
+  border-radius: 382rpx;
+  box-shadow: 4rpx 6rpx 12rpx rgba(161, 96, 0, 0.176);
+  font-size: 28rpx;
+  height: 66.15rpx;
+  justify-content: center;
+  width: 236rpx;
+}
+.vipcontar {
+  margin: 50rpx 32rpx 0;
+}
+.content {
+  background-color: #f5f5f5;
+  border-radius: 10rpx;
+  padding: 20rpx;
+}
+.description {
+  color: #888;
+  font-size: 26rpx;
+}

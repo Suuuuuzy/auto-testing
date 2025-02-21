@@ -1,0 +1,32 @@
+<view
+  bindtap="hideModal"
+  class="background_screen"
+  wx:if="{{showModalStatus}}"
+></view>
+<view
+  animation="{{animationData}}"
+  class="attr_box"
+  wx:if="{{showModalStatus}}"
+>
+  <view class="privacy">
+    <view class="title">隐私保护指引</view>
+    <view class="des">
+      在使用本小程序服务之前，请仔细阅读<text
+        bind:tap="openPrivacyContract"
+        class="link"
+        >{{privacyContractName}}</text
+      >。如您同意{{privacyContractName}}，请点击“同意”开始使用小程序。如您拒绝，本小程序部分功能您将无法使用。
+    </view>
+    <view class="btns">
+      <button bind:tap="exitMiniProgram" class="item reject">拒绝</button>
+      <button
+        bindagreeprivacyauthorization="handleAgreePrivacyAuthorization"
+        class="item agree"
+        id="agree-btn"
+        openType="agreePrivacyAuthorization"
+      >
+        同意
+      </button>
+    </view>
+  </view>
+</view>

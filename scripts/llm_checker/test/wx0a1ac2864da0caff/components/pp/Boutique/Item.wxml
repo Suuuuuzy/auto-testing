@@ -1,0 +1,31 @@
+<view class="boutique-item-common _div data-v-13258399">
+  <view class="boutique-item-common-title _div data-v-13258399"
+    >{{item.name}}</view
+  >
+  <view class="boutique-item-common-address _div data-v-13258399"
+    >{{item.address}}</view
+  >
+  <view class="boutique-item-common-detail _div data-v-13258399">
+    <view class="_div data-v-13258399" wx:if="{{item.phone}}"
+      >{{'电话：'+item.phone}}</view
+    >
+    <view class="_div data-v-13258399" wx:if="{{item.fax}}"
+      >{{'传真：'+item.fax}}</view
+    >
+  </view>
+  <view
+    bindtap="__e"
+    class="content _div data-v-13258399"
+    data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+  ></view>
+  <view
+    bindtap="__e"
+    class="icon-dot _div data-v-13258399"
+    data-event-opts="{{[ [ 'tap',[ [ 'showMap',['$event'] ] ] ] ]}}"
+  >
+    <image
+      class="pic _img data-v-13258399"
+      src="/static/img/icon-dot.svg"
+    ></image>
+  </view>
+</view>

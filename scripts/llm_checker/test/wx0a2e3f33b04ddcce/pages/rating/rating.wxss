@@ -1,0 +1,39 @@
+.page {
+  height: 100%;
+}
+.placeholder {
+  background-color: #f6f6f6;
+  height: 20rpx;
+}
+.totalRecords {
+  align-items: center;
+  border-bottom: 1px solid #e2e2e2;
+  border-radius: 2px;
+  display: -webkit-flex;
+  display: flex;
+  height: 46px;
+}
+.totalRecords-in {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px;
+}
+.rateDetail {
+  background-color: #fff;
+  padding: 0 30rpx;
+}
+.rate {
+  margin-bottom: 15px;
+  margin-top: 22px;
+  text-align: center;
+}
+.textarea {
+  background-color: #f9f9f9 !important;
+  min-height: 260rpx !important;
+  padding: 12rpx !important;
+}
+.buttonB {
+  bottom: 20rpx;
+  position: fixed;
+  width: 100%;
+}

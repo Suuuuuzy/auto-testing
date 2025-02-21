@@ -1,0 +1,21 @@
+<view class="wuxiang-input_wrapper _div">
+    <view class="wuxiang-input_title _div" style="max-width:180rpx;min-width:180rpx;" wx:if="{{label}}">{{''+label+''}}</view>
+    <view class="wuxiang-input_lefticon _div" wx:if="{{leftIcon}}">
+        <view class="{{['iconfont','_i',leftIcon]}}" style="{{'font-size:'+iconSize+'rpx'+';'}}"></view>
+    </view>
+    <slot name="type"></slot>
+    <view class="wuxiang-input_value _div">
+        <view bindtap="__e" class="wuxiang-input_body _div" data-event-opts="{{[ [ 'tap',[ [ 'clickEvent',['$event'] ] ] ] ]}}">
+            <input adjustPosition="{{adjustPosition}}" bindblur="__e" bindconfirm="__e" bindfocus="__e" bindinput="__e" class="wuxiang-input_input uni-input" confirmHold="{{confirmHold}}" confirmType="{{confirmType}}" cursor="{{cursor}}" cursorSpacing="{{cursorSpacing}}" data-event-opts="{{[ [ 'input',[ [ 'inputEvent',['$event'] ] ] ],[ 'focus',[ [ 'focusEvent',['$event'] ] ] ],[ 'blur',[ [ 'blurEvent',['$event'] ] ] ],[ 'confirm',[ [ 'confirmEvent',['$event'] ] ] ] ]}}" disabled="{{disabled||readonly}}" focus="{{focus}}" maxlength="{{maxlength||140}}" password="{{password}}" placeholder="{{placeholder||'请输入'+label}}" placeholderClass="{{placeholderClass}}" placeholderStyle="{{'color: #c0c0c0;'+placeholderStyle}}" selectionEnd="{{selectionEnd}}" selectionStart="{{selectionStart}}" type="{{type||'text'}}" value="{{value}}"></input>
+        </view>
+    </view>
+    <slot name="text"></slot>
+    <view catchtap="__e" class="wuxiang-input_righticon _div" data-event-opts="{{[ [ 'tap',[ [ 'clearableFun',['$event'] ] ] ] ]}}" wx:if="{{clearable&&value}}">
+        <view class="iconfont icon-guanbi _i" style="{{'color:#ccc;'+'font-size:'+iconSize+'rpx'+';'}}"></view>
+    </view>
+    <view catchtap="__e" class="wuxiang-input_righticon _div" data-event-opts="{{[ [ 'tap',[ [ 'onClickIcon',['$event'] ] ] ] ]}}" wx:if="{{icon}}">
+        <view class="{{['iconfont','_i',icon]}}" style="{{'font-size:'+iconSize+'rpx'+';'}}"></view>
+    </view>
+    <slot name="icon"></slot>
+    <slot name="button"></slot>
+</view>

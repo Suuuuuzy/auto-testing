@@ -1,0 +1,237 @@
+.ad-ok-bg {
+  background: rgba(0, 0, 0, 0.2);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99999;
+}
+.ad-ok {
+  background: #fff;
+  border-radius: 10rpx;
+  box-shadow: 0 0 15rpx #ddd;
+  left: 50%;
+  padding: 20rpx 20rpx 0;
+  position: relative;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 500rpx;
+}
+.ad-ok .msg {
+  font-size: 26rpx;
+  line-height: 42rpx;
+  padding: 20rpx 0;
+}
+.ad-ok .btn {
+  border-top: 1rpx solid #f3f3f3;
+  color: #ff4303;
+  margin-top: 20rpx;
+  padding: 25rpx 0;
+}
+.ad-ok-bg2 {
+  background: rgba(0, 0, 0, 0.2);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999999999;
+}
+.ad-ok2 {
+  background: #fff;
+  border-radius: 10rpx;
+  box-shadow: 0 0 15rpx #ddd;
+  left: 50%;
+  padding: 20rpx 20rpx 0;
+  position: relative;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 560rpx;
+}
+.ad-ok2 .msg {
+  font-size: 26rpx;
+  line-height: 48rpx;
+  padding: 60rpx 0 20rpx;
+}
+.ad-ok2 .msg text {
+  color: #ff3b00;
+}
+.ad-ok2 .btn-box {
+  padding: 0 20rpx;
+}
+.ad-ok2 .btn,
+.ad-ok2 .btn-box {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+}
+.ad-ok2 .btn {
+  align-items: center;
+  background: #80be1f;
+  border-radius: 10rpx;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 75rpx;
+  margin-bottom: 50rpx;
+  text-align: center;
+  width: 46%;
+}
+.ad-ok2 .btn image {
+  display: block;
+  height: 45rpx;
+  margin-right: 15rpx;
+  width: 45rpx;
+}
+.ad-ok2 .btn:nth-child(2) {
+  background: #80be1f;
+  margin-left: 8%;
+}
+.ad-ok2 .btn.pay {
+  background: #ff3b00;
+}
+.ad-ok2 .msg-close {
+  height: 40rpx;
+  position: absolute;
+  right: 15rpx;
+  top: 15rpx;
+  width: 40rpx;
+}
+.msg-new {
+  background: #eee;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 24rpx;
+  justify-content: flex-end;
+  line-height: 30rpx;
+  padding: 25rpx 60rpx;
+}
+.msg-new .text {
+  color: #888;
+  margin-right: 10rpx;
+}
+.msg-new .img {
+  height: 30rpx;
+  width: 30rpx;
+}
+.msg-new .img image {
+  height: 100%;
+  width: 100%;
+}
+.handle-box {
+  background: #eee;
+  padding: 0 30rpx;
+}
+.handle-msg {
+  background: #eee;
+  color: #888;
+  font-size: 22rpx;
+  padding-bottom: 20rpx;
+  text-align: center;
+}
+.handle-box .item-box {
+  background: #fff;
+  border-radius: 15rpx;
+  overflow: hidden;
+}
+.handle-box .item {
+  background: #fff;
+  border-top: 1rpx solid #eee;
+  font-size: 24rpx;
+  justify-content: space-between;
+  padding: 15rpx;
+  position: relative;
+}
+.handle-box .item,
+.handle-box .item .left {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+}
+.handle-box .item .img {
+  font-size: 0;
+  width: 80rpx;
+}
+.handle-box .item .img image {
+  height: 80rpx;
+  width: 80rpx;
+}
+.handle-box .item .msg {
+  line-height: 38rpx;
+  margin-left: 10rpx;
+  width: 440rpx;
+}
+.handle-box .item .msg text {
+  color: red;
+}
+.handle-box .item:nth-child(1),
+.handle-box .item:nth-child(2) {
+  margin-top: 0;
+}
+.handle-box .item .btn {
+  background: #f0c045;
+  border-radius: 40rpx;
+  color: #3a3a3a;
+  color: #fff;
+  font-size: 26rpx;
+  line-height: 58rpx;
+  padding: 0;
+  position: absolute;
+  right: 25rpx;
+  text-align: center;
+  width: 98rpx;
+}
+.box-title {
+  font-size: 30rpx;
+  font-weight: 700;
+  line-height: 80rpx;
+}
+.box-title,
+.teach {
+  margin: 0 auto;
+  width: 92%;
+}
+.teach {
+  font-size: 0;
+  line-height: 0;
+  padding-bottom: 40rpx;
+}
+.teach image {
+  border-radius: 20rpx;
+  width: calc(50% - 15rpx);
+}
+.teach image:nth-child(2) {
+  float: right;
+}
+.line {
+  background: #eee;
+  height: 30rpx;
+  width: 100%;
+}
+.history-btn {
+  display: -webkit-flex;
+  display: flex;
+  font-size: 28rpx;
+  justify-content: space-between;
+  padding: 10rpx 40rpx 30rpx;
+}
+.history-btn .it {
+  border: 1px solid #dedede;
+  border-radius: 10rpx;
+  line-height: 65rpx;
+  margin: 0;
+  padding: 0 !important;
+  text-align: center;
+  width: 160rpx;
+}
+.history-btn .it.right {
+  background-color: #eec36a;
+  border: 1px solid #eec36a;
+  color: #fff;
+}
+.history-btn .it::after,
+.history-btn .it::before {
+  display: none;
+}

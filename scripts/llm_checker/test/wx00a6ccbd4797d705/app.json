@@ -1,0 +1,485 @@
+{
+  "debug": false,
+  "permission": {
+    "scope.userLocation": { "desc": "为了更好的服务，需要您的地理位置授权" }
+  },
+  "networkTimeout": { "request": 40000 },
+  "plugins": {
+    "sendCoupon": {
+      "version": "1.4.6",
+      "provider": "wxf3f436ba9bd4be7b",
+      "subpackage": "__APP__"
+    },
+    "advert-plugin": {
+      "version": "latest",
+      "provider": "wxafb4fcc54c70a08a",
+      "subpackage": "__APP__"
+    },
+    "WechatSI": {
+      "provider": "wx069ba97219f66d99",
+      "version": "0.0.7",
+      "subpackage": "/pages/passwordRedbag/"
+    }
+  },
+  "preloadRule": {
+    "pages/index/index": { "network": "all", "packages": ["pages/system"] },
+    "pages/diancan2/navigation/index": {
+      "network": "all",
+      "packages": ["pages/diancan"]
+    },
+    "pages/diancan2/people/index": {
+      "network": "all",
+      "packages": ["pages/diancan-fastfood"]
+    },
+    "pages/diancan2/scanCode/index": {
+      "network": "all",
+      "packages": ["pages/diancan"]
+    },
+    "pages/diancan/cart/pageA/index": {
+      "network": "all",
+      "packages": ["pages/pay"]
+    },
+    "pages/waimaiziti2/mdList/index": {
+      "network": "all",
+      "packages": ["pages/waimaiziti2"]
+    },
+    "pages/waimaiziti2/wmMdList/index": {
+      "network": "all",
+      "packages": ["pages/waimaiziti2"]
+    },
+    "pages/cardhome/card/cardHome/index": {
+      "network": "all",
+      "packages": ["pages/cardhome2"]
+    },
+    "pages/cardhome/home/index2": {
+      "network": "all",
+      "packages": ["pages/cardhome"]
+    }
+  },
+  "requiredPrivateInfos": ["getLocation", "chooseAddress", "chooseLocation"],
+  "__usePrivacyCheck__": true,
+  "subPackages": [
+    {
+      "root": "pages/passwordRedbag/",
+      "plugins": {
+        "WechatSI": {
+          "provider": "wx069ba97219f66d99",
+          "version": "0.0.7",
+          "subpackage": "/pages/passwordRedbag/"
+        }
+      },
+      "pages": ["index", "shareDetails", "openRedbagHistory"]
+    },
+    {
+      "root": "pages/blindBox/",
+      "pages": [
+        "index",
+        "eggTwistingMachineGame",
+        "rewardList",
+        "blindboxPrizes",
+        "blindboxShareDetails"
+      ]
+    },
+    {
+      "root": "pages/equityCard/",
+      "pages": [
+        "index",
+        "index2",
+        "myEquityCard",
+        "equityCenter",
+        "applicableStores"
+      ]
+    },
+    {
+      "root": "pages/cardhome2/",
+      "pages": [
+        "card/studentCard/index",
+        "card/about/index",
+        "card/remainingTimes/index",
+        "card/bindCard/index",
+        "card/cardMedalWall/index",
+        "card/cardRecharge_66331/index",
+        "card/communityCode/index",
+        "card/couponExchange/index",
+        "card/getTicket/index",
+        "card/gifeChange/index",
+        "card/growthValue/index",
+        "card/moreWechatMerchantApplyTicket/index",
+        "card/password/index",
+        "card/sendCodeGetCoupon/index",
+        "card/shareCoupon/index",
+        "card/shopList/index",
+        "card/stampCollecting/index",
+        "card/successPayCallbackPage/index",
+        "card/ticket_66331/index",
+        "card/ticketBag/index",
+        "card/ticketDetail/index",
+        "card/ywym/index",
+        "card/about/agreementContent",
+        "card/communityCode/cityShopList",
+        "card/growthValue/growthValueDetail",
+        "card/totalBalance/index"
+      ]
+    },
+    {
+      "root": "pages/cardhome/",
+      "pages": [
+        "card/questionnaire/index",
+        "card/questionnaire/result",
+        "card/thirdPay/index",
+        "card/familyCard/index",
+        "card/familyCard/familyCardAgree",
+        "card/familyCard/familyCardxfjl",
+        "card/cardRights/index",
+        "home/index2",
+        "home/index2_66331/index",
+        "home/index2_114174/index",
+        "home/index2_13935/index",
+        "home/customPage1/index",
+        "home/customPage2/index",
+        "home/merchantQualification/index",
+        "card/cardHome/index",
+        "card/cardHome_62151/index",
+        "card/cardHome_66331/index",
+        "card/cardHome_114174/index",
+        "card/cardLevelUp/index",
+        "card/cardLevelUpType2/index",
+        "card/cardLevelUpType3/index",
+        "card/cardLevelUp_66331/index",
+        "card/cardLevelHistory/index",
+        "card/cardLevelUp/automaticRenewal",
+        "card/cardRenewals/index",
+        "card/cardRights_62151/index",
+        "card/cardRights_13935/index",
+        "card/invitationReward/index",
+        "card/personalInfo/index",
+        "card/personalBranchPage/index",
+        "card/personalInfo/addFriendsBirth",
+        "card/personalInfo/addMemorialDay",
+        "card/cardLevelRule/index",
+        "card/ticket/index",
+        "card/ticket/couponForwarding/index",
+        "card/ticket/subgift/index",
+        "card/buyTicketHistory/index",
+        "card/buyCard/index",
+        "card/balance/index",
+        "card/balance/balanceShare",
+        "card/balance_66331/index",
+        "card/balance_114174/index",
+        "card/integral/index",
+        "card/integral/integralShare",
+        "card/personalInfo/serviceAgreement",
+        "card/collectCards/openCollectCards/index",
+        "card/collectCards/index",
+        "card/collectCards/pageA/detail/index",
+        "card/payCode/index",
+        "card/payCode_66331/index",
+        "card/payCode_114174/index",
+        "card/cardRecharge/index",
+        "card/cardRecharge_114174/index",
+        "card/inviteFriends/index",
+        "card/inviteFriends/invitee",
+        "card/consumeRecord/index",
+        "card/consumeRecord/consumeDetail"
+      ]
+    },
+    {
+      "root": "pages/address/",
+      "pages": [
+        "addressAdd/index",
+        "addressManage/index",
+        "cityList/index",
+        "addressChoose/index",
+        "wmAddressChoose/index",
+        "selectShippingAddress/index",
+        "guideGPS/index"
+      ]
+    },
+    {
+      "root": "pages/order/",
+      "pages": [
+        "myOrder/index",
+        "diancanOrder/index",
+        "waimaiOrder/index",
+        "diancanOrder/diancanDetail/index",
+        "diancanOrder/diancanMiniDetail/index",
+        "waimaiOrder/waimaiDetail/index",
+        "diancanOrder/invoicePage/index",
+        "diancanOrder/historyInvoicePage/index",
+        "shangchengOrder/index",
+        "shangchengOrder/shangchengDetail/index",
+        "shangchengOrder/paySuccess/index",
+        "waimaiOrder/orderBack/index",
+        "waimaiOrder/orderBackDetail/index",
+        "waimaiOrder/gbShareBill/index",
+        "otherOrder/index",
+        "otherOrder/detail/index"
+      ]
+    },
+    {
+      "root": "pages/jfsc/",
+      "pages": [
+        "jfscHome/pageA/index",
+        "jfscHome/pageB/index",
+        "jfscHome/pageD/index",
+        "jfscHome/pageE/index",
+        "goodsDetail/index",
+        "confirmOrder/index",
+        "marketingActivities/index"
+      ]
+    },
+    {
+      "root": "pages/diancan2/",
+      "pages": [
+        "preSubmitSuccess/index",
+        "navigation/index",
+        "people/index",
+        "diningCodePage/index",
+        "searchMdSmPage/index",
+        "dcBusinessTip/index",
+        "overtimePopup/index",
+        "ydmdList/index",
+        "scanCode/index",
+        "submitPage/index",
+        "submitPage/yd",
+        "wxWorkFriend/index",
+        "thirdPartyCouponDishPage/index",
+        "submitPage/pageB/index"
+      ]
+    },
+    {
+      "root": "pages/diancan-fastfood/",
+      "pages": [
+        "dishes/pageB/index",
+        "cart/pageB/index",
+        "payAfterWeb/index",
+        "equityCardMnPage/index",
+        "search/index",
+        "increasePriceMainDish/index",
+        "comboPage/index"
+      ]
+    },
+    {
+      "root": "pages/diancan/",
+      "plugins": {},
+      "pages": [
+        "peopleDish/index",
+        "dishes/pageA/index",
+        "dishes/pageB/index",
+        "dishes/pageC/index",
+        "dishes/pageB/dish",
+        "dishes/pageC/dish",
+        "preSubmitPage/index",
+        "presubmitConfirmPage/index",
+        "cart/pageA/index",
+        "search/index",
+        "increasePriceMainDish/index",
+        "comboPage/index",
+        "equityCardMnPage/index"
+      ]
+    },
+    {
+      "root": "pages/waimaiziti2/",
+      "pages": [
+        "searchMdPage/index",
+        "equityCardMnPage/index",
+        "mdList/index",
+        "wmMdList/index",
+        "noGPS/index",
+        "payAfterWeb/index",
+        "newInvoice/index",
+        "invoiceList/index",
+        "storeAddressMap/index",
+        "wmunpay/index",
+        "ztunpay/index"
+      ]
+    },
+    {
+      "root": "pages/grziti/",
+      "pages": [
+        "tagActivity/gorupBuy",
+        "tagActivity/normal",
+        "gbOrder/index",
+        "dish/pageA/index",
+        "dish/pageB/index",
+        "dish/pageC/index",
+        "dish/pageD/index",
+        "dish/pageE/index",
+        "submitOrder/index",
+        "dish/pageA/groupBuy",
+        "dish/pageB/groupBuy",
+        "dish/pageC/groupBuy",
+        "dish/pageD/groupBuy",
+        "dish/pageE/groupBuy",
+        "comboPage/index"
+      ]
+    },
+    {
+      "root": "pages/waimaiziti/",
+      "pages": [
+        "grwaimai/gbOrder/index",
+        "grwaimai/dish/pageA/index",
+        "grwaimai/dish/pageB/index",
+        "grwaimai/dish/pageC/index",
+        "grwaimai/dish/pageD/index",
+        "grwaimai/dish/pageE/index",
+        "grwaimai/submitOrder/index",
+        "grwaimai/search/index",
+        "grwaimai/necessity/index",
+        "grwaimai/increasePrice/index",
+        "grwaimai/dish/pageA/groupBuy",
+        "grwaimai/dish/pageB/groupBuy",
+        "grwaimai/dish/pageC/groupBuy",
+        "grwaimai/dish/pageD/groupBuy",
+        "grwaimai/dish/pageE/groupBuy",
+        "grwaimai/comboPage/index"
+      ]
+    },
+    {
+      "root": "pages/pj/",
+      "pages": ["pjHome/index", "pjReplay/index", "pjWebView/index"]
+    },
+    {
+      "root": "pages/pd/",
+      "pages": [
+        "mcList/index",
+        "mcList_66331/index",
+        "mcDetail/index",
+        "mcDetail_66331/index",
+        "pdDetail/index",
+        "searchMc/index",
+        "takeNumDetail/index",
+        "takeNumDetail_66331/index",
+        "pdInstructions_66331/index"
+      ]
+    },
+    {
+      "root": "pages/pay/",
+      "pages": [
+        "xf/index",
+        "xf/xfOrder",
+        "onlinePay/pageA/index",
+        "onlinePay/pageB/index",
+        "tablePay/pageA/index",
+        "tablePay/pageB/index",
+        "tablePaySingle/pageA/index",
+        "tablePaySingle/pageB/index"
+      ]
+    },
+    {
+      "root": "pages/giftcard/",
+      "pages": [
+        "giftcardHome/index",
+        "mine/index",
+        "acceptedGift/index",
+        "acceptedGiftDetail/index",
+        "orderDetail/index",
+        "orderList/index",
+        "paySuccess/index",
+        "sendTheme/index"
+      ]
+    },
+    { "root": "pages/webviewPage/", "pages": ["index"] },
+    { "root": "pages/navigateToMiniProgram/", "pages": ["index"] },
+    {
+      "root": "pages/logs/",
+      "pages": ["index", "interFace", "runTime", "storeData", "packDes"]
+    },
+    {
+      "root": "pages/system/",
+      "plugins": {},
+      "pages": [
+        "identification/index",
+        "identificationPageB/index",
+        "identification_66331/index",
+        "identificationPageD/index",
+        "login_66331/index",
+        "errorPage/index",
+        "exitPage/index",
+        "storeList/index",
+        "storeList/searchStore",
+        "privacyRights/privacyRightsPopup",
+        "privacyRights/index",
+        "memberGuidance/index"
+      ]
+    },
+    { "root": "pages/invoiceCallback/", "pages": ["index"] },
+    { "root": "pages/questionnairePopup-commonPackage/", "pages": [] },
+    { "root": "pages/aiDish-commonPackage/", "pages": [] },
+    { "root": "pages/aiDishPeople-commonPackage/", "pages": [] },
+    { "root": "pages/dishPopups-comobo-commonPackage/", "pages": [] },
+    { "root": "pages/hotpot-commonPackage/", "pages": [] },
+    { "root": "pages/orderImagePosition-commonPackage/", "pages": [] },
+    { "root": "pages/ai-waiter-commonPackage/", "pages": [] },
+    { "root": "pages/mescroll-uni-commonPackage/", "pages": [] },
+    { "root": "pages/redbag-commonPackage/", "pages": [] },
+    { "root": "pages/giveCollectCardBox-commonPackage/", "pages": [] },
+    { "root": "pages/treasureBox-commonPackage/", "pages": [] },
+    { "root": "pages/tabbar-commonPackage/", "pages": [] },
+    { "root": "pages/wmzt-addressPopup-commonPackage/", "pages": [] },
+    { "root": "pages/consumeGift-commonPackage/", "pages": [] },
+    { "root": "pages/wmzt-advSelectTimePopup-commonPackage/", "pages": [] },
+    { "root": "pages/wmzt-reducePrice-commonPackage/", "pages": [] },
+    { "root": "pages/collectCardBox-commonPackage/", "pages": [] },
+    { "root": "pages/wmzt-redPacketsPassword-commonPackage/", "pages": [] },
+    { "root": "pages/wmzt-qualification-commonPackage/", "pages": [] },
+    { "root": "pages/wmzt-storeMes-commonPackage/", "pages": [] },
+    { "root": "pages/wmzt-removeDishPopup-commonPackage/", "pages": [] },
+    { "root": "pages/wmzt-myCoupon-commonPackage/", "pages": [] },
+    { "root": "pages/advertComponents-commonPackage/", "pages": [] },
+    { "root": "pages/keyBoard-commonPackage/", "pages": [] },
+    {
+      "root": "pages/dishPopups-dp-pop-bigPictureModel-commonPackage/",
+      "pages": []
+    },
+    {
+      "root": "pages/dishPopups-dp-pop-dishPageStepModel-commonPackage/",
+      "pages": []
+    },
+    {
+      "root": "pages/dishPopups-dp-pop-dishSpecModel-commonPackage/",
+      "pages": []
+    },
+    {
+      "root": "pages/dishPopups-dp-pop-initialModel-commonPackage/",
+      "pages": []
+    },
+    {
+      "root": "pages/dishPopups-dp-pop-fullScreenModel-commonPackage/",
+      "pages": []
+    },
+    {
+      "root": "pages/dishPopups-dp-pop-specsSingleModel-commonPackage/",
+      "pages": []
+    },
+    {
+      "root": "pages/dishPopups-dp-pop-theWoodsModel-commonPackage/",
+      "pages": []
+    },
+    {
+      "root": "pages/dishPopups-tc-pop-blockModel-commonPackage/",
+      "pages": []
+    },
+    {
+      "root": "pages/dishPopups-tc-pop-bundleModel-commonPackage/",
+      "pages": []
+    },
+    {
+      "root": "pages/dishPopups-tc-pop-imgTextModel-commonPackage/",
+      "pages": []
+    },
+    {
+      "root": "pages/dishPopups-tc-pop-pureTextModel-commonPackage/",
+      "pages": []
+    },
+    {
+      "root": "pages/dishPopups-tc-pop-randomModel-commonPackage/",
+      "pages": []
+    }
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#FFFFFF"
+  },
+  "pages": ["pages/index/index"]
+}

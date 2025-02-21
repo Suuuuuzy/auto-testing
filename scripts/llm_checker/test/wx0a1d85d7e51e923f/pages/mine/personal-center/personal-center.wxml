@@ -1,0 +1,166 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view class="padding-sm ">
+    <view class="flex">
+        <view class="flex-sub text-center" wx:for="{{pageData.menu}}">
+            <view bindtap="menuClick" class="bg-{{index!=selectedMenuIndex?'white':''}} radius solids-right" data-index="{{index}}">
+                <view>
+                    <i class="iconfont icon-{{item.icon_url}} text-{{selectedMenuIndex==index?'pink':''}}" style="font-size:80rpx"></i>
+                </view>
+                <view class="text-sm padding-bottom-xs">{{isUy?item.uy_name:item.ch_name}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view wx:if="{{infoData.service}}">
+    <view class="cu-card dynamic no-card margin-tb-sm">
+        <view class="cu-item shadow">
+            <view class="cu-list menu-avatar" url="/pages/mine/my-resume/resume-detail/resume-detail?id={{item.id}}">
+                <view class="cu-item">
+                    <view class="cu-avatar round lg" style="background-image:url({{ossImage+infoData.service.head_img_url}});"></view>
+                    <view class="content flex-sub">
+                        <view class="flex justify-between">
+                            <view class="">{{infoData.service.name}}</view>
+                        </view>
+                        <view class="flex justify-between">
+                            <view class="flex justify-start align-center">
+                                <view class="text-sm">
+                                    <i class="iconfont {{infoData.service.sex==1?'icon-man text-pink':'icon-woman text-red'}}"></i> {{infoData.service.sex==1?Str.man[lanIndex]:Str.fman[lanIndex]}}</view>
+                                <view class="cu-tag uy radius  line-pink margin-left-sm">{{infoData.service.ages}}</view>
+                                <view class="padding-lr-sm margin-left-xs">
+                                    <button bindtap="callBtn" class="cu-btn line-pink radius text-xs sm" data-phone="{{infoData.service.phone}}">{{infoData.service.phone}}</button>
+                                </view>
+                            </view>
+                            <view>
+                                <text class="text-green" wx:if="{{infoData.service.state==1||infoData.service.state==0}}">{{Str.review[lanIndex]}}</text>
+                                <text class="text-pink" wx:if="{{infoData.service.state==2}}">{{Str.passed[lanIndex]}}</text>
+                                <text class="text-red" wx:if="{{infoData.service.state==-1}}">{{Str.notPassed[lanIndex]}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="" style="margin-left:140rpx">
+                    <view class="flex  justify-start margin-xs align-center">
+                        <view class="cu-tag line-orange radius uy padding-sm sm" wx:for="{{infoData.service.types}}"> {{isUy?item.uy_name:item.ch_name}}</view>
+                    </view>
+                </view>
+                <view class="padding justify-start">
+                    <button bindtap="deleteBtn" class="cu-btn bg-red radius shadow sm" data-id="{{infoData.service.id}}" disabled="{{!(infoData.service.state==-1||infoData.service.state==0)}}">{{Str._delete[lanIndex]}}</button>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view wx:else>
+    <view class="cu-bar bg-white">
+        <view class="action">
+            <text class="icon-titles text-pink"></text>
+            <text>{{Str.inputYourMessage[lanIndex]}}</text>
+        </view>
+    </view>
+    <view class="text-center padding">
+        <view class="v-center">
+            <view bindtap="chooseImage" class="bg-white  radius" style="width:max-content;padding:20rpx 50rpx 20rpx 50rpx;border-radius:20rpx" wx:if="{{imgList.length==0}}">
+                <i class="iconfont icon-camera_add" style="font-size:100rpx;"></i>
+            </view>
+            <view bindtap="viewImage" class="padding-xs bg-img text-right" data-url="{{imgList[0].state=='net'?ossImage+imgList[0].url:imgList[0].url}}" style="width:200rpx; height:200rpx;background-image:url({{imgList[0].state=='net'?ossImage+imgList[0].url:imgList[0].url}})" wx:else>
+                <view catchtap="delImg" class="cu-tag bg-red">
+                    <text class="icon-close"></text>
+                </view>
+            </view>
+        </view>
+        <view class="padding-xs text-gray">{{Str.uploadYourImage[lanIndex]}}</view>
+    </view>
+    <view class="bg-white padding-sm  margin-top-sm">
+        <view class="flex justify-start">
+            <view class="padding-right-sm">
+                <i class="iconfont icon-users" style="font-size:50rpx"></i>
+            </view>
+            <view class=" flex align-center">
+                <view class="padding-lr-xs padding-tb-sm bg-gray solids" style="border-radius:10rpx;">
+                    <input bindinput="bindInput" data-type="1" focus="{{focus.name}}" placeholder="{{Str.inputName[lanIndex]}}" style="font-size:32rpx" type="text" value="{{formData.name}}"></input>
+                </view>
+            </view>
+            <view>
+                <view bindtap="selectSex" class="bg-gray padding-sm margin-left-xs text-{{selectItem.sex?selectItem.sex.id==1?'pink':'red':''}}" style="border-raiuds:10rpx">
+                    <i class="iconfont icon-{{selectItem.sex.id==1?'man':'woman'}} margin-right-xs" wx:if="{{selectItem.sex}}"></i>{{selectItem.sex?isUy?selectItem.sex.uy_name:selectItem.sex.ch_name:Str.sex[lanIndex]}} </view>
+            </view>
+            <view>
+                <view bindtap="selectAge" class="bg-gray padding-sm margin-left-xs" style="border-raiuds:10rpx"> {{selectItem.age?isUy?selectItem.age.uy_name:selectItem.age.ch_name:Str.age[lanIndex]}} </view>
+            </view>
+        </view>
+        <view class="flex justify-start  margin-tb-xs">
+            <view class="padding-right-sm">
+                <i class="iconfont icon-phone" style="font-size:50rpx"></i>
+            </view>
+            <view class=" flex align-center">
+                <view class="padding-lr-xs padding-tb-sm bg-gray solids" style="border-radius:10rpx;">
+                    <input bindinput="bindInput" data-type="2" focus="{{focus.phone}}" placeholder="{{Str.inputPhone[lanIndex]}}" style="font-size:32rpx" type="number" value="{{formData.phone}}"></input>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="cu-list menu margin-top-sm sm-border">
+        <view bindtap="selectAreaClick" class="cu-item arrow">
+            <view class="content">
+                <text>{{Str.selectArea[lanIndex]}}</text>
+            </view>
+            <view class="action">
+                <text class="text-sm text-gray" wx:if="{{formData.area_id}}">{{isUy?selectItem.area.uy_name:selectItem.area.ch_name}}</text>
+            </view>
+        </view>
+        <view bindtap="selectTypeClick" class="cu-item arrow">
+            <view class="content">
+                <text>{{Str.selectTypes[lanIndex]}}</text>
+            </view>
+            <view class="action">
+                <text class="text-gray text-sm" wx:if="{{selectItem.types.length>0}}" wx:for="{{selectItem.types}}">
+                    <text wx:if="{{index<2}}">{{isUy?item.uy_name:item.ch_name}},<text wx:if="{{selectItem.types.length>2&&index==1}}">...</text>
+                    </text>
+                </text>
+            </view>
+        </view>
+    </view>
+    <view class="bg-white radius shadow margin-top-sm ">
+        <view class="flex">
+            <view class="flex-sub">
+                <view class="cu-form-group margin-top-sm">
+                    <textarea bindinput="bindInput" data-type="3" focus="{{focus.desc}}" maxlength="1000" placeholder="{{Str.selfIntrduction[lanIndex]}}" style="font-size:24rpx" value="{{formData.desc}}"></textarea>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="margin padding">
+        <button bindtap="subBtn" class="cu-btn bg-pink radius shadow block lg">{{Str.submit[lanIndex]}}</button>
+    </view>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>
+<dialog cancel="{{Str.cancel[lanIndex]}}" confirm="{{Str.confirm[lanIndex]}}" content="{{dialogContent}}" id="dialog" isInput="{{dialogIsInput}}" title="{{Str.warning[lanIndex]}}" type="normal"></dialog>
+<view bindtap="hideModal" class="cu-modal {{modalName=='selectModal'?'show':''}}">
+    <view catchtap class="cu-dialog">
+        <radio-group bindchange="selectChange" class="block">
+            <view class="cu-list menu text-left">
+                <view class="cu-item" wx:for="{{selectData}}">
+                    <label class="flex justify-between align-center flex-sub">
+                        <view class="flex-sub">{{isUy?item.uy_name:item.ch_name}}</view>
+                        <radio checked="{{item.checked}}" class="round" value="{{index}}"></radio>
+                    </label>
+                </view>
+            </view>
+        </radio-group>
+    </view>
+</view>
+<view bindtap="hideModal" class="cu-modal bottom-modal {{modalName=='TypeModal'?'show':''}}">
+    <view catchtap class="cu-dialog">
+        <view class="cu-bar bg-white">
+            <view bindtap="hideModal" class="action text-red">{{Str.cancel[lanIndex]}}</view>
+            <view bindtap="confirmType" class="action text-cyan">{{Str.confirm[lanIndex]}}</view>
+        </view>
+        <view class="grid col-3 padding-sm">
+            <view class="padding-xs" wx:for="{{infoData.types}}" wx:key="{{index}}">
+                <button bindtap="typeCheckbox" class="cu-btn orange  block sm {{item.checked?'bg-pink':'line-pink'}}" data-index="{{index}}" disabled="{{!item.checked&&checkedCount>=3}}"> {{isUy?item.uy_name:item.ch_name}} </button>
+            </view>
+        </view>
+    </view>
+</view>

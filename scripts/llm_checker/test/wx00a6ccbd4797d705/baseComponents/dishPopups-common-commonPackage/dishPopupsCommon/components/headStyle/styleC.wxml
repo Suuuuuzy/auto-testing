@@ -1,0 +1,31 @@
+<view class="pr bcf container wordBreakBreakAll _div data-v-58582dc7">
+  <view
+    class="sales f20 fcf _div data-v-58582dc7"
+    style="{{'background:'+themeColor+';'}}"
+    wx:if="{{sales}}"
+    >{{''+customSalesText+': '+sales+''}}</view
+  >
+  <view
+    class="share fcf flexCenter _div data-v-58582dc7"
+    style="{{'background:'+themeColor+';'}}"
+    wx:if="{{showShare}}"
+  >
+    <button class="shareBtn data-v-58582dc7" openType="share"></button>
+    <view class="iconfont icon-fenxiang fcf _div data-v-58582dc7"></view>
+  </view>
+  <view
+    class="{{['profile','_div','data-v-58582dc7',!(promotionLimit||hyOrderLimit)&&!sales&&!showShare?'height1':'']}}"
+  >
+    <view
+      class="flex mb10r _div data-v-58582dc7"
+      wx:if="{{promotionLimit||hyOrderLimit}}"
+    >
+      <view class="discount _div data-v-58582dc7" wx:if="{{hyOrderLimit}}"
+        >{{'会员价限'+hyOrderLimit+'份'}}</view
+      >
+      <view class="discount _div data-v-58582dc7" wx:if="{{promotionLimit}}"
+        >{{(promName||'促销价')+'限'+promotionLimit+'份'}}</view
+      >
+    </view>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+<view>
+  <cu-custom
+    bgColor="bg-gradual-blue"
+    bind:__l="__l"
+    isBack="{{true}}"
+    vueId="7fe58c50-1"
+    vueSlots="{{['content']}}"
+  >
+    <view slot="content">教程</view>
+  </cu-custom>
+  <view class="pic-padding">
+    <ad adTheme="white" adType="video" unitId="{{ad}}" wx:if="{{showAd}}"></ad>
+  </view>
+  <view class="grace-rich-text">
+    <rich-text nodes="{{demoHtml}}" type="text"></rich-text>
+  </view>
+</view>

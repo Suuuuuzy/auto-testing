@@ -1,0 +1,31 @@
+<view
+  bindtap="__e"
+  class="{{['uni-calendar-item__weeks-box data-v-21bafe27',weeks.disable?'uni-calendar-item--disable':'',calendar.fullDate===weeks.fullDate&&weeks.isDay?'uni-calendar-item--isDay':'',calendar.fullDate===weeks.fullDate&&!weeks.isDay?'uni-calendar-item--checked':'',weeks.multiple?'uni-calendar-item--multiple':'']}}"
+  data-event-opts="{{[ [ 'tap',[ [ 'choiceDate',['$0'],['weeks'] ] ] ] ]}}"
+>
+  <view class="uni-calendar-item__weeks-box-item data-v-21bafe27">
+    <text
+      class="uni-calendar-item__weeks-box-circle data-v-21bafe27"
+      wx:if="{{selected&&weeks.extraInfo}}"
+    ></text>
+    <text
+      class="{{['uni-calendar-item__weeks-box-text data-v-21bafe27',weeks.isDay?'uni-calendar-item--isDay-text':'',calendar.fullDate===weeks.fullDate&&weeks.isDay?'uni-calendar-item--isDay':'',calendar.fullDate===weeks.fullDate&&!weeks.isDay?'uni-calendar-item--checked':'',weeks.multiple?'uni-calendar-item--multiple':'',weeks.disable?'uni-calendar-item--disable':'']}}"
+      >{{weeks.date}}</text
+    >
+    <text
+      class="{{['uni-calendar-item__weeks-lunar-text data-v-21bafe27',weeks.isDay?'uni-calendar-item--isDay-text':'',calendar.fullDate===weeks.fullDate&&weeks.isDay?'uni-calendar-item--isDay':'',calendar.fullDate===weeks.fullDate&&!weeks.isDay?'uni-calendar-item--checked':'',weeks.multiple?'uni-calendar-item--multiple':'']}}"
+      wx:if="{{!lunar&&!weeks.extraInfo&&weeks.isDay}}"
+      >今天</text
+    >
+    <text
+      class="{{['uni-calendar-item__weeks-lunar-text data-v-21bafe27',weeks.isDay?'uni-calendar-item--isDay-text':'',calendar.fullDate===weeks.fullDate&&weeks.isDay?'uni-calendar-item--isDay':'',calendar.fullDate===weeks.fullDate&&!weeks.isDay?'uni-calendar-item--checked':'',weeks.multiple?'uni-calendar-item--multiple':'',weeks.disable?'uni-calendar-item--disable':'']}}"
+      wx:if="{{lunar&&!weeks.extraInfo}}"
+      >{{weeks.isDay?'今天':weeks.lunar.IDayCn==='初一'?weeks.lunar.IMonthCn:weeks.lunar.IDayCn}}</text
+    >
+    <text
+      class="{{['uni-calendar-item__weeks-lunar-text data-v-21bafe27',weeks.extraInfo.info?'uni-calendar-item--extra':'',weeks.isDay?'uni-calendar-item--isDay-text':'',calendar.fullDate===weeks.fullDate&&weeks.isDay?'uni-calendar-item--isDay':'',calendar.fullDate===weeks.fullDate&&!weeks.isDay?'uni-calendar-item--checked':'',weeks.multiple?'uni-calendar-item--multiple':'',weeks.disable?'uni-calendar-item--disable':'']}}"
+      wx:if="{{weeks.extraInfo&&weeks.extraInfo.info}}"
+      >{{weeks.extraInfo.info}}</text
+    >
+  </view>
+</view>

@@ -1,0 +1,51 @@
+<view class="warp data-v-61795fc0">
+  <zym-navigation
+    bind:__l="__l"
+    class="data-v-61795fc0"
+    uI="61795fc0-0"
+    uP="{{a}}"
+    wx:if="{{a}}"
+  ></zym-navigation>
+  <view class="cardview data-v-61795fc0">
+    <scroll-view
+      bind:refresher-refresh="{{d}}"
+      bindscrolltolower="{{c}}"
+      class="data-v-61795fc0"
+      lowerThreshold="{{100}}"
+      scrollY="true"
+      style="height: 80vh"
+    >
+      <view
+        bindtap="{{consume.h}}"
+        class="list data-v-61795fc0"
+        wx:for="{{b}}"
+        wx:for-item="consume"
+        wx:key="i"
+      >
+        <view class="create-time data-v-61795fc0" wx:if="{{consume.a}}"
+          >{{consume.b}}</view
+        >
+        <view class="list-bot data-v-61795fc0">
+          <view class="type-time data-v-61795fc0">
+            <view class="type data-v-61795fc0">{{consume.c}}</view>
+            <view class="time data-v-61795fc0">{{consume.d}}</view>
+          </view>
+          <view class="consumeamn data-v-61795fc0">
+            <text
+              class="data-v-61795fc0"
+              style="color: rgba(41, 43, 51, 1)"
+              wx:if="{{consume.e}}"
+              >+{{consume.f}}元</text
+            >
+            <text
+              class="data-v-61795fc0"
+              style="color: rgba(232, 79, 79, 1)"
+              wx:else
+              >{{consume.g}}元</text
+            >
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

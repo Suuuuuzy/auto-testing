@@ -1,0 +1,163 @@
+<view class="mpvue-calendar _div data-v-44db0633 vue-ref" data-ref="calendar">
+  <view class="calendar-tools _div data-v-44db0633" wx:if="{{!isMonthRange}}">
+    <view
+      bindtap="__e"
+      class="calendar-prev _div data-v-44db0633"
+      data-event-opts="{{[ [ 'tap',[ [ 'prev',['$event'] ] ] ] ]}}"
+    >
+      <image
+        class="_img data-v-44db0633"
+        src="{{arrowLeft}}"
+        wx:if="{{!!arrowLeft}}"
+      ></image>
+      <view class="iconfont icon-arrow-left _i data-v-44db0633" wx:else></view>
+    </view>
+    <view
+      bindtap="__e"
+      class="calendar-next _div data-v-44db0633"
+      data-event-opts="{{[ [ 'tap',[ [ 'next',['$event'] ] ] ] ]}}"
+    >
+      <image
+        class="_img data-v-44db0633"
+        src="{{arrowRight}}"
+        wx:if="{{!!arrowRight}}"
+      ></image>
+      <view class="iconfont icon-arrow-right _i data-v-44db0633" wx:else></view>
+    </view>
+    <view
+      catchtap="__e"
+      class="calendar-info _div data-v-44db0633"
+      data-event-opts="{{[ [ 'tap',[ [ 'changeYear',['$event'] ] ] ] ]}}"
+    >
+      <view class="mc-month _div data-v-44db0633">
+        <view
+          class="{{['_div','data-v-44db0633','mc-month-inner',oversliding?'':'month-transition']}}"
+          style="{{'top:'+monthPosition+unit+';'}}"
+          wx:if="{{isIos}}"
+        >
+          <label
+            class="_span data-v-44db0633"
+            wx:for="{{monthsLoop}}"
+            wx:for-index="i"
+            wx:for-item="m"
+            wx:key="i"
+            >{{m}}</label
+          >
+        </view>
+        <view class="mc-month-text _div data-v-44db0633" wx:else
+          >{{monthText}}</view
+        >
+      </view>
+      <view class="mc-year _div data-v-44db0633">{{year}}</view>
+    </view>
+  </view>
+  <view cellpadding="5" class="_table data-v-44db0633">
+    <view
+      class="{{[ 'mc-head','_div','data-v-44db0633','mc-head',[isMonthRange?'mc-month-range-mode-head':''] ]}}"
+    >
+      <view class="mc-head-box _div data-v-44db0633">
+        <view
+          class="mc-week _div data-v-44db0633"
+          wx:for="{{weeks}}"
+          wx:for-item="week"
+          wx:key="index"
+          >{{week}}</view
+        >
+      </view>
+    </view>
+    <view
+      class="{{[ '_div','data-v-44db0633','mc-body',[range?'mc-range-mode':'',weekSwitch&&!isMonthRange?'week-switch':'',isMonthRange?'month-range-mode':''] ]}}"
+      wx:for="{{monthRangeDays}}"
+      wx:for-item="days"
+      wx:key="index"
+    >
+      <view
+        class="month-rang-head _div data-v-44db0633"
+        wx:if="{{isMonthRange}}"
+        >{{rangeOfMonths[index][2]}}</view
+      >
+      <view
+        class="{{['_tr','data-v-44db0633',!lunar?'gregorianStyle':'']}}"
+        wx:for="{{days}}"
+        wx:for-index="k1"
+        wx:for-item="day"
+        wx:key="k1"
+      >
+        <view
+          bindtap="__e"
+          class="{{['mc-day','_td','data-v-44db0633',[child.selected?'selected':'',child.isToday?'mc-today-element':'',child.disabled?'disabled':'',rangeBgHide&&child.selected?'mc-range-select-one':'',lunar?'lunarStyle':'',k2===0&&child.selected?'mc-range-row-first':'',child.lastDay?'month-last-date':'',1===child.day?'month-first-date':'',k2===6&&child.selected?'mc-range-row-last':'',child.lastMonth?'mc-last-month':'',child.nextMonth?'mc-next-month':''],child.className,child.rangeClassName]}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'select',[k1,k2,'$0','$event',index],[ [ ['monthRangeDays','',index],['','',k1],['','',k2] ] ] ] ] ] ]}}"
+          style="{{itemStyle}}"
+          wx:for="{{day}}"
+          wx:for-index="k2"
+          wx:for-item="child"
+          wx:key="k2"
+        >
+          <label
+            class="mc-today calendar-date _span data-v-44db0633"
+            wx:if="{{showToday.show&&child.isToday}}"
+            >{{showToday.text}}</label
+          >
+          <label
+            class="{{['_span','data-v-44db0633',[k2===(monFirst?5:0)||k2===6?'mc-date-red':''],'calendar-date']}}"
+            wx:else
+            >{{child.day}}</label
+          >
+          <view
+            class="slot-element _div data-v-44db0633"
+            wx:if="{{!!child.content}}"
+            >{{child.content}}</view
+          >
+          <view
+            class="mc-text remark-text _div data-v-44db0633"
+            wx:if="{{child.eventName&&!clean}}"
+            >{{child.eventName}}</view
+          >
+          <view
+            class="mc-dot _div data-v-44db0633"
+            wx:if="{{child.eventName&&clean}}"
+          ></view>
+          <view
+            class="{{['mc-text','_div','data-v-44db0633',child.isAlmanac||child.isLunarFestival?'isLunarFestival':'',child.isGregorianFestival?'isGregorianFestival':'',child.isTerm?'isTerm':'']}}"
+            wx:if="{{lunar&&(!child.eventName||clean)}}"
+            >{{''+(child.almanac||child.lunar)+''}}</view
+          >
+          <view
+            class="mc-range-bg _div data-v-44db0633"
+            wx:if="{{range&&child.selected}}"
+          ></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view
+    class="{{['mpvue-calendar-change','_div','data-v-44db0633',yearsShow?'show':'']}}"
+  >
+    <view class="calendar-years _div data-v-44db0633" wx:if="{{!weekSwitch}}">
+      <label
+        catchtap="__e"
+        class="{{['_span','data-v-44db0633',y===year?'active':'']}}"
+        data-event-opts="{{[ [ 'tap',[ [ 'selectYear',['$0'],[ [ ['years','',__i0__] ] ] ] ] ] ]}}"
+        wx:for="{{years}}"
+        wx:for-index="__i0__"
+        wx:for-item="y"
+        wx:key="*this"
+        >{{y}}</label
+      >
+    </view>
+    <view
+      class="{{[ '_div','data-v-44db0633','calendar-months',[weekSwitch?'calendar-week-switch-months':''] ]}}"
+    >
+      <label
+        catchtap="__e"
+        class="{{['_span','data-v-44db0633',i===month?'active':'']}}"
+        data-event-opts="{{[ [ 'tap',[ [ 'changeMonth',[i] ] ] ] ]}}"
+        wx:for="{{months}}"
+        wx:for-index="i"
+        wx:for-item="m"
+        wx:key="*this"
+        >{{m}}</label
+      >
+    </view>
+  </view>
+</view>

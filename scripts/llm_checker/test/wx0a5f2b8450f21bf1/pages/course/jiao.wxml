@@ -1,0 +1,105 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">文案使用教程</view>
+</cu-custom>
+<view class="ad">
+  <ad adTheme="white" adType="video" unitId="{{ad['ad_k']}}"></ad>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-titles text-red"></text> 第一步
+  </view>
+</view>
+<view class="cu-card dynamic no-card">
+  <view class="cu-item shadow">
+    <view class="text-content margin-top-sm">
+      打开短视频平台，找到您要提取文案的短视频，点击【转发】图标，如下图
+    </view>
+    <view class="grid flex-sub padding-lr col-1">
+      <image
+        mode="widthFix"
+        src="/static/img/11.jpg"
+        style="width: 100%"
+      ></image>
+    </view>
+  </view>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-titles text-orange"></text> 第二步
+  </view>
+</view>
+<view class="cu-card dynamic no-card">
+  <view class="cu-item shadow">
+    <view class="text-content margin-top-sm">
+      点击【复制链接】按钮，如下图
+    </view>
+    <view class="grid flex-sub padding-lr col-1">
+      <image
+        mode="widthFix"
+        src="/static/img/22.jpg"
+        style="width: 100%"
+      ></image>
+    </view>
+  </view>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-titles text-blue"></text> 第三步
+  </view>
+</view>
+<view class="cu-card dynamic no-card margin-bottom">
+  <view class="cu-item shadow">
+    <view class="text-content margin-top-sm">
+      粘贴链接后，点击【解析文案】，如下图
+    </view>
+    <view class="grid flex-sub padding-lr col-1">
+      <image
+        mode="widthFix"
+        src="/static/img/444.jpg"
+        style="width: 100%"
+      ></image>
+    </view>
+    <view class="text-gray text-sm text-right padding"></view>
+  </view>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-titles text-green"></text> 第五步
+  </view>
+</view>
+<view class="cu-card dynamic no-card margin-bottom">
+  <view class="cu-item shadow">
+    <view class="text-content margin-top-sm">
+      解析提取成功，点击【复制】即可复制文案，如下图
+    </view>
+    <view class="grid flex-sub padding-lr col-1">
+      <image
+        mode="widthFix"
+        src="/static/img/555.jpg"
+        style="width: 100%"
+      ></image>
+    </view>
+    <view class="text-gray text-sm text-right padding"></view>
+  </view>
+</view>
+<view class="cu-card dynamic no-card margin-bottom">
+  <view class="cu-item shadow">
+    <view class="text-content margin-top-sm">
+      <span style="color: #ff0000"
+        >1.如果解析文案失败，可以返回首页解析去水印下载好视频。</span
+      >
+    </view>
+    <view class="text-content margin-top-sm">
+      <span style="color: #ff0000">2.在点击本地上传解析即可 </span>
+    </view>
+    <view class="grid flex-sub padding-lr col-1">
+      <image
+        mode="widthFix"
+        src="/static/img/666.jpg"
+        style="width: 100%"
+      ></image>
+    </view>
+    <view class="text-gray text-sm text-right padding"></view>
+  </view>
+</view>

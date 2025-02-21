@@ -1,0 +1,166 @@
+<view class="itemWrap _div data-v-b5e2635a">
+  <view
+    bindtap="__e"
+    class="imgBox pr _div data-v-b5e2635a"
+    data-event-opts="{{[ [ 'tap',[ [ 'imgAddDish',['$event'] ] ] ] ]}}"
+    style="{{'padding-bottom:'+imgPaddingBottom+';'}}"
+  >
+    <view
+      class="quantity fcf f20 tc _div data-v-b5e2635a"
+      style="{{'background:'+themeColor+';'}}"
+      wx:if="{{itemData.limitQuantityFlg=='1'&&itemData.limitQuantity>=0}}"
+      >{{'可售'+itemData.limitQuantity+'份'}}</view
+    >
+    <view
+      class="required fcf f20 tc _div data-v-b5e2635a"
+      style="{{'background:'+themeColor+';'}}"
+      wx:if="{{itemData.isSel==1}}"
+      >必选</view
+    >
+    <view class="dish-label _div data-v-b5e2635a" wx:if="{{showDishLabel}}">
+      <view
+        class="label-item _div data-v-b5e2635a"
+        wx:for="{{itemData.itemLabel}}"
+        wx:for-item="lable"
+        wx:key="index"
+        >{{''+lable+''}}</view
+      >
+    </view>
+    <image
+      class="image data-v-b5e2635a"
+      mode="aspectFill"
+      src="{{imgUrl}}"
+    ></image>
+  </view>
+  <view class="detailBox _div data-v-b5e2635a">
+    <view class="_div data-v-b5e2635a" style="padding: 12rpx">
+      <view class="itemNameWrap _div data-v-b5e2635a">
+        <view class="fc3 f26 ellipsis2 itemName _div data-v-b5e2635a"
+          >{{(itemData.combineFlag?itemData.realItemName:itemData.itemName)+(itemData.unId=='-1'&&showUnitName?'('+itemData.unitName+')':'')}}</view
+        >
+      </view>
+      <view
+        class="textLineThrough fc9 f22 originalPriceWrap _div data-v-b5e2635a"
+        wx:if="{{showTcOriginalprice}}"
+      >
+        <label
+          class="_span data-v-b5e2635a"
+          wx:if="{{itemData.itemPrice!=itemData.addPrice}}"
+          >{{''+itemData.itemPrice+''}}<label class="_span data-v-b5e2635a"
+            >元<label
+              class="_span data-v-b5e2635a"
+              wx:if="{{showTcOriginalprice}}"
+              >{{'/'+$root.m0}}</label
+            >
+          </label>
+        </label>
+      </view>
+      <view
+        class="addPriceWrap f22 flex _div data-v-b5e2635a"
+        style="{{'color:'+themeColor+';'+'height:'+(dynamicShow.addPrice2Line?'78rpx':'38rpx')+';'}}"
+        wx:if="{{dynamicShow.showAddPrice||showAddPriceWhenDetailIsZero}}"
+      >
+        <view
+          class="_div data-v-b5e2635a"
+          wx:if="{{itemData.addPrice>0&&(itemData.isShowVipAddPrice&&itemData.addPrice==vipAddPriceCalc||!itemData.isShowVipAddPrice)}}"
+        >
+          <label class="_span data-v-b5e2635a">{{'+'+itemData.addPrice}}</label>
+          <label class="_span data-v-b5e2635a"
+            >元<label
+              class="_span data-v-b5e2635a"
+              wx:if="{{showTcOriginalprice}}"
+              >{{'/'+$root.m1}}</label
+            >
+          </label>
+        </view>
+        <view
+          class="_div data-v-b5e2635a"
+          wx:if="{{itemData.addPrice>0&&itemData.isShowVipAddPrice&&itemData.addPrice!=vipAddPriceCalc}}"
+        >
+          <view class="_div data-v-b5e2635a"
+            >{{'+'+itemData.addPrice+''}}<label class="_span data-v-b5e2635a"
+              >元<label
+                class="_span data-v-b5e2635a"
+                wx:if="{{showTcOriginalprice}}"
+                >{{'/'+$root.m2}}</label
+              >
+            </label>
+          </view>
+          <view class="_div data-v-b5e2635a">
+            <label class="redText _span data-v-b5e2635a"
+              >{{'+'+vipAddPriceCalc+''}}<label class="_span data-v-b5e2635a"
+                >元<label
+                  class="_span data-v-b5e2635a"
+                  wx:if="{{showTcOriginalprice}}"
+                  >{{'/'+$root.m3}}</label
+                >
+              </label>
+            </label>
+            <view
+              class="hyTag displayInlineBlock f20 flexShrink0 pr tc _div data-v-b5e2635a"
+              >会<view class="triangle _div data-v-b5e2635a"></view>
+            </view>
+          </view>
+        </view>
+        <view
+          class="_div data-v-b5e2635a"
+          wx:if="{{!itemData.addPrice&&itemData.isShowVipAddPrice&&itemData.addPrice!=vipAddPriceCalc}}"
+        >
+          <label class="redText _span data-v-b5e2635a"
+            >{{'+'+vipAddPriceCalc+''}}<label class="f18 _span data-v-b5e2635a"
+              >元<label
+                class="_span data-v-b5e2635a"
+                wx:if="{{showTcOriginalprice}}"
+                >{{'/'+$root.m4}}</label
+              >
+            </label>
+          </label>
+          <view
+            class="hyTag displayInlineBlock f20 flexShrink0 pr tc _div data-v-b5e2635a"
+            >会<view class="triangle _div data-v-b5e2635a"></view>
+          </view>
+        </view>
+        <view
+          class="_div data-v-b5e2635a"
+          wx:if="{{showAddPriceWhenDetailIsZero&&!itemData.addPrice&&!vipAddPriceCalc}}"
+        >
+          <label class="_span data-v-b5e2635a">{{'+'+itemData.addPrice}}</label>
+        </view>
+      </view>
+      <view
+        class="f22 flex cookWrap _div data-v-b5e2635a"
+        wx:if="{{dynamicShow.showCook}}"
+      >
+        <view
+          bindtap="__e"
+          class="cookBorder tc fc9 f22 _div data-v-b5e2635a"
+          data-event-opts="{{[ [ 'tap',[ [ 'showCookPop',['$event'] ] ] ] ]}}"
+          style="{{'border-color:'+themeColor+';'+'color:'+themeColor+';'}}"
+          wx:if="{{dynamicShow.showAddCookBtn}}"
+          >选做法</view
+        >
+        <block wx:else>
+          <view
+            bindtap="__e"
+            class="pr flex fc9 _div data-v-b5e2635a"
+            data-event-opts="{{[ [ 'tap',[ [ 'showDelDishPop',['$event'] ] ] ] ]}}"
+            wx:if="{{dynamicShow.cookText}}"
+          >
+            <text class="ellipsis1 data-v-b5e2635a"
+              >{{dynamicShow.cookText}}</text
+            >
+            <text
+              class="ml5r f24 iconfont icon-xiangyouyuanjiantou flexShrink0 data-v-b5e2635a"
+            ></text>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view
+      class="_div data-v-b5e2635a"
+      style="{{'background:'+(hasBgColor?themeColor+'33':'')+';'}}"
+    >
+      <slot></slot>
+    </view>
+  </view>
+</view>

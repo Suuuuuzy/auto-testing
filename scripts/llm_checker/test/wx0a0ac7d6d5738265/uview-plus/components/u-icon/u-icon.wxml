@@ -1,0 +1,22 @@
+<view bindtap="{{s}}" class="{{['u-icon','data-v-42cc84bd',t]}}">
+  <image
+    class="u-icon__img data-v-42cc84bd"
+    mode="{{c}}"
+    src="{{b}}"
+    style="{{d+';'+e}}"
+    wx:if="{{a}}"
+  ></image>
+  <text
+    class="{{['u-icon__icon','data-v-42cc84bd',g]}}"
+    hoverClass="{{j}}"
+    style="{{h+';'+i}}"
+    wx:else
+    >{{f}}</text
+  >
+  <text
+    class="u-icon__label data-v-42cc84bd"
+    style="{{'color:'+m+';'+'font-size:'+n+';'+'margin-left:'+o+';'+'margin-top:'+p+';'+'margin-right:'+q+';'+'margin-bottom:'+r}}"
+    wx:if="{{k}}"
+    >{{l}}</text
+  >
+</view>

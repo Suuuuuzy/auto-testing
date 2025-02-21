@@ -1,0 +1,25 @@
+.codeWrap {
+  -webkit-box-pack: justify;
+  background: #fff;
+  border-radius: 16rpx;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8rpx;
+  width: 100%;
+}
+.codeImg {
+  height: 100rpx;
+  width: 100rpx;
+}
+.codeWord {
+  -webkit-box-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+  width: 100%;
+}
+.keyWord {
+  color: #00f;
+  font-size: 16px;
+}

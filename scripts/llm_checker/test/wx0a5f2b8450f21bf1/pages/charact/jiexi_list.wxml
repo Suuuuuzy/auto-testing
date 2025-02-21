@@ -1,0 +1,42 @@
+<view>
+  <cu-custom
+    bgColor="bg-gradual-blue"
+    bind:__l="__l"
+    isBack="{{true}}"
+    vueId="2e637200-1"
+    vueSlots="{{['content']}}"
+  >
+    <view slot="content">文案提取记录</view>
+  </cu-custom>
+  <view class="container">
+    <view class="pic-padding">
+      <ad
+        adTheme="white"
+        adType="video"
+        unitId="{{fontAd}}"
+        wx:if="{{showAd}}"
+      ></ad>
+    </view>
+    <view
+      bindtap="toDetail"
+      class="data-item"
+      data-item="{{item}}"
+      wx:for="{{dataList}}"
+    >
+      <view
+        style="
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 45px;
+        "
+      >
+        <view class="item-title">
+          <text>{{item.text}}</text>
+        </view>
+        <view class="item-time">{{item.time}}</view>
+      </view>
+      <view>前往查看 ></view>
+    </view>
+  </view>
+</view>

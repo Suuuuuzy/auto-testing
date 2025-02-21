@@ -1,0 +1,42 @@
+<view class="w100 cardPage data-v-4f93fb8d">
+  <zym-navigation
+    bind:__l="__l"
+    class="data-v-4f93fb8d"
+    uI="4f93fb8d-0"
+    uP="{{a}}"
+    wx:if="{{a}}"
+  ></zym-navigation>
+  <view class="contai data-v-4f93fb8d">
+    <view class="data-v-4f93fb8d" wx:if="{{b}}">
+      <view class="cardlist data-v-4f93fb8d" wx:for="{{c}}" wx:key="f">
+        <view class="cardName data-v-4f93fb8d">
+          <view class="c_name data-v-4f93fb8d"
+            >{{d}}
+            <text class="name data-v-4f93fb8d" wx:if="{{item.a}}"
+              >{{item.b}}</text
+            >
+          </view>
+        </view>
+        <u-line bind:__l="__l" class="data-v-4f93fb8d" uI="{{item.c}}"></u-line>
+        <view class="oiltypes mt24 mb24 data-v-4f93fb8d">
+          <image class="icon data-v-4f93fb8d" mode="" src="{{e}}"></image>
+          <text class="txt data-v-4f93fb8d">可使用油品{{item.d}} 优惠</text>
+        </view>
+        <view class="lq-btn data-v-4f93fb8d">
+          <text bindtap="{{item.e}}" class="btn data-v-4f93fb8d">
+            立即领取
+          </text>
+        </view>
+      </view>
+    </view>
+    <view class="data-v-4f93fb8d" wx:else>
+      <u-empty
+        bind:__l="__l"
+        class="data-v-4f93fb8d"
+        uI="4f93fb8d-2"
+        uP="{{f}}"
+        wx:if="{{f}}"
+      ></u-empty>
+    </view>
+  </view>
+</view>

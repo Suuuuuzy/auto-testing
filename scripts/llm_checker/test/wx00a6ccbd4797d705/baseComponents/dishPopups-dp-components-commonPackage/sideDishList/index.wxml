@@ -1,0 +1,116 @@
+<view class="_div data-v-a76e2f28">
+  <view
+    class="_div data-v-a76e2f28"
+    wx:for="{{$root.l1}}"
+    wx:for-index="groupIndex"
+    wx:for-item="group"
+    wx:key="groupld"
+  >
+    <view class="flex _div data-v-a76e2f28" style="padding: 30rpx 0 28rpx">
+      <view
+        class="f26 fw fc3 ellipsis1 display-block group-name _div data-v-a76e2f28"
+        >{{group[$orig].groupName}}</view
+      >
+      <view class="f24 fc6 _div data-v-a76e2f28"
+        >{{'（选'+group[$orig].minsel+'~'+group[$orig].maxsel+'）'}}</view
+      >
+    </view>
+    <view
+      class="{{['_div','data-v-a76e2f28',layout=='23'&&!isWoods?'dishItemWrap':'']}}"
+    >
+      <view
+        class="_div data-v-a76e2f28"
+        style="{{group.s0}}"
+        wx:for="{{group.l0}}"
+        wx:for-index="itemIndex"
+        wx:key="itemId"
+      >
+        <dish-item-w-m
+          bind:__l="__l"
+          bind:dishChange="__e"
+          class="data-v-a76e2f28 vue-ref-in-for"
+          context="{{context}}"
+          data-event-opts="{{[ [ '^dishChange',[ ['dishChange'] ] ] ]}}"
+          data-ref="dishItem"
+          disableDishChange="{{true}}"
+          disableInput="{{true}}"
+          dishBtnSize="{{init.dishBtnSize}}"
+          dishData="{{item[$orig]}}"
+          dishItemIndex="{{item.m0}}"
+          isShadow="{{true}}"
+          isVip="{{isVip}}"
+          layout="{{isWoods?'10':layout}}"
+          promPriceName="{{init.promPriceName}}"
+          themeColor="{{themeColor}}"
+          vipTxt="{{init.vipTxt}}"
+          vipTxtNext="{{init.vipTxtNext}}"
+          vueId="{{'3a268f58-1-'+groupIndex+'-'+itemIndex}}"
+          wx:if="{{context!=='DC'}}"
+        ></dish-item-w-m>
+        <block wx:else>
+          <dish-item-fast
+            bind:__l="__l"
+            bind:dishChange="__e"
+            class="data-v-a76e2f28 vue-ref-in-for"
+            context="{{context}}"
+            data-event-opts="{{[ [ '^dishChange',[ ['dishChange'] ] ] ]}}"
+            data-ref="dishItem"
+            disableDishChange="{{true}}"
+            disableEquity="{{true}}"
+            disableInput="{{true}}"
+            dishBtnSize="{{init.dishBtnSize}}"
+            dishData="{{item[$orig]}}"
+            dishItemIndex="{{item.m2}}"
+            gqData="{{item.m1}}"
+            isFastFood="{{false}}"
+            isShadow="{{true}}"
+            isVip="{{isVip}}"
+            layout="{{layout}}"
+            lockDish="{{null}}"
+            promPriceName="{{init.promPriceName}}"
+            themeColor="{{themeColor}}"
+            type="pageB"
+            vipTxt="{{init.vipTxt}}"
+            vipTxtNext="{{init.vipTxtNext}}"
+            vueId="{{'3a268f58-2-'+groupIndex+'-'+itemIndex}}"
+            wx:if="{{isFastFood}}"
+          ></dish-item-fast>
+          <dish-item-d-c
+            bind:__l="__l"
+            bind:dishChange="__e"
+            class="data-v-a76e2f28 vue-ref-in-for"
+            context="{{context}}"
+            data-event-opts="{{[ [ '^dishChange',[ ['dishChange'] ] ] ]}}"
+            data-ref="dishItem"
+            disableDishChange="{{true}}"
+            disableInput="{{true}}"
+            dishBtnSize="{{init.dishBtnSize}}"
+            dishData="{{item[$orig]}}"
+            dishItemIndex="{{item.m3}}"
+            gqData="{{item.m4}}"
+            isShadow="{{true}}"
+            isVip="{{isVip}}"
+            layout="{{layout}}"
+            promPriceName="{{init.promPriceName}}"
+            themeColor="{{themeColor}}"
+            vipTxt="{{init.vipTxt}}"
+            vipTxtNext="{{init.vipTxtNext}}"
+            vueId="{{'3a268f58-3-'+groupIndex+'-'+itemIndex}}"
+            wx:else
+          ></dish-item-d-c>
+        </block>
+      </view>
+    </view>
+  </view>
+  <reomve-dish-popup
+    bind:__l="__l"
+    bind:dishChange="__e"
+    bind:input="__e"
+    class="data-v-a76e2f28"
+    data-event-opts="{{[ [ '^dishChange',[ ['popupDishChange'] ] ],[ '^input',[ [ '__set_model',[ '','reomveDishPopup','$event',[] ] ] ] ] ]}}"
+    dishList="{{reomveDishList}}"
+    themeColor="{{themeColor}}"
+    value="{{reomveDishPopup}}"
+    vueId="3a268f58-4"
+  ></reomve-dish-popup>
+</view>

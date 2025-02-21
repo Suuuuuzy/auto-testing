@@ -1,0 +1,65 @@
+<view class="container">
+  <view id="reservation_topBar">
+    <view class="topBar_item">
+      <image
+        mode="aspectFit"
+        src="../asserts/images/reservation_cks.png"
+      ></image>
+      <view class="topBar_item_li"
+        >中心窗口数：<text class="topBar_item_num">{{totalWindows}}</text>
+      </view>
+    </view>
+    <view class="topBar_item">
+      <image
+        mode="aspectFit"
+        src="../asserts/images/reservation_pdrs.png"
+      ></image>
+      <view class="topBar_item_li"
+        >当前排队人数：<text class="topBar_item_num">{{currentWaiter}}</text>
+      </view>
+    </view>
+  </view>
+  <view id="reservation-topBg">
+    <image
+      class="reservation-topBg_img"
+      src="../asserts/images/reservation_topBG.png"
+    ></image>
+    <text class="reservation-topBg_title">排队情况</text>
+  </view>
+  <view id="reservation-body">
+    <view class="reservation_topMain">
+      <view class="topMain_item topMain_item_left">
+        <image src="../asserts/images/reservation_qh.png"></image>
+        <view class="topMain_item_num">
+          <view class="topMain_takeNum">{{takeNumbers}}</view>
+          <view>今日取号</view>
+        </view>
+      </view>
+      <view class="topMain_item">
+        <image src="../asserts/images/reservation_bl.png"></image>
+        <view class="topMain_item_num">
+          <view class="topMain_handle">{{handles}}</view>
+          <view>当月取号</view>
+        </view>
+      </view>
+    </view>
+    <view class="reservation_list">
+      <view
+        bindtap="bindReservationListTap"
+        class="reservation_list_item"
+        data-idx="{{item[3]}}"
+        wx:for="{{reservationList}}"
+      >
+        <view>{{item[0]}}</view>
+        <view class="item-waiters">
+          <image src="../asserts/images/reservation_windows.png"></image>
+          <text>{{item[2]}}</text>
+        </view>
+        <view class="item-showMore">
+          <text>点击查看</text>
+          <image src="../asserts/images/index_rightArrow.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

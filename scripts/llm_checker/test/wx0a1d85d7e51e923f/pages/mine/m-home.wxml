@@ -1,0 +1,171 @@
+<import src="/pages/template/footer/footer.wxml"></import>
+<view class="tap-page">
+  <view
+    class="padding-sm bg-white"
+    style="min-height: 200rpx; border-radius: 0rpx 0rpx 50rpx 50rpx"
+  >
+    <view wx:if="{{userInfo&&userInfo['nickName']!='微信用户_'}}">
+      <view class="flex justify-start align-center {{isUy?'rtl':''}}">
+        <view class="padding-xs">
+          <view
+            class="cu-avatar round lg"
+            style="background-image:url({{userInfo.avatarUrl}});"
+          ></view>
+        </view>
+        <view>
+          <view class="text-cut" style="200rpx">{{userInfo.nickName}}</view>
+          <view class="ltr" wx:if="{{appState.phone}}">{{appState.phone}}</view>
+          <navigator
+            class="padding-tb-xs"
+            url="/pages/common-page/login-page/login-page?title={{Str.login[lanIndex]}}"
+            wx:else
+          >
+            <button class="cu-btn bg-white sm shadow">
+              {{Str.getPhoneNumber[lanIndex]}}
+            </button>
+          </navigator>
+        </view>
+      </view>
+    </view>
+    <view class="text-center" style="padding: 70rpx 0px 70rpx 0px" wx:else>
+      <view>
+        <button
+          bindtap="loginBtn"
+          class="cu-btn bg-white radius shadow-warp"
+          style="padding: 20rpx 100rpx 20rpx 100rpx"
+        >
+          {{Str.login[lanIndex]}}
+        </button>
+      </view>
+    </view>
+  </view>
+  <view class="bg-white shadow margin-lr-xs flex align-center cart-bg">
+    <navigator
+      class="flex-twice text-center"
+      url="../mine/user-center/user-finance/user-finance?={{Str.myWallet[lanIndex]}}"
+    >
+      <t-icon class="text-balck" name="wallet" size="28"></t-icon>
+      <view class="text-black   text-block {{isUy?'uy-tom':'ch-font text-sm'}}"
+        >{{Str.myWallet[lanIndex]}}</view
+      >
+    </navigator>
+    <view class="text-center">
+      <view
+        class="bg-gray view-center"
+        style="min-height: 80rpx; width: 4rpx"
+      ></view>
+    </view>
+    <navigator
+      class="flex-twice text-center"
+      url="../mine/my-coupon/my-coupon?title={{Str.myCoupon[lanIndex]}}"
+    >
+      <t-icon class="text-black" name="coupon" size="28"></t-icon>
+      <view class="text-black  text-block {{isUy?'uy-tom':'ch-font text-sm'}}"
+        >{{Str.myCoupon[lanIndex]}}</view
+      >
+    </navigator>
+  </view>
+  <view
+    bindtap="callPhone"
+    class="cu-bar bg-white margin-lr-xs {{isUy?'rtl':''}} padding-lr-sm margin-top-xs"
+    data-phone="{{pageData.setting.phone}}"
+    style="border-radius: 12rpx"
+    wx:if="{{0}}"
+  >
+    <view class="action" style="margin-left: 16rpx">
+      <image
+        src="/resource/images/common/phone_service.png"
+        style="width: 64rpx; height: 64rpx"
+      ></image>
+      <text class="margin-lr-xs text-black uy-tom text-lg"
+        >{{isUy?pageData.locationArea.uy_name:pageData.locationArea.ch_name}}</text
+      >
+    </view>
+    <view class="action">
+      <text class="text-xl text-black text-bold"
+        >{{pageData.setting.phone}}</text
+      >
+    </view>
+  </view>
+  <view class="bg-white margin-lr-xs padding-xs margin-top-sm">
+    <t-grid class="block {{isUy?'rtl':''}}" column="{{4}}">
+      <t-grid-item
+        badgeProps="{{count:item.flag=='admin'?appState.orderCount:0}}"
+        bindtap="{{item.flag!='recomend'?'serviceItemClick':''}}"
+        data-item="{{item}}"
+        icon="{{item.icon}}"
+        wx:if="{{appState.admin==1&&item.flag=='admin'||item.flag!='admin'}}"
+        wx:for="{{menuList}}"
+        wx:key="index"
+      >
+        <view
+          class="text-black  margin-top-xs {{isUy?'uy-tom':'ch-font text-sm'}}"
+          slot="text"
+          >{{isUy?item.uy_name:item.ch_name}}</view
+        >
+      </t-grid-item>
+    </t-grid>
+  </view>
+  <view class="bg-white margin-lr-xs padding-xs margin-top-sm">
+    <t-grid class="block {{isUy?'rtl':''}}" column="{{4}}">
+      <t-grid-item
+        badgeProps="{{count:item.flag=='delivery'?appState.deliveryCount:0}}"
+        bindtap="otherItemClick"
+        data-item="{{item}}"
+        icon="{{item.icon}}"
+        wx:if="{{!(item.flag=='delivery'&&appState.delivery==0)}}"
+        wx:for="{{otherMenuList}}"
+        wx:key="index"
+      >
+        <view
+          class="text-black  margin-top-xs {{isUy?'uy-tom':'ch-font text-sm'}} "
+          slot="text"
+          >{{isUy?item.uy_name:item.ch_name}}</view
+        >
+      </t-grid-item>
+    </t-grid>
+  </view>
+  <view class="text-center padding" wx:if="{{0}}">
+    <view>{{scannerRst}}</view>
+    <view>
+      <button bindtap="scannerBtn" class="cu-btn radius lg bg-blue">
+        QRTEST
+      </button>
+    </view>
+  </view>
+  <official-account></official-account>
+  <template is="footer" data></template>
+</view>
+<t-popup
+  bind:visible-change="closeMakePhone"
+  data-index="2"
+  placement="bottom"
+  visible="{{showMakePhone}}"
+>
+  <view class="popup-content">
+    <view
+      class="popup-title border-bottom-1px"
+      wx:if="{{customerServiceInfo.serviceTimeDuration}}"
+    >
+      服务时间: {{customerServiceInfo.serviceTimeDuration}}
+    </view>
+    <view
+      bind:tap="callPhone"
+      class="popup-phone border-bottom-1px"
+      data-phone="{{pageData.setting.phone}}"
+      wx:if="{{pageData&&pageData.setting&&pageData.setting.phone}}"
+    >
+      <t-icon name="phone" prefix="cuIcon"></t-icon>
+      <view>
+        <text class="uy-tom padding-lr-xs">{{Str.contact[lanIndex]}}</text>
+      </view>
+    </view>
+    <button class="popup-phone border-bottom-1px online" openType="contact">
+      <t-icon name="earphone"></t-icon>
+      <text class="uy-tom padding-lr-xs">{{Str.leaveMessage[lanIndex]}}</text>
+    </button>
+    <view bind:tap="closeMakePhone" class="popup-close">
+      <text class="uy text-red">{{Str.cancel[lanIndex]}}</text>
+    </view>
+  </view>
+</t-popup>

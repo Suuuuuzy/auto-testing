@@ -1,0 +1,37 @@
+<view class="_div data-v-6222cf54">
+  <view class="{{['privacy_popup','_div','data-v-6222cf54',show?'active':'']}}">
+    <view class="privacy_popup_desc data-v-6222cf54"
+      >感谢您使用本服务。按照腾讯的最新要求，您使用本服务需首先同意<text
+        bindtap="__e"
+        class="privacy_popup_url_title data-v-6222cf54"
+        data-event-opts="{{[ [ 'tap',[ [ 'openPrivacyContract',['$event'] ] ] ] ]}}"
+        style="text-decoration: underline"
+        >《用户隐私保护指引》</text
+      >，如您同意<text
+        bindtap="__e"
+        class="privacy_popup_url_title data-v-6222cf54"
+        data-event-opts="{{[ [ 'tap',[ [ 'openPrivacyContract',['$event'] ] ] ] ]}}"
+        style="text-decoration: underline"
+        >《用户隐私保护指引》</text
+      >，请点击“同意”并开始使用本小程序相关功能。</view
+    >
+    <view class="privacy_popup_btns data-v-6222cf54">
+      <view
+        bindtap="__e"
+        class="default_btn message-btn data-v-6222cf54"
+        data-event-opts="{{[ [ 'tap',[ [ 'handleDisagree',['$event'] ] ] ] ]}}"
+        >拒绝</view
+      >
+      <view class="primary_btn message-btn data-v-6222cf54"
+        >同意<button
+          bindagreeprivacyauthorization="__e"
+          class="agree_btn data-v-6222cf54"
+          data-event-opts="{{[ [ 'agreeprivacyauthorization',[ [ 'handleAgree',['$event'] ] ] ] ]}}"
+          id="agree-btn"
+          openType="agreePrivacyAuthorization"
+        ></button>
+      </view>
+    </view>
+  </view>
+  <view class="{{['page','data-v-6222cf54',show?'active':'']}}"></view>
+</view>

@@ -1,0 +1,100 @@
+<view class="box active" id="page1">
+    <view class="gameinfobox" id="openexample" wx:if="{{list.length>0}}">
+        <view class="title">历史图标：</view>
+        <view class="water-list">
+            <view class="item" wx:for="{{list}}">
+                <image class="bg" mode="aspectFill" src="/images/icon-add-water-bg.png"></image>
+                <image class="img" mode="aspectFit" src="{{item.icon}}" style="opacity: {{item.opacity}};"></image>
+                <image bind:tap="del" class="x" data-id="{{item.id}}" src="/images/icon-add-water-del.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="page1-inputbox">
+        <form bindsubmit="onSubmit">
+            <block wx:for="{{formData}}">
+                <view class="inputlist" wx:if="{{item.type=='input'&&formData[0].i!=1}}">
+                    <view class="short-inputname">{{item.title}}：</view>
+                    <view class="short-input">
+                        <input bindinput="bindinput" class="input input-name" data-index="{{index}}" id="father-name" name="{{item.name}}" placeholder="{{item.msg}}" placeholderClass="placeholder" type="{{item.state}}" value="{{item.value}}"></input>
+                    </view>
+                </view>
+                <view class="inputlist upload-pic-containter" wx:if="{{item.type=='img'&&formData[0].i!=2}}">
+                    <view class="short-inputname upload-input upload-pic-lable">{{item.title}}：</view>
+                    <view class="upload-pic-wrapper">
+                        <view class="upload-pic-pre" wx:if="{{!item.value}}">
+                            <view bindtap="uploadImg" class="upload-pic-pre-info" data-face="{{item.is_auth==2?'1':'0'}}" data-h="{{item.data[2]}}" data-hok="{{item.data[4]}}" data-index="{{index}}" data-w="{{item.data[1]}}" data-wok="{{item.data[3]}}">点击上传照片></view>
+                        </view>
+                        <image bindtap="uploadImg" class="upload-pic-result" data-face="{{item.is_auth==2?'1':'0'}}" data-h="{{item.data[2]}}" data-hok="{{item.data[4]}}" data-index="{{index}}" data-w="{{item.data[1]}}" data-wok="{{item.data[3]}}" id="upload-canvas" src="{{item.value}}" wx:else></image>
+                        <input maxlength="-1" name="{{item.name}}" style="display: none;" type="text" value="{{item.value}}"></input>
+                    </view>
+                </view>
+                <view class="inputlist" wx:if="{{item.type=='select'&&(item.select_type=='1'&&formData[0].i!=1||item.select_type=='0')}}">
+                    <block wx:if="{{item.select_type=='1'}}">
+                        <view class="short-inputname">{{item.title}}：</view>
+                        <input name="{{item.name}}" style="display: none;" type="text" value="{{item.selected?item.selected:item.value[0]}}"></input>
+                        <view bindtap="bindSelectColor" class="short-input" data-color="{{item.value}}" data-index="{{index}}" data-selected="{{item.selected?item.selected:item.value[0]}}">
+                            <view style="background:{{item.selected?item.selected:item.value[0]}};width:40px;height:20px;margin:0 auto; margin-top:7px;border-radius:2px;border:1px solid #f3f3f3"></view>
+                        </view>
+                    </block>
+                    <block wx:elif="{{item.select_type=='2'}}">
+                        <view class="short-inputname">{{item.title}}：</view>
+                        <view class="short-input">
+                            <input disabled bindtap="selectCheckBox" class="input input-name" data-index="{{index}}" id="father-name" name="{{item.name}}" placeholder="请选择" type="text" value="{{item.selectBoxMsg}}"></input>
+                        </view>
+                    </block>
+                    <block wx:else>
+                        <view class="short-inputname">{{item.title}}：</view>
+                        <view class="short-input">
+                            <input bindinput="bindinput" class="input input-name" data-index="{{index}}" id="father-name" name="{{item.name}}" placeholder="自定义" type="text" value="" wx:if="{{item.msg[item.i]=='自定义'}}"></input>
+                            <block wx:else>
+                                <view class="analog-select" data-value="1" id="select-text">{{item.msg[item.i]}} <view class="select-arrow"></view>
+                                </view>
+                                <picker bindchange="bindPickerChange" class="select" data-index="{{index}}" id="select-list" range="{{item.msg}}" value="">
+                                    <view class="picker"> 当前选择：{{array[index]}} </view>
+                                </picker>
+                                <input name="{{item.name}}" style="display: none;" type="text" value="{{item.value[item.i]}}"></input>
+                            </block>
+                        </view>
+                    </block>
+                </view>
+            </block>
+            <view class="start normalstartbtn">
+                <button class="start" formType="submit" id="submitbtn">确认生成</button>
+            </view>
+        </form>
+    </view>
+</view>
+<view class="ad-ok-bg" style="{{selectColor.show?'':'left:6000px;'}}">
+    <view class="bottom-box">
+        <view class="title">颜色选择</view>
+        <view class="color-box">
+            <view class="select-color-box">
+                <view bindtap="colorPicker" class="item">
+                    <image src="/images/icon-select-color.png"></image>
+                </view>
+                <block wx:for="{{selectColor.color}}">
+                    <view bindtap="selectColor" class="item {{item==selectColor.selected?'on':''}}" data-value="{{item}}" style="background-color:{{item}};border:4rpx solid #969696;" wx:if="{{item=='#FFFFFF'||item=='#ffffff'}}"></view>
+                    <view bindtap="selectColor" class="item {{item==selectColor.selected?'on':''}}" data-value="{{item}}" style="background-color:{{item}};border:4rpx solid {{item}};" wx:else></view>
+                </block>
+            </view>
+        </view>
+        <view class="color-picker {{selectColor.type=='1'?'':'bottom'}}">
+            <color-picker bindchangeColor="pickColor" id="color-picker" initColor="#FFFFFF" show="{{selectColor.type}}"></color-picker>
+            <view bindtap="colorPickerHide" class="ok">确认</view>
+        </view>
+        <view bindtap="colorPickerHide" class="ok">确认</view>
+    </view>
+</view>
+<view class="ad-ok-bg" wx:if="{{icon!=''}}">
+    <view class="ad-ok ad-ok3">
+        <view class="water-show">
+            <image class="bg" mode="aspectFill" src="/images/icon-add-water-bg.jpg"></image>
+            <image class="img" mode="aspectFit" src="{{icon}}" style="opacity:{{formData[4].value[formData[4].i]}}"></image>
+        </view>
+        <view class="msg">无法完美呈现半透明效果,请合成视频后查看最终效果</view>
+        <view class="error-btn">
+            <button bindtap="clearIcon" class="jx">继续修改</button>
+            <button bind:tap="onUpload" class="qr">确认提交</button>
+        </view>
+    </view>
+</view>

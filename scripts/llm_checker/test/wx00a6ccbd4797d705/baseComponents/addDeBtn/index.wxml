@@ -1,0 +1,128 @@
+<view
+  class="choose-product _div data-v-68c1100b"
+  style="{{'background:'+set.background+';'}}"
+>
+  <view
+    catchtap="__e"
+    class="{{['special-add','_div','data-v-68c1100b',set.isWoods?'woods':'']}}"
+    data-event-opts="{{[ [ 'tap',[ [ 'plus',['$event'] ] ] ] ]}}"
+    id="plus"
+    style="{{'background-color:'+set.themeColor+';'+'height:'+set.size+'px'+';'+'line-height:'+set.size+'px'+';'}}"
+    wx:if="{{trueNum==0&&(!minusDisable?minNum>1:false)&&layout!=11&&layout!='custome11'}}"
+    >{{''+minNum+(unit.length===1?unit:'份')+'起点'}}</view
+  >
+  <block wx:else>
+    <view
+      catchtap="__e"
+      class="{{['special-add','_div','data-v-68c1100b',set.isWoods?'woods':'']}}"
+      data-event-opts="{{[ [ 'tap',[ [ 'plus',['$event'] ] ] ] ]}}"
+      id="plus"
+      style="{{'background-color:'+set.themeColor+';'+'height:'+set.size+'px'+';'+'line-height:'+set.size+'px'+';'}}"
+      wx:if="{{set.isShowPop&&showText&&(isFastFoods?true:trueNum==0)}}"
+      >选规格<view
+        class="sku-true-num _div data-v-68c1100b"
+        style="{{'background-color:'+set.themeColor+';'}}"
+        wx:if="{{trueNum>0&&isFastFoods}}"
+        >{{trueNum}}</view
+      >
+    </view>
+    <block wx:else>
+      <view
+        class="circleContent flexCenter _div data-v-68c1100b"
+        wx:if="{{set.dishBtnShape===2}}"
+      >
+        <view
+          catchtap="__e"
+          class="{{['product-add__minus','iconfont','icon-jianhao','fw700','_div','data-v-68c1100b','btn-size'+addBtnSize,trueNum<=set.min&&set.min>0?disable:'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'minus',['$event'] ] ] ] ]}}"
+          style="{{$root.s0}}"
+        ></view>
+        <view
+          bindtap="__e"
+          class="product-add__input _div data-v-68c1100b"
+          data-event-opts="{{[ [ 'tap',[ [ 'minus',['$event'] ] ] ] ]}}"
+          style="{{'display:'+(trueNum?'block':'none')+';'+'color:'+(set.isWoods?set.themeColor:'')+';'}}"
+          wx:if="{{set.isShowPop&&trueNum}}"
+          >{{''+trueNum+''}}</view
+        >
+        <view
+          class="product-add__input _div data-v-68c1100b"
+          wx:if="{{!set.isShowPop&&trueNum}}"
+        >
+          <input-num
+            bind:__l="__l"
+            bind:click="__e"
+            bind:input="__e"
+            bind:shift="__e"
+            class="data-v-68c1100b"
+            customStyle="{{'width:'+set.inputSize+'px'}}"
+            data-event-opts="{{[ [ '^input',[ ['printNewNum'] ] ],[ '^click',[ ['inputClick'] ] ],[ '^shift',[ ['shift'] ] ] ]}}"
+            precision="{{precision}}"
+            style="{{'display:'+(trueNum?'block':'none')+';'}}"
+            value="{{trueNum}}"
+            vueId="67c2ff82-1"
+          ></input-num>
+        </view>
+        <view
+          catchtap="__e"
+          class="{{['product-add__plus','iconfont','icon-jiahao','fw700','_div','data-v-68c1100b','btn-size'+addBtnSize]}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'plus',['$event'] ] ] ] ]}}"
+          id="plus"
+          style="{{$root.s1}}"
+        ></view>
+      </view>
+      <view
+        class="product-add _div data-v-68c1100b"
+        style="{{'height:'+set.size+'px'+';'+'line-height:'+set.size+'px'+';'}}"
+        wx:else
+      >
+        <view
+          class="product-add__content _div data-v-68c1100b"
+          style="{{'background-color:'+(goodsBgColor?'transparent':'#FFFFFF')+';'}}"
+        >
+          <view
+            catchtap="__e"
+            class="{{['product-add__minus','iconfont','icon-jianhao','_div','data-v-68c1100b',trueNum<=set.min&&set.min>0?'disable':'']}}"
+            data-event-opts="{{[ [ 'tap',[ [ 'minus',['$event'] ] ] ] ]}}"
+            style="{{'height:'+set.size+'px'+';'+'line-height:'+set.size+'px'+';'+'width:'+set.size+'px'+';'+'color:'+set.themeColor+';'+'border:'+(!set.isWoods?'1px solid '+set.themeColor:'')+';'+'font-weight:'+700+';'+'display:'+(trueNum?'':'none')+';'+'background-color:'+(goodsBgColor?'#FFFFFF':'')+';'+'font-size:'+set.size+10+'rpx'+';'}}"
+          ></view>
+          <view
+            bindtap="__e"
+            class="product-add__input _div data-v-68c1100b"
+            data-event-opts="{{[ [ 'tap',[ [ 'minus',['$event'] ] ] ] ]}}"
+            style="{{'height:'+set.size+'px'+';'+'width:'+set.inputSize+'px'+';'+'font-size:'+set.size*14/22+'px'+';'+'display:'+(trueNum?'block':'none')+';'+'color:'+(set.isWoods?set.themeColor:'')+';'}}"
+            wx:if="{{set.isShowPop}}"
+            >{{''+trueNum+''}}</view
+          >
+          <view
+            class="product-add__input _div data-v-68c1100b"
+            style="{{'height:'+set.size+'px;min-height:'+set.size+'px;width:'+set.inputSize+'px;font-size:'+set.size*14/22+'px;display:'+(trueNum?'block':'none')+';color:'+(set.isWoods?set.themeColor:'')}}"
+            wx:else
+          >
+            <input-num
+              bind:__l="__l"
+              bind:click="__e"
+              bind:input="__e"
+              bind:shift="__e"
+              class="data-v-68c1100b"
+              customStyle="{{'width:'+set.inputSize+'px'}}"
+              data-event-opts="{{[ [ '^input',[ ['printNewNum'] ] ],[ '^click',[ ['inputClick'] ] ],[ '^shift',[ ['shift'] ] ] ]}}"
+              isMultipleAdditionOrderFlg="{{isMultipleAdditionOrderFlg}}"
+              minOrderCount="{{minOrderCount}}"
+              precision="{{precision}}"
+              value="{{trueNum}}"
+              vueId="67c2ff82-2"
+            ></input-num>
+          </view>
+          <view
+            catchtap="__e"
+            class="product-add__plus iconfont icon-jiahao _div data-v-68c1100b"
+            data-event-opts="{{[ [ 'tap',[ [ 'plus',['$event'] ] ] ] ]}}"
+            id="plus"
+            style="{{'font-size:'+set.size+10+'rpx'+';'+'height:'+set.size+'px'+';'+'line-height:'+set.size+'px'+';'+'width:'+(trueNum||set.isCircle?set.size+'px':$root.g0+'px')+';'+'background-color:'+(maxNum<=trueNum||disabled?'#cccccc':set.themeColor)+';'+'border-radius:'+(trueNum?'50%':'100px')+';'}}"
+          ></view>
+        </view>
+      </view>
+    </block>
+  </block>
+</view>

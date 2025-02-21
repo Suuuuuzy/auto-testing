@@ -1,0 +1,58 @@
+<view>
+  <cu-custom
+    bgColor="bg-gradual-blue"
+    bind:__l="__l"
+    isBack="{{true}}"
+    vueId="2e637200-1"
+    vueSlots="{{['content']}}"
+  >
+    <view slot="backText">返回</view>
+    <view slot="content">短视频文案获取</view>
+  </cu-custom>
+  <view class="content">
+    <textarea
+      bindinput="setInputContent"
+      class="textarea"
+      maxlength="5000"
+      placeholder="长按粘贴短视频链接提取"
+      value="{{inputContent}}"
+    ></textarea>
+    <view bindtap="noneClick" class="mask" wx:if="{{!canInput}}"></view>
+    <view style="display: flex; width: 100%">
+      <button
+        bindtap="getCharact"
+        style="background: #b51bba; color: #fff; flex: 1; margin-right: 5px"
+      >
+        解析文案
+      </button>
+      <button
+        bindtap="clearInput"
+        style="background: #62ba1b; color: #fff; flex: 1; margin-right: 5px"
+      >
+        清空输入
+      </button>
+    </view>
+    <button
+      bindtap="localVideo"
+      style="background: #0d8ee4; color: #fff; margin-top: 10px"
+    >
+      提取本地视频文案
+    </button>
+    <view class="jiexi_list" style="margin-bottom: 3px">
+      <text bindtap="goLookJieXiList" style="margin-right: 9px"
+        >文案提取记录</text
+      >
+      <text bindtap="goLookJcourse" style="margin-right: 9px"
+        >文案使用教程</text
+      >
+    </view>
+    <view class="pic-padding">
+      <ad
+        adTheme="white"
+        adType="video"
+        unitId="{{fontAd}}"
+        wx:if="{{showAd}}"
+      ></ad>
+    </view>
+  </view>
+</view>

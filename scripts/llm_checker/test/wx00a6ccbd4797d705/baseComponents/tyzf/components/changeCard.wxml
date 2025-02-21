@@ -1,0 +1,51 @@
+<popup
+  bind:__l="__l"
+  bind:close="__e"
+  class="data-v-77f5faa0"
+  data-event-opts="{{[ [ '^close',[ ['hide'] ] ] ]}}"
+  position="bottom"
+  show="{{visible}}"
+  vueId="6405cbbe-1"
+  vueSlots="{{['default']}}"
+>
+  <view class="cardChangeWrap _div data-v-77f5faa0">
+    <view class="f28 _div data-v-77f5faa0">请选择一张您当前要使用的卡</view>
+    <view class="cardScrollWrap _div data-v-77f5faa0">
+      <view
+        class="cardWrap _div data-v-77f5faa0"
+        wx:for="{{crmCards.crmCardInfo}}"
+        wx:for-item="cardItem"
+        wx:key="index"
+      >
+        <view class="flexBetween pr p10 cardTop fcf _div data-v-77f5faa0">
+          <view class="_div data-v-77f5faa0">
+            <view class="_div data-v-77f5faa0">{{cardItem.kindName}}</view>
+            <view class="_div data-v-77f5faa0">{{'NO：'+cardItem.cardNo}}</view>
+          </view>
+          <view
+            bindtap="__e"
+            class="{{['iconfont','f48','_div','data-v-77f5faa0',cardNo===cardItem.cardNo?'icon-yuanxingxuanzhongfill':'icon-yuanxingweixuanzhong']}}"
+            data-event-opts="{{[ [ 'tap',[ [ 'selectCard',[ [ 'o',['cardNo',cardItem.cardNo],['cardKind',cardItem.card_kind],['kindName',cardItem.kindName],['memberId',cardItem.memberId] ] ] ] ] ] ]}}"
+          ></view>
+          <label
+            class="iconfont icon-huangguan huangguan _span data-v-77f5faa0"
+          ></label>
+        </view>
+        <view class="pr _div data-v-77f5faa0">
+          <view class="pa circle _left _div data-v-77f5faa0"></view>
+          <view class="pa circle _right _div data-v-77f5faa0"></view>
+        </view>
+        <view class="flexBetween bcf p15 cardBottom _div data-v-77f5faa0">
+          <view class="w50 tc crmItem _div data-v-77f5faa0">
+            <view class="_div data-v-77f5faa0">{{cardItem.cardScore}}</view>
+            <view class="mt5 _div data-v-77f5faa0">积分</view>
+          </view>
+          <view class="w50 tc crmItem _div data-v-77f5faa0">
+            <view class="_div data-v-77f5faa0">{{cardItem.balanceMoney}}</view>
+            <view class="mt5 _div data-v-77f5faa0">余额</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</popup>

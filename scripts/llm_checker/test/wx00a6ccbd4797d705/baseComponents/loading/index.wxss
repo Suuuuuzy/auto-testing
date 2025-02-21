@@ -1,0 +1,19 @@
+.loading {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+}
+.loading .loadingImage {
+  height: 100px;
+  width: 100px;
+}
+.loading.part {
+  position: absolute;
+  z-index: 1;
+}

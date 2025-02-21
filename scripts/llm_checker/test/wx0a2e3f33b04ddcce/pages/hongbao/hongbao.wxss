@@ -1,0 +1,98 @@
+.hongbao {
+  background-color: #f6f6f6;
+  height: 100%;
+  padding: 0 20rpx;
+}
+.hongbaoCard {
+  background-color: #fff;
+  box-shadow: 0 5px 12px 0 hsla(0, 0%, 89%, 0.5);
+  flex-direction: column;
+  height: 320rpx;
+  margin-top: 20rpx;
+}
+.hongbaoCard,
+.hongbaoCard-top {
+  display: -webkit-flex;
+  display: flex;
+}
+.hongbaoCard-top {
+  align-items: center;
+  background-color: snow;
+  border-radius: 6rpx;
+  flex: 1;
+  margin: 10rpx;
+  padding-left: 60rpx;
+  padding-right: 60rpx;
+}
+.hongbaoCard-top2 {
+  background-color: #f6f6f6;
+  position: relative;
+}
+.status-img {
+  height: 55rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 136rpx;
+}
+.status-text {
+  color: #fff;
+  font-size: 24rpx;
+  position: absolute;
+  right: 15rpx;
+  top: 10rpx;
+}
+.hongbaoCard-bottom {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  height: 90rpx;
+  justify-content: space-between;
+  padding-left: 60rpx;
+  padding-right: 60rpx;
+}
+.top-left {
+  width: 50%;
+}
+.text1 {
+  background-clip: text;
+  background-image: linear-gradient(146deg, #fc8c40 -5%, #fd5475 104%);
+  color: transparent;
+}
+.text1,
+.text1a {
+  font-size: 56rpx;
+  font-weight: 600;
+  line-height: 78rpx;
+}
+.text1a,
+.text2 {
+  color: #666;
+}
+.text2 {
+  font-size: 26rpx;
+  line-height: 32rpx;
+}
+.text3,
+.text4 {
+  color: #999;
+  font-size: 26rpx;
+  line-height: 36rpx;
+}
+.text3 {
+  margin-bottom: 25rpx;
+}
+.text5 {
+  color: #fd5e6c;
+}
+.text5,
+.text5a {
+  font-size: 28rpx;
+}
+.text5a {
+  color: #999;
+}
+.text6 {
+  color: #333;
+  font-size: 28rpx;
+}

@@ -1,0 +1,92 @@
+<view class="detailPopupSwiper pr _div data-v-06dd387c" style="{{$root.s0}}">
+  <view
+    class="{{['swiper-item','swiper-item__video','_div','data-v-06dd387c',imgList.length?'videoImg':'']}}"
+    hidden="{{!showVideo}}"
+    style="{{$root.s1}}"
+    wx:if="{{videoUrl}}"
+  >
+    <video
+      autoplay="{{false}}"
+      bindended="__e"
+      class="videoStyle data-v-06dd387c vue-ref"
+      controls="{{true}}"
+      data-event-opts="{{[ [ 'ended',[ [ 'videoEnded',['$event'] ] ] ] ]}}"
+      data-ref="video"
+      enableProgressGesture="{{false}}"
+      id="swiper-video"
+      showCenterPlayBtn="{{false}}"
+      showFullscreenBtn="{{false}}"
+      showPlayBtn="{{true}}"
+      src="{{videoUrl}}"
+    ></video>
+  </view>
+  <view
+    class="{{['swiper-item','swiper-item__img','_div','data-v-06dd387c',showPreview?'swiperPreview':'']}}"
+    hidden="{{!(nowShowSwiperType==1)}}"
+    wx:if="{{handledImglist.length}}"
+  >
+    <swiper
+      autoplay="{{true}}"
+      bindchange="__e"
+      class="swiper-item__component data-v-06dd387c"
+      data-event-opts="{{[ [ 'change',[ [ 'swipeImg',['$event'] ] ] ] ]}}"
+      interval="{{2000}}"
+    >
+      <swiper-item
+        bindtap="__e"
+        class="data-v-06dd387c"
+        data-event-opts="{{[ [ 'tap',[ [ 'imgPreview',[index] ] ] ] ]}}"
+        wx:for="{{handledImglist}}"
+        wx:key="index"
+      >
+        <image
+          class="bigFoodImg data-v-06dd387c"
+          mode="{{showPreview?'aspectFit':'aspectFill'}}"
+          src="{{item.url+(item.isGIF?sign:'')}}"
+        ></image>
+      </swiper-item>
+    </swiper>
+    <block
+      wx:if="{{(!videoUrl||styleType==2)&&indicator&&handledImglist.length>1}}"
+    >
+      <view class="indicator _div data-v-06dd387c" wx:if="{{indicatorType==1}}"
+        >{{currentIndex+1+'/'+handledImglist.length}}</view
+      >
+      <view class="_div data-v-06dd387c" wx:else>
+        <view
+          class="uni-swiper__dots-box data-v-06dd387c"
+          style="{{'bottom:'+indicatorSet.bottom+'rpx'+';'+'justify-content:'+indicatorSet.justifyContent+';'}}"
+        >
+          <view
+            class="{{['uni-swiper__dots-item','','data-v-06dd387c',i===currentIndex&&'uni-swiper__dots-long']}}"
+            style="{{item.s2}}"
+            wx:for="{{$root.l0}}"
+            wx:for-index="i"
+            wx:key="i"
+          ></view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view
+    class="{{['_div','data-v-06dd387c','swiper-btn__content_'+styleType]}}"
+    wx:if="{{isShowBtn}}"
+  >
+    <view class="swiper-btn__list _div data-v-06dd387c">
+      <view
+        bindtap="__e"
+        class="swiper-btn swiper-btn__video _div data-v-06dd387c"
+        data-event-opts="{{[ [ 'tap',[ [ 'changeNowShowSwiperType',[0] ] ] ] ]}}"
+        style="{{'background-color:'+(nowShowSwiperType==0?themeColor:'#f6f8fa')+';'+'border-color:'+(nowShowSwiperType==0?themeColor:'')+';'+'color:'+(nowShowSwiperType==0?textColor:'#333333')+';'}}"
+        >视频</view
+      >
+      <view
+        bindtap="__e"
+        class="swiper-btn swiper-btn__img _div data-v-06dd387c"
+        data-event-opts="{{[ [ 'tap',[ [ 'changeNowShowSwiperType',[1] ] ] ] ]}}"
+        style="{{'background-color:'+(nowShowSwiperType==1?themeColor:'#f6f8fa')+';'+'border-color:'+(nowShowSwiperType==1?themeColor:'')+';'+'color:'+(nowShowSwiperType==1?textColor:'#333333')+';'}}"
+        >图片</view
+      >
+    </view>
+  </view>
+</view>

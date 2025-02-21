@@ -1,0 +1,57 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view class="margin">
+    <view class="bg-white radius shadow-blur padding-sm;text-center" style="border-radius:16rpx;margin-top:150rpx">
+        <view style="margin-top:-80rpx;text-center">
+            <view class="cu-btn radius shadow-blur bg-pink lg" style="border-radius:24rpx">
+                <text class="icon-title text-white margin-right-sm"></text>
+                <text class="text-white">{{Str.applyForAgent[lanIndex]}}</text>
+                <text class="icon-title text-white margin-left-sm"></text>
+            </view>
+        </view>
+        <view class="margin-top text-left">
+            <view class="cu-form-group" style="min-height:80rpx">
+                <view class="title">
+                    <text class="icon-title text-red"></text>
+                </view>
+                <input bindinput="bindInputChange" data-type="0" focus="{{inputFocus.house}}" placeholder="{{Str.inputName[lanIndex]}}" value="{{formData.name}}"></input>
+            </view>
+            <view class="cu-form-group" style="min-height:100rpx">
+                <view class="title">
+                    <text class="icon-title text-red"></text>
+                </view>
+                <input bindinput="bindInputChange" data-type="1" focus="{{inputFocus.house}}" placeholder="{{Str.inputPhone[lanIndex]}}" type="number" value="{{formData.phone}}"></input>
+            </view>
+            <view class="cu-form-group" style="min-height:100rpx">
+                <view class="title">
+                    <text class="icon-title text-red"></text>
+                </view>
+                <input bindinput="bindInputChange" data-type="3" focus="{{inputFocus.house}}" placeholder="{{Str.inputAgentAreaName[lanIndex]}}" value="{{formData.areaName}}"></input>
+            </view>
+        </view>
+        <view class="margin-xl">
+            <button bindtap="subBtn" class="cu-btn radius bg-pink lg" disabled="{{!(formData.name&&formData.phone&&formData.areaName)}}" style="padding:0rpx 80rpx">{{Str.submit[lanIndex]}}</button>
+        </view>
+        <view class="margin-tb text-sm text-black">
+            <view wx:if="{{isUy}}">
+                <view>
+                    <text>ئالاقىدار ئۇچۇرىڭىزنى قالدۇرۇپ قويسىڭىز خىزمەتچى خادىملار سىز بىلەن ئالاقىلىشىدۇ</text>
+                </view>
+                <view>
+                    <text>قىزىق لىنىيە تېلېفۇن نومۇرى</text> : <text bindtap="callPhone" class="text-blue text-lg" data-phone="{{contactPhone}}">{{contactPhone}}</text>
+                </view>
+            </view>
+            <view wx:else>
+                <view>
+                    <text>把信息留下以后相关人员跟您联系</text>
+                </view>
+                <view>
+                    <text>热线电话</text> : <text bindtap="callPhone" class="text-blue text-lg" data-phone="{{contactPhone}}">{{contactPhone}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <template is="footer" data></template>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

@@ -1,0 +1,9 @@
+function noPassByMobile(str) {
+  if (null != str && str != undefined) {
+    var pat = getRegExp("(\x5cd{3})\x5cd*(\x5cd{4})");
+    return str.replace(pat, "$1****$2");
+  } else {
+    return "";
+  }
+}
+module.exports.desensitization = noPassByMobile;

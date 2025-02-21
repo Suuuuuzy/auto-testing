@@ -1,0 +1,72 @@
+<view
+  class="{{['banner','pr','_div','data-v-c1f93cf8','banner'+storeLayout]}}"
+  style="{{'background:'+'transparent'+';'}}"
+  wx:if="{{bannerInfo.openBanner&&(bannerInfo.bannerFile.length||bannerInfo.bannerAdScheme.length)}}"
+>
+  <block wx:if="{{storeLayout!=5}}">
+    <view class="_div data-v-c1f93cf8" wx:if="{{bannerInfo.bannerType==2}}">
+      <advert-components
+        advert="{{advert}}"
+        bind:__l="__l"
+        bind:adClickToPage="__e"
+        bind:dishAd="__e"
+        class="data-v-c1f93cf8"
+        currentPageHasDish="{{true}}"
+        data-event-opts="{{[ [ '^adClickToPage',[ ['adClickToPage'] ] ],[ '^dishAd',[ ['dishAd'] ] ] ]}}"
+        overspreadX="{{true}}"
+        pageControlToPage="{{true}}"
+        vueId="62f6e5e6-1"
+        wx:if="{{advert}}"
+      ></advert-components>
+    </view>
+    <image
+      alt
+      class="bannerImg _img data-v-c1f93cf8"
+      mode="{{storeLayout===7?'widthFix':'scaleToFill'}}"
+      src="{{bannerInfo.bannerFile[0]&&bannerInfo.bannerFile[0]['resUrl']}}"
+      wx:else
+    ></image>
+    <view class="_div data-v-c1f93cf8" style="{{$root.s0}}">
+      <view class="bcrgba pr mcInfo _div data-v-c1f93cf8" style="{{$root.s1}}">
+        <image
+          class="mcLogo _img data-v-c1f93cf8"
+          src="{{bannerInfo.logo}}"
+        ></image>
+        <view class="_div data-v-c1f93cf8">
+          <view class="mcName _div data-v-c1f93cf8">{{bannerInfo.mcName}}</view>
+          <block wx:if="{{storeLayout===7}}">
+            <view class="c6 f24 _div data-v-c1f93cf8"
+              >{{bannerInfo.mcDetailAddress}}</view
+            >
+            <view class="flexCenter mt20r _div data-v-c1f93cf8">
+              <view class="mcTableno mr20r _div data-v-c1f93cf8"
+                >{{'桌位：'+bannerInfo.tableName}}</view
+              >
+              <slot name="countdown"></slot>
+            </view>
+          </block>
+          <slot name="tableno" wx:else></slot>
+          <slot></slot>
+        </view>
+      </view>
+    </view>
+    <view
+      class="_div data-v-c1f93cf8"
+      style="{{'height:'+placeHolderHeight+'rpx'+';'}}"
+    ></view>
+    <view
+      class="{{['bannerDisplay','_div','data-v-c1f93cf8',storeLayout=='6'?'bannerWidth':'']}}"
+      wx:if="{{bannerInfo.takeout.enable}}"
+    >
+      <waidai-wrap
+        bind:__l="__l"
+        bind:changeWaidai="__e"
+        class="data-v-c1f93cf8"
+        data-event-opts="{{[ [ '^changeWaidai',[ ['changeWaidai'] ] ] ]}}"
+        initobj="{{bannerInfo}}"
+        vueId="62f6e5e6-2"
+      ></waidai-wrap>
+    </view>
+  </block>
+  <slot wx:else></slot>
+</view>

@@ -1,0 +1,131 @@
+<view class="_div data-v-470f5a40">
+  <movable-area class="fixed-box data-v-470f5a40">
+    <movable-view
+      class="fixed-button data-v-470f5a40"
+      direction="vertical"
+      inertia="{{true}}"
+      style="{{'top:'+topSize+';'}}"
+      wx:if="{{visible}}"
+    >
+      <view
+        bindtap="__e"
+        class="myCoupon _div data-v-470f5a40"
+        data-event-opts="{{[ [ 'tap',[ [ 'show',['$event'] ] ] ] ]}}"
+      >
+        <label class="youhuiIcon _span data-v-470f5a40">
+          <view class="iconfont icon-lingyouhuiquan _i data-v-470f5a40"></view>
+        </label>
+        <label class="_span data-v-470f5a40">我的券</label>
+      </view>
+    </movable-view>
+  </movable-area>
+  <view class="myCouponPopupBox _div data-v-470f5a40">
+    <weixin-popup
+      bind:__l="__l"
+      class="data-v-470f5a40"
+      customStyle="border-radius: 10px;"
+      position="center"
+      show="{{showPopup}}"
+      vueId="cea1f372-1"
+      vueSlots="{{['default']}}"
+    >
+      <view
+        class="myCouponPopup _div data-v-470f5a40"
+        style="{{'max-height:'+windowHeight+'px'+';'+'width:'+windowWidth+'px'+';'}}"
+      >
+        <view
+          bindtap="__e"
+          class="{{['_div','data-v-470f5a40',btnRadio=='1'?'close_right':'close_left']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'hidePopup',['$event'] ] ] ] ]}}"
+        >
+          <label
+            class="iconfont icon-guanbi close_icon _span data-v-470f5a40"
+          ></label>
+        </view>
+        <view
+          class="{{['_div','data-v-470f5a40',btnRadio=='1'?'myCouponTitleR':'myCouponTitleL']}}"
+          >菜品原价加购物车，支付时用券抵扣</view
+        >
+        <view
+          class="pt5 overflowAuto _div data-v-470f5a40"
+          style="{{'max-height:'+windowHeight-45+'px'+';'}}"
+          wx:if="{{crmTicketInfos&&crmTicketInfos.length>0}}"
+        >
+          <view
+            class="ticket-item ml10r mr10r mb15 radius16r _div data-v-470f5a40"
+            wx:for="{{crmTicketInfos}}"
+            wx:for-index="i"
+            wx:for-item="ticket"
+            wx:key="i"
+          >
+            <long-picture-ticket-item
+              bind:__l="__l"
+              class="data-v-470f5a40"
+              coustomDetail="{{!!ticket.unuseText}}"
+              noDate="{{true}}"
+              noDetail="{{true}}"
+              openSelection="{{true}}"
+              ticketData="{{ticket}}"
+              trueHeight="{{240}}"
+              vueId="{{'cea1f372-2-'+i+','+'cea1f372-1'}}"
+              vueSlots="{{['selectBtn','detail']}}"
+              wx:if="{{myTicketCustomImgFlg}}"
+            >
+              <add-de-btn
+                bind:__l="__l"
+                bind:plusFun="__e"
+                class="data-v-470f5a40"
+                data-event-opts="{{[ [ '^plusFun',[ [ 'showCouponDish',['$0'],[ [ ['crmTicketInfos','',i] ] ] ] ] ] ]}}"
+                maxNum="{{999}}"
+                set="{{themeColor:themeColor,size:18,inputSize:18}}"
+                slot="selectBtn"
+                trueNum="{{0}}"
+                vueId="{{'cea1f372-3-'+i+','+'cea1f372-2-'+i}}"
+                wx:if="{{ticket.type===3||ticket.type===4}}"
+              ></add-de-btn>
+              <view
+                class="f18 _div data-v-470f5a40"
+                slot="detail"
+                wx:if="{{ticket.unuseText}}"
+                >{{''+ticket.unuseText+''}}</view
+              >
+            </long-picture-ticket-item>
+            <ticket-item2
+              bind:__l="__l"
+              class="data-v-470f5a40"
+              noDate="{{true}}"
+              noDetail="{{true}}"
+              openSelection="{{true}}"
+              ticketData="{{ticket}}"
+              vueId="{{'cea1f372-4-'+i+','+'cea1f372-1'}}"
+              vueSlots="{{['selectBtn','detail']}}"
+              wx:else
+            >
+              <add-de-btn
+                bind:__l="__l"
+                bind:plusFun="__e"
+                class="data-v-470f5a40"
+                data-event-opts="{{[ [ '^plusFun',[ [ 'showCouponDish',['$0'],[ [ ['crmTicketInfos','',i] ] ] ] ] ] ]}}"
+                maxNum="{{999}}"
+                set="{{themeColor:themeColor,size:18,inputSize:18}}"
+                slot="selectBtn"
+                trueNum="{{0}}"
+                vueId="{{'cea1f372-5-'+i+','+'cea1f372-4-'+i}}"
+                wx:if="{{ticket.type===3||ticket.type===4}}"
+              ></add-de-btn>
+              <view
+                class="tips fc9 f24 _div data-v-470f5a40"
+                slot="detail"
+                wx:if="{{ticket.unuseText}}"
+                >{{''+ticket.unuseText+''}}</view
+              >
+            </ticket-item2>
+          </view>
+        </view>
+        <view class="tc fc6 messageTxt _div data-v-470f5a40" wx:else
+          >{{''+messageTxt+''}}</view
+        >
+      </view>
+    </weixin-popup>
+  </view>
+</view>

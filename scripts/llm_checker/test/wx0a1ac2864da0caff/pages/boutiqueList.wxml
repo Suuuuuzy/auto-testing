@@ -1,0 +1,252 @@
+<view class="{{['container','_div','data-v-1fd69da8','tab-top-'+tab]}}">
+  <view
+    class="{{['scroll-page','_div','data-v-1fd69da8',tab===1?'active':'']}}"
+  >
+    <scroll-view
+      class="content data-v-1fd69da8"
+      enableBackToTop="{{true}}"
+      scrollY="{{true}}"
+    >
+      <view class="boutique-item-list _div data-v-1fd69da8">
+        <pp-boutique-item-large
+          bind:__l="__l"
+          class="data-v-1fd69da8"
+          item="{{id:'m04v',name:'北京源邸',address:'北京市前门东大街23号',more:'前门23号1号楼',thumb:'http://cdn.impdigital.cn/patek/img/banner-top-1-new.jpg'}}"
+          vueId="577d736a-1"
+        ></pp-boutique-item-large>
+        <pp-boutique-item-large
+          bind:__l="__l"
+          class="data-v-1fd69da8"
+          item="{{id:'m0n3',name:'上海源邸',address:'上海市黄浦区中山东一路33号',more:'外滩源2号楼',thumb:'http://cdn.impdigital.cn/patek/img/banner-top-2-new-inner.jpg'}}"
+          vueId="577d736a-2"
+        ></pp-boutique-item-large>
+      </view>
+    </scroll-view>
+  </view>
+  <view
+    class="{{['scroll-page','_div','data-v-1fd69da8',tab===2?'active':'']}}"
+  >
+    <scroll-view
+      class="content data-v-1fd69da8"
+      enableBackToTop="{{true}}"
+      scrollY="{{true}}"
+    >
+      <view
+        class="boutique-item-list _div data-v-1fd69da8"
+        wx:if="{{boutiqueNotMainLand}}"
+      >
+        <pp-boutique-item
+          bind:__l="__l"
+          class="data-v-1fd69da8"
+          item="{{item}}"
+          vueId="{{'577d736a-3-'+index}}"
+          wx:for="{{boutiqueNotMainLand}}"
+          wx:key="index"
+        ></pp-boutique-item>
+      </view>
+    </scroll-view>
+  </view>
+  <view
+    class="{{['scroll-page','_div','data-v-1fd69da8',tab===3?'active':'']}}"
+  >
+    <scroll-view
+      bindscrolltolower="__e"
+      class="content data-v-1fd69da8"
+      data-event-opts="{{[ [ 'scrolltolower',[ [ 'toBottomRefresh',['$event'] ] ] ] ]}}"
+      enableBackToTop="{{true}}"
+      scrollY="{{true}}"
+    >
+      <view
+        class="boutique-item-list _div data-v-1fd69da8"
+        wx:if="{{boutiqueOthers}}"
+      >
+        <block wx:if="{{!nowArea||nowArea==='欧洲'}}">
+          <pp-boutique-item-large-more
+            bind:__l="__l"
+            class="data-v-1fd69da8"
+            item="{{url:'https://www.patek.com/chs/%E9%94%80%E5%94%AE%E4%B8%8E%E6%9C%8D%E5%8A%A1/%E7%99%BE%E8%BE%BE%E7%BF%A1%E4%B8%BD%E6%B2%99%E9%BE%99/%E6%97%A5%E5%86%85%E7%93%A6',name:'日内瓦沙龙',thumb:'http://cdn.impdigital.cn/patek/img/boutique-geneva.jpg'}}"
+            vueId="577d736a-4"
+          ></pp-boutique-item-large-more>
+          <pp-boutique-item-large-more
+            bind:__l="__l"
+            class="data-v-1fd69da8"
+            item="{{url:'https://www.patek.com/chs/%E9%94%80%E5%94%AE%E4%B8%8E%E6%9C%8D%E5%8A%A1/%E7%99%BE%E8%BE%BE%E7%BF%A1%E4%B8%BD%E6%B2%99%E9%BE%99/%E5%B7%B4%E9%BB%8E',name:'巴黎沙龙',thumb:'http://cdn.impdigital.cn/patek/img/boutique-paris.jpg'}}"
+            vueId="577d736a-5"
+          ></pp-boutique-item-large-more>
+          <pp-boutique-item-large-more
+            bind:__l="__l"
+            class="data-v-1fd69da8"
+            item="{{url:'https://www.patek.com/chs/%E9%94%80%E5%94%AE%E4%B8%8E%E6%9C%8D%E5%8A%A1/%E7%99%BE%E8%BE%BE%E7%BF%A1%E4%B8%BD%E6%B2%99%E9%BE%99/%E4%BC%A6%E6%95%A6',name:'伦敦沙龙',thumb:'http://cdn.impdigital.cn/patek/img/boutique-london.jpg'}}"
+            vueId="577d736a-6"
+          ></pp-boutique-item-large-more>
+        </block>
+        <pp-boutique-item
+          bind:__l="__l"
+          class="data-v-1fd69da8"
+          item="{{item}}"
+          vueId="{{'577d736a-7-'+index}}"
+          wx:for="{{boutiqueOthers}}"
+          wx:key="index"
+        ></pp-boutique-item>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="tab-top _div data-v-1fd69da8">
+    <view
+      bindtap="__e"
+      class="{{['tab-item','_div','data-v-1fd69da8',tab===1?'active':'']}}"
+      data-event-opts="{{[ [ 'tap',[ [ 'chooseTab',[1] ] ] ] ]}}"
+      >北京/上海</view
+    >
+    <view
+      bindtap="__e"
+      class="{{['tab-item','_div','data-v-1fd69da8',tab===2?'active':'']}}"
+      data-event-opts="{{[ [ 'tap',[ [ 'chooseTab',[2] ] ] ] ]}}"
+      >港澳台</view
+    >
+    <view
+      bindtap="__e"
+      class="{{['tab-item','_div','data-v-1fd69da8',tab===3?'active':'']}}"
+      data-event-opts="{{[ [ 'tap',[ [ 'chooseTab',[3] ] ] ] ]}}"
+      >海外</view
+    >
+    <view class="tab-item-line _div data-v-1fd69da8"></view>
+  </view>
+  <view class="boutique-filter-out _div data-v-1fd69da8">
+    <view
+      bindtap="__e"
+      class="{{['boutique-filter-item','_div','data-v-1fd69da8',nowArea?'active':'']}}"
+      data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+    >
+      <view class="boutique-filter-item-text _div data-v-1fd69da8"
+        >{{nowArea?nowArea:'地区'}}</view
+      >
+      <view class="arrow-down _div data-v-1fd69da8">
+        <image
+          class="pic _img data-v-1fd69da8"
+          src="/static/img/arrow-down.svg"
+        ></image>
+      </view>
+    </view>
+    <view
+      bindtap="__e"
+      class="{{['boutique-filter-item','_div','data-v-1fd69da8',nowCountry?'active':'']}}"
+      data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}"
+    >
+      <view class="boutique-filter-item-text _div data-v-1fd69da8"
+        >{{nowCountry?nowCountry:'国家或地区'}}</view
+      >
+      <view class="arrow-down _div data-v-1fd69da8">
+        <image
+          class="pic _img data-v-1fd69da8"
+          src="/static/img/arrow-down-grey.svg"
+        ></image>
+      </view>
+    </view>
+    <view
+      bindtap="__e"
+      class="{{['boutique-filter-item','_div','data-v-1fd69da8',nowCity?'active':'']}}"
+      data-event-opts="{{[ [ 'tap',[ [ 'e2',['$event'] ] ] ] ]}}"
+    >
+      <view class="boutique-filter-item-text _div data-v-1fd69da8"
+        >{{nowCity?nowCity:'城市'}}</view
+      >
+      <view class="arrow-down _div data-v-1fd69da8">
+        <image
+          class="pic _img data-v-1fd69da8"
+          src="/static/img/arrow-down-grey.svg"
+        ></image>
+      </view>
+    </view>
+  </view>
+  <view
+    class="{{['filter-top-out','_div','data-v-1fd69da8',showFilter==='area'?'active':'']}}"
+  >
+    <view
+      bindtap="__e"
+      class="content _div data-v-1fd69da8"
+      data-event-opts="{{[ [ 'tap',[ [ 'e3',['$event'] ] ] ] ]}}"
+    ></view>
+    <view class="filter-top-out-inner _div data-v-1fd69da8" wx:if="{{areas}}">
+      <scroll-view class="panel data-v-1fd69da8" scrollY="{{true}}">
+        <view class="filter-top-list _div data-v-1fd69da8">
+          <view
+            bindtap="__e"
+            class="filter-top-item _div data-v-1fd69da8"
+            data-event-opts="{{[ [ 'tap',[ [ 'chooseArea',[''] ] ] ] ]}}"
+            >全部</view
+          >
+          <view
+            bindtap="__e"
+            class="{{['filter-top-item','_div','data-v-1fd69da8',item===nowArea?'active':'']}}"
+            data-event-opts="{{[ [ 'tap',[ [ 'chooseArea',['$0'],[ [ ['areas','',index] ] ] ] ] ] ]}}"
+            wx:for="{{areas}}"
+            wx:key="index"
+            >{{item}}</view
+          >
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view
+    class="{{['filter-top-out','_div','data-v-1fd69da8',showFilter==='country'?'active':'']}}"
+  >
+    <view
+      bindtap="__e"
+      class="content _div data-v-1fd69da8"
+      data-event-opts="{{[ [ 'tap',[ [ 'e4',['$event'] ] ] ] ]}}"
+    ></view>
+    <view
+      class="filter-top-out-inner _div data-v-1fd69da8"
+      wx:if="{{countrys}}"
+    >
+      <scroll-view class="panel data-v-1fd69da8" scrollY="{{true}}">
+        <view class="filter-top-list _div data-v-1fd69da8">
+          <view
+            bindtap="__e"
+            class="filter-top-item _div data-v-1fd69da8"
+            data-event-opts="{{[ [ 'tap',[ [ 'chooseCountry',[''] ] ] ] ]}}"
+            >全部</view
+          >
+          <view
+            bindtap="__e"
+            class="{{['filter-top-item','_div','data-v-1fd69da8',item===nowCountry?'active':'']}}"
+            data-event-opts="{{[ [ 'tap',[ [ 'chooseCountry',['$0'],[ [ ['countrys','',index] ] ] ] ] ] ]}}"
+            wx:for="{{countrys}}"
+            wx:key="index"
+            >{{item}}</view
+          >
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view
+    class="{{['filter-top-out','_div','data-v-1fd69da8',showFilter==='city'?'active':'']}}"
+  >
+    <view
+      bindtap="__e"
+      class="content _div data-v-1fd69da8"
+      data-event-opts="{{[ [ 'tap',[ [ 'e5',['$event'] ] ] ] ]}}"
+    ></view>
+    <view class="filter-top-out-inner _div data-v-1fd69da8" wx:if="{{citys}}">
+      <scroll-view class="panel data-v-1fd69da8" scrollY="{{true}}">
+        <view class="filter-top-list _div data-v-1fd69da8">
+          <view
+            bindtap="__e"
+            class="filter-top-item _div data-v-1fd69da8"
+            data-event-opts="{{[ [ 'tap',[ [ 'chooseCity',[''] ] ] ] ]}}"
+            >全部</view
+          >
+          <view
+            bindtap="__e"
+            class="{{['filter-top-item','_div','data-v-1fd69da8',item===nowCity?'active':'']}}"
+            data-event-opts="{{[ [ 'tap',[ [ 'chooseCity',['$0'],[ [ ['citys','',index] ] ] ] ] ] ]}}"
+            wx:for="{{citys}}"
+            wx:key="index"
+            >{{item}}</view
+          >
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

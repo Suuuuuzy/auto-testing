@@ -1,0 +1,114 @@
+.content_style {
+  margin: 20rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  padding: 20rpx;
+}
+.param_item_style {
+  height: 90rpx;
+  line-height: 90rpx;
+  margin-top: 5rpx;
+}
+.param_input_item,
+.param_item_style {
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+}
+.param_input_item {
+  border: 1rpx solid #666;
+  border-radius: 10rpx;
+  height: 85rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+.center_y {
+  width: 150rpx;
+}
+.center_y,
+.param_input_style {
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.param_input_style {
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  padding-left: 15rpx;
+}
+.param_icon_style {
+  height: 90rpx;
+  width: 90rpx;
+}
+.uni-tip {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  padding: 15px;
+  margin-left: 100rpx;
+  margin-top: 100rpx;
+  width: 490rpx;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.uni-tip-title {
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  color: #333;
+}
+.uni-tip-content {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+.uni-tip-group-button {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  margin-top: 20px;
+}
+.uni-tip-button {
+  -webkit-box-flex: 1;
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+  color: #3b4144;
+}
+.view_hidde {
+  display: none;
+}
+.input_radius_view_style {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  padding: 15px;
+  width: 200px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.radius_input_style {
+  border: #999;
+  margin-left: 5px;
+  border-radius: 5px;
+}

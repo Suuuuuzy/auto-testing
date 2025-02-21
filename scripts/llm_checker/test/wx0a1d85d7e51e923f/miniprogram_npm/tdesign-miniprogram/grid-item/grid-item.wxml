@@ -1,0 +1,75 @@
+<import src="../common/template/image.wxml"></import>
+<import src="../common/template/icon.wxml"></import>
+<view
+  ariaDescribedby="{{describedbyID}}"
+  ariaLabel="{{ariaLabel}}"
+  ariaRole="{{ariaRole||'button'}}"
+  bindtap="onClick"
+  class="{{_.cls( classPrefix,[ ['auto-size',column==0] ] )}} class {{prefix}}-class"
+  hoverClass="{{hover?classPrefix+'--hover':''}}"
+  hoverStayTime="{{200}}"
+  style="{{_._style( [gridItemStyle,style,customStyle] )}}"
+>
+  <view
+    class="{{_.cls( classPrefix+'__wrapper',[layout] )}}"
+    style="{{gridItemWrapperStyle}}"
+  >
+    <view
+      class="{{_.cls( classPrefix+'__content',[align,layout] )}} {{prefix}}-class-content"
+      style="{{gridItemContentStyle}}"
+    >
+      <slot></slot>
+      <t-badge
+        color="{{badgeProps.color||''}}"
+        content="{{badgeProps.content||''}}"
+        count="{{badgeProps.count||0}}"
+        dot="{{badgeProps.dot||false}}"
+        maxCount="{{badgeProps.maxCount||99}}"
+        offset="{{badgeProps.offset||[]}}"
+        shape="{{badgeProps.shape||'circle'}}"
+        showZero="{{badgeProps.showZero||false}}"
+        size="{{badgeProps.size||'medium'}}"
+        tClass="{{badgeProps.tClass}}"
+        tClassContent="{{badgeProps.tClassContent}}"
+        tClassCount="{{badgeProps.tClassCount}}"
+        wx:if="{{image||icon}}"
+      >
+        <view
+          class="{{_.cls( classPrefix+'__image',[ util.getImageSize(column),['icon',icon] ] )}} {{prefix}}-class-image"
+        >
+          <template
+            is="image"
+            data="{{src:image,shape:'round',mode:'widthFix',tClass:_.cls( classPrefix+'__image',[ util.getImageSize(column) ] )+' '+prefix+'-class-image',...imageProps}}"
+            wx:if="{{image&&image!='slot'}}"
+          ></template>
+          <slot name="image"></slot>
+          <template
+            is="icon"
+            data="{{class:classPrefix+'__icon',name:iconName,...iconData}}"
+            wx:if="{{iconName||_.isNoEmptyObj(iconData)}}"
+          ></template>
+        </view>
+      </t-badge>
+      <view
+        ariaLabel="{{ariaLabel||(badgeProps.dot||badgeProps.count?text+','+description+','+_.getBadgeAriaLabel(...badgeProps):'')}}"
+        class="{{_.cls( classPrefix+'__words',[layout] )}}"
+        id="{{describedbyID}}"
+      >
+        <view
+          class="{{_.cls( classPrefix+'__text',[util.getImageSize(column),layout] )}} {{prefix}}-class-text"
+          wx:if="{{text}}"
+        >
+          {{text}}
+        </view>
+        <slot name="text"></slot>
+        <view
+          class="{{_.cls( classPrefix+'__description',[util.getImageSize(column),layout] )}} {{prefix}}-class-description"
+          wx:if="{{description}}"
+        >
+          {{description}}
+        </view>
+        <slot name="description"></slot>
+      </view>
+    </view>
+  </view>
+</view>

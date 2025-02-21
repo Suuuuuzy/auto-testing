@@ -1,0 +1,107 @@
+<view class="plr30r _div data-v-1d44ef56">
+  <view
+    class="_div data-v-1d44ef56"
+    wx:for="{{$root.l0}}"
+    wx:for-index="num"
+    wx:key="num"
+  >
+    <view
+      class="group_item_out _div data-v-1d44ef56"
+      wx:if="{{item[$orig].randomShow}}"
+    >
+      <view class="group_item flexBetweenCenter _div data-v-1d44ef56">
+        <view class="item_name_wrap _div data-v-1d44ef56">
+          <label class="item_name _span data-v-1d44ef56"
+            >{{item[$orig].itemName}}</label
+          >
+          <view class="_div data-v-1d44ef56">
+            <label
+              class="iconfont icon-huo rest_count redText _span data-v-1d44ef56"
+              wx:if="{{item[$orig].limitQuantityFlg&&item[$orig].guQingFlg=='0'}}"
+            ></label>
+            <label
+              class="f24 _span data-v-1d44ef56"
+              wx:if="{{item[$orig].limitQuantityFlg&&item[$orig].guQingFlg=='0'}}"
+              >{{'可售'+(item[$orig].limitQuantity||0)+'份'}}</label
+            >
+          </view>
+        </view>
+        <view class="cookStyleWrap ellipsis2 _div data-v-1d44ef56">
+          <block
+            wx:if="{{item[$orig].cookStyleList.length&&dishCookMap[group.grpId]}}"
+          >
+            <view
+              bindtap="__e"
+              class="addCookStyle _div data-v-1d44ef56"
+              data-event-opts="{{[ [ 'tap',[ [ 'addCookFun',['$0','$1'],[ [ ['group.tcGrpItem','',num] ],'group' ] ] ] ] ]}}"
+              style="{{item.s0}}"
+              wx:if="{{dishCookMap[group.grpId]['itemList'][item[$orig].mapKey].showAddCookBtn}}"
+              >选做法</view
+            >
+            <view
+              bindtap="__e"
+              class="itemAllCook _div data-v-1d44ef56"
+              data-event-opts="{{[ [ 'tap',[ [ 'showDelDishPop',['$0','$1'],[ [ ['group.tcGrpItem','',num] ],'group' ] ] ] ] ]}}"
+              wx:if="{{dishCookMap[group.grpId]['itemList'][item[$orig].mapKey].allCookText}}"
+              >{{''+dishCookMap[group.grpId]['itemList'][item[$orig].mapKey].allCookText+''}}</view
+            >
+          </block>
+        </view>
+        <view
+          class="ellipsis2 addPrcieFlex f24 _div data-v-1d44ef56"
+          wx:if="{{item[$orig].addPrice>0&&(item[$orig].isShowVipAddPrice&&item[$orig].addPrice==item[$orig].vipAddPrice||!item[$orig].isShowVipAddPrice)}}"
+        >
+          <view class="_div data-v-1d44ef56"
+            >{{'+'+item[$orig].addPrice+'元/'+item[$orig].unitName}}</view
+          >
+        </view>
+        <block wx:else>
+          <view
+            class="ellipsis2 addPrcieFlex f24 _div data-v-1d44ef56"
+            wx:if="{{item[$orig].addPrice>0&&item[$orig].isShowVipAddPrice&&item[$orig].addPrice!=item[$orig].vipAddPrice}}"
+          >
+            <view class="mr4 _div data-v-1d44ef56"
+              >{{'+'+item[$orig].addPrice+'元/'+item[$orig].unitName+''}}</view
+            >
+            <view class="_div data-v-1d44ef56">
+              <label
+                class="iconfont icon-hui f24 redText _span data-v-1d44ef56"
+              ></label>
+              <label class="redText _span data-v-1d44ef56"
+                >{{'+'+(showPriceType==2?item[$orig].vipAddPrice:item[$orig].originalVipAddPrice)+'元/'+item[$orig].unitName}}</label
+              >
+            </view>
+          </view>
+          <block wx:else>
+            <view
+              class="addPrcieFlex f24 _div data-v-1d44ef56"
+              wx:if="{{!item[$orig].addPrice&&item[$orig].isShowVipAddPrice&&item[$orig].addPrice!=item[$orig].vipAddPrice}}"
+            >
+              <view class="_div data-v-1d44ef56">
+                <label
+                  class="iconfont icon-hui f24 redText _span data-v-1d44ef56"
+                ></label>
+                <label class="redText _span data-v-1d44ef56"
+                  >{{'+'+(showPriceType==2?item[$orig].vipAddPrice:item[$orig].originalVipAddPrice)+'元/'+item[$orig].unitName}}</label
+                >
+              </view>
+            </view>
+            <view class="addPrcieFlex _div data-v-1d44ef56" wx:else></view>
+          </block>
+        </block>
+        <view class="add_btn_wrap _div data-v-1d44ef56">
+          <view
+            bindtap="__e"
+            class="_div data-v-1d44ef56"
+            data-event-opts="{{[ [ 'tap',[ [ 'addDeDish',['$0','$1'],[ [ ['group.tcGrpItem','',num] ],'group' ] ] ] ] ]}}"
+          >
+            <label
+              class="{{['iconfont','_span','data-v-1d44ef56',item[$orig].mrCount>0?'icon-yixuanzhong':'icon-weixuanzhong']}}"
+              style="{{'color:'+themeColor+';'+'font-size:'+(dishBtnShape==1?(init.dishBtnSize.size||24)+'px':'20px')+';'}}"
+            ></label>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,713 @@
+<import src="/pages/template/error-page/error-page.wxml"></import>
+<import src="/pages/template/shop-item/shop-item.wxml"></import>
+<scroll-view
+  bindscrolltolower="_loadMore"
+  class="container"
+  scrollIntoView="{{mainCur}}"
+  scrollWithAnimation="true"
+  scrollY="true"
+  showScrollbar="true"
+>
+  <view>
+    <view
+      class="bg-white flex justify-between align-center padding-lr-sm"
+      style="min-height: 90rpx"
+    >
+      <navigator class="" url="/pages/home/h-index/scratch-page/scratch-page">
+        <view class="flex justify-start align-center" wx:if="{{weatherData}}">
+          <image
+            mode="aspectFit"
+            src="/resource/images/weather/weather_state_{{weatherData.result.weather=='阴'?'1':weatherData.result.weather=='多云'?'2':weatherData.result.weather=='晴'?'3':'4'}}.png"
+            style="width: 65rpx; height: 65rpx"
+          ></image>
+          <text class="margin-lr-xs uy-tom text-xl"
+            >{{weatherData.result.temp}}℃</text
+          >
+          <view>
+            <text class="margin-left-xs text-sm uy-tom"
+              >{{weatherData.result.date}}</text
+            >
+            <view class="text-sm text-center uy-tom"
+              >{{weatherData.result.temphigh}}℃/{{weatherData.result.templow}}℃</view
+            >
+          </view>
+        </view>
+      </navigator>
+      <view class="text-right">
+        <navigator
+          class="action text-lg"
+          url="../common-page/select-area/select-area?title={{Str.selectArea[lanIndex]}}"
+          wx:if="{{selectArea}}"
+        >
+          <text class="">{{isUy?selectArea.uy_name:selectArea.ch_name}}</text>
+          <text class="cuIcon-triangledownfill"></text>
+        </navigator>
+        <navigator
+          class="action text-lg"
+          url="../common-page/select-area/select-area"
+          wx:else
+        >
+          <text class=""
+            >{{pageData.locationArea?isUy?pageData.locationArea.uy_name:pageData.locationArea.ch_name:Str.selectArea[lanIndex]}}</text
+          >
+          <text class="cuIcon-triangledownfill"></text>
+        </navigator>
+        <view class="text-sm text-pink" wx:if="{{qqMapLocation}}"></view>
+      </view>
+    </view>
+  </view>
+  <t-icon name="home" prefix="iconfont"></t-icon>
+  <t-sticky offsetTop="{{searchTop}}">
+    <navigator
+      class="bg-white padding-xs padding-sm {{isUy?'rtl':''}}"
+      url="/pages/shop-home/shop-search/shop-search"
+    >
+      <view class="flex justify-between align-center search-box">
+        <view class="content">
+          <t-notice-bar
+            class="notice-bar"
+            content="{{searchStrsContent}}"
+            direction="vertical"
+            interval="{{3000}}"
+            prefixIcon=""
+            tClass="{{isUy?'uy-tom':'ch-font'}}"
+            tClassContent="text-red"
+            visible="{{true}}"
+          ></t-notice-bar>
+        </view>
+        <view>
+          <text class="cuIcon-search padding-lr-xs"></text>
+        </view>
+      </view>
+    </navigator>
+  </t-sticky>
+  <view wx:if="{{pageData}}">
+    <view
+      wx:if="{{pageData&&(pageData.setting.version_code!=3||!isShowAll)&&!errorPage}}"
+    >
+      <view>
+        <view
+          class="flex margin-xs padding-tb-sm bg-white"
+          style="border-radius: 30rpx"
+        >
+          <view
+            bindtap="topTabClick"
+            class="flex-sub text-center"
+            data-item="{{item}}"
+            wx:for="{{tabInfo}}"
+          >
+            <image
+              mode=""
+              src="{{item.img_url}}"
+              style="width: 130rpx; height: 130rpx"
+            ></image>
+            <view>{{isUy?item.uy_name:item.ch_name}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view
+    class="bg-white"
+    wx:if="{{isShowAll&&pageData.setting.version_code==3}}"
+  >
+    <swiper
+      autoplay="true"
+      circular="true"
+      class="screen-swiper margin-lr-xs padding-top-xs"
+      duration="500"
+      indicatorActiveColor="yellow"
+      indicatorColor="grey"
+      indicatorDots="true"
+      interval="5000"
+      style="min-height: 225rpx; height: 225rpx"
+      wx:if="{{pageData.adverts}}"
+    >
+      <swiper-item
+        bindtap="swiperItemClick"
+        data-item="{{item}}"
+        wx:for="{{pageData.adverts}}"
+        wx:key="index"
+      >
+        <image
+          mode="aspectFill"
+          src="{{item.img_url}}"
+          style="border-radius: 16rpx"
+        ></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view
+    class="bg-white radius padding-tb margin-top-0"
+    wx:if="{{pageData&&isShowAll&&pageData.homeMenu}}"
+  >
+    <view class="grid col-4" wx:if="{{1}}">
+      <view
+        bindtap="homeMenuClick"
+        class="padding-sm text-center"
+        data-item="{{item}}"
+        wx:for="{{pageData.homeMenu}}"
+        wx:key="index"
+      >
+        <view>
+          <image
+            mode="scaleToFill"
+            src="{{item.img_url}}"
+            style="width: 100rpx; height: 100rpx"
+          ></image>
+        </view>
+        <view
+          class="text-black text-bold  text-center text-cut {{isUy?'rtl uy-tom':'ch-font'}} "
+          style="width: 180rpx"
+        >
+          {{isUy?item.uy_name:item.ch_name}}
+        </view>
+      </view>
+    </view>
+    <swiper
+      autoplay="true"
+      class="screen-swiper square-dot sub-menu-screen margin-lr-xs padding-top-sm"
+      duration="1000"
+      indicatorActiveColor="#582c83"
+      indicatorColor="gray"
+      indicatorDots="true"
+      interval="5000"
+      wx:if="{{pageData.subMenu}}"
+    >
+      <swiper-item
+        bindtap="swiperItemClick"
+        data-item="{{item}}"
+        wx:for="{{2}}"
+        wx:key="index"
+      >
+        <view class="grid col-5">
+          <view
+            bindtap="subMenuClick"
+            data-url="/pages/home/mall/shop-list/shop-list?catId={{subItem.id}}&areaId={{selectArea.id}}&title={{isUy?subItem.uy_name:subItem.ch_name}}"
+            wx:if="{{index==0&&subIndex<5||index==1&&subIndex>=5}}"
+            wx:for="{{pageData.subMenu}}"
+            wx:for-index="subIndex"
+            wx:for-item="subItem"
+            wx:key="subIndex"
+          >
+            <view class="flex justify-center">
+              <t-image
+                height="60rpx"
+                mode="scaleToFill"
+                src="{{subItem.img_url}}"
+                width="60rpx"
+              ></t-image>
+            </view>
+            <view
+              class=" text-center text-cut text-sm  {{isUy?'rtl uy-tom':'ch-font'}} sub-title"
+            >
+              {{isUy?subItem.uy_name:subItem.ch_name}}
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="bg-white solids-top">
+    <swiper
+      autoplay="true"
+      class="screen-swiper square-dot sub-menu-screen margin-lr-xs padding-top-sm"
+      duration="1000"
+      indicatorActiveColor="#582c83"
+      indicatorColor="gray"
+      indicatorDots="true"
+      interval="5000"
+      wx:if="{{pageData.smallAdvert}}"
+    >
+      <swiper-item
+        bindtap="smallAdvertClick"
+        data-item="{{item}}"
+        wx:for="{{pageData.smallAdvert}}"
+        wx:key="index"
+      >
+        <image
+          mode=""
+          src="{{item.img_url}}"
+          style="border-radius: 16rpx"
+        ></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view
+    class="bg-white padding-sm"
+    wx:if="{{isShowAll&&pageData&&pageData.hasAdvert==1}}"
+  >
+    <navigator class="text-center" url="{{pageData.advert.link_url}}">
+      <image
+        src="{{pageData.advert.img_url}}"
+        style="height: 80rpx; width: 710rpx"
+      ></image>
+    </navigator>
+  </view>
+  <view
+    class="bg-white padding-sm"
+    wx:if="{{isShowAll&&pageData&&pageData.marketAdvert&&pageData.marketAdvert.is_show&&pageData.supermarketCouponGoods==0}}"
+  >
+    <navigator class="text-center" url="{{pageData.marketAdvert.link_url}}">
+      <image
+        src="{{pageData.marketAdvert.img_url}}"
+        style="height: 190rpx; width: 700rpx"
+      ></image>
+    </navigator>
+  </view>
+  <view
+    class="bg-white padding-xs"
+    style="border-radius: 12rpx; margin: 0rpx"
+    wx:if="{{pageData&&(!pageData.couponGoods||pageData.couponGoods.length==0)&&isShowAll&&!notService}}"
+  >
+    <view class="flex justify-start" wx:if="{{pageData}}">
+      <view class="text-center">
+        <navigator
+          url="/pages/home/shop/shop-goods/shop-goods?title={{Str.todaysCoupon[lanIndex]}}"
+        >
+          <image
+            mode="aspectFill"
+            src="https://etwarjan.oss-cn-zhangjiakou.aliyuncs.com/icons/home/images/coupon_shop.png"
+            style="width: 300rpx; height: 300rpx; border-radius: 16rpx"
+          ></image>
+        </navigator>
+      </view>
+      <view class="text-center margin-left-sm">
+        <navigator
+          class="text-center"
+          url="/pages/home/shop/shop-list/shop-list?typeId={{pageData.hType==0?8:5}}&title={{pageData.hType==0?Str.breakfast[lanIndex]:Str.suanla[lanIndex]}}"
+        >
+          <image
+            mode="aspectFill"
+            src="https://etwarjan.oss-cn-zhangjiakou.aliyuncs.com/icons/home/images/{{pageData.hType==0?'zaocan':'suanla'}}_shop.png"
+            style="width: 385rpx; height: 145rpx; border-radius: 12rpx"
+          ></image>
+        </navigator>
+        <navigator
+          class="text-center"
+          url="/pages/home/shop/shop-list/shop-list?typeId=4&title={{Str.polo[lanIndex]}}"
+        >
+          <image
+            mode="aspectFill"
+            src="https://etwarjan.oss-cn-zhangjiakou.aliyuncs.com/icons/home/images/zhuafan_shop.png"
+            style="width: 385rpx; height: 145rpx; border-radius: 12rpx"
+          ></image>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view
+    class="padding--lr-xs bg-white flex margin-lr-xs margin-top-xs flex-wrap align-center margin-bottom-xs"
+    wx:if="{{pageData&&isShowAll&&pageData.marketAdvert&&pageData.supermarketCouponGoods.length>0}}"
+  >
+    <view class="" style="flex-basis: 100%">
+      <navigator
+        class="cu-bar {{isUy?'rtl':''}}"
+        url="{{pageData.marketAdvert.link_url}}"
+      >
+        <view class="action padding-lr-xs">
+          <image
+            src="/resource/images/common/etewar_supermarket.png"
+            style="width: 48rpx; height: 48rpx"
+          ></image>
+          <text class="uy-tom text-black margin-lr-xs"
+            >{{Str.etewarSupermarket[lanIndex]}}</text
+          >
+        </view>
+        <view class="action" style="margin-right: 10rpx">
+          <text class="bg-red uy-tom text-bold sm cu-tag radius weui-badge"
+            >{{Str.new[lanIndex]}}</text
+          >
+          <text class="icon-{{isUy?'back':'right'}}"></text>
+        </view>
+      </navigator>
+      <view class="scroll_box" style="width: 730rpx">
+        <scroll-view
+          scrollX
+          class="scroll-view_x margin-left-xs"
+          style="width: auto; overflow: hidden"
+        >
+          <navigator
+            class="item_list__ flex align-start"
+            style="border-radius: 15rpx; background-color: white"
+            url="/pages/home/mall/supermarket/super-market_/super-market_?shopId={{_item.shop.id}}"
+            wx:for="{{pageData.supermarketCouponGoods}}"
+            wx:for-item="_item"
+            wx:key="index"
+          >
+            <view>
+              <image
+                mode="aspectFill"
+                src="{{_item.img_url+'?x-oss-process=image/resize,w_600'}}"
+                style="border-radius: 16rpx 16rpx 8rpx 8rpx"
+              ></image>
+            </view>
+            <view style="margin-top: 0rpx">
+              <view
+                class="item_h_title padding-lr-sm {{isUy?'rtl':''}} text-black  text-left"
+              >
+                {{isUy?_item.uy_name:_item.ch_name}}
+              </view>
+              <view class="flex justify-start align-center">
+                <view class="padding-right-xs">
+                  <text class="text-price text-red"
+                    >{{_item.activity_price}}</text
+                  >
+                </view>
+                <view>
+                  <text class="text-price delete-text text-sm"
+                    >{{_item.price}}</text
+                  >
+                </view>
+              </view>
+            </view>
+          </navigator>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+  <scroll-goods
+    Str="{{Str}}"
+    areaId="{{selectArea.id}}"
+    goods="{{pageData.couponGoods}}"
+    isUy="{{isUy}}"
+    subTitle="{{Str.more[lanIndex]}}"
+    title="{{Str.todaysCoupon[lanIndex]}}"
+    wx:if="{{isShowAll}}"
+  ></scroll-goods>
+  <view
+    class="bg-white padding-bottom-sm margin-lr-xs bar-border padding-top-sm margin-top-sm"
+    id="sort"
+    wx:if="{{pageData&&isShowAll}}"
+  >
+    <view class="cu-bar {{isUy?'rtl':''}}" wx:if="{{0}}">
+      <view class="action">
+        <text class="icon-titles text-pink"></text>
+        <text class="text-black uy-tom margin-lr-xs"
+          >{{Str.nearbyShops[lanIndex]}}</text
+        >
+      </view>
+      <view class="action"></view>
+    </view>
+    <view>
+      <view class="flex {{isUy?'rtl':''}}">
+        <view class="flex-sub" wx:for="{{Str.shopsSortType}}" wx:key="index">
+          <view
+            bindtap="sortClick"
+            class="bg-{{shopsSortIndex==index?'pink':'gray'}} text-center radius padding-tb-xs uy-tom  margin-left-{{index==0?'sm':'xs'}} margin-right-{{index==Str.shopsSortType.length-1?'sm':'xs'}}"
+            data-index="{{index}}"
+          >
+            {{isUy?item.uy_name:item.ch_name}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="scroll_box bg-white {{isUy?'rtl':''}}"
+      id="foodMenu"
+      style="width: 100%"
+      wx:if="{{isShowAll}}"
+    >
+      <scroll-view
+        scrollWithAnimation
+        scrollX
+        class="scroll-view_x"
+        scrollRight="{{foodMenuScrollLeft}}"
+        style="width: auto; overflow: hidden"
+        wx:if="{{isUy}}"
+      >
+        <view class="flex justify-start">
+          <view
+            class="flex align-center margin-lr-xs"
+            style=""
+            wx:for="{{pageData.foodMenu}}"
+            wx:key="index"
+          >
+            <view
+              bindtap="foodMenuClick"
+              class="text-center {{foodMenuSelectIndex==index?'uy-tom text-pink bg-white radius':''}} padding-tb-xs padding-lr-sm"
+              data-index="{{index}}"
+            >
+              <view style="">{{isUy?item.uy_name:item.ch_name}}</view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+      <scroll-view
+        scrollWithAnimation
+        scrollX
+        class="scroll-view_x"
+        scrollLeft="{{foodMenuScrollLeft}}"
+        style="width: auto; overflow: hidden"
+        wx:else
+      >
+        <view class="flex justify-start">
+          <view
+            class="flex align-center margin-lr-xs"
+            style=""
+            wx:for="{{pageData.foodMenu}}"
+            wx:key="index"
+          >
+            <view
+              bindtap="foodMenuClick"
+              class="text-center {{foodMenuSelectIndex==index?' uy-tom text-pink bg-white radius':''}} padding-tb-xs padding-lr-sm"
+              data-index="{{index}}"
+            >
+              <view style="">{{isUy?item.uy_name:item.ch_name}}</view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="margin-top-sm">
+    <view
+      class="margin-lr-xs padding-bottom-xs radius"
+      style="border-radius: 20rpx"
+      wx:if="{{shopsSortIndex==0&&foodMenuSelectIndex==0&&pageData&&isShowAll&&pageData.shops.length>0}}"
+      wx:for="{{pageData.shops}}"
+      wx:key="index"
+    >
+      <shop-item
+        Str="{{Str}}"
+        goods="{{item.activity_goods}}"
+        isUy="{{isUy}}"
+        item="{{item}}"
+        navUrl="/pages/home/mall/activity-shops/activity-shops"
+        wx:if="{{1}}"
+      ></shop-item>
+      <template
+        is="shopItemWithScrollGoods"
+        data="{{isUy:isUy,Str:Str,lanIndex:lanIndex,item:item,ossImage:ossImage,navUrl:'/pages/home/mall/activity-shops/activity-shops',showPercent:pageData.setting.show_percent,info:pageData.shopsInfo}}"
+        wx:if="{{0}}"
+      ></template>
+    </view>
+    <view
+      class="margin-lr-xs padding-bottom-xs radius"
+      style="border-radius: 20rpx"
+      wx:if="{{pageData&&isShowAll&&shopsData.length>0}}"
+      wx:for="{{shopsData}}"
+      wx:key="index"
+    >
+      <shop-item
+        Str="{{Str}}"
+        deliveryLimit="{{pageData.setting.deliveryFee?pageData.setting.deliveryFee.limit_distance:0}}"
+        isUy="{{isUy}}"
+        item="{{item}}"
+        navUrl="/pages/home/mall/mall-home"
+        wx:if="{{1}}"
+      ></shop-item>
+      <template
+        is="_shopListItem"
+        data="{{isUy:isUy,Str:Str,lanIndex:lanIndex,item:item,ossImage:ossImage,navUrl:'/pages/home/mall/mall-home',showPercent:pageData.setting.show_percent,info:pageData.shopsInfo}}"
+        wx:if="{{0}}"
+      ></template>
+    </view>
+  </view>
+  <scroll-view
+    scrollWithAnimation
+    scrollY
+    class="margin-top-xs"
+    wx:if="{{goodsData.data}}"
+  >
+    <waterfall
+      customClass="waterfall-box"
+      id="waterfall01"
+      isAllLoaded="{{isAllLoaded}}"
+      loading="{{updateLoading}}"
+    >
+      <waterfall-item
+        bindtap="goodItemClick"
+        customClass="product-item-box"
+        data-item="{{item}}"
+        wx:for="{{goodsData.data}}"
+        wx:key="index"
+      >
+        <view bind:tap="onTap" class="">
+          <view
+            class="bg-img"
+            style="background-image: url({{item.img_url+'?x-oss-process=image/resize,m_lfit,h_300,w_300'}});height:{{item.aspect_ratio*340}}rpx"
+          ></view>
+          <view class="padding-xs">
+            <view class="">
+              <text class="text-black text-bold text-lg"
+                >{{isUy?item.uy_name:item.ch_name}}</text
+              >
+            </view>
+            <view>
+              <text class="text-gray"
+                >{{isUy?item.shop.uy_name:item.shop.ch_name}}</text
+              >
+            </view>
+            <view class="flex justify-between" style="width: 300rpx">
+              <view class="text-df">
+                <text
+                  class="icon icon-favorfill text-{{index<item.shop.star_count?'c4':'grey1'}}"
+                  wx:for="{{5}}"
+                  wx:for-item="_item"
+                  wx:key="index"
+                ></text>
+              </view>
+              <view class="text-gray">0.3km</view>
+            </view>
+            <view class="flex justify-start align-center">
+              <view class="">
+                <i
+                  class="iconfont icon-thumb_down text-gray"
+                  style="font-size: 40rpx"
+                ></i>
+                <text class="padding-left-xs text-gray"
+                  >{{item.thumbs_down_count}}</text
+                >
+              </view>
+              <view class="padding-lr">
+                <i
+                  class="iconfont icon-thumb_up text-c4"
+                  style="font-size: 36rpx"
+                ></i>
+                <text class="padding-left-xs text-grey"
+                  >{{item.thumbs_up_count}}</text
+                >
+              </view>
+            </view>
+            <view class="padding-xs text-center">
+              <view
+                class="flex text-white align-center"
+                style="background-color: #e84c1e; radius: 20rpx; height: 70rpx"
+              >
+                <view class="flex-sub">
+                  <text class="text-price text-lg">{{item.price}}</text>
+                </view>
+                <view
+                  class="flex-sub bg-img text-black padding-right-xs buy-bg flex align-center"
+                >
+                  <view class="text-right" style="width: 100%">
+                    <text>{{Str.buy[lanIndex]}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </waterfall-item>
+    </waterfall>
+  </scroll-view>
+  <view class="weui-loadmore" wx:if="{{!noMore}}">
+    <t-loading
+      TdLoadingColor="#ccc"
+      class="wrapper"
+      size="80rpx"
+      theme="dots"
+    ></t-loading>
+  </view>
+  <view
+    class="text-center margin-sm padding-sm"
+    style="min-height: 160rpx"
+    wx:if="{{isShowAll&&!errorPage&&pageData&&(notLocation||!pageData.locationArea.can_location||!pageData.locationArea.is_checked||!pageData.setting.is_open)}}"
+  >
+    <view wx:if="{{notLocation}}">
+      <view class="padding text-center">
+        <view class="text-gray uy-tom">{{Str.notLocation[lanIndex]}}</view>
+        <view class="flex padding-top">
+          <view class="flex-sub">
+            <button
+              class="cu-btn radius line-black shadow"
+              openType="openSetting"
+            >
+              {{Str.location[lanIndex]}}
+            </button>
+          </view>
+          <view class="flex-sub">
+            <button
+              bindtap="goSelectAreaPage"
+              class="cu-btn radius line-black shadow"
+            >
+              {{Str.selectArea[lanIndex]}}
+            </button>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view
+      wx:elif="{{!pageData.locationArea.can_location||!pageData.locationArea.is_checked}}"
+    >
+      <view>
+        <i class="iconfont icon-error text-gray" style="font-size: 120rpx"></i>
+      </view>
+      <view class="text-grey text-sm" style="margin-top: -40rpx">
+        <text class="text-cyan text-lg padding-lr-sm"
+          >{{isUy?pageData.locationArea.uy_name:pageData.locationArea.ch_name}}</text
+        >{{Str.cantService[lanIndex]}}
+      </view>
+      <view class="flex padding-top">
+        <view class="flex-sub">
+          <button
+            bindtap="goSelectAreaPage"
+            class="cu-btn radius text-black shadow margin-sm"
+          >
+            {{Str.selectArea[lanIndex]}}
+          </button>
+        </view>
+      </view>
+      <view class="text-center padding">
+        <navigator url="/pages/mine/agent/agent-contact/agent-contact">
+          <button class="cu-btn radius bg-pink lg uy-tom">
+            {{Str.applyForAgent[lanIndex]}}
+          </button>
+        </navigator>
+      </view>
+    </view>
+    <view class="" wx:elif="{{!pageData.setting.is_open}}">
+      <view>
+        <i class="iconfont icon-error text-gray" style="font-size: 120rpx"></i>
+      </view>
+      <view class="text-grey text-sm" style="margin-top: -40rpx">
+        <text class="text-cyan text-lg padding-lr-sm"
+          >{{isUy?pageData.locationArea.uy_name:pageData.locationArea.ch_name}}</text
+        >{{Str.notService[lanIndex]}}
+      </view>
+      <view class="flex-sub padding-top-sm">
+        <button
+          bindtap="goSelectAreaPage"
+          class="cu-btn radius line-pink shadow"
+        >
+          {{Str.selectArea[lanIndex]}}
+        </button>
+      </view>
+    </view>
+  </view>
+  <template
+    is="errorPage"
+    data="{{ content:Str.opratingError[lanIndex],retryStr:Str.retryAgain[lanIndex] }}"
+    wx:if="{{errorPage}}"
+  ></template>
+</scroll-view>
+<view
+  bindtap="hideModal"
+  class="cu-modal {{modalName=='showAdvert'?'show':''}}"
+>
+  <view
+    catchtap
+    class="cu-dialog"
+    style="
+      border-radius: 10px 10px 60px 60px;
+      width: 500rpx;
+      background-color: transparent;
+    "
+  >
+    <view
+      bindtap="wAdvertClick"
+      class="bg-img"
+      style="background-image: url({{pageData.wAdvert.img_url}});height:700rpx;width:500rpx"
+      url="{{pageData.wAdvert.link_url}}"
+    ></view>
+    <view class="text-center text-white" style="margin-top: 40rpx">
+      <text
+        bindtap="hideModal"
+        class="icon-roundclose"
+        style="font-size: 70rpx"
+      ></text>
+    </view>
+  </view>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

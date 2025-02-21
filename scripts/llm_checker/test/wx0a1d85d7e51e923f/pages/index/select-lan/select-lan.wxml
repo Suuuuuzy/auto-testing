@@ -1,0 +1,18 @@
+<image
+  src="/resource/images/common/lan_page_bg.png"
+  style="width: 100vw; height: 100vh"
+></image>
+<view style="position: absolute; bottom: 280rpx; width: 100vw">
+  <view class="flex">
+    <view class="flex-sub text-center">
+      <button bind:tap="chLanBtn" class="cu-btn bg-pink lg lan-btn text-bold">
+        {{Str.ch[0]}}
+      </button>
+    </view>
+    <view class="flex-sub text-center">
+      <button bind:tap="uyLanBtn" class="cu-btn bg-pink lg lan-btn text-bold">
+        {{Str.uy[1]}}
+      </button>
+    </view>
+  </view>
+</view>

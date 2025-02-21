@@ -1,0 +1,21 @@
+<view>
+    <form bindreset="__e" bindsubmit="__e" data-event-opts="{{[ [ 'submit',[ [ 'form_submit',['$event'] ] ] ],[ 'reset',[ [ 'form_reset',['$event'] ] ] ] ]}}">
+        <image align="center" class="bg" mode="scaleToFill" src="../../static/images/main_bg.png"></image>
+        <image class="login-img" mode="aspectFit" src="../../static/images/login_pic.png"></image>
+        <view class="login-from">
+            <view class="input_account">
+                <input bindinput="__e" class="inputText" confirmType="next" cursorSpacing="100" data-event-opts="{{[ [ 'input',[ [ 'input_phone',['$event'] ] ] ] ]}}" name="mobile" placeholder="请输入账号" value="{{phone}}"></input>
+            </view>
+            <view class="input_account" style="margin-top:60rpx;">
+                <input class="inputText" confirmType="next" cursorSpacing="100" name="captcha" placeholder="请输入验证码"></input>
+                <view bindtap="__e" class="gl_size_s" data-event-opts="{{[ [ 'tap',[ [ 'send_code',['$event'] ] ] ] ]}}" style="position:relative;color:#EEEEEE;line-height:90rpx;padding-right:20rpx;">{{code_msg}}</view>
+            </view>
+            <view class="input_account" style="margin-top:60rpx;">
+                <input class="inputText" cursorSpacing="100" name="password" password="true" placeholder="请输入密码"></input>
+            </view>
+            <view class="loginBtnView">
+                <button class="loginBtn" formType="submit" hoverClass="loginBtn_press" loading="{{loading}}">{{btn_text}}</button>
+            </view>
+        </view>
+    </form>
+</view>

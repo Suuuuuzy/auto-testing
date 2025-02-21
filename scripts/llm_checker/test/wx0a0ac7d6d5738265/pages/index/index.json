@@ -1,0 +1,13 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "首页",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "home": "../components/home",
+    "order": "../components/order",
+    "gift": "../components/gift",
+    "home-container": "../components/home-container",
+    "u-tabbar-item": "../../uview-plus/components/u-tabbar-item/u-tabbar-item",
+    "u-tabbar": "../../uview-plus/components/u-tabbar/u-tabbar"
+  }
+}

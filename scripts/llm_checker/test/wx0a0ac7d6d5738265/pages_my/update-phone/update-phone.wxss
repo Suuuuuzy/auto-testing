@@ -1,0 +1,126 @@
+.wrap {
+  width: 750rpx;
+}
+.cont {
+  height: 382rpx;
+  padding: 90rpx 32rpx 0;
+  width: 100%;
+}
+.cont .update {
+  align-items: center;
+  background: #06b9c0 !important;
+  bottom: 60rpx;
+  box-shadow: 23rpx 16rpx 20rpx rgba(130, 255, 253, 0.25);
+  color: #fff;
+  height: 98rpx;
+  padding: 24rpx 260rpx;
+  position: fixed;
+  width: 686rpx;
+}
+.cont .update,
+.upPhone {
+  border-radius: 4rpx;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  opacity: 1;
+}
+.upPhone {
+  align-items: flex-start;
+  background: #fff;
+  flex-direction: column;
+  padding: 32rpx;
+  width: 100%;
+}
+.upPhone .btns {
+  justify-content: space-between;
+  margin-top: 16rpx;
+}
+.upPhone .btns,
+.upPhone .phones {
+  display: -webkit-flex;
+  display: flex;
+}
+.upPhone .phones {
+  align-items: center;
+  background: #fff;
+  height: 96rpx;
+  padding: 12rpx 24rpx;
+  width: 100%;
+}
+.upPhone .phones .btnco {
+  color: #06b9c0;
+  font-size: 32rpx;
+  font-weight: 400;
+  letter-spacing: 0rpx;
+  line-height: 44.8rpx;
+  text-align: left;
+  vertical-align: top;
+}
+.upPhone .slectipt {
+  align-items: center;
+  background: #fff;
+  border: 2rpx solid #dadde6;
+  border-radius: 4rpx;
+  display: -webkit-flex;
+  display: flex;
+  height: 96rpx;
+  justify-content: space-between;
+  opacity: 1;
+  padding: 24rpx;
+  width: 100%;
+}
+.upPhone .slectipt .selection {
+  border-right: 2rpx solid #edeef0;
+}
+.upPhone .slectipt .iocn {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  height: 46rpx;
+  justify-content: flex-start;
+  opacity: 1;
+  width: 98rpx;
+}
+.upPhone .slectipt .img {
+  height: 36rpx;
+  width: 32rpx;
+}
+.upPhone .phonet {
+  color: #3e414d;
+  font-size: 36rpx;
+  font-weight: 500;
+  letter-spacing: 0rpx;
+  line-height: 50.4rpx;
+  text-align: left;
+  vertical-align: top;
+}
+.upPhone .palce {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+}
+.upPhone .error {
+  color: red;
+  font-size: 28rpx;
+}
+.upPhone .phonebtn {
+  align-items: center;
+  background: #f0feff;
+  border-radius: 4rpx;
+  color: #06b9c0;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 28rpx;
+  font-weight: 500;
+  height: 90rpx;
+  justify-content: center;
+  letter-spacing: 0rpx;
+  line-height: 40.54rpx;
+  margin-top: 40rpx;
+  opacity: 1;
+  padding: 24rpx 32rpx;
+  text-align: left;
+  vertical-align: top;
+  width: 100%;
+}

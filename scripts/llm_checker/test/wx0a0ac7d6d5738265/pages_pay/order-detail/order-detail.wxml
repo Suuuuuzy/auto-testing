@@ -1,0 +1,113 @@
+<view class="warp">
+  <zym-navigation
+    bind:__l="__l"
+    uI="3cdb1bca-0"
+    uP="{{a}}"
+    wx:if="{{a}}"
+  ></zym-navigation>
+  <u-skeleton
+    bind:__l="__l"
+    uI="3cdb1bca-1"
+    uP="{{C}}"
+    uS="{{['d']}}"
+    wx:if="{{C}}"
+  >
+    <view class="">
+      <view class="detail" hidden="{{!B}}">
+        <view class="finish" wx:if="{{b}}">
+          <text class="fok">订单已完成</text>
+          <image src="{{c}}"></image>
+        </view>
+        <view class="shuodin" wx:if="{{d}}">
+          <image src="{{e}}"></image>
+          <text class="fok">支付已取消</text>
+        </view>
+        <view class="shuodin" wx:if="{{f}}">
+          <image src="{{g}}"></image>
+          <text class="fok">支付失败</text>
+        </view>
+        <view class="shuodin" wx:if="{{h}}">
+          <image src="{{i}}"></image>
+          <text class="fok">支付锁定中</text>
+        </view>
+        <view class="toMap">
+          <view class="msg">
+            <u-icon
+              bind:__l="__l"
+              uI="3cdb1bca-2,3cdb1bca-1"
+              uP="{{j}}"
+              wx:if="{{j}}"
+            ></u-icon>
+            <text class="stationm ml10">{{k}}</text>
+          </view>
+          <view bindtap="{{m}}" class="Navigation">
+            <image
+              class="navimg"
+              mode=""
+              src="{{l}}"
+              style="padding-right: 8rpx"
+            ></image>
+            <text>导航</text>
+          </view>
+        </view>
+        <view class="ordID mt15">
+          <view class="fsb oid">
+            <text>订单ID：</text>
+            <view bindtap="{{o}}" class="">
+              <text style="color: #999">{{n}}</text>
+              <text>|复制</text>
+            </view>
+          </view>
+          <view class="fsb odetail">
+            <view class="cleft" style="{{'background-color:'+q}}">
+              <text>{{p}}</text>
+            </view>
+            <view class="fsb rodetail">
+              <view class="lid fsb">
+                <text>油枪枪号：</text>
+                <text>加油升数：</text>
+              </view>
+              <view class="rid fsb">
+                <view class="">
+                  <text class="ridgun">{{r}}</text>
+                  <text style="padding-left: 4rpx">号枪</text>
+                </view>
+                <text class="ridoils">{{s}}L</text>
+              </view>
+            </view>
+          </view>
+          <view class="carid fsb">
+            <text>车牌号：</text>
+            <text wx:if="{{t}}">{{v}}</text>
+            <text wx:else></text>
+          </view>
+        </view>
+        <view class="mt20">
+          <view class="fsb refund">
+            <text class="hs">默认金额:</text>
+            <text>￥{{w}}</text>
+          </view>
+          <view class="fsb refund">
+            <text class="hs">默认单价:</text>
+            <text>￥{{x}}</text>
+          </view>
+          <view class="fsb refund">
+            <text class="hs">优惠减免合计:</text>
+            <text class="discount">-￥{{y}}</text>
+          </view>
+          <view class="fsb refund">
+            <text class="hs">实付款:</text>
+            <text class="total">￥{{z}}</text>
+          </view>
+          <view class="refundbtn fdc"></view>
+        </view>
+        <view class="items mt20">
+          <view class="item fsb">
+            <text>交易时间：</text>
+            <text>{{A}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </u-skeleton>
+</view>

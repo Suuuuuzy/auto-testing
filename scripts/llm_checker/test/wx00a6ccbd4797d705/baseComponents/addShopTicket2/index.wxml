@@ -1,0 +1,14 @@
+<view class="addShopTicket _div data-v-57532904">
+  <send-coupon
+    bind:__l="__l"
+    bind:customevent="__e"
+    class="addShopTicketBtn data-v-57532904"
+    customize_send_time="{{sendCouponParams.customizeSendTime}}"
+    data-com-type="wx"
+    data-event-opts="{{[ [ '^customevent',[ ['getcouponFun'] ] ] ]}}"
+    send_coupon_merchant="{{sendCouponParams.sendCouponMerchant}}"
+    send_coupon_params="{{sendCouponParams.ticketData}}"
+    sign="{{sendCouponParams.sign}}"
+    vueId="467a892a-1"
+  ></send-coupon>
+</view>

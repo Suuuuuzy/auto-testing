@@ -1,0 +1,91 @@
+<view class="carpage data-v-a24a95a2">
+  <zym-navigation
+    bind:__l="__l"
+    class="data-v-a24a95a2"
+    uI="a24a95a2-0"
+    uP="{{a}}"
+    wx:if="{{a}}"
+  ></zym-navigation>
+  <view class="carlist data-v-a24a95a2">
+    <view
+      class="car-item data-v-a24a95a2"
+      wx:for="{{b}}"
+      wx:for-item="car"
+      wx:key="n"
+    >
+      <view class="car-detail data-v-a24a95a2">
+        <view class="car-detail_num data-v-a24a95a2">
+          <text
+            class="car-col data-v-a24a95a2"
+            style="{{'background:'+car.b+';'+'color:'+car.c}}"
+            >{{car.a}}</text
+          >
+          <text class="car-number data-v-a24a95a2">{{car.d}}</text>
+        </view>
+        <text class="car-last-wash-time data-v-a24a95a2"
+          >绑定时间：{{car.e}}</text
+        >
+      </view>
+      <view class="car-item_line data-v-a24a95a2"></view>
+      <view class="car-item_btm data-v-a24a95a2">
+        <view bindtap="{{car.g}}" class="car-item_btm_del data-v-a24a95a2">
+          <u-icon
+            bind:__l="__l"
+            class="data-v-a24a95a2"
+            uI="{{car.f}}"
+            uP="{{c}}"
+            uS="{{['d']}}"
+            wx:if="{{c}}"
+            >编辑</u-icon
+          >
+          <text class="txt data-v-a24a95a2">编辑</text>
+        </view>
+        <view bindtap="{{car.i}}" class="car-item_btm_edit data-v-a24a95a2">
+          <u-icon
+            bind:__l="__l"
+            class="data-v-a24a95a2"
+            uI="{{car.h}}"
+            uP="{{d}}"
+            wx:if="{{d}}"
+          ></u-icon>
+          <text class="txt data-v-a24a95a2">删除</text>
+        </view>
+        <view bindtap="{{car.m}}" class="car-item_btm_defualt data-v-a24a95a2">
+          <text class="{{['data-v-a24a95a2',car.k&&'active',car.l&&'txt']}}"
+            >{{car.j}}</text
+          >
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="modal-container data-v-a24a95a2" hidden="{{!i}}">
+    <view class="modal-header data-v-a24a95a2">请输入要修改的车牌</view>
+    <view class="modal-content data-v-a24a95a2">
+      <plate
+        bind:__l="__l"
+        bindmyPlateChange="{{e}}"
+        class="data-v-a24a95a2"
+        uI="a24a95a2-3"
+        uP="{{f}}"
+        wx:if="{{f}}"
+      ></plate>
+    </view>
+    <view class="modal-footer data-v-a24a95a2">
+      <button
+        bindtap="{{g}}"
+        class="cancel-button data-v-a24a95a2"
+        style="border: none"
+      >
+        取消
+      </button>
+      <button
+        bindtap="{{h}}"
+        class="start-button data-v-a24a95a2"
+        style="border: none"
+      >
+        确定
+      </button>
+    </view>
+  </view>
+  <button bindtap="{{j}}" class="add-car data-v-a24a95a2">添加车牌</button>
+</view>

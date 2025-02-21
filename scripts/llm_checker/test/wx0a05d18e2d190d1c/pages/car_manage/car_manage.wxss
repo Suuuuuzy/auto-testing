@@ -1,0 +1,139 @@
+.page {
+  background-color: #eee;
+}
+.item_layout_style {
+  height: 390rpx;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  position: relative;
+}
+.plate_no_style {
+  margin-left: 30rpx;
+  color: #242424;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+.current_car_style,
+.plate_no_style {
+  position: absolute;
+  line-height: 100rpx;
+  font-size: 34rpx;
+  top: 10rpx;
+}
+.current_car_style {
+  color: #fe7506;
+  left: 40%;
+}
+.text_style_red {
+  color: red;
+  font-size: 30rpx;
+}
+.text_style_yel {
+  color: #f90;
+  font-size: 30rpx;
+}
+.view_hidde {
+  display: none;
+}
+.empty_sytle {
+  width: 100%;
+  height: 100%;
+}
+.logo_style {
+  width: 80rpx;
+  height: 80rpx;
+  background-color: #666;
+}
+.bind_text_style_nor {
+  color: #666;
+}
+.bind_text_style_nor,
+.bind_text_style_sel {
+  position: absolute;
+  right: 30rpx;
+  font-size: 30rpx;
+}
+.bind_text_style_sel {
+  color: #0693ff;
+}
+.line_grey {
+  height: 1px;
+  background-color: #eee;
+  position: relative;
+}
+.item_btn_layout_style {
+  margin-top: 10rpx;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  position: relative;
+  bottom: 0;
+  justify-content: space-around;
+}
+.icon_layout_style,
+.item_btn_layout_style {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.icon_layout_style {
+  padding: 20rpx;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.icon_style {
+  width: 40rpx;
+  height: 40rpx;
+}
+.icon_text_style {
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  color: #666;
+}
+.icon_text_style_sel {
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  color: #0693ff;
+}
+.author_style {
+  width: 88rpx;
+  height: 88rpx;
+  position: absolute;
+  right: 0;
+  margin-right: 20rpx;
+  top: 28rpx;
+}
+.car_logo_style {
+  width: 70rpx;
+  height: 70rpx;
+  position: absolute;
+  left: 24rpx;
+  top: 170rpx;
+}
+.car_series_name_style {
+  color: #242424;
+  font-size: 30rpx;
+  position: absolute;
+  left: 0;
+  margin-left: 120rpx;
+  margin-top: 170rpx;
+  line-height: 70rpx;
+}
+.item_click_view_style {
+  position: relative;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 300rpx;
+}

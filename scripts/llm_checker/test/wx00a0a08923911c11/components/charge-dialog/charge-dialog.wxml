@@ -1,0 +1,44 @@
+<view class="topupCon data-v-5941e13e">
+  <view class="title-con flexible aItem-center jc-center data-v-5941e13e">
+    <view class="line data-v-5941e13e"></view>
+    <view class="title data-v-5941e13e">剩余内容需付费解锁</view>
+    <view class="line line-right data-v-5941e13e"></view>
+  </view>
+  <view
+    class="topup-List flexible flex-flow data-v-5941e13e"
+    wx:if="{{iosPay}}"
+  >
+    <view
+      bindtap="__e"
+      class="{{['topup-item','','data-v-5941e13e',i.paySceneType.value==2?'topup-item-xufei':'',productId==i.productId?'topup-item-act':'']}}"
+      data-event-opts="{{[ [ 'tap',[ [ 'changeprice',['$0'],[ [ ['consumegradeList','',__i0__] ] ] ] ] ] ]}}"
+      wx:for="{{consumegradeList}}"
+      wx:for-index="__i0__"
+      wx:for-item="i"
+    >
+      <view class="tips data-v-5941e13e" wx:if="{{i.tips}}">{{i.tips}}</view>
+      <block wx:else>
+        <image
+          class="img_vip data-v-5941e13e"
+          src="/static/img/img_vip@2x.png"
+          wx:if="{{i.isVip}}"
+        ></image>
+      </block>
+      <view
+        class="topup_money data-v-5941e13e"
+        wx:if="{{i.paySceneType.value==2}}"
+        >{{i.paySceneDetail+i.moneyStr+(gradeType==1?'元':'钻石')}}</view
+      >
+      <view class="topup_money data-v-5941e13e" wx:else
+        >{{i.moneyStr+(gradeType==1?'元':'钻石')}}</view
+      >
+      <view class="topup_fuli data-v-5941e13e" wx:if="{{i.type==2}}"
+        >{{i.property}}</view
+      >
+      <view class="topup_slogan data-v-5941e13e" wx:else>{{i.text}}</view>
+      <view class="topup_type data-v-5941e13e"
+        >{{i.type==2?i.text:i.property}}</view
+      >
+    </view>
+  </view>
+</view>

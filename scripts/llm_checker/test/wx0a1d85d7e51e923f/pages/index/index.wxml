@@ -1,0 +1,176 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<custom
+  bgColor="bg-white"
+  bind:lanSwitch="_lanSwitch"
+  color="pink"
+  isLan="{{true}}"
+  lanText="{{lanIndex==lanConst.UY?'中文':'ئۇيغۇرچە'}}"
+>
+  <view slot="content">
+    <text class="text-lg text-block uy-tom text-black"
+      >{{appTitle?isUy?appTitle.uy_name:appTitle.ch_name:Str.appName[lanIndex]}}</text
+    >
+  </view>
+</custom>
+<view wx:if="{{pageCur=='home'}}">
+  <view
+    catchtouchmove="donothing"
+    class="fixed"
+    style="height: 200rpx"
+    wx:if="{{0}}"
+  >
+    <view class="cu-bar bg-pink" style="min-height: 90rpx">
+      <view class="">
+        <view
+          bindtap="testBtn"
+          class="flex justify-start align-center"
+          wx:if="{{weatherData}}"
+        >
+          <image
+            mode="aspectFit"
+            src="/resource/i3mages/weather/weather_state_{{weatherData.result.weather=='阴'?'1':weatherData.result.weather=='多云'?'2':weatherData.result.weather=='晴'?'3':'4'}}.png"
+            style="width: 70rpx; height: 60rpx"
+          ></image>
+          <text class="margin-lr-xs text-bold" style="font-size: 50rpx"
+            >{{weatherData.result.temp}}℃</text
+          >
+          <view>
+            <text class="margin-left-xs" style="font-size: 24rpx"
+              >{{weatherData.result.date}}</text
+            >
+            <view class="text-sm text-center"
+              >{{weatherData.result.temphigh}}℃/{{weatherData.result.templow}}℃</view
+            >
+          </view>
+        </view>
+      </view>
+      <navigator
+        class="action text-lg"
+        url="../common-page/select-area/select-area?title={{Str.selectArea[lanIndex]}}"
+        wx:if="{{selectArea}}"
+      >
+        <text class="uy-tom"
+          >{{isUy?selectArea.uy_name:selectArea.ch_name}}</text
+        >
+        <text class="icon-triangledownfill"></text>
+      </navigator>
+      <navigator
+        class="action text-lg"
+        url="../common-page/select-area/select-area"
+        wx:else
+      >
+        <text class=""
+          >{{pageData.locationArea?isUy?pageData.locationArea.uy_name:pageData.locationArea.ch_name:Str.selectArea[lanIndex]}}</text
+        >
+        <text class="icon-triangledownfill"></text>
+      </navigator>
+    </view>
+    <view
+      style="
+        background-image: linear-gradient(to bottom, #ffc300, #ffffff);
+        margin: 0rpx;
+      "
+      wx:if="{{1}}"
+    >
+      <view class="cu-bar search radius" style="border-radius: 8rpx">
+        <navigator
+          class="search-form radius text-center"
+          url="/pages/shop-home/shop-search/shop-search"
+        >
+          <text class="icon-search"></text>
+          <text
+            style="font-size: 32rpx;color: {{searchStrs.length>0?searchStrs[searchStrIndex].color:''}};"
+            >{{searchStrs.length>0?searchStrs[searchStrIndex].title:Str.inputSearchShop[lanIndex]}}</text
+          >
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <home
+    bind:error="failureToast"
+    bind:homeOnLoadCall="homeOnLoad"
+    bind:onShare="onShare"
+    bind:scrollChange="scrollChange"
+    bind:showToast="showToast"
+    bind:takeOrder="takeOrder"
+    bind:wetherLoadDataCall="loadWeatheData"
+    id="home"
+    wx:if="{{pageCur=='home'}}"
+  ></home>
+</view>
+<shop id="shop" wx:if="{{pageCur=='shop'}}"></shop>
+<order
+  bind:error="failureToast"
+  bind:showToast="showToast"
+  id="order"
+  wx:if="{{pageCur=='order'}}"
+></order>
+<mine
+  bind:error="failureToast"
+  bind:lanSwitch="lanSwitch"
+  bind:mOrder="mOrder"
+  bind:sendMessage="showSendModal"
+  bind:showToast="showToast"
+  id="mine"
+  wx:if="{{pageCur=='mine'}}"
+></mine>
+<view
+  class="margin-sm"
+  style="
+    position: fixed;
+    right: 0rpx;
+    bottom: 250rpx;
+    width: 120rpx;
+    height: 120rpx;
+    z-index: 999;
+  "
+  wx:if="{{0}}"
+>
+  <navigator
+    url="/pages/home/shopping-cart/shopping-cart?title={{Str.shoppingCart[lanIndex]}}"
+  >
+    <view class="cu-tag badge" style="top: 0rpx" wx:if="{{shopsCount}}"
+      >{{shopsCount}}</view
+    >
+    <image
+      mode="aspectFit"
+      src="/resource/images/shopping/shopping_cart.png"
+      style="width: 140rpx; height: 140rpx"
+    ></image>
+  </navigator>
+</view>
+<view class="cu-bar  tabbar bg-white shadow foot {{isUy?'rtl':''}}" id="tabbar">
+  <view
+    bindtap="navChange"
+    class="action {{pageCur==item.flag?'text-pink':'text-black'}}"
+    data-cur="{{item.flag}}"
+    wx:if="{{!(item.flag=='shop'&&!showShop)}}"
+    wx:for="{{tapInfo}}"
+    wx:key="index"
+  >
+    <view>
+      <image
+        mode="aspectFit"
+        src="/resource/images/tab_/{{item.icon}}.png"
+        style="width: 50rpx; height: 50rpx"
+        wx:if="{{pageCur==item.flag}}"
+      ></image>
+      <image
+        src="/resource/images/tab_/{{item.icon}}_.png"
+        style="width: 50rpx; height: 50rpx"
+        wx:else
+      >
+        <view
+          class="cu-tag badge text-xs"
+          wx:if="{{item.flag=='mine'&&appState.orderCount+appState.deliveryCount+appState.shopOrderCount>0}}"
+          >{{appState.orderCount+appState.deliveryCount+appState.shopOrderCount}}</view
+        >
+      </image>
+    </view>
+    <text class="text-sm {{isUy?'uy-tom':'ch-font'}}"
+      >{{isUy?item.uy_name:item.ch_name}}</text
+    >
+  </view>
+</view>

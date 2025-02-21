@@ -1,0 +1,38 @@
+<view class="dialog {{show?'dialog_show':''}}">
+  <view
+    catchtap="close"
+    catchtouchmove="close"
+    class="weui-mask"
+    wx:if="{{mask}}"
+  ></view>
+  <view
+    catchtouchmove="preventdefault"
+    class="weui-actionsheet {{show?'weui-actionsheet_toggle':''}}"
+  >
+    <view class="weui-half-screen-dialog__hd">
+      <view class="color-msg" style="background:{{colorRes}};"></view>
+    </view>
+    <movable-area class="target" style="background-color:{{hueColor}}">
+      <movable-view
+        animation="{{false}}"
+        bindchange="changeSV"
+        bindtouchend="onEnd"
+        class="iconfont icon-ios-locate-outline"
+        direction="all"
+        style="z-index: 20000"
+        x="{{x}}"
+        y="{{y}}"
+      ></movable-view>
+    </movable-area>
+    <slider
+      activeColor="transparent"
+      backgroundColor="transparent"
+      bindchanging="changeHue"
+      bindtouchend="onEnd"
+      blockColor="{{colorRes}}"
+      class="ribbon"
+      max="360"
+      value="{{hsv.h}}"
+    ></slider>
+  </view>
+</view>

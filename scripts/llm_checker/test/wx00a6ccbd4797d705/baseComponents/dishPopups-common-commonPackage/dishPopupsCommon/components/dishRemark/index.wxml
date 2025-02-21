@@ -1,0 +1,39 @@
+<view class="pr" wx:if="{{textareaShow}}">
+  <view
+    bindtap="__e"
+    class="{{['textarea-edit-content','f26',border?'border':'']}}"
+    data-event-opts="{{[ [ 'tap',[ [ 'tapView',['$event'] ] ] ] ]}}"
+    style="{{$root.s0}}"
+    wx:if="{{!editMode}}"
+    >{{''+content+''}}<view
+      class="textarea-edit-placeholder f26"
+      wx:if="{{content===''}}"
+      >{{''+placeholder+''}}</view
+    >
+  </view>
+  <textarea
+    adjustPosition="{{adjustPosition}}"
+    bindblur="__e"
+    bindinput="__e"
+    bindkeyboardheightchange="__e"
+    class="{{['textarea-edit-content',border?'border':'',isIOS?'iosTextarea':'']}}"
+    confirmType="{{confirmType}}"
+    cursorSpacing="20"
+    data-event-opts="{{[ [ 'blur',[ [ 'editBlur',['$event'] ] ] ],[ 'input',[ [ 'handleInput',['$event'] ] ] ],[ 'keyboardheightchange',[ [ 'keyboardheightchange',['$event'] ] ] ] ]}}"
+    disabled="{{disabled}}"
+    focus="{{true}}"
+    maxlength="{{maxlength==''?-1:maxlength}}"
+    showConfirmBar="{{showConfirmBar}}"
+    style="{{$root.s1}}"
+    value="{{content}}"
+    wx:if="{{editMode}}"
+  ></textarea>
+  <view
+    class="inputlength f20 fc9 pa"
+    wx:if="{{showCounter&&maxlength!=''&&maxlength>=0}}"
+  >
+    <text>{{currentLength}}</text>
+    <text style="margin: 0 6rpx">/</text>
+    <text>{{maxlength}}</text>
+  </view>
+</view>

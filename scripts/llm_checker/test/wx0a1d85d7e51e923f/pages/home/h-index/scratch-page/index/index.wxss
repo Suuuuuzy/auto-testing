@@ -1,0 +1,25 @@
+@import "/app.wxss";
+.wrap {
+  margin: 0rpx auto;
+  position: relative;
+}
+.cover_canvas,
+.wrap {
+  height: 200rpx;
+  width: 700rpx;
+}
+.cover_canvas {
+  z-index: 9;
+}
+.wrap .content {
+  height: 180rpx;
+  left: 0;
+  margin: 10rpx 0rpx;
+  position: absolute;
+  top: 0;
+  width: 700rpx;
+  z-index: 1;
+}
+.txt {
+  padding: 20rpx 100rpx;
+}

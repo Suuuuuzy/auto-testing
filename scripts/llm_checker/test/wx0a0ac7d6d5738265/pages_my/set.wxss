@@ -1,0 +1,220 @@
+body,
+form,
+image,
+input,
+text,
+textarea,
+view {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+page {
+  background: #fafafc;
+  background-image: url(https://yiningjiayou.com/yn/ynxcx/bg.png);
+  background-repeat: no-repeat;
+  background-size: 100vw auto;
+  color: #000;
+  font-size: 24rpx;
+  line-height: 1;
+  padding-bottom: env(safe-area-inset-bottom) !important;
+}
+image {
+  border: 0;
+  vertical-align: middle;
+}
+.pl10 {
+  padding-left: 10rpx;
+}
+.pl20 {
+  padding-left: 20rpx;
+}
+.pr10 {
+  padding-right: 10rpx;
+}
+.pr20 {
+  padding-right: 20rpx;
+}
+.pb10 {
+  padding-bottom: 10rpx;
+}
+.pn16 {
+  padding-bottom: 16rpx;
+}
+.pb20 {
+  padding-bottom: 20rpx;
+}
+.pt10 {
+  padding-top: 10rpx;
+}
+.pt20 {
+  padding-top: 20rpx;
+}
+.ml10 {
+  margin-left: 10rpx;
+}
+.ml20 {
+  margin-left: 20rpx;
+}
+.ml24 {
+  margin-left: 24rpx;
+}
+.ml32 {
+  margin-left: 32rpx;
+}
+.mr10 {
+  margin-right: 10rpx;
+}
+.mr20 {
+  margin-right: 20rpx;
+}
+.mr24 {
+  margin-right: 24rpx;
+}
+.mr32 {
+  margin-right: 32rpx;
+}
+.mr16 {
+  margin-right: 16rpx;
+}
+.mb10 {
+  margin-bottom: 10rpx;
+}
+.mb15 {
+  margin-bottom: 15rpx;
+}
+.mb20 {
+  margin-bottom: 20rpx;
+}
+.mb24 {
+  margin-bottom: 24rpx;
+}
+.mb32 {
+  margin-bottom: 32rpx;
+}
+.mt10 {
+  margin-top: 10rpx;
+}
+.mt15 {
+  margin-top: 15rpx;
+}
+.mt20 {
+  margin-top: 20rpx;
+}
+.mt24 {
+  margin-top: 24rpx;
+}
+.mt30 {
+  margin-top: 30rpx;
+}
+.mt32 {
+  margin-top: 32rpx;
+}
+.f28 {
+  font-size: 28rpx;
+}
+.f30 {
+  font-size: 30rpx;
+}
+.f32 {
+  font-size: 32rpx;
+}
+.f34 {
+  font-size: 34rpx;
+}
+.f36 {
+  font-size: 36rpx;
+}
+.f38 {
+  font-size: 38rpx;
+}
+.f40 {
+  font-size: 40rpx;
+}
+.f42 {
+  font-size: 42rpx;
+}
+.f44 {
+  font-size: 44rpx;
+}
+.f50 {
+  font-size: 50rpx;
+}
+.f70 {
+  font-size: 70rpx;
+}
+.fw {
+  font-weight: 500;
+  font-weight: 700;
+}
+.c_zs {
+  color: #6849ae;
+}
+.hs {
+  color: #999;
+}
+.bgc_f {
+  background-color: #fff;
+}
+.bgc_zs {
+  background-color: #6849ae;
+}
+.uni-swipe_button {
+  margin: 13rpx 0;
+}
+.fdc {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+}
+.fc {
+  justify-content: center;
+}
+.fc,
+.fsb {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+}
+.fsb {
+  justify-content: space-between;
+}
+.fg {
+  flex-grow: 1;
+}
+.fjc {
+  justify-content: center;
+}
+.fac,
+.fjc {
+  display: -webkit-flex;
+  display: flex;
+}
+.fac {
+  align-items: center;
+}
+.w100 {
+  width: 100%;
+}
+.my_set {
+  font-size: 34rpx;
+  height: 100vh;
+  width: 750rpx;
+}
+.my_set .setitem {
+  padding: 50rpx 24rpx 0;
+}
+.my_set .item {
+  background-color: #fff;
+  height: 88rpx;
+  margin-bottom: 20rpx;
+  padding: 0 12rpx 0 24rpx;
+}
+.my_set .item image {
+  height: 50rpx;
+  width: 50rpx;
+}
+.my_set .outLogin {
+  bottom: 40rpx;
+  position: absolute;
+}

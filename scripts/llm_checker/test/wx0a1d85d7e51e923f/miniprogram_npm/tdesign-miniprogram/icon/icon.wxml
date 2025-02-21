@@ -1,0 +1,20 @@
+<view
+  ariaHidden="{{ariaHidden}}"
+  ariaLabel="{{ariaLabel}}"
+  ariaRole="{{ariaRole}}"
+  bind:tap="onTap"
+  class="{{prefix?prefix:classPrefix}} class {{componentPrefix}}-class"
+  style="{{_._style( [iconStyle,style,customStyle] )}}"
+>
+  <view class="{{classPrefix}}--image" wx:if="{{isImage}}">
+    <image
+      class="{{classPrefix}}__image"
+      mode="aspectFit"
+      src="{{name}}"
+    ></image>
+  </view>
+  <label
+    class="{{prefix?prefix:classPrefix}}-{{name}} {{classPrefix}}-base"
+    wx:else
+  ></label>
+</view>

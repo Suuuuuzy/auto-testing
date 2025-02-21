@@ -1,0 +1,113 @@
+<view>
+  <cu-custom
+    bgColor="bg-gradual-blue"
+    bind:__l="__l"
+    isBack="{{true}}"
+    vueId="5e4520a8-1"
+    vueSlots="{{['content']}}"
+  >
+    <view slot="backText">返回</view>
+    <view slot="content">视频解析</view>
+  </cu-custom>
+  <ad adTheme="white" adType="video" unitId="{{ad}}" wx:if="{{showAd}}"></ad>
+  <view class="box" wx:if="{{pcqsy}}">
+    <view class="padding-sm flex flex-direction">
+      <button
+        bindtap="__e"
+        class="cu-btn"
+        data-event-opts="{{[ [ 'tap',[ [ 'pcqsycopy',['$event'] ] ] ] ]}}"
+        style="margin-left: 2px; background: #045f10; color: white"
+      >
+        {{pcqsy}}
+      </button>
+    </view>
+  </view>
+  <view>
+    <view wx:if="{{vs}}">
+      <video class="video-play" poster="{{cover}}" src="{{videoUrl}}"></video>
+    </view>
+  </view>
+  <cmd-progress
+    custom
+    bind:__l="__l"
+    percent="{{percent}}"
+    strokeColor="white"
+    successPercent="{{percent}}"
+    vueId="5e4520a8-2"
+    vueSlots="{{['default']}}"
+  >
+    <text style="color: #009688">{{percent+'%'}}</text>
+  </cmd-progress>
+  <view class="box">
+    <view class="cu-bar btn-group">
+      <button
+        bindtap="__e"
+        class="cu-btn bg-orange shadow-blur"
+        data-event-opts="{{[ [ 'tap',[ [ 'copyMvUrl',['$event'] ] ] ] ]}}"
+      >
+        复制无水印链接
+      </button>
+      <button
+        bindtap="__e"
+        class="cu-btn bg-green shadow"
+        data-event-opts="{{[ [ 'tap',[ [ 'downFile',[1,'$0'],['videoUrl'] ] ] ] ]}}"
+      >
+        保存到手机
+      </button>
+    </view>
+  </view>
+  <view class="box" wx:if="{{null!=cover}}">
+    <view class="cu-bar btn-group">
+      <button
+        bindtap="__e"
+        class="cu-btn bg-blue shadow-blur"
+        data-event-opts="{{[ [ 'tap',[ ['copyCover2'] ] ] ]}}"
+        wx:if="{{null!=cover}}"
+      >
+        复制封面链接
+      </button>
+      <button
+        bindtap="__e"
+        class="cu-btn bg-grey shadow"
+        data-event-opts="{{[ [ 'tap',[ [ 'downFile',[2,'$0'],['cover'] ] ] ] ]}}"
+        wx:if="{{null!=cover}}"
+      >
+        保存封面
+      </button>
+    </view>
+  </view>
+  <view class="box" wx:if="{{null!=cover}}">
+    <view class="padding-sm flex flex-direction">
+      <button
+        bindtap="__e"
+        class="cu-btn"
+        data-event-opts="{{[ [ 'tap',[ [ 'downFilea',[1,'$0'],['videoUrl'] ] ] ] ]}}"
+        style="margin-left: 2px; background: #d84949; color: white"
+      >
+        下载通道二(保存失败时使用)
+      </button>
+    </view>
+  </view>
+  <view class="box" wx:if="{{null!=cover}}">
+    <view class="padding-sm flex flex-direction">
+      <button
+        bindtap="__e"
+        class="cu-btn bg-greenbt shadow"
+        data-event-opts="{{[ [ 'tap',[ ['copyCover'] ] ] ]}}"
+        wx:if="{{null!=cover}}"
+      >
+        复制视频标题文案
+      </button>
+    </view>
+  </view>
+  <view class="water-teach">
+    <view
+      bindtap="__e"
+      class="tui-nickname"
+      data-event-opts="{{[ [ 'tap',[ [ 'skipToWeb',['$event'] ] ] ] ]}}"
+    >
+      <image class="tui-img-vip"></image>下载失败了怎么办？
+      点我查看解决方式</view
+    >
+  </view>
+</view>

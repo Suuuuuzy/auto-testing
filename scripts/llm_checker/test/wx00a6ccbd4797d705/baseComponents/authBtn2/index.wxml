@@ -1,0 +1,69 @@
+<view
+  catchtap="__e"
+  class="authBtnWrap _div data-v-7bd2d264"
+  data-event-opts="{{[ [ 'tap',[ [ 'wrapHandel',['$event'] ] ] ] ]}}"
+  style="{{styleStr}}"
+>
+  <view
+    bindtap="__e"
+    class="_div data-v-7bd2d264"
+    data-event-opts="{{[ [ 'tap',[ [ 'goPrivacyRights',['$event'] ] ] ] ]}}"
+    style="
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+    "
+    wx:if="{{agreeVersion}}"
+    >需要先同意隐私协议</view
+  >
+  <block wx:else>
+    <view
+      catchtap="__e"
+      class="_div data-v-7bd2d264"
+      data-event-opts="{{[ [ 'tap',[ [ 'btnHandel',['$event'] ] ] ] ]}}"
+      style="
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+      "
+      wx:if="{{!needAuth}}"
+      >已认证</view
+    >
+    <block wx:else>
+      <view
+        class="_div data-v-7bd2d264"
+        style="
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 100%;
+          width: 100%;
+        "
+        wx:if="{{needAuth&&method=='1'&&!goIdentificationPage}}"
+      >
+        <button
+          catchgetphonenumber="__e"
+          class="auth data-v-7bd2d264"
+          data-event-opts="{{[ [ 'getphonenumber',[ [ 'decryptPhoneNumber',['$event'] ] ] ] ]}}"
+          lang="en"
+          openType="getPhoneNumber"
+          wx:if="{{needAuth&&!locked}}"
+        ></button>
+      </view>
+      <block wx:else>
+        <button
+          catchtap="__e"
+          class="auth data-v-7bd2d264"
+          data-event-opts="{{[ [ 'tap',[ [ 'toAuthPage',['$event'] ] ] ] ]}}"
+          wx:if="{{needAuth&&(method=='2'||goIdentificationPage)}}"
+        ></button>
+      </block>
+    </block>
+  </block>
+</view>

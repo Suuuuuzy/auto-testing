@@ -1,0 +1,20 @@
+<view class="container">
+    <view class="searchSection">
+        <view class="searchSection-main">
+            <icon color="#b2b2b2" size="21rpx" type="search"></icon>
+            <input bindconfirm="searchConfirm" bindinput="searchInput" bindkeyboardheightchange="searchBoardheightchange" class="searchInput" focus="{{focusFlag}}" placeholder="请输入要查询的应用名称" placeholderClass="searchPlaceholder" type="text" value="{{searchInput}}"></input>
+            <icon catchtap="clearTap" class="search-cancelIcon" color="#b2b2b2" hidden="{{clearFlagHide}}" size="25rpx" type="clear"></icon>
+        </view>
+    </view>
+    <view id="applicationList-body">
+        <view class="hotService-cont">
+            <view class="noData" wx:if="{{!hotServiceFlag}}">暂无数据</view>
+            <block wx:else>
+                <view bindtap="bindHotServiceTap" class="hotService_item" data-idx="{{index}}" wx:for="{{hotService}}" wx:key="id">
+                    <image mode="aspectFit" src="https://spj.csdsj.net/gateway/zwfw-api/api/file/download?fileId={{item.iconId}}"></image>
+                    <text>{{item.name}}</text>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

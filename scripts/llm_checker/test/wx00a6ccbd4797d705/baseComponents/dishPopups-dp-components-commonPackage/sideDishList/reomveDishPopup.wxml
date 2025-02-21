@@ -1,0 +1,76 @@
+<weixin-popup
+  bind:__l="__l"
+  bind:close="__e"
+  class="data-v-5e8b3204"
+  closeOnClickOverlay="{{true}}"
+  customStyle="border-radius: 20rpx 20rpx 0 0; padding-bottom: 0;"
+  data-event-opts="{{[ [ '^close',[ ['close'] ] ] ]}}"
+  position="bottom"
+  round="{{true}}"
+  show="{{value}}"
+  vueId="fd4c8850-1"
+  vueSlots="{{['default']}}"
+>
+  <view class="remove-popup p30r _div data-v-5e8b3204">
+    <view
+      class="flex mb40r _div data-v-5e8b3204"
+      wx:for="{{dishList}}"
+      wx:for-index="__i0__"
+      wx:for-item="dish"
+      wx:key="itemStr"
+    >
+      <image
+        class="image data-v-5e8b3204"
+        mode="aspectFill"
+        src="{{dish.imgUrl}}"
+      ></image>
+      <view class="flex1 flexColumnBetween ml30 _div data-v-5e8b3204">
+        <view class="_div data-v-5e8b3204">
+          <view class="flexAlignCenter _div data-v-5e8b3204">
+            <view class="dish-name ellipsis1 f30 _div data-v-5e8b3204"
+              >{{dish.itemName}}</view
+            >
+            <label class="unit-name f24 _span data-v-5e8b3204">（</label>
+            <view class="unit-name ellipsis1 f24 _div data-v-5e8b3204"
+              >{{dish.unName}}</view
+            >
+            <label class="unit-name f24 _span data-v-5e8b3204">）</label>
+          </view>
+          <view class="f24 fc9 _div data-v-5e8b3204" wx:if="{{dish.makeStr}}"
+            >{{dish.makeStr}}</view
+          >
+        </view>
+        <view
+          class="{{['_div','data-v-5e8b3204',dish.equityMark?'flexContentBetween align-end':'']}}"
+        >
+          <view
+            class="equity-card-label f20 mt10r _div data-v-5e8b3204"
+            wx:if="{{dish.equityMark}}"
+          >
+            <view
+              class="p8 fcf left-label tc displayInlineBlock _div data-v-5e8b3204"
+              style="{{'background-color:'+themeColor+';'}}"
+              >{{''+dish.equityMark+''}}</view
+            >
+            <label
+              class="p8 _span data-v-5e8b3204"
+              style="{{'background-color:'+themeColor+'33'+';'+'color:'+themeColor+';'}}"
+              >{{''+dish.equityCardName+''}}</label
+            >
+          </view>
+          <add-de-btn
+            bind:__l="__l"
+            bind:minusFun="__e"
+            bind:plusFun="__e"
+            class="data-v-5e8b3204"
+            data-event-opts="{{[ [ '^plusFun',[ [ 'dishChange',['addDish','$0'],[ [ ['dishList','itemStr',dish.itemStr] ] ] ] ] ],[ '^minusFun',[ [ 'dishChange',['removeDish','$0'],[ [ ['dishList','itemStr',dish.itemStr] ] ] ] ] ] ]}}"
+            minNum="{{0}}"
+            set="{{themeColor:themeColor,size:24,inputSize:26}}"
+            trueNum="{{dish.num}}"
+            vueId="{{'fd4c8850-2-'+__i0__+','+'fd4c8850-1'}}"
+          ></add-de-btn>
+        </view>
+      </view>
+    </view>
+  </view>
+</weixin-popup>

@@ -1,0 +1,58 @@
+<view class="itemWrap pr h100p _div data-v-1e7abea3">
+  <view class="cookWrap h100p flexColumn _div data-v-1e7abea3">
+    <view
+      bindtap="__e"
+      class="imgBox pr _div data-v-1e7abea3"
+      data-event-opts="{{[ [ 'tap',[ [ 'showBigPicModle',['$event'] ] ] ] ]}}"
+      style="{{'border-color:'+(dishConfig.dishNum>0?dishConfig.themeColor:'transparent')+';'}}"
+    >
+      <image
+        class="image pa data-v-1e7abea3"
+        mode="aspectFill"
+        src="{{dishImages}}"
+      ></image>
+      <view class="imgSelBorder pa _div data-v-1e7abea3"></view>
+    </view>
+    <view
+      class="content flex1 _div data-v-1e7abea3"
+      style="{{'border-color:'+(dishConfig.dishNum>0?dishConfig.themeColor:'transparent')+';'}}"
+    >
+      <dish-info
+        bind:__l="__l"
+        bind:add="__e"
+        bind:getNumber="__e"
+        bind:inputClick="__e"
+        bind:remove="__e"
+        bind:shift="__e"
+        class="data-v-1e7abea3"
+        context="{{context}}"
+        data-event-opts="{{[ [ '^add',[ ['add'] ] ],[ '^remove',[ ['remove'] ] ],[ '^getNumber',[ ['getNumber'] ] ],[ '^inputClick',[ ['inputClick'] ] ],[ '^shift',[ ['shift'] ] ] ]}}"
+        dishConfig="{{dishConfig}}"
+        dishData="{{dishData}}"
+        inputSize="{{28}}"
+        layout="{{23}}"
+        showAddBtn="{{dishConfig.dishNum>0}}"
+        style="height: 100%"
+        vueId="4879dc74-1"
+      ></dish-info>
+    </view>
+  </view>
+  <view
+    bindtap="__e"
+    class="pa singleBtn _div data-v-1e7abea3"
+    data-event-opts="{{[ [ 'tap',[ [ 'showBigPicModle',['$event'] ] ] ] ]}}"
+    wx:if="{{!dishConfig.guQingFlg}}"
+  >
+    <view class="pa iconfont iconshixinyuan fcf _div data-v-1e7abea3"></view>
+    <view
+      class="pa iconfont icon-yixuanzhong _div data-v-1e7abea3"
+      style="{{'color:'+dishConfig.themeColor+';'}}"
+      wx:if="{{dishConfig.dishNum>0}}"
+    ></view>
+    <view
+      class="pa iconfont icon-weixuanzhong _div data-v-1e7abea3"
+      style="{{'color:'+dishConfig.themeColor+';'}}"
+      wx:else
+    ></view>
+  </view>
+</view>

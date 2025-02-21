@@ -1,0 +1,252 @@
+page {
+  background: #f7f7f7;
+}
+.container {
+  color: #333;
+  padding-bottom: 100rpx;
+}
+.tui-scale {
+  font-weight: 700;
+  line-height: 30rpx;
+  transform: scale(0.8);
+  transform-origin: center 100%;
+}
+.tui-item-active {
+  color: #e41f19 !important;
+}
+.tui-swiper-item {
+  -webkit-box-align: center;
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+}
+.tui-hot-item {
+  line-height: 26rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tui-header-banner {
+  background: #e41f19;
+  box-sizing: border-box;
+  padding-top: 100rpx;
+}
+.tui-hot-search {
+  -webkit-box-pack: justify;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 24rpx;
+  justify-content: space-between;
+  padding: 0 20rpx;
+  position: relative;
+  z-index: 2;
+}
+.tui-hot-search,
+.tui-hot-tag {
+  -webkit-box-align: center;
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+}
+.tui-hot-tag {
+  -webkit-box-pack: center;
+  background: hsla(0, 0%, 100%, 0.15);
+  border-radius: 30rpx;
+  justify-content: center;
+  line-height: 24rpx;
+  padding: 10rpx 24rpx;
+}
+.tui-banner-bg {
+  display: -webkit-flex;
+  display: flex;
+  height: 180rpx;
+}
+.tui-banner-bg,
+.tui-primary-bg {
+  background: #e41f19;
+  position: relative;
+}
+.tui-primary-bg {
+  border: 1px solid transparent;
+  display: inline-block;
+  height: 224rpx;
+  width: 50%;
+  z-index: 1;
+}
+.tui-route-left {
+  transform: skewY(8deg);
+}
+.tui-route-right {
+  transform: skewY(-8deg);
+}
+.tui-banner-swiper {
+  border-radius: 12rpx;
+  height: 240rpx;
+  overflow: hidden;
+  transform: translateY(0);
+  width: 100%;
+}
+.tui-product-category {
+  background: #fff;
+  box-sizing: border-box;
+  color: #555;
+  flex-wrap: wrap;
+  font-size: 24rpx;
+  margin-bottom: 20rpx;
+  padding: 80rpx 20rpx 30rpx;
+}
+.tui-category-item,
+.tui-product-category {
+  -webkit-box-align: center;
+  -webkit-box-pack: justify;
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+}
+.tui-category-item {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  height: 118rpx;
+  padding-top: 30rpx;
+  width: 20%;
+}
+.tui-category-img {
+  display: block;
+  height: 80rpx;
+  width: 80rpx;
+}
+.tui-category-name {
+  line-height: 24rpx;
+}
+.tui-product-box {
+  box-sizing: border-box;
+  margin-top: 20rpx;
+  padding: 0 20rpx;
+}
+.tui-pb-20 {
+  padding-bottom: 20rpx;
+}
+.tui-bg-white {
+  background: #fff;
+}
+.tui-group-name {
+  font-size: 32rpx;
+  font-weight: 700;
+  padding: 24rpx 0;
+  text-align: center;
+}
+.tui-new-box {
+  -webkit-box-pack: justify;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.tui-new-box,
+.tui-new-item {
+  -webkit-box-align: center;
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+}
+.tui-new-item {
+  background: #f5f2f9;
+  border-radius: 12rpx;
+  box-sizing: border-box;
+  height: 200rpx;
+  padding: 0 20rpx;
+  position: relative;
+  width: 49%;
+}
+.tui-new-mtop {
+  margin-top: 2%;
+}
+.tui-title-box {
+  font-size: 24rpx;
+}
+.tui-new-title {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  line-height: 32rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+.tui-new-original {
+  color: #a0a0a0;
+  display: inline-block;
+  padding-left: 12rpx;
+  text-decoration: line-through;
+  transform: scale(0.8);
+  transform-origin: center center;
+}
+.tui-new-img {
+  display: block;
+  flex-shrink: 0;
+  height: 160rpx;
+  width: 160rpx;
+}
+.tui-new-label {
+  border-top-left-radius: 12rpx;
+  height: 56rpx;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 56rpx;
+}
+.tui-product-list {
+  -webkit-box-pack: justify;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.tui-product-container {
+  -webkit-box-flex: 1;
+  flex: 1;
+  margin-right: 2%;
+}
+.tui-product-container:last-child {
+  margin-right: 0;
+}
+.tui-pro-item {
+  background: #fff;
+  border-radius: 12rpx;
+  box-sizing: border-box;
+  margin-bottom: 4%;
+  overflow: hidden;
+  width: 100%;
+}
+.tui-pro-img {
+  display: block;
+  width: 100%;
+}
+.tui-pro-content {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-box-pack: justify;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20rpx;
+}
+.tui-pro-tit {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: #2e2e2e;
+  display: -webkit-box;
+  font-size: 26rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+.file-btn {
+  color: #1890ff;
+}

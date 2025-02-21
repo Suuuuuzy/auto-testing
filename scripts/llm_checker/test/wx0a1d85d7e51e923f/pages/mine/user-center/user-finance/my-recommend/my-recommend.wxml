@@ -1,0 +1,29 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view class="text-center margin" wx:if="{{pageData}}">
+  <view class="grid col-2">
+    <view class="text-center" wx:for="{{pageData.images}}">
+      <image
+        bindtap="viewImg"
+        data-index="{{index}}"
+        src="{{item}}"
+        style="width: 300rpx; height: 570rpx"
+      ></image>
+      <view class="padding-sm">
+        <button
+          bindtap="downBtn"
+          class="cu-btn line-blue shadow"
+          data-url="{{item}}"
+        >
+          {{Str.save[lanIndex]}}
+        </button>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="margin-top text-red text-lg text-center"
+  >{{Str.howGetMoney[lanIndex]}}</view
+>
+<view class="padding {{isUy?'rtl':''}}">{{Str.aboutGetMoney[lanIndex]}}</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

@@ -1,0 +1,85 @@
+.dub-page {
+  background-color: #fff;
+  min-height: 100vh;
+}
+.dub-page textarea {
+  background-color: #eee;
+  height: 400rpx;
+  margin: 30rpx 30rpx 0;
+  padding: 10px;
+  width: 690rpx;
+}
+.dub-page .tool {
+  align-items: center;
+  background-color: #eee;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  margin: 0rpx 30rpx 30rpx;
+  padding: 30rpx;
+}
+.dub-page .tool > view > text {
+  border: 1rpx solid #ddd;
+  color: #666;
+  margin-right: 12rpx;
+  padding: 6rpx 12rpx;
+}
+.dub-flex,
+.dub-flex .flex-item {
+  display: -webkit-flex;
+  display: flex;
+}
+.dub-flex .flex-item {
+  align-items: center;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+.tips {
+  color: #999;
+  font-size: 28rpx;
+}
+.link,
+.tips {
+  padding: 40rpx 30rpx 0;
+}
+.link {
+  color: #2196fc;
+  text-align: center;
+  text-decoration: underline;
+}
+.select-status {
+  color: #333;
+  font-size: 26rpx;
+}
+.content .position-button {
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  bottom: 0;
+  padding: 30rpx;
+  position: absolute;
+  width: 100%;
+}
+.position-button view {
+  align-items: center;
+  background-color: #2196fc;
+  color: #fff;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  padding: 20rpx 0;
+}
+.container {
+  padding: 30rpx;
+}
+.tool {
+  background-color: #fff;
+  padding: 0 30rpx 30rpx;
+}
+.sxb {
+  background-color: #2196fc;
+  color: #fff;
+  padding: 16rpx 0;
+  text-align: center;
+  width: 100%;
+}

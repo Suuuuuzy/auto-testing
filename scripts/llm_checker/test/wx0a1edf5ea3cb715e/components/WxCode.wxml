@@ -1,0 +1,42 @@
+<view class="code-warp-content data-v-495252d2">
+  <u-popup
+    bind:__l="__l"
+    bind:close="__e"
+    bind:input="__e"
+    borderRadius="30"
+    class="data-v-495252d2"
+    closeable="{{true}}"
+    data-event-opts="{{[ [ '^close',[ ['close'] ] ],[ '^input',[ [ '__set_model',[ '','value','$event',[] ] ] ] ] ]}}"
+    maskCloseAble="{{false}}"
+    mode="center"
+    value="{{value}}"
+    vueId="4170f8c6-1"
+    vueSlots="{{['default']}}"
+  >
+    <view class="home-popup-container data-v-495252d2">
+      <view class="u-text-title data-v-495252d2">
+        <text class="data-v-495252d2">长按保存二维码</text>
+      </view>
+      <image
+        class="pop-code-warp data-v-495252d2"
+        mode="widthFix"
+        showMenuByLongpress="{{true}}"
+        src="{{ewmImg}}"
+        wx:if="{{ewmImg}}"
+      ></image>
+      <view class="load-warp data-v-495252d2" wx:else>
+        <u-loading
+          bind:__l="__l"
+          class="data-v-495252d2"
+          color="#6b5aff"
+          mode="circle"
+          size="46"
+          vueId="{{'4170f8c6-2'+','+'4170f8c6-1'}}"
+        ></u-loading>
+      </view>
+      <view class="u-text data-v-495252d2">
+        <text class="data-v-495252d2">关注公众号，可即时接收最新消息通知</text>
+      </view>
+    </view>
+  </u-popup>
+</view>

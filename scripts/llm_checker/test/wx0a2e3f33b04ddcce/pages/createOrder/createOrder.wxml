@@ -1,0 +1,39 @@
+<view class="create-order">
+  <view class="content">
+    <view class="companyName">{{orderData[0].companyName}}</view>
+    <view class="splitline"></view>
+    <view class="cart-list">
+      <view class="dish" wx:for="{{orderData}}" wx:key="createTime">
+        <view class="dish-image">
+          <image
+            class="image"
+            mode="aspectFit"
+            src="{{item.item.attach[0].shrinkUrl?item.item.attach[0].shrinkUrl:defaultFoodUrl}}"
+          ></image>
+        </view>
+        <view class="dish-info">
+          <view class="dish-info-top">
+            <text class="name">{{item.item.name}}【{{item.weekday}}】</text>
+            <text class="price">￥{{item.item.price}}</text>
+          </view>
+          <view class="pickupInfo"
+            >提货：{{item.pickupInfo.startDate}}
+            {{item.pickupInfo.startTime.length===2?item.pickupInfo.startTime+':00':item.pickupInfo.startTime}}-{{item.pickupInfo.endTime.length===2?item.pickupInfo.endTime+':00':item.pickupInfo.endTime}}</view
+          >
+          <view class="count">x{{item.count}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="wrapper">
+    <view class="shopping-cart">
+      <view class="cart-left">
+        <text class="price-text">合计：</text>
+        <text class="total-price">￥{{totalPrice}}</text>
+      </view>
+      <text bind:tap="createOrder" class="cart-right" data-item="{{item}}"
+        >提交订单</text
+      >
+    </view>
+  </view>
+</view>

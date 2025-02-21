@@ -1,0 +1,56 @@
+.searchSection-main {
+  margin-bottom: 67rpx;
+}
+#businessTodo-main {
+  padding-top: 136rpx;
+  box-sizing: border-box;
+}
+.businessTodo-list {
+  padding: 0 28rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.businessTodo-list .list-item {
+  width: 307rpx;
+  height: 140rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 48rpx;
+  padding-right: 26rpx;
+  box-shadow: 0 5rpx 8.3rpx 1.7rpx rgba(0, 0, 0, 0.08);
+}
+.list-item .list-item_icon {
+  width: 114rpx;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list-item_icon image {
+  width: 62rpx;
+  height: 62rpx;
+}
+.list-item .list-item_detail {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10rpx;
+  color: #353535;
+}
+.list-item_detail .item-detail_title {
+  font-size: 28rpx;
+  line-height: 32rpx;
+}
+.list-item_detail .item-detail_cont {
+  display: flex;
+  align-items: center;
+  margin-top: 10rpx;
+}
+.list-item_detail .item-label {
+  font-size: 24rpx;
+  color: #7e7e7e;
+}
+.list-item_detail .item-approveItemCount {
+  font-size: 26rpx;
+  vertical-align: text-bottom;
+}

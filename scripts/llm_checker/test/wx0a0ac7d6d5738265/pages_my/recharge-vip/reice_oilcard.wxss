@@ -1,0 +1,165 @@
+.lqbtn.data-v-c6a1a269 {
+  align-items: center;
+  background: #41bbc0;
+  border-radius: 50rpx;
+  bottom: 40rpx;
+  color: #fff;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 32rpx;
+  font-weight: 700;
+  height: 100rpx;
+  justify-content: center;
+  letter-spacing: 0rpx;
+  position: fixed;
+  width: calc(100% - 32rpx);
+}
+.btncolor-gray.data-v-c6a1a269 {
+  background: silver !important;
+}
+.carditem.data-v-c6a1a269 {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 24rpx;
+  margin-top: 16rpx;
+  padding: 0 32rpx;
+  width: 100%;
+}
+.carditem .coupon_box.data-v-c6a1a269 {
+  background: #0ca3ad;
+  border-radius: 20rpx;
+  flex-direction: column;
+  margin-top: 24rpx;
+  padding: 24rpx;
+}
+.carditem .coupon_box.data-v-c6a1a269,
+.carditem .coupon_box_title.data-v-c6a1a269 {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+.carditem .coupon_box_title_name.data-v-c6a1a269 {
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: 700;
+  letter-spacing: 0rpx;
+  line-height: 37.5rpx;
+  margin: 0 24rpx;
+}
+.carditem .coupon_box_title_img.data-v-c6a1a269 {
+  height: 36rpx;
+  width: 38rpx;
+}
+.carditem .coupon_box_title_img.data-v-c6a1a269:nth-child(1) {
+  transform: scaleX(-1);
+}
+.carditem .coupon_box_couponitem.data-v-c6a1a269 {
+  font-size: 28rpx;
+  line-height: 32.82rpx;
+  margin-top: 24rpx;
+}
+.carditem .coupon_box_couponitem.data-v-c6a1a269,
+.carditem .isuse.data-v-c6a1a269 {
+  color: #7b8199;
+  font-weight: 400;
+  letter-spacing: 0rpx;
+  text-align: left;
+  vertical-align: top;
+}
+.carditem .isuse.data-v-c6a1a269 {
+  font-size: 24rpx;
+  line-height: 28.12rpx;
+  margin: 24rpx 0;
+  width: 100%;
+}
+.carditem .cardtype.data-v-c6a1a269 {
+  align-items: center;
+  background-color: #0ca3ad;
+  border-radius: 20rpx;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  height: 50rpx;
+  justify-content: center;
+  margin-right: 6rpx;
+  padding: 8rpx 16rpx;
+  width: 130rpx;
+}
+.carditem .cardtype.data-v-c6a1a269:nth-last-child(1) {
+  margin-right: 0rpx !important;
+}
+.carditem .cardtype .type.data-v-c6a1a269 {
+  font-size: 28rpx;
+  font-weight: 400;
+  letter-spacing: 0rpx;
+  line-height: 28rpx;
+  text-align: center;
+  vertical-align: middle;
+}
+.carditem .cardtype .cop.data-v-c6a1a269 {
+  font-size: 20rpx;
+  font-weight: 400;
+  letter-spacing: 0rpx;
+  line-height: 31.86rpx;
+  text-align: left;
+  vertical-align: top;
+}
+.carditem .cardtype .yhje.data-v-c6a1a269 {
+  color: #c0c2cc;
+  font-size: 21rpx;
+  font-weight: 400;
+  letter-spacing: 0rpx;
+  text-align: left;
+  vertical-align: top;
+}
+.oilsCard_index.data-v-c6a1a269 {
+  width: 750rpx;
+}
+.oilsCard_index .oilsCardItem.data-v-c6a1a269,
+.oilsCard_index.data-v-c6a1a269 {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.oilsCard_index .oilsCardItem.data-v-c6a1a269 {
+  background: #06b9c0;
+  border: 2rpx solid #7b8199;
+  border-radius: 20rpx;
+  flex-shrink: 0;
+  height: 100%;
+  margin-bottom: 24rpx;
+  padding: 32rpx;
+  position: relative;
+  width: 686rpx;
+}
+.oilsCard_index .oilsCardItem .oilsCardType.data-v-c6a1a269 {
+  align-items: center;
+  background: #0ca3ad;
+  border: 2rpx solid #8a8f99;
+  border-radius: 20rpx 20rpx 0rpx;
+  color: #e1e4ef;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 22rpx;
+  font-weight: 400;
+  height: 42rpx;
+  justify-content: center;
+  left: -8rpx;
+  letter-spacing: 0rpx;
+  padding: 0 12rpx;
+  position: absolute;
+  top: -8rpx;
+}
+.oilsCard_index .oilsCardItem .oilsCardName.data-v-c6a1a269 {
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: 500;
+  letter-spacing: 0rpx;
+}

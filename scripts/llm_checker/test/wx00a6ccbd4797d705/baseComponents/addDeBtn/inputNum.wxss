@@ -1,0 +1,23 @@
+.input-num.data-v-0707cd64 {
+  position: relative;
+  vertical-align: middle;
+}
+.input-num .input-num__line.data-v-0707cd64 {
+  animation: line-data-v-0707cd64 1.5s infinite;
+  background-color: #333;
+  display: inline-block;
+  height: 38rpx;
+  vertical-align: text-bottom;
+  width: 1px;
+}
+@keyframes line-data-v-0707cd64 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

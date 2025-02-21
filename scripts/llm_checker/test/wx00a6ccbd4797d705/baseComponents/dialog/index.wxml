@@ -1,0 +1,45 @@
+<weixin-popup
+  bind:__l="__l"
+  bind:close="__e"
+  class="data-v-16d0897c"
+  closeable="{{closeable}}"
+  customStyle="background: none;"
+  data-event-opts="{{[ [ '^close',[ ['close'] ] ] ]}}"
+  position="center"
+  show="{{visible}}"
+  vueId="4e726bb1-1"
+  vueSlots="{{['default']}}"
+>
+  <view
+    class="{{['data-v-16d0897c',true?'wuxiang-dialog':'']}}"
+    style="{{$root.s0}}"
+  >
+    <view class="wuxiang-dialog-top data-v-16d0897c" wx:if="{{!useSlotTitle}}">
+      <text class="wuxiang-dialog-title data-v-16d0897c">{{title}}</text>
+    </view>
+    <slot name="title"></slot>
+    <slot></slot>
+    <slot name="footer"></slot>
+    <view
+      class="{{['wuxiang-dialog-buttons','data-v-16d0897c',btnInterchange?'flex-row-reverse':'']}}"
+      wx:if="{{!useSlotFooter}}"
+    >
+      <view
+        bindtap="__e"
+        class="wuxiang-dialog-button data-v-16d0897c"
+        data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}"
+        style="{{$root.s1}}"
+        wx:if="{{showCancelButton}}"
+        >{{''+cancelButtonText+''}}</view
+      >
+      <view
+        bindtap="__e"
+        class="wuxiang-dialog-button data-v-16d0897c"
+        data-event-opts="{{[ [ 'tap',[ [ 'confirm',['$event'] ] ] ] ]}}"
+        style="{{$root.s2}}"
+        wx:if="{{showConfirmButton}}"
+        >{{''+confirmButtonText+''}}</view
+      >
+    </view>
+  </view>
+</weixin-popup>

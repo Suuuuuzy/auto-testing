@@ -1,0 +1,7 @@
+<view
+  bindtap="__e"
+  class="_div"
+  data-event-opts="{{[ [ 'tap',[ [ 'fire',['$event'] ] ] ] ]}}"
+>
+  <slot></slot>
+</view>

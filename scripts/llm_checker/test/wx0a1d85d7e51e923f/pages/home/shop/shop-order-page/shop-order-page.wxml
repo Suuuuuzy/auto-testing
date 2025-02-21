@@ -1,0 +1,260 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view class="tap-page">
+    <view bindtap="addAddress" class="cu-bar bg-white margin-top-sm" wx:if="{{!selectAddress}}">
+        <view class="action">
+            <text class="icon-roundadd text-red text-xxl"></text>
+            <text>{{Str.selectAddress[lanIndex]}}</text>
+        </view>
+    </view>
+    <view bindtap="addAddress" wx:if="{{selectAddress}}">
+        <view class="cu-list menu sm-border margin-top-sm">
+            <view class="cu-item">
+                <view class="content padding-tb-sm">
+                    <view class="text-sm">
+                        <text wx:if="{{selectAddress.search_address}}">{{isUy?selectAddress.search_address.uy_name:selectAddress.search_address.name}}/</text> {{selectAddress.house_number}}</view>
+                    <view class="text-gray text-sm">{{selectAddress.contact_name}} {{selectAddress.contact_phone}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{formData.cartList}}">
+        <view class="cu-bar bg-white solid-bottom margin-top-sm solids-bottom">
+            <view class="action">
+                <text class="icon-title text-cyan "></text> {{isUy?formData.cartList.shop.uy_name:formData.cartList.shop.ch_name}} </view>
+        </view>
+        <view wx:for="{{formData.cartList.cartItems}}" wx:key="index">
+            <view class="cu-list menu-avatar sm-border">
+                <view class="cu-item" style="min-height:140rpx">
+                    <view class="cu-avatar  lg" style="background-image:url({{ossImage+item.item.img_url+'?x-oss-process=image/resize,m_lfit,h_100,w_100'}});"></view>
+                    <view class="content">
+                        <view class="text-grey">{{isUy?item.item.uy_name:item.item.ch_name}}</view>
+                        <view class="text-gray text-sm flex">
+                            <text class="text-cut">
+                                <text class="text-price text-red">
+                                    <text style="text-decoration:{{item.item.time2>0?'line-through':''}}">{{item.item.price}}</text>
+                                    <text class="text-cyan text-price" wx:if="{{item.item.time2>0}}">{{item.item.activity_price}}</text>
+                                </text>
+                            </text>
+                        </view>
+                        <view class="text-sm text-gray" wx:if="{{item.item.phone||item.item.pickup_number}}">
+                            <text class="icon-phone"></text>{{item.item.phone}} / <text wx:if="{{item.item.pickup_number}}">{{item.item.pickup_number}}</text>
+                        </view>
+                    </view>
+                    <view class="action">
+                        <view class="text-grey text-xs"></view>
+                        <view class="cu-tag round bg-grey sm">X{{item.count}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="cu-bar bg-white solid-bottom  solid-top">
+            <view class="action"> {{Str.deliveryFee[lanIndex]}} </view>
+            <view class="action">
+                <text class="text-price text-red">{{formData.cartList.deliveryFee}}</text>
+            </view>
+        </view>
+        <view class="cu-bar bg-white">
+            <view class="action"> {{Str.shopSum[lanIndex]}} </view>
+            <view class="action">
+                <text class="text-price text-red">{{formData.cartList.allPrice}}</text>
+            </view>
+        </view>
+        <view class="cu-list menu margin-top-sm sm-border">
+            <view bindtap="selectScan" class="cu-item arrow" wx:if="{{formData.cartList.shop.has_scan==1&&pageData.isAdmin}}">
+                <view class="content">
+                    <text class="icon-scan"></text>
+                    <text>{{Str.scanner[lanIndex]}}</text>
+                </view>
+                <view class="action">
+                    <text class="text-sm" wx:if="{{scanResult}}">{{scanResult}}</text>
+                </view>
+            </view>
+            <view bindtap="selectPayWayClick" class="cu-item arrow" wx:if="{{formData.cartList.shop.is_cash==1}}">
+                <view class="content">
+                    <text class="icon-pay"></text>
+                    <text>{{Str.payWay[lanIndex]}}</text>
+                </view>
+                <view class="action">
+                    <text class="text-{{formData.payType==0?'green':'pink'}}">
+                        <text class="icon-{{formData.payType==0?'weixin':'moneybag'}} padding-right-xs"></text>{{isUy?payWayList[formData.payType].uy_name:payWayList[formData.payType].ch_name}}</text>
+                </view>
+            </view>
+            <picker bindchange="timeMultiChange" bindcolumnchange="timeMultiColumnChange" data-type="local" mode="multiSelector" range="{{timeMultiArray}}" value="{{timeMultiIndex}}">
+                <view class="cu-item arrow">
+                    <view class="content">
+                        <view class="flex justify-between bg-white padding">
+                            <view>
+                                <text class="icon-time padding-right-sm padding-left-xs"></text>
+                                <text class="">{{Str.pickupTime[lanIndex]}}</text>
+                            </view>
+                            <view>
+                                <text class="text-sm padding-right-sm">
+                                    <text wx:if="{{timeMultiIndex[0]==-1||timeMultiIndex[1]==0}}">{{Str.getNow[lanIndex]}}</text>
+                                    <text wx:else>{{timeMultiArray[0][ timeMultiIndex[0] ]}},
+										{{timeMultiArray[1][ timeMultiIndex[1] ]}}:{{timeMultiArray[2][ timeMultiIndex[2] ]}}</text>
+                                </text>
+                                <text class="icon-unfold"></text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </picker>
+            <view bindtap="tipItemClick" class="cu-item arrow" wx:if="{{formData.cartList.shop.is_volunteer==0}}">
+                <view class="content">
+                    <text class="icon-moneybag"></text>
+                    <text class="">{{Str.tip[lanIndex]}}</text>
+                </view>
+                <view class="action">
+                    <text class="text-sm" wx:if="{{formData.tipValue}}">{{formData.tipValue}}￥</text>
+                    <text class="text-sm text-gray" wx:else>{{Str.tipWarn[lanIndex]}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="cu-form-group margin-top-sm">
+            <view class="title">{{Str.leaveMessage[lanIndex]}}</view>
+            <textarea bindinput="messageInput" focus="{{remarkFocused}}" placeholder="{{Str.inputLeaveMessage[lanIndex]}}" value="{{formData.remark}}"></textarea>
+        </view>
+        <view wx:if="{{formData.cartList.shop.has_ids==1}}">
+            <view class="cu-bar bg-white margin-top">
+                <view class="action"> {{Str.uploadIdCard[lanIndex]}} </view>
+                <view class="action"> {{imgList.length}}/1 </view>
+            </view>
+            <view class="cu-form-group solid-top">
+                <view class="grid col-4 grid-square flex-sub">
+                    <view bindtap="viewImage" class="padding-xs bg-img" data-url="{{imgList[index].state=='net'?ossImage+imgList[index].url:imgList[index].url}}" style="background-image:url({{imgList[index].state=='net'?ossImage+imgList[index].url:imgList[index].url}})" wx:for="{{imgList}}" wx:key="{{index}}">
+                        <view catchtap="delImg" class="cu-tag bg-red" data-index="{{index}}">
+                            <text class="icon-close"></text>
+                        </view>
+                    </view>
+                    <view bindtap="chooseImage" class="padding-xs solids" wx:if="{{imgList.length<1}}">
+                        <text class="icon-cameraadd"></text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="cu-bar bg-white solid-bottom margin-top-sm" wx:if="{{0}}">
+        <view class="action">
+            <text class="icon-title text-cyan text-xxl "></text> {{Str.payWay[lanIndex]}} </view>
+        <view class="action">
+            <text class="padding-xs">{{Str.weixin[lanIndex]}}</text>
+            <text class="text-xxl">
+                <text class="icon-weixin text-green text-xxl"></text>
+            </text>
+        </view>
+    </view>
+</view>
+<view class="cu-bar bg-white tabbar border  foot flex">
+    <view class="flex-sub action">
+        <view class="icon-cart" style="font-size:60rpx">
+            <view class="cu-tag badge">{{formData.cartList.allCount}}</view>
+        </view>
+    </view>
+    <view class="flex-twice cu-bar">
+        <view class="action">
+            <view wx:if="{{formData.cartList.shop.is_open}}">
+                <view class="{{isUy?'rtl':''}} " wx:if="{{formData.cartList.shop.is_open}}">
+                    <text>{{Str.all[lanIndex]}}</text> : <text class="text-price text-red text-lg">{{formData.cartList.totalPrice}}</text>
+                </view>
+                <view class="{{isUy?'rtl':''}} text-sm" wx:if="{{formData.tipValue}}">
+                    <text>{{Str.tip[lanIndex]}}</text>: <text class="text-price text-pink">{{formData.tipValue}}</text>
+                </view>
+            </view>
+            <view wx:else>
+                <text class="text-sm text-grey">{{Str.notService[lanIndex]}}</text>
+            </view>
+        </view>
+    </view>
+    <view bindtap="{{formData.cartList.canOrder?'subBtn':''}}" class="flex-twice  cu-bar text-center bg-{{formData.cartList.canOrder?'pink':'gray'}}">
+        <view class="action" wx:if="{{!formData.cartList.canOrder}}">
+            <view class="{{isUy?'rtl':''}}" wx:if="{{isUy}}">
+                <text>{{Str.also[lanIndex]}} </text>
+                <text class="text-pink padding-lr-xs">{{formData.cartList.shop.starting_price-formData.cartList.allPrice}}</text>
+                <text>{{Str.yuan[lanIndex]}} </text>
+                <text>{{Str.lack[lanIndex]}} </text>
+            </view>
+            <view wx:else>
+                <text>{{Str.also[lanIndex]}}</text>
+                <text>{{Str.lack[lanIndex]}}</text>
+                <text class="text-pink padding-lr-xs" wx:if="{{formData.cartList.shop}}">{{formData.cartList.shop.starting_price-formData.cartList.allPrice}}</text>
+                <text>{{Str.yuan[lanIndex]}}</text>
+            </view>
+        </view>
+        <view class="action text-lg" style="font-size:32rpx" wx:else> {{formData.cartList.shop.is_volunteer==1||formData.payType==1?Str.confirmOrder[lanIndex]:Str.pay[lanIndex]}} </view>
+    </view>
+</view>
+<view bindtap="hideModal" class="cu-modal bottom-modal {{modalName=='detailModal'?'show':''}} " style="margin-bottom:100rpx" wx:if="{{formData.cartList.cartItems.length>0}}">
+    <view catchtap class="cu-dialog">
+        <view class="padding-sm bg-white solid-top">
+            <view class="text-center ">{{Str.details[lanIndex]}}</view>
+        </view>
+        <view class="cu-list menu solid-top solids-bottom sm-border">
+            <view class="cu-item" wx:for="{{formData.cartList.cartItems}}" wx:key="index">
+                <view class="content">
+                    <view class="flex ">
+                        <view class="flex-twice text-sm text-left">{{isUy?item.item.uy_name:item.item.ch_name}}</view>
+                        <view class="flex-sub text-price text-red text-left">
+                            <text style="text-decoration:{{item.item.time2>0?'line-through':''}}">{{item.item.price}}</text>
+                            <text class="text-cyan text-price" wx:if="{{item.item.time2>0}}">{{item.item.activity_price}}</text>
+                        </view>
+                        <view class="flex-sub text-right align-center">
+                            <i bindtap="removeBtn" class="iconfont icon-Remove padding-right-sm text-pink" data-index="{{item.index}}" data-indexx="{{item.indexx}}" style="font-size:50rpx" wx:if="{{item.count>0}}"></i>
+                            <text class="text-lg" wx:if="{{item.count>0}}"> {{item.count}}</text>
+                            <i bindtap="addBtn" class="iconfont icon-add1 padding-left-sm text-pink" data-index="{{item.index}}" data-indexx="{{item.indexx}}" style="font-size:50rpx"></i>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view bindtap="hideModal" class="cu-modal bottom-modal {{modalName=='tipModal'?'show':''}} ">
+    <view catchtap class="cu-dialog">
+        <view class="cu-bar bg-white">
+            <view class="action text-gray">
+                <button bindtap="hideModal" class="cu-btn line-gray radius">{{Str.cancel[lanIndex]}}</button>
+            </view>
+            <view class="action text-pink">
+                <button bindtap="tipConfirmBtn" class="cu-btn line-pink radius" disabled="{{tipValue>200||tipValue<0}}">{{Str.confirm[lanIndex]}}</button>
+            </view>
+        </view>
+        <view class="padding-sm bg-white solid-top">
+            <view class="cu-list grid col-3 no-border">
+                <view bindtap="tipModaltemClick" class="cu-item padding-tb-sm" data-value="{{item.value}}" wx:for="{{tipData}}">
+                    <view class="margin-lr-xs">
+                        <button class="cu-btn block line-{{tipValue==item.value?'pink':'gray'}}">{{item.title}}</button>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="otherValueClick" class="margin-top-sm line-gray border text-center padding-sm" style="border:1rpx solid gray" wx:if="{{!otherValueEditing}}"> {{Str.otherValue[lanIndex]}} </view>
+            <view class="margin-top-sm  text-center padding-xs" style="border:1rpx solid pink" wx:else>
+                <view class="cu-form-group ">
+                    <view class="title">
+                        <text class="text-sm text-pink">{{Str.otherValue[lanIndex]}} : ￥ </text>: </view>
+                    <input bindinput="otherValueInput" class="" focus="true" style="font-size:24rpx" type="number" value="{{tipValue}}"></input>
+                </view>
+            </view>
+            <view class="padding-sm text-center text-sm text-gray" wx:if="{{otherValueEditing}}">
+                <text class="icon-info"></text>
+                <text class="{{tipValue>200?'text-red':''}}">{{Str.tipMaxWarn[lanIndex]}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view bindtap="hideModal" class="cu-modal {{modalName=='selectModal'?'show':''}}">
+    <view catchtap class="cu-dialog">
+        <radio-group bindchange="selectChange" class="block">
+            <view class="cu-list menu text-left">
+                <view class="cu-item" wx:for="{{selectData}}">
+                    <label class="flex justify-between align-center flex-sub">
+                        <view class="flex-sub">{{isUy?item.uy_name:item.ch_name}}</view>
+                        <radio checked="{{item.checked}}" class="round" value="{{index}}"></radio>
+                    </label>
+                </view>
+            </view>
+        </radio-group>
+    </view>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

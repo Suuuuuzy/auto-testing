@@ -1,0 +1,41 @@
+<view class="_div">
+  <view class="officialAccountLieFlat _div" wx:if="{{type==2}}">
+    <view class="official _div">
+      <official-account
+        binderror="__e"
+        bindload="__e"
+        data-event-opts="{{[ [ 'load',[ [ 'loadOffAcc',['$event'] ] ] ],[ 'error',[ [ 'loadOffAcc',['$event'] ] ] ] ]}}"
+      ></official-account>
+    </view>
+  </view>
+  <view
+    class="officialAccountWrap _div"
+    hidden="{{!visible}}"
+    style="{{'z-index:'+zIndex+';'}}"
+    wx:else
+  >
+    <view class="content-position _div">
+      <view class="pr _div">
+        <image
+          class="offBackImage"
+          mode="aspectFill"
+          src="{{followPublicAccountBackImage}}"
+        ></image>
+        <view class="pre _div">
+          <view
+            bindtap="__e"
+            class="iconfont icon-cha cha _i"
+            data-event-opts="{{[ [ 'tap',[ [ 'handleClickOutside',['$event'] ] ] ] ]}}"
+          ></view>
+          <view class="official _div">
+            <official-account
+              binderror="__e"
+              bindload="__e"
+              data-event-opts="{{[ [ 'load',[ [ 'loadOffAcc',['$event'] ] ] ],[ 'error',[ [ 'loadOffAcc',['$event'] ] ] ] ]}}"
+            ></official-account>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

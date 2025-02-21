@@ -1,0 +1,56 @@
+<view class="cropper-wrapper">
+  <view id="img" style="width:{{box_data.w}}px;height:{{box_data.h}}px;">
+    <video
+      controls="false"
+      id="mp4"
+      showCenterPlayBtn="false"
+      showFullscreenBtn="false"
+      showPlayBtn="false"
+      src="{{url}}"
+      style="width: 100%; height: 100%"
+    ></video>
+  </view>
+  <view
+    catchtouchend="touchEndDraw"
+    catchtouchmove="touchMoveDraw"
+    class="cropper-wrapper"
+    id="draw"
+    style="width:{{box_data.w}}px;height:{{box_data.h}}px;"
+  >
+    <view
+      catchtouchmove="touchMove"
+      catchtouchstart="touchStart"
+      class="draw-item {{index==box_active_index?'on':''}}"
+      data-index="{{index}}"
+      data-type="move"
+      style="width:{{item.w}}px;height:{{item.h}}px;top:{{item.y}}px;left:{{item.x}}px"
+      wx:for="{{box_item}}"
+    >
+      <image
+        catchtouchstart="del"
+        class="btn-x"
+        src="/images/icon-btn-x.png"
+      ></image>
+      <image
+        catchtouchmove="touchMove"
+        catchtouchstart="touchStart"
+        class="btn-fd"
+        data-type="scale"
+        src="/images/icon-btn-fd.png"
+      ></image>
+    </view>
+  </view>
+</view>
+<view id="bottom">
+  <view class="msg">
+    <image src="/images/icon-s.png"></image>使用教程：框选需要去除位置
+  </view>
+  <view class="cropper-buttons">
+    <view bindtap="play" class="upload">
+      <text> {{play?'暂停':'播放'}}</text>
+    </view>
+    <view bindtap="complete" class="getCropperImage">
+      <text> 去除水印</text>
+    </view>
+  </view>
+</view>

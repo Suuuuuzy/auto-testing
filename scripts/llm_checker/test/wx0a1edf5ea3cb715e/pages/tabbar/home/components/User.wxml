@@ -1,0 +1,103 @@
+<view class="user-list data-v-a45a49c8">
+  <view
+    catchtap="__e"
+    class="item-user data-v-a45a49c8"
+    data-event-opts="{{[ [ 'tap',[ [ 'handleNavigater',['/pages/user/details/index?id='+user[$orig].id] ] ] ] ]}}"
+    wx:for="{{$root.l0}}"
+    wx:for-index="i"
+    wx:for-item="user"
+    wx:key="id"
+  >
+    <avatar
+      bind:__l="__l"
+      class="data-v-a45a49c8"
+      detail="{{true}}"
+      size="{{120}}"
+      src="{{user[$orig].avatar}}"
+      uid="{{user[$orig].id}}"
+      vipLevel="{{user[$orig].vipLevel}}"
+      vueId="{{'9df1dc6c-1-'+i}}"
+    ></avatar>
+    <block wx:if="{{current===0}}">
+      <image
+        class="online data-v-a45a49c8"
+        mode="widthFix"
+        src="http://image.fanglinxq.com/assets/icons/online.png"
+        wx:if="{{user[$orig].isOnline===1}}"
+      ></image>
+    </block>
+    <view class="d-info data-v-a45a49c8">
+      <view class="name data-v-a45a49c8">
+        <text class="data-v-a45a49c8">{{user[$orig].nickname}}</text>
+        <block wx:if="{{user[$orig].sex===1}}">
+          <image
+            class="data-v-a45a49c8"
+            mode="widthFix"
+            src="{{'http://image.fanglinxq.com/assets/icons/level'+user[$orig].vipLevel+'.png'}}"
+            wx:if="{{user[$orig].vipLevel>2}}"
+          ></image>
+        </block>
+        <block wx:if="{{user[$orig].sex===2}}">
+          <image
+            class="data-v-a45a49c8"
+            mode="widthFix"
+            src="http://image.fanglinxq.com/assets/icons/goddess.png"
+            wx:if="{{user[$orig].isRealAuth}}"
+          ></image>
+          <image
+            class="withoutAuth data-v-a45a49c8"
+            mode="widthFix"
+            src="http://image.fanglinxq.com/assets/icons/no-goddess.png"
+            wx:else
+          ></image>
+        </block>
+      </view>
+      <view class="more data-v-a45a49c8">
+        <text class="data-v-a45a49c8" wx:if="{{user[$orig].age}}"
+          >{{user[$orig].age+'岁 |'}}</text
+        >
+        <text class="data-v-a45a49c8" wx:if="{{user[$orig].height}}"
+          >{{user[$orig].height+'cm |'}}</text
+        >
+        <text class="data-v-a45a49c8" wx:if="{{user[$orig].cityName}}"
+          >{{user[$orig].cityName}}</text
+        >
+      </view>
+    </view>
+    <view
+      catchtap="__e"
+      class="shouhu data-v-a45a49c8"
+      data-event-opts="{{[ [ 'tap',[ [ 'handleper',['$0'],[ [ ['dataList','id',user[$orig].id] ] ] ] ] ] ]}}"
+      wx:if="{{current===0}}"
+    >
+      <image
+        class="data-v-a45a49c8"
+        mode="widthFix"
+        src="http://image.fanglinxq.com/assets/icons/shouhu.png"
+      ></image>
+      <text class="data-v-a45a49c8">守护</text>
+    </view>
+    <view class="location data-v-a45a49c8" wx:else>
+      <image
+        class="data-v-a45a49c8"
+        mode="widthFix"
+        src="http://image.fanglinxq.com/assets/icons/location.png"
+      ></image>
+      <text class="data-v-a45a49c8">{{user.f0+'km'}}</text>
+    </view>
+  </view>
+  <image
+    class="kiss-gif data-v-a45a49c8"
+    mode="widthFix"
+    src="http://image.fanglinxq.com/assets/kiss.gif"
+    wx:if="{{ishowKiss}}"
+  ></image>
+  <rechage-popup
+    bind:__l="__l"
+    bind:setVisble="__e"
+    class="data-v-a45a49c8"
+    data-event-opts="{{[ [ '^setVisble',[ ['setchageVisble'] ] ] ]}}"
+    isShow="{{isRechage}}"
+    vueId="9df1dc6c-2"
+  ></rechage-popup>
+</view>

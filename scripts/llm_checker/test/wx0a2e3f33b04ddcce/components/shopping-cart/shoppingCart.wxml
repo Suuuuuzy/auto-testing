@@ -1,0 +1,74 @@
+<view class="wrapper">
+  <view class="shopping-cart">
+    <view class="cart-left">
+      <image
+        bind:tap="showPopup"
+        class="cart-image"
+        mode="widthFix"
+        src="/assets/img/shopping-icon.png"
+      ></image>
+      <text class="badge" wx:if="{{badge>0}}">{{badge}}</text>
+      <text class="total-price">￥{{totalPrice}}</text>
+    </view>
+    <text bind:tap="createOrder" class="cart-right">立即下单</text>
+  </view>
+</view>
+<van-popup bind:close="onClose" position="bottom" show="{{show}}">
+  <view class="cart-popup">
+    <view class="popup-header">
+      <text>购物车</text>
+      <view bind:tap="removeCart">
+        <image class="clear-image" src="/assets/img/clear.png"></image>
+        <text>清空购物车</text>
+      </view>
+    </view>
+    <view class="cart-list">
+      <view class="no-data" wx:if="{{cartData.length===0}}">购物车是空的~</view>
+      <scroll-view>
+        <block wx:for="{{cartData}}" wx:key="createTime">
+          <view class="dish">
+            <view class="dish-image">
+              <image
+                class="image"
+                mode="aspectFit"
+                src="{{item.item.attach[0].shrinkUrl}}"
+              ></image>
+            </view>
+            <view class="dish-info">
+              <view class="name">{{item.item.name}}【{{item.weekday}}】</view>
+              <view class="pickupInfo"
+                >提货日期：{{item.pickupInfo.startDate}}</view
+              >
+              <view class="pickupInfo"
+                >提货时间：{{item.pickupInfo.startTime}}:00-{{item.pickupInfo.endTime}}:00</view
+              >
+              <view style="width: 100%">
+                <text class="inventory">库存：{{item.item.inventory}}</text>
+                <text class="limit">每人次限购{{item.limit}}件</text>
+              </view>
+              <view class="price-stepper">
+                <view class="price">￥{{item.item.price}}</view>
+                <view class="stepper">
+                  <van-stepper
+                    disableInput
+                    integer
+                    catch:change="changeCount"
+                    customClass="stepper-box"
+                    data-item="{{item}}"
+                    inputClass="stepper-input"
+                    max="{{item.max}}"
+                    min="0"
+                    minusClass="stepper-minus"
+                    plusClass="stepper-plus"
+                    value="{{item.count}}"
+                  ></van-stepper>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="splitline" wx:if="{{index!==cartData.length-1}}"></view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+</van-popup>

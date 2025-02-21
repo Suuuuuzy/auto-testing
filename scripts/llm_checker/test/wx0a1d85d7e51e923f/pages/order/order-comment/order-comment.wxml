@@ -1,0 +1,97 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view class="padding-sm">
+    <view class="cu-bar bg-white " style="border-radius:10rpx 10rpx 0 0">
+        <view class="action text-black text-bold uy-tom">{{Str.deliverySatisfy[lanIndex]}}</view>
+    </view>
+    <view class="bg-white solid-top padding-bottom-sm">
+        <view class="flex margin-lr-xs justify-start padding-xs">
+            <image mode="fitCenter" src="/resource/images/common/cart_box_.png" style="width:80rpx;height:80rpx"></image>
+            <view class="margin-left-xs">
+                <view class="text-black uy-tom padding-lr-xs">{{pageData.order.delivery.name}}</view>
+                <view class="{{isUy?'rtl':''}} text-left">
+                    <text>{{pageData.order.arrived_time}}</text>
+                    <text>{{Str.aboutArrived[lanIndex]}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="flex padding-sm">
+            <view class="flex-sub text-center margin-right-sm">
+                <button bindtap="dissatisfiedBtn" class="cu-btn bg-{{formData.delivery_score==-1?'pink':'gray'}} lg block uy-tom">
+                    <i class="iconfont icon-bumanyi" style="font-size:40rpx"></i>{{Str.dissatisfied[lanIndex]}}</button>
+            </view>
+            <view class="flex-sub text-center margin-left-sm">
+                <button bindtap="satisfyBtn" class="cu-btn bg-{{formData.delivery_score==1?'pink':'gray'}} lg block uy-tom">
+                    <i class="iconfont icon-smiling" style="font-size:40rpx"></i>{{Str.satisfy[lanIndex]}}</button>
+            </view>
+        </view>
+        <view class="cu-form-group margin-xs bg-gray" wx:if="{{formData.delivery_score!=0}}">
+            <input bindinput="deliveryInput" focus="{{deliveryFocused}}" placeholder="{{Str.inputDeliveryEvaluation[lanIndex]}}" value="{{formData.delivery_text_evaluation}}"></input>
+        </view>
+    </view>
+    <view class="cu-bar bg-white margin-top-sm" style="border-radius:10rpx 10rpx 0 0">
+        <view class="action text-black text-bold uy-tom">{{Str.shopAndGoodSatisfy[lanIndex]}}</view>
+    </view>
+    <view class="bg-white solid-top padding-bottom-sm">
+        <view class="flex margin-lr-xs justify-start padding-xs align-center">
+            <image mode="fitCenter" src="{{ossImage+pageData.order.shop.icon_url+'?x-oss-process=image/resize,m_lfit,h_200,w_200'}}" style="width:100rpx;height:100rpx;border-radius:12rpx"></image>
+            <view class="margin-left-xs">
+                <view class="text-lg padding-lr-xs">{{isUy?pageData.order.shop.uy_name:pageData.order.shop.ch_name}} </view>
+            </view>
+        </view>
+        <view class="padding-sm">
+            <view class="flex justify-start align-center ">
+                <view class="margin-right uy-tom">{{Str.overAll[lanIndex]}}</view>
+                <view></view>
+                <view wx:for="{{5}}">
+                    <i bindtap="commonStarClick" class="iconfont icon-star-fill margin-left-xs text-{{index<formData.shop_common_star?'pink':'gray'}}" data-index="{{index}}" style="font-size:50rpx"></i>
+                </view>
+                <view class="margin-left-sm" wx:if="{{formData.shop_common_star>0}}">{{formData.shop_common_star>3?Str.hao[lanIndex]:formData.shop_common_star==3?Str.zhong[lanIndex]:Str.cha[lanIndex]}}</view>
+            </view>
+            <view class="flex justify-start align-center " wx:if="{{formData.shop_common_star>0}}">
+                <view class="margin-right uy-tom">{{Str.quality[lanIndex]}}</view>
+                <view></view>
+                <view wx:for="{{5}}">
+                    <i bindtap="qualityStarClick" class="iconfont icon-star-fill margin-left-xs text-{{index<formData.good_quality_star?'pink':'gray'}}" data-index="{{index}}" style="font-size:50rpx"></i>
+                </view>
+                <view class="margin-left-sm" wx:if="{{formData.good_quality_star>0}}">{{formData.good_quality_star>3?Str.hao[lanIndex]:formData.good_quality_star==3?Str.zhong[lanIndex]:Str.cha[lanIndex]}}</view>
+            </view>
+            <view class="flex justify-start align-center " wx:if="{{formData.shop_common_star>0}}">
+                <view class="margin-right uy-tom">{{Str.package[lanIndex]}}</view>
+                <view></view>
+                <view wx:for="{{5}}">
+                    <i bindtap="packageStarClick" class="iconfont icon-star-fill margin-left-xs text-{{index<formData.good_package_star?'pink':'gray'}}" data-index="{{index}}" style="font-size:50rpx"></i>
+                </view>
+                <view class="margin-left-sm" wx:if="{{formData.good_package_star>0}}">{{formData.good_package_star>3?Str.hao[lanIndex]:formData.good_package_star==3?Str.zhong[lanIndex]:Str.cha[lanIndex]}}</view>
+            </view>
+        </view>
+        <view wx:if="{{formData.shop_common_star>0}}">
+            <view class="cu-form-group margin-sm bg-gray">
+                <textarea bindinput="commonInput" maxlength="-1" placeholder="{{Str.inputForShop[lanIndex]}}"></textarea>
+            </view>
+            <view>
+                <view class="cu-bar bg-white margin-top">
+                    <view class="action"> {{Str.relatedImage[lanIndex]}} </view>
+                    <view class="action"> {{imgList.length}}/1 </view>
+                </view>
+                <view class="cu-form-group">
+                    <view class="grid col-4 grid-square flex-sub">
+                        <view bindtap="viewImage" class="padding-xs bg-img" data-url="{{imgList[index].state=='net'?ossImage+imgList[index].url:imgList[index].url}}" style="background-image:url({{imgList[index].state=='net'?ossImage+imgList[index].url:imgList[index].url}})" wx:for="{{imgList}}" wx:key="{{index}}">
+                            <view catchtap="delImg" class="cu-tag bg-red" data-index="{{index}}">
+                                <text class="icon-close"></text>
+                            </view>
+                        </view>
+                        <view bindtap="chooseImage" class="padding-xs solids" wx:if="{{imgList.length<1}}">
+                            <text class="icon-cameraadd"></text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="margin padding">
+        <button bindtap="subBtn" class="cu-btn bg-pink lg radius shadow block" disabled="{{!canSub}}">{{Str.submit[lanIndex]}}</button>
+    </view>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

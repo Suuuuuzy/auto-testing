@@ -1,0 +1,50 @@
+<view class="header data-v-5adfbf24">
+  <view class="data-v-5adfbf24" style="{{'padding-top:'+a}}"></view>
+  <view class="navBar data-v-5adfbf24" style="{{'height:'+o}}">
+    <slot name="leftIcon" wx:if="{{b}}"></slot>
+    <view class="nimileft data-v-5adfbf24" wx:elif="{{c}}">
+      <u-icon
+        bind:__l="__l"
+        bindclick="{{d}}"
+        class="data-v-5adfbf24"
+        uI="5adfbf24-0"
+        uP="{{e}}"
+        wx:if="{{e}}"
+      ></u-icon>
+      <u-line
+        bind:__l="__l"
+        class="data-v-5adfbf24"
+        uI="5adfbf24-1"
+        uP="{{f}}"
+        wx:if="{{f}}"
+      ></u-line>
+      <u-icon
+        bind:__l="__l"
+        bindclick="{{g}}"
+        class="data-v-5adfbf24"
+        uI="5adfbf24-2"
+        uP="{{h}}"
+        wx:if="{{h}}"
+      ></u-icon>
+    </view>
+    <u-icon
+      bind:__l="__l"
+      bindclick="{{i}}"
+      class="data-v-5adfbf24"
+      uI="5adfbf24-3"
+      uP="{{j||''}}"
+      wx:else
+    ></u-icon>
+    <slot name="title" wx:if="{{k}}"></slot>
+    <u-text
+      bind:__l="__l"
+      class="data-v-5adfbf24"
+      uI="5adfbf24-4"
+      uP="{{m||''}}"
+      uS="{{['d']}}"
+      wx:else
+      >{{l}}</u-text
+    >
+    <view class="data-v-5adfbf24" style="{{n}}"></view>
+  </view>
+</view>

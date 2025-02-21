@@ -1,0 +1,107 @@
+<view class="container _div data-v-314e9186">
+  <canvas
+    canvasId="poster"
+    class="data-v-314e9186"
+    id="poster"
+    style="
+      position: absolute;
+      width: 750px;
+      height: 1300px;
+      left: -9999px;
+      top: -9999px;
+    "
+  ></canvas>
+  <scroll-view
+    class="content data-v-314e9186"
+    enableBackToTop="{{true}}"
+    scrollY="{{true}}"
+  >
+    <view class="book-top _div data-v-314e9186">
+      <image
+        class="pic _img data-v-314e9186"
+        src="http://cdn.impdigital.cn/patek/img/book-top.jpg"
+      ></image>
+    </view>
+    <view class="form-out _div data-v-314e9186">
+      <view class="form-title _div data-v-314e9186">预约成功</view>
+      <view class="final-name _div data-v-314e9186"
+        >{{bookCache.lastname+bookCache.firstname+(bookCache.gender===1?'
+        先生':bookCache.gender===2?' 女士':'')}}</view
+      >
+      <view class="final-label _div data-v-314e9186">预约时间</view>
+      <view class="final-value _div data-v-314e9186">{{timeShow}}</view>
+      <view class="final-label _div data-v-314e9186">{{detail.name}}</view>
+      <view class="final-value _div data-v-314e9186">{{detail.address}}</view>
+      <view
+        bindtap="__e"
+        class="final-btn _div data-v-314e9186"
+        data-event-opts="{{[ [ 'tap',[ [ 'showLocation',['$event'] ] ] ] ]}}"
+      >
+        <view class="icon-location _div data-v-314e9186">
+          <image
+            class="pic _img data-v-314e9186"
+            src="/static/img/icon-location.svg"
+          ></image>
+        </view>
+        <view class="_div data-v-314e9186">导航</view>
+      </view>
+      <view
+        bindtap="__e"
+        class="final-value _div data-v-314e9186"
+        data-event-opts="{{[ [ 'tap',[ [ 'callPhone',['$event'] ] ] ] ]}}"
+        >{{detail.phone}}</view
+      >
+      <view
+        bindtap="__e"
+        class="final-btn _div data-v-314e9186"
+        data-event-opts="{{[ [ 'tap',[ [ 'callPhone',['$event'] ] ] ] ]}}"
+      >
+        <view class="icon-phone _div data-v-314e9186">
+          <image
+            class="pic _img data-v-314e9186"
+            src="/static/img/icon-phone.svg"
+          ></image>
+        </view>
+        <view class="_div data-v-314e9186">客服</view>
+      </view>
+      <view
+        bindtap="__e"
+        class="final-btn-save _div data-v-314e9186"
+        data-event-opts="{{[ [ 'tap',[ [ 'savePic',['$event'] ] ] ] ]}}"
+        >保存至相册</view
+      >
+      <view
+        class="final-btn-change-out _div data-v-314e9186"
+        wx:if="{{status===1}}"
+      >
+        <view
+          bindtap="__e"
+          class="final-btn-change _div data-v-314e9186"
+          data-event-opts="{{[ [ 'tap',[ [ 'cancelBook',['$event'] ] ] ] ]}}"
+          >取消预约</view
+        >
+        <view
+          bindtap="__e"
+          class="final-btn-change _div data-v-314e9186"
+          data-event-opts="{{[ [ 'tap',[ [ 'changeBook',['$event'] ] ] ] ]}}"
+          >修改预约</view
+        >
+      </view>
+    </view>
+    <view class="boutique-map-gap _div data-v-314e9186"></view>
+  </scroll-view>
+  <pp-nav
+    back="{{true}}"
+    bind:__l="__l"
+    class="data-v-314e9186"
+    placeholder="{{navigationBarHeightPlaceholder}}"
+    transparent="{{true}}"
+    value="{{true}}"
+    vueId="01e27f43-1"
+  ></pp-nav>
+  <privacy-popup
+    bind:__l="__l"
+    class="data-v-314e9186"
+    vueId="01e27f43-2"
+  ></privacy-popup>
+</view>

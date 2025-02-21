@@ -1,0 +1,72 @@
+<view class="uni-swiper__warp">
+  <slot></slot>
+  <view
+    class="uni-swiper__dots-box"
+    style="{{'bottom:'+dots.bottom+'px'+';'}}"
+    wx:if="{{mode==='default'}}"
+  >
+    <view
+      bindtap="__e"
+      class="uni-swiper__dots-item uni-swiper__dots-bar"
+      data-event-opts="{{[ [ 'tap',[ [ 'clickItem',[index] ] ] ] ]}}"
+      style="{{'width:'+(index===current?dots.width*2:dots.width)+'px'+';'+'height:'+dots.width/2+'px'+';'+'background-color:'+(index!==current?dots.backgroundColor:dots.selectedBackgroundColor)+';'+'border-radius:'+'0px'+';'}}"
+      wx:for="{{info}}"
+      wx:key="index"
+    ></view>
+  </view>
+  <view
+    class="uni-swiper__dots-box"
+    style="{{'bottom:'+dots.bottom+'px'+';'}}"
+    wx:if="{{mode==='dot'}}"
+  >
+    <view
+      bindtap="__e"
+      class="uni-swiper__dots-item"
+      data-event-opts="{{[ [ 'tap',[ [ 'clickItem',[index] ] ] ] ]}}"
+      style="{{'width:'+dots.width+'px'+';'+'height:'+dots.height+'px'+';'+'background-color:'+(index!==current?dots.backgroundColor:dots.selectedBackgroundColor)+';'+'border:'+(index!==current?dots.border:dots.selectedBorder)+';'}}"
+      wx:for="{{info}}"
+      wx:key="index"
+    ></view>
+  </view>
+  <view
+    class="uni-swiper__dots-box"
+    style="{{'bottom:'+dots.bottom+'px'+';'}}"
+    wx:if="{{mode==='round'}}"
+  >
+    <view
+      bindtap="__e"
+      class="{{['uni-swiper__dots-item','',index===current&&'uni-swiper__dots-long']}}"
+      data-event-opts="{{[ [ 'tap',[ [ 'clickItem',[index] ] ] ] ]}}"
+      style="{{'width:'+(index===current?dots.width*3:dots.width)+'px'+';'+'height:'+dots.height+'px'+';'+'background-color:'+(index!==current?dots.backgroundColor:dots.selectedBackgroundColor)+';'+'border:'+(index!==current?dots.border:dots.selectedBorder)+';'}}"
+      wx:for="{{info}}"
+      wx:key="index"
+    ></view>
+  </view>
+  <view
+    class="uni-swiper__dots-box uni-swiper__dots-nav"
+    style="{{'background-color:'+dotsStyles.backgroundColor+';'+'bottom:'+'0'+';'}}"
+    wx:if="{{mode==='nav'}}"
+  >
+    <text
+      class="uni-swiper__dots-nav-item"
+      style="{{'color:'+dotsStyles.color+';'}}"
+      >{{current+1+'/'+$root.g0+' '+info[current][field]}}</text
+    >
+  </view>
+  <view
+    class="uni-swiper__dots-box"
+    style="{{'bottom:'+dots.bottom+'px'+';'}}"
+    wx:if="{{mode==='indexes'}}"
+  >
+    <view
+      bindtap="__e"
+      class="uni-swiper__dots-item uni-swiper__dots-indexes"
+      data-event-opts="{{[ [ 'tap',[ [ 'clickItem',[index] ] ] ] ]}}"
+      style="{{'width:'+dots.width+'px'+';'+'height:'+dots.height+'px'+';'+'color:'+(index===current?dots.selectedColor:dots.color)+';'+'background-color:'+(index!==current?dots.backgroundColor:dots.selectedBackgroundColor)+';'+'border:'+(index!==current?dots.border:dots.selectedBorder)+';'}}"
+      wx:for="{{info}}"
+      wx:key="index"
+    >
+      <text class="uni-swiper__dots-indexes-text">{{index+1}}</text>
+    </view>
+  </view>
+</view>

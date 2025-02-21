@@ -1,0 +1,26 @@
+<view
+  class="{{['u-loading-icon','data-v-4c6d6dc4',t]}}"
+  style="{{s}}"
+  wx:if="{{a}}"
+>
+  <view
+    class="{{['u-loading-icon__spinner','data-v-4c6d6dc4',e]}}"
+    ref="ani"
+    style="{{'color:'+f+';'+'width:'+g+';'+'height:'+h+';'+'border-top-color:'+i+';'+'border-bottom-color:'+j+';'+'border-left-color:'+k+';'+'border-right-color:'+l+';'+'animation-duration:'+m+';'+'animation-timing-function:'+n}}"
+    wx:if="{{b}}"
+  >
+    <block wx:if="{{c}}">
+      <view
+        class="u-loading-icon__dot data-v-4c6d6dc4"
+        wx:for="{{d}}"
+        wx:key="a"
+      ></view>
+    </block>
+  </view>
+  <text
+    class="u-loading-icon__text data-v-4c6d6dc4"
+    style="{{'font-size:'+q+';'+'color:'+r}}"
+    wx:if="{{o}}"
+    >{{p}}</text
+  >
+</view>

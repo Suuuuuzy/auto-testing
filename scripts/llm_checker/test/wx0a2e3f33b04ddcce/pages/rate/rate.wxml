@@ -1,0 +1,50 @@
+<navBar
+  back="{{true}}"
+  bindback="handlerGobackClick"
+  bindhome="handlerGohomeClick"
+  home="{{false}}"
+  title="菜品评价"
+></navBar>
+<view class="page">
+  <view class="placeholder"></view>
+  <view class="noRate" wx:if="{{totalRecords===0}}">
+    <image alt="" class="noRate-img" src="/assets/img/noRate.svg"></image>
+    <view class="noRate-text1">暂无评价</view>
+    <view class="noRate-text2">快去为菜品添加评价吧~</view>
+  </view>
+  <view class="rateDetail" wx:else>
+    <view class="totalRecords">
+      <text class="totalRecords-in">菜品评价{{totalRecords}}条</text>
+    </view>
+    <view
+      class="detail-card"
+      data-item="{{item}}"
+      wx:for="{{detailsData}}"
+      wx:key="id"
+    >
+      <view class="detail-in">
+        <view class="text1">{{item.accountName}}</view>
+        <view class="text2">{{item.createTime}}</view>
+      </view>
+      <view>
+        <van-rate
+          allowHalf
+          readonly
+          size="10px"
+          value="{{item.score}}"
+        ></van-rate>
+        <text class="score">{{item.score}}</text>
+      </view>
+      <view class="text3">{{item.evaluationContent||'暂无评价内容哦'}}</view>
+    </view>
+  </view>
+  <van-button
+    block
+    round
+    bind:tap="toRating"
+    class="buttonB"
+    color="#456AFF"
+    type="primary"
+    >新增评价</van-button
+  >
+</view>

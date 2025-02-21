@@ -1,0 +1,32 @@
+<wxpopup
+  bind:__l="__l"
+  class="data-v-b7029c14"
+  closeable="{{false}}"
+  position="center"
+  round="{{true}}"
+  show="{{visible}}"
+  vueId="2211adb6-1"
+  vueSlots="{{['default']}}"
+  zIndex="{{9999}}"
+>
+  <view class="poupWrap _div data-v-b7029c14">
+    <view class="tc fw _div data-v-b7029c14">注意</view>
+    <view class="mt40r _div data-v-b7029c14">{{tipCon}}</view>
+    <view
+      class="button_item tc mt60r _div data-v-b7029c14"
+      style="{{'background:'+themeColor+';'}}"
+      >确定<exit-btn
+        bind:__l="__l"
+        class="data-v-b7029c14"
+        style="
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 100%;
+          width: 100%;
+        "
+        vueId="{{'2211adb6-2'+','+'2211adb6-1'}}"
+      ></exit-btn>
+    </view>
+  </view>
+</wxpopup>

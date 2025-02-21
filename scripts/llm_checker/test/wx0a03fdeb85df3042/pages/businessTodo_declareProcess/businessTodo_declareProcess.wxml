@@ -1,0 +1,62 @@
+<view class="container">
+  <view id="declareProcess-top">
+    <image
+      class="topBg"
+      src="../asserts/images/declareProcess_topBg.png"
+    ></image>
+    <view class="top-cont">
+      <text class="top-title">{{businessInfo.businessName}}</text>
+      <text class="dots-green">预</text>
+      <text class="dots-yellow">申</text>
+    </view>
+  </view>
+  <view id="declareProcess-body">
+    <view class="body-progress">
+      <image
+        class="progressLine"
+        src="../asserts/images/declareProcess_progress.png"
+      ></image>
+      <view class="body-progress-text">
+        <text
+          class="{{index===0?'progressLine-this':''}}"
+          wx:for="{{progressText}}"
+          wx:key="*this"
+          >{{item}}</text
+        >
+      </view>
+    </view>
+    <view class="declareProcess-basis">
+      <view class="declareProcess-commonTitle">实施依据</view>
+      <text class="noData" wx:if="{{!businessInfo.byLow}}">暂无实施依据</text>
+      <text class="basis-text" wx:else>{{businessInfo.byLow}}</text>
+    </view>
+    <view class="declareProcess-condition">
+      <view class="declareProcess-commonTitle">办理条件</view>
+      <text class="noData" wx:if="{{!businessInfo.condition}}"
+        >暂无办理条件</text
+      >
+      <text class="condition-text" wx:else>{{businessInfo.condition}}</text>
+    </view>
+    <view class="declareProcess-material">
+      <view class="declareProcess-commonTitle">收取材料</view>
+      <text class="noData" wx:if="{{businessInfo.annex.length==0}}"
+        >暂无收取材料</text
+      >
+      <view class="materialList" wx:else>
+        <view
+          class="materialList-item"
+          wx:for="{{businessInfo.annex}}"
+          wx:key="id"
+        >
+          <text>{{index+1}}.{{item.fileName}}</text>
+          <text class="necessaryMaterial" hidden="{{item.important!='true'}}"
+            >必要材料</text
+          >
+        </view>
+      </view>
+    </view>
+  </view>
+  <view id="declareProcess-footer">
+    <view bindtap="bindDeclareTap" class="footer-startReporting">开始申报</view>
+  </view>
+</view>

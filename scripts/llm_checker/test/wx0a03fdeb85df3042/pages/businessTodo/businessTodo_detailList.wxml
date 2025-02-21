@@ -1,0 +1,48 @@
+<view class="container">
+  <view id="detailList-top">
+    <image
+      class="detailList-top_bg"
+      src="../asserts/images/declareNote_topBg.png"
+    ></image>
+    <view class="top-cont">
+      <text class="top-title">{{title}}</text>
+    </view>
+  </view>
+  <view id="detailList-body">
+    <view class="body-detail">
+      <view class="body-detail-list">
+        <text class="detailList-left">权力编码</text>
+        <text>{{itemList.powerCode}}</text>
+      </view>
+      <view class="body-detail-list">
+        <text class="detailList-left">权力类型</text>
+        <text>{{itemList.powerType}}</text>
+      </view>
+      <view class="body-detail-list">
+        <text class="detailList-left">实施主体</text>
+        <text>{{itemList.implementSubject}}</text>
+      </view>
+      <view class="body-detail-list">
+        <text class="detailList-left">行驶层级</text>
+        <text>{{itemList.useLevel}}</text>
+      </view>
+    </view>
+    <view class="body-list">
+      <view
+        bindtap="bindBusinessListTap"
+        class="body-list-item"
+        data-idx="{{item.id}}"
+        data-title="{{item.businessName}}"
+        wx:for="{{businessList}}"
+        wx:key="id"
+      >
+        <view class="item-dots"></view>
+        <view class="item-name">{{item.businessName}}</view>
+        <image
+          class="item-rightArrow"
+          src="../asserts/images/index_rightArrow.png"
+        ></image>
+      </view>
+    </view>
+  </view>
+</view>

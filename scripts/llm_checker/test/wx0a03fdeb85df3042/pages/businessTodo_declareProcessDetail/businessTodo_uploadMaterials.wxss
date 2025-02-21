@@ -1,0 +1,139 @@
+.container {
+  height: 100%;
+  background-color: #f3f4f6;
+}
+.uploadMaterials-body {
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0 20rpx;
+  padding-top: 20rpx;
+  padding-bottom: 203rpx;
+}
+.uploadMaterials-bg {
+  height: 100%;
+  background-color: #fff;
+  padding: 30rpx 20rpx 0;
+  overflow: scroll;
+  box-sizing: border-box;
+}
+.uploadMaterials-title {
+  position: relative;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 30rpx;
+  color: #0c0c0c;
+  padding-left: 25rpx;
+  padding-bottom: 25rpx;
+  border-bottom: 1rpx solid #bfbfbf;
+}
+.uploadMaterials-title:before {
+  content: "";
+  width: 9rpx;
+  height: 30rpx;
+  background-color: #f95d5f;
+  position: absolute;
+  top: 0;
+  left: 1rpx;
+}
+.uploadMaterials-wrap {
+  padding-top: 40rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.uploadMaterials-wrap .pickerFile {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40rpx;
+}
+.pickerFile .pickerFile-cont {
+  position: relative;
+  width: 122rpx;
+  height: 135rpx;
+  border: 1px solid #eee;
+  text-align: center;
+}
+.pickerFile-cont .uploadFile-add {
+  display: inline-block;
+  height: 100%;
+  line-height: 120rpx;
+  font-size: 120rpx;
+  color: #e6e6e6;
+}
+.pickerFile-cont .pickerFile-file {
+  width: 100%;
+  height: 100%;
+}
+.pickerFile-cont .pickerFile-fileDel {
+  position: absolute;
+  top: -9px;
+  right: -9px;
+  z-index: 1;
+}
+.pickerFile-cont .pickerFile-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 28rpx;
+  color: #fff;
+  font-size: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.imgFile .pickerFile-name {
+  background-color: #13c383;
+}
+.pickerFile-name.wordName {
+  background-color: #00a2ff;
+}
+.pickerFile-name.excelName {
+  background-color: #03b028;
+}
+.pickerFile-name.pdfName {
+  background-color: #de4204;
+}
+.videoFile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.videoFile .pickerFile-name,
+.otherName {
+  background-color: #8eb8d1;
+}
+.videoFile .pickerFile-file,
+.otherFile .pickerFile-file {
+  width: 102rpx;
+  height: 108rpx;
+}
+.materials-item-intro {
+  min-height: 200rpx;
+  background-color: #fff;
+  padding: 20rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+.uploadMaterials-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 145rpx;
+  background-color: #fff;
+  padding: 0 15rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 58rpx;
+}
+.uploadFileBtn {
+  flex: 1;
+  height: 92rpx;
+  line-height: 92rpx;
+  font-size: 26rpx;
+  color: #fff;
+  border-radius: 0;
+  border: 0;
+  background-color: #356ffb;
+}

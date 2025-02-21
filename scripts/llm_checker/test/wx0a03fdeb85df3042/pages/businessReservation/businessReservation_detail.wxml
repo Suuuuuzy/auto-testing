@@ -1,0 +1,40 @@
+<view class="container">
+  <view id="reservation_topBar">
+    <view class="topBar_item">
+      <image
+        mode="aspectFit"
+        src="../asserts/images/reservation_cks.png"
+      ></image>
+      <view class="topBar_item_li"
+        >中心窗口数：<text class="topBar_item_num">{{totalWindows}}</text>
+      </view>
+    </view>
+    <view class="topBar_item">
+      <image
+        mode="aspectFit"
+        src="../asserts/images/reservation_pdrs.png"
+      ></image>
+      <view class="topBar_item_li"
+        >当前排队人数：<text class="topBar_item_num">{{currentWaiter}}</text>
+      </view>
+    </view>
+  </view>
+  <view id="reservation-topBg">
+    <image
+      class="reservation-topBg_img"
+      src="../asserts/images/reservation_topBG.png"
+    ></image>
+  </view>
+  <view id="reservationDetail-body">
+    <view class="detailList-title">
+      <text class="list-left">区域名称</text>
+      <text class="list-center">窗口数</text>
+      <text class="list-right">等待人数</text>
+    </view>
+    <view class="detailList" wx:for="{{detailList}}">
+      <text class="list-left">{{item[0]}}</text>
+      <text class="list-center">{{item[1]}}</text>
+      <text class="list-right">{{item[2]}}</text>
+    </view>
+  </view>
+</view>

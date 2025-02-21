@@ -1,0 +1,44 @@
+<view class="wrap data-v-73680460">
+    <zym-navigation bind:__l="__l" class="data-v-73680460" uI="73680460-0" uP="{{a}}" wx:if="{{a}}"></zym-navigation>
+    <view class="pt20 data-v-73680460"></view>
+    <view class="content data-v-73680460">
+        <view class="avatarbtn data-v-73680460">
+            <view class="atv data-v-73680460">
+                <u-avatar bind:__l="__l" bindclick="{{b}}" class="data-v-73680460" uI="73680460-1" uP="{{c}}" wx:if="{{c}}"></u-avatar>
+                <u-upload bind:__l="__l" bindonError="{{f}}" bindonRemove="{{g}}" bindonSuccess="{{e}}" class="atvc r data-v-73680460" uI="73680460-2" uP="{{h}}" uR="uUpload" uS="{{['d']}}" wx:if="{{h}}">
+                    <view class="slot-btn data-v-73680460" hoverClass="slot-btn__hover" hoverStayTime="150">
+                        <image class="slot-btn_img data-v-73680460" src="https://yiningjiayou.com/yn/ynxcx/Camera.png"></image>
+                    </view>
+                </u-upload>
+            </view>
+        </view>
+        <view class="itemName data-v-73680460">
+            <text class="data-v-73680460">昵称:</text>
+            <view class="ri data-v-73680460">
+                <input bindinput="{{i}}" class="niname data-v-73680460" maxlength="10" placeholder="请输入昵称" type="nickname" value="{{j}}"></input>
+                <image class="righticon data-v-73680460" mode="" src="{{k}}"></image>
+            </view>
+        </view>
+        <view class="itemName data-v-73680460">
+            <text class="data-v-73680460">ID:</text>
+            <view class="ri data-v-73680460">
+                <text class="data-v-73680460">{{l}}</text>
+                <text class="data-v-73680460" style="width:24rpx"></text>
+            </view>
+        </view>
+        <view class="itemName data-v-73680460">
+            <text class="data-v-73680460">手机号:</text>
+            <view class="ri data-v-73680460">
+                <text class="data-v-73680460">{{m}}</text>
+                <text class="data-v-73680460" style="width:24rpx"></text>
+            </view>
+        </view>
+        <view class="itemName data-v-73680460">
+            <u-text bind:__l="__l" class="data-v-73680460" uI="73680460-3" uP="{{n}}" wx:if="{{n}}"></u-text>
+            <u-button bind:__l="__l" bindgetphonenumber="{{o}}" class="data-v-73680460" uI="73680460-4" uP="{{p}}" uS="{{['d']}}" wx:if="{{p}}"> 点击获取 </u-button>
+        </view>
+        <view class=" data-v-73680460">
+            <button bindtap="{{q}}" class="payBtn data-v-73680460" style="background-color:rgba(6, 185, 192, 1);color:white" type="submit">确认</button>
+        </view>
+    </view>
+</view>

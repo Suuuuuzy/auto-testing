@@ -1,0 +1,231 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view>
+  <scroll-view
+    scrollWithAnimation
+    scrollX
+    class="bg-white nav"
+    scrollLeft="{{scrollLeft}}"
+  >
+    <view
+      bindtap="tabSelect"
+      class="cu-item {{index==tabIndex?'text-cyan cur':''}}"
+      data-index="{{index}}"
+      wx:for="{{pageData.goods}}"
+    >
+      <text
+        >{{isUy?item.uy_name:item.ch_name}}(<text class="text-price"
+          >{{item.activity_price}}</text
+        >)</text
+      >
+    </view>
+  </scroll-view>
+  <view class="margin-top-xs">
+    <scroll-view class="scroll-page" scrollY="true">
+      <swiper
+        autoplay="{{0}}"
+        bindchange="pageScrollChange"
+        circular="{{0}}"
+        class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}"
+        current="{{tabIndex}}"
+        indicatorDots="{{0}}"
+        style="height:{{scrollHeight?scrollHeight*1.2+'px':'120vh'}};padding-bottom: 100rpx;"
+      >
+        <swiper-item class="" wx:for="{{pageData.goods}}">
+          <view id="sItem">
+            <view class="padding-xs">
+              <view class="{{isUy?'rtl':''}} bg-white padding-sm radius">
+                <view class="padding-tb-xs">
+                  <text class="text-bold text-black text-lg uy-tom"
+                    >{{isUy?item.uy_name:item.ch_name}}</text
+                  >
+                </view>
+                <swiper
+                  autoplay="{{1}}"
+                  circular="{{1}}"
+                  class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}"
+                  duration="500"
+                  indicatorActiveColor="yellow"
+                  indicatorColor="red"
+                  indicatorDots="{{1}}"
+                  interval="5000"
+                  style="min-height: 300rpx; height: 300rpx"
+                >
+                  <swiper-item wx:for="{{item.images}}" wx:for-item="_item">
+                    <image
+                      mode="aspectFill"
+                      src="{{_item.img_url}}"
+                      style="border-radius: 16rpx"
+                    ></image>
+                    <text class="text-white">1</text>
+                  </swiper-item>
+                </swiper>
+                <view class="padding-tb-xs">
+                  <price
+                    decimalSmaller
+                    fill
+                    class="text-bold text-red uy-tom text-xl"
+                    price="{{item.activity_price}}"
+                    priceUnit="yuan"
+                  ></price>
+                  <text>&nbsp;</text>
+                  <price
+                    decimalSmaller
+                    class=""
+                    price="{{item.price}}"
+                    priceUnit="yuan"
+                    type="delthrough"
+                  ></price>
+                </view>
+              </view>
+            </view>
+            <view class="margin-lr-xs radius bg-white">
+              <item class="radius" hasArrow="{{0}}" isUy="{{isUy}}">
+                <view
+                  class="text-lg uy-tom text-black text-bold uy-tom"
+                  slot="content"
+                  >{{Str.details[lanIndex]}}</view
+                >
+              </item>
+            </view>
+            <view class="margin-xs bg-white padding-sm {{isUy?'rtl':''}}">
+              <view
+                wx:if="{{_item.items.length>0}}"
+                wx:for="{{item.cats}}"
+                wx:for-item="_item"
+                wx:key="index"
+              >
+                <view>
+                  <text class="icon-title"></text>
+                  <text class="text-black text-bold uy-tom"
+                    >{{isUy?_item.uy_name:_item.ch_name}}</text
+                  >
+                </view>
+                <view
+                  class="padding-lr margin-tb-xs"
+                  wx:for="{{_item.items}}"
+                  wx:for-item="__item"
+                  wx:key="index"
+                >
+                  <view class="flex justify-between">
+                    <view>
+                      <text class="uy-tom"
+                        >{{isUy?__item['good']['uy_name']:__item['good']['ch_name']}}</text
+                      >
+                    </view>
+                    <view>
+                      <text class="text-gray"
+                        >({{__item.good_count}} {{Str.fen[lanIndex]}})</text
+                      >
+                      <text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;</text>
+                      <text class="text-price text-lg text-black"
+                        >{{__item['price']*__item['good_count']}}</text
+                      >
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="margin-lr-xs radius bg-white margin-top">
+              <item hasArrow="{{0}}" isUy="{{isUy}}">
+                <view class="text-black text-bold text-lg uy-tom" slot="content"
+                  >{{Str.buyerKnow[lanIndex]}}</view
+                >
+              </item>
+            </view>
+            <view class="bg-white padding-sm radius margin-xs">
+              <view class="{{isUy?'rtl':''}}">
+                <view class="text-black text-bold uy-tom">
+                  <text class="cuIcon-calendar padding-lr-xs"></text>
+                  {{Str.validPeriod[lanIndex]}}
+                </view>
+                <view class="padding-lr-xl solid-bottom padding-bottom-sm"
+                  >{{Str.groupCanUsedLimit[lanIndex]}}</view
+                >
+              </view>
+              <view class="{{isUy?'rtl':''}}">
+                <view class="text-black text-bold uy-tom">
+                  <text class="cuIcon-time padding-lr-xs"></text>
+                  {{Str.usedTime[lanIndex]}}
+                </view>
+                <view class="padding-lr-xl solid-bottom padding-bottom-sm"
+                  >{{Str.groupUsedTimeLimit[lanIndex]}}</view
+                >
+              </view>
+            </view>
+            <view
+              class="bg-white padding-sm margin-lr-xs margin-tb-sm radius flex justify-between {{isUy?'rtl':''}} align-center"
+            >
+              <view class="flex">
+                <view
+                  class="bg-img"
+                  style="background-image: url({{ossImage+pageData.shop.icon_url}});width: 120rpx;height: 120rpx;border-radius: 12rpx;"
+                ></view>
+                <navigator
+                  class="padding-lr-sm"
+                  url="../../group-shop/group-shop?shopId={{pageData.shop.id}}"
+                >
+                  <view class="text-black uy-tom text-lg"
+                    >{{isUy?pageData.shop.uy_name:pageData.shop.ch_name}}</view
+                  >
+                  <view>
+                    <text class="text-sm cu-tag uy-tom sm line-cyan radius"
+                      >{{isUy?pageData.shop.uy_address:pageData.shop.ch_address}}</text
+                    >
+                    <text decode="true">&nbsp;&nbsp;&nbsp;</text>
+                    <text
+                      class="uy-tom text-black text-sm"
+                      wx:if="{{pageData.shop.distance}}"
+                      >{{pageData.shop.distance}}</text
+                    >
+                  </view>
+                  <view class="text-sm flex">
+                    <text>{{Str.shoppingTime[lanIndex]}}</text>
+                    <text> : </text>
+                    <view class="ltr"
+                      >{{pageData.shop.start_time}} ~
+                      {{pageData.shop.end_time}}</view
+                    >
+                  </view>
+                </navigator>
+              </view>
+              <view
+                bindtap="callPhone"
+                class="text-center"
+                data-phone="{{pageData.shop.contact_phone}}"
+              >
+                <view class="text-xl">
+                  <text class="cuIcon-phone"></text>
+                </view>
+                <view class="text-black">{{Str.contact[lanIndex]}}</view>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+      </swiper>
+    </scroll-view>
+  </view>
+  <view class="cu-bar bg-white tabbar border shop foot">
+    <view
+      bind:tap="callPhone"
+      class="action uy-tom"
+      data-phone="{{pageData.shop.contact_phone}}"
+    >
+      <view class="cuIcon-service text-green" style="font-size: 40rpx"></view>
+      {{Str.service[lanIndex]}}
+    </view>
+    <navigator
+      class="action text-cyan uy-tom"
+      url="../../group-shop/group-shop?shopId={{pageData.shop.id}}"
+    >
+      <view class="cuIcon-shop" style="font-size: 40rpx"></view>
+      {{Str.shop[lanIndex]}}
+    </navigator>
+    <view class="action text-orange"></view>
+    <view bindtap="subBtn" class="bg-cyan submit"
+      >{{Str.toOrder[lanIndex]}}</view
+    >
+  </view>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

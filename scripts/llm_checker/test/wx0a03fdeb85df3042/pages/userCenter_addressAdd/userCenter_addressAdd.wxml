@@ -1,0 +1,68 @@
+<view class="container">
+    <view id="addressAdd-location">
+        <view bindtap="bindLocationTap" class="location-cont">
+            <image src="../asserts/images/addressAdd_location.png"></image>
+            <text>定位到当前位置</text>
+        </view>
+    </view>
+    <form action="" bindsubmit="bindCompleteSubmit" id="addressAdd-form">
+        <view class="form-top">
+            <view class="section requiredField">
+                <label for="name">收货人</label>
+                <input bindinput="bindNameInput" id="name" name="name" placeholder="请填写姓名" placeholderClass="placeholderClass" type="text" value="{{name}}"></input>
+            </view>
+            <view class="section requiredField">
+                <label for="tel">联系电话</label>
+                <input bindinput="bindTelInput" id="tel" name="tel" placeholder="请填写联系电话" placeholderClass="placeholderClass" type="number" value="{{tel}}"></input>
+            </view>
+            <view class="section requiredField">
+                <label for="zipCode">邮政编码</label>
+                <input bindinput="bindZipCodeInput" id="zipCode" name="zipCode" placeholder="请填写邮政编码" placeholderClass="placeholderClass" type="number" value="{{zipCode}}"></input>
+            </view>
+            <view class="section requiredField">
+                <label for="address">配送地址</label>
+                <picker bindchange="bindRegionChange" id="address" mode="region" value="{{region}}">
+                    <view class="region-picker">
+                        <text class="{{region.length==0?'placeholderClass':''}}" wx:if="{{region.length==0}}">请选择省、市、区</text>
+                        <text wx:else>{{region[0]}}{{region[1]}}{{region[2]}}</text>
+                    </view>
+                </picker>
+            </view>
+            <view class="section detailAddress requiredField">
+                <textarea bindinput="bindDetailAddressInput" id="" name="detailAddress" placeholder="请填写详细地址(街道、楼牌号等)" placeholderClass="placeholderClass" value="{{detailAddress}}"></textarea>
+            </view>
+            <view class="topic">
+                <label for="">标签</label>
+                <view class="address-topic">
+                    <view class="topic-detail">
+                        <view class="topic-detail-default">
+                            <view bindtap="bindHomeTap" class="topic-commonStyle {{curTopic===0?'topicChoose':''}}" data-topic="家">家</view>
+                            <view bindtap="bindCompanyTap" class="topic-commonStyle {{curTopic===1?'topicChoose':''}}" data-topic="公司">公司</view>
+                            <view bindtap="bindSchoolTap" class="topic-commonStyle {{curTopic===2?'topicChoose':''}}" data-topic="学校">学校</view>
+                        </view>
+                        <view class="topic-detail-customize">
+                            <view bindtap="bindCustomAddTap" class="topic-commonStyle noCustomize" wx:if="{{customTopicFlag}}">
+                                <image src="../asserts/images/addressAdd_addIcon.png"></image>
+                            </view>
+                            <view class="topic-commonStyle customize {{!customButtonFlag&&curTopic===3?'topicChoose':''}} {{customButtonFlag?'':'inputWidth'}}" wx:else>
+                                <input bindfocus="bindCustomTopicFocus" bindinput="bindCustomTopicInput" focus="{{true}}" placeholder="请输入标签名称,最多5个字" type="text" value="{{customTopic}}"></input>
+                                <button bindtap="bindCustomTopicConfirm" class="{{!customTopic?'':'topicConfirm'}}" hidden="{{!customButtonFlag}}">确定</button>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="form-bottom">
+            <view class="section toDefault">
+                <label for="defaultAddress">设为默认地址</label>
+                <switch bindchange="bindSwitchChange" checked="{{defaultAddress}}" id="defaultAddress" name="defaultAddress"></switch>
+            </view>
+        </view>
+        <view id="addressAdd-option">
+            <view class="addressAdd_btns">
+                <button class="address_completeBtn" formType="submit">完成</button>
+            </view>
+        </view>
+    </form>
+</view>

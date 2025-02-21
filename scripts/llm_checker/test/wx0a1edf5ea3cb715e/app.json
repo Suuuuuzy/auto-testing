@@ -1,0 +1,102 @@
+{
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "requiredPrivateInfos": ["getLocation"],
+  "tabBar": {
+    "color": "#AEAEAE",
+    "selectedColor": "#000000",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/tabbar/home/index",
+        "text": "芳邻",
+        "iconPath": "static/assets/home.png",
+        "selectedIconPath": "static/assets/home_selected.png"
+      },
+      {
+        "pagePath": "pages/tabbar/invite/index",
+        "text": "邀约",
+        "iconPath": "static/assets/invite.png",
+        "selectedIconPath": "static/assets/invite_selected.png"
+      },
+      {
+        "pagePath": "pages/tabbar/message/index",
+        "text": "消息",
+        "iconPath": "static/assets/message.png",
+        "selectedIconPath": "static/assets/message_selected.png"
+      },
+      {
+        "pagePath": "pages/tabbar/mine/index",
+        "text": "我的",
+        "iconPath": "static/assets/mine.png",
+        "selectedIconPath": "static/assets/mine_selected.png"
+      }
+    ]
+  },
+  "subPackages": [
+    { "root": "pages/imPages/", "pages": ["TUI-Chat/chat"] },
+    {
+      "root": "pages/subPages/",
+      "pages": [
+        "groupChat/index",
+        "inviteNotice/index",
+        "safeRecomand/index",
+        "sysNotice/index",
+        "profitNotice/index",
+        "service/index",
+        "official/index",
+        "webView/index",
+        "groupRule/index",
+        "search/index",
+        "goddessAuth/index",
+        "downApp/index"
+      ]
+    },
+    {
+      "root": "pages/user/",
+      "pages": [
+        "recharge/index",
+        "wallet/index",
+        "withdraw/index",
+        "memberCode/index",
+        "memberCenter/index",
+        "midServe/index",
+        "shield/index",
+        "handShare/index",
+        "publishList/index",
+        "guardian/index",
+        "wxAuth/index",
+        "details/index",
+        "follow/index",
+        "edit/index",
+        "inviteDetail/index",
+        "invitePublish/index",
+        "exactFilter/index",
+        "perfect/index",
+        "publish/index",
+        "photo/index",
+        "photo/add-photo"
+      ]
+    }
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#FFFFFF",
+    "rpxCalcMaxDeviceWidth": 960,
+    "rpxCalcBaseDeviceWidth": 375,
+    "rpxCalcIncludeWidth": 750
+  },
+  "pages": [
+    "pages/tabbar/home/index",
+    "pages/login/index",
+    "pages/tabbar/invite/index",
+    "pages/tabbar/message/index",
+    "pages/tabbar/mine/index"
+  ]
+}

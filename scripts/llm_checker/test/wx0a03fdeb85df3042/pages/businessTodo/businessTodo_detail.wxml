@@ -1,0 +1,48 @@
+<view class="container">
+    <view class="searchSection">
+        <view class="searchSection-main">
+            <icon color="#b2b2b2" size="21rpx" type="search"></icon>
+            <input bindconfirm="searchConfirm" bindinput="searchInput" bindkeyboardheightchange="searchBoardheightchange" class="searchInput" focus="{{focusFlag}}" placeholder="请输入要查询的业务名称" placeholderClass="searchPlaceholder" type="text" value="{{postData.searchTitle}}"></input>
+            <icon catchtap="clearTap" class="search-cancelIcon" color="#b2b2b2" hidden="{{clearFlagHide}}" size="25rpx" type="clear"></icon>
+        </view>
+    </view>
+    <view id="businessTodo-main">
+        <view class="businessTodo-filter">
+            <view bindtap="bindSynSortTap" class="filter-item {{synSort?'filter-this':''}}">
+                <text>综合排序</text>
+            </view>
+            <view bindtap="bindFilterTitleTap" class="filter-item {{filterTitleFlag?'filter-this':''}}">
+                <text>筛选</text>
+                <image mode="aspectFit" src="{{filterTitleFlag?'../asserts/images/businessTodo_filter_h.png':'../asserts/images/businessTodo_filter.png'}}"></image>
+            </view>
+        </view>
+        <view class="businessTodo-list" hidden="{{filterTitleFlag}}">
+            <view class="noData">{{businessListNoData}}</view>
+            <view bindtap="bindBusinessListTap" class="list-item" data-idx="{{item.id}}" data-title="{{item.itemName}}" style="border-top: 4rpx solid {{item.color}};" wx:for="{{businessPowerList}}" wx:key="id">
+                <view class="business-sort" style="border-top: 24rpx solid {{item.color}};"></view>
+                <text class="business-sortTitle">{{item.typeName}}</text>
+                <text class="business-itemName">{{item.itemName}}</text>
+            </view>
+        </view>
+        <view class="businessTodo-filterCont" hidden="{{!filterTitleFlag}}">
+            <view class="filterCont-list">
+                <view class="filterCont-item">
+                    <view class="filterCont-fiterName">权力类型</view>
+                    <view class="filterCont-item_li">
+                        <text bindtap="bindPowerConditionTap" class="{{item.ischecked?'active':''}}" data-idx="{{index}}" wx:for="{{powerTypeList}}" wx:key="typeNum">{{item.typeName}}</text>
+                    </view>
+                </view>
+                <view class="filterCont-item">
+                    <view class="filterCont-fiterName">部门列表</view>
+                    <view class="filterCont-item_li">
+                        <text bindtap="bindDepartmentConditionTap" class="{{item.ischecked?'active':''}}" data-idx="{{index}}" wx:for="{{departmentList}}" wx:key="id">{{item.bureauShortName}}</text>
+                    </view>
+                </view>
+                <view class="filterCont-btns">
+                    <button bindtap="bindFilterResetTap" class="resetBtn" hoverClass="commonHoverClass">重置</button>
+                    <button bindtap="bindFilterSumitTap" class="submitBtn" hoverClass="commonHoverClass">确定</button>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

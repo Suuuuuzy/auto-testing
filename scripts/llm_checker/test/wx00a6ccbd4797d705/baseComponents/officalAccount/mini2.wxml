@@ -1,0 +1,33 @@
+<view class="_div data-v-ebdb9e30">
+  <view
+    class="{{['wrap','bcf','flexBetween','data-v-ebdb9e30',type!=2?'fixedPosition':'']}}"
+    hidden="{{!(visible||isReady&&type==2)}}"
+    style="{{customStyle}}"
+  >
+    <view
+      bindtap="__e"
+      class="iconfont pa close icon-guandiao fc9 data-v-ebdb9e30"
+      data-event-opts="{{[ [ 'tap',[ [ 'handleClickOutside',['$event'] ] ] ] ]}}"
+      wx:if="{{type!=2}}"
+    ></view>
+    <text class="fc6 f24 ml30r data-v-ebdb9e30"
+      >{{followPublicAccountTips}}</text
+    >
+    <view class="btnWrap pr f28 flexShrink0 _div data-v-ebdb9e30"
+      >关注<button
+        capture-bind:tap="__e"
+        class="pa btn-official bcf f28 data-v-ebdb9e30"
+        data-event-opts="{{[ [ 'tap',[ [ 'setUpdateFlag',['$event'] ] ] ] ]}}"
+        type="default"
+      >
+        <official-account
+          binderror="__e"
+          bindload="__e"
+          class="official-account data-v-ebdb9e30"
+          data-event-opts="{{[ [ 'load',[ [ 'loadOffAcc',['$event'] ] ] ],[ 'error',[ [ 'loadOffAcc',['$event'] ] ] ] ]}}"
+          id="official_account"
+        ></official-account>
+      </button>
+    </view>
+  </view>
+</view>

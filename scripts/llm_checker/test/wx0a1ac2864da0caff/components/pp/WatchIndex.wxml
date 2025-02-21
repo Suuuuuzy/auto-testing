@@ -1,0 +1,333 @@
+<view
+  class="{{['content','content-panel-watch','_div','data-v-33c64714',value?'active':'']}}"
+  wx:if="{{placeholder>=0}}"
+>
+  <scroll-view
+    class="common-scroll data-v-33c64714"
+    enableBackToTop="{{true}}"
+    scrollY="{{true}}"
+    style="{{'top:'+barHeight+'px'+';'}}"
+  >
+    <view class="watch-tab-gap _div data-v-33c64714"></view>
+    <view
+      bindtap="__e"
+      class="watch-filter-top _div data-v-33c64714"
+      data-event-opts="{{[ [ 'tap',[ [ 'toFilter',['$event'] ] ] ] ]}}"
+    >
+      <view class="icon-filter _div data-v-33c64714">
+        <image
+          class="pic _img data-v-33c64714"
+          src="/static/img/icon-filter.svg"
+        ></image>
+      </view>
+      <view class="watch-filter-text _div data-v-33c64714">分类筛选</view>
+      <view class="arrow-more-fill _div data-v-33c64714">
+        <image
+          class="pic _img data-v-33c64714"
+          src="/static/img/arrow-more-fill.svg"
+        ></image>
+      </view>
+    </view>
+    <view class="watch-banner-top-out _div data-v-33c64714">
+      <swiper
+        bindchange="__e"
+        circular="{{true}}"
+        class="watch-banner-top data-v-33c64714"
+        data-event-opts="{{[ [ 'change',[ [ 'changeSwiperWatch',['$event'] ] ] ] ]}}"
+        nextMargin="220rpx"
+      >
+        <swiper-item class="watch-banner-item data-v-33c64714">
+          <view
+            bindtap="__e"
+            class="watch-banner-item-inner _div data-v-33c64714"
+            data-event-opts="{{[ [ 'tap',[ [ 'toTopic',['$event'] ] ] ] ]}}"
+          >
+            <view class="panel _div data-v-33c64714">
+              <image
+                class="pic _img data-v-33c64714"
+                mode="aspectFill"
+                src="http://cdn.impdigital.cn/patek/0408-out.png"
+              ></image>
+            </view>
+            <view class="watch-banner-item-text _div data-v-33c64714"
+              >2024年新款</view
+            >
+            <view class="watch-banner-item-detail _div data-v-33c64714"
+              >{{(newWatch?$root.g0:'...')+'个款型'}}</view
+            >
+          </view>
+        </swiper-item>
+        <swiper-item
+          bindtap="__e"
+          class="watch-banner-item data-v-33c64714"
+          data-event-opts="{{[ [ 'tap',[ [ 'toJewelry',['$event'] ] ] ] ]}}"
+        >
+          <view class="watch-banner-item-inner _div data-v-33c64714">
+            <view class="panel _div data-v-33c64714">
+              <image
+                class="pic _img data-v-33c64714"
+                mode="aspectFill"
+                src="http://cdn.impdigital.cn/patek/img/category3.jpg"
+              ></image>
+            </view>
+            <view class="watch-banner-item-text _div data-v-33c64714"
+              >珠宝/配饰</view
+            >
+            <view class="watch-banner-item-detail _div data-v-33c64714"
+              >{{(jewelsList?$root.g1:'...')+'个款型'}}</view
+            >
+          </view>
+        </swiper-item>
+        <swiper-item
+          bindtap="__e"
+          class="watch-banner-item data-v-33c64714"
+          data-event-opts="{{[ [ 'tap',[ [ 'toInner',['$event'] ] ] ] ]}}"
+        >
+          <view class="watch-banner-item-inner _div data-v-33c64714">
+            <view class="panel _div data-v-33c64714">
+              <image
+                class="pic _img data-v-33c64714"
+                mode="aspectFill"
+                src="http://cdn.impdigital.cn/patek/img/category4.jpg"
+              ></image>
+            </view>
+            <view class="watch-banner-item-text _div data-v-33c64714"
+              >机芯</view
+            >
+            <view class="watch-banner-item-detail _div data-v-33c64714"
+              >{{(calibers?$root.g2:'...')+'个款型'}}</view
+            >
+          </view>
+        </swiper-item>
+      </swiper>
+      <view class="watch-banner-top-nav _div data-v-33c64714">
+        <view
+          class="{{['_div','data-v-33c64714',nowBannerWatch===0?'active':'']}}"
+        ></view>
+        <view
+          class="{{['_div','data-v-33c64714',nowBannerWatch===1?'active':'']}}"
+        ></view>
+        <view
+          class="{{['_div','data-v-33c64714',nowBannerWatch===2?'active':'']}}"
+        ></view>
+      </view>
+    </view>
+    <view class="watch-list-title _div data-v-33c64714">全部时计系列</view>
+    <view class="watch-list-list _div data-v-33c64714">
+      <view
+        bindtap="__e"
+        class="watch-list-item _div data-v-33c64714"
+        data-event-opts="{{[ [ 'tap',[ [ 'toCollection',['超级复杂功能时计'] ] ] ] ]}}"
+      >
+        <view class="watch-list-item-inner _div data-v-33c64714">
+          <view class="watch-list-item-title _div data-v-33c64714"
+            >超级复杂功能时计</view
+          >
+          <view class="watch-list-item-count _div data-v-33c64714"
+            >{{watchTypeCount['超级复杂功能时计']+'个款型'}}</view
+          >
+        </view>
+        <view class="watch-list-item-pic _div data-v-33c64714">
+          <image
+            class="pic _img data-v-33c64714"
+            mode="aspectFit"
+            src="http://cdn.impdigital.cn/patek/cjfz.png"
+          ></image>
+        </view>
+      </view>
+      <view
+        bindtap="__e"
+        class="watch-list-item _div data-v-33c64714"
+        data-event-opts="{{[ [ 'tap',[ [ 'toCollection',['复杂功能时计'] ] ] ] ]}}"
+      >
+        <view class="watch-list-item-inner _div data-v-33c64714">
+          <view class="watch-list-item-title _div data-v-33c64714"
+            >复杂功能时计</view
+          >
+          <view class="watch-list-item-count _div data-v-33c64714"
+            >{{watchTypeCount['复杂功能时计']+'个款型'}}</view
+          >
+        </view>
+        <view class="watch-list-item-pic _div data-v-33c64714">
+          <image
+            class="pic _img data-v-33c64714"
+            mode="aspectFit"
+            src="http://cdn.impdigital.cn/patek/fz-white.png"
+          ></image>
+        </view>
+      </view>
+      <view
+        bindtap="__e"
+        class="watch-list-item _div data-v-33c64714"
+        data-event-opts="{{[ [ 'tap',[ [ 'toCollection',['Calatrava'] ] ] ] ]}}"
+      >
+        <view class="watch-list-item-inner _div data-v-33c64714">
+          <view class="watch-list-item-title _div data-v-33c64714"
+            >Calatrava</view
+          >
+          <view class="watch-list-item-count _div data-v-33c64714"
+            >{{watchTypeCount['Calatrava']+'个款型'}}</view
+          >
+        </view>
+        <view class="watch-list-item-pic _div data-v-33c64714">
+          <image
+            class="pic _img data-v-33c64714"
+            mode="aspectFit"
+            src="http://cdn.impdigital.cn/patek/calatrava-white.png"
+          ></image>
+        </view>
+      </view>
+      <view
+        bindtap="__e"
+        class="watch-list-item _div data-v-33c64714"
+        data-event-opts="{{[ [ 'tap',[ [ 'toCollection',['Gondolo'] ] ] ] ]}}"
+      >
+        <view class="watch-list-item-inner _div data-v-33c64714">
+          <view class="watch-list-item-title _div data-v-33c64714"
+            >Gondolo</view
+          >
+          <view class="watch-list-item-count _div data-v-33c64714"
+            >{{watchTypeCount['Gondolo']+'个款型'}}</view
+          >
+        </view>
+        <view class="watch-list-item-pic _div data-v-33c64714">
+          <image
+            class="pic _img data-v-33c64714"
+            mode="aspectFit"
+            src="http://cdn.impdigital.cn/patek/gondolo-white.png"
+          ></image>
+        </view>
+      </view>
+      <view
+        bindtap="__e"
+        class="watch-list-item _div data-v-33c64714"
+        data-event-opts="{{[ [ 'tap',[ [ 'toCollection',['Golden Ellipse'] ] ] ] ]}}"
+      >
+        <view class="watch-list-item-inner _div data-v-33c64714">
+          <view class="watch-list-item-title _div data-v-33c64714"
+            >Golden Ellipse</view
+          >
+          <view class="watch-list-item-count _div data-v-33c64714"
+            >{{watchTypeCount['Golden Ellipse']+'个款型'}}</view
+          >
+        </view>
+        <view class="watch-list-item-pic _div data-v-33c64714">
+          <image
+            class="pic _img data-v-33c64714"
+            mode="aspectFit"
+            src="http://cdn.impdigital.cn/patek/golden-white.png"
+          ></image>
+        </view>
+      </view>
+      <view
+        bindtap="__e"
+        class="watch-list-item _div data-v-33c64714"
+        data-event-opts="{{[ [ 'tap',[ [ 'toCollection',['Nautilus'] ] ] ] ]}}"
+      >
+        <view class="watch-list-item-inner _div data-v-33c64714">
+          <view class="watch-list-item-title _div data-v-33c64714"
+            >Nautilus</view
+          >
+          <view class="watch-list-item-count _div data-v-33c64714"
+            >{{watchTypeCount['Nautilus']+'个款型'}}</view
+          >
+        </view>
+        <view class="watch-list-item-pic _div data-v-33c64714">
+          <image
+            class="pic _img data-v-33c64714"
+            mode="aspectFit"
+            src="http://cdn.impdigital.cn/patek/nautilus-white.png"
+          ></image>
+        </view>
+      </view>
+      <view
+        bindtap="__e"
+        class="watch-list-item _div data-v-33c64714"
+        data-event-opts="{{[ [ 'tap',[ [ 'toCollection',['Aquanaut'] ] ] ] ]}}"
+      >
+        <view class="watch-list-item-inner _div data-v-33c64714">
+          <view class="watch-list-item-title _div data-v-33c64714"
+            >Aquanaut</view
+          >
+          <view class="watch-list-item-count _div data-v-33c64714"
+            >{{watchTypeCount['Aquanaut']+'个款型'}}</view
+          >
+        </view>
+        <view class="watch-list-item-pic _div data-v-33c64714">
+          <image
+            class="pic _img data-v-33c64714"
+            mode="aspectFit"
+            src="http://cdn.impdigital.cn/patek/aquanaut-white.png"
+          ></image>
+        </view>
+      </view>
+      <view
+        bindtap="__e"
+        class="watch-list-item _div data-v-33c64714"
+        data-event-opts="{{[ [ 'tap',[ [ 'toCollection',['Twenty~4'] ] ] ] ]}}"
+      >
+        <view class="watch-list-item-inner _div data-v-33c64714">
+          <view class="watch-list-item-title _div data-v-33c64714"
+            >Twenty~4</view
+          >
+          <view class="watch-list-item-count _div data-v-33c64714"
+            >{{watchTypeCount['Twenty~4']+'个款型'}}</view
+          >
+        </view>
+        <view class="watch-list-item-pic _div data-v-33c64714">
+          <image
+            class="pic _img data-v-33c64714"
+            mode="aspectFit"
+            src="http://cdn.impdigital.cn/patek/twenty4-white.png"
+          ></image>
+        </view>
+      </view>
+      <view
+        bindtap="__e"
+        class="watch-list-item watch-list-item-small _div data-v-33c64714"
+        data-event-opts="{{[ [ 'tap',[ [ 'toCollection',['怀表'] ] ] ] ]}}"
+      >
+        <view class="watch-list-item-inner _div data-v-33c64714">
+          <view class="watch-list-item-title _div data-v-33c64714">怀表</view>
+          <view class="watch-list-item-count _div data-v-33c64714"
+            >{{watchTypeCount['怀表']+'个款型'}}</view
+          >
+        </view>
+        <view class="watch-list-item-pic _div data-v-33c64714">
+          <image
+            class="pic _img data-v-33c64714"
+            mode="aspectFit"
+            src="https://static.patek.com/images/articles/face_white/150/973J_010@2x.jpg"
+          ></image>
+        </view>
+      </view>
+      <view
+        bindtap="__e"
+        class="watch-list-item watch-list-item-more _div data-v-33c64714"
+        data-event-opts="{{[ [ 'tap',[ [ 'toCollectionAll',['$event'] ] ] ] ]}}"
+      >
+        <view class="watch-list-item-inner _div data-v-33c64714">
+          <view class="more-empty _div data-v-33c64714">
+            <image
+              class="pic _img data-v-33c64714"
+              src="/static/img/watch-empty.png"
+            ></image>
+          </view>
+          <view class="more-empty-btn _div data-v-33c64714">所有表款</view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="_div data-v-33c64714"
+      style="{{'height:'+placeholder+'px'+';'}}"
+    ></view>
+  </scroll-view>
+  <pp-nav
+    bind:__l="__l"
+    class="data-v-33c64714"
+    placeholder="{{placeholder}}"
+    title="时计系列"
+    vueId="c120d982-1"
+    white="{{true}}"
+  ></pp-nav>
+</view>

@@ -1,0 +1,104 @@
+<view
+  class="border-box _div"
+  style="{{'width:100%;'+'background-color:'+(noBackground?'none':themeColor?themeColor+'26':decorateInfo.backgroundColor)+';'+'font-size:'+(isShowGG?'28rpx':isZc?'12px':'22rpx')+';'+'padding:'+(isZc?bottomStyle?'22rpx 14rpx':'28rpx 20rpx':'')+';'}}"
+>
+  <view
+    class="noticeMsg hongBei-pageE noticeWrapE _div"
+    style="{{'padding:'+(isShowGG?'10rpx 10rpx; ':'10rpx 10rpx 10rpx 0')+';'+'background:'+themeColor+'33'+';'}}"
+    wx:if="{{template=='pageE'}}"
+  >
+    <view class="noticeMsgIcon flexAlignCenter">
+      <image
+        class="img"
+        mode="aspectFill"
+        src="{{decorateInfo.leftIcon}}"
+        wx:if="{{decorateInfo.leftIcon}}"
+      ></image>
+      <label
+        class="iconfont icon-gonggao1 text _span"
+        style="{{'color:'+themeColor+';font-size:28rpx;'}}"
+        wx:else
+      ></label>
+    </view>
+    <swiper
+      autoplay="{{autoplay}}"
+      circular="true"
+      class="swiperE"
+      interval="3000"
+      vertical="{{vertical}}"
+    >
+      <swiper-item wx:for="{{noticeList}}" wx:key="index">
+        <view
+          bindtap="__e"
+          class="nowrapE _div"
+          data-event-opts="{{[ [ 'tap',[ [ 'showPopup',['$0'],[ [ ['noticeList','',index] ] ] ] ] ] ]}}"
+          wx:if="{{ifShowDeil}}"
+          >{{''+item+''}}</view
+        >
+        <view class="nowrapE _div" wx:else>{{''+item+''}}</view>
+      </swiper-item>
+    </swiper>
+    <label
+      class="iconfont icon-gengduo1 _span"
+      style="font-size: 18rpx; line-height: 30px; top: 14rpx"
+    ></label>
+  </view>
+  <view class="noticeMsg noticeWrap _div" wx:else>
+    <swiper
+      autoplay="{{autoplay}}"
+      circular="true"
+      class="swiper"
+      interval="3000"
+      vertical="{{vertical}}"
+    >
+      <swiper-item wx:for="{{noticeList}}" wx:key="index">
+        <view
+          bindtap="__e"
+          class="nowrap flexAlignCenter _div"
+          data-event-opts="{{[ [ 'tap',[ [ 'showPopup',['$0'],[ [ ['noticeList','',index] ] ] ] ] ] ]}}"
+          style="{{'color:'+(isShowGG?decorateInfo.textColor:'#333')+';'+'font-size:'+(isZc?'24rpx':'22rpx')+';'}}"
+          wx:if="{{ifShowDeil}}"
+        >
+          <label
+            class="iconfont icon-dianpugonggao text _span"
+            style="vertical-align: middle"
+          ></label>
+          <label
+            class="ellipsis _span"
+            style="line-height: 30rpx; display: inline"
+            >{{item}}</label
+          >
+        </view>
+        <view
+          class="nowrap flexAlignCenter _div"
+          style="{{'color:'+(isShowGG?decorateInfo.textColor:'#333')+';'}}"
+          wx:else
+        >
+          <label
+            class="iconfont icon-dianpugonggao text _span"
+            style="vertical-align: middle"
+          ></label>
+          <label
+            class="ellipsis _span"
+            style="line-height: 30rpx; display: inline"
+            >{{item}}</label
+          >
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <order-notice-popup
+    bind:__l="__l"
+    class="vue-ref"
+    data-ref="orderNoticePopup"
+    noticeList="{{noticeList}}"
+    vueId="47a9e1d7-1"
+  ></order-notice-popup>
+  <mc-msg-popup
+    bind:__l="__l"
+    class="vue-ref"
+    context="{{context}}"
+    data-ref="mcMsgPopup"
+    vueId="47a9e1d7-2"
+  ></mc-msg-popup>
+</view>

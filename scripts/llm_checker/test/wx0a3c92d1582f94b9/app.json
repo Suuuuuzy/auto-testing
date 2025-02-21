@@ -1,0 +1,68 @@
+{
+  "__usePrivacyCheck__": true,
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#EC643A",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/watermark/watermark",
+        "text": "链接去印",
+        "iconPath": "images/1.jpg",
+        "selectedIconPath": "images/1a.jpg"
+      },
+      {
+        "pagePath": "pages/video/video",
+        "text": "视频去印",
+        "iconPath": "images/2.jpg",
+        "selectedIconPath": "images/2a.jpg"
+      },
+      {
+        "pagePath": "pages/img/img",
+        "text": "图片去印",
+        "iconPath": "images/3.jpg",
+        "selectedIconPath": "images/3a.jpg"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "会员中心",
+        "iconPath": "images/4.jpg",
+        "selectedIconPath": "images/4a.jpg"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小葩去水印",
+    "navigationBarTextStyle": "black"
+  },
+  "pages": [
+    "pages/watermark/watermark",
+    "pages/video/video",
+    "pages/video/draw/draw",
+    "pages/video/res/res",
+    "pages/video/add/add",
+    "pages/video/huakuang/index",
+    "pages/video/huakuang/word",
+    "pages/video/add/uploadimg/index",
+    "pages/url/url",
+    "pages/img/img",
+    "pages/img/draw/draw",
+    "pages/img/res/res",
+    "pages/img/choose/res/res",
+    "pages/img/choose/choose",
+    "pages/img/choose/index",
+    "pages/user/user",
+    "pages/user/share/share",
+    "pages/user/share/cash",
+    "pages/user/share/cashform",
+    "pages/user/share/sc",
+    "pages/history/history",
+    "pages/watermark/index/index",
+    "pages/jump/jump",
+    "pages/sph/sph",
+    "pages/comment/comment"
+  ]
+}

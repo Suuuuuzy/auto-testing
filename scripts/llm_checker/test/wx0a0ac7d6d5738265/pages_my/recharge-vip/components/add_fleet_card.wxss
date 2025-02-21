@@ -1,0 +1,29 @@
+.customStyle {
+  background-color: "rgba(6, 185, 192, 1)";
+  color: "#fff";
+}
+.addform {
+  background-color: #fff;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  height: 100%;
+  padding: 32rpx;
+  width: 100%;
+}
+.addform .formTitle {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  height: 48rpx;
+  justify-content: space-between;
+}
+.addform .formTitle .txt {
+  color: #45474d;
+  font-family: \82f9\65b9-\7b80;
+  font-size: 34rpx;
+  font-weight: 500;
+  letter-spacing: 0rpx;
+  line-height: 47.6rpx;
+  text-align: left;
+  vertical-align: top;
+}

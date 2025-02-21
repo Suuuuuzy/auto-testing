@@ -1,0 +1,43 @@
+.fixedPosition.data-v-ebdb9e30 {
+  bottom: calc(env(safe-area-inset-bottom) + 140rpx);
+  left: 0;
+  margin: 0 20rpx !important;
+  position: fixed;
+  right: 0;
+  z-index: 500;
+}
+.wrap.data-v-ebdb9e30 {
+  border-radius: 6rpx;
+  box-shadow: 0rpx 0rpx 43rpx 1rpx rgba(0, 0, 0, 0.11);
+  height: 100rpx;
+  margin: auto;
+}
+.wrap .close.data-v-ebdb9e30 {
+  right: 6rpx;
+  top: -40rpx;
+}
+.wrap .btnWrap.data-v-ebdb9e30 {
+  border: 1px solid #07c160;
+  border-radius: 6rpx 6rpx 6rpx 6rpx;
+  color: #07c160;
+  height: 54rpx;
+  line-height: 54rpx;
+  margin-right: 20rpx;
+  text-align: center;
+  width: 120rpx;
+}
+.wrap .btn-official.data-v-ebdb9e30 {
+  -webkit-tap-highlight-color: transparent;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.wrap .btn-official .official-account.data-v-ebdb9e30 {
+  position: absolute;
+  right: -14px;
+  top: -40px;
+  z-index: 1000;
+}

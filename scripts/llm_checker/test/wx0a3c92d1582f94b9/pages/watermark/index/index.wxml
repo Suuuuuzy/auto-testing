@@ -1,0 +1,70 @@
+<view class="msg-new">
+    <view class="text">点击右上角添加到我的小程序，随时使用</view>
+    <view class="img">
+        <image src="/images/icon-top.png"></image>
+    </view>
+</view>
+<view class="index-box">
+    <view class="title">
+        <view class="h1">主页批量解析</view>
+        <view bindtap="copyIndexUrl" class="copy">粘贴链接</view>
+    </view>
+    <view class="input-box">
+        <input bindinput="onInputIndex" placeholder="请输入用户主页链接" type="text" value="{{link}}"></input>
+        <view bindtap="clearInputIndex" class="clear">
+            <image src="/images/icon-x.png"></image>
+        </view>
+    </view>
+    <view bindtap="onWaterIndex" class="submit">
+        <view>开始解析</view>
+        <image src="/images/icon-btn.png"></image>
+    </view>
+</view>
+<view class="btn-bottom" wx:if="{{list.length>0}}">
+    <view bindtap="onDown" class="submit">一键下载已显示的所有视频</view>
+</view>
+<view class="index-box2" wx:if="{{list.length>0}}">
+    <view class="list">
+        <view class="item" wx:for="{{list}}">
+            <view class="box">
+                <view class="img">
+                    <image mode="aspectFill" src="{{item.cover}}"></image>
+                </view>
+                <view class="text"> {{item.desc}} </view>
+            </view>
+            <view bindtap="onDown" class="btn" data-i="{{index+1}}"> 下载此视频 </view>
+        </view>
+    </view>
+</view>
+<view class="refresh-tip" wx:if="{{page==''}}">
+    <text>已加载完！</text>
+</view>
+<view class="index-box" style="margin-top: 30rpx;" wx:if="{{list.length==0}}">
+    <view class="title">
+        <view class="h1">主页批量解析简易教程</view>
+    </view>
+    <view class="teach" style="width:100%;margin-top:30rpx">
+        <image mode="widthFix" src="https://apis.ddfans.com/bian/public/static/image/qsy/1111.jpg"></image>
+        <image mode="widthFix" src="https://apis.ddfans.com/bian/public/static/image/qsy/2222.jpg"></image>
+    </view>
+</view>
+<view class="ad-ok-bg2" wx:if="{{isShowDownload||errormoney!=''}}">
+    <view class="ad-ok2">
+        <view class="msg" wx:if="{{errormoney}}">{{errormoney}}</view>
+        <view class="msg" wx:else>
+            <view>下载需 <text>-{{type=='all'?list.length:'1'}}枚无印豆</text>
+            </view> 账号无印豆余额：<text>{{userInfo.money}}枚</text>
+        </view>
+        <view class="btn-box">
+            <view bindtap="noAd" class="btn pay">
+                <image src="/images/icon-vip.png"></image>
+                <text>{{errormoney==''?'':'开通'}}会员</text>
+            </view>
+            <view bindtap="onDown" class="btn" data-i="{{i}}" data-type="{{type}}" wx:if="{{errormoney==''&&(type!='all'||list.length<=userInfo.money)}}">
+                <image src="/images/icon-v.png"></image>
+                <text>下载</text>
+            </view>
+        </view>
+        <image bindtap="isHideDownload" class="msg-close" src="/images/msg-close.png"></image>
+    </view>
+</view>

@@ -1,0 +1,57 @@
+<import src="../common/template/icon.wxml"></import>
+<view
+  class="{{classPrefix}} {{classPrefix}}--{{theme}} class {{prefix}}-class"
+  style="{{_._style( [style,customStyle] )}}"
+  wx:if="{{visible}}"
+>
+  <view bind:tap="clickPrefixIcon" class="{{classPrefix}}__prefix-icon">
+    <slot name="prefix-icon"></slot>
+    <template
+      is="icon"
+      data="{{tClass:prefix+'-class-prefix-icon',..._prefixIcon}}"
+      wx:if="{{_prefixIcon}}"
+    ></template>
+  </view>
+  <view bind:tap="clickContent" class="{{classPrefix}}__content-wrap">
+    <view wx:if="{{direction==='vertical'&&_.isArray(content)}}">
+      <swiper
+        autoplay="true"
+        bindchange="onChange"
+        circular="true"
+        class="{{classPrefix}}__content {{classPrefix}}__content--vertical"
+        displayMultipleItems="1"
+        interval="{{interval}}"
+        vertical="true"
+      >
+        <swiper-item wx:for="{{content}}" wx:key="index">
+          <view class="{{classPrefix}}__content--vertical-item">
+            {{item}}
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+    <view
+      animation="{{animationData}}"
+      class="{{classPrefix}}__content {{prefix}}-class-content {{!marquee?classPrefix+'__content-wrapable':''}}"
+      wx:else
+    >
+      <block wx:if="{{content}}">{{content}}</block>
+      <slot name="content"></slot>
+      <view
+        catch:tap="clickOperation"
+        class="{{classPrefix}}__operation {{prefix}}-class-operation"
+      >
+        <block wx:if="{{operation}}">{{operation}}</block>
+        <slot name="operation"></slot>
+      </view>
+    </view>
+  </view>
+  <view bind:tap="clickSuffixIcon" class="{{classPrefix}}__suffix-icon">
+    <slot name="suffix-icon"></slot>
+    <template
+      is="icon"
+      data="{{tClass:prefix+'-class-suffix-icon',..._suffixIcon}}"
+      wx:if="{{_suffixIcon}}"
+    ></template>
+  </view>
+</view>

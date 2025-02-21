@@ -1,0 +1,173 @@
+<view class="warp data-v-8216c3a6">
+    <zym-navigation bind:__l="__l" class="data-v-8216c3a6" uI="8216c3a6-0" uP="{{a}}" wx:if="{{a}}"></zym-navigation>
+    <u-skeleton bind:__l="__l" class="data-v-8216c3a6" uI="8216c3a6-1" uP="{{ag}}" uS="{{['d']}}" wx:if="{{ag}}">
+        <view class="recharge-vip data-v-8216c3a6">
+            <view class="recharge data-v-8216c3a6" wx:if="{{b}}">
+                <view class="recharge-money data-v-8216c3a6">
+                    <view class="c_name data-v-8216c3a6">
+                        <text class="cname data-v-8216c3a6">{{c}}</text>
+                        <u-icon bind:__l="__l" bindclick="{{d}}" class="ml20 data-v-8216c3a6" uI="8216c3a6-2,8216c3a6-1" uP="{{e}}" wx:if="{{e}}"></u-icon>
+                        <view class="tooplit ml10 data-v-8216c3a6" wx:if="{{f}}">{{g}}</view>
+                    </view>
+                    <view class="c_name data-v-8216c3a6">
+                        <view class="c_phone data-v-8216c3a6">
+                            <image class="data-v-8216c3a6" mode="" src="https://yiningjiayou.com/yn/ynxcx/phone.png" style="width:28rpx;height:28rpx;opacity:0.8;margin-right:8rpx"></image>
+                            <text class="phone data-v-8216c3a6">{{h}}</text>
+                        </view>
+                        <view class=" data-v-8216c3a6">
+                            <text class="phone data-v-8216c3a6">车队ID:{{i}}</text>
+                        </view>
+                    </view>
+                    <view class="recharge-bag fsb data-v-8216c3a6">
+                        <view class="amn-rss fdc data-v-8216c3a6">
+                            <view class="amn data-v-8216c3a6"> 车队卡余额 </view>
+                            <view class="amnnum data-v-8216c3a6">{{j}}</view>
+                        </view>
+                    </view>
+                    <view class="carditem data-v-8216c3a6">
+                        <view class="cardtype data-v-8216c3a6" style="{{'background:'+t.d}}" wx:for="{{k}}" wx:for-item="t" wx:key="e">
+                            <view class=" data-v-8216c3a6" wx:if="{{t.a}}">
+                                <text class="type data-v-8216c3a6">{{t.b}}</text>
+                                <view class="cop data-v-8216c3a6">每升优惠 <text class="yhje data-v-8216c3a6">{{t.c}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="consume-list data-v-8216c3a6">
+                <view class="oilcard data-v-8216c3a6">
+                    <text bindtap="{{m}}" class="{{['textline','data-v-8216c3a6',l&&'active']}}" style="margin-right:20rpx">附卡</text>
+                    <text bindtap="{{o}}" class="{{['textline','data-v-8216c3a6',n&&'active']}}">消费记录</text>
+                </view>
+                <scroll-view class="data-v-8216c3a6" scrollY="true" style="max-height:55vh" wx:if="{{p}}">
+                    <view class=" data-v-8216c3a6" wx:if="{{q}}">
+                        <view bindtap="{{item.o}}" class="cardlist data-v-8216c3a6" wx:for="{{r}}" wx:key="n">
+                            <view class="ficon data-v-8216c3a6"> 附 </view>
+                            <view class="cardName data-v-8216c3a6">
+                                <view class="c_name data-v-8216c3a6">
+                                    <view class=" data-v-8216c3a6">
+                                        <text class="phone cname data-v-8216c3a6" wx:if="{{item.a}}">{{item.b}}</text>
+                                    </view>
+                                    <view class="plate data-v-8216c3a6" wx:if="{{item.c}}">
+                                        <text class="data-v-8216c3a6">{{item.d}}</text>
+                                    </view>
+                                </view>
+                                <view class="c_name data-v-8216c3a6">
+                                    <view class="c_phone data-v-8216c3a6" wx:if="{{item.e}}">
+                                        <image class="data-v-8216c3a6" mode="" src="{{item.f}}" style="width:28rpx;height:28rpx;opacity:0.8;margin-right:8rpx"></image>
+                                        <text class="phone data-v-8216c3a6">{{item.g}}</text>
+                                    </view>
+                                    <view class=" data-v-8216c3a6">
+                                        <text class="phone data-v-8216c3a6" wx:if="{{item.h}}">ID:{{item.i}}</text>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="card-bag fsb data-v-8216c3a6">
+                                <view class="cardAmn data-v-8216c3a6">
+                                    <view class="cardAmntxt data-v-8216c3a6"> 油卡余额 </view>
+                                    <view class="camn data-v-8216c3a6">{{item.j}}</view>
+                                </view>
+                                <view class="fac data-v-8216c3a6" wx:if="{{item.k}}">
+                                    <text catchtap="{{item.l}}" class="recharge-btn mr16 data-v-8216c3a6">转出</text>
+                                    <text catchtap="{{item.m}}" class="recharge-btn data-v-8216c3a6">分配余额</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="noCard data-v-8216c3a6" wx:else> 附卡为空 </view>
+                </scroll-view>
+                <scroll-view bind:refresher-refresh="{{x}}" bindscrolltolower="{{w}}" class="data-v-8216c3a6" lowerThreshold="{{100}}" scrollY="true" style="max-height:55vh" wx:if="{{s}}">
+                    <view class="list data-v-8216c3a6" wx:for="{{t}}" wx:for-item="consume" wx:key="s">
+                        <view class="create-time data-v-8216c3a6" wx:if="{{consume.a}}">{{consume.b}}</view>
+                        <view class="{{['order-id','data-v-8216c3a6',consume.f&&'order-id-bg']}}">
+                            <text class="con_num data-v-8216c3a6">订单号：{{consume.c}}</text>
+                            <text class="{{['cash','data-v-8216c3a6',consume.e&&'refund']}}">{{consume.d}}</text>
+                        </view>
+                        <view class="con_name data-v-8216c3a6">
+                            <view class="con_car data-v-8216c3a6" wx:if="{{consume.g}}">
+                                <text class="data-v-8216c3a6">{{consume.h}}</text>
+                            </view>
+                            <view class="con_car data-v-8216c3a6" style="background-color:rgba(232, 130, 130, 1)">
+                                <text class="data-v-8216c3a6">{{consume.i}} | {{consume.j}}/升</text>
+                            </view>
+                            <view class="con_num data-v-8216c3a6">
+                                <text class="data-v-8216c3a6">ID:{{consume.k}}</text>
+                            </view>
+                        </view>
+                        <view class="list-bot data-v-8216c3a6">
+                            <view class="type-time data-v-8216c3a6">
+                                <view class="type data-v-8216c3a6">{{consume.l}}号枪 </view>
+                                <view class="time data-v-8216c3a6">{{consume.m}}</view>
+                            </view>
+                            <view class="consumeamn data-v-8216c3a6">
+                                <view class="fsb data-v-8216c3a6">
+                                    <text class="money data-v-8216c3a6">￥{{consume.n}}</text>
+                                    <text class="data-v-8216c3a6" style="color:rgba(232, 79, 79, 1);font-weight:700" wx:if="{{consume.o}}">+￥{{consume.p}}元</text>
+                                    <text class="data-v-8216c3a6" style="color:rgba(41, 43, 51, 1);font-weight:700" wx:else> -￥{{consume.q}}元</text>
+                                </view>
+                                <text class="totaloil data-v-8216c3a6">{{consume.r}}升</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="data-v-8216c3a6">
+                        <u-loadmore bind:__l="__l" class="data-v-8216c3a6" uI="8216c3a6-3,8216c3a6-1" uP="{{v}}" wx:if="{{v}}"></u-loadmore>
+                    </view>
+                </scroll-view>
+            </view>
+            <u-popup bind:__l="__l" class="data-v-8216c3a6" style="background-color:rgba(0, 0, 0, 0)" uI="8216c3a6-4,8216c3a6-1" uP="{{J}}" uS="{{['d']}}" wx:if="{{J}}">
+                <view class="pop data-v-8216c3a6">
+                    <view class="pop--header data-v-8216c3a6">
+                        <text class="poptxt data-v-8216c3a6">充值金额</text>
+                        <image catchtap="{{z}}" class="popbtn data-v-8216c3a6" mode="" src="{{y}}"></image>
+                    </view>
+                    <view class="pop--listbtn data-v-8216c3a6">
+                        <view catchtap="{{topUp.d}}" class="{{['listbtn','data-v-8216c3a6',topUp.b&&'poplist--active']}}" wx:for="{{A}}" wx:for-item="topUp" wx:key="c"> ￥{{topUp.a}}</view>
+                    </view>
+                    <view class="pop--input data-v-8216c3a6">
+                        <view class="fuhao data-v-8216c3a6"> ￥ </view>
+                        <view class="data-v-8216c3a6" style="height:100%" wx:if="{{B}}">
+                            <input alwaysSystem autoFocus adjustPosition="{{false}}" bindblur="{{C}}" bindinput="{{E}}" class="inpu data-v-8216c3a6" maxlength="5" type="digit" value="{{D}}"></input>
+                        </view>
+                        <view bindtap="{{G}}" class="inpu data-v-8216c3a6" style="width:686rpx" wx:else>{{F}}</view>
+                    </view>
+                    <view class="zengsong data-v-8216c3a6"> 赠送金额 <text class="data-v-8216c3a6" style="color:rgba(159, 227, 227, 1)">{{H}}</text> 元 </view>
+                    <button bindtap="{{I}}" class="ybtn data-v-8216c3a6" type="default">确认</button>
+                </view>
+            </u-popup>
+            <u-popup bind:__l="__l" class="data-v-8216c3a6" style="background-color:rgba(0, 0, 0, 0)" uI="8216c3a6-5,8216c3a6-1" uP="{{af}}" uS="{{['d']}}" wx:if="{{af}}">
+                <view class="pop data-v-8216c3a6">
+                    <view class="pop--header data-v-8216c3a6">
+                        <text class="poptxt data-v-8216c3a6">{{K}}</text>
+                        <image catchtap="{{M}}" class="popbtn data-v-8216c3a6" mode="" src="{{L}}"></image>
+                    </view>
+                    <view class="pop--listbtn data-v-8216c3a6">
+                        <view catchtap="{{tops.d}}" class="{{['listbtn','data-v-8216c3a6',tops.b&&'poplist--active']}}" wx:for="{{N}}" wx:for-item="tops" wx:key="c"> ￥{{tops.a}}</view>
+                    </view>
+                    <view class="pop--input data-v-8216c3a6">
+                        <view class="fuhao data-v-8216c3a6"> ￥ </view>
+                        <view class="data-v-8216c3a6" style="height:100%" wx:if="{{O}}">
+                            <input alwaysSystem autoFocus adjustPosition="{{false}}" bindblur="{{P}}" bindinput="{{R}}" class="inpu data-v-8216c3a6" type="digit" value="{{Q}}"></input>
+                        </view>
+                        <view bindtap="{{T}}" class="inpu data-v-8216c3a6" style="width:calc(100% - 64rpx)" wx:else>{{S}}</view>
+                    </view>
+                    <view class="balanceInfo data-v-8216c3a6">
+                        <view class="ids data-v-8216c3a6"> 司机卡ID {{U}}</view>
+                        <view class="plate data-v-8216c3a6">{{V}}</view>
+                        <view class="userM mb24 data-v-8216c3a6">
+                            <text class="N mr16 data-v-8216c3a6">司机卡余额</text>
+                            <text class="M data-v-8216c3a6" wx:if="{{W}}">{{X}}</text>
+                            <text class="M data-v-8216c3a6" wx:if="{{Y}}">{{Z}}</text>
+                        </view>
+                        <view class="userM data-v-8216c3a6">
+                            <text class="N mr16 data-v-8216c3a6">车队卡余额</text>
+                            <text class="M data-v-8216c3a6" wx:if="{{aa}}">{{ab}}</text>
+                            <text class="M data-v-8216c3a6" wx:if="{{ac}}">{{ad}}</text>
+                        </view>
+                    </view>
+                    <button bindtap="{{ae}}" class="ybtn data-v-8216c3a6" type="default">确认</button>
+                </view>
+            </u-popup>
+        </view>
+    </u-skeleton>
+</view>

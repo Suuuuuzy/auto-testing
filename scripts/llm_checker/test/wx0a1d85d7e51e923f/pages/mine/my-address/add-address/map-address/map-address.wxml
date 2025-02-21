@@ -1,0 +1,27 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view>
+  <map
+    bindregionchange="regionChange"
+    id="myMap"
+    latitude="{{location.lat}}"
+    longitude="{{location.lng}}"
+    markers="{{markers}}"
+    scale="17"
+    style="width: 100%; height: 300px"
+  ></map>
+  <scroll-view scrollY="true" style="height: calc(100vh - 480rpx)">
+    <view class="padding-top">
+      <view class="cu-list menu">
+        <view class="cu-item" wx:for="{{itemData}}">
+          <view class="content">
+            <view class="text-black">{{item.title}}</view>
+            <view class="text-gray">{{item.address}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

@@ -1,0 +1,449 @@
+<view
+  class="{{['dish-info-desc','_div','data-v-bf2b50c8','info-desc'+layout,dishConfig.hasBGColor?'hasBackground':'']}}"
+>
+  <view class="info-name ellipsis-2 _div data-v-bf2b50c8" style="{{$root.s0}}">
+    <rich-text
+      class="dish-rich data-v-bf2b50c8"
+      nodes="{{$root.m0}}"
+      space="nbsp"
+      style="word-break: break-word; white-space: pre-wrap"
+      wx:if="{{dishConfig.type==='search'&&dishData._lightItemName}}"
+    ></rich-text>
+    <block wx:else>{{''+dishConfig.realDishName+''}}</block>
+  </view>
+  <view
+    class="dish-medal f24 _div data-v-bf2b50c8"
+    wx:if="{{dishData['medalCounts']&&dishData['medalCounts'][0]}}"
+  >
+    <view
+      class="dish-medal-sp sp1 _div data-v-bf2b50c8"
+      wx:if="{{iconUrlCount>0}}"
+    >
+      <image
+        class="medal-img data-v-bf2b50c8"
+        mode="heightFix"
+        src="{{dishData['medalCounts'][0].iconUrl}}"
+      ></image>
+      <label class="medal-span _span data-v-bf2b50c8"
+        >{{'已得勋章'+iconUrlCount+'枚'}}</label
+      >
+    </view>
+    <view class="dish-medal-sp sp2 _div data-v-bf2b50c8" wx:else>
+      <image
+        class="medal-img data-v-bf2b50c8"
+        mode="heightFix"
+        src="{{dishData['medalCounts'][0].offIconUrl}}"
+      ></image>
+      <label class="medal-span _span data-v-bf2b50c8">暂未获得勋章</label>
+    </view>
+  </view>
+  <view
+    class="{{['info-ladu','_div','data-v-bf2b50c8','info-ladu'+layout]}}"
+    wx:if="{{dishData.spicy>0}}"
+  >
+    <image
+      class="ladu-item data-v-bf2b50c8"
+      mode="heightFix"
+      src="{{'https://cdnpic.wuuxiang.com/msgjDecorationImg/nladu'+dishData.spicy+'.png'}}"
+    ></image>
+  </view>
+  <view
+    class="info-pick-rate _div data-v-bf2b50c8"
+    wx:if="{{context=='DC'&&dishData.itemClickRate}}"
+  >
+    <label
+      class="iconfont icon-dianzan _span data-v-bf2b50c8"
+      style="font-size: 26rpx"
+    ></label
+    >{{dishData.itemClickRate+'%顾客已点'}}</view
+  >
+  <view
+    class="{{['info-desc','_div','data-v-bf2b50c8','info-desp'+layout,dishConfig.goodsDescLine?'ellipsis-'+dishConfig.goodsDescLine:'ellipsis-1']}}"
+    style="{{'color:'+(dishConfig.goodsDescLineColor?dishConfig.goodsDescLineColor:'#999999')+';'+'font-size:'+(dishConfig.goodsDescLineSize?dishConfig.goodsDescLineSize+'px':'22rpx')+';'}}"
+    wx:if="{{dishData.desp}}"
+    >{{''+dishData.desp+''}}</view
+  >
+  <view class="{{['info-label','_div','data-v-bf2b50c8','info-label'+layout]}}">
+    <view
+      class="info-label-item _div data-v-bf2b50c8"
+      style="{{$root.s1}}"
+      wx:for="{{dishConfig.labelList}}"
+      wx:for-item="label"
+      wx:key="index"
+      >{{label}}</view
+    >
+  </view>
+  <view
+    class="{{['info-icon','_div','data-v-bf2b50c8','info-icon'+layout]}}"
+    wx:if="{{onlyShowOriginalPrice}}"
+  >
+    <view
+      class="info-icon-item _div data-v-bf2b50c8"
+      style="{{$root.s2}}"
+      wx:if="{{dishConfig.itemUnit.limitQuantityFlg=='1'&&!dishConfig.guQingFlg}}"
+      >{{'可售'+(dishConfig.itemUnit.limitQuantity||0)+(dishConfig.itemUnit.unName.length===1?dishConfig.itemUnit.unName:'份')+''}}</view
+    >
+  </view>
+  <view
+    class="{{['info-icon','_div','data-v-bf2b50c8','info-icon'+layout]}}"
+    wx:else
+  >
+    <view
+      class="info-icon-item _div data-v-bf2b50c8"
+      style="{{$root.s3}}"
+      wx:if="{{exchangeFlg&&!dishConfig.isGroupBuy}}"
+      >换</view
+    >
+    <view
+      class="info-icon-item _div data-v-bf2b50c8"
+      style="{{$root.s4}}"
+      wx:if="{{fullGiftFlg&&!dishConfig.isGroupBuy}}"
+      >满赠</view
+    >
+    <view
+      class="info-icon-item _div data-v-bf2b50c8"
+      style="{{$root.s5}}"
+      wx:if="{{dishData.isManLiJian=='1'&&dishConfig.shopMLJTag}}"
+      >减</view
+    >
+    <view
+      class="info-icon-item _div data-v-bf2b50c8"
+      style="{{$root.s6}}"
+      wx:if="{{reducePriceFlg&&!dishConfig.isGroupBuy}}"
+      >随机立减</view
+    >
+    <view class="dishInfo__icon _div data-v-bf2b50c8" wx:if="{{false}}"
+      >集</view
+    >
+    <view
+      class="info-icon-item _div data-v-bf2b50c8"
+      style="{{$root.s7}}"
+      wx:if="{{dishConfig.itemUnit.limitQuantityFlg=='1'&&!dishConfig.guQingFlg}}"
+      >{{'可售'+(dishConfig.itemUnit.limitQuantity||0)+(dishConfig.itemUnit.unName.length===1?dishConfig.itemUnit.unName:'份')}}</view
+    >
+    <view
+      class="info-icon-item _div data-v-bf2b50c8"
+      style="{{$root.s8}}"
+      wx:if="{{dishConfig.preTime>0}}"
+      >{{dishConfig.preTime+'天后'+(context=='ZT'?'自提':'配送')}}</view
+    >
+    <block wx:else>
+      <view
+        class="info-icon-item _div data-v-bf2b50c8"
+        style="{{$root.s9}}"
+        wx:if="{{dishConfig.preTimePoint}}"
+        >{{'当天'+dishConfig.preTimePoint+(context=='ZT'?'自提':'配送')}}</view
+      >
+    </block>
+    <view
+      class="info-icon-item _div data-v-bf2b50c8"
+      style="{{$root.s10}}"
+      wx:if="{{$root.m1}}"
+      >{{'第'+(dishConfig.itemUnit.npartNum||0)+'份￥'+(dishConfig.itemUnit.npartPr||0)+''}}</view
+    >
+    <view
+      class="info-icon-item _div data-v-bf2b50c8"
+      style="{{$root.s11}}"
+      wx:if="{{$root.m2}}"
+      >{{'第'+(dishConfig.itemUnit.npartNum||0)+'份￥'+(dishConfig.itemUnit.npartPr||0)+''}}</view
+    >
+  </view>
+  <view
+    class="info-price _div data-v-bf2b50c8"
+    wx:if="{{!dishConfig.isHiddenPriceBtn}}"
+  >
+    <view
+      class="info-price-item _div data-v-bf2b50c8"
+      wx:if="{{dishConfig.showType==3||dishConfig.showType==5}}"
+    >
+      <view
+        class="{{['_div','data-v-bf2b50c8',dishConfig.priceLabelStyle==1?'price-item-left':'',dishConfig.priceLabelStyle==2?'price-item-left-style2':'']}}"
+        style="{{$root.s12}}"
+      >
+        <label class="left-money _span data-v-bf2b50c8">￥</label
+        >{{dishConfig.itemUnit.promPrice}}</view
+      >
+      <view
+        class="{{['_div','data-v-bf2b50c8',dishConfig.priceLabelStyle==1?'price-item-right':'',dishConfig.priceLabelStyle==2?'price-item-right-style2':'']}}"
+        style="{{$root.s13}}"
+      >
+        <label
+          class="right-style2 _span data-v-bf2b50c8"
+          wx:if="{{context==='DC'||!(dishConfig.itemUnit.promId&&dishConfig.itemUnit.promLimitedQuantity>0)||dishConfig.isGroupBuy}}"
+          >{{''+dishConfig.promPriceName+''}}</label
+        >
+        <label
+          class="right-style2 _span data-v-bf2b50c8"
+          wx:if="{{whichPromotionLimitTextShow}}"
+        >
+          <block wx:if="{{layout==15}}">{{''+$root.g0+''}}</block>
+          <block wx:else>{{''+dishConfig.promotionLimitText+''}}</block>
+        </label>
+        <block
+          wx:if="{{dishConfig.promotionLimitCount&&!dishConfig.isGroupBuy}}"
+        >
+          <label
+            class="right-style2-p6 _span data-v-bf2b50c8"
+            wx:if="{{context==='DC'}}"
+            >{{'限'+dishConfig.promotionLimitCount+(dishConfig.itemUnit.unName.length===1?dishConfig.itemUnit.unName:'份')}}</label
+          >
+          <block wx:else>
+            <label
+              class="right-style2-p6 _span data-v-bf2b50c8"
+              wx:if="{{!whichPromotionLimitTextShow}}"
+            >
+              <block wx:if="{{layout==15}}">{{''+$root.g1+''}}</block>
+              <block wx:else>{{''+dishConfig.promotionLimitText+''}}</block>
+            </label>
+          </block>
+        </block>
+      </view>
+    </view>
+    <block wx:if="{{dishConfig.showType==2||dishConfig.showType==5}}">
+      <view
+        class="info-price-item _div data-v-bf2b50c8"
+        wx:if="{{context==='WM'||context==='ZT'}}"
+      >
+        <view
+          class="{{['_div','data-v-bf2b50c8',dishConfig.priceLabelStyle==1?'price-item-left':'',dishConfig.priceLabelStyle==2?'price-item-left-style2':'']}}"
+          style="{{$root.s14}}"
+        >
+          <label class="left-money _span data-v-bf2b50c8">￥</label
+          >{{dishConfig.itemUnit.vipPrice}}</view
+        >
+        <view
+          class="{{['_div','data-v-bf2b50c8',dishConfig.priceLabelStyle==1?'price-item-right':'',dishConfig.priceLabelStyle==2?'price-item-right-style2':'']}}"
+          style="{{$root.s15}}"
+        >
+          <label class="right-style2 _span data-v-bf2b50c8"
+            >{{''+dishConfig.getVipTxt.text+''}}</label
+          >
+          <label
+            class="right-style2-p6 _span data-v-bf2b50c8"
+            wx:if="{{dishConfig.itemUnit.hyOrderLimitedQuantity&&!dishConfig.isGroupBuy}}"
+            >{{'限'+dishConfig.itemUnit.hyOrderLimitedQuantity+(dishConfig.itemUnit.unName.length===1?dishConfig.itemUnit.unName:'份')}}</label
+          >
+        </view>
+      </view>
+      <view
+        class="info-price-item _div data-v-bf2b50c8"
+        wx:if="{{context==='DC'}}"
+      >
+        <view
+          class="{{['_div','data-v-bf2b50c8',dishConfig.priceLabelStyle==1?'price-item-left':'',dishConfig.priceLabelStyle==2?'price-item-left-style2':'']}}"
+          style="{{$root.s16}}"
+          wx:if="{{dishConfig.showType==5&&dishConfig.oldShowTpye==4}}"
+        >
+          <label class="left-money _span data-v-bf2b50c8">￥</label
+          >{{dishConfig.itemUnit.nextCardPrice}}</view
+        >
+        <view
+          class="{{['_div','data-v-bf2b50c8',dishConfig.priceLabelStyle==1?'price-item-left':'',dishConfig.priceLabelStyle==2?'price-item-left-style2':'']}}"
+          style="{{$root.s17}}"
+          wx:else
+        >
+          <label class="left-money _span data-v-bf2b50c8">￥</label
+          >{{dishConfig.itemUnit.vipPrice}}</view
+        >
+        <view
+          class="{{['_div','data-v-bf2b50c8',dishConfig.priceLabelStyle==1?'price-item-right':'',dishConfig.priceLabelStyle==2?'price-item-right-style2':'']}}"
+          style="{{$root.s18}}"
+        >
+          <label class="right-style2 _span data-v-bf2b50c8"
+            >{{''+(dishConfig.showType==5&&dishConfig.oldShowTpye==4?dishConfig.getVipTxtNext:dishConfig.getVipTxt)+''}}</label
+          >
+          <label
+            class="right-style2-p6 _span data-v-bf2b50c8"
+            wx:if="{{dishConfig.itemUnit.hyOrderLimitedQuantity&&(dishConfig.showType==2||dishConfig.showType==4||dishConfig.showType==5)}}"
+            >{{'限'+dishConfig.itemUnit.hyOrderLimitedQuantity+(dishConfig.itemUnit.unName.length===1?dishConfig.itemUnit.unName:'份')}}</label
+          >
+        </view>
+      </view>
+    </block>
+    <view
+      class="info-price-item _div data-v-bf2b50c8"
+      wx:if="{{dishConfig.showType==4}}"
+    >
+      <view
+        class="{{['_div','data-v-bf2b50c8',dishConfig.priceLabelStyle==1?'price-item-left':'',dishConfig.priceLabelStyle==2?'price-item-left-style2':'']}}"
+        style="{{$root.s19}}"
+      >
+        <label class="left-money _span data-v-bf2b50c8">￥</label
+        >{{dishConfig.itemUnit.nextCardPrice}}</view
+      >
+      <view
+        class="{{['_div','data-v-bf2b50c8',dishConfig.priceLabelStyle==1?'price-item-right':'',dishConfig.priceLabelStyle==2?'price-item-right-style2':'']}}"
+        style="{{$root.s20}}"
+        wx:if="{{context==='WM'||context==='ZT'}}"
+      >
+        <label class="right-style2 _span data-v-bf2b50c8"
+          >{{''+dishConfig.getVipTxtNext+''}}</label
+        >
+      </view>
+      <view
+        class="{{['_div','data-v-bf2b50c8',dishConfig.priceLabelStyle==1?'price-item-right':'',dishConfig.priceLabelStyle==2?'price-item-right-style2':'']}}"
+        style="{{$root.s21}}"
+        wx:if="{{context==='DC'}}"
+      >
+        <label class="right-style2 _span data-v-bf2b50c8"
+          >{{''+dishConfig.getVipTxtNext+''}}</label
+        >
+      </view>
+    </view>
+    <view
+      class="info-price-item _div data-v-bf2b50c8"
+      wx:if="{{!dishConfig.isGroupBuy&&dishData.equityMark&&(dishConfig.priceLabelStyle==1||dishConfig.priceLabelStyle==3)}}"
+    >
+      <view class="price-item-left _div data-v-bf2b50c8" style="{{$root.s22}}"
+        >{{dishData.equityMark}}</view
+      >
+      <view class="price-item-right _div data-v-bf2b50c8" style="{{$root.s23}}">
+        <label class="right-style2 _span data-v-bf2b50c8"
+          >{{''+dishData.equityCardName+''}}</label
+        >
+      </view>
+    </view>
+    <view
+      class="info-price-item pr _div data-v-bf2b50c8"
+      wx:if="{{!dishConfig.isGroupBuy&&dishData.equityMark&&dishConfig.priceLabelStyle==2}}"
+    >
+      <view class="price-item-right-style3 _div data-v-bf2b50c8">
+        <view class="quanyi-icon _div data-v-bf2b50c8">
+          <view class="iconfont icon-quanyi _i data-v-bf2b50c8"></view>
+        </view>
+        <view class="ellipsis-1 ml6rpx mr12rpx _div data-v-bf2b50c8"
+          >{{''+dishData.equityCardName+''}}</view
+        >
+      </view>
+      <view
+        bindtap="__e"
+        class="iconfont icon-guanyu _div data-v-bf2b50c8"
+        data-event-opts="{{[ [ 'tap',[ [ 'showDisabledTips',['$event'] ] ] ] ]}}"
+      ></view>
+      <view
+        class="disabled-tips pa flex f22 _div data-v-bf2b50c8"
+        wx:if="{{isShowDisabledTips}}"
+      >
+        <view class="tips-allow _div data-v-bf2b50c8">
+          <view class="tips-allow-i _i data-v-bf2b50c8"></view> </view
+        >{{''+dishData.equityMark+' | '+dishData.equityCardName+''}}</view
+      >
+    </view>
+  </view>
+  <view
+    class="{{['dishPriceAndBtn','_div','data-v-bf2b50c8',dishConfig.specialDishStyle]}}"
+    wx:if="{{layout!='21'&&!dishConfig.isHiddenPriceBtn}}"
+  >
+    <view class="dishPrice _div data-v-bf2b50c8">
+      <view
+        class="dishPrice__unPrice _div data-v-bf2b50c8"
+        style="{{$root.s24}}"
+        wx:if="{{!textLineThrough}}"
+      >
+        <label class="_span data-v-bf2b50c8"
+          >{{dishConfig.itemUnit.unPrice}}</label
+        >
+        <label class="f20 fw400 _span data-v-bf2b50c8"
+          >{{dishData.hasAddPriceItemFlg||isShowPop&&isMinPriceUnit?'起':''}}</label
+        >
+        <label class="f20 fw400 dishInfo-unName _span data-v-bf2b50c8"
+          >{{'/'+dishConfig.itemUnit.unName}}</label
+        >
+      </view>
+      <view class="line-through-style _div data-v-bf2b50c8" wx:else
+        >{{''+dishConfig.itemUnit.unPrice+(dishData.hasAddPriceItemFlg||isShowPop&&isMinPriceUnit?'起':'')+'/'+dishConfig.itemUnit.unName+''}}</view
+      >
+      <view
+        class="coupon-price-layout _div data-v-bf2b50c8"
+        wx:if="{{dishConfig.couponId}}"
+      >
+        <view class="coupon-price _div data-v-bf2b50c8">
+          <view class="coupon-price-text _div data-v-bf2b50c8"
+            >{{dishConfig.couponPrice}}</view
+          >
+          <view class="_div data-v-bf2b50c8" style="line-height: 1">
+            <image
+              class="coupon-image data-v-bf2b50c8"
+              src="https://cdnpic.wuuxiang.com/msgjDecorationImg/precoupnprice516.png"
+            ></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="{{['dishBtn','_div','data-v-bf2b50c8','dishBtn'+context]}}"
+      wx:if="{{showAddBtn||dishConfig.guQingFlg}}"
+    >
+      <view
+        class="addBtn _div data-v-bf2b50c8"
+        data-set-num="{{dishConfig.dishNum}}"
+        wx:if="{{!dishConfig.guQingFlg&&dishConfig.showAddDish}}"
+      >
+        <view
+          class="{{['btnWrap','_div','data-v-bf2b50c8','dishBtnSize'+dishConfig.dishBtnSize.size,dishConfig.dishNum>0?'btnWrapBor':'']}}"
+          id="{{'autotest_dishitem'+dishData['_itemId']}}"
+        >
+          <dc-add-de-btn
+            addBtnSize="{{dishConfig.addBtnSize?dishConfig.addBtnSize:2}}"
+            bind:__l="__l"
+            bind:disabledClick="__e"
+            bind:inputChange="__e"
+            bind:inputClick="__e"
+            bind:minusFun="__e"
+            bind:plusFun="__e"
+            bind:shift="__e"
+            class="data-v-bf2b50c8"
+            data-event-opts="{{[ [ '^plusFun',[ ['add'] ] ],[ '^minusFun',[ ['remove'] ] ],[ '^inputChange',[ ['getNumber'] ] ],[ '^inputClick',[ ['inputClick'] ] ],[ '^shift',[ ['shift'] ] ],[ '^disabledClick',[ ['disabledClick'] ] ] ]}}"
+            disabled="{{dishConfig.canAdd}}"
+            goodsBgColor="{{dishConfig.goodsBgColor}}"
+            isFastFoods="{{dishConfig.isFastFood}}"
+            layout="{{layout}}"
+            maxNum="{{999}}"
+            minNum="{{dishData.minOrderCount}}"
+            precision="{{$root.m3?$root.m4:0}}"
+            set="{{addDeBtnConfig?addDeBtnConfig:null}}"
+            trueNum="{{dishConfig.dishNum}}"
+            unit="{{dishConfig.itemUnit.unName}}"
+            vueId="20ad3817-1"
+            wx:if="{{context==='DC'}}"
+          ></dc-add-de-btn>
+          <wz-add-de-btn
+            addBtnSize="{{dishConfig.addBtnSize?dishConfig.addBtnSize:2}}"
+            bind:__l="__l"
+            bind:inputChange="__e"
+            bind:inputClick="__e"
+            bind:minusFun="__e"
+            bind:plusFun="__e"
+            bind:shift="__e"
+            class="data-v-bf2b50c8"
+            data-event-opts="{{[ [ '^plusFun',[ ['add'] ] ],[ '^minusFun',[ ['remove'] ] ],[ '^inputChange',[ ['getNumber'] ] ],[ '^inputClick',[ ['inputClick'] ] ],[ '^shift',[ ['shift'] ] ] ]}}"
+            maxNum="{{999}}"
+            minNum="{{dishData.minOrderCount}}"
+            set="{{addDeBtnConfig?addDeBtnConfig:null}}"
+            trueNum="{{dishConfig.dishNum}}"
+            unit="{{dishConfig.itemUnit.unName}}"
+            vueId="20ad3817-2"
+            wx:else
+          ></wz-add-de-btn>
+        </view>
+      </view>
+      <block wx:else>
+        <view
+          class="dishSellOut _div data-v-bf2b50c8"
+          style="position: relative"
+          wx:if="{{dishConfig.guQingFlg&&dishConfig.showAddDish}}"
+        >
+          <view
+            class="{{['_i','data-v-bf2b50c8',dishConfig.gqText]}}"
+            style="{{'color: #B1B1B1;line-height: 1;'}}"
+          ></view>
+          <view
+            class="customGqText _div data-v-bf2b50c8"
+            wx:if="{{dishConfig.gqTextFlg==3}}"
+            >{{''+dishConfig.gqCustomText+''}}</view
+          >
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

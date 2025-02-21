@@ -1,0 +1,31 @@
+<view class="pr _div data-v-6f209530">
+  <weixin-popup
+    bind:__l="__l"
+    class="data-v-6f209530"
+    customStyle="background: none;height: 766rpx;"
+    position="top"
+    round="{{true}}"
+    show="{{remindSwitch}}"
+    vueId="0e4bf508-1"
+    vueSlots="{{['default']}}"
+  >
+    <view class="container tc _div data-v-6f209530">
+      <view class="title _div data-v-6f209530">
+        <view class="pl10 pr _div data-v-6f209530">
+          <label
+            class="iconfont icona-lujing116 f18 mb4r pa _span data-v-6f209530"
+            style="{{'color:'+(themeColor.themeColor?themeColor.themeColor:'#FABD32')+';'}}"
+          ></label
+          >勾上选框，不会错过任何优惠<label
+            class="iconfont icona-lujing115 f18 mt4r _span data-v-6f209530"
+            style="{{'color:'+(themeColor.themeColor?themeColor.themeColor:'#FABD32')+';'}}"
+          ></label>
+        </view>
+      </view>
+      <image
+        class="ticketRemindPopupimg _img data-v-6f209530"
+        src="https://cdnpic.wuuxiang.com/msgjDecorationImg/CD_ticketRemindPopup202308041352.png"
+      ></image>
+    </view>
+  </weixin-popup>
+</view>

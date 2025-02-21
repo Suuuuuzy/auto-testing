@@ -1,0 +1,69 @@
+<view>
+  <cu-custom
+    bgColor="bg-gradual-blue"
+    bind:__l="__l"
+    isBack="{{true}}"
+    vueId="4e38f180-1"
+    vueSlots="{{['content']}}"
+  >
+    <view slot="content">去除背景音乐</view>
+  </cu-custom>
+  <view class="solids video padding-sm">
+    <view
+      bindtap="__e"
+      data-event-opts="{{[ [ 'tap',[ [ 'upload',['$event'] ] ] ] ]}}"
+    >
+      <text class="cuIcon-cameraadd" style="font-size: 40px"></text>
+    </view>
+    <view
+      bindtap="__e"
+      data-event-opts="{{[ [ 'tap',[ [ 'upload',['$event'] ] ] ] ]}}"
+    >
+      <text>点我上传视频去除背景音乐</text>
+    </view>
+  </view>
+  <view class="padding-sm" wx:if="{{result}}">
+    <video class="video-play" src="{{tempFilePath}}"></video>
+  </view>
+  <view class="padding-sm" wx:if="{{showMusic}}">
+    <video class="video-play" src="{{tempFilePath}}"></video>
+  </view>
+  <view
+    bindtap="__e"
+    class="padding-sm flex flex-direction"
+    data-event-opts="{{[ [ 'tap',[ ['complete'] ] ] ]}}"
+    style="margin-top: -7px"
+    wx:if="{{result}}"
+  >
+    <button class="cu-btn bg-cyan">开始去除音乐</button>
+  </view>
+  <view class="box" wx:if="{{showMusic}}">
+    <cmd-progress
+      custom
+      bind:__l="__l"
+      percent="{{percent}}"
+      strokeColor="white"
+      successPercent="{{percent}}"
+      vueId="4e38f180-2"
+      vueSlots="{{['default']}}"
+    >
+      <text style="color: #009688">{{percent+'%'}}</text>
+    </cmd-progress>
+    <view class="cu-bar btn-group">
+      <button
+        bindtap="__e"
+        class="cu-btn bg-orange shadow-blur"
+        data-event-opts="{{[ [ 'tap',[ [ 'copyMusic',['$event'] ] ] ] ]}}"
+      >
+        复制视频链接
+      </button>
+      <button
+        bindtap="__e"
+        class="cu-btn bg-green shadow"
+        data-event-opts="{{[ [ 'tap',[ [ 'downloadFile',['$event'] ] ] ] ]}}"
+      >
+        下载视频
+      </button>
+    </view>
+  </view>
+</view>

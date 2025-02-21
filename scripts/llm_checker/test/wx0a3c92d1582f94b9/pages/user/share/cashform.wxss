@@ -1,0 +1,24 @@
+@import "/pages/video/add/add.wxss";
+page {
+  background-color: #f3f3f3;
+}
+.page1-inputbox {
+  background-color: initial;
+  padding: 15px 0;
+}
+.input-box {
+  background-color: #fff;
+  padding: 10px;
+}
+.money-box {
+  color: red;
+  margin-top: 40rpx;
+  text-align: center;
+}
+.money-box .h1 {
+  font-size: 36rpx;
+}
+.money-box .m {
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}

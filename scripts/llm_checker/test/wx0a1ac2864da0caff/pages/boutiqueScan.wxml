@@ -1,0 +1,9 @@
+<view class="container _div data-v-77744ba6">
+  <view class="panel _div data-v-77744ba6" wx:if="{{landingPic}}">
+    <image
+      class="pic data-v-77744ba6"
+      mode="aspectFill"
+      src="{{landingPic}}"
+    ></image>
+  </view>
+</view>

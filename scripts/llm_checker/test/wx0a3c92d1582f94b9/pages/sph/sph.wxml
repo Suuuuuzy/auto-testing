@@ -1,0 +1,35 @@
+<view class="box">
+  <view class="h1">
+    <view class="text">
+      <text>下载视频号步骤</text>
+    </view>
+  </view>
+  <view class="item">
+    <view class="em">1</view>
+    <view class="text-box">
+      <view class="h2"> 第一步：长按识别二维码 </view>
+      <view class="msg"> 微信添加客服机器人好友 </view>
+      <image
+        class="code"
+        mode="widthFix"
+        showMenuByLongpress="true"
+        src="https://apis.ddfans.com/bian/public/static/image/sphkf.png"
+      ></image>
+    </view>
+  </view>
+  <view class="item">
+    <view class="em">2</view>
+    <view class="text-box">
+      <view class="h2"> 第二步：转发视频号视频给客服机器人 </view>
+      <view class="msg"> 点击视频号视频下方分享按钮 </view>
+      <image class="img" mode="widthFix" src="/images/sph.jpg"></image>
+    </view>
+  </view>
+  <view class="item">
+    <view class="em">3</view>
+    <view class="text-box">
+      <view class="h2"> 第三步：根据机器人提示下载视频 </view>
+      <view class="msg"> 只要根据步骤操作即可下载 </view>
+    </view>
+  </view>
+</view>

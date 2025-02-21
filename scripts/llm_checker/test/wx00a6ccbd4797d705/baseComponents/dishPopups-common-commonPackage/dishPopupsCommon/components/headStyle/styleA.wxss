@@ -1,0 +1,60 @@
+.discount.data-v-3accbe07 {
+  border: 1px solid #fc634b;
+  border-radius: 4rpx;
+  color: #fc634b;
+  font-size: 20rpx;
+  font-weight: 400;
+  height: 28rpx;
+  line-height: 28rpx;
+  margin-right: 8rpx;
+  padding: 0 4rpx;
+}
+.sales.data-v-3accbe07 {
+  background: #016241;
+  border-radius: 20rpx 0rpx 20rpx 0rpx;
+  font-weight: 400;
+  height: 28rpx;
+  left: 0;
+  line-height: 28rpx;
+  padding: 0 18rpx;
+  position: absolute;
+  top: 0;
+}
+.share.data-v-3accbe07 {
+  background: #016241;
+  border-radius: 0rpx 20rpx 0rpx 32rpx;
+  height: 52rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 52rpx;
+}
+.shareBtn.data-v-3accbe07 {
+  background: none;
+  border: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.shareBtn.data-v-3accbe07::after {
+  border: none !important;
+}
+.container.data-v-3accbe07 {
+  border-radius: 20rpx;
+  box-shadow: 0 10rpx 20rpx rgba(0, 0, 0, 0.07);
+  box-sizing: border-box;
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+}
+.image.data-v-3accbe07 {
+  display: block;
+  margin-right: 24rpx;
+  width: 160rpx;
+}
+.profile.data-v-3accbe07 {
+  min-width: 0;
+}

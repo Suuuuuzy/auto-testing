@@ -1,0 +1,18 @@
+<view class="huakuang-box">
+  <block wx:for="{{list}}">
+    <navigator class="it" url="./word?id={{item.id}}" wx:if="{{item.form>0}}">
+      <image
+        class="img"
+        mode="aspectFill"
+        src="https://47oss.ddfans.com/douyin/huakuang/{{item.url}}.jpg"
+      ></image>
+    </navigator>
+    <view bind:tap="onSelectPicture" class="it" data-id="{{item.id}}" wx:else>
+      <image
+        class="img"
+        mode="aspectFill"
+        src="https://47oss.ddfans.com/douyin/huakuang/{{item.url}}.jpg"
+      ></image>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,115 @@
+<view class="container">
+  <view class="uploadMaterials-body">
+    <view class="uploadMaterials-bg">
+      <view class="uploadMaterials-title">材料上传</view>
+      <view class="uploadMaterials-wrap">
+        <view class="pickerFile" wx:for="{{imgFile}}" wx:key="*this">
+          <view class="pickerFile-cont imgFile">
+            <image
+              bindtap="bindimagePreviewTap"
+              class="pickerFile-file"
+              data-idx="{{index}}"
+              mode="aspectFill"
+              src="{{item.path||item.url}}"
+            ></image>
+            <icon
+              bindtap="bindDelImgFileTap"
+              class="pickerFile-fileDel"
+              color="#e3140e"
+              data-idx="{{index}}"
+              size="18"
+              type="clear"
+            ></icon>
+          </view>
+        </view>
+        <view class="pickerFile" wx:for="{{otherFile}}" wx:key="*this">
+          <view class="pickerFile-cont otherFile">
+            <block wx:if="{{item.fileType=='word'}}">
+              <image
+                bindtap="bindOtherPreviewTap"
+                class="pickerFile-file"
+                data-idx="{{index}}"
+                mode="aspectFill"
+                src="../asserts/images/uploadFile_word.png"
+              ></image>
+              <text class="pickerFile-name wordName"
+                >{{item.name||item.fileName}}</text
+              >
+            </block>
+            <block wx:elif="{{item.fileType=='excel'}}">
+              <image
+                bindtap="bindOtherPreviewTap"
+                class="pickerFile-file"
+                data-idx="{{index}}"
+                mode="aspectFill"
+                src="../asserts/images/uploadFile_excel.png"
+              ></image>
+              <text class="pickerFile-name excelName"
+                >{{item.name||item.fileName}}</text
+              >
+            </block>
+            <block wx:elif="{{item.fileType=='pdf'}}">
+              <image
+                bindtap="bindOtherPreviewTap"
+                class="pickerFile-file"
+                data-idx="{{index}}"
+                mode="aspectFill"
+                src="../asserts/images/uploadFile_pdf.png"
+              ></image>
+              <text class="pickerFile-name pdfName"
+                >{{item.name||item.fileName}}</text
+              >
+            </block>
+            <block wx:else>
+              <image
+                bindtap="bindOtherPreviewTap"
+                class="pickerFile-file"
+                data-idx="{{index}}"
+                mode="aspectFill"
+                src="../asserts/images/uploadFile_file.png"
+              ></image>
+              <text class="pickerFile-name otherName"
+                >{{item.name||item.fileName}}</text
+              >
+            </block>
+            <icon
+              bindtap="bindDelOtherFileTap"
+              class="pickerFile-fileDel"
+              color="#e3140e"
+              data-idx="{{index}}"
+              size="18"
+              type="clear"
+            ></icon>
+          </view>
+        </view>
+        <view class="pickerFile" wx:for="{{videoFile}}" wx:key="*this">
+          <view class="pickerFile-cont videoFile">
+            <image
+              bindtap="bindVideoPreviewTap"
+              class="pickerFile-file"
+              mode="aspectFill"
+              src="../asserts/images/uploadFile_file.png"
+            ></image>
+            <icon
+              bindtap="bindDelVideoFileTap"
+              class="pickerFile-fileDel"
+              color="#e3140e"
+              data-idx="{{index}}"
+              size="18"
+              type="clear"
+            ></icon>
+            <text class="pickerFile-name">{{item.name||item.fileName}}</text>
+          </view>
+        </view>
+        <view bindtap="bindPickerFileTap" class="pickerFile">
+          <view class="pickerFile-cont">
+            <text class="uploadFile-add">+</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="uploadMaterials-footer" hoverClass="commonHoverClass">
+    <button bindtap="bindUploadFileTap" class="uploadFileBtn">提交</button>
+  </view>
+</view>

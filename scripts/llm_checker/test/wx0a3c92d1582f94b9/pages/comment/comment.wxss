@@ -1,0 +1,17 @@
+page {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
+.btn {
+  border: 2rpx solid #ff3b00;
+  border-radius: 20rpx;
+  color: #ff3b00;
+  padding: 15rpx 40rpx;
+}
+.msg {
+  font-size: 26rpx;
+  margin-top: 80rpx;
+}

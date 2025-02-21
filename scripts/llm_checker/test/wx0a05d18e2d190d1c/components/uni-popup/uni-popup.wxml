@@ -1,0 +1,39 @@
+<view
+  catchtouchmove="__e"
+  class="{{['uni-popup data-v-21dec862',popupstyle]}}"
+  data-event-opts="{{[ [ 'touchmove',[ [ 'clear',['$event'] ] ] ] ]}}"
+  wx:if="{{showPopup}}"
+>
+  <uni-transition
+    bind:__l="__l"
+    bind:click="__e"
+    class="data-v-21dec862"
+    data-event-opts="{{[ [ '^click',[ ['onTap'] ] ] ]}}"
+    duration="{{duration}}"
+    modeClass="{{['fade']}}"
+    show="{{showTrans}}"
+    styles="{{maskClass}}"
+    vueId="37594ee2-1"
+    wx:if="{{maskShow}}"
+  ></uni-transition>
+  <uni-transition
+    bind:__l="__l"
+    bind:click="__e"
+    class="data-v-21dec862"
+    data-event-opts="{{[ [ '^click',[ ['onTap'] ] ] ]}}"
+    duration="{{duration}}"
+    modeClass="{{ani}}"
+    show="{{showTrans}}"
+    styles="{{transClass}}"
+    vueId="37594ee2-2"
+    vueSlots="{{['default']}}"
+  >
+    <view
+      catchtap="__e"
+      class="uni-popup__wrapper-box data-v-21dec862"
+      data-event-opts="{{[ [ 'tap',[ [ 'clear',['$event'] ] ] ] ]}}"
+    >
+      <slot></slot>
+    </view>
+  </uni-transition>
+</view>

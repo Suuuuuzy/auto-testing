@@ -1,0 +1,15 @@
+<view
+  bindtap="__e"
+  class="{{['loading','_div',partLoading?'part':'']}}"
+  data-event-opts="{{[ [ 'tap',[ [ 'openDebug',['$event'] ] ] ] ]}}"
+  style="{{'top:'+top+';'+'background:'+background+';'}}"
+  wx:if="{{visible}}"
+>
+  <view class="tc _div">
+    <image class="loadingImage _img" src="{{loadingImage}}"></image>
+    <view class="_div" style="white-space: pre-wrap" wx:if="{{loadingText}}"
+      >{{$root.m0}}</view
+    >
+  </view>
+  <log bind:__l="__l" vueId="117f4ba1-1"></log>
+</view>

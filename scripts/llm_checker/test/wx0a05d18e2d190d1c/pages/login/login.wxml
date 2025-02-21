@@ -1,0 +1,28 @@
+<view style="display:flex;flex-direction:column;align-items:center;">
+    <image align="center" class="bg" src="../../static/images/main_bg.png"></image>
+    <image class="login-img" src="../../static/images/login_pic.png"></image>
+    <view class="login-from">
+        <view class="input_account">
+            <image class="nameImage" src="../../static/images/icon_user_name.png"></image>
+            <input bindinput="__e" class="inputText" confirmType="next" cursorSpacing="100" data-event-opts="{{[ [ 'input',[ [ 'phoneInput',['$event'] ] ] ] ]}}" placeholder="请输入账号" value="{{phone}}"></input>
+        </view>
+        <view class="input_account" style="margin-top:60rpx;">
+            <image class="keyImage" src="../../static/images/icon_user_pwd.png"></image>
+            <input bindinput="__e" class="inputText" cursorSpacing="100" data-event-opts="{{[ [ 'input',[ [ 'passwordInput',['$event'] ] ] ] ]}}" password="true" placeholder="请输入密码"></input>
+        </view>
+        <view class="loginBtnView">
+            <button bindtap="__e" class="loginBtn" data-event-opts="{{[ [ 'tap',[ [ 'login',['$event'] ] ] ] ]}}" disabled="{{disabled}}" hoverClass="loginBtn_press" loading="{{loading}}" plain="{{plain}}" size="{{primarySize}}">登 录</button>
+        </view>
+        <view class="loginBtnView">
+            <button bindgetphonenumber="__e" class="loginBtn" data-event-opts="{{[ [ 'getphonenumber',[ [ 'getPhoneNumber',['$event'] ] ] ] ]}}" openType="getPhoneNumber">微信快捷登录</button>
+        </view>
+    </view>
+    <view style="display:flex;justify-content:center;position:absolute;width:100%;bottom:100rpx;">
+        <view bindtap="__e" class="forget_text" data-event-opts="{{[ [ 'tap',[ [ 'click_forget',['$event'] ] ] ] ]}}">忘记密码</view>
+        <view style="margin:30rpx;">|</view>
+        <view bindtap="__e" class="forget_text" data-event-opts="{{[ [ 'tap',[ [ 'click_register',['$event'] ] ] ] ]}}">注册</view>
+    </view>
+    <uni-popup bind:__l="__l" class="vue-ref" data-ref="dialogInput" type="dialog" vueId="35a7246c-1" vueSlots="{{['default']}}">
+        <uni-popup-dialog beforeClose="true" bind:__l="__l" bind:close="__e" bind:confirm="__e" bind:sendVerifyCode="__e" cancleText="{{cancel_btn_text}}" code_msg="{{code_msg}}" content="{{notice_msg}}" data-event-opts="{{[ [ '^confirm',[ ['dialogInputConfirm'] ] ],[ '^close',[ ['dialogInputClose'] ] ],[ '^sendVerifyCode',[ ['dialogSendVerifyCode'] ] ] ]}}" mode="{{dialog_mode}}" phone="{{alert_phone_value}}" phoneDisable="{{!alert_can_edit_phone}}" placeholder="请输入内容" title="提示" vueId="{{'35a7246c-2'+','+'35a7246c-1'}}"></uni-popup-dialog>
+    </uni-popup>
+</view>

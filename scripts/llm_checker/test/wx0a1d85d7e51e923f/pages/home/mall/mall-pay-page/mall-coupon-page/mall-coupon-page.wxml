@@ -1,0 +1,71 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<import src="/pages/template/coupon/coupon-item.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view class="margin-xs bg-white" style="border-radius: 20rpx 20rpx 0rpx 0rpx">
+  <view class="cu-list menu sm-border">
+    <view class="cu-item">
+      <view class="padding-tb-xs">
+        <view class="flex justify-between" style="width: 650rpx">
+          <view>
+            <text class="text-black text-bold text-xl"
+              >{{Str.couponAmount[lanIndex]}}</text
+            >
+          </view>
+          <view>
+            <view bindtap="allChekChange">
+              <text class="text-red text-price text-xl"
+                >{{couponData.couponAmount}}</text
+              >
+            </view>
+          </view>
+        </view>
+        <view class="flex justify-between">
+          <view>
+            <view class="rtl" wx:if="{{isUy}}">
+              <text>تاللانغىنى </text>
+              <text class="text-pink text-lg"> {{selectedCartCount}} </text>
+              <text>تال</text>
+            </view>
+            <view wx:else>
+              <text>已选</text>
+              <text class="text-pink text-lg">{{selectedCartCount}}</text>
+              <text>张</text>
+            </view>
+          </view>
+          <view>
+            <view class="rtl" wx:if="{{isUy}}">
+              <text>ئەڭ يوقىرى ئېتىبار</text>
+              <text class="text-pink text-lg">{{couponData.maxAmount}}</text>
+              <text>يۈەن</text>
+            </view>
+            <view wx:else>
+              <text>最高抵扣</text>
+              <text class="text-pink text-lg"> {{couponData.maxAmount}} </text>
+              <text>元</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view
+  class="bg-white padding-xs margin-xs"
+  wx:if="{{couponData.coupon.length>0}}"
+>
+  <view class="margin-tb-xs" wx:for="{{couponData.coupon}}">
+    <template
+      is="couponItem"
+      data="{{item:item,Str:Str,lanIndex:lanIndex,isUy:isUy,hasSelected:true,index:index}}"
+    ></template>
+  </view>
+</view>
+<view
+  class="margin-xl padding-xl text-center"
+  style="margin-top: 100px"
+  wx:else
+>
+  <text class="text-gray">{{Str.noCouponCart[lanIndex]}}</text>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

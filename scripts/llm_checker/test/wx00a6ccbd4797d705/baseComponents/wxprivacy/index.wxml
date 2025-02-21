@@ -1,0 +1,45 @@
+<weixin-popup
+  bind:__l="__l"
+  class="data-v-b02788cc"
+  customStyle="width: 80%;"
+  round="{{true}}"
+  show="{{show}}"
+  vueId="5bcf4414-1"
+  vueSlots="{{['default']}}"
+  zIndex="199999"
+>
+  <view class="privacyWrap _div data-v-b02788cc">
+    <view class="title _div data-v-b02788cc">隐私协议政策提示</view>
+    <view class="privacyContent _div data-v-b02788cc"
+      >{{'感谢您使用'+appName+'小程序，当您点击同意并开始使用本产品服务时，即表示您理解并同意'}}<view
+        bindtap="__e"
+        class="privacyName _div data-v-b02788cc"
+        data-event-opts="{{[ [ 'tap',[ [ 'openPrivacyContract',['$event'] ] ] ] ]}}"
+        >{{privacyName}}</view
+      >的条款信息，
+      该条款将对您产生法律保护与法律约束力，如您拒绝，则您无法享受该条款信息中的权益。</view
+    >
+    <view class="privacyBtns _div data-v-b02788cc">
+      <button
+        bindtap="__e"
+        class="privacyBtn data-v-b02788cc"
+        data-event-opts="{{[ [ 'tap',[ [ 'handleDisagree',['$event'] ] ] ] ]}}"
+        id="disagree-btn"
+        type="default"
+      >
+        不同意
+      </button>
+      <button
+        bindagreeprivacyauthorization="__e"
+        class="agreeBtn data-v-b02788cc"
+        data-event-opts="{{[ [ 'agreeprivacyauthorization',[ [ 'handleAgree',['$event'] ] ] ] ]}}"
+        id="agree-btn"
+        openType="agreePrivacyAuthorization"
+        style="{{'background-color:'+themeColor+';'}}"
+        type="default"
+      >
+        同意并继续
+      </button>
+    </view>
+  </view>
+</weixin-popup>

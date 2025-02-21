@@ -1,0 +1,38 @@
+<view class="tab-box">
+  <navigator
+    class="tab-li"
+    hoverClass="on"
+    openType="switchTab"
+    url="/pages/watermark/watermark"
+  >
+    <image src="/images/1{{selected===1?'a':''}}.jpg"></image>
+    <text style="{{selected===1?'color:#EC643A':''}}">链接去印</text>
+  </navigator>
+  <navigator
+    class="btn tab-li"
+    hoverClass="on"
+    openType="switchTab"
+    url="/pages/video/video"
+  >
+    <image src="/images/2{{selected===2?'a':''}}.jpg"></image>
+    <text style="{{selected===2?'color:#EC643A':''}}">视频去重</text>
+  </navigator>
+  <navigator
+    class="btn tab-li"
+    hoverClass="on"
+    openType="switchTab"
+    url="/pages/img/img"
+  >
+    <image src="/images/3{{selected===3?'a':''}}.jpg"></image>
+    <text style="{{selected===3?'color:#EC643A':''}}">图片去印</text>
+  </navigator>
+  <navigator
+    class="btn tab-li"
+    hoverClass="on"
+    openType="switchTab"
+    url="/pages/user/user"
+  >
+    <image src="/images/4{{selected===4?'a':''}}.jpg"></image>
+    <text style="{{selected===4?'color:#EC643A':''}}">会员中心</text>
+  </navigator>
+</view>

@@ -1,0 +1,49 @@
+<view class="data-v-04d9d90d">
+  <view
+    class="cu-progress-main data-v-04d9d90d"
+    style="{{'border-radius:'+bgBR+';'+'width:'+progressMainW+';'+'height:'+progressMainH+';'+'background-color:'+backgroundColor+';'}}"
+  >
+    <view
+      class="cu-progress data-v-04d9d90d"
+      style="{{'left:'+areaLeft+';'+'flex-direction:'+flexDirection+';'+'width:'+areaW+';'+'height:'+areaH+';'}}"
+    >
+      <view
+        class="cu-progress-bar data-v-04d9d90d"
+        style="{{'bottom:'+pgBarBottom+';'+'background:'+pgBarBg+';'+'margin-left:'+pgBarML+';'+'margin-bottom:'+pgBarMB+';'+'width:'+pgBarW+';'+'height:'+pgBarH+';'+'border-radius:'+pgBarBR+';'+'background-color:'+noActiveColor+';'}}"
+      ></view>
+      <movable-area
+        bindtouchcancel="__e"
+        bindtouchend="__e"
+        bindtouchmove="__e"
+        bindtouchstart="__e"
+        class="cu-area data-v-04d9d90d"
+        data-event-opts="{{[ [ 'touchcancel',[ [ 'touchCancel',['$event'] ] ] ],[ 'touchstart',[ [ 'areaTouchStart',['$event'] ] ] ],[ 'touchmove',[ [ 'areaTouchMove',['$event'] ] ] ],[ 'touchend',[ [ 'touchEnd',['$event'] ] ] ] ]}}"
+        style="{{'flex-direction:'+flexDirection+';'+'width:'+areaW+';'+'height:'+areaH+';'}}"
+      >
+        <movable-view
+          animation="{{false}}"
+          bindchange="__e"
+          class="cu-handle data-v-04d9d90d"
+          damping="{{damping}}"
+          data-event-opts="{{[ [ 'change',[ [ 'change',['$event'] ] ] ] ]}}"
+          direction="{{direction=='vertical'?'vertical':'horizontal'}}"
+          disabled="disabled"
+          style="{{'top:'+handleT+';'+'width:'+handleS+';'+'height:'+handleS+';'+'border-radius:'+handleBR+';'+'background-color:'+handleColor+';'}}"
+          x="{{handleX}}"
+          y="{{handleY}}"
+        >
+          <text
+            class="{{['data-v-04d9d90d',handleIcon]}}"
+            style="{{'background-color:'+iconColor+';'+'font-size:'+iconS+';'+'border-radius:'+iconBR+';'}}"
+          ></text>
+        </movable-view>
+      </movable-area>
+    </view>
+    <text
+      class="cu-showInfo data-v-04d9d90d"
+      style="{{'right:'+infoRt+';'+'left:'+infoLt+';'+'color:'+infoColor+';'+'font-size:'+infoS+';'+'width:'+infoW+';'}}"
+      wx:if="{{getShowInfoStatus2view}}"
+      >{{showValue+infoEndText}}</text
+    >
+  </view>
+</view>

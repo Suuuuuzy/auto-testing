@@ -1,0 +1,104 @@
+.uni-popup-dialog.data-v-05bc7417 {
+  width: 300px;
+  border-radius: 15px;
+  background-color: #fff;
+}
+.uni-dialog-title.data-v-05bc7417 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+.uni-dialog-title-text.data-v-05bc7417 {
+  font-size: 16px;
+  font-weight: 500;
+}
+.uni-dialog-content.data-v-05bc7417 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 5px 15px 15px;
+}
+.uni-dialog-content-text.data-v-05bc7417 {
+  font-size: 14px;
+  color: #6e6e6e;
+}
+.uni-dialog-button-group.data-v-05bc7417 {
+  flex-direction: row;
+  border-top: 1px solid #f5f5f5;
+}
+.uni-dialog-button-group.data-v-05bc7417,
+.uni-dialog-button.data-v-05bc7417 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+}
+.uni-dialog-button.data-v-05bc7417 {
+  -webkit-box-flex: 1;
+  flex: 1;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  height: 45px;
+}
+.uni-border-left.data-v-05bc7417 {
+  border-left: 1px solid #f0f0f0;
+}
+.uni-dialog-button-text.data-v-05bc7417 {
+  font-size: 14px;
+}
+.uni-button-color.data-v-05bc7417 {
+  color: #007aff;
+}
+.uni-dialog-input-view.data-v-05bc7417 {
+  border: 2rpx solid #999;
+  margin-top: 5rpx;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.uni-dialog-input.data-v-05bc7417 {
+  width: auto;
+  height: 90rpx;
+  padding-left: 15rpx;
+  line-height: 90rpx;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+}
+.uni-popup__success.data-v-05bc7417 {
+  color: #4cd964;
+}
+.uni-popup__warn.data-v-05bc7417 {
+  color: #f0ad4e;
+}
+.uni-popup__error.data-v-05bc7417 {
+  color: #dd524d;
+}
+.uni-popup__info.data-v-05bc7417 {
+  color: #909399;
+}
+.gl_size_s.data-v-05bc7417 {
+  font-size: 24rpx;
+}
+.code_style.data-v-05bc7417 {
+  margin-right: 25rpx;
+  width: auto;
+  text-overflow: ellipsis;
+  line-height: 90rpx;
+  white-space: nowrap;
+}

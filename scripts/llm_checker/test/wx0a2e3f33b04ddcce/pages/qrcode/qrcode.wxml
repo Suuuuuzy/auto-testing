@@ -1,0 +1,31 @@
+<navBar
+  back="{{true}}"
+  bindback="handlerGobackClick"
+  bindhome="handlerGohomeClick"
+  home="{{false}}"
+  title="二维码"
+></navBar>
+<view class="page">
+  <view class="content">
+    <view class="top">
+      <view class="text1">
+        <view>账户：{{phone}}</view>
+        <view style="margin-top: 10rpx">卡号：{{cardNum}}</view>
+      </view>
+      <canvas
+        canvasId="myQrcode"
+        style="background: #fff; width: 200px; height: 200px"
+      ></canvas>
+      <view class="text2">每分钟自动刷新</view>
+    </view>
+    <view class="bottom">
+      <van-button
+        block
+        bind:tap="refresh"
+        color="linear-gradient(to right, #3680FD, #7659FC)"
+        >刷新二维码</van-button
+      >
+      <view class="text3">仅用于个人支付，请勿发送给他人，以防财产损失</view>
+    </view>
+  </view>
+</view>

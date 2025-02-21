@@ -1,0 +1,33 @@
+<view
+  bindtap="__e"
+  class="{{[boxStyle]}}"
+  data-event-opts="{{[ [ 'tap',[ [ 'clickEvent',['$event'] ] ] ] ]}}"
+>
+  <block wx:if="{{countdownType==1}}">{{timeData.second}}</block>
+  <block wx:if="{{countdownType==2}}">
+    <label class="{{['_span',dayStyle]}}" wx:if="{{timeData.day>0}}"
+      >{{''+timeData.day+''}}<label class="{{['_span',unitStyle]}}">天</label>
+    </label>
+    <label class="{{['_span',hourStyle]}}" wx:if="{{timeData.hour>=0}}"
+      >{{''+timeData.hour+''}}<label class="{{['_span',unitStyle]}}">时</label>
+    </label>
+    <label class="{{['_span',minuteStyle]}}" wx:if="{{timeData.minute>=0}}"
+      >{{''+timeData.minute+''}}<label class="{{['_span',unitStyle]}}"
+        >分</label
+      >
+    </label>
+    <label class="{{['_span',secondStyle]}}" wx:if="{{timeData.second>=0}}"
+      >{{''+timeData.second+''}}<label class="{{['_span',unitStyle]}}"
+        >秒</label
+      >
+    </label>
+  </block>
+  <block wx:if="{{countdownType==3}}">
+    <label class="{{['_span',dayStyle]}}" wx:if="{{timeData.day>0}}"
+      >{{timeData.day+'天'}}</label
+    >
+    <label class="{{['_span',hourStyle]}}">{{timeData.hour+':'}}</label>
+    <label class="{{['_span',minuteStyle]}}">{{timeData.minute+':'}}</label>
+    <label class="{{['_span',secondStyle]}}">{{timeData.second}}</label>
+  </block>
+</view>

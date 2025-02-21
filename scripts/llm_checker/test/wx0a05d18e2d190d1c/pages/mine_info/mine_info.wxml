@@ -1,0 +1,99 @@
+<view class="page">
+  <uni-list bind:__l="__l" vueId="1152b38a-1" vueSlots="{{['default']}}">
+    <uni-list-item
+      bind:__l="__l"
+      bind:click="__e"
+      data-event-opts="{{[ [ '^click',[ ['chooseImage'] ] ] ]}}"
+      rightIcon="{{avatar==''||avatar==undefined?'../../static/images/icon_mine_photo.png':avatar}}"
+      showArrow="{{false}}"
+      showRightIcon="{{true}}"
+      title="头像"
+      vueId="{{'1152b38a-2'+','+'1152b38a-1'}}"
+    ></uni-list-item>
+    <uni-list-item
+      bind:__l="__l"
+      bind:click="__e"
+      data-event-opts="{{[ [ '^click',[ [ 'onclick_detail_info',[true] ] ] ] ]}}"
+      rightText="{{nickname}}"
+      title="昵称"
+      vueId="{{'1152b38a-3'+','+'1152b38a-1'}}"
+    ></uni-list-item>
+  </uni-list>
+  <uni-list bind:__l="__l" vueId="1152b38a-4" vueSlots="{{['default']}}">
+    <uni-list-item
+      bind:__l="__l"
+      bind:click="__e"
+      data-event-opts="{{[ [ '^click',[ [ 'toggleTab',['selector'] ] ] ] ]}}"
+      rightText="{{gender==1?'男':'女'}}"
+      title="性别"
+      vueId="{{'1152b38a-5'+','+'1152b38a-4'}}"
+    ></uni-list-item>
+    <uni-list-item
+      bind:__l="__l"
+      rightText="{{mobile}}"
+      title="手机号"
+      vueId="{{'1152b38a-6'+','+'1152b38a-4'}}"
+    ></uni-list-item>
+    <uni-list-item
+      bind:__l="__l"
+      bind:click="__e"
+      data-event-opts="{{[ [ '^click',[ [ 'toggleTab',['date'] ] ] ] ]}}"
+      rightText="{{birthday}}"
+      title="生日"
+      vueId="{{'1152b38a-7'+','+'1152b38a-4'}}"
+    ></uni-list-item>
+    <uni-list-item
+      bind:__l="__l"
+      bind:click="__e"
+      data-event-opts="{{[ [ '^click',[ [ 'toggleTab',['region'] ] ] ] ]}}"
+      rightText="{{areaName}}"
+      title="地址"
+      vueId="{{'1152b38a-8'+','+'1152b38a-4'}}"
+    ></uni-list-item>
+    <uni-list-item
+      bind:__l="__l"
+      bind:click="__e"
+      data-event-opts="{{[ [ '^click',[ [ 'onclick_detail_info',[false] ] ] ] ]}}"
+      rightText="{{address}}"
+      title="详细地址"
+      vueId="{{'1152b38a-9'+','+'1152b38a-4'}}"
+    ></uni-list-item>
+  </uni-list>
+  <w-picker
+    bind:__l="__l"
+    bind:confirm="__e"
+    class="vue-ref"
+    data-event-opts="{{[ [ '^confirm',[ ['onConfirm'] ] ] ]}}"
+    data-ref="selector"
+    defaultVal="{{gender==1?'男':'女'}}"
+    mode="selector"
+    selectList="{{selectList}}"
+    themeColor="#FE7506"
+    vueId="1152b38a-10"
+  ></w-picker>
+  <w-picker
+    bind:__l="__l"
+    bind:confirm="__e"
+    class="vue-ref"
+    current="{{false}}"
+    data-event-opts="{{[ [ '^confirm',[ ['onConfirm'] ] ] ]}}"
+    data-ref="date"
+    defaultVal="{{birthday}}"
+    mode="date"
+    startYear="1900"
+    themeColor="#FE7506"
+    vueId="1152b38a-11"
+  ></w-picker>
+  <w-picker
+    bind:__l="__l"
+    bind:confirm="__e"
+    class="vue-ref"
+    data-event-opts="{{[ [ '^confirm',[ ['onConfirm'] ] ] ]}}"
+    data-ref="region"
+    hideArea="{{false}}"
+    mode="region"
+    themeColor="#FE7506"
+    timeout="{{true}}"
+    vueId="1152b38a-12"
+  ></w-picker>
+</view>

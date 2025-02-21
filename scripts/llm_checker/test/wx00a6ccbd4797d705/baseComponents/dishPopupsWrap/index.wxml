@@ -1,0 +1,30 @@
+<view class="_div">
+  <dp-dish-popups
+    bind:__l="__l"
+    bind:addDishToCart="__e"
+    bind:closeDish="__e"
+    bind:shareDish="__e"
+    class="vue-ref"
+    context="{{context}}"
+    data-event-opts="{{[ [ '^addDishToCart',[ ['getDishPupopData'] ] ],[ '^shareDish',[ ['shareDish'] ] ],[ '^closeDish',[ ['closeDish'] ] ] ]}}"
+    data-ref="dpDishPopups"
+    dpPopLayout="{{dpPopLayout}}"
+    init="{{init}}"
+    vueId="339917ae-1"
+    wx:if="{{dpReady}}"
+  ></dp-dish-popups>
+  <tc-dish-popups
+    bind:__l="__l"
+    bind:addDishToCart="__e"
+    bind:closeDish="__e"
+    bind:shareDish="__e"
+    class="vue-ref"
+    context="{{context}}"
+    data-event-opts="{{[ [ '^addDishToCart',[ ['getDishPupopData'] ] ],[ '^shareDish',[ ['shareDish'] ] ],[ '^closeDish',[ ['closeDish'] ] ] ]}}"
+    data-ref="tcDishPopups"
+    init="{{init}}"
+    tcPopLayout="{{tcPopLayout}}"
+    vueId="339917ae-2"
+    wx:if="{{tcReady}}"
+  ></tc-dish-popups>
+</view>

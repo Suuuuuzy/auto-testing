@@ -1,0 +1,60 @@
+<view class="container">
+    <view class="searchSection">
+        <view class="searchSection-main">
+            <icon color="#b2b2b2" size="21rpx" type="search"></icon>
+            <input bindconfirm="searchConfirm" bindinput="searchInput" bindkeyboardheightchange="searchBoardheightchange" class="searchInput" focus="{{focusFlag}}" placeholder="请输入受理编号查询进度" placeholderClass="searchPlaceholder" type="text" value="{{searchInput}}"></input>
+            <icon catchtap="clearTap" class="search-cancelIcon" color="#b2b2b2" hidden="{{clearFlagHide}}" size="25rpx" type="clear"></icon>
+        </view>
+    </view>
+    <view id="declaration-body">
+        <view class="declaration-body-bg">
+            <view class="common-tabTitle">
+                <view bindtap="tabTitleTap" class="{{tabCurrent==index?'navbar-this':''}}" data-idx="{{index}}" wx:for="{{tabTitle}}" wx:key="*this">{{item}}</view>
+                <view class="sidebar" style="left:{{titleBarLeft}}px"></view>
+            </view>
+            <swiper bindchange="swiperChange" class="declaration-tabCont" current="{{tabCurrent}}">
+                <swiper-item>
+                    <scroll-view class="historicalDeclare" scrollY="{{true}}">
+                        <view class="noData" wx:if="{{!historicalFlag}}">暂无数据</view>
+                        <block wx:else>
+                            <view bindtap="bindHistoricalListTap" class="common-list tabCont-listItem" data-curaction="{{item.curaction}}" data-declareid="{{item.declareId}}" wx:for="{{historicalDeclareList}}" wx:key="{{item.declareId}}">
+                                <view class="commonList-title">{{item.businessName}}</view>
+                                <view class="commonList-detail">
+                                    <view>项目名称：{{item.engineeName}}</view>
+                                    <view>受理编号：{{item.declareSN}}</view>
+                                    <view>
+                                        <text>当前业务状态：</text>
+                                        <text class="approved">{{item.curaction}}</text>
+                                    </view>
+                                    <view>申请人姓名：{{item.applicantName}}</view>
+                                    <view>经办人姓名：{{item.linkManName}}</view>
+                                    <view>受理时间：{{item.startTime}}</view>
+                                    <view>收件单位：{{item.bureau}}</view>
+                                </view>
+                            </view>
+                        </block>
+                    </scroll-view>
+                </swiper-item>
+                <swiper-item>
+                    <scroll-view class="draftBox" scrollY="{{true}}">
+                        <view class="noData" wx:if="{{!draftBoxFlag}}">暂无数据</view>
+                        <block wx:else>
+                            <view bindtap="bindDraftListTap" class="common-list tabCont-listItem" data-declareid="{{item.declareId}}" wx:for="{{draftBoxList}}" wx:key="declareId">
+                                <view class="commonList-title">{{item.name}}</view>
+                                <view class="commonList-detail">
+                                    <view>受理编号：{{item.declareSN}}</view>
+                                    <view>
+                                        <text>当前业务状态：</text>
+                                        <text class="undeclared">{{item.valid}}</text>
+                                    </view>
+                                    <view>申请人姓名：{{item.applicantName}}</view>
+                                    <view>经办人姓名：{{item.linkManName}}</view>
+                                </view>
+                            </view>
+                        </block>
+                    </scroll-view>
+                </swiper-item>
+            </swiper>
+        </view>
+    </view>
+</view>

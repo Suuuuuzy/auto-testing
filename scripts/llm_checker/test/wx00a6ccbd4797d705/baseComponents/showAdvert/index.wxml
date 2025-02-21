@@ -1,0 +1,11 @@
+<view class="videoAdvertWrap _div">
+  <ad-custom
+    bind:__l="__l"
+    bind:error="__e"
+    bind:load="__e"
+    data-event-opts="{{[ [ '^error',[ ['adError'] ] ],[ '^load',[ ['adLoaded'] ] ] ]}}"
+    unitId="{{unitId}}"
+    vueId="75934128-1"
+    wx:if="{{unitId}}"
+  ></ad-custom>
+</view>

@@ -1,0 +1,48 @@
+<view class="box data-v-7b093d9e">
+  <zym-navigation
+    bind:__l="__l"
+    class="data-v-7b093d9e"
+    uI="7b093d9e-0"
+    uP="{{c}}"
+    uS="{{['leftIcon']}}"
+    wx:if="{{c}}"
+  >
+    <u-icon
+      bind:__l="__l"
+      bindclick="{{a}}"
+      class="data-v-7b093d9e"
+      slot="leftIcon"
+      uI="7b093d9e-1,7b093d9e-0"
+      uP="{{b}}"
+    ></u-icon>
+  </zym-navigation>
+  <view class="box_view data-v-7b093d9e">
+    <view class="view-box data-v-7b093d9e">
+      <view class="loader data-v-7b093d9e"></view>
+      <u-text
+        bind:__l="__l"
+        class="data-v-7b093d9e"
+        uI="7b093d9e-2"
+        uP="{{d}}"
+        wx:if="{{d}}"
+      ></u-text>
+      <u-button
+        bind:__l="__l"
+        bindclick="{{e}}"
+        class="data-v-7b093d9e"
+        uI="7b093d9e-3"
+        uP="{{f}}"
+        wx:if="{{f}}"
+      ></u-button>
+    </view>
+  </view>
+  <zym-coupon-popup
+    bind:__l="__l"
+    bindgetClick="{{h}}"
+    class="r data-v-7b093d9e"
+    uI="7b093d9e-4"
+    uP="{{i}}"
+    uR="Zcoupon"
+    wx:if="{{i}}"
+  ></zym-coupon-popup>
+</view>

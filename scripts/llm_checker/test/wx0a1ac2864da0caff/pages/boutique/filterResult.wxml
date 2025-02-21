@@ -1,0 +1,110 @@
+<view class="container _div data-v-2652f09a">
+  <scroll-view
+    bindscrolltolower="__e"
+    class="content content-filter data-v-2652f09a"
+    data-event-opts="{{[ [ 'scrolltolower',[ [ 'toBottomRefresh',['$event'] ] ] ] ]}}"
+    enableBackToTop="{{true}}"
+    scrollY="{{true}}"
+  >
+    <view class="topic-list _div data-v-2652f09a" wx:if="{{productShow}}">
+      <view
+        class="topic-list-line _div data-v-2652f09a"
+        wx:for="{{productShow}}"
+        wx:key="index"
+      >
+        <view
+          bindtap="__e"
+          class="topic-list-line-item _div data-v-2652f09a"
+          data-event-opts="{{[ [ 'tap',[ [ 'chooseItem',['$0'],[ [ ['productShow','',index],['','',indexInner] ] ] ] ] ] ]}}"
+          wx:for="{{item}}"
+          wx:for-index="indexInner"
+          wx:for-item="itemInner"
+          wx:key="indexInner"
+        >
+          <view class="topic-list-line-item-pic _div data-v-2652f09a">
+            <image
+              class="pic _img data-v-2652f09a"
+              lazyLoad="{{true}}"
+              mode="aspectFit"
+              src="{{itemInner.articleImages}}"
+            ></image>
+          </view>
+          <view class="topic-list-line-item-code _div data-v-2652f09a"
+            >{{itemInner.reference}}</view
+          >
+          <view class="topic-list-line-item-detail _div data-v-2652f09a"
+            >{{itemInner.caseMaterial}}</view
+          >
+          <view class="topic-list-line-item-title _div data-v-2652f09a"
+            >{{itemInner.collection}}</view
+          >
+          <view
+            class="{{['topic-check','_div','data-v-2652f09a',itemInner.active?'active':'']}}"
+          >
+            <view class="icon-checked _div data-v-2652f09a">
+              <image
+                class="pic _img data-v-2652f09a"
+                src="/static/img/icon-checked.svg"
+              ></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="filter-bottom _div data-v-2652f09a"></view>
+  </scroll-view>
+  <view class="filter-top-scroll-out _div data-v-2652f09a">
+    <view
+      bindtap="__e"
+      class="filter-left _div data-v-2652f09a"
+      data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+    >
+      <view class="icon-filter _div data-v-2652f09a">
+        <image
+          class="pic _img data-v-2652f09a"
+          src="/static/img/icon-filter.svg"
+        ></image>
+      </view>
+      <view class="_div data-v-2652f09a"
+        >{{'筛选（'+(filterBar?$root.g0:'')+'）'}}</view
+      >
+    </view>
+    <scroll-view
+      class="filter-left-left data-v-2652f09a"
+      scrollX="{{true}}"
+      wx:if="{{filterBar}}"
+    >
+      <view
+        class="filter-tag _div data-v-2652f09a"
+        wx:for="{{filterBar}}"
+        wx:key="index"
+      >
+        <view class="_div data-v-2652f09a">{{item.title}}</view>
+        <view
+          bindtap="__e"
+          class="icon-close _div data-v-2652f09a"
+          data-event-opts="{{[ [ 'tap',[ [ 'removeTag',['$0',index],[ [ ['filterBar','',index] ] ] ] ] ] ]}}"
+        >
+          <image
+            class="pic _img data-v-2652f09a"
+            src="/static/img/icon-close.svg"
+          ></image>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="btn-bottom _div data-v-2652f09a">
+    <view class="btn-bottom-inner _div data-v-2652f09a">
+      <view
+        bindtap="__e"
+        class="btn-bottom-btn _div data-v-2652f09a"
+        data-event-opts="{{[ [ 'tap',[ [ 'finishChoose',['$event'] ] ] ] ]}}"
+        >确认选择</view
+      >
+    </view>
+    <view
+      class="btn-bottom-gap _div data-v-2652f09a"
+      style="{{'height:'+navigationBarHeightPlaceholder+'px'+';'}}"
+    ></view>
+  </view>
+</view>

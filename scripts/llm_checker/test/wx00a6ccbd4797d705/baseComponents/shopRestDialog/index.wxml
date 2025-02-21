@@ -1,0 +1,46 @@
+<view class="_div data-v-03e47d24">
+  <wxpopup
+    bind:__l="__l"
+    bind:close="__e"
+    class="data-v-03e47d24"
+    closeOnClickOverlay="{{false}}"
+    customStyle="border-radius:16rpx;"
+    data-event-opts="{{[ [ '^close',[ ['close'] ] ] ]}}"
+    position="center"
+    round="{{true}}"
+    show="{{popupVisible}}"
+    vueId="03866ee7-1"
+    vueSlots="{{['default']}}"
+    zIndex="{{600}}"
+  >
+    <view class="popup-content-box _div data-v-03e47d24">
+      <view class="popup-icon _div data-v-03e47d24">
+        <image
+          class="popup-icon-image data-v-03e47d24"
+          src="https://cdnpic.wuuxiang.com/msgjDecorationImg/laba2222.png"
+        ></image>
+      </view>
+      <view class="xiaBu-title _div data-v-03e47d24">{{title}}</view>
+      <view class="xiaBu-btn _div data-v-03e47d24">
+        <view
+          bindtap="__e"
+          class="xiaBu-btn-cancel _div data-v-03e47d24"
+          data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}"
+          >知道了<exit-btn
+            bind:__l="__l"
+            class="data-v-03e47d24"
+            style="
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              height: 100%;
+              width: 100%;
+            "
+            vueId="{{'03866ee7-2'+','+'03866ee7-1'}}"
+            wx:if="{{showExitBtn}}"
+          ></exit-btn>
+        </view>
+      </view>
+    </view>
+  </wxpopup>
+</view>

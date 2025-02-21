@@ -1,0 +1,65 @@
+.img-box {
+  background-color: #f7f7f9;
+  padding: 40rpx;
+}
+.img-box .img {
+  border-radius: 20rpx;
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+}
+.msg-box {
+  margin-top: 40rpx;
+  text-align: center;
+}
+.msg-box .msg {
+  line-height: 50rpx;
+}
+.msg-box .m {
+  color: #999;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+  margin-top: 30rpx;
+}
+.btns-box {
+  padding: 30rpx;
+}
+.btns-box .t {
+  font-size: 36rpx;
+}
+.btn-box {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40rpx;
+}
+.btn-box image {
+  margin-right: 10rpx;
+  width: 40rpx;
+}
+.btn-box button {
+  align-items: center;
+  background-color: #f5f7f8;
+  border-radius: 80rpx;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  line-height: 100rpx;
+  margin: 0;
+  padding: 0;
+  width: 320rpx;
+}
+.btn-box button::after,
+.btn-box button::before {
+  display: none;
+}
+.msg-share {
+  background-color: #ffb400;
+  border-radius: 10rpx;
+  color: #fff;
+  font-size: 19rpx;
+  line-height: 34rpx;
+  margin: 20rpx auto 0;
+  text-align: center;
+  width: 690rpx;
+}

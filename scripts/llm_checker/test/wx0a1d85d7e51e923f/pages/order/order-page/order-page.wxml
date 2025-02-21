@@ -1,0 +1,54 @@
+<import src="/pages/template/error-page/error-page.wxml"></import>
+<import src="/pages/template/order-item/order-item.wxml"></import>
+<scroll-view
+  scrollWithAnimation
+  scrollX
+  class="bg-white nav"
+  scrollLeft="{{scrollLeft}}"
+>
+  <view
+    bindtap="tabSelect"
+    class="cu-item {{index==TabCur?'text-pink cur':''}}"
+    data-id="{{index}}"
+    wx:for="{{tabInfo}}"
+  >
+    <view>
+      <i class="iconfont icon-{{item.icon}}" style="font-size: 40rpx"></i>
+      <text>{{isUy?item.uy_name:item.ch_name}}</text>
+    </view>
+  </view>
+</scroll-view>
+<view class="tap-page">
+  <view
+    class="margin-top-sm"
+    wx:if="{{result.data.length>0}}"
+    wx:for="{{result.data}}"
+  >
+    <template
+      is="orderItem"
+      data="{{isUy:isUy,Str:Str,lanIndex:lanIndex,item:item,ossImage:ossImage,navUrl:'/pages/home/mall/mall-home',showComment:true}}"
+      wx:if="{{item.is_group==0}}"
+    ></template>
+    <template
+      is="groupItem"
+      data="{{isUy:isUy,Str:Str,lanIndex:lanIndex,item:item,ossImage:ossImage,navUrl:'/pages/home/mall/mall-home',showComment:true}}"
+      wx:else
+    ></template>
+  </view>
+  <view>
+    <view class="weui-loadmore weui-loadmore_line">
+      <view
+        class="weui-loadmore__tips weui-loadmore__tips_in-line"
+        style="background-color: #f1f1f1"
+      >
+        {{Str.noContent[lanIndex]}}</view
+      >
+    </view>
+  </view>
+</view>
+<template
+  is="errorPage"
+  data="{{ content:Str.opratingError[lanIndex],retryStr:Str.retryAgain[lanIndex] }}"
+  wx:if="{{errorPage}}"
+></template>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

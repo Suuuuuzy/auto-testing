@@ -1,0 +1,9 @@
+<view>
+    <view class="input_item_sytle" style="margin-top:30rpx;">
+        <input bindinput="__e" class="input_style" data-event-opts="{{[ [ 'input',[ [ 'input_phone',['$event'] ] ] ] ]}}" placeholder="请输入接收人手机号" type="number" value="{{phone}}"></input>
+    </view>
+    <view class="input_item_sytle" style="margin-top:1rpx;">
+        <input bindinput="__e" class="input_style" data-event-opts="{{[ [ 'input',[ [ 'input_pwd',['$event'] ] ] ] ]}}" password="true" placeholder="请输入您的登录密码" value="{{pwd}}"></input>
+    </view>
+    <button bindtap="__e" class="btn_style" data-event-opts="{{[ [ 'tap',[ [ 'confirm',['$event'] ] ] ] ]}}" style="margin-top:60rpx;" type="warn">确定</button>
+</view>

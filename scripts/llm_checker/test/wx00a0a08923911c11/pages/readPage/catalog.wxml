@@ -1,0 +1,48 @@
+<view class="container munuList data-v-0cf29cb1">
+  <view class="topbox flexible aItem-center jc-between data-v-0cf29cb1">
+    <view class="menu_num data-v-0cf29cb1">{{'共'+chapterTotal+'章'}}</view>
+    <view
+      bindtap="__e"
+      class="more flexible data-v-0cf29cb1"
+      data-event-opts="{{[ [ 'tap',[ [ 'startList',['$event'] ] ] ] ]}}"
+      wx:if="{{!isEnd}}"
+    >
+      <view class="f26 text-muted mr5 data-v-0cf29cb1">倒序</view>
+      <image
+        class="ic_sort data-v-0cf29cb1"
+        src="/static/img/ic_sort.png"
+      ></image>
+    </view>
+    <view
+      bindtap="__e"
+      class="more flexible data-v-0cf29cb1"
+      data-event-opts="{{[ [ 'tap',[ [ 'startList',['$event'] ] ] ] ]}}"
+      wx:if="{{isEnd}}"
+    >
+      <view class="f26 text-muted mr5 data-v-0cf29cb1">正序</view>
+      <image
+        class="ic_sort data-v-0cf29cb1"
+        src="/static/img/ic_sort_down.png"
+      ></image>
+    </view>
+  </view>
+  <scroll-view class="menu_list data-v-0cf29cb1" scrollY="{{true}}">
+    <view
+      bindtap="__e"
+      class="menu_item flexible jc-between aItem-center data-v-0cf29cb1"
+      data-event-opts="{{[ [ 'tap',[ [ 'goNext',['/pages/readPage/chapter?bookId='+bookId+'&chapterId='+chpter.id] ] ] ] ]}}"
+      wx:for="{{menuList}}"
+      wx:for-index="__i0__"
+      wx:for-item="chpter"
+    >
+      <view
+        class="flex name text-hidden-1 f28 text-333 f-fwb-500 data-v-0cf29cb1"
+        >{{chpter.name}}</view
+      >
+      <view
+        class="{{['chapter_type','data-v-0cf29cb1',chpter.free?'free':'charge']}}"
+        >{{chpter.free?'':'付费'}}</view
+      >
+    </view>
+  </scroll-view>
+</view>

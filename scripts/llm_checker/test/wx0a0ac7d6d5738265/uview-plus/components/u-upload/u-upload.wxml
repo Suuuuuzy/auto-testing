@@ -1,0 +1,105 @@
+<view class="u-upload data-v-895b3a47" style="{{m}}">
+  <view class="u-upload__wrap data-v-895b3a47">
+    <block wx:if="{{a}}">
+      <view
+        class="u-upload__wrap__preview data-v-895b3a47"
+        wx:for="{{b}}"
+        wx:key="y"
+      >
+        <image
+          bindtap="{{item.d}}"
+          class="u-upload__wrap__preview__image data-v-895b3a47"
+          mode="{{item.c}}"
+          src="{{item.b}}"
+          style="{{item.e}}"
+          wx:if="{{item.a}}"
+        ></image>
+        <view class="u-upload__wrap__preview__other data-v-895b3a47" wx:else>
+          <u-icon
+            bind:__l="__l"
+            class="data-v-895b3a47"
+            uI="{{item.f}}"
+            uP="{{item.g}}"
+            wx:if="{{item.g}}"
+          ></u-icon>
+          <text class="u-upload__wrap__preview__other__text data-v-895b3a47"
+            >{{item.h}}</text
+          >
+        </view>
+        <view class="u-upload__status data-v-895b3a47" wx:if="{{item.i}}">
+          <view class="u-upload__status__icon data-v-895b3a47">
+            <u-icon
+              bind:__l="__l"
+              class="data-v-895b3a47"
+              uI="{{item.k}}"
+              uP="{{item.l}}"
+              wx:if="{{item.j}}"
+            ></u-icon>
+            <u-loading-icon
+              bind:__l="__l"
+              class="data-v-895b3a47"
+              uI="{{item.m}}"
+              uP="{{item.n||''}}"
+              wx:else
+            ></u-loading-icon>
+          </view>
+          <text
+            class="u-upload__status__message data-v-895b3a47"
+            wx:if="{{item.o}}"
+            >{{item.p}}</text
+          >
+        </view>
+        <view
+          catchtap="{{item.t}}"
+          class="u-upload__deletable data-v-895b3a47"
+          wx:if="{{item.q}}"
+        >
+          <view class="u-upload__deletable__icon data-v-895b3a47">
+            <u-icon
+              bind:__l="__l"
+              class="data-v-895b3a47"
+              uI="{{item.r}}"
+              uP="{{item.s}}"
+              wx:if="{{item.s}}"
+            ></u-icon>
+          </view>
+        </view>
+        <view class="u-upload__success data-v-895b3a47" wx:if="{{item.v}}">
+          <view class="u-upload__success__icon data-v-895b3a47">
+            <u-icon
+              bind:__l="__l"
+              class="data-v-895b3a47"
+              uI="{{item.w}}"
+              uP="{{item.x}}"
+              wx:if="{{item.x}}"
+            ></u-icon>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{c}}">
+      <view bindtap="{{e}}" class="data-v-895b3a47" wx:if="{{d}}">
+        <slot></slot>
+      </view>
+      <view
+        bindtap="{{j}}"
+        class="{{['u-upload__button','data-v-895b3a47',k]}}"
+        hoverClass="{{i}}"
+        hoverStayTime="150"
+        style="{{l}}"
+        wx:else
+      >
+        <u-icon
+          bind:__l="__l"
+          class="data-v-895b3a47"
+          uI="895b3a47-5"
+          uP="{{f}}"
+          wx:if="{{f}}"
+        ></u-icon>
+        <text class="u-upload__button__text data-v-895b3a47" wx:if="{{g}}"
+          >{{h}}</text
+        >
+      </view>
+    </block>
+  </view>
+</view>

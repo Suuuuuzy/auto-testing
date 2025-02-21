@@ -1,0 +1,78 @@
+<view
+  bind:tap="clickHandle"
+  class="goods-card"
+  data-goods="{{goods}}"
+  id="{{independentID}}"
+>
+  <view class="goods-card__main">
+    <view bind:tap="clickThumbHandle" class="goods-card__thumb">
+      <t-image
+        lazyLoad
+        mode="aspectFill"
+        src="{{goods.img_url}}"
+        tClass="goods-card__img"
+        wx:if="{{!!goods.img_url}}"
+      ></t-image>
+    </view>
+    <view class="goods-card__body">
+      <view class="goods-card__upper">
+        <view
+          class="goods-card__title {{isUy?'rtl':''}}"
+          wx:if="{{goods.uy_name}}"
+        >
+          {{isUy?goods.uy_name:goods.ch_name}}
+        </view>
+        <view
+          class="goods-card__tags {{isUy?'rtl':''}}"
+          wx:if="{{goods.tags&&!!goods.tags.length}}"
+        >
+          <view
+            class="goods-card__tag"
+            data-index="{{index}}"
+            wx:for="{{goods.tags}}"
+            wx:for-item="tag"
+            wx:key="index"
+          >
+            {{isUy?tag.uy_title:tag.ch_title}}
+          </view>
+        </view>
+      </view>
+      <view class="goods-card__down">
+        <view>
+          <price
+            price="{{isValidityLinePrice?goods.activity_price*100:goods.price*100}}"
+            symbol="{{currency}}"
+            symbolClass="spec-for-symbol"
+            wrClass="spec-for-price"
+            wx:if="{{goods.price}}"
+          ></price>
+          <price
+            price="{{goods.price*100}}"
+            symbol="{{currency}}"
+            type="delthrough"
+            wrClass="goods-card__origin-price"
+            wx:if="{{goods.activity_price>0&&isValidityLinePrice}}"
+          ></price>
+          <view wx:if="{{time}}">
+            <t-count-down
+              format="HH:mm:ss"
+              size="small"
+              theme="square"
+              time="{{time}}"
+            ></t-count-down>
+          </view>
+        </view>
+        <t-icon
+          catchtap="addCartHandle"
+          class="goods-card__add-cart"
+          color="#FA550F"
+          data-id="{{independentID}}"
+          id="{{independentID}}-cart"
+          name="cartAdd"
+          prefix="wr"
+          size="48rpx"
+        ></t-icon>
+      </view>
+    </view>
+  </view>
+</view>

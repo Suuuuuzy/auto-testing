@@ -1,0 +1,425 @@
+<view class="container flexible flex-direction">
+  <view class="header-search flexible">
+    <view
+      bindtap="__e"
+      class="search flexible aItem-center"
+      data-event-opts="{{[ [ 'tap',[ [ 'goNext',['/pages/shucheng/search'] ] ] ] ]}}"
+    >
+      <image class="_img" src="{{$root.m0}}"></image>
+      <view class="flex ml0 text-muted f24">搜索书名/口令码</view>
+    </view>
+  </view>
+  <scroll-view
+    bindscroll="__e"
+    bindscrolltolower="__e"
+    class="app-container scroll-box flex"
+    data-event-opts="{{[ [ 'scrolltolower',[ [ 'scrollLower',['$event'] ] ] ],[ 'scroll',[ [ 'scroll',['$event'] ] ] ] ]}}"
+    scrollTop="{{scrollTop}}"
+    scrollWithAnimation="{{true}}"
+    scrollY="{{true}}"
+  >
+    <view style="margin: 0 30rpx">
+      <view wx:for="{{$root.l8}}" wx:key="index">
+        <view class="shucheng-swiper" wx:if="{{item[$orig].layoutId==1}}">
+          <uni-swiper-dot
+            bind:__l="__l"
+            bind:clickItem="__e"
+            class="uni-swiper-dot-box"
+            current="{{current}}"
+            data-event-opts="{{[ [ '^clickItem',[ ['clickItem'] ] ] ]}}"
+            dotsStyles="{{dotsStyles}}"
+            field="content"
+            info="{{item[$orig].content}}"
+            mode="{{mode}}"
+            vueId="{{'3bf759c0-1-'+index}}"
+            vueSlots="{{['default']}}"
+          >
+            <swiper
+              autoplay="true"
+              bindchange="__e"
+              class="swiper-box"
+              current="{{swiperDotIndex}}"
+              data-event-opts="{{[ [ 'change',[ [ 'change',['$event'] ] ] ] ]}}"
+            >
+              <swiper-item
+                wx:for="{{item[$orig].content}}"
+                wx:for-index="swiperIndex"
+                wx:for-item="swiperItem"
+                wx:key="*this"
+              >
+                <view
+                  bindtap="__e"
+                  class="swiper-item"
+                  data-event-opts="{{[ [ 'tap',[ [ 'bannerToDetail',['$event'] ] ] ] ]}}"
+                >
+                  <view class="swiper-item-left">
+                    <image
+                      src="{{swiperItem.imgUrl}}"
+                      style="width: 156rpx; height: 218rpx"
+                    ></image>
+                  </view>
+                  <view class="ml24 swiper-item-right">
+                    <view class="text-000 f30 fwb-500"
+                      >{{swiperItem.name}}</view
+                    >
+                    <view class="text-666 mt15 f24 fwb-400 text-c3 swiper-text"
+                      >{{''+swiperItem.introduce+''}}</view
+                    >
+                  </view>
+                </view>
+              </swiper-item>
+            </swiper>
+          </uni-swiper-dot>
+        </view>
+        <view class="hot-sell-box mt20" wx:if="{{item[$orig].layoutId==2}}">
+          <view
+            class="hot-sell-title label_title flexible aItem-center jc-between"
+          >
+            <view class="label mr10 f36 text-default fwb-500"
+              >{{item[$orig].name}}</view
+            >
+            <view
+              bindtap="__e"
+              class="flexible aItem-center"
+              data-event-opts="{{[ [ 'tap',[ [ 'getbookshelf',['$0'],[ [ ['dataList.shelves','',index] ] ] ] ] ] ]}}"
+            >
+              <view class="my-tb">
+                <uni-icons
+                  bind:__l="__l"
+                  color="#333"
+                  type="loop"
+                  vueId="{{'3bf759c0-2-'+index}}"
+                ></uni-icons>
+              </view>
+              <view class="f24 mr10 text-333">换一换</view>
+            </view>
+          </view>
+          <view
+            bindtap="__e"
+            class="hot-sell mt20"
+            data-event-opts="{{[ [ 'tap',[ [ 'clickToDetail',['$0'],[ [ ['dataList.shelves','',index],['content','',hotIndex] ] ] ] ] ] ]}}"
+            wx:if="{{hotIndex==0}}"
+            wx:for="{{item.l1}}"
+            wx:for-index="hotIndex"
+            wx:for-item="hotItem"
+            wx:key="hotIndex"
+          >
+            <view class="book-logo">
+              <image
+                class="hot-sell-image"
+                src="{{hotItem[$orig].imgUrl}}"
+              ></image>
+            </view>
+            <view class="ml20 book-detail">
+              <view class="text-default f28 fwb-400 mt5"
+                >{{hotItem[$orig].name}}</view
+              >
+              <view class="text-666 f24 fwb-400 bood-name mt15"
+                >{{''+hotItem[$orig].introduce+''}}</view
+              >
+              <view
+                class="book-tags flexible mt40"
+                wx:if="{{hotItem[$orig].book.tags}}"
+              >
+                <view
+                  class="{{['book-tags-item','f24','',index==0?'green-btn':'red-btn']}}"
+                  wx:if="{{index<2}}"
+                  wx:for="{{hotItem.l0}}"
+                  wx:for-item="tag"
+                  wx:key="index"
+                  >{{tag}}</view
+                >
+              </view>
+              <view
+                class="book-tags flexible mt40"
+                wx:if="{{!hotItem[$orig].book.tags&&hotItem[$orig].book.sort}}"
+              >
+                <view class="book-tags-item f24 green-btn"
+                  >{{hotItem[$orig].book.sort}}</view
+                >
+              </view>
+            </view>
+          </view>
+          <view class="hot-sell hot-sell-4 mt30">
+            <view
+              bindtap="__e"
+              data-event-opts="{{[ [ 'tap',[ [ 'clickToDetail',['$0'],[ [ ['dataList.shelves','',index],['content','',hotIndex] ] ] ] ] ] ]}}"
+              wx:if="{{hotIndex!=0}}"
+              wx:for="{{item.l3}}"
+              wx:for-index="hotIndex"
+              wx:for-item="hotItem"
+              wx:key="hotIndex"
+            >
+              <view class="book-logo">
+                <image
+                  class="hot-sell-image"
+                  src="{{hotItem[$orig].imgUrl}}"
+                ></image>
+              </view>
+              <view class="text-000 f28 bood-name-2-1 mt24"
+                >{{''+hotItem[$orig].name+''}}</view
+              >
+              <view
+                class="book-tags flexible mt24"
+                wx:if="{{hotItem[$orig].book.tags}}"
+              >
+                <view
+                  class="{{['book-tags-item','f24','','bood-name-2-1','mr0',index==0?'green-btn':'red-btn']}}"
+                  wx:if="{{index<1}}"
+                  wx:for="{{hotItem.l2}}"
+                  wx:for-item="tag"
+                  wx:key="index"
+                  >{{tag}}</view
+                >
+              </view>
+              <view
+                class="book-tags flexible mt24"
+                wx:if="{{!hotItem[$orig].book.tags&&hotItem[$orig].book.sort}}"
+              >
+                <view class="book-tags-item f24 bood-name-2-1 mr0 green-btn"
+                  >{{hotItem[$orig].book.sort}}</view
+                >
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="hot-sell-box mt20" wx:if="{{item[$orig].layoutId==3}}">
+          <view
+            class="hot-sell-title label_title flexible aItem-center jc-between"
+          >
+            <view class="label mr10 f36 text-default fwb-500"
+              >{{item[$orig].name}}</view
+            >
+            <view
+              bindtap="__e"
+              class="flexible aItem-center"
+              data-event-opts="{{[ [ 'tap',[ [ 'getbookshelf',['$0'],[ [ ['dataList.shelves','',index] ] ] ] ] ] ]}}"
+            >
+              <view class="my-tb">
+                <uni-icons
+                  bind:__l="__l"
+                  color="#333"
+                  type="loop"
+                  vueId="{{'3bf759c0-3-'+index}}"
+                ></uni-icons>
+              </view>
+              <view class="f24 text-333 mr10">换一换</view>
+            </view>
+          </view>
+          <view class="hot-sell hot-sell-4 hot-sell-8">
+            <view
+              bindtap="__e"
+              class="mt20"
+              data-event-opts="{{[ [ 'tap',[ [ 'clickToDetail',['$0'],[ [ ['dataList.shelves','',index],['content','',hotIndex] ] ] ] ] ] ]}}"
+              wx:for="{{item.l5}}"
+              wx:for-index="hotIndex"
+              wx:for-item="hotItem"
+              wx:key="hotIndex"
+            >
+              <view class="book-logo">
+                <image
+                  class="hot-sell-image"
+                  src="{{hotItem[$orig].imgUrl}}"
+                ></image>
+              </view>
+              <view>
+                <view class="text-333 f28 bood-name-2-1 mt24"
+                  >{{hotItem[$orig].name}}</view
+                >
+                <view
+                  class="book-tags flexible mt24"
+                  wx:if="{{hotItem[$orig].book.tags}}"
+                >
+                  <view
+                    class="{{['book-tags-item','f24','','bood-name-2-1','mr0',index==0?'green-btn':'red-btn']}}"
+                    wx:if="{{index<1}}"
+                    wx:for="{{hotItem.l4}}"
+                    wx:for-item="tag"
+                    wx:key="index"
+                    >{{tag+''}}</view
+                  >
+                </view>
+                <view
+                  class="book-tags flexible mt24"
+                  wx:if="{{!hotItem[$orig].book.tags&&hotItem[$orig].book.sort}}"
+                >
+                  <view class="book-tags-item f24 bood-name-2-1 mr0 green-btn"
+                    >{{hotItem[$orig].book.sort}}</view
+                  >
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="hot-sell-box mt20" wx:if="{{item[$orig].layoutId==4}}">
+          <view
+            class="hot-sell-title label_title flexible aItem-center jc-between"
+          >
+            <view class="label mr10 f36 text-default fwb-500"
+              >{{item[$orig].name}}</view
+            >
+            <view
+              bindtap="__e"
+              class="flexible aItem-center"
+              data-event-opts="{{[ [ 'tap',[ [ 'getbookshelf',['$0'],[ [ ['dataList.shelves','',index] ] ] ] ] ] ]}}"
+            >
+              <view class="my-tb">
+                <uni-icons
+                  bind:__l="__l"
+                  color="#333"
+                  type="loop"
+                  vueId="{{'3bf759c0-4-'+index}}"
+                ></uni-icons>
+              </view>
+              <view class="f24 text-333 mr10">换一换</view>
+            </view>
+          </view>
+          <view class="hot-sell hot-sell-2">
+            <view
+              bindtap="__e"
+              class="mt20"
+              data-event-opts="{{[ [ 'tap',[ [ 'clickToDetail',['$0'],[ [ ['dataList.shelves','',index],['content','',hotIndex] ] ] ] ] ] ]}}"
+              wx:for="{{item.l7}}"
+              wx:for-index="hotIndex"
+              wx:for-item="hotItem"
+            >
+              <view class="book-logo">
+                <image
+                  class="hot-sell-image"
+                  src="{{hotItem[$orig].imgUrl}}"
+                ></image>
+              </view>
+              <view class="ml20">
+                <view class="text-333 f28 bood-name-2-1"
+                  >{{hotItem[$orig].name}}</view
+                >
+                <view
+                  class="book-tags flexible mt24"
+                  wx:if="{{hotItem[$orig].book.tags}}"
+                >
+                  <view
+                    class="{{['book-tags-item','f24','','bood-name-2-1','mr0',index==0?'green-btn':'red-btn']}}"
+                    wx:if="{{index<1}}"
+                    wx:for="{{hotItem.l6}}"
+                    wx:for-item="tag"
+                    wx:key="index"
+                    >{{tag+''}}</view
+                  >
+                </view>
+                <view
+                  class="book-tags flexible mt24"
+                  wx:if="{{!hotItem[$orig].book.tags&&hotItem[$orig].book.sort}}"
+                >
+                  <view class="book-tags-item f24 bood-name-2-1 mr0 green-btn"
+                    >{{hotItem[$orig].book.sort}}</view
+                  >
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view
+        class="hot-sell-box mt30"
+        style="background: transparent; padding: 20rpx 0"
+      >
+        <view
+          class="hot-sell-title label_title flexible aItem-center jc-between ml20"
+        >
+          <view class="label mr10 f36 text-default fwb-500"
+            >{{pageData.name}}</view
+          >
+        </view>
+        <view class="hot-sell hot-sell-2 mt10 page-box">
+          <view
+            bindtap="__e"
+            class="hot-sell-good-book"
+            data-event-opts="{{[ [ 'tap',[ [ 'clickToDetail',['$0'],[ [ ['pageData.content','',pageIndex] ] ] ] ] ] ]}}"
+            wx:for="{{$root.l10}}"
+            wx:for-index="pageIndex"
+            wx:for-item="pageItem"
+          >
+            <view class="good-book-image">
+              <image
+                class="hot-sell-image"
+                src="{{pageItem[$orig].imgUrl}}"
+              ></image>
+            </view>
+            <view class="good-book-text">
+              <view class="text-default f28 bood-name-2-1 mt20"
+                >{{pageItem[$orig].name}}</view
+              >
+              <view
+                class="book-tags flexible mt24"
+                wx:if="{{pageItem[$orig].book.tags}}"
+              >
+                <view
+                  class="{{['book-tags-item','f24','','bood-name-2-1','mr15',index==0?'green-btn':'red-btn']}}"
+                  wx:if="{{index<2}}"
+                  wx:for="{{pageItem.l9}}"
+                  wx:for-item="tag"
+                  wx:key="index"
+                  >{{tag+''}}</view
+                >
+              </view>
+              <view
+                class="book-tags flexible mt24"
+                wx:if="{{!pageItem[$orig].book.tags&&pageItem[$orig].book.sort}}"
+              >
+                <view class="book-tags-item f24 bood-name-2-1 mr0 green-btn"
+                  >{{pageItem[$orig].book.sort}}</view
+                >
+              </view>
+              <view
+                class="text-999 f24 book-brief-1-3 mt15"
+                style="height: 120rpx"
+                >{{''+pageItem[$orig].introduce}}</view
+              >
+            </view>
+          </view>
+        </view>
+        <view class="book-no-data f28 text-666" wx:if="{{isShowNoData}}"
+          >暂无更多数据！</view
+        >
+      </view>
+    </view>
+  </scroll-view>
+  <image
+    catchtap="__e"
+    class="icon-top"
+    data-event-opts="{{[ [ 'tap',[ [ 'toTop',['$event'] ] ] ] ]}}"
+    src="/static/img/ic_top.png"
+    wx:if="{{isShowIconTop}}"
+  ></image>
+  <view class="add-short-con" wx:if="{{isAddShortcut&&openDesktop}}">
+    <button
+      bindaddshortcut="__e"
+      class="add-short-btn flexible aItem-center"
+      data-event-opts="{{[ [ 'addshortcut',[ [ 'eventHandler',['$event'] ] ] ] ]}}"
+      openType="addShortcut"
+    >
+      <view class="logo flexible aItem-center jc-center">
+        <image
+          src="https://img.zhangwenpindu.cn/banner/logo_heiyan.png"
+        ></image>
+      </view>
+      <view class="ml20 text-fff mr30 book-content flex f-tal">
+        <view class="f28 fwb-500 mt10" style="line-height: 34rpx"
+          >添加至桌面</view
+        >
+        <view class="f22 fwb-400">添加后方便下次阅读</view>
+      </view>
+      <view class="book-start f22">添加</view>
+    </button>
+    <uni-icons
+      bind:__l="__l"
+      catch:click="__e"
+      class="ic_close"
+      color="#fff"
+      data-event-opts="{{[ [ '^click',[ [ 'closeAddShortcut',['$event'] ] ] ] ]}}"
+      size="18px"
+      type="closeempty"
+      vueId="3bf759c0-5"
+    ></uni-icons>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view class="cu-bar bg-wgite">
+  <view class="content">
+    <view>{{Str.selectTableNum[lanIndex]}}</view>
+  </view>
+</view>
+<view class="cu-list menu sm-border">
+  <view
+    bindtap="itemClick"
+    class="cu-item"
+    data-num="{{index+1}}"
+    wx:for="{{30}}"
+  >
+    <view class="content {{isUy?'rtl':''}}">
+      <text class="text-xl text-pink">{{index+1}}</text> {{Str.table[lanIndex]}}
+    </view>
+  </view>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

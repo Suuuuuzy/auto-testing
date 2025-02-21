@@ -1,0 +1,45 @@
+<view>
+  <view class="uni-list" style="margin-top: 10rpx; padding: 15rpx">
+    <view class="item_info_style">
+      <view class="gl_size_m">车牌号码:</view>
+      <view class="plate_no_style">{{page_data.plateNo}}</view>
+    </view>
+    <view class="item_info_style" style="margin-top: 15rpx">
+      <view class="gl_size_m">服务截止时间:</view>
+      <view class=".service_time_style">{{''+service_time+''}}</view>
+    </view>
+  </view>
+  <view wx:if="{{pay_list.length!=0&&pay_packages.length!=0}}">
+    <view class="uni-list" style="margin-top: 20rpx; padding: 15rpx">
+      <view>套餐选择</view>
+      <view wx:for="{{pay_packages}}" wx:key="index">
+        <view
+          bindtap="__e"
+          class="{{[item.isSelected?'item_pay_style item_color_sel':'item_pay_style item_color_nor']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'click_pay_package',['$event'] ] ] ] ]}}"
+          data-value="{{item}}"
+        >
+          <image
+            class="recommend_style"
+            mode="aspectFill"
+            src="../../static/images/icon_recommend.png"
+            wx:if="{{item.isRecommend}}"
+          ></image>
+          <view>{{''+item.name+''}}</view>
+          <view style="padding-right: 80rpx; color: #fe7506"
+            >{{'¥ '+item.price+''}}</view
+          >
+        </view>
+      </view>
+    </view>
+    <button
+      bindtap="__e"
+      class="gl_btn_oval"
+      data-event-opts="{{[ [ 'tap',[ [ 'click_pay',['$event'] ] ] ] ]}}"
+      style="margin-top: 160rpx"
+      type="warn"
+    >
+      确定
+    </button>
+  </view>
+</view>

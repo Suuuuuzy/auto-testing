@@ -1,0 +1,13 @@
+<template name="toast">
+  <view class="toast_content_box" wx:if="{{isHide}}">
+    <view class="toast_content">
+      <view class="text-center" wx:if="{{icon}}">
+        <i
+          class="iconfont icon-{{icon}} text-{{color?color:'white'}}"
+          style="font-size: 100rpx"
+        ></i>
+      </view>
+      <view class=" toast_content_text {{isUy?'rtl':''}}"> {{content}} </view>
+    </view>
+  </view>
+</template>

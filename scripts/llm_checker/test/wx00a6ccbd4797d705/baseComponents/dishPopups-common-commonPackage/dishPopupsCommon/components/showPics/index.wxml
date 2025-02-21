@@ -1,0 +1,11 @@
+<view class="wrap _div data-v-7f543e48" style="{{customStyle}}">
+  <image
+    bindtap="__e"
+    class="image data-v-7f543e48"
+    data-event-opts="{{[ [ 'tap',[ [ 'preview',[index] ] ] ] ]}}"
+    mode="widthFix"
+    src="{{item}}"
+    wx:for="{{imgList}}"
+    wx:key="index"
+  ></image>
+</view>

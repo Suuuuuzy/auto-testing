@@ -1,0 +1,74 @@
+<view class="canvas-container">
+  <view
+    animation="{{animationData}}"
+    class="gb-wheel-content"
+    style="width:{{size.w}}rpx;height:{{size.h}}rpx;"
+  >
+    <view class="canvas-list">
+      <view
+        class="canvas-item2"
+        style="transform: rotate({{item.item2Deg}});background-color:{{awardsConfig.awards.length==2?item.color:''}};opacity:{{awardsConfig.awards.length==2?item.opacity:awardsConfig.awards.length==3?item.opacity:''}};width:{{size.h}}rpx;height:{{size.h/2-2}}rpx;transform-origin:{{size.h/2}}rpx {{size.h/2}}rpx"
+        wx:for="{{awardsConfig.awards}}"
+        wx:key="key"
+      >
+        <view
+          class="canvas-item2-after"
+          style="transform: rotate({{item.afterDeg}});background-color:{{item.color}};opacity:{{awardsConfig.awards.length==3?'':item.opacity}};width:{{size.h/2}}rpx;height:{{size.h/2}}rpx;transform-origin: {{size.h/2}}rpx {{size.h/2}}rpx"
+        ></view>
+        <view
+          class="canvas-item2-after"
+          style="background-color:{{item.color}};width:{{size.h/2}}rpx;height:{{size.h/2}}rpx;transform-origin: {{size.h/2}}rpx {{size.h/2}}rpx"
+          wx:if="{{awardsConfig.awards.length==3}}"
+        ></view>
+      </view>
+    </view>
+    <view class="gb-wheel-list">
+      <view
+        class="gb-wheel-item"
+        data-index="{{index}}"
+        wx:for="{{awardsConfig.awards}}"
+        wx:key="key"
+      >
+        <view
+          class="gb-wheel-icontent uy"
+          style="height:262rpx;overflow:hidden;font-size:{{item.name.length>9?'20':'26'}}rpx;line-height:{{item.name.length>9?'20':'26'}}rpx;width:120rpx;padding:5rpx;transform: rotate({{index*turnNum}}turn);transform-origin: 50% {{size.h/2-40}}rpx"
+        >
+          <view>
+            <text style="word-break: break-all; color: #000"
+              >{{item.name}}</text
+            >
+          </view>
+          <view style="padding-top: 5rpx">
+            <image
+              mode="fitCenter"
+              src="{{item.imgUrl}}"
+              style="width: 110rpx; height: 110rpx"
+            ></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <image
+    bindtap="_zhuan"
+    mode="widthFix"
+    src="https://etwarjan.oss-cn-zhangjiakou.aliyuncs.com/icons/turntable/turntable_start.png"
+    style="width:{{size.h/4.4}}rpx;position:absolute;left:41%;top:38%;margin-top:-11rpx;z-index:9999;display:{{block1}}"
+  ></image>
+  <image
+    mode="widthFix"
+    src="https://etwarjan.oss-cn-zhangjiakou.aliyuncs.com/icons/turntable/turntable_start.png"
+    style="width:{{size.h/4.4}}rpx;position:absolute;left:41%;top:38%;margin-top:-11rpx;z-index:9999;display:{{block2}}"
+  ></image>
+  <image
+    bindtap="reset"
+    mode="widthFix"
+    src="https://etwarjan.oss-cn-zhangjiakou.aliyuncs.com/icons/turntable/turntable_restart.png"
+    style="width:{{size.h/4.4}}rpx;left:41%;top:38%;position: absolute;margin-top:-11rpx;z-index:9999;display:{{block3}}"
+  ></image>
+  <image
+    mode="widthFix"
+    src="https://etwarjan.oss-cn-zhangjiakou.aliyuncs.com/icons/turntable/turntable_restart.png"
+    style="width:{{size.h/4.4}}rpx;position:absolute;left:41%;top:38%;margin-top:-11rpx;z-index:9999;display:{{block4}}"
+  ></image>
+</view>

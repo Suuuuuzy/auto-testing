@@ -1,0 +1,125 @@
+<view class="page">
+  <view
+    style="display: flex; flex-direction: column; background-color: #ffffff"
+  >
+    <image
+      class="mine_bg_style"
+      mode="scaleToFill"
+      src="../../static/images/bg_mine.png"
+    ></image>
+    <image
+      bindtap="__e"
+      class="mine_photo_style"
+      data-event-opts="{{[ [ 'tap',[ [ 'click_mine_btnFun',['$event'] ] ] ] ]}}"
+      mode="scaleToFill"
+      src="{{avatar==''||avatar==undefined?'../../static/images/icon_mine_photo.png':avatar}}"
+    ></image>
+    <view
+      bindtap="__e"
+      class="name_style"
+      data-event-opts="{{[ [ 'tap',[ [ 'click_mine_btnFun',['$event'] ] ] ] ]}}"
+      >{{nickname==null?'--':nickname}}</view
+    >
+    <view class="mine_zw_style"></view>
+    <view class="card_style">
+      <view
+        bindtap="__e"
+        class="uni-list-cell uni-list-cell-pd"
+        data-event-opts="{{[ [ 'tap',[ [ 'click_manager_btnFun',['$event'] ] ] ] ]}}"
+        style="margin-top: 30rpx"
+      >
+        <image
+          class="gl_icon_size gl_margin_lr"
+          mode="aspectFit"
+          src="../../static/images/iv_car_manager_icon.png"
+        ></image>
+        <view class="uni-list-cell-db gl_color_title">车辆管理</view>
+        <text class="uni-icon gl_color_desc"></text>
+      </view>
+      <view
+        bindtap="__e"
+        class="uni-list-cell uni-list-cell-pd"
+        data-event-opts="{{[ [ 'tap',[ [ 'click_common_set',['$event'] ] ] ] ]}}"
+      >
+        <image
+          class="gl_icon_size gl_margin_lr"
+          mode="aspectFit"
+          src="../../static/images/icon_common_set.png"
+        ></image>
+        <view class="uni-list-cell-db gl_color_title">通用设置</view>
+        <text class="uni-icon gl_color_desc"></text>
+      </view>
+      <view
+        bindtap="__e"
+        class="uni-list-cell uni-list-cell-pd"
+        data-event-opts="{{[ [ 'tap',[ [ 'click_accountFun',['$event'] ] ] ] ]}}"
+      >
+        <image
+          class="gl_icon_size gl_margin_lr"
+          mode="aspectFit"
+          src="../../static/images/icon_one_key_phone.png"
+        ></image>
+        <view class="uni-list-cell-db gl_color_title">一键呼叫</view>
+        <text class="uni-icon gl_color_desc"></text>
+      </view>
+      <view
+        bindtap="__e"
+        class="uni-list-cell uni-list-cell-pd"
+        data-event-opts="{{[ [ 'tap',[ [ 'click_feedbackFun',['$event'] ] ] ] ]}}"
+      >
+        <image
+          class="gl_icon_size gl_margin_lr"
+          mode="aspectFit"
+          src="../../static/images/icon_feedback.png"
+        ></image>
+        <view class="uni-list-cell-db gl_color_title">意见反馈</view>
+        <text class="uni-icon gl_color_desc"></text>
+      </view>
+      <view
+        bindtap="__e"
+        class="uni-list-cell uni-list-cell-pd"
+        data-event-opts="{{[ [ 'tap',[ [ 'click_message',['$event'] ] ] ] ]}}"
+      >
+        <image
+          class="gl_icon_size gl_margin_lr"
+          mode="aspectFit"
+          src="../../static/images/icon_mine_msg.png"
+        ></image>
+        <view class="uni-list-cell-db gl_color_title">消息</view>
+        <text class="uni-icon gl_color_desc"></text>
+      </view>
+    </view>
+  </view>
+  <view
+    class="{{[showSosDialog?'d_report_page':'view_hidde']}}"
+    style="z-index: 3"
+  >
+    <view class="d_report_overlay"></view>
+    <view class="d_phone_layout_style">
+      <scroll-view scrollX="false" scrollY="true" style="height: 380rpx">
+        <view
+          bindtap="__e"
+          class="phone_item_layout_sytle"
+          data-event-opts="{{[ [ 'tap',[ [ 'callSosPhone',['$0'],[ [ ['sosPhones','',index] ] ] ] ] ] ]}}"
+          data-value="{{item}}"
+          wx:for="{{sosPhones}}"
+          wx:key="index"
+        >
+          <view class="phone_text_style">{{item.name+':'+item.telephone}}</view>
+          <image
+            class="icon_phone_style"
+            data-value="{{item.phone}}"
+            mode="aspectFit"
+            src="../../static/images/icon_phone.png"
+          ></image>
+        </view>
+      </scroll-view>
+      <view
+        bindtap="__e"
+        class="sos_cancel_style"
+        data-event-opts="{{[ [ 'tap',[ [ 'sos_cancelFun',['$event'] ] ] ] ]}}"
+        >取消</view
+      >
+    </view>
+  </view>
+</view>

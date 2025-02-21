@@ -1,0 +1,77 @@
+<view class="bottom border-box bcf _div data-v-499ab5a8">
+  <view class="info mb10 _div data-v-499ab5a8">
+    <view class="flexBetween _div data-v-499ab5a8">
+      <price
+        addCartBar="{{addCartBar}}"
+        bind:__l="__l"
+        class="data-v-499ab5a8"
+        context="{{context}}"
+        onlyShowOriginalPrice="{{onlyShowOriginalPrice}}"
+        popType="{{popType}}"
+        vueId="264bc7ee-1"
+      ></price>
+      <view class="_div data-v-499ab5a8">
+        <slot></slot>
+      </view>
+    </view>
+    <view class="cook ellipsis f22 _div data-v-499ab5a8"
+      >{{''+addCartBar.selText+''}}</view
+    >
+  </view>
+  <view class="flex _div data-v-499ab5a8">
+    <view
+      bindtap="__e"
+      class="{{['btn','preBtn','tc','mr20r','bcf','f24','c3','_div','data-v-499ab5a8',show2Btns&&showAddCart?'preBtnSmall':'']}}"
+      data-event-opts="{{[ [ 'tap',[ [ 'prevStep',['$event'] ] ] ] ]}}"
+      wx:if="{{step===1}}"
+    >
+      <label
+        class="iconfont icon-zuo2 _span data-v-499ab5a8"
+        wx:if="{{show2Btns&&showAddCart}}"
+      ></label>
+      <label class="_span data-v-499ab5a8" wx:else>上一步</label>
+    </view>
+    <view
+      bindtap="__e"
+      class="{{['nextBtn','btn','tc','bcf','f32','pr','_div','data-v-499ab5a8',!show2Btns&&showAddCart||!showAddCart?'flex1':'']}}"
+      data-event-opts="{{[ [ 'tap',[ [ 'nextStep',[ [ 'o',['addDishMode',isEqDish&&!show2Btns?'2':'1'] ] ] ] ] ] ]}}"
+      style="{{$root.s0}}"
+      >{{''+(showAddCart?'加入购物车':'下一步')+''}}<view
+        class="eqLimitTips tc pa f20 fcf _div data-v-499ab5a8"
+        wx:if="{{showAddCart&&showLimitInSingleBtn&&!show2Btns}}"
+        >{{'限'+addCartBar.equityLimit+'份'}}</view
+      >
+    </view>
+    <view
+      bindtap="__e"
+      class="fcf ml20r btn tc bcf flex1 flexCenter pr _div data-v-499ab5a8"
+      data-event-opts="{{[ [ 'tap',[ [ 'nextStep',[ [ 'o',['addDishMode','2'] ] ] ] ] ] ]}}"
+      style="{{'background-color:'+addCartBar.themeColor+';'}}"
+      wx:if="{{showAddCart&&show2Btns}}"
+    >
+      <block
+        wx:if="{{addCartBar.equityCardItemData.discountType=='1'||addCartBar.equityCardItemData.discountType=='2'}}"
+      >
+        <label class="f32 _span data-v-499ab5a8"
+          >{{'￥'+addCartBar.eqPrice}}</label
+        >
+        <label class="f32 _span data-v-499ab5a8">权益价加购</label>
+      </block>
+      <block wx:else>
+        <block wx:if="{{addCartBar.equityCardItemData.discountType=='3'}}">
+          <label class="f32 _span data-v-499ab5a8"
+            >{{'￥'+addCartBar.equityCardItemData.equityPrice}}</label
+          >
+          <label class="f32 _span data-v-499ab5a8"
+            >{{addCartBar.equityCardItemData.itemAmount+'选'+addCartBar.equityCardItemData.optionalAmount}}</label
+          >
+        </block>
+      </block>
+      <view
+        class="eqLimitTips tc pa f20 fcf _div data-v-499ab5a8"
+        wx:if="{{isEqDish&&equityCardLimit}}"
+        >{{''+equityCardLimit+''}}</view
+      >
+    </view>
+  </view>
+</view>

@@ -1,0 +1,121 @@
+<view class="_div data-v-dfc19262">
+  <view class="{{['cart_block','_div','data-v-dfc19262','popType'+popType]}}">
+    <view
+      class="cart_block_shadow _div data-v-dfc19262"
+      wx:if="{{popType=='1'}}"
+    ></view>
+    <view class="_div data-v-dfc19262" wx:if="{{popType=='2'}}">
+      <view
+        class="_div data-v-dfc19262"
+        style="{{'width:100%;height:1px;'+'background:'+addCartBar.themeColor+';'}}"
+      ></view>
+    </view>
+    <calc-discount-price
+      addCartBar="{{addCartBar}}"
+      bind:__l="__l"
+      class="data-v-dfc19262"
+      processedPrice="{{processedPrice}}"
+      vueId="18105327-1"
+      wx:if="{{showPreferentialPrice}}"
+    ></calc-discount-price>
+    <view
+      class="{{['cart_block_inner','_div','data-v-dfc19262',showTcDiscountFormula?'cart_block_formula':'']}}"
+    >
+      <view
+        class="tcDetailTips _div data-v-dfc19262"
+        wx:if="{{!addCartBar.canAddCart&&addCartBar.countTipsNum>0}}"
+        >{{''+addCartBar.countTipsTxt}}<label
+          class="_span data-v-dfc19262"
+          style="color: #e59b6b"
+          >{{addCartBar.countTipsNum}}</label
+        >份哦~<view class="triangle _div data-v-dfc19262"></view>
+      </view>
+      <price
+        addCartBar="{{addCartBar}}"
+        bind:__l="__l"
+        class="data-v-dfc19262"
+        context="{{context}}"
+        isTcPop="{{isTcPop}}"
+        onlyShowOriginalPrice="{{onlyShowOriginalPrice}}"
+        popType="{{popType}}"
+        vueId="18105327-2"
+      ></price>
+      <view
+        class="normal_selText flexAlignCenter _div data-v-dfc19262"
+        wx:if="{{popType==1&&selText}}"
+      >
+        <view
+          bindtap="__e"
+          class="{{['iconfont','f34','collectDish','_i','data-v-dfc19262',isHighLight?'icon-yishoucang':'icon-shoucangcaipin']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'collected',['$event'] ] ] ] ]}}"
+          style="{{isHighLight?'color:'+addCartBar.themeColor:'color: #999'}}"
+          wx:if="{{showCollect}}"
+        ></view>
+        <view class="f24 ellipsis1 fc9 _div data-v-dfc19262" wx:if="{{selText}}"
+          >{{''+selText+''}}</view
+        >
+      </view>
+      <view class="add_des_btn flexCenterEnd _div data-v-dfc19262">
+        <slot></slot>
+      </view>
+    </view>
+    <view class="woods_selText _div data-v-dfc19262" wx:if="{{popType==2}}">
+      <view class="f24 ellipsis2 _div data-v-dfc19262" wx:if="{{selText}}"
+        >{{''+selText+''}}</view
+      >
+    </view>
+    <view class="eqBtnWrap flex _div data-v-dfc19262" wx:if="{{show2Btns}}">
+      <view
+        bindtap="__e"
+        class="addCartBtn btn left f32 _div data-v-dfc19262"
+        data-event-opts="{{[ [ 'tap',[ [ 'addDishToCart',['1'] ] ] ] ]}}"
+        style="{{$root.s0}}"
+        >{{addCartBar.addCartText||'加入购物车'}}</view
+      >
+      <view
+        bindtap="__e"
+        class="flexCenter addCartBtn btn right flex1 ml10r pr _div data-v-dfc19262"
+        data-event-opts="{{[ [ 'tap',[ [ 'addDishToCart',['2'] ] ] ] ]}}"
+        style="{{$root.s1}}"
+      >
+        <block
+          wx:if="{{addCartBar.equityCardItemData.discountType=='1'||addCartBar.equityCardItemData.discountType=='2'}}"
+        >
+          <label class="f32 _span data-v-dfc19262"
+            >{{'￥'+addCartBar.eqPrice}}</label
+          >
+          <label class="f32 ml10r _span data-v-dfc19262">权益价加购</label>
+        </block>
+        <block wx:else>
+          <block wx:if="{{addCartBar.equityCardItemData.discountType=='3'}}">
+            <label class="f32 _span data-v-dfc19262"
+              >{{'￥'+addCartBar.equityCardItemData.equityPrice}}</label
+            >
+            <label class="f32 ml10r _span data-v-dfc19262"
+              >{{addCartBar.equityCardItemData.itemAmount+'选'+addCartBar.equityCardItemData.optionalAmount}}</label
+            >
+          </block>
+        </block>
+        <view
+          class="eqLimitTips tc pa f20 fcf _div data-v-dfc19262"
+          wx:if="{{equityCardLimit}}"
+          >{{''+equityCardLimit+''}}</view
+        >
+      </view>
+    </view>
+    <view class="btnWrap pr _div data-v-dfc19262" wx:else>
+      <view
+        bindtap="__e"
+        class="{{['addCartBtn','f28','_div','data-v-dfc19262',popType==2?'woods_addCartBtn':'']}}"
+        data-event-opts="{{[ [ 'tap',[ [ 'addDishToCart',[isEqDish?'2':'1'] ] ] ] ]}}"
+        style="{{$root.s2}}"
+        >{{''+(addCartBar.addCartText||'加入购物车')+''}}</view
+      >
+      <view
+        class="eqLimitTips tc pa f20 fcf _div data-v-dfc19262"
+        wx:if="{{showLimitInSingleBtn&&equityCardLimit}}"
+        >{{''+equityCardLimit+''}}</view
+      >
+    </view>
+  </view>
+</view>

@@ -1,0 +1,387 @@
+<view style="{{showInvest?'overflow:hidden;height:calc(100vh - 150rpx) ;':''}}">
+  <view class="user-vip">
+    <view class="info">
+      <view class="h1" wx:if="{{userInfo.level=='0'}}">
+        <image src="/images/icon-head.jpg"></image>{{userInfo.money}}</view
+      >
+      <view class="p" wx:if="{{userInfo.level_deadline=='已过期'}}"
+        >会员已过期</view
+      >
+      <view class="p" wx:else
+        >{{userInfo.level=='1'?'到期时间：'+userInfo.level_deadline:'无印豆剩余>'}}</view
+      >
+      <view class="p"
+        >ID:{{userInfo.id}} {{userInfo.level=='1'?'
+        无印豆剩余:'+userInfo.money:''}}</view
+      >
+    </view>
+    <view bindtap="showInvest" class="btn" wx:if="{{isInvest}}">购买会员</view>
+  </view>
+  <view class="tishi" wx:if="{{appmsg}}">
+    <image mode="" src="/images/icon-msg.png"></image>
+    <view bindtap="copyAppName" class="content">
+      应用商店搜索[{{isios?'小葩水印':'小葩去水印'}}] 提高下载成功率，也避免走丢
+      >
+    </view>
+    <button openType="contact">联系客服</button>
+  </view>
+  <view class="task-box" wx:if="{{task.share.show}}">
+    <view class="sign-box share">
+      <navigator class="left1" hoverClass="on" url="./share/share">
+        <image class="im" mode="" src="/images/icon-hb.png"></image>
+        <view class="l">
+          <view class="title">邀请好友得现金</view>
+          <view class="share-box">
+            <view class="left">
+              <view class="">
+                有效邀请 : <text>{{task.share.data}}人</text>
+              </view>
+              <view class="">
+                获得佣金 : <text>￥{{userInfo.total_price}}</text>
+              </view>
+              <view class="">
+                获得 : <text>{{task.share.data*task.share.config}}无印豆</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+      <view class="right">
+        <view class="title">
+          <view></view>
+          <view bindtap="showShareMsg" class="share-msg-btn">
+            邀请规则 <image mode="" src="/images/icon-xq.png"></image>
+          </view>
+        </view>
+        <button>
+          <navigator hoverClass="no" url="./share/sc?parent_id={{userInfo.id}}"
+            >立即邀请</navigator
+          >
+        </button>
+      </view>
+    </view>
+  </view>
+  <view class="task-box" wx:if="{{task.sign.show&&userInfo.level=='0'}}">
+    <view class="sign-box">
+      <view class="title"
+        >已连续签到 <text>{{task.sign.data.length}}</text> 天</view
+      >
+      <view class="item-box">
+        <view class="i off" wx:for="{{task.sign.config}}">
+          <view class="img" wx:if="{{item==1||task.sign.data.length>index}}">
+            <image
+              src="/images/icon-bi{{task.sign.data[index]?'-on':'1'}}.png"
+            ></image>
+          </view>
+          <view class="img hb" wx:else>
+            <view class="multiple">{{item}}倍</view>
+            <image src="/images/icon-bi-hb.png"></image>
+          </view>
+          <view
+            class="msg"
+            style="color: #ccc"
+            wx:if="{{task.sign.data[index]}}"
+          >
+            已领取
+          </view>
+          <view class="msg" wx:else> {{index+1}}天 </view>
+        </view>
+      </view>
+      <view
+        bindtap="{{userInfo.issign?'':'onSign'}}"
+        class="btn {{userInfo.issign?'off':''}}"
+        >{{userInfo.issign?'已签到':'签到'}}</view
+      >
+    </view>
+  </view>
+  <view class="task-box" wx:if="{{task.ad.show&&userInfo.level=='0'}}">
+    <view class="sign-box ad">
+      <view class="title"
+        >看广告视频额外得 <text>{{task.ad.count}}</text> 无印豆</view
+      >
+      <view class="item-box">
+        <view class="i" wx:for="{{task.ad.config}}">
+          <view class="img">
+            <image
+              src="/images/icon-bi{{index<task.ad.data?'-on':''}}.png"
+            ></image>
+          </view>
+          <view class="msg" style="color: #ccc" wx:if="{{index<task.ad.data}}">
+            已领取
+          </view>
+          <view class="msg" wx:else> +{{item}}无印豆 </view>
+        </view>
+      </view>
+      <view
+        bindtap="{{task.ad.data>=task.ad.config.length?'':'onShowAd'}}"
+        class="btn {{task.ad.data>=task.ad.config.length?'off':''}}"
+        >{{task.ad.data>=task.ad.config.length?'已完成':'去看视频'}}</view
+      >
+    </view>
+  </view>
+  <view class="other">
+    <view class="h1">其他</view>
+    <navigator class="item" url="/pages/history/history">
+      <view class="icon">
+        <image src="/images/icon-history.png"></image>
+      </view>
+      链接去水印历史查询
+    </navigator>
+    <navigator appId="{{showadappid}}" class="item" target="miniProgram">
+      <view class="icon">
+        <image src="/images/icon-ad2.png"></image>
+      </view>
+      看广告免费版
+    </navigator>
+    <button
+      bindtap="goHtml"
+      class="item"
+      data-url="https://apis.ddfans.com/bian/public/html/douyin/"
+      hoverClass="on"
+    >
+      <view class="icon">
+        <image src="/images/icon-wt.png"></image>
+      </view>
+      常见问题有哪些？
+    </button>
+    <button class="item" openType="feedback">
+      <view class="icon">
+        <image src="/images/icon-fk.png"></image>
+      </view>
+      APP建议或异常反馈
+    </button>
+    <button class="item" openType="openSetting">
+      <view class="btn icon">
+        <image src="/images/icon-qx.png"></image>
+      </view>
+      权限管理
+    </button>
+    <button bindtap="getCode" class="item">
+      <view class="btn icon">
+        <image src="/images/icon-code.png"></image>
+      </view>
+      小程序二维码
+    </button>
+    <button
+      bindtap="showInvest"
+      class="item"
+      wx:if="{{invest_msg&&investShow}}"
+    >
+      <view class="btn icon">
+        <image src="/images/icon-vip2.png"></image>
+      </view>
+      {{userInfo.level=='1'?'会员到期时间：'+userInfo.level_deadline:invest_msg}}
+    </button>
+    <button
+      bindtap="showMsg"
+      class="item"
+      data-img="https://apis.ddfans.com/bian/public/static/image/qsy/msg/msg-wuyindou-0.jpg"
+    >
+      <view class="btn icon">
+        <image src="/images/icon-head.jpg"></image>
+      </view>
+      会员及无印币规则
+    </button>
+  </view>
+  <button id="content" openType="contact">
+    遇到任何问题，请联系<text>客服</text>
+  </button>
+</view>
+<view class="invest-bg" wx:if="{{showInvest}}">
+  <view class="invest-box">
+    <image class="top" mode="widthFix" src="/images/top.png"></image>
+    <view bindtap="hideInvest" class="btn close">
+      <image src="/images/icon-x.png"></image>
+    </view>
+    <view class="h1">
+      <image mode="widthFix" src="/images/jiaru.png"></image>
+    </view>
+    <view class="p">加入会员不限使用，高速下载，客服优先</view>
+    <block wx:if="{{isInvest}}">
+      <view class="invest-money">
+        <view
+          bindtap="selectMoney"
+          class="li  {{item.money==money?'on':''}} {{item.flag=='c'?'hot':''}} {{item.flag=='a'?'hot2':''}}"
+          data-money="{{item.money}}"
+          wx:if="{{item.type==1||userInfo.level=='0'}}"
+          wx:for="{{moneyData}}"
+        >
+          <view class="date">
+            <view class="m"
+              >{{item.date}}{{item.type==2?'次':'天'}}
+              <view class="s">
+                <text wx:if="{{item.type==2}}">= {{item.date}}枚无印豆</text>
+              </view>
+            </view>
+          </view>
+          <view class="money"> <text>￥</text>{{item.money}}</view>
+          <view class="title" wx:if="{{item.title!=''}}">
+            <image
+              mode="heightFix"
+              src="/images/hot.png"
+              wx:if="{{item.flag=='c'}}"
+            ></image
+            >{{item.title}}</view
+          >
+          <view class="typename" wx:if="{{item.type==1}}"
+            >{{item.typename}}</view
+          >
+          <view class="bottom" wx:if="{{item.type==2}}"
+            >不支持视频号和长时去重</view
+          >
+        </view>
+      </view>
+      <button bindtap="recharge" class="btn money-ok">
+        <block wx:if="{{!coupon}}"> 立即开通 </block>
+        <block wx:elif="{{money!=0}}">
+          立即以{{couponMoney}}元购买(限时{{couponTimeShow}})
+        </block>
+        <block wx:else>
+          {{couponData.discount*100}}%优惠(限时{{couponTimeShow}})
+        </block>
+      </button>
+      <view class="msg2">
+        <view>仅月/季/年卡会员支持视频号和长时去重</view>
+        <view>会员每天视频号100次/视频去重50次/其他服务不限次数</view>
+        <view>本服务购买后即刻生效，一旦付款不接受退款</view>
+      </view>
+    </block>
+    <view class="invest-money-msg" wx:else>
+      <view>由于相关规范</view> 充值功能暂时不可用
+      <view style="color: #f0c045">有需要联系客服</view>
+    </view>
+  </view>
+</view>
+<view class="invest-bg" wx:if="{{shareMsg}}">
+  <view class="invest-box">
+    <view bindtap="hideShareMsg" class="btn close">
+      <image src="/images/icon-x.png"></image>
+    </view>
+    <view class="h1">邀请规则</view>
+    <view
+      class="p"
+      style="
+        text-align: left;
+        margin-top: 20rpx;
+        font-size: 26rpx;
+        font-weight: initial;
+      "
+    >
+      <view> 1.成功邀请有效用户一人，获得10枚无印豆。</view>
+      <view>2.成功邀请有效用户一人，可按等级获得分佣。</view>
+      <view> 3.最终解析权归本平台所有。</view>
+    </view>
+  </view>
+</view>
+<view class="ad-ok-bg2" wx:if="{{contact}}">
+  <view class="ad-ok2">
+    <view
+      class="msg"
+      style="
+        padding-top: 30rpx;
+        padding-bottom: 60rpx;
+        font-size: 40rpx;
+        font-weight: bold;
+      "
+      >进入客服</view
+    >
+    <view class="btn-box">
+      <view bindtap="hideContact" class="btn" style="background: #ddd">
+        <text>取消</text>
+      </view>
+      <button class="btn" openType="contact" style="background: #80be1f">
+        <text>确认</text>
+      </button>
+    </view>
+  </view>
+</view>
+<view class="ad-ok-bg2" wx:if="{{appback}}">
+  <view class="ad-ok2">
+    <view class="msg" style="padding-top: 30rpx; padding-bottom: 60rpx">
+      <view
+        style="
+          font-size: 40rpx;
+          font-weight: bold;
+          padding-bottom: 20rpx;
+          color: #f00;
+        "
+      >
+        感谢付款完成
+      </view>
+      <view style="font-weight: bold">有问题联系客服</view>
+    </view>
+    <view class="btn-box">
+      <view bindtap="hideApp" class="btn" style="background: #ddd">
+        <text>取消</text>
+      </view>
+      <button
+        bindlaunchapp="hideApp"
+        class="btn"
+        openType="launchApp"
+        style="background: #80be1f"
+      >
+        <text>返回APP</text>
+      </button>
+    </view>
+  </view>
+</view>
+<view class="ad-ok-bg2" wx:if="{{isSign&&investShow}}">
+  <view class="ad-ok2">
+    <view class="msg" style="padding-top: 30rpx; padding-bottom: 60rpx"
+      >用户需要授权</view
+    >
+    <view class="btn-box">
+      <navigator
+        class="btn"
+        openType="switchTab"
+        style="background: #ddd"
+        url="/pages/watermark/watermark"
+      >
+        <text>取消</text>
+      </navigator>
+      <button bindtap="getUserInfo" class="btn" style="background: #80be1f">
+        <text>确认</text>
+      </button>
+    </view>
+  </view>
+</view>
+<view class="ad-ok-bg2" wx:if="{{isauthorize}}">
+  <view class="ad-ok2">
+    <view class="msg" style="padding-top: 30rpx; padding-bottom: 60rpx">
+      <view
+        style="
+          font-size: 40rpx;
+          font-weight: bold;
+          padding-bottom: 20rpx;
+          color: #f00;
+        "
+      >
+        授权成功
+      </view>
+    </view>
+    <view class="btn-box">
+      <button
+        appParameter="{{'token:'+token}}"
+        bindlaunchapp="hideApp"
+        class="btn"
+        openType="launchApp"
+        style="background: #80be1f"
+      >
+        <text>返回APP</text>
+      </button>
+    </view>
+  </view>
+</view>
+<block wx:if="{{isInvest&&couponData.show&&!showInvest}}">
+  <view bindtap="hideInvest" class="ad-ok-bg3"></view>
+  <view bindtap="showInvest" class="ad-ok3">
+    <image mode="" src="/images/bg_sgyh.png"></image>
+    <view class="m">
+      <view>恭喜你获得</view>
+      <view class="h2">首购<text>{{couponData.discount*100}}%</text>优惠</view>
+    </view>
+    <view class="time">
+      福利剩余 <view class="t">{{couponTimeShow}}</view>有效
+    </view>
+  </view>
+</block>

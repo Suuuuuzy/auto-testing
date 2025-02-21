@@ -1,0 +1,191 @@
+<view>
+  <view class="uni-list">
+    <view class="uni-list-cell uni-list-cell-pd">
+      <view class="uni-list-cell-db gl_color_title">GPS开关</view>
+      <switch
+        bindchange="__e"
+        checked="{{gpsSwitch}}"
+        color="#FF3333"
+        data-event-opts="{{[ [ 'change',[ [ 'change_gps',['$event'] ] ] ] ]}}"
+      ></switch>
+    </view>
+    <view class="uni-list-cell uni-list-cell-pd">
+      <view class="uni-list-cell-db gl_color_title">维修模式</view>
+      <switch
+        bindchange="__e"
+        checked="{{maintainMode}}"
+        color="#FF3333"
+        data-event-opts="{{[ [ 'change',[ [ 'change_maintain',['$event'] ] ] ] ]}}"
+      ></switch>
+    </view>
+    <view class="uni-list-cell uni-list-cell-pd">
+      <view class="uni-list-cell-db gl_color_title">自动锁车</view>
+      <switch
+        bindchange="__e"
+        checked="{{gpsAutoLock}}"
+        color="#FF3333"
+        data-event-opts="{{[ [ 'change',[ [ 'change_auto_lock',['$event'] ] ] ] ]}}"
+      ></switch>
+    </view>
+  </view>
+  <view class="uni-list" style="margin-top: 20rpx">
+    <view
+      bindtap="__e"
+      class="uni-list-cell uni-list-cell-pd"
+      data-event-opts="{{[ [ 'tap',[ [ 'click_push',['$event'] ] ] ] ]}}"
+    >
+      <view class="uni-list-cell-db gl_color_title">推送开关</view>
+      <text class="uni-icon gl_color_desc"></text>
+    </view>
+    <view
+      bindtap="__e"
+      class="uni-list-cell uni-list-cell-pd"
+      data-event-opts="{{[ [ 'tap',[ [ 'click_dhsj',['$event'] ] ] ] ]}}"
+    >
+      <view class="uni-list-cell-db gl_color_title">点火时间</view>
+      <text class="gl_color_desc uni-text-small">{{ignitionValue}}</text>
+      <text class="uni-icon gl_color_desc"></text>
+    </view>
+    <view
+      bindtap="__e"
+      class="uni-list-cell uni-list-cell-pd"
+      data-event-opts="{{[ [ 'tap',[ [ 'click_zdsz',['$event'] ] ] ] ]}}"
+    >
+      <view class="uni-list-cell-db gl_color_title">震动设置</view>
+      <text class="gl_color_desc uni-text-small"
+        >{{vib_type_text[gpsVibrateType]}}</text
+      >
+      <text class="uni-icon gl_color_desc"></text>
+    </view>
+  </view>
+  <view class="uni-list" style="margin-top: 20rpx">
+    <view
+      bindtap="__e"
+      class="uni-list-cell uni-list-cell-pd"
+      data-event-opts="{{[ [ 'tap',[ [ 'click_clzy',['$event'] ] ] ] ]}}"
+    >
+      <view class="uni-list-cell-db gl_color_title">车辆转移</view>
+      <text class="uni-icon gl_color_desc"></text>
+    </view>
+    <view
+      bindtap="__e"
+      class="uni-list-cell uni-list-cell-pd"
+      data-event-opts="{{[ [ 'tap',[ [ 'click_car_info',['$event'] ] ] ] ]}}"
+    >
+      <view class="uni-list-cell-db gl_color_title">修改车辆信息</view>
+      <text class="uni-icon gl_color_desc"></text>
+    </view>
+    <view
+      bindtap="__e"
+      class="uni-list-cell uni-list-cell-pd"
+      data-event-opts="{{[ [ 'tap',[ [ 'click_delete_car',['$event'] ] ] ] ]}}"
+    >
+      <view class="uni-list-cell-db gl_color_title">删除车辆</view>
+      <text class="uni-icon gl_color_desc"></text>
+    </view>
+  </view>
+  <uni-popup
+    bind:__l="__l"
+    class="vue-ref"
+    data-ref="popup_dhsj"
+    maskClick="{{false}}"
+    type="center"
+    vueId="b464f460-1"
+    vueSlots="{{['default']}}"
+  >
+    <view class="pop_dhsj_root">
+      <view class="title">设置点火时间</view>
+      <view class="uni-list">
+        <radio-group
+          bindchange="__e"
+          data-event-opts="{{[ [ 'change',[ [ 'change_dhsj',['$event'] ] ] ] ]}}"
+        >
+          <label
+            class="uni-list-cell uni-list-cell-pd"
+            wx:for="{{dhsj_list}}"
+            wx:key="index"
+          >
+            <radio
+              checked="{{index==dhsj_index}}"
+              color="#FF3333"
+              value="{{index}}"
+            ></radio>
+            <view style="flex-grow: 1; text-align: left; padding-left: 20rpx"
+              >{{item.text}}</view
+            >
+          </label>
+        </radio-group>
+      </view>
+      <view class="dialog_btn_layout_style" style="width: 500rpx">
+        <button
+          bindtap="__e"
+          data-event-opts="{{[ [ 'tap',[ [ 'cancle_dhsj',['$event'] ] ] ] ]}}"
+          style="flex-grow: 1; margin: 10rpx"
+          type="default"
+        >
+          取消
+        </button>
+        <button
+          bindtap="__e"
+          data-event-opts="{{[ [ 'tap',[ [ 'confirm_dhsj',['$event'] ] ] ] ]}}"
+          style="flex-grow: 1; margin: 10rpx"
+          type="warn"
+        >
+          确定
+        </button>
+      </view>
+    </view>
+  </uni-popup>
+  <uni-popup
+    bind:__l="__l"
+    class="vue-ref"
+    data-ref="popup_zdsz"
+    maskClick="{{false}}"
+    type="center"
+    vueId="b464f460-2"
+    vueSlots="{{['default']}}"
+  >
+    <view class="pop_dhsj_root">
+      <view class="title">震动设置</view>
+      <view class="uni-list">
+        <radio-group
+          bindchange="__e"
+          data-event-opts="{{[ [ 'change',[ [ 'change_zdsz',['$event'] ] ] ] ]}}"
+        >
+          <label
+            class="uni-list-cell uni-list-cell-pd"
+            wx:for="{{vib_type_text}}"
+            wx:key="index"
+          >
+            <radio
+              checked="{{index==gpsVibrateType}}"
+              color="#FF3333"
+              value="{{index}}"
+            ></radio>
+            <view style="flex-grow: 1; text-align: left; padding-left: 20rpx"
+              >{{vib_type_text[index]}}</view
+            >
+          </label>
+        </radio-group>
+      </view>
+      <view class="dialog_btn_layout_style" style="width: 500rpx">
+        <button
+          bindtap="__e"
+          data-event-opts="{{[ [ 'tap',[ [ 'cancle_zdsz',['$event'] ] ] ] ]}}"
+          style="flex-grow: 1; margin: 10rpx"
+          type="default"
+        >
+          取消
+        </button>
+        <button
+          bindtap="__e"
+          data-event-opts="{{[ [ 'tap',[ [ 'confirm_zdsz',['$event'] ] ] ] ]}}"
+          style="flex-grow: 1; margin: 10rpx"
+          type="warn"
+        >
+          确定
+        </button>
+      </view>
+    </view>
+  </uni-popup>
+</view>

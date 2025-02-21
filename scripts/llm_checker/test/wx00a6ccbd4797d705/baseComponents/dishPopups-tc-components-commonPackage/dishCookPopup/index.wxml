@@ -1,0 +1,225 @@
+<weixin-popup
+  bind:__l="__l"
+  bind:close="__e"
+  class="data-v-5b30d4ee"
+  closeIconPosition="{{closePosition=='1'?'top-right':'out-top-left'}}"
+  closeOnClickOverlay="{{true}}"
+  closeable="{{true}}"
+  customStyle="{{popType==2?'border-radius:12rpx;':''}}"
+  data-event-opts="{{[ [ '^close',[ ['hidePopup'] ] ] ]}}"
+  position="center"
+  round="{{true}}"
+  show="{{showPopup}}"
+  translateY="-30px"
+  vueId="563082b0-1"
+  vueSlots="{{['default']}}"
+>
+  <view class="templateE _div data-v-5b30d4ee" wx:if="{{showPopup}}">
+    <view
+      class="middle_pop_content data-v-5b30d4ee"
+      style="{{'width:'+windowWidth*0.9+'px'+';'}}"
+    >
+      <view class="plr30r _div data-v-5b30d4ee">
+        <view
+          class="despInfoWrap _div data-v-5b30d4ee"
+          wx:if="{{showTcItemDetail}}"
+        >
+          <view class="mt30r swiperWrap _div data-v-5b30d4ee">
+            <image-video-swiper
+              aspectRatio="{{aspectRatio}}"
+              bind:__l="__l"
+              class="data-v-5b30d4ee vue-ref"
+              data-ref="imageVideoSwiper"
+              imgList="{{imgList}}"
+              indicator="{{true}}"
+              textColor="{{btnTxtColor}}"
+              themeColor="{{themeColor}}"
+              videoUrl="{{videoUrl}}"
+              vueId="{{'563082b0-2'+','+'563082b0-1'}}"
+              width="{{headSwipeWidth}}"
+            ></image-video-swiper>
+          </view>
+          <view class="fc3 f34 fw mt30r mb30r _div data-v-5b30d4ee"
+            >{{combineFlag&&!preCookString?dishData.realItemName:dishData.itemName}}</view
+          >
+        </view>
+        <view class="tc itemTitle f32 plr30r _div data-v-5b30d4ee" wx:else
+          >{{combineFlag&&!preCookString?dishData.realItemName:dishData.itemName}}</view
+        >
+        <view
+          class="dish_content _div data-v-5b30d4ee"
+          style="{{'max-height:'+maxHeight+'px'+';'}}"
+        >
+          <view
+            class="fc9 f24 mt10 mb30r _div data-v-5b30d4ee"
+            wx:for="{{desp}}"
+            wx:for-item="de"
+            wx:key="index"
+            >{{''+de+''}}</view
+          >
+          <view
+            class="setMealDishes _div data-v-5b30d4ee"
+            wx:if="{{!preCookString&&itemUnitList.length>1}}"
+          >
+            <view class="groupName _div data-v-5b30d4ee">规格</view>
+            <view class="flex flexWrap _div data-v-5b30d4ee">
+              <view
+                class="colorCheckBtn btnStyle _div data-v-5b30d4ee"
+                wx:for="{{$root.l0}}"
+                wx:key="index"
+              >
+                <view
+                  class="btnInStyle f24 gqMark flexCenter _div data-v-5b30d4ee"
+                  wx:if="{{item[$orig].guQingFlg=='1'}}"
+                  >{{''+(item[$orig].realUnName||' ')+item[$orig].addPriceText+''}}</view
+                >
+                <view
+                  bindtap="__e"
+                  class="btnInStyle f24 flexCenter _div data-v-5b30d4ee"
+                  data-event-opts="{{[ [ 'tap',[ [ 'changUnit',['$0'],[ [ ['itemUnitList','',index] ] ] ] ] ] ]}}"
+                  style="{{item.s0}}"
+                  wx:else
+                  >{{''+(item[$orig].realUnName||' ')+item[$orig].addPriceText+''}}</view
+                >
+              </view>
+            </view>
+          </view>
+          <view
+            class="setMealDishes _div data-v-5b30d4ee"
+            wx:for="{{$root.l2}}"
+            wx:key="index"
+          >
+            <view
+              class="_div data-v-5b30d4ee"
+              wx:if="{{item[$orig].allItemGuQingFlg?isShowGqMethod:true}}"
+            >
+              <view class="groupName _div data-v-5b30d4ee"
+                >{{''+item[$orig].groupName}}<label
+                  class="_span data-v-5b30d4ee"
+                  wx:if="{{item[$orig].maxcount>=2}}"
+                  >{{'（最多选'+item[$orig].maxcount+'份）'}}</label
+                >
+                <label
+                  class="mustSelTips _span data-v-5b30d4ee"
+                  wx:if="{{!selCookMap[item[$orig].groupId]['cookIsSel']&&showPopup}}"
+                  >必选请选择</label
+                >
+              </view>
+              <view class="flex flexWrap _div data-v-5b30d4ee">
+                <view
+                  class="_div data-v-5b30d4ee"
+                  wx:if="{{cookItem[$orig].guqingFlg==0||isShowGqMethod}}"
+                  wx:for="{{item.l1}}"
+                  wx:for-index="cookIndex"
+                  wx:for-item="cookItem"
+                  wx:key="cookIndex"
+                >
+                  <view
+                    class="colorCheckBtn btnStyle _div data-v-5b30d4ee"
+                    wx:if="{{cookItem[$orig].guqingFlg==1}}"
+                  >
+                    <view
+                      class="{{['btnInStyle','f24','gqMark','flexCenter','_div','data-v-5b30d4ee',item[$orig].selectModel==1||hasImgMap[item[$orig].groupId]?'btnInStyle1':'']}}"
+                      >{{''+cookItem[$orig].name+''}}</view
+                    >
+                  </view>
+                  <view
+                    class="colorCheckBtn btnStyle _div data-v-5b30d4ee"
+                    wx:else
+                  >
+                    <view
+                      bindtap="__e"
+                      class="{{['btnInStyle','f24','flexCenter','_div','data-v-5b30d4ee',item[$orig].selectModel==1||hasImgMap[item[$orig].groupId]?'btnInStyle1':'']}}"
+                      data-event-opts="{{[ [ 'tap',[ [ '_changeCook',['$0','$1'],[ [ ['copyCookStyle','',index] ],[ ['copyCookStyle','',index],['itemMakeList','',cookIndex] ] ] ] ] ] ]}}"
+                      style="{{cookItem.s1}}"
+                    >
+                      <image
+                        class="imageTafileName data-v-5b30d4ee"
+                        mode="aspectFill"
+                        src="{{cookItem[$orig].taFileName}}"
+                        wx:if="{{cookItem[$orig].taFileName}}"
+                      ></image
+                      >{{''+cookItem[$orig].name+(cookItem[$orig].addPr>0?'+'+cookItem[$orig].addPr+'元':'')+''}}<label
+                        class="_span data-v-5b30d4ee"
+                        style="{{'color:'+themeColor+';'+'padding-left:'+'10rpx'+';'}}"
+                        wx:if="{{isVipDisScale<1&&cookItem[$orig].addPr>0}}"
+                      >
+                        <label
+                          class="iconfont icon-hui f28 _span data-v-5b30d4ee"
+                        ></label
+                        >{{''+cookItem.m0+''}}</label
+                      >
+                      <label
+                        class="_span data-v-5b30d4ee"
+                        style="{{'color:'+themeColor+';'+'padding-left:'+'10rpx'+';'}}"
+                        wx:if="{{isNextVipDisScale<1&&cookItem[$orig].addPr>0}}"
+                      >
+                        <label
+                          class="iconfont icon-hui f28 _span data-v-5b30d4ee"
+                        ></label
+                        >{{''+cookItem.m1+''}}</label
+                      >
+                      <view
+                        class="_div data-v-5b30d4ee"
+                        style="margin-left: 16rpx"
+                        wx:if="{{selCookMap[item[$orig].groupId][cookItem[$orig].moId]>0&&item[$orig].selectModel==1&&cookItem[$orig].addPr>0}}"
+                      >
+                        <add-de-btn
+                          addBtnSize="{{1}}"
+                          bind:__l="__l"
+                          bind:minusFun="__e"
+                          bind:plusFun="__e"
+                          bind:shift="__e"
+                          class="data-v-5b30d4ee"
+                          data-event-opts="{{[ [ '^plusFun',[ [ 'addDelCookStyle',['$0','$1','add'],[ [ ['copyCookStyle','',index] ],[ ['copyCookStyle','',index],['itemMakeList','',cookIndex,'moId'] ] ] ] ] ],[ '^minusFun',[ [ 'addDelCookStyle',['$0','$1','del'],[ [ ['copyCookStyle','',index] ],[ ['copyCookStyle','',index],['itemMakeList','',cookIndex,'moId'] ] ] ] ] ],[ '^shift',[ ['shift'] ] ] ]}}"
+                          goodsBgColor="transparent"
+                          set="{{themeColor:themeColor,size:22,inputSize:22}}"
+                          trueNum="{{selCookMap[item[$orig].groupId][cookItem[$orig].moId]}}"
+                          vueId="{{'563082b0-3-'+index+'-'+cookIndex+','+'563082b0-1'}}"
+                        ></add-de-btn>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="confirmWrap _div data-v-5b30d4ee">
+        <view
+          class="seledInfo _div data-v-5b30d4ee"
+          wx:if="{{selInfo.addPrice>0||selInfo.unName}}"
+        >
+          <view class="_div data-v-5b30d4ee" wx:if="{{selInfo.addPrice>0}}">
+            <label class="fc3 f28 mr10r _span data-v-5b30d4ee"
+              >{{'+￥'+selInfo.addPrice}}</label
+            >
+            <view
+              class="fc3 f28 displayInline _div data-v-5b30d4ee"
+              wx:if="{{isVipDisScale<1}}"
+            >
+              <label
+                class="iconfont icon-hui f28 _span data-v-5b30d4ee"
+                style="{{'color:'+themeColor+';'}}"
+              ></label
+              >{{'￥'+selInfo.vipAddPrice+''}}</view
+            >
+          </view>
+          <view
+            class="fc9 f24 mb10r ellipsis1 _div data-v-5b30d4ee"
+            wx:if="{{selInfo.unName}}"
+            >{{'已选：'+selInfo.unName+''}}</view
+          >
+        </view>
+        <view
+          bindtap="__e"
+          class="addCartBtn f28 radius4px _div data-v-5b30d4ee"
+          data-event-opts="{{[ [ 'tap',[ [ 'confirm',['$event'] ] ] ] ]}}"
+          style="{{$root.s2}}"
+          >确定</view
+        >
+      </view>
+    </view>
+  </view>
+</weixin-popup>

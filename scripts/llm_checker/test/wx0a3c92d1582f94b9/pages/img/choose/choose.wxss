@@ -1,0 +1,140 @@
+.prev-container {
+  align-content: space-between;
+  direction: column;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+.prev-container,
+.prev-part {
+  display: -webkit-flex;
+  display: flex;
+}
+.prev-part {
+  direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 690rpx;
+}
+.prev-image {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  height: 230rpx;
+  justify-content: center;
+  position: relative;
+  width: 230rpx;
+}
+.del-btn {
+  background-color: #eee;
+  border-radius: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: -2rpx;
+  top: -4rpx;
+  width: 50rpx;
+  z-index: 999;
+}
+.add-btn,
+image {
+  border-radius: 12rpx;
+  height: 88%;
+  position: relative;
+  width: 88%;
+}
+.add-btn:after {
+  height: 100rpx;
+  width: 10rpx;
+}
+.add-btn::before,
+.add-btn:after {
+  background-color: #aaa;
+  border-radius: 8rpx;
+  content: "";
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.add-btn::before {
+  height: 10rpx;
+  width: 100rpx;
+}
+.add-btn {
+  background: #ebebeb;
+  color: #bbb;
+  font-size: 150rpx;
+  line-height: 115%;
+  text-align: center;
+}
+.sew-btn::after {
+  border: none;
+}
+.bottom-container {
+  align-items: center;
+  bottom: 0;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+}
+ad {
+  border-radius: 12rpx;
+  box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.1);
+  margin-bottom: 30rpx;
+}
+.adv {
+  width: 90%;
+}
+.btn-view {
+  background-color: #fff;
+  padding-top: 10px;
+  width: 100%;
+}
+.mode-tips {
+  color: #aaa;
+  font-size: 14px;
+  text-align: center;
+}
+.mode-tag {
+  background-color: #eee;
+  border-radius: 14px;
+  padding: 2px 6px;
+}
+@font-face {
+  font-display: block;
+  font-family: icomoon;
+  font-style: normal;
+  font-weight: 400;
+  src: url(data:application/font-woff2;charset=utf-8;base64,d09GMgABAAAAAAU8AA0AAAAADSAAAATnAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP0ZGVE0cGh4GVgCCWhEICo88jE0LFAABNgIkAxwEIAWDBgdZG7MKyI6TpZrmYpMPvVv5JhlCFJJb/GxV4cSUNTNoHVqP1F0+zUiAgPSr/X4/3uI6XTQSCkRCspSe2N3i6qmLWfTS/hAiodMTi3m1HZTB+u7EBwEgAPDuNVk8AHx0xNOhlBAAMgbPWzAgIOBBQAEwAAh7EzkHNoC5kHkFwNl4f/IzQgkAAxsLxZWoOBzHOna3YRuS59gnEk+gDhKxfQ4FAFiIWJaCMiSsPcW6MhE8mNHbJs/+yCUShEbQJ/G1l3oZEAAK4SIJJswqYKD9bwjAAmWQRGLVhgIsISVmzEvWrC8wLfGRQPVijlKHrEU5VEO5NDlJTVrmMzWR7FRV1sy34jUOn4fOSrzYC7XvIzeIYuwmErUsSYq/S883ejNb1BfRdWYpb/yrrfaLEAMw9WOmSUj0/RgH/YWAf03d3y2/bxqRR0SROCDGHiNEsosk+rgkwUmk+KOAyM3EdB1cxJCcccuyiD1qirNa/FFwTahaXbNXjSuPlQqMyGomzm2T4jcuVR5BXqU9id488p25TvTj+dGPagoMz4mbNfEvdzRuozY+U+PaP3QcuPF45g9qj7YbEVebHvOYF13s7bw5w+jTI+52I+69OWB6OszrrlldSVXYjHqb1XKXG4bbWAvKg1YvP24YukvXSmKm6akQxPnmNscNY2LDZ+czvFyl9WE+Ihdcw23RWaZfc91F3sqLM5owo/vLRHSXfp2nqsK87poL3OUXZhmWVfRWVtT0mNe4aiQqLh99Iozwe9nhunDwGb+mdCiaLJz5Pt+hfKZFRbsnGJxh7paby27l9RX8/Pu8K6fT5befrrV4Ct9DkOVC+mfVAdpe+GCei0u0aPcC8KJ5WK4jhxWSpriopTNCTZ93ECz8B2f+pnVNZW5/KODa/NVmVyDkd2+p2xI/vqh12Gbs4+qEh/mvaGtZFvVLYL/7CbGMnlJPdmN2HM+rtcpWfRL3gNeGrtk9QoNnucagLgA/umNG7szcW/1TN5gffvO+mWmfWSqdZZ0KSUt1UUun1HUEmJq2E8b3ZtsUbrl8s7ZMdsUCMSfSIUf+agV/5gc8w9n+EL1Nm0yd1FKWj96mkJXVNP73iwZ49mqRjx9OfXjLlodTHp4sK5/YvGXXreGH2STZ7C314fIPV4c2Y3LXrkVf4uMjF5wWOA2HUlLa2qH5UFVYvGjzr3Xg6dPLt24tTx1t5odbU1s7VEI+KNH/QpZ/f16b/54Hc741xxnq/RG4ukyTrsqVuMv8/E9xac0pdZ09e2avLGGbmkt3JSkt96hntV470VMUznc4ubarOLjtLiudNd/rbDPes3cx250NDYnw8xA/WXVlo3PTb7xEcQ5xMBJPULBPAODBHLV+nkg8ro6GRQFibaNmpBwYQulmHUEBKRPIWviKkUn5JQC2AW6ADJPCzrBDDYExzvZgkWbKg8KOWzxskPBKCQc7fqhlT6hAHDIGxtjnwWIPij0oHLjEwwaPe67JwYEP0I1WDKIfgxjEANB9u0MHvbPCaEcnxtGHZowA/41MA/bUwTE3ZQSdUDNZUKFivMoGyX3JaRrUUwqUcI5BxQwfvuv2GOlsTw4WFidvSB6T90uDwYKSguuj8WFeUJE8gtGE3D+WjB2B+1fzLSlstwAGWqRw25lMGCLUo8RGOO6COcJ++xDJn9kyepYdYX+oAAA=)
+    format("woff2");
+}
+[class*=" i-"],
+[class^="i-"] {
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: icomoon !important;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: none;
+}
+.blue-btn,
+.pink-btn {
+  border-radius: 25px;
+  color: #fff;
+  height: 45px;
+  margin-bottom: 25px;
+  width: 50%;
+}
+.pink-btn {
+  background: #f46484;
+  box-shadow: 0 4px 8px rgba(244, 100, 132, 0.3);
+}
+buttom::after,
+buttom::before {
+  display: none;
+}

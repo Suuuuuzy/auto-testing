@@ -1,0 +1,5 @@
+<view class="bcrgba pr mcInfo _div data-v-80f22ac8">
+  <image class="mcLogo _img data-v-80f22ac8" src="{{bannerInfo.logo}}"></image>
+  <view class="mcName _div data-v-80f22ac8">{{bannerInfo.mcName}}</view>
+  <slot name="tableno"></slot>
+</view>

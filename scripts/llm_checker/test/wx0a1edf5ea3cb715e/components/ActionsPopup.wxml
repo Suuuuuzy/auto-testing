@@ -1,0 +1,40 @@
+<u-popup
+  bind:__l="__l"
+  bind:input="__e"
+  borderRadius="30"
+  class="data-v-6c646e34"
+  closeIconColor="#fff"
+  data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','value','$event',[] ] ] ] ] ]}}"
+  maskCloseAble="{{false}}"
+  mode="center"
+  value="{{value}}"
+  vueId="5362d588-1"
+  vueSlots="{{['default']}}"
+>
+  <view class="home-popup-container data-v-6c646e34">
+    <view class="pop-top data-v-6c646e34"
+      >{{title+''}}<u-icon
+        bind:__l="__l"
+        bind:click="__e"
+        class="closeIcon data-v-6c646e34"
+        color="#fff"
+        data-event-opts="{{[ [ '^click',[ ['close'] ] ] ]}}"
+        name="close"
+        size="30"
+        vueId="{{'5362d588-2'+','+'5362d588-1'}}"
+      ></u-icon>
+    </view>
+    <view class="u-text data-v-6c646e34">
+      <text class="data-v-6c646e34" wx:if="{{text}}">{{text}}</text>
+    </view>
+    <view class="pop-actions data-v-6c646e34">
+      <view
+        bindtap="__e"
+        class="action data-v-6c646e34"
+        data-event-opts="{{[ [ 'tap',[ [ 'onShield',['$event'] ] ] ] ]}}"
+        >屏蔽</view
+      >
+      <button class="action data-v-6c646e34" openType="contact">举报</button>
+    </view>
+  </view>
+</u-popup>

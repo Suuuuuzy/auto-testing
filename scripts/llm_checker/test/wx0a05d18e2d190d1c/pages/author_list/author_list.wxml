@@ -1,0 +1,59 @@
+<view>
+  <view>
+    <scroll-view scrollY="true" style="margin-bottom: 100rpx">
+      <empty
+        bind:__l="__l"
+        msg="没有数据"
+        vueId="76353f4c-1"
+        wx:if="{{data_list.length==0}}"
+      ></empty>
+      <view class="item_layout_style" wx:for="{{data_list}}" wx:key="index">
+        <view style="display: flex; margin-top: 20rpx">
+          <view class="plate_no_title_style">车牌号:</view>
+          <view class="plate_no_style">{{item.plateNo}}</view>
+        </view>
+        <view style="display: flex; margin-top: 20rpx">
+          <text class="title_desc">授权时间:</text>
+          <text class="title_desc" style="color: #1e9eff; margin-left: 20rpx"
+            >{{item.beginTime}}</text
+          >
+          <text class="title_desc" style="margin: 0rpx 10rpx 0 10rpx">至</text>
+          <text class="title_desc" style="color: #1e9eff"
+            >{{item.endTime}}</text
+          >
+        </view>
+        <view style="display: flex; margin-top: 20rpx">
+          <text class="title_desc">账号:</text>
+          <text class="title_desc">{{item.grantMobile}}</text>
+        </view>
+        <view style="display: flex; margin-top: 20rpx">
+          <text class="title_desc">姓名:</text>
+          <text class="title_desc">{{item.grantName}}</text>
+        </view>
+        <image
+          bindtap="__e"
+          class="icon_style"
+          data-event-opts="{{[ [ 'tap',[ [ 'click_edit',['$event'] ] ] ] ]}}"
+          data-value="{{item}}"
+          mode="aspectFit"
+          src="../../static/images/icon_author_edit.png"
+          style="right: 160rpx"
+        ></image>
+        <image
+          bindtap="__e"
+          class="icon_style"
+          data-event-opts="{{[ [ 'tap',[ [ 'click_delete',['$event'] ] ] ] ]}}"
+          data-value="{{item}}"
+          mode="aspectFit"
+          src="../../static/images/icon_author_delete.png"
+        ></image>
+      </view>
+    </scroll-view>
+    <image
+      bindtap="__e"
+      class="add_btn_style"
+      data-event-opts="{{[ [ 'tap',[ [ 'click_add_btn',['$event'] ] ] ] ]}}"
+      src="../../static/images/icon_add.png"
+    ></image>
+  </view>
+</view>

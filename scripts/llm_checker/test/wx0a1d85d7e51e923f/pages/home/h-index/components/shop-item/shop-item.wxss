@@ -1,0 +1,54 @@
+@import "/app.wxss";
+.shop-img {
+  border-radius: 16rpx;
+  height: 180rpx;
+  width: 180rpx;
+}
+.shop-name {
+  width: 560rpx;
+}
+.new-img {
+  height: 80rpx;
+  left: 10rpx;
+  position: absolute;
+  width: 80rpx;
+}
+.shop-sub-title {
+  color: #666;
+}
+.tag {
+  font-size: 24rpx;
+  height: 36rpx;
+  margin-left: 0;
+  margin-right: 10rpx;
+}
+.item_list {
+  display: inline-block;
+  height: auto;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  width: 180rpx;
+}
+.item_list image {
+  height: 150rpx;
+  width: 180rpx;
+}
+.scroll_box {
+  padding: 10rpx;
+  width: 100%;
+}
+.scroll_box,
+.swiper_item {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.swiper_item {
+  font-size: 30rpx;
+  text-overflow: ellipsis;
+}
+.bar-border {
+  border-radius: 12rpx;
+}
+.wrapper {
+  color: red;
+}

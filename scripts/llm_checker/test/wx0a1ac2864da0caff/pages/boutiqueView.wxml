@@ -1,0 +1,82 @@
+<view class="container _div data-v-0de18414">
+  <view class="boutique-detail-out _div data-v-0de18414" wx:if="{{pic}}">
+    <swiper
+      bindchange="__e"
+      circular="{{true}}"
+      class="content data-v-0de18414"
+      current="{{currentPic}}"
+      data-event-opts="{{[ [ 'change',[ [ 'changeBanner',['$event'] ] ] ] ]}}"
+      wx:if="{{currentPic>=0}}"
+    >
+      <swiper-item
+        class="content data-v-0de18414"
+        wx:for="{{pic}}"
+        wx:key="index"
+      >
+        <view
+          bindtap="__e"
+          class="panel _div data-v-0de18414"
+          data-event-opts="{{[ [ 'tap',[ [ 'viewPic',['$0'],[ [ ['pic','',index] ] ] ] ] ] ]}}"
+        >
+          <image
+            class="pic _img data-v-0de18414"
+            mode="aspectFit"
+            src="{{item}}"
+          ></image>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <scroll-view
+    bindscroll="__e"
+    class="boutique-view-bottom data-v-0de18414"
+    data-event-opts="{{[ [ 'scroll',[ [ 'scrollBottom',['$event'] ] ] ] ]}}"
+    scrollY="{{true}}"
+    wx:if="{{roomList}}"
+  >
+    <view class="boutique-view-bottom-inner-gap _div data-v-0de18414"></view>
+    <view class="boutique-view-bottom-inner _div data-v-0de18414">
+      <view class="boutique-view-shadow _div data-v-0de18414">
+        <view class="panel _div data-v-0de18414"></view>
+        <view
+          bindtap="__e"
+          class="boutique-view-text _div data-v-0de18414"
+          data-event-opts="{{[ [ 'tap',[ [ 'toVideo',['$0'],['nowItem.video'] ] ] ] ]}}"
+          wx:if="{{nowItem&&nowItem.video}}"
+        >
+          <view class="icon-play _div data-v-0de18414">
+            <image
+              class="pic _img data-v-0de18414"
+              src="/static/img/icon-play.svg"
+            ></image>
+          </view>
+          <view class="_div data-v-0de18414">导览视频</view>
+        </view>
+      </view>
+      <scroll-view
+        class="{{['boutique-btn-out','data-v-0de18414',expand?'expand':'']}}"
+        scrollX="{{true}}"
+      >
+        <view class="boutique-btn-item-gap _div data-v-0de18414"></view>
+        <view
+          bindtap="__e"
+          class="{{['boutique-btn-item','_div','data-v-0de18414',index===nowRoom?'active':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'chooseRoom',['$0',index],[ [ ['roomList','',index] ] ] ] ] ] ]}}"
+          wx:for="{{roomList}}"
+          wx:key="index"
+        >
+          <view class="boutique-btn-item-inner _div data-v-0de18414">
+            <view class="boutique-btn-item-title _div data-v-0de18414"
+              >{{item.title}}</view
+            >
+            <view
+              class="boutique-btn-floor _div data-v-0de18414"
+              wx:if="{{item.more}}"
+              >{{item.more}}</view
+            >
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </scroll-view>
+</view>

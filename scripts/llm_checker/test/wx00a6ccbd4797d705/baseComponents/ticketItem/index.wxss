@@ -1,0 +1,233 @@
+.redTips {
+  background: rgba(251, 68, 84, 0.1);
+  border-radius: 4rpx;
+  color: #fb4454;
+  display: inline-block;
+  font-size: 22rpx;
+  padding: 4rpx 13rpx;
+}
+.freeIcon {
+  color: #fb4454;
+  font-size: 32px;
+}
+.exempt {
+  height: 38.5px;
+  width: 37.5px;
+}
+.unuseful.ticketItem .picBox {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  margin-right: 6px;
+  position: relative;
+}
+.unuseful.ticketItem .picBox .picBoxModel {
+  background: hsla(0, 0%, 59%, 0.7);
+  border-radius: 4px;
+  bottom: 0;
+  height: 90px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 4px;
+  width: 90px;
+}
+.unuseful.ticketItem .tipStyle {
+  background: #999 !important;
+}
+.unuseful.ticketItem .iconStyle,
+.unuseful.ticketItem .ticketValue {
+  color: #999 !important;
+}
+.unuseful.ticketItem .ticketNum {
+  background: #999 !important;
+}
+.unuseful.ticketItem .freeIcon {
+  color: #999 !important;
+}
+.unuseful.ticketItem .reduceStyle {
+  background: #999 !important;
+  color: #fff;
+}
+.ticketItem {
+  background-image: url(https://cdnpic.wuuxiang.com/msgjDecorationImg/quanBg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 16rpx;
+  box-sizing: border-box;
+  display: flex;
+  min-height: 230rpx;
+  overflow: hidden;
+  padding: 10px;
+  position: relative;
+  width: 100%;
+}
+.ticketItem .reduceStyle {
+  background: #ffecec;
+  border-radius: 2rpx;
+  color: #fb6774;
+  font-size: 20rpx;
+  height: 36rpx;
+  left: 10rpx;
+  line-height: 36rpx;
+  position: absolute;
+  text-align: center;
+  top: 3rpx;
+  width: 98rpx;
+}
+.ticketItem .reduceStyle_custom {
+  top: -20rpx;
+}
+.ticketItem .ticketNum {
+  background: #ff4e4e;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 2px 0;
+  position: absolute;
+  right: -31px;
+  text-align: center;
+  top: 5px;
+  transform: rotate(52deg);
+  width: 90px;
+}
+.ticketItem .ticket_right {
+  box-sizing: border-box;
+  padding: 10px 0;
+  position: relative;
+  width: 28%;
+}
+.ticketItem .ticket_right .ticket_right_content {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+.ticketItem .ticket_right .shangjiaquanJihuo {
+  border: 1px solid #ff4e4e;
+  border-radius: 20px;
+  bottom: 5px;
+  color: #ff4e4e;
+  font-size: 12px;
+  left: 50%;
+  padding: 3px;
+  position: absolute;
+  text-align: center;
+  transform: translateX(-50%);
+  width: 46px;
+}
+.ticketItem .ticket_right .iconStyle {
+  color: #fb4454;
+  font-size: 37rpx;
+  font-weight: 700;
+  position: relative;
+  top: 8rpx;
+}
+.ticketItem .ticket_right .ticketValue {
+  color: #fb4454;
+  font-size: 62rpx;
+  font-weight: 700;
+}
+.ticketItem .ticket_left {
+  display: flex;
+  width: 72%;
+}
+.ticketItem .ticket_left .ticket_note {
+  min-height: 40rpx;
+}
+.ticketItem .ticket_left .menkanTitle {
+  color: #666;
+  font-size: 24rpx;
+  padding-top: 10rpx;
+}
+.ticketItem .ticket_left .ticket_goDetail {
+  color: #999;
+  font-size: 20rpx;
+}
+.ticketItem .ticket_left .ticket_goDetail .iconfont {
+  font-size: 23rpx;
+  padding-left: 5rpx;
+}
+.ticketItem .ticket_left .picBox {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  margin-right: 6px;
+}
+.ticketItem .ticket_left .picBox .tipStyle {
+  background: #fb4454;
+  border-radius: 16rpx 0rpx 16rpx 0rpx;
+  color: #fff;
+  display: inline;
+  font-size: 20rpx;
+  height: 32rpx;
+  left: -18rpx;
+  line-height: 32rpx;
+  position: absolute;
+  text-align: center;
+  top: -18rpx;
+  width: 82rpx;
+}
+.ticketItem .ticket_left .picBox .daijin {
+  background: #ff4e4e;
+}
+.ticketItem .ticket_left .picBox .zhekou {
+  background: #5863ca;
+}
+.ticketItem .ticket_left .picBox .shangpin {
+  background: #65d2b6;
+}
+.ticketItem .ticket_left .picBox .zengpin {
+  background: #ffb249;
+}
+.ticketItem .ticket_left .picBox .peisong {
+  background: #63b2fd;
+}
+.ticketItem .ticket_left .diyPic {
+  border-radius: 4px;
+  height: 100px;
+  width: 100px;
+}
+.ticketItem .ticket_left .ticket_text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 90px;
+  padding: 8rpx 5px;
+  position: relative;
+  width: 100%;
+}
+.ticketItem .ticket_left .ticket_date {
+  color: #666;
+  font-size: 22rpx;
+  height: 30px;
+}
+.ticketItem .ticket_left .ticket_name {
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  font-size: 25rpx;
+  line-height: 1.6;
+  overflow: hidden;
+  padding-bottom: 4rpx;
+  text-overflow: -o-ellipsis-lastline;
+  text-overflow: ellipsis;
+}
+.ticketItem .ticket_left .ticket_name .ticketTitle {
+  font-size: 28rpx;
+  padding-left: 3px;
+}
+.ticketItem .yaoqingchengjiu {
+  bottom: -40rpx;
+  position: absolute;
+  right: -36rpx;
+}
+.ticketItem .yaoqingchengjiu .icon-quanyikazhuanxiang,
+.ticketItem .yaoqingchengjiu .icon-yaoqingchengjiu {
+  color: #fb4454;
+  font-size: 160rpx;
+  opacity: 0.3;
+}

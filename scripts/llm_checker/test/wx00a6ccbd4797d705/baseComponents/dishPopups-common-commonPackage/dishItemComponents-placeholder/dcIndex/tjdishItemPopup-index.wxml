@@ -1,0 +1,63 @@
+<view
+  class="_div data-v-6e2da6b0"
+  id="observeView"
+  style="{{'height:'+(showWhitchLayout==23||showWhitchLayout==3||showWhitchLayout==13||showWhitchLayout=='exchange'?'100%':'')+';'}}"
+>
+  <view
+    class="_div data-v-6e2da6b0"
+    style="{{'height:'+(showWhitchLayout==23||showWhitchLayout==3||showWhitchLayout==13||showWhitchLayout=='exchange'?'100%':'')+';'}}"
+    wx:if="{{pageShow&&intersectionRatio}}"
+  >
+    <layout9
+      bind:__l="__l"
+      bind:add="__e"
+      bind:getNumber="__e"
+      bind:inputClick="__e"
+      bind:remove="__e"
+      bind:shift="__e"
+      bind:showBigPicModle="__e"
+      class="data-v-6e2da6b0"
+      context="DC"
+      data-event-opts="{{[ [ '^add',[ ['add'] ] ],[ '^remove',[ ['remove'] ] ],[ '^getNumber',[ ['getNumber'] ] ],[ '^inputClick',[ ['inputClick'] ] ],[ '^shift',[ ['shift'] ] ],[ '^showBigPicModle',[ ['showBigPicModle'] ] ] ]}}"
+      dishConfig="{{dishConfig}}"
+      dishData="{{dishData}}"
+      layout="{{layout}}"
+      vueId="42b107c6-1"
+      wx:if="{{showWhitchLayout==9}}"
+    ></layout9>
+    <layout23
+      bind:__l="__l"
+      bind:add="__e"
+      bind:getNumber="__e"
+      bind:inputClick="__e"
+      bind:remove="__e"
+      bind:shift="__e"
+      bind:showBigPicModle="__e"
+      class="data-v-6e2da6b0"
+      context="DC"
+      data-event-opts="{{[ [ '^add',[ ['add'] ] ],[ '^remove',[ ['remove'] ] ],[ '^getNumber',[ ['getNumber'] ] ],[ '^inputClick',[ ['inputClick'] ] ],[ '^shift',[ ['shift'] ] ],[ '^showBigPicModle',[ ['showBigPicModle'] ] ] ]}}"
+      dishConfig="{{dishConfig}}"
+      dishData="{{dishData}}"
+      layout="{{layout}}"
+      vueId="42b107c6-2"
+      wx:if="{{showWhitchLayout==23}}"
+    ></layout23>
+  </view>
+  <view
+    class="{{['dishItem-dc','_div','data-v-6e2da6b0',hasBGColor?'hasBgColor':'']}}"
+    wx:if="{{!intersectionRatio}}"
+  >
+    <view
+      class="dishItem _div data-v-6e2da6b0"
+      style="{{'box-sizing:'+'border-box'+';'}}"
+    >
+      <image
+        alt
+        class="data-v-6e2da6b0"
+        mode="widthFix"
+        src="{{'https://cdnpic.wuuxiang.com/msgjDecorationImg/dish_layout_skeleton'+dishLayoutSkeletonType+'.png'}}"
+        style="width: 100%"
+      ></image>
+    </view>
+  </view>
+</view>

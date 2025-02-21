@@ -1,0 +1,34 @@
+<view class="identificationMc _div data-v-0f2673cb">
+    <view class="{{['certifiedStores','_div','data-v-0f2673cb','layout_'+layout]}}" wx:if="{{registerMcidFlg}}">
+        <view class="itemTitle _div data-v-0f2673cb" style="{{itemTitleStyle}}">认证门店</view>
+        <view bindtap="__e" class="setStore _div data-v-0f2673cb" data-event-opts="{{[ [ 'tap',[ [ 'showRegisterShops',['$event'] ] ] ] ]}}">{{''+mcName+''}}<label class="iconfont icon-xiangyou _span data-v-0f2673cb"></label>
+        </view>
+    </view>
+    <popup bind:__l="__l" class="data-v-0f2673cb" position="bottom" round="{{true}}" show="{{show}}" vueId="5717e556-1" vueSlots="{{['default']}}">
+        <view class="flexBetweenCenter p30r _div data-v-0f2673cb">请选择认证门店<view class="btnGroup flex f24 _div data-v-0f2673cb">
+                <view bindtap="__e" class="mc_btn _div data-v-0f2673cb" data-event-opts="{{[ [ 'tap',[ [ 'cancleMc',['$event'] ] ] ] ]}}" style="{{'border-color:'+'#999'+';'+'color:'+'#999'+';'}}">取消</view>
+                <view bindtap="__e" class="mc_btn _div data-v-0f2673cb" data-event-opts="{{[ [ 'tap',[ [ 'saveMc',['$event'] ] ] ] ]}}" style="{{'border-color:'+themeColor+';'+'background-color:'+themeColor+';'+'color:'+textColor+';'}}">保存</view>
+            </view>
+        </view>
+        <view class="search _div data-v-0f2673cb">
+            <view class="content _div data-v-0f2673cb">
+                <label class="iconfont icon-sousuo mr5r _span data-v-0f2673cb"></label>
+                <input bindinput="__e" class="searchInput data-v-0f2673cb" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','searchValue','$event',[] ] ] ] ] ]}}" placeholder="搜索门店" type="text" value="{{searchValue}}"></input>
+                <view bindtap="__e" class="searchBtn _div data-v-0f2673cb" data-event-opts="{{[ [ 'tap',[ [ 'getMdList',['$0'],['searchValue'] ] ] ] ]}}">搜索</view>
+            </view>
+        </view>
+        <view class="mcList _div data-v-0f2673cb" wx:if="{{caninit}}">
+            <mescroll-uni bind:__l="__l" bind:down="__e" bind:init="__e" bind:up="__e" class="data-v-0f2673cb vue-ref" data-event-opts="{{[ [ '^init',[ ['mescrollInit'] ] ],[ '^down',[ ['downCallback'] ] ],[ '^up',[ ['upCallback'] ] ] ]}}" data-ref="mescrollRef" down="{{downOption}}" height="{{600+'rpx'}}" isShowEmpty="{{false}}" up="{{upOption}}" vueId="{{'5717e556-2'+','+'5717e556-1'}}" vueSlots="{{['default']}}">
+                <view class="flexBetweenCenter p30r _div data-v-0f2673cb" wx:for="{{$root.l0}}" wx:for-index="l" wx:for-item="mc" wx:key="l">
+                    <view bindtap="__e" class="flexAlignCenter _div data-v-0f2673cb" data-event-opts="{{[ [ 'tap',[ [ 'checkBoxMc',[l,'$0'],[ [ ['registerShops','',l] ] ] ] ] ] ]}}">
+                        <label class="{{['iconfont','mr10r','_span','data-v-0f2673cb',tempMcIndex==l?'icon-yuanxingxuanzhongfill':'icon-yuanxingweixuanzhong']}}" style="{{'color:'+(tempMcIndex==l?themeColor:'#999')+';'}}"></label>
+                        <view class="_div data-v-0f2673cb">{{''+mc[$orig].shopName+''}}<view class="f24 fc9 _div data-v-0f2673cb">{{mc[$orig].shopAddress}}</view>
+                        </view>
+                    </view>
+                    <view class="_div data-v-0f2673cb" wx:if="{{mc[$orig].distance}}">
+                        <label class="iconfont icon-weizhi _span data-v-0f2673cb"></label>{{''+mc.m0+''}}</view>
+                </view>
+            </mescroll-uni>
+        </view>
+    </popup>
+</view>

@@ -1,0 +1,63 @@
+<view class="container _div data-v-6c1e429e">
+  <scroll-view
+    class="content data-v-6c1e429e"
+    enableBackToTop="{{true}}"
+    scrollY="{{true}}"
+  >
+    <view class="me-gap _div data-v-6c1e429e"></view>
+    <view
+      bindtap="__e"
+      class="me-item _div data-v-6c1e429e"
+      data-event-opts="{{[ [ 'tap',[ [ 'chooseMe',['$0'],[ [ ['bookList','',index] ] ] ] ] ] ]}}"
+      wx:for="{{bookList}}"
+      wx:key="index"
+    >
+      <view class="me-item-title _div data-v-6c1e429e"
+        >{{item.time_label}}</view
+      >
+      <view class="me-line _div data-v-6c1e429e">
+        <view class="icon-place-border _div data-v-6c1e429e">
+          <image
+            class="pic _img data-v-6c1e429e"
+            src="/static/img/icon-place-border.svg"
+          ></image>
+        </view>
+        <view class="_div data-v-6c1e429e"
+          >{{item.detail.name||'百达翡丽北京源邸'}}</view
+        >
+      </view>
+      <view class="me-line _div data-v-6c1e429e">
+        <view class="icon-place-border _div data-v-6c1e429e">
+          <image
+            class="pic _img data-v-6c1e429e"
+            src="/static/img/icon-phone-border.svg"
+          ></image>
+        </view>
+        <view class="_div data-v-6c1e429e"
+          >{{item.detail.phone||'+86 10 65255868'}}</view
+        >
+      </view>
+      <view class="me-view-more _div data-v-6c1e429e">查看详情</view>
+    </view>
+    <view class="me-gap _div data-v-6c1e429e"></view>
+  </scroll-view>
+  <scrolltoptext
+    bind:__l="__l"
+    class="data-v-6c1e429e"
+    data-com-type="wx"
+    style="opacity: 0"
+    text="预约列表"
+    vueId="1358dfe6-1"
+  ></scrolltoptext>
+  <calendar
+    bind:__l="__l"
+    bind:change="dateChange"
+    cal_title="请选择预约日期"
+    class="data-v-6c1e429e"
+    data-com-type="wx"
+    data-custom-hidden="{{!false}}"
+    defaultTime="2024-01-04"
+    theme_color="#000"
+    vueId="1358dfe6-2"
+  ></calendar>
+</view>

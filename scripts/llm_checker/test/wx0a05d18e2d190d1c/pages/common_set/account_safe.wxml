@@ -1,0 +1,32 @@
+<view>
+  <view class="uni-list" style="margin-top: 20rpx">
+    <view
+      bindtap="__e"
+      class="uni-list-cell uni-list-cell-pd"
+      data-event-opts="{{[ [ 'tap',[ [ 'click_change_password',['$event'] ] ] ] ]}}"
+      style="margin-top: 5rpx"
+    >
+      <view class="uni-list-cell-db gl_color_title">修改密码</view>
+      <text class="uni-icon gl_color_desc"></text>
+    </view>
+    <view
+      bindtap="__e"
+      class="uni-list-cell uni-list-cell-pd"
+      data-event-opts="{{[ [ 'tap',[ [ 'click_change_phone',['$event'] ] ] ] ]}}"
+      style="margin-top: 5rpx"
+      wx:if="{{show_change_phone}}"
+    >
+      <view class="uni-list-cell-db gl_color_title">更改手机号</view>
+      <text class="uni-icon gl_color_desc"></text>
+    </view>
+    <view
+      bindtap="__e"
+      class="uni-list-cell uni-list-cell-pd"
+      data-event-opts="{{[ [ 'tap',[ [ 'click_login_device',['$event'] ] ] ] ]}}"
+      style="margin-top: 5rpx"
+    >
+      <view class="uni-list-cell-db gl_color_title">登录设备管理</view>
+      <text class="uni-icon gl_color_desc"></text>
+    </view>
+  </view>
+</view>

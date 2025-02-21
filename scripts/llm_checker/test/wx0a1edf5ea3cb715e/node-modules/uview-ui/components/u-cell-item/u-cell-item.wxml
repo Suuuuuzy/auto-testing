@@ -1,0 +1,51 @@
+<view
+  bindtap="__e"
+  class="{{['u-cell','data-v-1e1d5355',borderBottom?'u-border-bottom':'',borderTop?'u-border-top':'',center?'u-col-center':'',required?'u-cell--required':'']}}"
+  data-event-opts="{{[ [ 'tap',[ [ 'click',['$event'] ] ] ] ]}}"
+  hoverClass="{{hoverClass}}"
+  hoverStayTime="150"
+  style="{{'background-color:'+bgColor+';'}}"
+>
+  <u-icon
+    bind:__l="__l"
+    class="u-cell__left-icon-wrap data-v-1e1d5355"
+    customStyle="{{iconStyle}}"
+    name="{{icon}}"
+    size="{{iconSize}}"
+    vueId="05113182-1"
+    wx:if="{{icon}}"
+  ></u-icon>
+  <view class="u-flex data-v-1e1d5355" wx:else>
+    <slot name="icon"></slot>
+  </view>
+  <view class="u-cell_title data-v-1e1d5355" style="{{$root.s0}}">
+    <block wx:if="{{title!==''}}">{{title}}</block>
+    <slot name="title" wx:else></slot>
+    <view
+      class="u-cell__label data-v-1e1d5355"
+      style="{{$root.s1}}"
+      wx:if="{{label||$slots.label}}"
+    >
+      <block wx:if="{{label!==''}}">{{label}}</block>
+      <slot name="label" wx:else></slot>
+    </view>
+  </view>
+  <view class="u-cell__value data-v-1e1d5355" style="{{$root.s2}}">
+    <block wx:if="{{value!==''}}">{{value}}</block>
+    <slot wx:else></slot>
+  </view>
+  <view
+    class="u-flex u-cell_right data-v-1e1d5355"
+    wx:if="{{$slots['right-icon']}}"
+  >
+    <slot name="right-icon"></slot>
+  </view>
+  <u-icon
+    bind:__l="__l"
+    class="u-icon-wrap u-cell__right-icon-wrap data-v-1e1d5355"
+    name="arrow-right"
+    style="{{$root.s3}}"
+    vueId="05113182-2"
+    wx:if="{{arrow}}"
+  ></u-icon>
+</view>

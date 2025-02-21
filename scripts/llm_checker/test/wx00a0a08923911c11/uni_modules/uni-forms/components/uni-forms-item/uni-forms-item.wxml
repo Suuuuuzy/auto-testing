@@ -1,0 +1,19 @@
+<view
+  class="{{['uni-forms-item','is-direction-'+localLabelPos,border?'uni-forms-item--border':'',border&&isFirstBorder?'is-first-border':'']}}"
+>
+  <slot name="label" wx:if="{{$slots.label}}"></slot>
+  <view
+    class="{{['uni-forms-item__label',!label&&!isRequired?'no-label':'']}}"
+    style="{{'width:'+localLabelWidth+';'+'justify-content:'+localLabelAlign+';'}}"
+    wx:else
+  >
+    <text class="is-required" wx:if="{{isRequired}}">*</text>
+    <text>{{label}}</text>
+  </view>
+  <view class="uni-forms-item__content">
+    <slot></slot>
+    <view class="{{['uni-forms-item__error',msg?'msg--active':'']}}">
+      <text>{{msg}}</text>
+    </view>
+  </view>
+</view>

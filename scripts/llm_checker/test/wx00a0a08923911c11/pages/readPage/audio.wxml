@@ -1,0 +1,116 @@
+<view class="container bookAudio data-v-4eca34db" wx:if="{{bookInfo}}">
+  <sy-audio
+    audioAuthor="{{bookInfo.bookAuthor}}"
+    audioCover="{{bookInfo.bookIconUrl}}"
+    audioTitle="{{bookInfo.bookName}}"
+    autoplay="{{true}}"
+    bind:__l="__l"
+    bind:audioEnd="__e"
+    bind:change="__e"
+    bind:changevoice="__e"
+    bookId="{{bookId}}"
+    class="data-v-4eca34db vue-ref"
+    data-event-opts="{{[ [ '^audioEnd',[ ['audioEnd'] ] ],[ '^change',[ ['audioTimeChange'] ] ],[ '^changevoice',[ ['changevoice'] ] ] ]}}"
+    data-ref="audio"
+    isCountDown="{{false}}"
+    isTone="{{isTone}}"
+    isUserShelf="{{bookInfo.isUserShelf}}"
+    src="{{bookInfo.url}}"
+    vueId="2c7c7f3e-1"
+  ></sy-audio>
+  <view class="bookList-con data-v-4eca34db" wx:if="{{$root.g0}}">
+    <view
+      bindtap="__e"
+      class="book-item flexible data-v-4eca34db"
+      data-event-opts="{{[ [ 'tap',[ [ 'changeBook',['$0'],[ [ ['bookInfo.recommend.content','',__i0__,'id'] ] ] ] ] ] ]}}"
+      wx:for="{{$root.l1}}"
+      wx:for-index="__i0__"
+      wx:for-item="home"
+    >
+      <view class="book-cover data-v-4eca34db">
+        <image
+          class="book-cover-img data-v-4eca34db"
+          mode="scaleToFill"
+          src="{{home[$orig].imgUrl}}"
+        ></image>
+      </view>
+      <view class="book-detail flex data-v-4eca34db">
+        <view class="book-title data-v-4eca34db">{{home[$orig].name}}</view>
+        <view
+          class="book-tags flexible mt20 data-v-4eca34db"
+          wx:if="{{home[$orig].book.tags}}"
+        >
+          <view
+            class="{{['book-tags-item','data-v-4eca34db',index==0?'green-btn':'red-btn']}}"
+            wx:if="{{index<2}}"
+            wx:for="{{home.l0}}"
+            wx:for-item="tag"
+            >{{tag}}</view
+          >
+        </view>
+        <view
+          class="book-tags flexible mt20 data-v-4eca34db"
+          wx:if="{{!home[$orig].book.tags&&home[$orig].book.sort}}"
+        >
+          <view class="book-tags-item f24 green-btn data-v-4eca34db"
+            >{{home[$orig].book.sort}}</view
+          >
+        </view>
+      </view>
+      <view class="data-v-4eca34db">
+        <image
+          class="btn_st mt30 data-v-4eca34db"
+          src="/static/img/btn_st@2x.png"
+        ></image>
+      </view>
+    </view>
+  </view>
+  <uni-popup
+    animation="{{false}}"
+    bind:__l="__l"
+    class="chongzhipopup data-v-4eca34db vue-ref"
+    data-ref="chongzhipopup"
+    ismaskShow="{{true}}"
+    maskClick="{{false}}"
+    vueId="2c7c7f3e-2"
+    vueSlots="{{['default']}}"
+    wx:if="{{iosPay}}"
+  >
+    <view class="topupCon data-v-4eca34db" style="padding: 60rpx 24rpx 130rpx">
+      <view class="title-con flexible aItem-center jc-center data-v-4eca34db">
+        <view class="line data-v-4eca34db"></view>
+        <view class="title data-v-4eca34db">剩余内容需付费解锁</view>
+        <view class="line line-right data-v-4eca34db"></view>
+      </view>
+      <view class="topup-List flexible flex-flow data-v-4eca34db">
+        <view
+          bindtap="__e"
+          class="{{['topup-item','data-v-4eca34db',productId==i.productId?'topup-item-act':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'changeprice',['$0',3],[ [ ['consumegradeList','',index] ] ] ] ] ] ]}}"
+          wx:for="{{consumegradeList}}"
+          wx:for-item="i"
+          wx:key="index"
+        >
+          <view class="tips data-v-4eca34db" wx:if="{{i.tips}}"
+            >{{i.tips}}</view
+          >
+          <image
+            class="img_vip data-v-4eca34db"
+            src="/static/img/img_vip@2x.png"
+            wx:if="{{i.isVip}}"
+          ></image>
+          <view class="topup_money data-v-4eca34db"
+            >{{i.moneyStr+(gradeType==1?'元':'钻石')}}</view
+          >
+          <view class="topup_fuli data-v-4eca34db" wx:if="{{i.type==2}}"
+            >{{i.property}}</view
+          >
+          <view class="topup_slogan data-v-4eca34db" wx:else>{{i.text}}</view>
+          <view class="topup_type data-v-4eca34db"
+            >{{i.type==2?i.text:i.property}}</view
+          >
+        </view>
+      </view>
+    </view>
+  </uni-popup>
+</view>

@@ -1,0 +1,5 @@
+<web-view src="{{url}}" wx:if="{{show&&url!=''}}"></web-view>
+<view class="msg" wx:else>
+  <image mode="" src="/images/icon-msg.png"></image>
+  链接有误</view
+>

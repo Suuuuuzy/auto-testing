@@ -1,0 +1,17 @@
+@import "/components/vant/common/index.wxss";
+.van-goods-action {
+  align-items: center;
+  background-color: #fff;
+  background-color: var(--goods-action-background-color, #fff);
+  bottom: 0;
+  display: -webkit-flex;
+  display: flex;
+  height: 50px;
+  height: var(--goods-action-height, 50px);
+  left: 0;
+  position: fixed;
+  right: 0;
+}
+.van-goods-action--safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}

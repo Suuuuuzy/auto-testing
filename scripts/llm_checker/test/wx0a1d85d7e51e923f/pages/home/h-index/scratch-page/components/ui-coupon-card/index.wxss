@@ -1,0 +1,142 @@
+.wr-coupon {
+  background-image: url(data:image/image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAACwCAMAAAD5Yhz2AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Q0Y2Q0MwNDBCOEVCMTFFRThCQTVEMTU5RDZEOUE4REMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Q0Y2Q0MwNDFCOEVCMTFFRThCQTVEMTU5RDZEOUE4REMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDRjZDQzAzRUI4RUIxMUVFOEJBNUQxNTlENkQ5QThEQyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDRjZDQzAzRkI4RUIxMUVFOEJBNUQxNTlENkQ5QThEQyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PkTyUWkAAAAYUExURdnu5ODx6ev28fv9/Pb7+Nbs4v///wAAAOMAmOkAAAAIdFJOU/////////8A3oO9WQAAAt1JREFUeNrs2UFuwjAQQNGx49T3v3HBgEIhaletOvb7O3aBeRrZIbqUpvATCNe/bteUfcM15RegdSWzkW/ip1zLh+Zra7V8GXnkW0+ny7Wa7aRiB9gXrntqrvsem8HOWqvH0CPh0e/k4Gq5ztzhNTJeVN60Fst1Da+R8lr9qrWZ6PReH1wzv9oYH2id/8JVbjOPrO8sH1YjqpPAAvetB9fEr48jolSrdaH1mppra5vNusp6jcE1859zhrjUesVVabiOlwO4KtFlC1clWa+4KlG4CldchSuuuOIqXHEVrrjiiqtwxVW44oorrsIVV+GKK664CldchSuuuOIqXHEVrrjiiqtwxVW44oorrsIVV+EqXHEVrrgKV+GKq3DFVbgKV1yFK67CVbjiKlxxFa7CFVfhiqtwFa64CldchatwxVW44ipchSuuwhVX4SpccRWuuApX4YqrcMVVuApXXIUrrsJVuOIqXHEVrsIVV+GKq3AVrrgKV1yFq3DFVbjiKlyFK67CFVfhKlxxFa64ClfhiqtwxVW4CldchSuuwlW44ipccRWuwhVX4YqrcBWuuApXXHHFVbjiKlxxxRVX4YqrcMUVV1yFK67CFVdccRWuuApXXHHFVbjiKlxxxRVX4YqrcMUVV1yFK67CVbjiKlxxFa7CFVfhiqtwFa64CldchatwxVW44ipchSuuwhVX4SpccRWuuApX4YqrcMVVuApXXIUrrsJVuOIqXHEVrsIVV+GKq35qw1V5argqz3KtuCoP13LRmptra20zyEXOAjG49sRcI6LUZpQrVPb0XG9kqw27yEXryjWp1z4aYIsFu8DJNTPXfnT5xOvs1fvIo2f02vuLV+eB2bUeXHtqrePxq5GuoPXGtafWen38sF7nvWUdWu9ce2qt18e3XqfFWp5mHj2d137mtRjsjC8EbliPkcfzCTAxV01cP+GaZea987qi1Deu0j8PV+Eq/UafAgwA6QmZddTEWRQAAAAASUVORK5CYII=);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom: 24rpx;
+  overflow: hidden;
+  position: relative;
+}
+.theme-weak.wr-coupon {
+  background-image: url(https://cdn-we-retail.ym.tencent.com/miniapp/coupon/coupon-bg-grey2.png);
+}
+.wr-coupon__left {
+  color: #fa4126;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  height: 180rpx;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 200rpx;
+}
+.theme-weak .wr-coupon__left {
+  color: #333;
+}
+.wr-coupon__left--value {
+  font-family: DIN Alternate, cursive;
+  font-size: 64rpx;
+  font-weight: 700;
+  line-height: 88rpx;
+}
+.wr-coupon__left--value-int {
+  font-size: 48rpx;
+  line-height: 88rpx;
+}
+.wr-coupon__left--value-decimal {
+  font-size: 36rpx;
+  line-height: 48rpx;
+}
+.wr-coupon__left--image {
+  border-radius: 8px;
+  height: 128rpx;
+  margin-top: 30rpx;
+  width: 128rpx;
+}
+.wr-coupon__left--desc,
+.wr-coupon__left--unit {
+  font-size: 24rpx;
+  line-height: 32rpx;
+}
+.wr-coupon__left--desc {
+  color: #fa4126;
+}
+.theme-weak .wr-coupon__left--desc {
+  color: #333;
+}
+.wr-coupon__right {
+  align-items: center;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: flex;
+  flex-grow: 1;
+  height: 180rpx;
+  overflow: hidden;
+  padding: 0 20rpx;
+}
+.wr-coupon__right--title {
+  align-items: flex-start;
+  color: #999;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  font-size: 24rpx;
+}
+.wr-coupon__right--title .coupon-title {
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  color: #333;
+  display: -webkit-box;
+  font-size: 28rpx;
+  font-weight: 700;
+  line-height: 40rpx;
+  max-width: 320rpx;
+  overflow: hidden;
+  white-space: normal;
+}
+.wr-coupon__right--title .coupon-time {
+  margin-top: 16rpx;
+}
+.wr-coupon__right--title .coupon-desc {
+  margin-top: 8rpx;
+}
+.wr-coupon__right--title .coupon-arrow {
+  font-size: 22rpx;
+}
+.wr-coupon__right--oper {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+}
+.wr-coupon__mask {
+  background-color: #fff;
+  height: 182rpx;
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  width: 702rpx;
+}
+.wr-coupon__tag {
+  border: 0.5px solid #fa4126;
+  box-sizing: border-box;
+  color: #fa4126;
+  font-size: 20rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  opacity: 0.9;
+  position: absolute;
+  right: -24rpx;
+  text-align: center;
+  top: 8px;
+  transform: rotate(45deg);
+  width: 106rpx;
+}
+.wr-coupon__seal {
+  background-size: 100% 100%;
+  height: 128rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 128rpx;
+}
+.wr-coupon__seal.seal-useless {
+  background-image: url(https://cdn-we-retail.ym.tencent.com/miniapp/coupon/seal-used.png);
+}
+.wr-coupon__seal.seal-disabled {
+  background-image: url(https://cdn-we-retail.ym.tencent.com/miniapp/coupon/coupon-expired.png);
+}

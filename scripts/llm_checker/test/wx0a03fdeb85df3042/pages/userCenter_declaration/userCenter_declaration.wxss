@@ -1,0 +1,45 @@
+.container {
+  height: 100%;
+  background-color: #f3f4f6;
+}
+#declaration-body {
+  height: 100%;
+  padding: 101rpx 17rpx 0 17rpx;
+  box-sizing: border-box;
+}
+#declaration-body .declaration-body-bg {
+  height: 100%;
+  padding: 17rpx 24rpx 0 24rpx;
+  background-color: #fdfdfd;
+  box-sizing: border-box;
+}
+.declaration-body-bg swiper {
+  height: calc(100% - 85rpx);
+}
+.historicalDeclare,
+.draftBox {
+  height: 100%;
+}
+.common-list.tabCont-listItem {
+  padding-left: 28rpx;
+  padding-right: 28rpx;
+}
+.declaration-body-bg .common-tabTitle {
+  height: 83rpx;
+  margin: 0 18rpx;
+  border-bottom: 1rpx solid #bfbfbf;
+}
+.noData {
+  padding-top: 38rpx;
+}
+.draftBox,
+.historicalDeclare {
+  padding-top: 38rpx;
+  box-sizing: border-box;
+}
+.common-list {
+  margin-top: 0;
+}
+.common-list + .common-list {
+  margin-top: 38rpx;
+}

@@ -1,0 +1,90 @@
+{
+  "permission": {
+    "scope.userLocation": { "desc": "你的位置信息将用于小程序定位" },
+    "scope.invoiceTitle": { "desc": "小程序申请获得发票抬头的权限" },
+    "scope.phoneNumber": { "desc": "用户小程序登录和绑定车牌号" }
+  },
+  "networkTimeout": { "request": 5000 },
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": ["pages_pay", "pages_my", "pages_asset"]
+    }
+  },
+  "requiredPrivateInfos": ["getLocation"],
+  "tabBar": {
+    "color": "#8A8F99",
+    "selectedColor": "rgba(6, 185, 192, 1)",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      { "pagePath": "pages/order/order" },
+      { "pagePath": "pages/index/index" }
+    ]
+  },
+  "subPackages": [
+    {
+      "root": "pages_pay/",
+      "pages": [
+        "pay/pay",
+        "orderCupons/orderCupons",
+        "socketpay/socketpay",
+        "socketpay/paysuccess",
+        "order-detail/order-detail",
+        "passwordpop/passwordpop",
+        "select_order/select_order",
+        "gift-info/gift-info",
+        "shop-order/shop-order",
+        "shop-order-detail/shop-order-detail"
+      ]
+    },
+    {
+      "root": "pages_my/",
+      "pages": [
+        "login/phone_login",
+        "login/wx_login",
+        "recharge-vip/obtain_card",
+        "set",
+        "integral-shop/integral-shop",
+        "my_vip/my_vip",
+        "vip-coupon-list/vip-coupon-list",
+        "recharge-vip/reice_oilcard",
+        "recharge-vip/recharge-vip",
+        "recharge-vip/recharge-oilcard",
+        "oil_card_record/oil_card_record",
+        "receive_coupoon/new_receice_coupon",
+        "membership/membership",
+        "edit-password/edit-password",
+        "check-password/check-password",
+        "update-phone/update-phone",
+        "forgetpw/forgetpw",
+        "update_user_info/update_user_info",
+        "update-check-phone/update-check-phone",
+        "setopen-card-info/setopen-card-info",
+        "my_cupons/my_cupons",
+        "webView/webView"
+      ]
+    },
+    {
+      "root": "pages_asset/",
+      "pages": [
+        "add_phone_car/add_phone_car",
+        "washing-car/washing-car",
+        "mycar/mycar",
+        "add-more-car/add-more-car",
+        "fleet-card-detail/fleet-card-detail",
+        "fleet-card-detail/allocate-balance",
+        "fleet-card-detail/fleet-card-list"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundColorTop": "rgba(235, 236, 237, 1)",
+    "backgroundColorBottom": "rgba(235, 236, 237, 1)",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "pages": ["pages/index/index", "pages/order/order"]
+}

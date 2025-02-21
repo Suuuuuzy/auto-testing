@@ -1,0 +1,35 @@
+<button
+  appParameter="{{appParameter}}"
+  binderror="__e"
+  bindgetphonenumber="__e"
+  bindgetuserinfo="__e"
+  bindlaunchapp="__e"
+  bindopensetting="__e"
+  catchtap="__e"
+  class="{{['u-btn','u-line-1','u-fix-ios-appearance','data-v-22c7754f','u-size-'+size,plain?'u-btn--'+type+'--plain':'',loading?'u-loading':'',shape=='circle'?'u-round-circle':'',hairLine?showHairLineBorder:'u-btn--bold-border','u-btn--'+type,disabled?'u-btn--'+type+'--disabled':'']}}"
+  data-event-opts="{{[ [ 'getphonenumber',[ [ 'getphonenumber',['$event'] ] ] ],[ 'getuserinfo',[ [ 'getuserinfo',['$event'] ] ] ],[ 'error',[ [ 'error',['$event'] ] ] ],[ 'opensetting',[ [ 'opensetting',['$event'] ] ] ],[ 'launchapp',[ [ 'launchapp',['$event'] ] ] ],[ 'tap',[ [ 'click',['$event'] ] ] ] ]}}"
+  data-name="{{dataName}}"
+  disabled="{{disabled}}"
+  formType="{{formType}}"
+  hoverClass="{{getHoverClass}}"
+  hoverStartTime="{{$root.m0}}"
+  hoverStayTime="{{$root.m1}}"
+  hoverStopPropagation="{{hoverStopPropagation}}"
+  id="u-wave-btn"
+  lang="{{lang}}"
+  loading="{{loading}}"
+  openType="{{openType}}"
+  sendMessageImg="{{sendMessageImg}}"
+  sendMessagePath="sendMessagePath"
+  sendMessageTitle="{{sendMessageTitle}}"
+  sessionFrom="{{sessionFrom}}"
+  showMessageCard="{{showMessageCard}}"
+  style="{{$root.s0}}"
+>
+  <slot></slot>
+  <view
+    class="{{['u-wave-ripple','data-v-22c7754f',waveActive?'u-wave-active':'']}}"
+    style="{{'top:'+rippleTop+'px'+';'+'left:'+rippleLeft+'px'+';'+'width:'+fields.targetWidth+'px'+';'+'height:'+fields.targetWidth+'px'+';'+'background-color:'+(rippleBgColor||'rgba(0, 0, 0, 0.15)')+';'}}"
+    wx:if="{{ripple}}"
+  ></view>
+</button>

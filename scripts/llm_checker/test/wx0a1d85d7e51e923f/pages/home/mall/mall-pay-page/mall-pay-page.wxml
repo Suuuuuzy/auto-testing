@@ -1,0 +1,549 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<import src="/pages/template/coupon/coupon-item.wxml"></import>
+<import src="/pages/template/shop-item/shop-item.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view wx:if="{{payedPage}}">
+    <view class="margin-xs padding-tb radius bg-white padding-xs">
+        <view class="text-center uy-tom text-black  text-lg">
+            <text>{{Str.paySuccessed[lanIndex]}}</text>
+        </view>
+        <view class="text-center ">
+            <i class="iconfont icon-coupon_icon_5 text-pink" style="font-size:60rpx"></i>
+        </view>
+        <view class="text-center">
+            <text class="text-black text-block text-lg">{{isUy?shop.uy_name:shop.ch_name}}</text>
+        </view>
+        <view class="margin-sm solid-bottom padding-xs">
+            <view class="flex justify-between {{isUy?'rtl':''}}">
+                <view class="uy-tom">
+                    <text>{{Str.orderAmount[lanIndex]}}</text>
+                </view>
+                <view>
+                    <price decimalSmaller fill class="text-xl text-black text-bold uy-tom" price="{{payedData.order.total_fee}}" priceUnit="yuan"></price>
+                </view>
+            </view>
+            <view class="flex justify-between {{isUy?'rtl':''}}">
+                <view class="uy-tom">
+                    <text>{{Str.couponAmount[lanIndex]}}</text>
+                </view>
+                <view class="ltr">-<price decimalSmaller fill class="text-xl text-red text-bold uy-tom" price="{{payedData.order.actual_discount_fee}}" priceUnit="yuan"></price>
+                </view>
+            </view>
+            <view class="flex justify-between {{isUy?'rtl':''}}">
+                <view class="uy-tom">
+                    <text>{{Str.payedTime[lanIndex]}}</text>
+                </view>
+                <view class="ltr">
+                    <text class="text-sm text-gray ltr">{{payedData.order.created_at}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="padding-lr-sm">
+            <view class="flex justify-between {{isUy?'rtl':''}}">
+                <view>
+                    <text class="text-black  uy-tom">{{Str.actulyPayed[lanIndex]}}</text>
+                </view>
+                <view>
+                    <price decimalSmaller fill class="text-xl text-pink text-bold uy-tom" price="{{payedData.order.actual_fee}}" priceUnit="yuan"></price>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{scratchItem}}">
+            <scratch Str="{{Str}}" bind:btnClick="scratchBtnClick" canUse="{{scratchCanUse}}" data-item="{{scratchItem}}" isUy="{{isUy}}" item="{{scratchItem}}"></scratch>
+        </view>
+        <view class="margin-top-sm">
+            <view class="margin-top-xs " wx:for="{{payedData.coupon}}">
+                <template is="couponItem" data="{{item:item,Str:Str,lanIndex:lanIndex,isUy:isUy,index:index}}"></template>
+            </view>
+        </view>
+    </view>
+    <template is="footer" data></template>
+</view>
+<view wx:else>
+    <view wx:if="{{!formData.cartList.tableNum&&formData.cartList.shop.can_delivery&&formData.cartList.shop.can_pick_up&&pageData.isShow}}">
+        <view class="tab-{{STabCur==0?'left':'right'}} margin-lr-sm margin-top-sm">
+            <view class="flex text-center align-center" style="height:100rpx">
+                <view bindtap="STabSelect" class="cu-item flex-sub {{index==STabCur?'text-pink cur':'text-grey'}}" data-id="{{index}}" wx:for="{{tableInfo}}">
+                    <view class="flex justify-start view-center align-center">
+                        <view>
+                            <view>
+                                <i class="iconfont icon-{{item.icon}}" style="font-size:50rpx"></i>
+                            </view>
+                        </view>
+                        <view>
+                            <view class="text-bold text-lg padding-lr-xs  {{index==STabCur?'text-black':''}} "> {{isUy?item.uy_name:item.ch_name}} </view>
+                            <view class="text-sm text-gray" wx:if="{{isUy}}">{{item.ch_name}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view style="padding:10rpx 10rpx 150rpx 10rpx">
+        <view wx:if="{{!formData.cartList.tableNum&&formData.cartList.shop.can_delivery&&(formData.take_food_way==3||formData.take_food_way==2)&&pageData.isShow}}">
+            <view class="address-box" wx:if="{{STabCur==0}}">
+                <view bind:tap="addAddress" class="flex justify-between select-address align-center {{isUy?'rtl':''}} padding-lr-xs">
+                    <view>
+                        <view class="text-lg" wx:if="{{!selectAddress}}">
+                            <text class="icon-location text-pink"></text>
+                            <text class="text-black text-bold text-lg uy-tom margin-lr-sm">{{Str.selectAddress[lanIndex]}}</text>
+                        </view>
+                        <view wx:else>
+                            <view>
+                                <text wx:if="{{selectAddress.search_address}}">{{isUy?selectAddress.search_address.uy_name?selectAddress.search_address.uy_name:selectAddress.search_address.name:selectAddress.search_address.name}}/</text>
+                                <text>{{selectAddress.house_number}}</text>
+                            </view>
+                            <view class="text-gray text-sm uy-tom">{{selectAddress.contact_name}} {{selectAddress.contact_phone}} </view>
+                        </view>
+                    </view>
+                    <view>
+                        <text class="icon-{{isUy?'back':'right'}} text-xxl "></text>
+                    </view>
+                </view>
+                <picker bindchange="timeChange" range="{{allTime}}" value="{{tIndex}}" wx:if="{{STabCur==0}}">
+                    <view class="padding-lr-xs padding-tb-sm flex justify-between {{isUy?'rtl':''}} align-center">
+                        <view class="text-lg">
+                            <text class="icon-time padding-left-xs uy-tom"></text>
+                            <text class="padding-left-sm uy-tom text-bold">{{Str.pickupTime[lanIndex]}}</text>
+                        </view>
+                        <view>
+                            <view wx:if="{{isUy}}">
+                                <text class="icon-{{isUy?'back':'right'}} text-xxl"></text>
+                                <text class="text-lg text-bold text-black padding-lr-sm text-pink">{{allTime[tIndex]}}</text>
+                            </view>
+                            <view wx:else>
+                                <text class="text-lg text-bold text-black padding-lr-sm text-pink">{{allTime[tIndex]}}</text>
+                                <text class="icon-{{isUy?'back':'right'}} text-xxl"></text>
+                            </view>
+                        </view>
+                    </view>
+                </picker>
+            </view>
+            <view wx:if="{{STabCur==1}}">
+                <view class="cu-bar bg-white" wx:if="{{formData.cartList.shop['location_address']}}">
+                    <view class="action">
+                        <text class="text-black text-bold">{{formData.cartList.shop['location_address']}}</text>
+                    </view>
+                </view>
+                <view class="cu-bar bg-white solid-top">
+                    <view class="action">
+                        <view class="flex justify-start align-center ">
+                            <view class="text-center padding-lr-sm">
+                                <view>{{Str.getselfTime[lanIndex]}}</view>
+                                <view>
+                                    <picker bindchange="timeChange" range="{{allTime}}" value="{{tIndex}}">
+                                        <view class="picker">
+                                            <text class="text-lg text-bold text-black">{{allTime[tIndex]}}</text>
+                                        </view>
+                                    </picker>
+                                </view>
+                            </view>
+                            <view class="solids-right margin-lr-sm" style="width:10rpx;height:50rpx">
+                                <text></text>
+                            </view>
+                            <view class="margin-left-sm">
+                                <view>{{Str.reservePhone[lanIndex]}}</view>
+                                <view class="flex align-center">
+                                    <input bindinput="phoneInput" focus="{{phoneFocus}}" placeholder="{{Str.inputPhone[lanIndex]}}" value="{{formData.phone}}"></input>
+                                    <text bindtap="editPhone" class="icon-edit" style="font-size:40rpx"></text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{0}}">
+            <view wx:if="{{STabCur==0}}">
+                <view bindtap="addAddress" class="cu-bar bg-white {{isUy?'rtl':''}} padding-lr-xs" wx:if="{{!selectAddress}}">
+                    <view class="action">
+                        <text class="icon-location text-pink text-xxl"></text>
+                        <text class="text-black text-bold text-lg uy-tom margin-lr-sm">{{Str.selectAddress[lanIndex]}}</text>
+                    </view>
+                    <view class="action">
+                        <text class="icon-{{isUy?'back':'right'}} text-xxl text-red"></text>
+                    </view>
+                </view>
+                <view bindtap="addAddress" wx:if="{{selectAddress}}">
+                    <view class="cu-list menu sm-border {{isUy?'rtl':''}}">
+                        <view class="cu-item">
+                            <view class="content padding-tb-sm">
+                                <view class="uy-tom">
+                                    <text wx:if="{{selectAddress.search_address}}">{{isUy?selectAddress.search_address.uy_name?selectAddress.search_address.uy_name:selectAddress.search_address.name:selectAddress.search_address.name}}/</text> {{selectAddress.house_number}} </view>
+                                <view class="text-gray text-sm uy-tom">{{selectAddress.contact_name}} {{selectAddress.contact_phone}} </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view wx:if="{{STabCur==1}}">
+                <view class="cu-bar bg-white" wx:if="{{formData.cartList.shop['location_address']}}">
+                    <view class="action">
+                        <text class="text-black text-bold">{{formData.cartList.shop['location_address']}}</text>
+                    </view>
+                </view>
+                <view class="cu-bar bg-white solid-top">
+                    <view class="action">
+                        <view class="flex justify-start align-center ">
+                            <view class="text-center padding-lr-sm">
+                                <view>{{Str.getselfTime[lanIndex]}}</view>
+                                <view>
+                                    <picker bindchange="timeChange" range="{{allTime}}" value="{{tIndex}}">
+                                        <view class="picker">
+                                            <text class="text-lg text-bold text-black">{{allTime[tIndex]}}</text>
+                                        </view>
+                                    </picker>
+                                </view>
+                            </view>
+                            <view class="solids-right margin-lr-sm" style="width:10rpx;height:50rpx">
+                                <text></text>
+                            </view>
+                            <view class="margin-left-sm">
+                                <view>{{Str.reservePhone[lanIndex]}}</view>
+                                <view class="flex align-center">
+                                    <input bindinput="phoneInput" focus="{{phoneFocus}}" placeholder="{{Str.inputPhone[lanIndex]}}" value="{{formData.phone}}"></input>
+                                    <text bindtap="editPhone" class="icon-edit" style="font-size:40rpx"></text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view wx:else>
+            <view bindtap="selectTableNum" wx:if="{{formData.cartList.tableNum||pageData.isWaiter&&formData.cartList.shop.has_ordering_service}}">
+                <view class="margin-bottom-sm text-center flex justify-center" wx:if="{{formData.cartList.tableNum}}">
+                    <view class="bg-img text-center table-num">
+                        <view class="text-c4 " style="margin-top:130rpx">
+                            <i class="iconfont icon-num_{{item}}" style="font-size:44rpx" wx:for="{{formData.cartList.tableNums}}"></i>
+                        </view>
+                    </view>
+                </view>
+                <view wx:elif="{{pageData.isWaiter&&formData.cartList.shop.has_ordering_service}}">
+                    <view class="text-center">
+                        <text class="icon-roundadd text-pink" style="font-size:120rpx"></text>
+                    </view>
+                    <view class="text-center text-sm text-gray" style="margin-top:-20rpx">{{Str.selectTableNum[lanIndex]}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="margin-top-xs" wx:if="{{formData.cartList}}">
+            <view class="cu-bar bg-white solid-bottom {{isUy?'rtl':''}}" style="min-height:80rpx;border-radius:14rpx 14rpx 0 0">
+                <view class="action uy-tom text-black">
+                    <text class="icon-shop text-pink"></text>
+                    <text>&nbsp;&nbsp;</text> {{isUy?formData.cartList.shop.uy_name:formData.cartList.shop.ch_name}} </view>
+            </view>
+            <view wx:for="{{formData.cartList.cartItems}}" wx:key="index">
+                <view class="flex justify-between bg-white align-center padding-sm {{isUy?'rtl':''}}">
+                    <view class="flex justify-start">
+                        <view class="cu-avatar lg radius" style="background-image:url({{item.item.img_url+'?x-oss-process=image/resize,m_lfit,h_100,w_100'}});"></view>
+                        <view class="padding-xs">
+                            <view class="text-black uy-tom">{{isUy?item.item.uy_name:item.item.ch_name}}</view>
+                            <view class="text-gray text-sm">
+                                <view class="flex justify-start" wx:if="{{item.specificationIndexs}}">
+                                    <view wx:for="{{item.specificationIndexs}}" wx:for-index="_index" wx:for-item="_item">
+                                        <view class="padding-lr-xs text-sm"> {{isUy?item.specificationItems[ _item[0] ].items[ _item[1] ].uy_name:item.specificationItems[ _item[0] ].items[ _item[1] ].ch_name}} </view>
+                                    </view>
+                                </view>
+                                <view class="text-price text-red text-lg" wx:if="{{item.specificationIndexs}}">{{item.amount}}</view>
+                                <view class="text-cut" wx:else>
+                                    <price decimalSmaller class="{{item.is_activity==1?'text-sm ':'text-lg text-red'}}" price="{{(item.specificationIndexs?item.amount:item.item.price)*item.count}}" priceUnit="yuan" type="{{item.is_activity==1?'delthrough':'main'}}"></price>
+                                    <price decimalSmaller class="text-bold text-red text-lg" price="{{(item.specificationIndexs?item.amount:item.item.activity_price)*item.count}}" priceUnit="yuan" wx:if="{{item.is_activity==1}}"></price>
+                                </view>
+                            </view>
+                            <view class="text-sm text-gray" wx:if="{{item.item.phone||item.item.pickup_number}}">
+                                <text class="icon-phone"></text>{{item.item.phone}} / <text wx:if="{{item.item.pickup_number}}">{{item.item.pickup_number}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view></view>
+                    <view class="cu-tag round bg-grey sm">X{{item.count}}</view>
+                </view>
+            </view>
+            <view class="cu-bar bg-white {{isUy?'rtl':''}} padding-lr-sm" style="min-height:80rpx" wx:if="{{pageData.isShow}}">
+                <view class="action">
+                    <view>
+                        <view class="text-bold  text-black"> {{Str.deliveryFee[lanIndex]}}</view>
+                        <view class="text-sm text-green" style="height: 40rpx;margin-top: -8rpx;">
+                            <template is="deliveryDiscountTxt" data="{{isUy:isUy,discountAmount:formData.cartList.discountDeliveryFee}}" wx:if="{{formData.cartList.discountDeliveryFee>0}}"></template>
+                        </view>
+                    </view>
+                </view>
+                <view class="action">
+                    <price decimalSmaller fill class="uy-tom text-lg  text-black" price="{{formData.cartList.deliveryFee-formData.cartList.discountDeliveryFee}}" priceUnit="yuan" wx:if="{{formData.cartList.discountDeliveryFee>0&&formData.payType==0}}"></price>
+                    <text decode="true">&nbsp;</text>
+                    <price decimalSmaller fill class="{{formData.cartList.discountDeliveryFee>0&&formData.payType==0?' text-gray ':'text-black text-lg uy-tom'}}  " price="{{formData.cartList.deliveryFee}}" priceUnit="yuan" type="{{formData.cartList.discountDeliveryFee>0&&formData.payType==0?'delthrough':''}}">{{formData.cartList.deliveryFee}}</price>
+                </view>
+            </view>
+            <view class="cu-bar bg-white {{isUy?'rtl':''}} padding-lr-sm m-item" wx:if="{{formData.cartList.packingFee>0}}">
+                <view class="action">
+                    <view class="text-black text-bold">{{Str._packingFee[lanIndex]}}</view>
+                </view>
+                <view class="action">
+                    <text class="text-price text-black  text-lg">{{formData.cartList.packingFee}}</text>
+                </view>
+            </view>
+            <view class="cu-bar bg-white   {{isUy?'rtl':''}} padding-lr-sm m-item" wx:if="{{formData.payType==0&&formData.cartList.discountAmount>0}}">
+                <view class="action flex">
+                    <view class="r-bg padding-lr-xs radius">
+                        <template is="shopCouponTxtItem" data="{{isUy:isUy,item:formData.cartList.shopCouponSelectedItem}}"></template>
+                    </view>
+                </view>
+                <view class="action">
+                    <price decimalSmaller fill class="uy-tom text-black text-lg" price="{{formData.cartList.discountAmount}}" priceUnit="yuan"></price>
+                    <text>-</text>
+                </view>
+            </view>
+            <view class="cu-bar bg-white   {{isUy?'rtl':''}} padding-lr-sm m-item" wx:if="{{formData.payType==0&&!pageData.hasCashCart}}">
+                <view class="action flex">
+                    <view>
+                        <text class="text-bold text-black">{{Str.couponCart[lanIndex]}}</text>
+                    </view>
+                </view>
+                <view class="action">
+                    <price decimalSmaller fill class="uy-tom text-black text-lg" price="{{formData.coupon_amount}}" priceUnit="yuan"></price>
+                    <text>-</text>
+                </view>
+            </view>
+            <view bindtap="couponItemClick" class="cu-bar bg-white   {{isUy?'rtl':''}} padding-lr-sm m-item" wx:if="{{formData.payType==0&&pageData.hasCashCart}}">
+                <view class="action flex">
+                    <view>
+                        <text class="text-bold text-black">{{Str.couponCart[lanIndex]}}</text>
+                    </view>
+                </view>
+                <view class="action">
+                    <price decimalSmaller fill class="uy-tom text-black text-lg" price="{{formData.cash_coupon_amount}}" priceUnit="yuan"></price>
+                    <text>-</text>
+                </view>
+            </view>
+            <view wx:if="{{0}}">
+                <view class="cu-list menu sm-border  solid-bottom" style="margin-top: 0rpx;" wx:if="{{formData.payType==0&&!pageData.hasCashCart}}">
+                    <view bindtap="couponItemClick" class="cu-item {{isUy?'rtl':''}}">
+                        <view class="content">
+                            <view>
+                                <text class="text-df uy-tom text-balck">{{Str.couponCart[lanIndex]}}</text>
+                            </view>
+                        </view>
+                        <view class="action">
+                            <text>-<text class="text-price text-red text-xl  ">{{formData.coupon_amount}}</text>
+                            </text>
+                        </view>
+                    </view>
+                </view>
+                <view class="cu-list menu sm-border solid-top solid-bottom" wx:if="{{formData.payType==0&&pageData.hasCashCart}}">
+                    <view bindtap="couponItemClick" class="cu-item {{isUy?'rtl':''}}">
+                        <view class="content">
+                            <view>
+                                <text class="text-df uy-tom text-black ">{{Str.couponCart[lanIndex]}}</text>
+                            </view>
+                        </view>
+                        <view class="action ltr">
+                            <text>-</text>
+                            <text class="text-price text-red text-lg">{{formData.cash_coupon_amount}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="cu-bar bg-white {{isUy?'rtl':''}} padding-lr-sm m-bottom">
+                <view class="action flex justify-between align-center">
+                    <view class=" text-bold text-black uy-tom padding-{{isUy?'left':'right'}}-sm"> {{Str.shopSum[lanIndex]}} </view>
+                    <view class="margin-left-xl text-sm" style="margin-top:{{isUy?'-10':0}}rpx" wx:if="{{formData.actuly_amount>0&&formData.total_discounted>0}}">
+                        <view class="rtl" wx:if="{{isUy}}">
+                            <text class="text-red">{{formData.total_discounted}}</text>
+                            <text>{{Str.yuan[lanIndex]}}</text>
+                            <text decode="true">&nbsp;</text>
+                            <text>{{Str.discounted[lanIndex]}}</text>
+                        </view>
+                        <view wx:else>
+                            <text>{{Str.discounted[lanIndex]}}</text>
+                            <text class="text-red">{{formData.total_discounted}}</text>
+                            <text>{{Str.yuan[lanIndex]}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="action">
+                    <price decimalSmaller fill class="uy-tom text-black text-lg" price="{{formData.actuly_amount}}" priceUnit="yuan"></price>
+                    <price decimalSmaller fill class="text-sm" price="{{formData.cartList.totalPrice}}" priceUnit="yuan" type="delthrough" wx:if="{{formData.cartList.totalPrice>formData.actuly_amount}}"></price>
+                </view>
+            </view>
+            <view class="cu-list menu margin-top-xs sm-border" style="border-radius:14rpx">
+                <view bindtap="selectPayWayClick" class="cu-item {{isUy?'rtl':''}}" wx:if="{{(formData.cartList.shop.is_cash==1||pageData.isAdmin)&&STabCur==0}}">
+                    <view class="content">
+                        <text class="text-black text-bold">{{Str.payWay[lanIndex]}}</text>
+                    </view>
+                    <view class="action flex align-center">
+                        <text class="text-{{formData.payType==0?'green':'pink'}}">
+                            <text class="icon-{{formData.payType==0?'weixin':'moneybag'}} padding-right-xs"></text>{{isUy?payWayList[formData.payType].uy_name:payWayList[formData.payType].ch_name}}</text>
+                        <text class="{{isUy?'icon-back padding-right-xs':'icon-right padding-left-xs'}} "></text>
+                    </view>
+                </view>
+                <navigator class="cu-item {{isUy?'rtl':''}}" url="./remark-page/remark-page?title={{Str.writeRemark[lanIndex]}}">
+                    <view class="content">
+                        <text class="text-black text-bold">{{Str.writeRemark[lanIndex]}}</text>
+                    </view>
+                    <view class="action flex align-center">
+                        <text class="text-gray">{{formData.remark?formData.remark:Str.remarkWarn[lanIndex]}}</text>
+                        <text class="{{isUy?'icon-back padding-right-xs':'icon-right padding-left-xs'}} "></text>
+                    </view>
+                </navigator>
+            </view>
+            <view class="cu-form-group margin-top-xs {{isUy?'rtl':''}}" wx:if="{{0}}">
+                <view class="title">{{Str.leaveMessage[lanIndex]}}</view>
+                <input bindinput="messageInput" focus="{{remarkFocused}}" placeholder="{{Str.inputLeaveMessage[lanIndex]}}" value="{{formData.remark}}"></input>
+            </view>
+            <view wx:if="{{formData.cartList.shop.has_ids==1}}">
+                <view class="cu-bar bg-white margin-top">
+                    <view class="action"> {{Str.uploadIdCard[lanIndex]}} </view>
+                    <view class="action"> {{imgList.length}}/1 </view>
+                </view>
+                <view class="cu-form-group solid-top">
+                    <view class="grid col-4 grid-square flex-sub">
+                        <view bindtap="viewImage" class="padding-xs bg-img" data-url="{{imgList[index].state=='net'?ossImage+imgList[index].url:imgList[index].url}}" style="background-image:url({{imgList[index].state=='net'?ossImage+imgList[index].url:imgList[index].url}})" wx:for="{{imgList}}" wx:key="{{index}}">
+                            <view catchtap="delImg" class="cu-tag bg-red" data-index="{{index}}">
+                                <text class="icon-close"></text>
+                            </view>
+                        </view>
+                        <view bindtap="chooseImage" class="padding-xs solids" wx:if="{{imgList.length<1}}">
+                            <text class="icon-cameraadd"></text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="cu-bar bg-white solid-bottom margin-top-sm" wx:if="{{0}}">
+            <view class="action">
+                <text class="icon-title text-cyan text-xxl "></text> {{Str.payWay[lanIndex]}} </view>
+            <view class="action">
+                <text class="padding-xs">{{Str.weixin[lanIndex]}}</text>
+                <text class="text-xxl">
+                    <text class="icon-weixin text-green text-xxl"></text>
+                </text>
+            </view>
+        </view>
+    </view>
+    <view class="cu-bar  tabbar border  foot flex bg-black   margin-lr-xs margin-bottom flex justify-between align-center" style="border-radius:50rpx;padding-bottom:0;height:80rpx">
+        <view class="margin-left flex">
+            <view class="flex" style="margin-top:-40rpx"></view>
+            <view class="text-center " style="min-width:300rpx">
+                <view bindtap="showDetail">
+                    <view>
+                        <view>
+                            <view wx:if="{{formData.cartList.shop.is_open}}">
+                                <price decimalSmaller fill class="text-white text-xl padding-right-xs" price="{{formData.actuly_amount}}" priceUnit="yuan" wx:if="{{formData.actuly_amount>0&&formData.total_discounted>0}}">{{formData.actuly_amount}}</price>
+                                <price decimalSmaller fill class="{{formData.actuly_amount>0&&formData.total_discounted>0?'text-sm delete-text text-gray':'text-xl text-white'}}" price="{{formData.cartList.totalPrice}}" priceUnit="yuan">{{formData.cartList.totalPrice}}</price>
+                            </view>
+                        </view>
+                        <view class=" text-gray text-sm" style="margin-top:{{isUy?'-10':0}}rpx" wx:if="{{formData.actuly_amount>0&&formData.total_discounted>0}}">
+                            <view class="rtl " wx:if="{{isUy}}">
+                                <price decimalSmaller fill class="text-gray" price="{{formData.total_discounted}}" priceUnit="yuan">{{formData.total_discounted}}</price>
+                                <text>{{Str.yuan[lanIndex]}}</text>
+                                <text decode="true">&nbsp;</text>
+                                <text>{{Str.discounted[lanIndex]}}</text>
+                            </view>
+                            <view wx:else>
+                                <text>{{Str.discounted[lanIndex]}}</text>
+                                <price decimalSmaller fill class="text-gray" price="{{formData.total_discounted}}" priceUnit="yuan">{{formData.total_discounted}}</price>
+                                <text>{{Str.yuan[lanIndex]}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="bg-{{formData.cartList.shop.starting_price-formData.cartList.allPrice<=0?'pink':'black'}}  flex align-center" style="min-width:300rpx;min-height:100rpx;border-radius:0rpx 48rpx 48rpx 0rpx" wx:if="{{formData.cartList.shop.is_open}}">
+            <view class="{{isUy?'rtl':''}} text-center" style="min-width:300rpx" wx:if="{{formData.cartList.allPrice==0}}">
+                <text class="text-price">{{formData.cartList.shop.starting_price}}</text>
+                <text>{{Str._startPrice[lanIndex]}}</text>
+            </view>
+            <view bindtap="{{formData.cartList.shop.starting_price-formData.cartList.allPrice<=0&&formData.cartList.shop.is_open?'subBtn':''}}" class="text-center text-lg" style="min-width:300rpx" wx:elif="{{formData.cartList.shop.starting_price-formData.cartList.allPrice<=0}}"> {{Str.pay[lanIndex]}} </view>
+            <view class="text-center text-sm" style="min-width:300rpx" wx:else>
+                <view class="{{isUy?'rtl':''}}" wx:if="{{isUy}}">
+                    <text>{{Str.also[lanIndex]}} </text>
+                    <text class=" padding-lr-xs text-price">{{formData.cartList.shop.starting_price-formData.cartList.allPrice}}</text>
+                    <text>{{Str.yuan[lanIndex]}} </text>
+                    <text>{{Str.lack[lanIndex]}} </text>
+                </view>
+                <view wx:else>
+                    <text>{{Str.also[lanIndex]}}</text>
+                    <text>{{Str.lack[lanIndex]}}</text>
+                    <text class="text-pink padding-lr-xs" wx:if="{{cartList.shop}}">{{formData.cartList.shop.starting_price-formData.cartList.allPrice}}</text>
+                    <text>{{Str.yuan[lanIndex]}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view bindtap="hideModal" class="cu-modal bottom-modal {{modalName=='detailModal'?'show':''}} " style="margin-bottom:100rpx" wx:if="{{formData.cartList.cartItems.length>0}} ">
+    <view catchtap class="cu-dialog">
+        <view class="padding-sm bg-white solid-top">
+            <view class="text-center ">{{Str.details[lanIndex]}}</view>
+        </view>
+        <view class="cu-list menu solid-top solids-bottom sm-border">
+            <view class="cu-item" wx:for="{{formData.cartList.cartItems}}" wx:key="index">
+                <view class="content">
+                    <view class="flex ">
+                        <view class="flex-twice text-sm text-left">{{isUy?item.item.uy_name:item.item.ch_name}}</view>
+                        <view class="flex-sub text-price text-red text-left">
+                            <text style="text-decoration:{{item.item.time2>0?'line-through':''}}">{{item.item.price}}</text>
+                            <text class="text-cyan text-price" wx:if="{{item.item.time2>0}}">{{item.item.activity_price}}</text>
+                        </view>
+                        <view class="flex-sub text-right align-center">
+                            <i bindtap="removeBtn" class="iconfont icon-Remove padding-right-sm text-pink" data-index="{{item.index}}" data-indexx="{{item.indexx}}" style="font-size:50rpx" wx:if="{{item.count>0}}"></i>
+                            <text class="text-lg" wx:if="{{item.count>0}}"> {{item.count}}</text>
+                            <i bindtap="addBtn" class="iconfont icon-add1 padding-left-sm text-pink" data-index="{{item.index}}" data-indexx="{{item.indexx}}" style="font-size:50rpx"></i>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view bindtap="hideModal" class="cu-modal bottom-modal {{modalName=='tipModal'?'show':''}} ">
+    <view catchtap class="cu-dialog">
+        <view class="cu-bar bg-white">
+            <view class="action text-gray">
+                <button bindtap="hideModal" class="cu-btn line-gray radius">{{Str.cancel[lanIndex]}}</button>
+            </view>
+            <view class="action text-pink">
+                <button bindtap="tipConfirmBtn" class="cu-btn line-pink radius" disabled="{{tipValue>200||tipValue<0}}">{{Str.confirm[lanIndex]}}</button>
+            </view>
+        </view>
+        <view class="padding-sm bg-white solid-top">
+            <view class="cu-list grid col-3 no-border">
+                <view bindtap="tipModaltemClick" class="cu-item padding-tb-sm" data-value="{{item.value}}" wx:for="{{tipData}}" wx:key="index">
+                    <view class="margin-lr-xs">
+                        <button class="cu-btn block line-{{tipValue==item.value?'pink':'gray'}}">{{item.title}}</button>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="otherValueClick" class="margin-top-sm line-gray border text-center padding-sm" style="border:1rpx solid gray" wx:if="{{!otherValueEditing}}"> {{Str.otherValue[lanIndex]}} </view>
+            <view class="margin-top-sm  text-center padding-xs" style="border:1rpx solid pink" wx:else>
+                <view class="cu-form-group ">
+                    <view class="title">
+                        <text class="text-sm text-pink">{{Str.otherValue[lanIndex]}} : ￥ </text>: </view>
+                    <input bindinput="otherValueInput" class="" focus="true" style="font-size:24rpx" type="number" value="{{tipValue}}"></input>
+                </view>
+            </view>
+            <view class="padding-sm text-center text-sm text-gray" wx:if="{{otherValueEditing}}">
+                <text class="icon-info"></text>
+                <text class="{{tipValue>200?'text-red':''}}">{{Str.tipMaxWarn[lanIndex]}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view bindtap="hideModal" class="cu-modal {{modalName=='selectModal'?'show':''}}">
+    <view catchtap class="cu-dialog">
+        <radio-group bindchange="selectChange" class="block">
+            <view class="cu-list menu text-left">
+                <view class="cu-item" wx:for="{{selectData}}">
+                    <label class="flex justify-between align-center flex-sub">
+                        <view class="flex-sub">{{isUy?item.uy_name:item.ch_name}}</view>
+                        <radio checked="{{item.checked}}" class="round" value="{{index}}"></radio>
+                    </label>
+                </view>
+            </view>
+        </radio-group>
+    </view>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

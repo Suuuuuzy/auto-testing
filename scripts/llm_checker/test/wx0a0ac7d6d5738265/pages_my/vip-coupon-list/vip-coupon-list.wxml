@@ -1,0 +1,36 @@
+<view class="container data-v-d269d341">
+  <zym-navigation
+    bind:__l="__l"
+    class="data-v-d269d341"
+    uI="d269d341-0"
+    uP="{{a}}"
+    wx:if="{{a}}"
+  ></zym-navigation>
+  <view class="coupon-list data-v-d269d341">
+    <view
+      catchtap="{{item.f}}"
+      class="coupon-item data-v-d269d341"
+      wx:for="{{b}}"
+      wx:key="e"
+    >
+      <text class="coupon-text data-v-d269d341">{{item.a}}</text>
+      <view class="coupon-count data-v-d269d341">
+        <view class="{{['count-text','data-v-d269d341',item.c]}}">
+          <text
+            class="data-v-d269d341"
+            style="font-size: 28rpx; padding-right: 8rpx"
+            >{{item.b}}</text
+          >
+          张
+        </view>
+        <u-icon
+          bind:__l="__l"
+          class="data-v-d269d341"
+          uI="{{item.d}}"
+          uP="{{c}}"
+          wx:if="{{c}}"
+        ></u-icon>
+      </view>
+    </view>
+  </view>
+</view>

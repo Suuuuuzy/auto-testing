@@ -1,0 +1,247 @@
+<view>
+  <cu-custom
+    bgColor="bg-gradual-blue"
+    bind:__l="__l"
+    isBack="{{false}}"
+    vueId="8dd740cc-1"
+    vueSlots="{{['content']}}"
+  >
+    <view slot="content">{{appName}}</view>
+  </cu-custom>
+  <swiper
+    autoplay="{{true}}"
+    circular="{{true}}"
+    class="screen-swiper square-dot"
+    duration="400"
+    indicatorDots="{{true}}"
+    interval="3000"
+    style="min-height: 176px"
+  >
+    <swiper-item
+      bindtap="__e"
+      data-event-opts="{{[ [ 'tap',[ [ 'bannerClick',[index] ] ] ] ]}}"
+      wx:for="{{banner}}"
+      wx:key="index"
+    >
+      <image mode="aspectFill" src="{{item.imgUrl}}"></image>
+    </swiper-item>
+  </swiper>
+  <view class="tui-notice-board" wx:if="{{showNotice}}">
+    <view class="tui-scorll-view">
+      <view class="{{['tui-notice',animation?'tui-animation':'']}}"
+        >{{notice}}</view
+      >
+    </view>
+  </view>
+  <view class="hahahah">
+    <textarea
+      adjustPosition="{{false}}"
+      bindconfirm="__e"
+      bindinput="__e"
+      class="qsylink"
+      confirmType="go"
+      data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','analyseUrl','$event',[] ] ] ] ] ]}}"
+      maxlength="-1"
+      name="input"
+      placeholder="请输入视频链接"
+      value="{{analyseUrl}}"
+    ></textarea>
+  </view>
+  <view class="qsy-btn">
+    <button
+      bindtap="__e"
+      class="cu-btn bg-grey shadow-blur"
+      data-event-opts="{{[ [ 'tap',[ [ 'clearText2',['$event'] ] ] ] ]}}"
+    >
+      <text class="cuIcon-roundclose lg text-gray"></text>清空
+    </button>
+    <button
+      bindtap="__e"
+      class="cu-btn shadow-blur bg-gradual-orange"
+      data-event-opts="{{[ [ 'tap',[ [ 'copytext',['$event'] ] ] ] ]}}"
+    >
+      <text class="cuIcon-copy lg text-gray"></text>一键粘贴
+    </button>
+    <button
+      bindtap="__e"
+      class="cu-btn shadow-blur bg-gradual-blue"
+      data-event-opts="{{[ [ 'tap',[ [ 'videoAnalyse',['$event'] ] ] ] ]}}"
+      openType="getUserProfile"
+      wx:if="{{!wxappid}}"
+    >
+      <text class="cuIcon-roundright lg text-gray"></text>开始解析
+    </button>
+    <navigator
+      appId="{{wxappid}}"
+      class="cu-btn shadow-blur bg-gradual-blue"
+      extraData=""
+      openType="navigate"
+      path="{{wxpath}}"
+      target="miniProgram"
+      version="release"
+      wx:if="{{wxappid}}"
+    >
+      <text class="cuIcon-roundright lg text-gray"></text>{{jx}}</navigator
+    >
+  </view>
+  <view class="userjc-link">
+    <text class="cuIcon-lightauto lg text-gray"></text>
+    <text class="ccqy">启用小程序自动检测粘贴板链接</text>
+    <switch
+      bindchange="__e"
+      checked="{{jiancelink?true:false}}"
+      class="{{[jiancelink?'checked':'']}}"
+      data-event-opts="{{[ [ 'change',[ [ 'SwitchA',['$event'] ] ] ] ]}}"
+      style="float: right"
+    ></switch>
+  </view>
+  <view class="text-center">{{pcpeiyin}}</view>
+  <view class="grid col-2 width98">
+    <view class="pic-padding" wx:if="{{wenanpeiyin==0}}">
+      <view
+        bindtap="__e"
+        class="radius shadow-blur bg-gradual-red"
+        data-event-opts="{{[ [ 'tap',[ [ 'page',[2] ] ] ] ]}}"
+      >
+        <view class="nowBody">
+          <view class="headWord">
+            <text class="firstHead">邀请好友</text>
+            <view>获取更多免费次数</view>
+          </view>
+          <image
+            alt
+            class="headImg _img"
+            src="../../static/img/camera.png"
+          ></image>
+        </view>
+      </view>
+    </view>
+    <view class="pic-padding" wx:else>
+      <view
+        bindtap="__e"
+        class="radius shadow-blur bg-gradual-red"
+        data-event-opts="{{[ [ 'tap',[ [ 'page',[1] ] ] ] ]}}"
+      >
+        <view class="nowBody">
+          <view class="headWord">
+            <text class="firstHead">文案提取</text>
+            <view>提取短视频文案</view>
+          </view>
+          <image
+            alt
+            class="headImg _img"
+            src="../../static/img/book-2.png"
+          ></image>
+        </view>
+      </view>
+    </view>
+    <view class="pic-padding">
+      <view
+        bindtap="__e"
+        class="radius shadow-blur bg-gradual-pink"
+        data-event-opts="{{[ [ 'tap',[ [ 'page',[5] ] ] ] ]}}"
+      >
+        <view class="nowBody">
+          <view class="headWord">
+            <text class="firstHead">使用教程</text>
+            <view>如何去水印</view>
+          </view>
+          <image
+            alt
+            class="headImg _img"
+            src="../../static/img/book-2.png"
+          ></image>
+        </view>
+      </view>
+    </view>
+    <view class="pic-padding">
+      <view
+        bindtap="__e"
+        class="radius shadow-blur bg-gradual-purple"
+        data-event-opts="{{[ [ 'tap',[ [ 'page',[3] ] ] ] ]}}"
+      >
+        <view class="nowBody">
+          <view class="headWord">
+            <text class="firstHead">批量解析</text>
+            <view>解析所有作品</view>
+          </view>
+          <image
+            alt
+            class="headImg _img"
+            src="../../static/img/batch-1.png"
+          ></image>
+        </view>
+      </view>
+    </view>
+    <view class="pic-padding" wx:if="{{wenanpeiyin==0}}">
+      <view
+        bindtap="__e"
+        class="radius shadow-blur bg-gradual-orange"
+        data-event-opts="{{[ [ 'tap',[ [ 'page',[6] ] ] ] ]}}"
+      >
+        <view class="nowBody">
+          <view class="headWord">
+            <text class="firstHead">解析记录</text>
+            <view>已解析的视频</view>
+          </view>
+          <image
+            alt
+            class="headImg _img"
+            src="../../static/img/music-3.png"
+          ></image>
+        </view>
+      </view>
+    </view>
+    <view class="pic-padding" wx:else>
+      <view
+        bindtap="__e"
+        class="radius shadow-blur bg-gradual-orange"
+        data-event-opts="{{[ [ 'tap',[ [ 'page',[4] ] ] ] ]}}"
+      >
+        <view class="nowBody">
+          <view class="headWord">
+            <text class="firstHead">配音工具</text>
+            <view>文字转语音</view>
+          </view>
+          <image
+            alt
+            class="headImg _img"
+            src="../../static/img/music-3.png"
+          ></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="pic-padding">
+    <view
+      bindtap="__e"
+      class="bg-gzh padding-sm radius text-center shadow-blur"
+      data-event-opts="{{[ [ 'tap',[ ['skipgzh'] ] ] ]}}"
+      wx:if="{{customername}}"
+    >
+      <view class="text-lg">{{customername}}</view>
+    </view>
+  </view>
+  <view
+    class="padding-sm flex flex-direction"
+    style="margin-top: -7px"
+    wx:if="{{shareBtn}}"
+  >
+    <button
+      class="cu-btn"
+      openType="share"
+      style="margin-left: 2px; background: #16a7f8; color: white"
+    >
+      {{shareBtn}}
+    </button>
+  </view>
+  <view class="pic-padding">
+    <ad
+      adTheme="white"
+      adType="video"
+      unitId="{{indexAd}}"
+      wx:if="{{showAd}}"
+    ></ad>
+  </view>
+  <privacy id="privacyComponent"></privacy>
+</view>

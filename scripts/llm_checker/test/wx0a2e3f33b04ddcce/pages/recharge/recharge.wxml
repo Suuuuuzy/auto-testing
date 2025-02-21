@@ -1,0 +1,59 @@
+<navBar
+  back="{{true}}"
+  bindback="handlerGobackClick"
+  bindhome="handlerGohomeClick"
+  home="{{false}}"
+  style="background-image: linear-gradient(to left top, blue, red)"
+  title="充值中心"
+></navBar>
+<view class="container">
+  <view class="recharge">
+    <view class="user-info">
+      <view class="user-info-main">
+        <image class="background" src="/assets/img/rechargeBg.png"></image>
+        <view class="user-info">
+          <view
+            >余额（元）<view class="amount">{{cardDetail.money}}</view>
+          </view>
+          <view class="user-num">NO.{{cardDetail.cardId}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="main">
+      <van-row gutter="12">
+        <van-col span="8" wx:for="{{money}}" wx:key="index">
+          <view
+            bindtap="change"
+            class="money-box {{index===active?'active':''}}"
+            data-index="{{index}}"
+            data-money="{{item}}"
+            >{{item}}元</view
+          >
+        </van-col>
+        <van-col span="8">
+          <van-field
+            bind:focus="change"
+            bind:input="checkMoney"
+            border="{{false}}"
+            class="money-box {{selfActive?'active':''}}"
+            placeholder="自定义"
+            type="number"
+            value="{{value}}"
+          ></van-field>
+        </van-col>
+      </van-row>
+      <view style="padding-top: 140rpx">
+        <van-button
+          block
+          bind:click="recharge"
+          class="recharge-button"
+          color="linear-gradient(to right, #3680FD, #7659FC)"
+          disabled="{{rechargeButton}}"
+          >充值</van-button
+        >
+      </view>
+    </view>
+  </view>
+  <van-toast id="van-toast"></van-toast>
+</view>
+<van-dialog id="van-dialog"></van-dialog>

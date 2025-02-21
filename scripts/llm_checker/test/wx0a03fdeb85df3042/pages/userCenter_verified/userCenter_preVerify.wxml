@@ -1,0 +1,33 @@
+<view class="container">
+    <image class="verified-topImg" src="../asserts/images/userVerified_topImg.png"></image>
+    <view class="verified-top">
+        <image class="verified-bgImg" src="../asserts/images/userVerified_bgImg.png"></image>
+        <view class="top-title">
+            <image src="../asserts/images/userVerified_title.png"></image>
+        </view>
+    </view>
+    <view class="verified-body">
+        <form action="" bindsubmit="bindVerifiedSubmit">
+            <view class="verified-item">
+                <image mode="aspectFit" src="../asserts/images/userVerified_nameIcon.png"></image>
+                <input bindinput="bindUserNameInput" class="verified-item-input" name="userName" placeholder="请输入用户姓名" placeholderClass="placeHolderClass" type="text" value="{{preVerifyData.userName}}"></input>
+            </view>
+            <view class="verified-item">
+                <image mode="aspectFit" src="../asserts/images/userVerified_idCardIcon.png"></image>
+                <input bindinput="bindIdCardInput" class="verified-item-input" name="idCard" placeholder="请输入身份证号码" placeholderClass="placeHolderClass" type="idcard" value="{{preVerifyData.idCard}}"></input>
+            </view>
+            <view class="verified-item">
+                <image mode="aspectFit" src="../asserts/images/userVerified_telIcon.png"></image>
+                <input bindinput="bindMobileInput" class="verified-item-input" name="mobile" placeholder="请输入手机号" placeholderClass="placeHolderClass" type="number" value="{{preVerifyData.mobile}}"></input>
+            </view>
+            <view class="verified-item getVerificationCode">
+                <view class="inputCode">
+                    <image mode="aspectFit" src="../asserts/images/userVerified_codeIcon.png"></image>
+                    <input bindinput="bindVerifyCodeInput" class="verified-item-input" name="verifyCode" placeholder="请输入验证码" placeholderClass="placeHolderClass" type="number" value="{{preVerifyData.verifyCode}}"></input>
+                </view>
+                <button bindtap="bindGetCodeTap" class="getCodeBtn {{getCodeDisabled?'disabledClass':''}}" disabled="{{getCodeDisabled}}" type="button">{{getCodeText}}</button>
+            </view>
+            <button class="next" formType="submit">下一步</button>
+        </form>
+    </view>
+</view>

@@ -1,0 +1,212 @@
+.page_record_style {
+  padding-top: 20rpx;
+  width: 750rpx;
+  height: 100%;
+}
+.item_style {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  background: #fff;
+  border-radius: 14rpx;
+  margin-top: 20rpx;
+  padding: 20rpx 20rpx 60rpx;
+  position: relative;
+  z-index: 2;
+}
+.view_hidde {
+  display: none;
+}
+.loading {
+  padding: 10rpx;
+  text-align: center;
+  font-size: 16px;
+}
+.loading:before {
+  font-size: 16px;
+  display: inline-block;
+  margin-right: 5rpx;
+  vertical-align: middle;
+  content: "";
+  width: 40rpx;
+  height: 40rpx;
+  background-size: contain;
+  animation: rotate 1s linear infinite;
+}
+.loading.complete:before {
+  font-size: 16px;
+  display: none;
+}
+.down_allow_style {
+  width: 60rpx;
+  height: 60rpx;
+  top: 0rpx;
+  z-index: 10;
+}
+.empty_sytle {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.view_x {
+  -webkit-box-orient: horizontal;
+  flex-flow: row;
+  justify-items: center;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.view_x,
+.view_y {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-direction: normal;
+}
+.view_y {
+  -webkit-box-orient: vertical;
+  flex-flow: column;
+}
+.mileage_style {
+  width: 30rpx;
+  height: 30rpx;
+}
+.detail_info_avgimg_text_style {
+  background-color: #3dc171;
+}
+.detail_info_avgimg_text_style,
+.detail_info_maximg_text_style {
+  width: 68rpx;
+  height: 32rpx;
+  border-radius: 16rpx;
+  font-size: 24rpx;
+  line-height: 32rpx;
+  color: #fff;
+  text-align: center;
+}
+.detail_info_maximg_text_style {
+  background-color: #ed3f03;
+}
+.text_content_style {
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+.circle_style {
+  width: 20rpx;
+  height: 20rpx;
+}
+.time_text_style {
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  font-size: 26rpx;
+  color: #666;
+}
+.address_text_style {
+  color: #666;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+}
+.drive_look_style {
+  position: absolute;
+  right: 0rpx;
+  bottom: 0rpx;
+  font-size: 32rpx;
+  color: #1197ff;
+  padding: 20rpx;
+}
+.record_date_style {
+  width: 630rpx;
+  height: 100rpx;
+  background-color: #fff;
+  white-space: nowrap;
+}
+.select_date_image_style {
+  position: absolute;
+  top: 0rpx;
+  right: 0rpx;
+  width: 120rpx;
+  height: 120rpx;
+  background-color: #fff;
+}
+.scroll-view-item_H {
+  display: inline-block;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 20rpx;
+}
+.mdate_view_style,
+.scroll-view-item_H {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  width: 100rpx;
+}
+.mdate_view_style {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.date_line_style {
+  width: 80rpx;
+  height: 6rpx;
+  background-color: #d96507;
+}
+.selectday_detailinfo_view_style {
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 14px;
+  background-color: #fff;
+}
+.grid-item-box,
+.selectday_detailinfo_view_style {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+}
+.grid-item-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  width: 375rpx;
+  height: 144rpx;
+  line-height: 144rpx;
+  text-align: center;
+  font-size: 20rpx;
+}
+.grid_item_imageview_style {
+  width: 84rpx;
+  height: 84rpx;
+  padding: 40rpx;
+}
+.grid_item_image_style {
+  width: 84rpx;
+  height: 84rpx;
+}
+.grid_item_textview_style {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  width: 200rpx;
+  color: #000;
+  text-align: left;
+}
+.grid_text_title_style {
+  padding-top: 30rpx;
+  color: #353535;
+  font-size: 30rpx;
+}
+.grid_text_subitle_style {
+  color: #666;
+  font-size: 24rpx;
+}

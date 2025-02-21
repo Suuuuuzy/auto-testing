@@ -1,0 +1,23 @@
+<view class="container data-v-13487246">
+  <view bindtap="{{b}}" class="gunitem data-v-13487246">
+    <image class="itemTu data-v-13487246" mode="" src="{{a}}"></image>
+  </view>
+  <view bindtap="{{d}}" class="gunitem data-v-13487246">
+    <image class="itemTu data-v-13487246" mode="" src="{{c}}"></image>
+  </view>
+  <view bindtap="{{g}}" class="fleet fsb data-v-13487246" wx:if="{{e}}">
+    <view class="fleetTeam fc data-v-13487246">
+      <image class="img data-v-13487246" mode="" src="{{f}}"></image>
+      <text class="xqtxt data-v-13487246">车队详情</text>
+    </view>
+    <view class="fc cktxt data-v-13487246"> 查看车队细信息 </view>
+  </view>
+  <view class="oilOrice data-v-13487246">
+    <view class="priceitem data-v-13487246" wx:for="{{h}}" wx:key="d">
+      <text class="{{['type','mb24','data-v-13487246',item.b]}}"
+        >{{item.a}}</text
+      >
+      <text class="price data-v-13487246">￥{{item.c}}/L</text>
+    </view>
+  </view>
+</view>

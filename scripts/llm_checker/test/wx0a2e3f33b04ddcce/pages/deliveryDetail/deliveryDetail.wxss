@@ -1,0 +1,97 @@
+.dish-image {
+  background-color: #f2f2f2;
+  text-align: center;
+  width: 100%;
+}
+.image {
+  width: 100%;
+}
+.content {
+  background-color: #efefef;
+}
+.dish-info {
+  background-color: #fff;
+  margin-bottom: 16rpx;
+  padding: 30rpx;
+}
+.name {
+  color: #333;
+  font-size: 36rpx;
+  font-weight: 600;
+  line-height: 50rpx;
+  min-height: 50rpx;
+}
+.inventory,
+.limit,
+.pickupInfo {
+  color: #999;
+  font-size: 24rpx;
+  height: 33rpx;
+  line-height: 33rpx;
+  margin-top: 10rpx;
+}
+.price-count {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+}
+.price {
+  background-clip: text;
+  background-image: linear-gradient(146deg, #fc8c40 -5%, #fd5475 104%);
+  color: transparent;
+  font-size: 22px;
+  font-weight: 600;
+}
+.stepper-input {
+  background-color: #fff !important;
+  color: #3a7efd !important;
+}
+.stepper-plus {
+  background-color: #3a7efd !important;
+  color: #fff !important;
+}
+.stepper-minus,
+.stepper-plus {
+  height: 36rpx !important;
+  padding: 3rpx !important;
+  width: 36rpx !important;
+}
+.stepper-minus {
+  background-color: #fff !important;
+  border: 2rpx solid #3a7efd !important;
+  border-radius: 10rpx !important;
+  color: #3a7efd !important;
+}
+.stepper-plus::before {
+  height: 2px !important;
+  width: 12px !important;
+}
+.stepper-plus::after {
+  height: 12px !important;
+  width: 2px !important;
+}
+.stepper-minus::before {
+  height: 2px !important;
+  width: 12px !important;
+}
+.stepper-minus::after {
+  height: 12px !important;
+  width: 2px !important;
+}
+.van-stepper__input {
+  height: 36rpx !important;
+  transform: translateY(-6rpx) !important;
+}
+.description-section {
+  background-color: #fff;
+  padding: 30rpx;
+}
+.title {
+  color: #333;
+  font-size: 26rpx;
+}
+.description {
+  color: #999;
+  font-size: 26rpx;
+  line-height: 40px;
+}

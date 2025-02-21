@@ -1,0 +1,272 @@
+<view
+  class="{{['chapterWrap','data-v-2c9a6033',isEye?'bgNightColor':'bgDayColor']}}"
+>
+  <view
+    class="mainCon data-v-2c9a6033"
+    style="{{'font-size:'+fontSize+'rpx'+';'+'line-height:'+fontSize+fontSize+'rpx'+';'}}"
+  >
+    <u-parse
+      bind:__l="__l"
+      class="content data-v-2c9a6033"
+      content="{{bookContent}}"
+      style="{{'font-size:'+fontSize+'rpx'+';'+'line-height:'+fontSize+fontSize+'rpx'+';'}}"
+      vueId="0b6c2826-1"
+    ></u-parse>
+  </view>
+  <view
+    class="{{['topupSmoothCon','data-v-2c9a6033',uniPlatform=='mp-weixin'?'topupSmoothConWX':'']}}"
+    wx:if="{{readStatus!=1}}"
+  >
+    <view class="topup_bg data-v-2c9a6033"></view>
+    <view class="topupCon data-v-2c9a6033" wx:if="{{readStatus==4}}">
+      <view class="title-con flexible aItem-center jc-center data-v-2c9a6033">
+        <view class="line data-v-2c9a6033"></view>
+        <view class="title data-v-2c9a6033">剩余内容需付费解锁</view>
+        <view class="line line-right data-v-2c9a6033"></view>
+      </view>
+      <view
+        class="topup-List flexible flex-flow mb30 data-v-2c9a6033"
+        wx:if="{{iosPay}}"
+      >
+        <view
+          catchtap="__e"
+          class="{{['topup-item','data-v-2c9a6033',productId==i[$orig].productId?'topup-item-act':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'changeprice',['$0',2],[ [ ['consumegradeList','',index] ] ] ] ] ] ]}}"
+          wx:for="{{$root.l0}}"
+          wx:for-item="i"
+          wx:key="index"
+        >
+          <view class="tips data-v-2c9a6033" wx:if="{{i[$orig].tips}}"
+            >{{i[$orig].tips}}</view
+          >
+          <image
+            class="img_vip data-v-2c9a6033"
+            src="/static/img/img_vip@2x.png"
+            wx:if="{{i[$orig].isVip}}"
+          ></image>
+          <view
+            class="topup_current f-tal ml30 flexible data-v-2c9a6033"
+            wx:if="{{i[$orig].type==2}}"
+          >
+            <view class="f30 data-v-2c9a6033"
+              >{{i[$orig].coin}}<text class="f20 data-v-2c9a6033">书币</text>
+            </view>
+            <view class="data-v-2c9a6033" wx:if="{{i[$orig].bonus>0}}"
+              >{{'+'+i[$orig].bonus}}<text class="f20 data-v-2c9a6033"
+                >赠币</text
+              >
+            </view>
+          </view>
+          <view class="topup_current data-v-2c9a6033" wx:else
+            >{{i[$orig].property}}</view
+          >
+          <view class="topup_cost data-v-2c9a6033">{{i.g0[1]}}</view>
+          <view
+            class="topup_fuli ml30 data-v-2c9a6033"
+            wx:if="{{i[$orig].type==2}}"
+            >{{i[$orig].text}}</view
+          >
+          <view class="topup_slogan data-v-2c9a6033" wx:else
+            >{{i[$orig].text}}</view
+          >
+          <view class="topup_type data-v-2c9a6033"
+            >{{i[$orig].moneyStr+(gradeType==1?'元':'钻石')}}</view
+          >
+        </view>
+      </view>
+    </view>
+    <view
+      class="topupCon data-v-2c9a6033"
+      wx:if="{{readStatus==2||readStatus==3}}"
+    >
+      <view class="title-con flexible aItem-center jc-center data-v-2c9a6033">
+        <view class="line data-v-2c9a6033"></view>
+        <view class="title data-v-2c9a6033">剩余内容需付费解锁</view>
+        <view class="line line-right data-v-2c9a6033"></view>
+      </view>
+      <view
+        class="{{['f30','data-v-2c9a6033',isEye?'text-fff':'text-333']}}"
+        style="margin-top: 50rpx"
+        >书币余额</view
+      >
+      <view class="wode-coin flexible aItem-center mb10 data-v-2c9a6033">
+        <image
+          class="ic_b data-v-2c9a6033"
+          src="/static/img/ic_b@2x.png"
+        ></image>
+        <view class="coin-count ml30 data-v-2c9a6033">{{coin}}</view>
+        <view
+          class="{{['f28','ml0','data-v-2c9a6033',isEye?'text-fff':'text-999']}}"
+          >书币</view
+        >
+        <view class="coin-count ml30 data-v-2c9a6033">{{bonus}}</view>
+        <view
+          class="{{['f28','ml0','data-v-2c9a6033',isEye?'text-fff':'text-999']}}"
+          >赠币</view
+        >
+      </view>
+      <view
+        class="currencyCon flexible jc-between aItem-center data-v-2c9a6033"
+      >
+        <image
+          class="tip data-v-2c9a6033"
+          src="/static/img/currency_tips.png"
+        ></image>
+        <view class="currency-detail data-v-2c9a6033">
+          <text class="name f24 data-v-2c9a6033">本章价格</text>
+          <text class="price data-v-2c9a6033">{{chapterPrice}}</text>
+          <text class="coin f26 data-v-2c9a6033">书币</text>
+        </view>
+        <view
+          catchtap="__e"
+          class="currency-btn mr20 data-v-2c9a6033"
+          data-event-opts="{{[ [ 'tap',[ ['lockChapter'] ] ] ]}}"
+          wx:if="{{readStatus==2}}"
+          >立即解锁</view
+        >
+        <view
+          catchtap="__e"
+          class="currency-btn mr20 data-v-2c9a6033"
+          data-event-opts="{{[ [ 'tap',[ ['topupChapter'] ] ] ]}}"
+          wx:if="{{readStatus==3}}"
+          >书币不足，去充值</view
+        >
+      </view>
+    </view>
+  </view>
+  <view
+    bindtap="__e"
+    class="audio-con data-v-2c9a6033"
+    data-event-opts="{{[ [ 'tap',[ [ 'goNext',['/pages/readPage/audio?bookId='+bookId] ] ] ] ]}}"
+    wx:if="{{bookData.hasAudio&&isShowReadBtn}}"
+  >
+    <image class="ic_zi data-v-2c9a6033" src="/static/img/ic_zi@2x.png"></image>
+  </view>
+  <view
+    bindtap="__e"
+    class="footer-wrap data-v-2c9a6033"
+    data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+    wx:if="{{chapterContent}}"
+  >
+    <view
+      class="set-warp background-wrap flexible mt40 aItem-center data-v-2c9a6033"
+      wx:if="{{isShowSet}}"
+    >
+      <view class="{{['f22','data-v-2c9a6033',isEye?'text-fff':'text-333']}}"
+        >背景</view
+      >
+      <view class="flexible data-v-2c9a6033">
+        <view
+          catchtap="__e"
+          class="set-btn set-btn-day data-v-2c9a6033"
+          data-event-opts="{{[ [ 'tap',[ [ 'changeEye',[false] ] ] ] ]}}"
+          >日间模式</view
+        >
+        <view
+          catchtap="__e"
+          class="set-btn set-btn-night data-v-2c9a6033"
+          data-event-opts="{{[ [ 'tap',[ [ 'changeEye',[true] ] ] ] ]}}"
+          >夜间模式</view
+        >
+      </view>
+    </view>
+    <view
+      class="set-warp flexible slider-wrap mt40 mb30 aItem-center data-v-2c9a6033"
+      wx:if="{{isShowSet}}"
+    >
+      <view class="{{['f22','data-v-2c9a6033',isEye?'text-fff':'text-333']}}"
+        >字号</view
+      >
+      <view class="flexible aItem-center data-v-2c9a6033">
+        <view
+          catchtap="__e"
+          class="set-btn mr20 data-v-2c9a6033"
+          data-event-opts="{{[ [ 'tap',[ [ 'sliderChange',['plus'] ] ] ] ]}}"
+          >A-</view
+        >
+        <view
+          class="{{['f24','ml20','data-v-2c9a6033',isEye?'text-fff':'text-666']}}"
+          >{{fontSize}}</view
+        >
+        <view
+          catchtap="__e"
+          class="set-btn data-v-2c9a6033"
+          data-event-opts="{{[ [ 'tap',[ [ 'sliderChange',['add'] ] ] ] ]}}"
+          >A+</view
+        >
+      </view>
+    </view>
+    <view class="bottomWrap flexible aItem-center bgColor data-v-2c9a6033">
+      <view
+        catchtap="__e"
+        class="flex data-v-2c9a6033"
+        data-event-opts="{{[ [ 'tap',[ [ 'gohome',['$event'] ] ] ] ]}}"
+      >
+        <image
+          class="data-v-2c9a6033"
+          src="/static/img/sc_sun.png"
+          wx:if="{{!isEye}}"
+        ></image>
+        <image
+          class="data-v-2c9a6033"
+          src="/static/img/sc_night.png"
+          wx:if="{{isEye}}"
+        ></image>
+        <view class="f22 f-fwb-400 text-eye data-v-2c9a6033">书城</view>
+      </view>
+      <view
+        catchtap="__e"
+        class="flex data-v-2c9a6033"
+        data-event-opts="{{[ [ 'tap',[ [ 'goNext',['/pages/readPage/detail?bookId='+bookId] ] ] ] ]}}"
+      >
+        <image
+          class="ic_eye data-v-2c9a6033"
+          src="/static/img/detail_night.png"
+          wx:if="{{!isEye}}"
+        ></image>
+        <image
+          class="ic_eye data-v-2c9a6033"
+          src="/static/img/detail_sun.png"
+          wx:if="{{isEye}}"
+        ></image>
+        <view class="f22 f-fwb-400 text-eye data-v-2c9a6033">详情</view>
+      </view>
+      <view
+        catchtap="__e"
+        class="flex data-v-2c9a6033"
+        data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}"
+      >
+        <image
+          class="ic_eye data-v-2c9a6033"
+          src="/static/img/set_sun.png"
+          wx:if="{{!isEye}}"
+        ></image>
+        <image
+          class="ic_eye data-v-2c9a6033"
+          src="/static/img/set_night.png"
+          wx:if="{{isEye}}"
+        ></image>
+        <view class="f22 f-fwb-400 text-eye data-v-2c9a6033">设置</view>
+      </view>
+      <view
+        catchtap="__e"
+        class="flex data-v-2c9a6033"
+        data-event-opts="{{[ [ 'tap',[ [ 'addShelfFun',['$event'] ] ] ] ]}}"
+      >
+        <image
+          class="ic_shujia data-v-2c9a6033"
+          src="/static/img/ic_sj_sun.png"
+          wx:if="{{!isEye}}"
+        ></image>
+        <image
+          class="ic_shujia data-v-2c9a6033"
+          src="/static/img/ic_sj_day.png"
+          wx:if="{{isEye}}"
+        ></image>
+        <view class="f22 f-fwb-400 text-eye data-v-2c9a6033"
+          >{{!bookData.isShelf?'加入书架':'已在书架'}}</view
+        >
+      </view>
+    </view>
+  </view>
+</view>

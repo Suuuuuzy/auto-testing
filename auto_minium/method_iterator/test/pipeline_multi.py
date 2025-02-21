@@ -36,15 +36,15 @@ INPUT_FILE = "/media/dataj/wechat-devtools-linux/testing/auto-testing/data/appid
 CONFIG_WORK_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/work"
 CONFIG_READY_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test"
 # PACKAGE_JSON_READY_PATH = "/media/dataj/wechat-devtools-linux/wechat-web-devtools-linux-nodebug/package.nw"
-PACKAGE_JSON_READY_PATH = "/media/dataj/wechat-devtools-linux/fix_multi/WeChat_Dev_Tools_v1.06.2409140-continuous_x86_64_linux/package.nw"
+PACKAGE_JSON_READY_PATH = "/media/dataj/wechat-devtools-linux/wechat-web-devtools-linux-nodebug/package.nw"
 PREPROCESS_SCRIPT_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/data/data_utils/single_preprocess.py"
 PREPROCESS_SCRIPT_GENERATE_BIND_PATH = "/media/dataj/wechat-devtools-linux/prework/MiniScope/src/static/generate_binds_for_jianjia.py"
-OUTPUT_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/miniTracker_gt/outputs"
-# OUTPUT_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output"
-# MINIAPP_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/data/newcrawl/pkg_unpack/"
-MINIAPP_PATH = "/media/dataj/wechat-devtools-linux/prework/MiniTracker/Benchmark/Dynamic"
+# OUTPUT_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/miniTracker_gt/outputs"
+OUTPUT_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/over_10k/output"
+MINIAPP_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/data/newcrawl/pkg_unpack/"
+# MINIAPP_PATH = "/media/dataj/wechat-devtools-linux/prework/MiniTracker/Benchmark/Dynamic"
 # DEV_TOOL_PATH = "/media/dataj/wechat-devtools-linux/wechat-web-devtools-linux-nodebug/bin/wechat-devtools-cli"
-DEV_TOOL_PATH = "/media/dataj/wechat-devtools-linux/fix_multi/WeChat_Dev_Tools_v1.06.2409140-continuous_x86_64_linux/bin/wechat-devtools-cli"
+DEV_TOOL_PATH = "/media/dataj/wechat-devtools-linux/wechat-web-devtools-linux-nodebug/bin/wechat-devtools-cli"
 
 # Run Configs
 TEST_CASE = "autominium_test" # "autominium_test" or "monkey_test"
@@ -321,7 +321,7 @@ def main():
 
 def single_worker_test():
   miniapp_ids = read_miniapp_ids(INPUT_FILE)
-  miniapp_ids = ["wxc395913ec26476b3"]
+  miniapp_ids = ["wxb937e3d0b3ca117e"]
   logger.info(f"Read {len(miniapp_ids)} miniapp IDs from {INPUT_FILE}")
   
   worker = Worker("Zhengyu-0", 0)
@@ -329,5 +329,5 @@ def single_worker_test():
     worker.run(miniapp_id)
   
 if __name__ == "__main__":
-  main()
-  # single_worker_test()
+  # main()
+  single_worker_test()

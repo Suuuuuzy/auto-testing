@@ -1,0 +1,50 @@
+<cu-custom bgColor="bg-gradual-white" isBack="{{true}}">
+  <view slot="backText">返回</view>
+</cu-custom>
+<view class="task-header-container border" style="margin-top: 75rpx"></view>
+<view>
+  <view class="num bg-gradual-blue padding radius text-center shadow-blur">
+    <image class="image" mode="widthFix" src="/static/img/share-a.svg"></image>
+    <view class="title">
+      <text class="text">{{keyong}}</text>
+      <text class="text-a">可用的免费次数</text>
+    </view>
+  </view>
+  <share-box bind:initData="poster" isCanDraw="{{isCanDraw}}"></share-box>
+  <view
+    class="cu-list menu sm-border card-menu margin-top"
+    style="margin-top: 130rpx"
+  >
+    <view bindtap="onShareAppMessage" class="cu-item">
+      <button class="cu-btn content" openType="share">
+        <text class="cuIcon-friendadd text-cyan"></text>
+        <text class="text-grey share-size">点我立即邀请好友</text>
+      </button>
+    </view>
+    <view bindtap="invite" class="cu-item">
+      <view class="content">
+        <text class="cuIcon-friend text-blue"></text>
+        <text class="text-grey">查看邀请列表</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">您已经邀请{{invite_num}}人了哦</text>
+      </view>
+    </view>
+  </view>
+  <view class="wrapper redeemWrapper">
+    <view class="contain" style="width: 692rpx">
+      <view class="descriptWrap">
+        <view class="titlebar">邀请说明</view>
+        <view class="terms">
+          <view>
+            <view class="term">1.邀请的好友登录授权后即算邀请成功</view>
+            <view class="term">2.邀请好友及赠送次数无上限</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="pic-padding" wx:if="{{videoAdAfter}}">
+      <ad-custom unitId="{{videoAdAfter}}"></ad-custom>
+    </view>
+  </view>
+</view>

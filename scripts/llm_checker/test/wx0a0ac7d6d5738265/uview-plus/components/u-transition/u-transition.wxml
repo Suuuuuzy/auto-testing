@@ -1,0 +1,10 @@
+<view
+  bindtap="{{b}}"
+  bindtouchmove="{{e}}"
+  class="{{['u-transition','data-v-d466f59e',c]}}"
+  ref="u-transition"
+  style="{{d}}"
+  wx:if="{{a}}"
+>
+  <slot></slot>
+</view>

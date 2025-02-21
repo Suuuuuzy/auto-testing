@@ -1,0 +1,45 @@
+<view class="container flexible flex-direction">
+    <view class="search-con flexible aItem-center">
+        <view class="search flexible aItem-center flex">
+            <image class="_img" src="{{$root.m0}}"></image>
+            <input bindconfirm="__e" bindinput="__e" class="uni-input flex ml0" confirmType="search" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','sort','$event',[] ] ],['changeInput'] ] ],[ 'confirm',[ [ 'searchquery',['$event'] ] ] ] ]}}" placeholder="搜索书名/口令码" type="text" value="{{sort}}"></input>
+        </view>
+        <view bindtap="__e" class="search-text f28 text-333" data-event-opts="{{[ [ 'tap',[ ['searchquery'] ] ] ]}}">搜索</view>
+    </view>
+    <view class="history" wx:if="{{$root.g0}}">
+        <view class="history_title f30 text-default flexible jc-between">历史搜索<image bindtap="__e" class="_img" data-event-opts="{{[ [ 'tap',[ ['clearHisFun'] ] ] ]}}" src="{{$root.m1}}"></image>
+        </view>
+        <view class="history_list flexible flex-flow">
+            <view bindtap="__e" class="history_item mb20" data-event-opts="{{[ [ 'tap',[ [ 'chooseone',['$0'],[ [ ['historylist','',__i0__] ] ] ] ] ] ]}}" wx:for="{{historylist}}" wx:for-index="__i0__" wx:key="*this">{{''+item+''}}</view>
+        </view>
+    </view>
+    <view class="no-data posCen f30 text-muted" style="z-index:99;" wx:if="{{$root.g1}}">暂无搜索数据！</view>
+    <scroll-view bindscrolltolower="__e" class="app-container mt30 flex" data-event-opts="{{[ [ 'scrolltolower',[ [ 'scrolltolowerFun',['$event'] ] ] ] ]}}" scrollWithAnimation="{{true}}" scrollY="true">
+        <view class="label f30 text-default" wx:if="{{$root.g2}}">热门推荐</view>
+        <view class="bookList-con mt30" wx:if="{{$root.g3}}">
+            <view bindtap="__e" class="book-item mb30 flexible" data-event-opts="{{[ [ 'tap',[ [ 'iswxReader',['$0','detail'],[ [ ['homeList','',__i1__] ] ] ] ] ] ]}}" wx:for="{{$root.l2}}" wx:for-index="__i1__" wx:for-item="home">
+                <view class="book-cover" wx:if="{{!isShowlist}}">
+                    <image class="book-cover-img" mode="scaleToFill" src="{{home[$orig].imgUrl}}"></image>
+                </view>
+                <view class="book-cover" wx:if="{{isShowlist}}">
+                    <image class="book-cover-img" mode="scaleToFill" src="{{home[$orig].iconUrlSmall}}"></image>
+                </view>
+                <view class="book-detail flex">
+                    <view class="book-title text-hidden-1">{{home[$orig].name}}</view>
+                    <view class="book-desc">{{''+home[$orig].introduce+''}}</view>
+                    <view class="book-tags flexible" wx:if="{{!isShowlist&&home[$orig].book.tags}}">
+                        <view class="{{['book-tags-item',index==0?'green-btn':'red-btn']}}" wx:if="{{index<2}}" wx:for="{{home.l0}}" wx:for-item="tag">{{tag}}</view>
+                    </view>
+                    <view class="book-tags flexible" wx:if="{{home[$orig].tags&&isShowlist}}">
+                        <view class="{{['book-tags-item',index==0?'green-btn':'red-btn']}}" wx:if="{{index<2}}" wx:for="{{home.l1}}" wx:for-item="tag">{{tag}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="showMore flexible aItem-center" wx:if="{{showMore&&isShowlist}}">
+                <view class="line flex"></view>
+                <view class="f24 text-muted ml5 mr5">全部搜索结果</view>
+                <view class="line flex"></view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

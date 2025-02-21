@@ -1,0 +1,42 @@
+<view>
+  <view class="uni-form-item uni-column">
+    <radio-group
+      bindchange="__e"
+      class="uni-list"
+      data-event-opts="{{[ [ 'change',[ [ 'radioChange',['$event'] ] ] ] ]}}"
+    >
+      <view
+        class="uni-list-cell uni-list-cell-pd"
+        wx:for="{{radioItems}}"
+        wx:key="index"
+      >
+        <label class="label-2-text" for="{{item.name}}">
+          <text>{{item.value}}</text>
+        </label>
+        <view>
+          <radio
+            checked="{{item.checked}}"
+            id="{{item.name}}"
+            value="{{item.name}}"
+          ></radio>
+        </view>
+      </view>
+    </radio-group>
+  </view>
+  <view class="uni-textarea">
+    <textarea
+      bindinput="__e"
+      data-event-opts="{{[ [ 'input',[ [ 'textChangeFun',['$event'] ] ] ] ]}}"
+      placeholder="请留下您的宝贵意见或建议"
+      placeholderStyle="color:#666666"
+      value="{{content}}"
+    ></textarea>
+  </view>
+  <button
+    bindtap="__e"
+    class="btn_confirm_style"
+    data-event-opts="{{[ [ 'tap',[ [ 'confirm_submit_func',['$event'] ] ] ] ]}}"
+  >
+    确定
+  </button>
+</view>

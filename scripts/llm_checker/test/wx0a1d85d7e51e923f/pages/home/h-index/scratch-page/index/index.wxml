@@ -1,0 +1,29 @@
+<view class="margin-xs radius">
+  <view class="wrap bg-white">
+    <canvas
+      bindtouchend="touchEnd"
+      bindtouchmove="touchMove"
+      bindtouchstart="touchStart"
+      class="cover_canvas"
+      disableScroll="false"
+      id="coverCanvas"
+      type="2d"
+      wx:if="{{isOver==0}}"
+    ></canvas>
+    <view class="content">
+      <coupon-card
+        bind:btnClick="btnClick"
+        btnText="{{item.state==1?Str.isReceived[lanIndex]:Str.getCoupon[lanIndex]}}"
+        canUse="{{canUse&&isOver==1}}"
+        couponDTO="{{item}}"
+        isReceived="{{item.state==1}}"
+      ></coupon-card>
+    </view>
+  </view>
+  <view class="text-center uy-tom" wx:if="{{isOver==0}}">
+    <view>
+      <t-icon name="top" prefix="cuIcon" size="small"></t-icon>
+    </view>
+    <view>{{Str.scratchArea[lanIndex]}}</view>
+  </view>
+</view>

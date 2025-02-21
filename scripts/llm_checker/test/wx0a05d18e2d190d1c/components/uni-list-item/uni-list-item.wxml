@@ -1,0 +1,81 @@
+<view
+  bindtap="__e"
+  class="{{['uni-list-item data-v-ff52fc74',disabled?'uni-list-item--disabled':'']}}"
+  data-event-opts="{{[ [ 'tap',[ [ 'onClick',['$event'] ] ] ] ]}}"
+  hoverClass="{{disabled||showSwitch?'':'uni-list-item--hover'}}"
+>
+  <view
+    class="{{['uni-list-item__container data-v-ff52fc74',isFirstChild?'uni-list-item--first':'']}}"
+  >
+    <view class="uni-list-item__icon data-v-ff52fc74" wx:if="{{thumb}}">
+      <image
+        class="uni-list-item__icon-img data-v-ff52fc74"
+        src="{{thumb}}"
+      ></image>
+    </view>
+    <block wx:else>
+      <view
+        class="uni-list-item__icon data-v-ff52fc74"
+        wx:if="{{showExtraIcon}}"
+      >
+        <uni-icons
+          bind:__l="__l"
+          class="uni-icon-wrapper data-v-ff52fc74"
+          color="{{extraIcon.color}}"
+          size="{{extraIcon.size}}"
+          type="{{extraIcon.type}}"
+          vueId="01e39c76-1"
+        ></uni-icons>
+      </view>
+    </block>
+    <view class="uni-list-item__content data-v-ff52fc74">
+      <slot></slot>
+      <text class="uni-list-item__content-title data-v-ff52fc74"
+        >{{title}}</text
+      >
+      <text class="uni-list-item__content-note data-v-ff52fc74" wx:if="{{note}}"
+        >{{note}}</text
+      >
+    </view>
+    <view
+      class="uni-list-item__extra data-v-ff52fc74"
+      wx:if="{{showBadge||showArrow||showSwitch||showRightIcon}}"
+    >
+      <text
+        class="uni-list-item__extra-text data-v-ff52fc74"
+        wx:if="{{rightText}}"
+        >{{rightText}}</text
+      >
+      <uni-badge
+        bind:__l="__l"
+        class="data-v-ff52fc74"
+        text="{{badgeText}}"
+        type="{{badgeType}}"
+        vueId="01e39c76-2"
+        wx:if="{{showBadge}}"
+      ></uni-badge>
+      <switch
+        bindchange="__e"
+        checked="{{switchChecked}}"
+        class="data-v-ff52fc74"
+        data-event-opts="{{[ [ 'change',[ [ 'onSwitchChange',['$event'] ] ] ] ]}}"
+        disabled="{{disabled}}"
+        wx:if="{{showSwitch}}"
+      ></switch>
+      <uni-icons
+        bind:__l="__l"
+        class="uni-icon-wrapper data-v-ff52fc74"
+        color="#bbb"
+        size="{{20}}"
+        type="arrowright"
+        vueId="01e39c76-3"
+        wx:if="{{showArrow}}"
+      ></uni-icons>
+      <image
+        class="uni-list-item__right_icon-img data-v-ff52fc74"
+        src="{{rightIcon}}"
+        wx:if="{{showRightIcon}}"
+      ></image>
+    </view>
+  </view>
+</view>

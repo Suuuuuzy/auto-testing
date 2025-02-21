@@ -1,0 +1,194 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view>
+    <view class="{{pageData.setting.is_open==1&&pageData.shop.is_open==1?'':'grayscale'}} tap-page" wx:if="{{pageData}}">
+        <view class="bg-white solid-top padding-xs">
+            <view class="flex justify-start">
+                <view class="margin-xs">
+                    <image bindtap="viewImg" class="radius" data-url="{{ossImage+pageData.shop.icon_url}}" mode="aspectFill" src="{{ossImage+pageData.shop.icon_url+'?x-oss-process=image/resize,m_lfit,h_200,w_200'}}" style="width:160rpx; height:160rpx;"></image>
+                </view>
+                <view class="padding-xs">
+                    <view class="text-lg">{{isUy?pageData.shop.uy_name:pageData.shop.ch_name}}</view>
+                    <view class="flex justify-start">
+                        <view class="{{isUy?'rtl':''}} text-sm">{{Str.startPrice[lanIndex]}} <text class="text-price text-pink">{{pageData.shop.starting_price}}</text>
+                        </view>
+                        <view class="text-grey padding-lr-xs text-sm"> | </view>
+                        <view class="{{isUy?'rtl':''}} text-sm">{{Str.deliveryFee[lanIndex]}} <text class="text-price text-pink">{{pageData.shop.delivery_fee}}</text>
+                        </view>
+                    </view>
+                    <view class="flex justify-start">
+                        <view>{{Str.shopState[lanIndex]}}</view>
+                        <view> : </view>
+                        <view class="{{pageData.shop.is_open==1&&pageData.setting.is_open==1?'text-cyan':'text-red'}}">{{pageData.shop.is_open==1&&pageData.setting.is_open==1?Str.isOpening[lanIndex]:Str.isClosing[lanIndex]}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="VerticalBox margin-top-xs">
+            <scroll-view scrollWithAnimation scrollY class="VerticalNav nav" scrollTop="{{VerticalNavTop}}" style="height:calc(100vh - 275rpx)">
+                <view bindtap="tabSelect" class="cu-item {{index==TabCur?'text-pink cur':''}} text-cut {{isUy?'rtl':''}}" data-id="{{index}}" wx:if="{{item.goods.length>0}}" wx:for="{{list}}">
+                    <view class="cu-tag badge" style="top:5rpx;right:5rpx" wx:if="{{item.count}}">{{item.count}}</view>
+                    <text class="text-sm">{{isUy?item.uy_name:item.ch_name}}</text>
+                </view>
+            </scroll-view>
+            <scroll-view scrollWithAnimation scrollY bindscroll="VerticalMain" class="VerticalMain" scrollIntoView="main-{{MainCur}}" style="height:calc(100vh - 300rpx)" wx:if="{{pageData.shop.show_type==0}}">
+                <view class="padding-top-xs padding-lr-xs" id="main-{{index}}" wx:for="{{list}}" wx:key="index">
+                    <view class="cu-bar solid-bottom bg-white" wx:if="{{item.goods.length>0}}">
+                        <view class="action">
+                            <text class="icon-titles text-pink"></text> {{isUy?item.uy_name:item.ch_name}} </view>
+                    </view>
+                    <view class="cu-list menu sm-border">
+                        <view class="cu-item" style="padding:10rpx  20rpx;" wx:for="{{item.goods}}" wx:for-index="_index" wx:for-item="_item" wx:key="_index">
+                            <view bindtap="viewImg" class="cu-avatar radius xl" data-url="{{ossImage+_item.img_url}}" style="background-image:url({{ossImage+_item.img_url+'?x-oss-process=image/resize,m_lfit,h_150,w_150'}});">
+                                <view class="bg-cyan text-sm" style="position:absolute;bottom:0;width:100%" wx:if="{{_item.time2>0}}">{{Str.activity[lanIndex]}}</view>
+                            </view>
+                            <view class="text-left content padding-left-sm">
+                                <view>
+                                    <text class="text-cut {{isUy?'rtl':''}}" style="width:300rpx">{{isUy?_item.uy_name:_item.ch_name}}</text>
+                                </view>
+                                <view class="flex justify-between ">
+                                    <view>
+                                        <view>
+                                            <text class="text-price text-red text-lg" style="text-decoration:{{_item.time2>0?'line-through':''}}">{{_item.price}}</text>
+                                        </view>
+                                        <view wx:if="{{_item.time2>0}}">
+                                            <text class="text-price text-cyan" style="">{{_item.activity_price}}<text class="text-gray text-xs" wx:if="{{_item.time}}">({{_item.time}})</text>
+                                            </text>
+                                        </view>
+                                    </view>
+                                    <view class="flex align-center">
+                                        <i bindtap="removeBtn" class="iconfont icon-Remove padding-right-sm text-pink" data-index="{{index}}" data-indexx="{{_index}}" style="font-size:50rpx" wx:if="{{_item.count>0}}"></i>
+                                        <text class="text-lg" wx:if="{{_item.count>0}}"> {{_item.count}}</text>
+                                        <i bindtap="_addBtn" class="iconfont icon-add1 padding-left-sm text-pink" data-icon="{{ossImage+_item.img_url}}" data-index="{{index}}" data-indexx="{{_index}}" style="font-size:50rpx" wx:if="{{pageData.shop.is_open==1&&pageData.setting.is_open==1}}"></i>
+                                    </view>
+                                </view>
+                                <view class="cu-form-group margin-top-xs  solids-top" style="min-height:60rpx" wx:if="{{pageData.shop.is_postal==1&&_item.count>0}}">
+                                    <view class="title text-gray text-sm">{{Str.phone[lanIndex]}}</view>
+                                    <input bindinput="inputPhone" data-index="{{index}}" data-indexx="{{_index}}" placeholder="请输入手机号" style="font-size:24rpx" value="{{_item.phone}}"></input>
+                                </view>
+                                <view class="cu-form-group  solid-top" style="min-height:60rpx" wx:if="{{pageData.shop.is_postal==1&&_item.count>0}}">
+                                    <view class="title text-gray text-sm">{{Str.pickupNumber[lanIndex]}}</view>
+                                    <input bindinput="inputPickupNumber" data-index="{{index}}" data-indexx="{{_index}}" placeholder="请输入取件号" style="font-size:24rpx" value="{{_item.pickup_number}}"></input>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+            <scroll-view scrollWithAnimation scrollY bindscroll="VerticalMain" class="VerticalMain" scrollIntoView="main-{{MainCur}}" style="height:calc(100vh - 300rpx)" wx:if="{{pageData.shop.show_type==1}}">
+                <view class="padding-top-xs padding-lr-xs" id="main-{{index}}" wx:for="{{list}}" wx:key="index">
+                    <view class="cu-bar solid-bottom bg-white" wx:if="{{item.goods.length>0}}">
+                        <view class="action">
+                            <text class="icon-titles text-pink"></text> {{isUy?item.uy_name:item.ch_name}} </view>
+                    </view>
+                    <view class="grid col-2 text-center">
+                        <view bindtap="goodClick" class="padding-xs" wx:for="{{item.goods}}" wx:for-index="_index" wx:for-item="_item">
+                            <navigator url="">
+                                <view class="bg-white" style="border-radius:15rpx 15rpx 0rpx 0rpx">
+                                    <view class="padding-xs">
+                                        <view bindtap="viewImg" class="bg-img  flex align-end" data-url="{{ossImage+_item.img_url}}" style="background-image: url({{ossImage+_item.img_url+'?x-oss-process=image/resize,w_250'}});height: 220rpx;width:100%"></view>
+                                    </view>
+                                    <view class="{{isUy?'rtl text-right':'text-left'}} text-cut" style="width:95%"> {{isUy?_item.uy_name:_item.ch_name}} </view>
+                                    <view class="text-red {{isUy?'text-right':'text-left'}} padding-lr-xs text-price">{{_item.price}}</view>
+                                </view>
+                            </navigator>
+                            <view class="flex bg-white align-center justify-between padding-lr-sm">
+                                <view class=""></view>
+                                <view class="">
+                                    <i bindtap="removeBtn" class="iconfont icon-Remove padding-right-sm text-pink" data-index="{{index}}" data-indexx="{{_index}}" style="font-size:50rpx" wx:if="{{_item.count>0}}"></i>
+                                    <text class="text-lg" wx:if="{{_item.count>0}}"> {{_item.count}}</text>
+                                    <i bindtap="addBtn" class="iconfont icon-add1 padding-left-sm text-pink" data-index="{{index}}" data-indexx="{{_index}}" style="font-size:50rpx" wx:if="{{pageData.shop.is_open==1&&pageData.setting.is_open==1}}"></i>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+</view>
+<view class="cu-bar bg-white tabbar border  foot flex">
+    <view bindtap="showDetail" class="flex-sub action">
+        <view class="icon-cart" style="font-size:60rpx">
+            <view class="cu-tag badge">{{cartList.allCount}}</view>
+        </view>
+    </view>
+    <view bindtap="showDetail" class="flex-twice cu-bar">
+        <view class="action">
+            <view>
+                <view wx:if="{{cartList.shop.is_open}}">
+                    <text class="text-price text-red text-lg">{{cartList.allPrice}}</text>
+                </view>
+            </view>
+            <view class="padding-xs" wx:if="{{cartList.shop.is_open}}">
+                <view class="{{isUy?'rtl':''}} text-sm" wx:if="{{cartList.shop.is_open}}">{{Str.deliveryFee[lanIndex]}} <text class="text-price text-pink">{{cartList.deliveryFee}}</text>
+                </view>
+            </view>
+            <view wx:else>
+                <text class="text-sm text-grey">{{Str.notService[lanIndex]}}</text>
+            </view>
+        </view>
+    </view>
+    <view bindtap="{{cartList.canOrder?'subBtn':''}}" class="flex-twice  cu-bar text-center bg-{{cartList.canOrder?'pink':'gray'}}">
+        <view class="action" wx:if="{{!cartList.canOrder}}">
+            <view class="{{isUy?'rtl':''}}" wx:if="{{isUy}}">
+                <text>{{Str.also[lanIndex]}} </text>
+                <text class="text-pink padding-lr-xs">{{cartList.shop.starting_price-cartList.allPrice}}</text>
+                <text>{{Str.yuan[lanIndex]}} </text>
+                <text>{{Str.lack[lanIndex]}} </text>
+            </view>
+            <view wx:else>
+                <text>{{Str.also[lanIndex]}}</text>
+                <text>{{Str.lack[lanIndex]}}</text>
+                <text class="text-pink padding-lr-xs" wx:if="{{cartList.shop}}">{{cartList.shop.starting_price-cartList.allPrice}}</text>
+                <text>{{Str.yuan[lanIndex]}}</text>
+            </view>
+        </view>
+        <view class="action text-lg" style="font-size:32rpx" wx:else>{{Str.toOrder[lanIndex]}}</view>
+    </view>
+</view>
+<view bindtap="hideModal" class="cu-modal bottom-modal {{modalName=='detailModal'?'show':''}} " style="margin-bottom:100rpx" wx:if="{{cartList.cartItems.length>0}}">
+    <view catchtap class="cu-dialog">
+        <view class="padding-sm bg-white solid-top">
+            <view class="text-center ">{{Str.details[lanIndex]}}</view>
+        </view>
+        <view class="cu-list menu solid-top solids-bottom sm-border">
+            <view class="cu-item" wx:for="{{cartList.cartItems}}" wx:key="index">
+                <view class="content">
+                    <view class="flex ">
+                        <view class="flex-twice text-sm text-left">{{isUy?item.item.uy_name:item.item.ch_name}}</view>
+                        <view class="flex-sub text-price text-red text-left">
+                            <text style="text-decoration:{{item.item.time2>0?'line-through':''}}">{{item.item.price}}</text>
+                            <text class="text-cyan text-price" wx:if="{{item.item.time2>0}}">{{item.item.activity_price}}</text>
+                        </view>
+                        <view class="flex-sub text-right align-center">
+                            <i bindtap="removeBtn" class="iconfont icon-Remove padding-right-sm text-pink" data-index="{{item.index}}" data-indexx="{{item.indexx}}" style="font-size:50rpx" wx:if="{{item.count>0}}"></i>
+                            <text class="text-lg" wx:if="{{item.count>0}}"> {{item.count}}</text>
+                            <i bindtap="addBtn" class="iconfont icon-add1 padding-left-sm text-pink" data-index="{{item.index}}" data-indexx="{{item.indexx}}" style="font-size:50rpx"></i>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view bindtap="hideModal" class="cu-modal {{modalName=='shopClosed'?'show':''}}">
+    <view class="cu-dialog" style="border-radius:10px 10px 60px 60px;width:600rpx;background-color:transparent;">
+        <view class="bg-img" style="background-image: url('https://yeltapan.oss-cn-zhangjiakou.aliyuncs.com/public/uploads/images/QQ20200627-0.png');height:600rpx;">
+            <view class="cu-bar justify-end text-white">
+                <view bindtap="hideModal" class="action">
+                    <text class="icon-close "></text>
+                </view>
+            </view>
+        </view>
+        <view class="cu-bar" style="margin-top:-80rpx">
+            <view bindtap="hideModal" class="action margin-0 flex-sub  solid-left text-cyan padding-bottom">{{Str.shopRestinng[lanIndex]}}</view>
+        </view>
+    </view>
+</view>
+<dialog cancel="{{Str.cancel[lanIndex]}}" confirm="{{Str.confirm[lanIndex]}}" content="{{dialogContent}}" id="dialog" isInput="{{dialogIsInput}}" title="{{Str.warning[lanIndex]}}" type="normal"></dialog>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>
+<view class="good-box" hidden="{{hideCurveGood}}" style="left: {{bus_x}}px; top: {{bus_y}}px;">
+    <view class="cu-avatar round lg" style="background-image:url({{pointIcon+'?x-oss-process=image/resize,m_lfit,h_150,w_150'}});background-color:transparent;"></view>
+</view>

@@ -1,0 +1,440 @@
+<view>
+  <view>
+    <image
+      mode="scaleToFill"
+      src="../../static/images/icon_carControl_bg.png"
+      style="
+        position: absolute;
+        width: 750rpx;
+        margin-top: 300rpx;
+        z-index: 1;
+        margin-bottom: 60;
+      "
+    ></image>
+    <view
+      bindtap="__e"
+      class="simulate_style"
+      data-event-opts="{{[ [ 'tap',[ [ 'closeSimulateModel',['$event'] ] ] ] ]}}"
+      wx:if="{{isSimulateModel}}"
+    >
+      <image
+        mode="aspectFit"
+        src="../../static/images/simulate_img.png"
+        style="width: 100rpx; height: 100rpx"
+      ></image>
+      <text style="font-size: 30rpx; color: #01dffe">关闭模拟</text>
+    </view>
+    <view
+      class="car_base_view"
+      style="{{'width: 100%;height: '+bodyheight+'px;position: absolute;'}}"
+    >
+      <view class="status_base_view">
+        <view class="style_deviceStatusStyle">
+          <view class="style_horizontal" style="width: 300rpx">
+            <view class="device_status_style">
+              <image
+                class="iv_device_icon_style"
+                mode="aspectFit"
+                src="{{signalPic}}"
+              ></image>
+              <text style="font-size: 28rpx; color: #ffffff">网络</text>
+            </view>
+            <view class="device_status_style">
+              <image
+                class="iv_device_icon_style"
+                mode="aspectFit"
+                src="{{isLocate?'../../static/images/icon_gps_on.png':'../../static/images/icon_gps_off.png'}}"
+              ></image>
+              <text style="font-size: 28rpx; color: #ffffff">GPS</text>
+            </view>
+            <view
+              bindtap="__e"
+              class="device_status_style"
+              data-event-opts="{{[ [ 'tap',[ [ 'click_bleFun',['$event'] ] ] ] ]}}"
+            >
+              <image
+                class="iv_device_icon_style"
+                mode="aspectFit"
+                src="{{isBleConnected?'../../static/images/ble_on.png':'../../static/images/ble_nor.png'}}"
+              ></image>
+              <text style="font-size: 28rpx; color: #ffffff">蓝牙</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="car_layout_base_view">
+        <view class="style_vertial car_mileage_view">
+          <view class="style_mileage_view">
+            <text
+              style="
+                color: #ffffff;
+                font-size: 24rpx;
+                line-height: 30rpx;
+                padding-top: 50rpx;
+                width: 118rpx;
+              "
+              >{{mileage}}</text
+            >
+          </view>
+          <text style="font-size: 28rpx; color: #ffffff; z-index: 3"
+            >今日里程</text
+          >
+        </view>
+        <view class="car_layout_style">
+          <swiper
+            bindchange="__e"
+            circular="{{true}}"
+            class="swiper"
+            data-event-opts="{{[ [ 'change',[ [ 'swiper_changeFun',['$event'] ] ] ] ]}}"
+          >
+            <swiper-item>
+              <image
+                class="{{[!isTailbox?'car_base_style':'view_hide']}}"
+                mode="aspectFit"
+                src="{{carColorWhite?'../../static/images/car_tail_box_nor_white.png':'../../static/images/car_tail_box_nor.png'}}"
+              ></image>
+              <image
+                class="{{[isTailbox?'car_base_style':'view_hide']}}"
+                mode="aspectFit"
+                src="{{carColorWhite?'../../static/images/car_tail_box_sel_white.png':'../../static/images/car_tail_box_sel.png'}}"
+              ></image>
+              <image
+                class="car_base_style"
+                mode="aspectFit"
+                src="{{carColorWhite?'../../static/images/car_white.png':'../../static/images/car.png'}}"
+              ></image>
+              <image class="{{[isEngine?'carwheel':'car_wheel_nor']}}"></image>
+              <image
+                class="{{[isFrontLamp?'car_base_style':'view_hide']}}"
+                mode="aspectFit"
+                src="../../static/images/car_light.png"
+              ></image>
+              <image
+                class="{{[!isLeftRearDoor?'car_base_style':'view_hide']}}"
+                mode="aspectFit"
+                src="{{carColorWhite?'../../static/images/car_door_l2_close_white.png':'../../static/images/car_door_l2_close.png'}}"
+              ></image>
+              <image
+                class="{{[isLeftRearDoor?'car_base_style':'view_hide']}}"
+                mode="aspectFit"
+                src="{{carColorWhite?'../../static/images/car_door_l2_open_white.png':'../../static/images/car_door_l2_open.png'}}"
+              ></image>
+              <image
+                class="{{[!isLeftFrontDoor?'car_base_style':'view_hide']}}"
+                mode="aspectFit"
+                src="{{carColorWhite?'../../static/images/car_door_l1_close_white.png':'../../static/images/car_door_l1_close.png'}}"
+              ></image>
+              <image
+                class="{{[isLeftFrontDoor?'car_base_style':'view_hide']}}"
+                mode="aspectFit"
+                src="{{carColorWhite?'../../static/images/car_door_l1_open_white.png':'../../static/images/car_door_l1_open.png'}}"
+              ></image>
+            </swiper-item>
+            <swiper-item>
+              <image
+                class="car_base_style"
+                mode="aspectFit"
+                src="{{carColorWhite?'../../static/images/car_back_white.png':'../../static/images/car_back.png'}}"
+              ></image>
+              <image
+                class="{{[isEngine?'carwheel_back':'car_wheel_nor_back']}}"
+              ></image>
+              <image
+                class="{{[!isRightFrontDoor?'car_base_style':'view_hide']}}"
+                mode="aspectFit"
+                src="{{carColorWhite?'../../static/images/car_door_r1_close_back_white.png':'../../static/images/car_door_r1_close_back.png'}}"
+              ></image>
+              <image
+                class="{{[isRightFrontDoor?'car_base_style':'view_hide']}}"
+                mode="aspectFit"
+                src="{{carColorWhite?'../../static/images/car_door_r1_open_back_white.png':'../../static/images/car_door_r1_open_back.png'}}"
+              ></image>
+              <image
+                class="{{[!isRightRearDoor?'car_base_style':'view_hide']}}"
+                mode="aspectFit"
+                src="{{carColorWhite?'../../static/images/car_door_r2_close_back_white.png':'../../static/images/car_door_r2_close_back.png'}}"
+              ></image>
+              <image
+                class="{{[isRightRearDoor?'car_base_style':'view_hide']}}"
+                mode="aspectFit"
+                src="{{carColorWhite?'../../static/images/car_door_r2_open_back_white.png':'../../static/images/car_door_r2_open_back.png'}}"
+              ></image>
+              <image
+                class="{{[!isTailbox?'car_base_style':'view_hide']}}"
+                mode="aspectFit"
+                src="{{carColorWhite?'../../static/images/car_tail_box_nor_back_white.png':'../../static/images/car_tail_box_nor_back.png'}}"
+              ></image>
+              <image
+                class="{{[isTailbox?'car_base_style':'view_hide']}}"
+                mode="aspectFit"
+                src="{{carColorWhite?'../../static/images/car_tail_box_sel_back_white.png':'../../static/images/car_tail_box_sel_back.png'}}"
+              ></image>
+              <image
+                class="{{[isFrontLamp?'car_base_style':'view_hide']}}"
+                mode="aspectFit"
+                src="../../static/images/car_light_back.png"
+              ></image>
+            </swiper-item>
+          </swiper>
+        </view>
+        <image
+          class="{{[isBackCar?isEngine?'road_ani_style_back':'road_left_style':isEngine?'road_ani_style':'road_left_style']}}"
+        ></image>
+      </view>
+      <view class="car_status_base_view">
+        <view
+          class="car_status_style"
+          style="margin-left: 10rpx; margin-right: 10rpx"
+        >
+          <view class="car_plate_style" style="align-items: flex-start">
+            <text
+              bindtap="__e"
+              class="car_status_text_style"
+              data-event-opts="{{[ [ 'tap',[ [ 'click_start_timeFun',['$event'] ] ] ] ]}}"
+              style="color: #05eafe; z-index: 10"
+              >{{'启动时间\n\n\t\t\t\t\t\t\t'+startTime}}</text
+            >
+            <view
+              bindtap="__e"
+              data-event-opts="{{[ [ 'tap',[ [ 'click_plate_numberFun',['$event'] ] ] ] ]}}"
+              style="z-index: 10"
+            >
+              <text
+                style="
+                  font-size: 32rpx;
+                  color: #ffffff;
+                  line-height: 50rpx;
+                  align-items: center;
+                "
+                >{{plateNo}}</text
+              >
+              <image
+                class="iv_allow_down_style"
+                mode="aspectFit"
+                src="../../static/images/allow_down.png"
+                style="margin-left: 20rpx"
+              ></image>
+            </view>
+          </view>
+          <view class="car_info_style" style="align-items: flex-start">
+            <view class="style_vertial">
+              <image
+                class="iv_device_icon_style"
+                mode="aspectFit"
+                src="../../static/images/icon_temperature.png"
+              ></image>
+              <text
+                style="
+                  font-size: 28rpx;
+                  color: #ffffff;
+                  z-index: 3;
+                  width: 120rpx;
+                  text-align: center;
+                "
+                >{{ambientT}}</text
+              >
+            </view>
+            <view class="style_vertial">
+              <image
+                class="iv_device_icon_style"
+                mode="aspectFit"
+                src="../../static/images/icon_voltage.png"
+              ></image>
+              <text
+                style="
+                  font-size: 28rpx;
+                  color: #ffffff;
+                  z-index: 3;
+                  width: 120rpx;
+                  text-align: center;
+                "
+                >{{voltage}}</text
+              >
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="car_control_base_view">
+        <view class="car_control_layout_style">
+          <image
+            mode="aspectFit"
+            src="{{isEngine?'../../static/images/icon_carControl_btnBg_red.png':'../../static/images/icon_carControl_btnBg.png'}}"
+            style="
+              position: absolute;
+              width: 630rpx;
+              height: 460rpx;
+              margin-left: 60rpx;
+            "
+          ></image>
+          <image
+            bindtap="__e"
+            class="control_btn_lock_size"
+            data-event-opts="{{[ [ 'tap',[ [ 'click_lockFun',['$event'] ] ] ] ]}}"
+            mode="aspectFit"
+            src="{{isLock?'../../static/images/car_lock_btn_sel.png':'../../static/images/car_lock_btn_nor.png'}}"
+          ></image>
+          <image
+            bindtap="__e"
+            class="control_btn_unlock_size"
+            data-event-opts="{{[ [ 'tap',[ [ 'click_unlockFun',['$event'] ] ] ] ]}}"
+            src="{{isLock?'../../static/images/car_unlock_btn_nor.png':'../../static/images/car_unlock_btn_sel.png'}}"
+          ></image>
+          <image
+            bindtap="__e"
+            class="control_btn_tailbox_size"
+            data-event-opts="{{[ [ 'tap',[ [ 'click_tail_boxFun',['$event'] ] ] ] ]}}"
+            src="{{isTailbox?'../../static/images/car_tail_box_btn_sel.png':'../../static/images/car_tail_box_btn_nor.png'}}"
+          ></image>
+          <image
+            bindtap="__e"
+            class="control_btn_find_size"
+            data-event-opts="{{[ [ 'tap',[ [ 'click_find_carFun',['$event'] ] ] ] ]}}"
+            src="../../static/images/car_find_btn_nor.png"
+          ></image>
+          <image
+            bindtouchcancel="__e"
+            bindtouchend="__e"
+            bindtouchstart="__e"
+            class="control_btn_engine_size"
+            data-event-opts="{{[ [ 'touchstart',[ [ 'click_engine_startFun',['$event'] ] ] ],[ 'touchend',[ [ 'click_engine_cancelFun',['$event'] ] ] ],[ 'touchcancel',[ [ 'click_engine_cancelFun',['$event'] ] ] ] ]}}"
+            src="{{isEngine?'../../static/images/car_engine_off_nor.png':'../../static/images/car_engine_on_nor.png'}}"
+          ></image>
+          <view class="lock_status_style">
+            <view class="style_horizontal" style="width: 150rpx">
+              <view class="device_status_style">
+                <image
+                  mode="aspectFit"
+                  src="{{isLock?'../../static/images/car_lock_on_light.png':'../../static/images/car_lock_on.png'}}"
+                  style="width: 24rpx; height: 8rpx"
+                ></image>
+                <text
+                  class="{{[isLock?'lock_status_text_light_style':'lock_status_text_style']}}"
+                  >lock</text
+                >
+              </view>
+              <view class="device_status_style">
+                <image
+                  mode="aspectFit"
+                  src="{{isLock==false?'../../static/images/car_lock_on_light.png':'../../static/images/car_lock_on.png'}}"
+                  style="width: 24rpx; height: 8rpx"
+                ></image>
+                <text
+                  class="{{[isLock==false?'lock_status_text_light_style':'lock_status_text_style']}}"
+                  >on</text
+                >
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="style_panbg">
+      <image
+        class="{{[isAnimated?'car_pan_style':'view_hidde']}}"
+        mode="aspectFit"
+        src="../../static/images/board_pan.png"
+      ></image>
+      <image
+        class="car_pan_style"
+        mode="aspectFit"
+        src="{{isEngine?'../../static/images/board_red_light.png':'../../static/images/board_blue_light.png'}}"
+      ></image>
+      <image
+        animation="{{pointAnimationData}}"
+        class="car_pan_style"
+        mode="aspectFit"
+        src="../../static/images/board_indicator.png"
+      ></image>
+      <image
+        class="{{[isAnimated?'car_pan_style':'view_hidde']}}"
+        mode="aspectFit"
+        src="../../static/images/board_in_circle.png"
+      ></image>
+      <image
+        animation="{{animationData}}"
+        class="{{[isAnimated?'car_pan_style':'img_hidden']}}"
+        mode="aspectFit"
+        src="../../static/images/board_in_point.png"
+      ></image>
+      <image
+        class="{{[isAnimated?'car_pan_style':'view_hidde']}}"
+        mode="aspectFit"
+        src="../../static/images/board_red_circle.png"
+      ></image>
+      <image
+        animation="{{animationData}}"
+        class="{{[isAnimated?'car_pan_style':'img_hidden']}}"
+        mode="aspectFit"
+        src="../../static/images/board_red_point.png"
+      ></image>
+      <text class="{{[showCount?'countnum_style':'img_hidden']}}"
+        >{{countNum}}</text
+      >
+    </view>
+  </view>
+  <view class="{{[showSetTime?'dialog_page':'view_hide']}}">
+    <view class="dialog_bg"></view>
+    <view class="dialog_layout">
+      <text class="dialog_title">设置启动时长</text>
+      <slider
+        activeColor="#05EAFE"
+        backgroundColor="#e9e9e9"
+        bindchange="__e"
+        blockColor="#05EAFE"
+        blockSize="28"
+        class="dialog_slider"
+        data-event-opts="{{[ [ 'change',[ [ 'select_valueFun',['$event'] ] ] ] ]}}"
+        max="40"
+        min="10"
+        showValue="true"
+        step="5"
+        value="{{startTimeTemp}}"
+      ></slider>
+      <view style="font-size: 20rpx; margin: 30rpx; color: #666"
+        >设置启动时长后，通过app远程启动车辆，如果没有开关过车门，车辆将运行设定时长后自动熄火。</view
+      >
+      <button
+        bindtap="__e"
+        class="dialog_confirm_style"
+        data-event-opts="{{[ [ 'tap',[ [ 'set_starttimeFun',['$event'] ] ] ] ]}}"
+        style="background-color: #05eafe; color: #1f1f1f; font-size: 36rpx"
+        type="default"
+      >
+        确定
+      </button>
+    </view>
+  </view>
+  <view class="{{[showBlePop?'ble_list_layout':'view_hide']}}">
+    <view class="ble_list_title">
+      <text class="ble_title">蓝牙连接</text>
+      <text
+        bindtap="__e"
+        class="ble_rescan"
+        data-event-opts="{{[ [ 'tap',[ [ 'click_ble_rescan',['$event'] ] ] ] ]}}"
+        >重新扫描</text
+      >
+    </view>
+    <scroll-view class="ble_list" scrollX="false" scrollY="true">
+      <view class="ble_item" wx:for="{{ble_devices}}" wx:key="index">
+        <view
+          bindtap="__e"
+          class="ble_item_content"
+          data-deviceID="{{item.deviceId}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'connect_ble_deviceFun',['$event'] ] ] ] ]}}"
+        >
+          <view>{{item.name}}</view>
+          <view
+            class="{{[bleDeviceID==item.deviceId?'ble_connect_sel':'ble_connect']}}"
+            >{{bleDeviceID==item.deviceId?'断开连接':'点击连接'}}</view
+          >
+        </view>
+        <view class="ble_item_line"></view>
+      </view>
+    </scroll-view>
+    <view
+      bindtap="__e"
+      class="ble_list_other"
+      data-event-opts="{{[ [ 'tap',[ [ 'close_ble_popFun',['$event'] ] ] ] ]}}"
+    ></view>
+  </view>
+</view>

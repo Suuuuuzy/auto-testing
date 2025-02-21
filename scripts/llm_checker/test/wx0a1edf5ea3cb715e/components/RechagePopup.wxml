@@ -1,0 +1,42 @@
+<u-popup
+  bind:__l="__l"
+  bind:close="__e"
+  bind:input="__e"
+  borderRadius="30"
+  class="data-v-f4c11cf4"
+  closeIconColor="#fff"
+  closeable="{{true}}"
+  data-event-opts="{{[ [ '^close',[ ['close'] ] ],[ '^input',[ [ '__set_model',[ '','popShow','$event',[] ] ] ] ] ]}}"
+  maskCloseAble="{{false}}"
+  mode="center"
+  value="{{popShow}}"
+  vueId="947ae034-1"
+  vueSlots="{{['default']}}"
+>
+  <view class="home-popup-container data-v-f4c11cf4">
+    <image
+      class="pop-bg data-v-f4c11cf4"
+      mode="widthFix"
+      src="http://image.fanglinxq.com/assets/rechage-pop.png"
+    ></image>
+    <view class="u-text data-v-f4c11cf4">
+      <text class="data-v-f4c11cf4">很遗憾！</text>
+      <text class="data-v-f4c11cf4">您的金币余额不足</text>
+    </view>
+    <view class="pop-actions data-v-f4c11cf4">
+      <view
+        bindtap="__e"
+        class="action made data-v-f4c11cf4"
+        data-event-opts="{{[ [ 'tap',[ [ 'handleNavigater',['/pages/user/handShare/index'] ] ] ] ]}}"
+        wx:if="{{userInfo&&userInfo.sex===2}}"
+        >赚金币</view
+      >
+      <view
+        bindtap="__e"
+        class="action data-v-f4c11cf4"
+        data-event-opts="{{[ [ 'tap',[ [ 'handleNavigater',['/pages/user/recharge/index'] ] ] ] ]}}"
+        >立即充值</view
+      >
+    </view>
+  </view>
+</u-popup>

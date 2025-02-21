@@ -1,0 +1,36 @@
+.item_layout_style {
+  height: 300rpx;
+  padding: 20rpx;
+  margin: 20rpx 20rpx 0;
+  background: #fff;
+  border-radius: 10rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  position: relative;
+}
+.plate_no_title_style {
+  font-size: 32rpx;
+  color: #333;
+}
+.plate_no_style {
+  font-size: 32rpx;
+  color: #fe7506;
+  margin-left: 30rpx;
+}
+.title_desc {
+  font-size: 28rpx;
+  color: #999;
+  lines: 1;
+}
+.icon_style {
+  width: 50rpx;
+  height: 50rpx;
+  padding: 20rpx;
+  position: absolute;
+  bottom: 15rpx;
+  right: 30rpx;
+}

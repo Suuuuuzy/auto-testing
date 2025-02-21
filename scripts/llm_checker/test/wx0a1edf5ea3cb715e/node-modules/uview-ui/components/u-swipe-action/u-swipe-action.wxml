@@ -1,0 +1,37 @@
+<view class="data-v-d19371c2">
+  <movable-area
+    class="u-swipe-action data-v-d19371c2"
+    style="{{'background-color:'+bgColor+';'}}"
+  >
+    <movable-view
+      bindchange="__e"
+      bindtouchend="__e"
+      bindtouchstart="__e"
+      class="u-swipe-view data-v-d19371c2"
+      data-event-opts="{{[ [ 'change',[ [ 'change',['$event'] ] ] ],[ 'touchend',[ [ 'touchend',['$event'] ] ] ],[ 'touchstart',[ [ 'touchstart',['$event'] ] ] ] ]}}"
+      direction="horizontal"
+      disabled="{{disabled}}"
+      style="{{'width:'+(movableViewWidth?movableViewWidth:'100%')+';'}}"
+      x="{{moveX}}"
+    >
+      <view
+        catchtap="__e"
+        class="u-swipe-content data-v-d19371c2"
+        data-event-opts="{{[ [ 'tap',[ [ 'contentClick',['$event'] ] ] ] ]}}"
+      >
+        <slot></slot>
+      </view>
+      <view
+        catchtap="__e"
+        class="u-swipe-del data-v-d19371c2"
+        data-event-opts="{{[ [ 'tap',[ [ 'btnClick',[index] ] ] ] ]}}"
+        style="{{item.s0}}"
+        wx:if="{{showBtn}}"
+        wx:for="{{$root.l0}}"
+        wx:key="index"
+      >
+        <view class="u-btn-text data-v-d19371c2">{{item[$orig].text}}</view>
+      </view>
+    </movable-view>
+  </movable-area>
+</view>

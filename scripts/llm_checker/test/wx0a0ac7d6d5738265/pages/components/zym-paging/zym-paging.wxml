@@ -1,0 +1,21 @@
+<scroll-view
+  bindrefresherpulling="{{f}}"
+  bindrefresherrefresh="{{g}}"
+  bindscrolltolower="{{e}}"
+  lowerThreshold="{{h}}"
+  refresherEnabled="{{true}}"
+  refresherTriggered="{{i}}"
+  scrollY="{{true}}"
+  style="{{'max-height:'+d}}"
+>
+  <slot name="item"></slot>
+  <slot name="empty"></slot>
+  <slot name="loadmore" wx:if="{{a}}"></slot>
+  <u-loadmore
+    bind:__l="__l"
+    uI="22233d3a-0"
+    uP="{{b||''}}"
+    wx:else
+  ></u-loadmore>
+  <view style="height: 70px" wx:if="{{c}}"></view>
+</scroll-view>

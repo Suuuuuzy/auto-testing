@@ -1,0 +1,29 @@
+.inputView {
+  margin-top: 30rpx;
+  background-color: #fff;
+}
+.add_car_input,
+.inputView {
+  margin-left: 30rpx;
+  right: 30rpx;
+  padding-right: 30rpx;
+  font-size: 30rpx;
+  text-align: left;
+  color: #666;
+  width: 90%;
+}
+.add_car_input,
+.btn_confirm_style,
+.inputView {
+  height: 88rpx;
+  position: absolute;
+  line-height: 88rpx;
+}
+.btn_confirm_style {
+  margin-top: 160rpx;
+  width: 80%;
+  color: #fff;
+  background-color: #fe7506;
+  border-radius: 44rpx;
+  margin-left: 10%;
+}

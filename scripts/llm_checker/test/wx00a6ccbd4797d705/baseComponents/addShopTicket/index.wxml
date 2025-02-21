@@ -1,0 +1,19 @@
+<view
+  bindtap="__e"
+  class="addShopTicket _div data-v-c70df0a0"
+  data-event-opts="{{[ [ 'tap',[ [ 'beginGetcoupon',['$event'] ] ] ] ]}}"
+  wx:if="{{ready}}"
+>
+  <send-coupon
+    bind:__l="__l"
+    bind:customevent="__e"
+    class="addShopTicketBtn data-v-c70df0a0"
+    customize_send_time="{{customizeSendTime}}"
+    data-com-type="wx"
+    data-event-opts="{{[ [ '^customevent',[ ['getcouponFun'] ] ] ]}}"
+    send_coupon_merchant="{{sendCouponMerchant}}"
+    send_coupon_params="{{ticketData}}"
+    sign="{{sign}}"
+    vueId="1499e04c-1"
+  ></send-coupon>
+</view>

@@ -1,0 +1,106 @@
+.itemWrap.data-v-b5e2635a {
+  border-radius: 12rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
+}
+.quantity.data-v-b5e2635a {
+  border-radius: 0 12rpx 0 12rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 5;
+}
+.dish-label.data-v-b5e2635a {
+  font-size: 18rpx;
+  left: 0;
+  position: absolute;
+  text-align: left;
+  top: 36rpx;
+  z-index: 5;
+}
+.dish-label .label-item.data-v-b5e2635a {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0 10rpx 10rpx 0;
+  color: #fff;
+  margin-bottom: 8rpx;
+  padding: 4rpx 10rpx;
+  width: 90%;
+}
+.cookWrap.data-v-b5e2635a {
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-bottom: 6rpx;
+}
+.cookWrap .cookBorder.data-v-b5e2635a {
+  border: 1px dashed;
+  border-radius: 8rpx;
+  display: inline-block;
+  height: 32rpx;
+  line-height: 32rpx;
+  padding: 0 4rpx;
+}
+.imgBox.data-v-b5e2635a {
+  height: 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.required.data-v-b5e2635a {
+  background: #016241;
+  border-radius: 12rpx 0 12rpx 0;
+  height: 28rpx;
+  left: 0;
+  line-height: 28rpx;
+  position: absolute;
+  top: 0;
+  width: 60rpx;
+  z-index: 1;
+}
+.image.data-v-b5e2635a {
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.itemNameWrap.data-v-b5e2635a {
+  height: 66rpx;
+  margin-bottom: 8rpx;
+}
+.itemNameWrap .itemName.data-v-b5e2635a {
+  line-height: normal;
+}
+.originalPriceWrap.data-v-b5e2635a {
+  height: 16px;
+}
+.detailBox.data-v-b5e2635a {
+  border: 1px solid #ddd;
+  border-bottom-left-radius: 12rpx;
+  border-bottom-right-radius: 12rpx;
+  border-top: none;
+  overflow: hidden;
+}
+.addPriceWrap.data-v-b5e2635a {
+  line-height: 38rpx;
+  min-height: 38rpx;
+  padding-bottom: 2px;
+}
+.hyTag.data-v-b5e2635a {
+  background: #333;
+  border-radius: 4rpx;
+  color: #fde7b5;
+  height: 30rpx;
+  line-height: 30rpx;
+  margin-left: 14rpx;
+  width: 30rpx;
+}
+.triangle.data-v-b5e2635a {
+  border: 8rpx solid transparent;
+  border-right: 10rpx solid #333;
+  height: 0;
+  left: -16rpx;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+}

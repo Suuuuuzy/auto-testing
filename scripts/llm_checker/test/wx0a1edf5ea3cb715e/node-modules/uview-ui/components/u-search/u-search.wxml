@@ -1,0 +1,12 @@
+<view bindtap="__e" class="u-search data-v-16a88cf4" data-event-opts="{{[ [ 'tap',[ [ 'clickHandler',['$event'] ] ] ] ]}}" style="{{'margin:'+margin+';'}}">
+    <view class="u-content data-v-16a88cf4" style="{{'background-color:'+bgColor+';'+'border-radius:'+(shape=='round'?'100rpx':'10rpx')+';'+'border:'+borderStyle+';'+'height:'+height+'rpx'+';'}}">
+        <view class="u-icon-wrap data-v-16a88cf4">
+            <u-icon bind:__l="__l" class="u-clear-icon data-v-16a88cf4" color="{{searchIconColor?searchIconColor:color}}" name="{{searchIcon}}" size="{{30}}" vueId="0a234466-1"></u-icon>
+        </view>
+        <input bindblur="__e" bindconfirm="__e" bindfocus="__e" bindinput="__e" class="u-input data-v-16a88cf4" confirmType="search" data-event-opts="{{[ [ 'blur',[ [ 'blur',['$event'] ] ] ],[ 'confirm',[ [ 'search',['$event'] ] ] ],[ 'input',[ [ 'inputChange',['$event'] ] ] ],[ 'focus',[ [ 'getFocus',['$event'] ] ] ] ]}}" disabled="{{disabled}}" focus="{{focus}}" maxlength="{{maxlength}}" placeholder="{{placeholder}}" placeholderClass="u-placeholder-class" placeholderStyle="{{'color: '+placeholderColor}}" style="{{$root.s0}}" type="text" value="{{value}}"></input>
+        <view bindtap="__e" class="u-close-wrap data-v-16a88cf4" data-event-opts="{{[ [ 'tap',[ [ 'clear',['$event'] ] ] ] ]}}" wx:if="{{keyword&&clearabled&&focused}}">
+            <u-icon bind:__l="__l" class="u-clear-icon data-v-16a88cf4" color="#c0c4cc" name="close-circle-fill" size="34" vueId="0a234466-2"></u-icon>
+        </view>
+    </view>
+    <view catchtap="__e" class="{{['u-action','data-v-16a88cf4',showActionBtn||show?'u-action-active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'custom',['$event'] ] ] ] ]}}" style="{{$root.s1}}">{{actionText}}</view>
+</view>

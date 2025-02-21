@@ -1,0 +1,64 @@
+{
+  "__usePrivacyCheck__": true,
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#5677FC",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/home_a.png"
+      },
+      {
+        "pagePath": "pages/renwu/renwu",
+        "text": "任务",
+        "iconPath": "static/tabbar/stars.png",
+        "selectedIconPath": "static/tabbar/stars_a.png"
+      },
+      {
+        "pagePath": "pages/otherTool/otherTool",
+        "text": "工具",
+        "iconPath": "static/tabbar/tools.png",
+        "selectedIconPath": "static/tabbar/tools_a.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "static/tabbar/users.png",
+        "selectedIconPath": "static/tabbar/user.png"
+      }
+    ]
+  },
+  "window": { "navigationStyle": "custom" },
+  "pages": [
+    "pages/index/index",
+    "pages/parse/parse",
+    "pages/picInfo/picInfo",
+    "pages/videoInfo/videoInfo",
+    "pages/list/list",
+    "pages/my/my",
+    "pages/md5/md5",
+    "pages/otherTool/otherTool",
+    "pages/music/music",
+    "pages/batch/batch",
+    "pages/teach/teach",
+    "pages/clearMusic/clearMusic",
+    "pages/movevideo/movevideo",
+    "pages/article/article",
+    "pages/lists/lists",
+    "pages/charact/charact",
+    "pages/dub/dub",
+    "pages/dub/userSelect",
+    "pages/dub/down",
+    "pages/charact/jiexi_list",
+    "pages/charact/charact_detail",
+    "pages/share/index",
+    "pages/course/jiao",
+    "pages/dub/history",
+    "pages/course/index",
+    "pages/renwu/renwu",
+    "pages/myuser/myuser"
+  ]
+}

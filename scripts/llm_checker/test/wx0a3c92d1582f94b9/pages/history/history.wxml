@@ -1,0 +1,162 @@
+<view class="tab-box">
+  <view bindtap="onTab" class="item {{type==1?'on':''}}" data-type="1"
+    >链接处理记录</view
+  >
+  <view bindtap="onTab" class="item  {{type==2?'on':''}}" data-type="2"
+    >视频处理等候列表</view
+  >
+</view>
+<view class="msg-box" style="line-height: 40rpx; padding: 15rpx 0">
+  ({{type==1?'链接数据本地存储,有概率会丢失':'数据仅保留72小时,请及时下载'}})
+  <view style="color: #ffa422" wx:if="{{type==2}}"
+    >(无需在本页面等待，处理完成后微信通知！)</view
+  >
+</view>
+<video
+  bindfullscreenchange="onFullScreenChange"
+  id="play"
+  src="{{play}}"
+></video>
+<view class="history-box" wx:if="{{type==1}}">
+  <view class="item" wx:for="{{data}}">
+    <text bindtap="copy" class="text" data-data="{{item.data}}"
+      >{{item.data}}</text
+    >
+    <view class="time"
+      >日期：{{item.time}}
+      <view class="clear">
+        <image
+          bindtap="clearInput"
+          data-i="{{index}}"
+          src="/images/icon-x.png"
+        ></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="history-box2" wx:else>
+  <view class="item" wx:if="{{item.state>=0}}" wx:for="{{data}}">
+    <view class="block">
+      <view class="image">
+        <block wx:if="{{item.state==1}}">
+          <image
+            mode="aspectFit"
+            src="{{item.icon?item.icon:item.request_url+'?x-oss-process=video/snapshot,t_1000,f_jpg'}}"
+          ></image>
+          <view
+            bindtap="onPlay"
+            class="shade"
+            data-url="{{item.request_url}}"
+            style="background: initial"
+          >
+            <image src="/images/icon-play.png"></image>
+          </view>
+        </block>
+        <block wx:else>
+          <image
+            mode="aspectFit"
+            src="{{item.icon?item.icon:item.oss_url+'?x-oss-process=video/snapshot,t_1000,f_jpg'}}"
+          ></image>
+          <view class="shade">
+            <image src="/images/w2.png" wx:if="{{item.state==0}}"></image>
+            <image src="/images/w2.png" wx:else></image>
+          </view>
+        </block>
+      </view>
+      <view class="content">
+        <view class="text">
+          <view>任务ID:{{item.request_id}}</view>
+          <view>日期:{{item.addtime}}</view>
+          <view>类型:{{item.type==1?'去字幕':'视频处理'}}</view>
+          <view wx:if="{{item.type==2}}">方式:{{item.handle_msg}}</view>
+          <view bindtap="onInvest" wx:if="{{item.btnshow&&item.state=='7'}}"
+            >状态: {{item.msg}}
+          </view>
+          <view wx:else>状态: {{item.msg}} </view>
+        </view>
+        <view class="btn" wx:if="{{item.state==1}}">
+          <view bindtap="isAd" class="it" data-i="{{index}}">
+            <image src="/images/icon-dowload.png"></image>
+            <view class="t">下载</view>
+          </view>
+          <view bindtap="onEditVideo" class="it" data-i="{{index}}">
+            <image src="/images/icon-edit.png"></image>
+            <view class="t">截取时长</view>
+          </view>
+        </view>
+        <view class="clear">
+          <image
+            bindtap="clearInput"
+            data-i="{{index}}"
+            data-id="{{item.id}}"
+            src="/images/icon-x.png"
+          ></image>
+        </view>
+      </view>
+    </view>
+    <view class="tishi" wx:if="{{item.error}}">
+      <image mode="" src="/images/icon-msg.png"></image>
+      <view bindtap="copyAppName" class="content"> {{item.error}} </view>
+    </view>
+  </view>
+</view>
+<view class="ad-ok-bg2" wx:if="{{adState||error!=''}}">
+  <view class="ad-ok2">
+    <view class="msg" wx:if="{{error}}">{{error}}</view>
+    <view class="msg" wx:else>
+      <view>本次保存需 <text>-{{data[i].money}}枚无印豆</text> </view>
+      账号无印豆余额：<text>{{userinfo.money}}枚</text>
+    </view>
+    <view class="btn-box">
+      <view bindtap="noAd" class="btn pay" wx:if="{{userinfo.level=='0'}}">
+        <image src="/images/icon-vip.png"></image>
+        <text>{{error==''?'':'开通'}}会员</text>
+      </view>
+      <view bindtap="adShow" class="btn" wx:if="{{error==''}}">
+        <image src="/images/icon-v.png"></image>
+        <text>保存</text>
+      </view>
+    </view>
+    <image
+      bindtap="isHideAd"
+      class="msg-close"
+      src="/images/msg-close.png"
+    ></image>
+  </view>
+</view>
+<view class="ad-ok-bg" wx:if="{{showPrivacy}}">
+  <view class="ad-ok">
+    <view
+      class="msg"
+      style="text-align: left; padding: 20rpx 25rpx; color: #333"
+    >
+      <view
+        >在你使用【{{name}}】服务之前，请仔细阅读<text
+          bindtap="openPrivacy"
+          style="color: #085bfe"
+          >《{{name}}小程序隐私保护指引》</text
+        >
+        如你同意<text bindtap="openPrivacy" style="color: #085bfe"
+          >《{{name}}小程序隐私保护指引》</text
+        >，请点击"同意"开始使用{{name}}</view
+      >
+    </view>
+    <view class="history-btn">
+      <button
+        bindtap="exitMini"
+        class="it left"
+        style="background-color: #e8e9e9; color: #b8b5b5"
+      >
+        拒绝
+      </button>
+      <button
+        bindagreeprivacyauthorization="handleAgreePrivacyAuthorization"
+        class="it right"
+        id="agree-btn"
+        openType="agreePrivacyAuthorization"
+      >
+        同意
+      </button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,26 @@
+.container {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.text {
+  background-color: #f8f5f8;
+  border: 1px solid #000;
+  border-radius: 15rpx;
+  height: 160rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  margin-top: 10rpx;
+}
+.text2 {
+  font-size: 28rpx;
+  line-height: 52rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+.text3 {
+  background-color: #5a9b1e;
+  border-radius: 20rpx;
+  color: #fff;
+  height: 45rpx;
+  margin: 0rpx 100rpx;
+  text-align: center;
+}

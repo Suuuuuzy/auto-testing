@@ -1,0 +1,147 @@
+<view
+  class="{{['container','content-panel-shop','_div','data-v-0b846e28',value?'active':'']}}"
+>
+  <scroll-view
+    class="common-scroll data-v-0b846e28"
+    enableBackToTop="{{true}}"
+    scrollY="{{true}}"
+    style="{{'top:'+navigationBarHeight+'px'+';'}}"
+  >
+    <view class="nav-search-top _div data-v-0b846e28">
+      <view
+        bindtap="__e"
+        class="nav-search-input _div data-v-0b846e28"
+        data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+      >
+        <view class="icon-search _div data-v-0b846e28">
+          <image
+            class="pic _img data-v-0b846e28"
+            src="/static/img/icon-search.svg"
+          ></image>
+        </view>
+        <view class="input _div data-v-0b846e28">国家或地区、城市…</view>
+      </view>
+      <view class="nav-city-out _div data-v-0b846e28">
+        <view class="icon-location _div data-v-0b846e28">
+          <image
+            class="pic _img data-v-0b846e28"
+            src="/static/img/icon-location.svg"
+          ></image>
+        </view>
+        <view class="nav-city-text _div data-v-0b846e28">{{city}}</view>
+      </view>
+    </view>
+    <view
+      class="{{['index-banner-out','_div','data-v-0b846e28','index-banner-'+nowBanner]}}"
+    >
+      <view class="panel banner-top-1 _div data-v-0b846e28">
+        <image
+          class="pic _img data-v-0b846e28"
+          mode="aspectFill"
+          src="http://cdn.impdigital.cn/patek/img/banner-top-1-new.jpg"
+        ></image>
+      </view>
+      <view class="panel banner-top-2 _div data-v-0b846e28">
+        <image
+          class="pic _img data-v-0b846e28"
+          mode="aspectFill"
+          src="http://cdn.impdigital.cn/patek/img/banner-top-2-new.jpg"
+        ></image>
+      </view>
+      <view class="index-banner-title _div data-v-0b846e28"
+        >百达翡丽全球授权经销商</view
+      >
+      <view class="index-banner-btn-out _div data-v-0b846e28">
+        <view
+          bindtap="__e"
+          class="index-banner-btn _div data-v-0b846e28"
+          data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}"
+          >寻找销售中心</view
+        >
+      </view>
+    </view>
+    <view class="index-top-boutique-out _div data-v-0b846e28">
+      <swiper
+        bindchange="__e"
+        class="index-top-boutique-inner data-v-0b846e28"
+        current="{{nowBanner}}"
+        data-event-opts="{{[ [ 'change',[ [ 'changeSwiper',['$event'] ] ] ] ]}}"
+        nextMargin="390rpx"
+      >
+        <swiper-item
+          class="{{['index-top-boutique-item-out','data-v-0b846e28',nowBanner===0?'active':'']}}"
+        >
+          <view class="index-top-boutique-item _div data-v-0b846e28">
+            <view class="top-b-title _div data-v-0b846e28">北京源邸</view>
+            <view class="top-b-address _div data-v-0b846e28"
+              >北京市前门东大街23号<view class="_br data-v-0b846e28"></view
+              >前门23号1号楼</view
+            >
+            <view class="top-b-learn _div data-v-0b846e28">
+              <view
+                bindtap="__e"
+                class="top-b-learn-btn _div data-v-0b846e28"
+                data-event-opts="{{[ [ 'tap',[ [ 'toBeijingBook',['$event'] ] ] ] ]}}"
+                >立即预约</view
+              >
+              <view
+                bindtap="__e"
+                class="top-b-learn-btn top-b-learn-btn-border _div data-v-0b846e28"
+                data-event-opts="{{[ [ 'tap',[ [ 'toBeijing',['$event'] ] ] ] ]}}"
+                >了解更多</view
+              >
+            </view>
+          </view>
+        </swiper-item>
+        <swiper-item
+          class="{{['index-top-boutique-item-out','index-top-boutique-item-out-2','data-v-0b846e28',nowBanner===1?'active':'']}}"
+        >
+          <view class="index-top-boutique-item _div data-v-0b846e28">
+            <view class="top-b-title _div data-v-0b846e28">上海源邸</view>
+            <view class="top-b-address _div data-v-0b846e28"
+              >上海市黄浦区中山东一路33号<view
+                class="_br data-v-0b846e28"
+              ></view
+              >外滩源2号楼</view
+            >
+            <view class="top-b-learn _div data-v-0b846e28">
+              <view
+                bindtap="__e"
+                class="top-b-learn-btn _div data-v-0b846e28"
+                data-event-opts="{{[ [ 'tap',[ [ 'toShanghaiBook',['$event'] ] ] ] ]}}"
+                >立即预约</view
+              >
+              <view
+                bindtap="__e"
+                class="top-b-learn-btn top-b-learn-btn-border _div data-v-0b846e28"
+                data-event-opts="{{[ [ 'tap',[ [ 'toShanghai',['$event'] ] ] ] ]}}"
+                >了解更多</view
+              >
+            </view>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+    <view class="index-logo-bottom _div data-v-0b846e28">
+      <view class="logo-large _div data-v-0b846e28">
+        <image
+          class="pic _img data-v-0b846e28"
+          src="/static/img/logo-large.png"
+        ></image>
+      </view>
+    </view>
+    <view class="nav-gap _div data-v-0b846e28"></view>
+    <view
+      class="_div data-v-0b846e28"
+      style="{{'height:'+navigationBarHeightPlaceholder+'px'+';'}}"
+    ></view>
+  </scroll-view>
+  <pp-nav
+    bind:__l="__l"
+    class="data-v-0b846e28"
+    logo="{{true}}"
+    placeholder="{{navigationBarHeightPlaceholder}}"
+    value="{{true}}"
+    vueId="5f49666e-1"
+  ></pp-nav>
+</view>

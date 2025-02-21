@@ -1,0 +1,12 @@
+.flex_center_x {
+  background-color: #fff;
+  margin-left: 10%;
+  margin-right: 10%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  height: 90rpx;
+  margin-top: 50rpx;
+  -webkit-box-pack: center;
+  justify-content: center;
+}

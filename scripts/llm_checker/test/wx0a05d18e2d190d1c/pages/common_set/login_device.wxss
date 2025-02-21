@@ -1,0 +1,21 @@
+.item_car_notice_style {
+  -webkit-box-orient: horizontal;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+.item_car_notice_style,
+.item_system_notice_style {
+  padding: 15rpx 30rpx;
+  margin: 20rpx 30rpx 0rpx;
+  border-radius: 20rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-direction: normal;
+  background-color: #fff;
+}
+.item_system_notice_style {
+  -webkit-box-orient: vertical;
+  flex-direction: column;
+}

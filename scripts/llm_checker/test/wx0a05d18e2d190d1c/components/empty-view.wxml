@@ -1,0 +1,16 @@
+<view>
+  <view class="empty_page">
+    <image
+      catchtap="__e"
+      class="iv_logo_style"
+      data-event-opts="{{[ [ 'tap',[ [ '_clickFun',['$event'] ] ] ] ]}}"
+      src="../static/images/icon_empty.png"
+    ></image>
+    <text
+      catchtap="__e"
+      class="tv_msg_style"
+      data-event-opts="{{[ [ 'tap',[ [ '_clickFun',['$event'] ] ] ] ]}}"
+      >{{msg}}</text
+    >
+  </view>
+</view>

@@ -1,0 +1,59 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<import src="/pages/template/coupon/coupon-item.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<scroll-view scrollX class="bg-white nav">
+  <view class="flex text-center">
+    <view
+      bindtap="tabSelect"
+      class="cu-item flex-sub {{index==TabCur?'text-pink cur':''}}"
+      data-id="{{index}}"
+      wx:for="{{tabInfo}}"
+      wx:key="key"
+    >
+      {{isUy?item.uy_name:item.ch_name}}
+    </view>
+  </view>
+</scroll-view>
+<view class="bg-white padding-sm">
+  <view
+    class="margin-tb-xs {{TabCur!=0?'grayscale':''}}"
+    wx:for="{{result.data}}"
+    wx:key="key"
+  >
+    <template
+      is="couponItem"
+      data="{{item:item,Str:Str,lanIndex:lanIndex,isUy:isUy}}"
+    ></template>
+  </view>
+</view>
+<view>
+  <view class="weui-loadmore weui-loadmore_line">
+    <view
+      class="weui-loadmore__tips weui-loadmore__tips_in-line"
+      style="background-color: #f1f1f1"
+    >
+      {{Str.noContent[lanIndex]}}</view
+    >
+  </view>
+</view>
+<view
+  class="weui-footer weui-footer_fixed-bottom"
+  style="bottom: 0"
+  wx:if="{{hasVideoAdd&&result&&result.showAdvert}}"
+>
+  <view class="margin-top text-center padding-xs shadow">
+    <view class="flex">
+      <view bindtap="startAdvert" class="flex-sub text-center">
+        <image
+          src="/resource/images/common/video_advert.png"
+          style="width: 60rpx; height: 60rpx"
+        ></image>
+      </view>
+      <view class="flex-sub"></view>
+      <view class="flex-sub"></view>
+      <view class="flex-sub"></view>
+    </view>
+  </view>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

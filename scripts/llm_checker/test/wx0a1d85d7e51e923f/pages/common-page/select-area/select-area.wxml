@@ -1,0 +1,57 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view class="box solid-top">
+    <view class="cu-bar search bg-white">
+        <view class="search-form ">
+            <text class="icon-search"></text>
+            <input bindinput="searchInput" confirmType="search" placeholder="{{Str.inputAddress[lanIndex]}}" type="text" value="{{searchKeyWord}}"></input>
+        </view>
+        <view class="action">
+            <view class="padding-lr {{searchKeyWord.length>0?'text-pink':'text-gray'}} uy-tom text-sm">{{Str.search[lanIndex]}}</view>
+        </view>
+    </view>
+</view>
+<view class="margin-top-sm cu-bar bg-white {{isUy?'rtl':''}}" style="min-height:80rpx" wx:if="{{pageData.locationArea}}">
+    <view class="action">
+        <text class="icon-locationfill text-pink {{isUy?'padding-left-sm':''}}"></text>
+        <text class="text-sm text-gray padding-left-sm">{{Str.locationArea[lanIndex]}}</text>
+        <text class="uy-tom text-pink">{{isUy?pageData.locationArea.uy_name:pageData.locationArea.ch_name}}</text>
+    </view>
+</view>
+<view class="margin-top-sm cu-bar bg-white {{isUy?'rtl':''}}" wx:else>
+    <view class="action">
+        <text class="text-sm text-grey">{{Str.locationFail[lanIndex]}}</text>
+    </view>
+    <view class="action">
+        <button bindopensetting="settingCall" bindtap="locationBtn" class="cu-btn bg-cyan sm radius shadow " openType="openSetting">{{Str.location[lanIndex]}}</button>
+    </view>
+</view>
+<view class="{{isUy?'rtl':''}}" wx:if="{{pageData&&areaList.length==pageData.areas.length}}">
+    <view class="margin-top-sm cu-bar bg-white" style="min-height:80rpx">
+        <view class="action">
+            <text class="icon-titles text-pink {{isUy?'padding-left-sm':''}}"></text>
+            <text>{{Str.recommend[lanIndex]}}</text>
+        </view>
+        <view class="action"></view>
+    </view>
+    <view class="grid col-3 bg-white text-center solids-top padding-sm">
+        <view class="" wx:if="{{item.is_hot==1}}" wx:for="{{pageData.areas}}" wx:key="index">
+            <view bindtap="selectItem" class="bg-pink radius margin-xs padding-tb-xs text-sm" data-item="{{item}}">{{isUy?item.uy_name:item.ch_name}}</view>
+        </view>
+    </view>
+</view>
+<view class="cu-list menu margin-top sm-border">
+    <view bindtap="selectItem" class="cu-item {{isUy?'rtl':''}}" data-item="{{item}}" wx:for="{{areaList}}">
+        <view class="content">
+            <view class="uy-tom">{{isUy?item.uy_name:item.ch_name}}</view>
+            <view class="text-gray text-sm">{{isUy?item.ch_name:item.uy_name}}</view>
+        </view>
+    </view>
+</view>
+<view>
+    <view class="weui-loadmore weui-loadmore_line">
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line" style="background-color:#f1f1f1">{{Str.noContent[lanIndex]}}</view>
+    </view>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

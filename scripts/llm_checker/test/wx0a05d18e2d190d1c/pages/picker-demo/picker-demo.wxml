@@ -1,0 +1,218 @@
+<view class="content">
+  <view
+    bindtap="__e"
+    class="tab"
+    data-event-opts="{{[ [ 'tap',[ [ 'toggleTab',['linkage'] ] ] ] ]}}"
+    >多级联动</view
+  >
+  <view
+    bindtap="__e"
+    class="tab"
+    data-event-opts="{{[ [ 'tap',[ [ 'toggleTab',['half'] ] ] ] ]}}"
+    >选择上午下午</view
+  >
+  <view
+    bindtap="__e"
+    class="tab"
+    data-event-opts="{{[ [ 'tap',[ [ 'toggleTab',['range'] ] ] ] ]}}"
+    >选择区间的日期</view
+  >
+  <view
+    bindtap="__e"
+    class="tab"
+    data-event-opts="{{[ [ 'tap',[ [ 'toggleTab',['limitHour'] ] ] ] ]}}"
+    >选择短期的日期上下午</view
+  >
+  <view
+    bindtap="__e"
+    class="tab"
+    data-event-opts="{{[ [ 'tap',[ [ 'toggleTab',['limit'] ] ] ] ]}}"
+    >选择短期的日期时间</view
+  >
+  <view
+    bindtap="__e"
+    class="tab"
+    data-event-opts="{{[ [ 'tap',[ [ 'toggleTab',['date'] ] ] ] ]}}"
+    >日期选择</view
+  >
+  <view
+    bindtap="__e"
+    class="tab"
+    data-event-opts="{{[ [ 'tap',[ [ 'toggleTab',['yearMonth'] ] ] ] ]}}"
+    >年月</view
+  >
+  <view
+    bindtap="__e"
+    class="tab"
+    data-event-opts="{{[ [ 'tap',[ [ 'toggleTab',['dateTime'] ] ] ] ]}}"
+    >日期时间选择</view
+  >
+  <view
+    bindtap="__e"
+    class="tab"
+    data-event-opts="{{[ [ 'tap',[ [ 'toggleTab',['time'] ] ] ] ]}}"
+    >时间选择</view
+  >
+  <view
+    bindtap="__e"
+    class="tab"
+    data-event-opts="{{[ [ 'tap',[ [ 'toggleTab',['region'] ] ] ] ]}}"
+    >省市区</view
+  >
+  <view
+    bindtap="__e"
+    class="tab"
+    data-event-opts="{{[ [ 'tap',[ [ 'toggleTab',['selector'] ] ] ] ]}}"
+    >单列选择</view
+  >
+  <w-picker
+    bind:__l="__l"
+    bind:confirm="__e"
+    class="vue-ref"
+    data-event-opts="{{[ [ '^confirm',[ ['onConfirm'] ] ] ]}}"
+    data-ref="linkage"
+    level="{{3}}"
+    linkList="{{linkList}}"
+    mode="linkage"
+    themeColor="#f00"
+    vueId="1659027a-1"
+  ></w-picker>
+  <w-picker
+    bind:__l="__l"
+    bind:confirm="__e"
+    class="vue-ref"
+    current="{{false}}"
+    data-event-opts="{{[ [ '^confirm',[ ['onConfirm'] ] ] ]}}"
+    data-ref="half"
+    defaultVal="2018-02-15 下午"
+    disabledAfter="{{false}}"
+    endYear="2030"
+    mode="half"
+    startYear="2016"
+    themeColor="#f00"
+    vueId="1659027a-2"
+  ></w-picker>
+  <w-picker
+    bind:__l="__l"
+    bind:confirm="__e"
+    class="vue-ref"
+    current="{{false}}"
+    data-event-opts="{{[ [ '^confirm',[ ['onConfirm'] ] ] ]}}"
+    data-ref="range"
+    defaultVal="{{rangeDval}}"
+    endYear="2030"
+    mode="range"
+    startDate="2017"
+    themeColor="#f00"
+    vueId="1659027a-3"
+  ></w-picker>
+  <w-picker
+    bind:__l="__l"
+    bind:confirm="__e"
+    class="vue-ref"
+    data-event-opts="{{[ [ '^confirm',[ ['onConfirm'] ] ] ]}}"
+    data-ref="limitHour"
+    dayStep="60"
+    mode="limitHour"
+    themeColor="#f00"
+    vueId="1659027a-4"
+  ></w-picker>
+  <w-picker
+    afterStep="30"
+    bind:__l="__l"
+    bind:confirm="__e"
+    class="vue-ref"
+    data-event-opts="{{[ [ '^confirm',[ ['onConfirm'] ] ] ]}}"
+    data-ref="limit"
+    dayStep="60"
+    endHour="20"
+    minuteStep="5"
+    mode="limit"
+    startHour="8"
+    themeColor="#f00"
+    vueId="1659027a-5"
+  ></w-picker>
+  <w-picker
+    bind:__l="__l"
+    bind:confirm="__e"
+    class="vue-ref"
+    current="{{false}}"
+    data-event-opts="{{[ [ '^confirm',[ ['onConfirm'] ] ] ]}}"
+    data-ref="date"
+    defaultVal="2019-10-31"
+    disabledAfter="{{false}}"
+    endYear="2030"
+    mode="date"
+    startYear="2017"
+    themeColor="#f00"
+    vueId="1659027a-6"
+  ></w-picker>
+  <w-picker
+    bind:__l="__l"
+    bind:confirm="__e"
+    class="vue-ref"
+    current="{{false}}"
+    data-event-opts="{{[ [ '^confirm',[ ['onConfirm'] ] ] ]}}"
+    data-ref="yearMonth"
+    defaultVal="2018-12"
+    disabledAfter="{{false}}"
+    endYear="2030"
+    mode="yearMonth"
+    startYear="2016"
+    themeColor="#f00"
+    vueId="1659027a-7"
+  ></w-picker>
+  <w-picker
+    bind:__l="__l"
+    bind:confirm="__e"
+    class="vue-ref"
+    current="{{false}}"
+    data-event-opts="{{[ [ '^confirm',[ ['onConfirm'] ] ] ]}}"
+    data-ref="dateTime"
+    defaultVal="2018-09-10 12:48:45"
+    endYear="2030"
+    mode="dateTime"
+    startYear="2017"
+    step="1"
+    themeColor="#f00"
+    vueId="1659027a-8"
+  ></w-picker>
+  <w-picker
+    bind:__l="__l"
+    bind:confirm="__e"
+    class="vue-ref"
+    current="{{false}}"
+    data-event-opts="{{[ [ '^confirm',[ ['onConfirm'] ] ] ]}}"
+    data-ref="time"
+    defaultVal="02:03:30"
+    mode="time"
+    step="1"
+    vueId="1659027a-9"
+  ></w-picker>
+  <w-picker
+    areaCode="{{['33','3301','330108']}}"
+    bind:__l="__l"
+    bind:confirm="__e"
+    class="vue-ref"
+    data-event-opts="{{[ [ '^confirm',[ ['onConfirm'] ] ] ]}}"
+    data-ref="region"
+    defaultVal="{{regionDval}}"
+    hideArea="{{false}}"
+    mode="region"
+    timeout="{{true}}"
+    vueId="1659027a-10"
+  ></w-picker>
+  <w-picker
+    bind:__l="__l"
+    bind:confirm="__e"
+    class="vue-ref"
+    data-event-opts="{{[ [ '^confirm',[ ['onConfirm'] ] ] ]}}"
+    data-ref="selector"
+    defaultVal="女"
+    mode="selector"
+    selectList="{{selectList}}"
+    themeColor="#f00"
+    vueId="1659027a-11"
+  ></w-picker>
+  <view class="result">{{'选择结果：'+resultInfo.result}}</view>
+</view>

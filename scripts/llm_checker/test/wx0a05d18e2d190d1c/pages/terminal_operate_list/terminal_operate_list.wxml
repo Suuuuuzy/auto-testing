@@ -1,0 +1,27 @@
+<view class="page">
+  <scroll-view scrollY="true" style="width: 100%; height: 100%">
+    <empty
+      bind:__l="__l"
+      msg="{{emptyMsg}}"
+      vueId="d7db26f4-1"
+      wx:if="{{data_list.length==0}}"
+    ></empty>
+    <view
+      bindtap="__e"
+      class="item_layout_style"
+      data-event-opts="{{[ [ 'tap',[ [ 'click_item_view',['$event'] ] ] ] ]}}"
+      data-value="{{item}}"
+      wx:for="{{data_list}}"
+      wx:key="index"
+    >
+      <image class="icon_style" mode="aspectFit" src="{{icon_url}}"></image>
+      <text class="terminal_text_style">{{item.terminalNo}}</text>
+    </view>
+  </scroll-view>
+  <image
+    bindtap="__e"
+    class="add_btn_style"
+    data-event-opts="{{[ [ 'tap',[ [ 'click_add_btn',['$event'] ] ] ] ]}}"
+    src="../../static/images/icon_add.png"
+  ></image>
+</view>

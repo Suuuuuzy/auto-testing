@@ -1,0 +1,52 @@
+{
+  "permission": {},
+  "plugins": {
+    "imp-plugin": {
+      "version": "1.1.2",
+      "provider": "wx9ededd215b5f3b83",
+      "subpackage": "__APP__"
+    },
+    "imp-plugin-calendar": {
+      "version": "0.0.1",
+      "provider": "wx98873a0ddbef8b05",
+      "subpackage": "__APP__"
+    }
+  },
+  "__usePrivacyCheck__": true,
+  "subPackages": [
+    { "root": "pages/appointment/", "pages": ["home", "from", "success"] }
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "百达翡丽时计查询",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#ffffff"
+  },
+  "pages": [
+    "pages/index",
+    "pages/filterList",
+    "pages/filterResult",
+    "pages/boutique/filterList",
+    "pages/boutique/filterResult",
+    "pages/all",
+    "pages/inner",
+    "pages/innerList",
+    "pages/jewelry",
+    "pages/topic",
+    "pages/treasure",
+    "pages/watch",
+    "pages/watchList",
+    "pages/wishList",
+    "pages/bookList",
+    "pages/search",
+    "pages/boutique",
+    "pages/boutiqueBookForm",
+    "pages/boutiqueBookFormView",
+    "pages/boutiqueBookTime",
+    "pages/boutiqueBookResult",
+    "pages/boutiqueView",
+    "pages/boutiqueList",
+    "pages/boutiqueScan",
+    "pages/web"
+  ]
+}

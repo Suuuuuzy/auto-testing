@@ -1,0 +1,24 @@
+<view class="_div data-v-79eb9b96">
+  <view class="{{['tabbarPlcaceHolder','_div','data-v-79eb9b96',hide]}}">
+    <view
+      class="_tabbarItem _div data-v-79eb9b96"
+      wx:for="{{itemsNum}}"
+      wx:for-index="__i0__"
+      wx:key="*this"
+    >
+      <view
+        class="{{['tabbarTop','_div','data-v-79eb9b96',item+1==$root.g0?centerClass:'']}}"
+      ></view>
+      <view class="tabbarBottom _div data-v-79eb9b96"></view>
+    </view>
+  </view>
+  <tabbar-commonpackage
+    bind:__l="__l"
+    bind:init="__e"
+    class="data-v-79eb9b96"
+    data-event-opts="{{[ [ '^init',[ ['init'] ] ] ]}}"
+    nameSpace="{{nameSpace}}"
+    vueId="b0e3d79e-1"
+    wx:if="{{componentReady}}"
+  ></tabbar-commonpackage>
+</view>

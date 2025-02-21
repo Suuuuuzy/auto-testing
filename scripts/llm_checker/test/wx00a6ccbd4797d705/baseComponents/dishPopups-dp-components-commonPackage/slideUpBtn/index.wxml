@@ -1,0 +1,12 @@
+<view
+  bindtap="__e"
+  class="bgf toTopBtn fc3 f28 flexCenter _div data-v-15fc1f68"
+  data-event-opts="{{[ [ 'tap',[ [ 'upToCook',['$event'] ] ] ] ]}}"
+  style="{{'z-index:'+zIndex+';'}}"
+>
+  <image
+    class="image data-v-15fc1f68"
+    src="https://cdnpic.wuuxiang.com/msgjDecorationImg/slideUp.gif"
+  ></image>
+  <text class="text data-v-15fc1f68">向上滑选择口味</text>
+</view>

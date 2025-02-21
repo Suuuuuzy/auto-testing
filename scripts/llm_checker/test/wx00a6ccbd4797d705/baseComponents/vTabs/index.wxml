@@ -1,0 +1,69 @@
+<view
+  class="{{['v-tabs','data-v-a0adbf4e',fixed?'tabs-fixed':'']}}"
+  id="{{elId}}"
+  style="{{'background:'+bgColor+';'+'padding:'+(!iconFlg?padding:'')+';'+'margin-bottom:'+(iconFlg?'24rpx':'')+';'}}"
+>
+  <scroll-view
+    class="data-v-a0adbf4e"
+    scrollLeft="{{scroll?scrollLeft:0}}"
+    scrollWithAnimation="{{scroll}}"
+    scrollX="{{scroll}}"
+  >
+    <view
+      class="v-tabs__container data-v-a0adbf4e"
+      style="{{'display:'+(scroll?'inline-flex':'flex')+';'+'white-space:'+(scroll?'nowrap':'normal')+';'+'height:'+height+';'+'width:'+width+';'+'justify-content:'+(centerModel?'center':'')+';'}}"
+    >
+      <block wx:if="{{useFollow}}">
+        <view
+          bindtap="__e"
+          class="v-tabs__container-item data-v-a0adbf4e"
+          data-event-opts="{{[ [ 'tap',[ [ 'change',[ [ 'o',['index',i],['tab',v] ] ] ] ] ] ]}}"
+          style="{{'color:'+(current==i?activeColor:color)+';'+'font-size:'+(current==i?fontSize:fontSize)+';'+'font-weight:'+(bold&&current==i?'bold':'')+';'+'justify-content:'+(!scroll?'center':'')+';'+'padding:'+(paddingItem?paddingItem:'0 11px')+';'+'flex-direction:'+(iconFlg?'column':'')+';'+'justify-content:'+(iconFlg?'center':'')+';'+'flex:'+(centerModel?'':'1')+';'}}"
+          wx:for="{{tabs}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+        >
+          <view class="_div data-v-a0adbf4e" wx:if="{{iconFlg}}">
+            <image
+              class="icon-tabs data-v-a0adbf4e"
+              lazyLoad="{{true}}"
+              src="{{v.iconUrl}}"
+            ></image> </view
+          >{{''+(field?v[field]:v)+''}}</view
+        >
+        <view
+          class="data-v-a0adbf4e"
+          style="width: 88rpx"
+          wx:if="{{useRightBox}}"
+        ></view>
+      </block>
+      <block wx:else>
+        <view
+          bindtap="__e"
+          class="v-tabs__container-item data-v-a0adbf4e"
+          data-event-opts="{{[ [ 'tap',[ [ 'change',[ [ 'o',['index',i],['tab',v] ] ] ] ] ] ]}}"
+          style="{{'color:'+(current==i?activeColor:color)+';'+'font-size:'+(current==i?fontSize:fontSize)+';'+'font-weight:'+(bold&&current==i?'bold':'')+';'+'justify-content:'+(!scroll?'center':'')+';'+'padding:'+(paddingItem?paddingItem:'0 11px')+';'+'margin:'+(marginItem?marginItem:'0')+';'+'border:'+(current==i?activeBorder:border)+';'+'border-radius:'+pillsBorderRadius+';'+'background:'+(!useFollow&&current==i?pillsColor:'#fff')+';'+'flex:'+(centerModel?'':'1')+';'}}"
+          wx:for="{{tabs}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+          >{{''+(field?v[field]:v)+''}}</view
+        >
+      </block>
+      <view class="_div data-v-a0adbf4e"></view>
+      <block wx:if="{{useFollow}}">
+        <view
+          class="v-tabs__container-line data-v-a0adbf4e"
+          style="{{'background:'+lineColor+';'+'width:'+lineWidth+'px'+';'+'height:'+lineHeight+';'+'border-radius:'+lineRadius+';'+'left:'+lineLeft+'px'+';'+'transform:'+'translateX(-'+lineWidth/2+'px)'+';'}}"
+          wx:if="{{!pills}}"
+        ></view>
+        <view
+          class="v-tabs__container-pills data-v-a0adbf4e"
+          style="{{'background:'+pillsColor+';'+'border-radius:'+pillsBorderRadius+';'+'left:'+pillsLeft+'px'+';'+'width:'+currentWidth+'px'+';'+'height:'+height+';'}}"
+          wx:else
+        ></view>
+      </block>
+    </view>
+  </scroll-view>
+</view>

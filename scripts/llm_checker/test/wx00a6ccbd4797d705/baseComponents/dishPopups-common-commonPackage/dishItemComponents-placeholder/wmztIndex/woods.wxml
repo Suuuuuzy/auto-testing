@@ -1,0 +1,338 @@
+<view class="view _div data-v-433a07ce" style="overflow: hidden">
+  <view
+    class="{{['dishItem-wm','view','_div','data-v-433a07ce',dishConfig.hasBGColor?'hasBgColor':'']}}"
+    data-set-layout="{{layout}}"
+    wx:if="{{dishData.show}}"
+  >
+    <view
+      class="dishItem mt40r _div data-v-433a07ce"
+      style="margin-bottom: 0rpx"
+    >
+      <view
+        bindtap="__e"
+        class="dishImage _div data-v-433a07ce"
+        data-event-opts="{{[ [ 'tap',[ [ 'showBigPicModle',['$event'] ] ] ] ]}}"
+      >
+        <view
+          class="marker f24 _div data-v-433a07ce"
+          wx:if="{{dishData._markerUrl}}"
+        >
+          <view
+            class="pr _div data-v-433a07ce"
+            style="{{'width:'+dishConfig.markerWidth+'px'+';'+'height:'+dishConfig.markerHeight+'px'+';'}}"
+          >
+            <image
+              class="markerUrl data-v-433a07ce"
+              src="{{dishData._markerUrl}}"
+              style="{{'width:'+dishConfig.markerWidth+'px'+';'+'height:'+dishConfig.markerHeight+'px'+';'}}"
+            ></image>
+            <label class="markerText _span data-v-433a07ce"
+              >{{dishData._markerText}}</label
+            >
+          </view>
+        </view>
+        <view class="dishImage__box _div data-v-433a07ce">
+          <image
+            class="dishImage__image data-v-433a07ce"
+            lazyLoad="{{true}}"
+            mode="aspectFill"
+            src="{{dishImages}}"
+          ></image>
+        </view>
+        <label
+          class="bofangBtn pa _span data-v-433a07ce"
+          wx:if="{{dishData.videoName}}"
+        >
+          <label class="pr bofangCopy _span data-v-433a07ce">
+            <view class="iconfont icon-bofang _i data-v-433a07ce"></view>
+          </label>
+        </label>
+        <label
+          class="medalImg_wrap _span data-v-433a07ce"
+          wx:if="{{dishData['medalCounts']&&dishData['medalCounts'][0]}}"
+        >
+          <label
+            class="_span data-v-433a07ce"
+            wx:for="{{$root.l0}}"
+            wx:for-item="medal"
+            wx:key="index"
+          >
+            <image
+              class="medalImg _img data-v-433a07ce"
+              src="{{medal[$orig].iconUrl}}"
+              wx:if="{{medal.m0>0}}"
+            ></image>
+            <image
+              class="medalImg _img data-v-433a07ce"
+              src="{{medal[$orig].offIconUrl}}"
+              wx:else
+            ></image>
+          </label>
+        </label>
+      </view>
+      <view
+        class="dishInfo _div data-v-433a07ce"
+        style="{{'top:'+dishData['_cardTop']*2+'rpx'+';'+'left:'+dishData['_cardLeft']*2+'rpx'+';'}}"
+      >
+        <view class="dishName _div data-v-433a07ce">
+          <view class="dishName__text _div data-v-433a07ce">
+            <view
+              class="dishName__text--secondList _div data-v-433a07ce"
+              style="display: flex"
+              wx:if="{{dishConfig.type=='search'&&dishData._lightItemName}}"
+            >
+              <label class="woods-dishName _span data-v-433a07ce">
+                <rich-text
+                  class="data-v-433a07ce"
+                  nodes="{{$root.m1}}"
+                  space="nbsp"
+                  style="word-break: break-word; white-space: pre-wrap"
+                ></rich-text>
+              </label>
+            </view>
+            <view
+              class="dishName__text--secondList _div data-v-433a07ce"
+              style="display: flex"
+              wx:else
+            >
+              <label class="woods-dishName _span data-v-433a07ce"
+                >{{dishConfig.realDishName}}</label
+              >
+            </view>
+          </view>
+        </view>
+        <view
+          class="dishIcon _div data-v-433a07ce"
+          wx:if="{{dishData.spicy>0}}"
+        >
+          <label class="dishLaDu _span data-v-433a07ce">
+            <image
+              class="dishLaDu__item _img data-v-433a07ce"
+              mode="heightFix"
+              src="{{'https://cdnpic.wuuxiang.com/msgjDecorationImg/nladu'+dishData.spicy+'.png'}}"
+            ></image>
+          </label>
+        </view>
+        <view
+          class="dishLabel _div data-v-433a07ce"
+          wx:if="{{dishData.itemLabel}}"
+        >
+          <view
+            class="dishLabel__lable _div data-v-433a07ce"
+            style="{{'background:'+(dishConfig.goodsTagColor?dishConfig.goodsTagColor:'')+';'}}"
+            wx:for="{{dishConfig.labelList}}"
+            wx:for-item="label"
+            wx:key="index"
+            >{{label}}</view
+          >
+        </view>
+        <view class="dishDesc _div data-v-433a07ce" wx:if="{{dishData.desp}}"
+          >{{''+dishData.desp+''}}</view
+        >
+        <view
+          class="dishIcon _div data-v-433a07ce"
+          wx:if="{{!dishConfig.isGroupBuy}}"
+        >
+          <view
+            class="dishInfo__icon--npart npart0 _div data-v-433a07ce"
+            wx:if="{{$root.m2}}"
+          >
+            <view class="dishInfo__icon--npartbox left _div data-v-433a07ce"
+              >{{'第'+(dishConfig.itemUnit.npartNum||0)+'份'}}</view
+            >
+            <view class="dishInfo__icon--npartbox right _div data-v-433a07ce"
+              >{{(dishConfig.itemUnit.npartPr||0)+'元'}}</view
+            >
+          </view>
+          <view
+            class="dishInfo__icon--npart npart1 _div data-v-433a07ce"
+            wx:if="{{$root.m3}}"
+          >
+            <view class="dishInfo__icon--npartbox left _div data-v-433a07ce"
+              >{{'第'+(dishConfig.itemUnit.npartNum||0)+'份'}}</view
+            >
+            <view class="dishInfo__icon--npartbox right _div data-v-433a07ce"
+              >{{(dishConfig.itemUnit.npartPr||0)+'元'}}</view
+            >
+          </view>
+        </view>
+        <view class="dishIcon _div data-v-433a07ce">
+          <view
+            class="dishInfo__icon _div data-v-433a07ce"
+            style="{{themeStyle}}"
+            wx:if="{{dishConfig.exchangeFlg&&!dishConfig.isGroupBuy}}"
+            >换</view
+          >
+          <view
+            class="dishInfo__icon _div data-v-433a07ce"
+            style="{{themeStyle}}"
+            wx:if="{{dishConfig.fullGiftFlg&&!dishConfig.isGroupBuy}}"
+            >满赠</view
+          >
+          <view
+            class="dishInfo__icon _div data-v-433a07ce"
+            style="{{themeStyle}}"
+            wx:if="{{dishData.isManLiJian=='1'&&dishConfig.shopMLJTag}}"
+            >减</view
+          >
+          <view
+            class="dishInfo__icon _div data-v-433a07ce"
+            style="{{themeStyle}}"
+            wx:if="{{dishConfig.itemUnit.limitQuantityFlg=='1'&&!dishConfig.guQingFlg}}"
+            >{{'余'+(dishConfig.itemUnit.limitQuantity||0)+'份'}}</view
+          >
+          <view
+            class="dishInfo__icon _div data-v-433a07ce"
+            style="{{themeStyle}}"
+            wx:if="{{dishData.maxOrderCount<2147483647}}"
+            >{{'限'+(dishData.maxOrderCount||0)+'份'}}</view
+          >
+        </view>
+        <view
+          class="{{['dishPriceAndBtn','_div','data-v-433a07ce',dishConfig.specialDishStyle]}}"
+        >
+          <view class="dishPrice _div data-v-433a07ce">
+            <view
+              class="dishPrice__unPrice _div data-v-433a07ce"
+              style="{{dishConfig.showType==1?themeStyle:''}}"
+            >
+              <label class="_span data-v-433a07ce">￥</label>
+              <label
+                class="_span data-v-433a07ce"
+                style="{{dishConfig.showType!=1?'text-decoration:line-through;':''}}"
+                >{{dishConfig.itemUnit.unPrice}}</label
+              >
+            </view>
+            <view
+              class="dishPrice__unPrice _div data-v-433a07ce"
+              wx:if="{{dishConfig.showType==3||dishConfig.showType==5}}"
+            >
+              <label
+                class="_span data-v-433a07ce"
+                style="{{'color:'+themeColor+';'}}"
+              >
+                <label class="_span data-v-433a07ce">￥</label
+                >{{dishConfig.itemUnit.promPrice}}</label
+              >
+              <label class="dishPrice__tip promotion _span data-v-433a07ce">
+                <view class="triangle _div data-v-433a07ce"></view
+                >{{''+dishConfig.promPriceName+''}}</label
+              >
+            </view>
+            <view
+              class="dishPrice__unPrice _div data-v-433a07ce"
+              wx:if="{{dishConfig.showType==2||dishConfig.showType==5}}"
+            >
+              <label
+                class="_span data-v-433a07ce"
+                style="{{'color:'+themeColor+';'}}"
+              >
+                <label class="_span data-v-433a07ce">￥</label
+                >{{dishConfig.itemUnit.vipPrice}}</label
+              >
+              <label class="dishPrice__tip vip _span data-v-433a07ce">
+                <view class="triangle _div data-v-433a07ce"></view
+                >{{''+dishConfig.vipTxt+''}}</label
+              >
+            </view>
+            <view
+              class="dishPrice__unPrice _div data-v-433a07ce"
+              wx:if="{{dishConfig.showType==4}}"
+            >
+              <label
+                class="_span data-v-433a07ce"
+                style="{{'color:'+themeColor+';'}}"
+              >
+                <label class="_span data-v-433a07ce">￥</label
+                >{{dishConfig.itemUnit.nextCardPrice}}</label
+              >
+              <label class="dishPrice__tip vip _span data-v-433a07ce">
+                <view class="triangle _div data-v-433a07ce"></view
+                >{{''+dishConfig.vipTxt+''}}</label
+              >
+            </view>
+          </view>
+          <view class="dishBtn _div data-v-433a07ce">
+            <view
+              class="salesCounts _div data-v-433a07ce"
+              wx:if="{{dishConfig.foodsales&&dishData.salesCounts&&dishData.salesCounts!=0}}"
+              >{{'已售'+(dishData.salesCounts>9999?'1万+':dishData.salesCounts)+''}}</view
+            >
+            <view
+              class="addBtn _div data-v-433a07ce"
+              data-set-num="{{dishConfig.dishNum}}"
+              wx:if="{{!dishConfig.guQingFlg&&dishConfig.showAddDish}}"
+            >
+              <view
+                bindtap="__e"
+                class="btnWrap _div data-v-433a07ce"
+                data-event-opts="{{[ [ 'tap',[ [ 'add',['$event'] ] ] ] ]}}"
+                wx:if="{{dishConfig.type=='newtjDish3'}}"
+              >
+                <label
+                  class="border-radius-10 fcf _span data-v-433a07ce"
+                  style="{{'background:'+themeColor+';'+'padding:'+'4rpx 20rpx'+';'}}"
+                  >加一份</label
+                >
+              </view>
+              <view
+                class="{{['btnWrap','_div','data-v-433a07ce','dishBtnSize'+dishConfig.dishBtnSize.size,dishConfig.dishNum>0?'btnWrapBor':'']}}"
+                wx:else
+              >
+                <add-de-btn
+                  bind:__l="__l"
+                  bind:errNum="__e"
+                  bind:inputChange="__e"
+                  bind:inputClick="__e"
+                  bind:minusFun="__e"
+                  bind:plusFun="__e"
+                  bind:shift="__e"
+                  class="data-v-433a07ce"
+                  data-event-opts="{{[ [ '^plusFun',[ ['add'] ] ],[ '^minusFun',[ ['remove'] ] ],[ '^inputChange',[ ['getNumber'] ] ],[ '^inputClick',[ ['inputClick'] ] ],[ '^shift',[ ['shift'] ] ],[ '^errNum',[ ['errNum'] ] ] ]}}"
+                  maxNum="{{dishConfig.set.max}}"
+                  minNum="{{dishConfig.set.min}}"
+                  set="{{addDeBtnConfig?addDeBtnConfig:null}}"
+                  trueNum="{{dishConfig.dishNum}}"
+                  unit="份"
+                  vueId="e77979c2-1"
+                ></add-de-btn>
+              </view>
+            </view>
+            <block wx:else>
+              <view
+                class="dishSellOut _div data-v-433a07ce"
+                wx:if="{{dishConfig.guQingFlg&&dishConfig.showAddDish}}"
+              >
+                <view
+                  class="iconfont icon-qiangguangle _i data-v-433a07ce"
+                  style="{{'color: '+themeColor}}"
+                ></view>
+              </view>
+            </block>
+          </view>
+        </view>
+        <view
+          class="dishPriceLimit _div data-v-433a07ce"
+          style="{{themeStyle}}"
+          wx:if="{{!dishConfig.isGroupBuy}}"
+        >
+          <label
+            class="_span data-v-433a07ce"
+            wx:if="{{dishConfig.itemUnit.hyOrderLimitedQuantity}}"
+            >{{'会员限'+dishConfig.itemUnit.hyOrderLimitedQuantity+'份'}}</label
+          >
+          <label
+            class="_span data-v-433a07ce"
+            wx:if="{{dishConfig.itemUnit.hyOrderLimitedQuantity&&dishConfig.promotionLimitCount}}"
+            >，</label
+          >
+          <label
+            class="_span data-v-433a07ce"
+            wx:if="{{dishConfig.promotionLimitCount}}"
+            >{{dishConfig.promotionLimitText}}</label
+          >
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

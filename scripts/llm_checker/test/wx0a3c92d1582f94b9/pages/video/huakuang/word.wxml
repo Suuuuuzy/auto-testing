@@ -1,0 +1,22 @@
+<view class="box active" id="page1">
+    <view class="gameinfobox" id="openexample">
+        <view class="water-list">
+            <view class="item">
+                <image class="img" mode="aspectFit" src="https://47oss.ddfans.com/douyin/huakuang/{{data.url}}.jpg"></image>
+            </view>
+        </view>
+    </view>
+    <view class="page1-inputbox">
+        <form bindsubmit="onSubmit">
+            <view class="inputlist" wx:if="{{item.type=='input'&&formData[0].i!=1}}" wx:for="{{formData}}">
+                <view class="short-inputname">{{item.title}}：</view>
+                <view class="short-input">
+                    <input bindinput="bindinput" class="input input-name" data-index="{{index}}" id="father-name" name="{{item.name}}" placeholder="{{item.msg}}" placeholderClass="placeholder" type="{{item.state}}" value="{{item.value}}"></input>
+                </view>
+            </view>
+            <view class="start normalstartbtn">
+                <button class="start" formType="submit" id="submitbtn">确认生成</button>
+            </view>
+        </form>
+    </view>
+</view>

@@ -1,0 +1,77 @@
+page {
+  background-color: #f7f7f7;
+}
+.box,
+page {
+  padding: 30rpx;
+}
+.box {
+  background-color: #fff;
+  border-radius: 15rpx;
+  box-sizing: border-box;
+  width: 690rpx;
+}
+.h1 {
+  font-size: 30rpx;
+  font-weight: 700;
+  margin-bottom: 30rpx;
+  text-align: center;
+}
+.h1 .text {
+  display: inline-block;
+  position: relative;
+}
+.h1 .text text {
+  position: relative;
+  z-index: 3;
+}
+.h1 .text:after {
+  background-color: #f3bac1;
+  bottom: 0;
+  content: "";
+  height: 12rpx;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+.item {
+  border-left: 2rpx dashed #e93340;
+  box-sizing: border-box;
+  padding: 0rpx 40rpx 30rpx;
+  position: relative;
+}
+.item .em {
+  background-color: #e93340;
+  border-radius: 40rpx;
+  color: #fff;
+  font-size: 26rpx;
+  font-weight: 700;
+  height: 40rpx;
+  left: -20rpx;
+  line-height: 40rpx;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 40rpx;
+}
+.item .h2 {
+  font-size: 28rpx;
+  font-weight: 700;
+}
+.item .msg {
+  color: #636363;
+  font-size: 28rpx;
+  margin-top: 10rpx;
+}
+.item .code {
+  width: 60%;
+}
+.item .code,
+.item .img {
+  display: block;
+  margin: 30rpx auto 0;
+}
+.item .img {
+  width: 100%;
+}

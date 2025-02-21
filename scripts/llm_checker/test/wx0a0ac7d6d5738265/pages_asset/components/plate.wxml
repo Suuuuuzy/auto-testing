@@ -1,0 +1,63 @@
+<view class="data-v-e3998e4b">
+  <view class="{{['plate','data-v-e3998e4b',C&&'show']}}">
+    <view bindtap="{{c}}" class="{{['item','data-v-e3998e4b',b&&'active']}}"
+      >{{a}} <text class="triangle data-v-e3998e4b"></text>
+    </view>
+    <view bindtap="{{f}}" class="{{['item','data-v-e3998e4b',e&&'active']}}"
+      >{{d}}</view
+    >
+    <view class="point data-v-e3998e4b">●</view>
+    <view bindtap="{{i}}" class="{{['item','data-v-e3998e4b',h&&'active']}}"
+      >{{g}}</view
+    >
+    <view bindtap="{{l}}" class="{{['item','data-v-e3998e4b',k&&'active']}}"
+      >{{j}}</view
+    >
+    <view bindtap="{{o}}" class="{{['item','data-v-e3998e4b',n&&'active']}}"
+      >{{m}}</view
+    >
+    <view bindtap="{{r}}" class="{{['item','data-v-e3998e4b',q&&'active']}}"
+      >{{p}}</view
+    >
+    <view bindtap="{{v}}" class="{{['item','data-v-e3998e4b',t&&'active']}}"
+      >{{s}}</view
+    >
+    <view
+      bindtap="{{B}}"
+      class="{{['item','new-energy','data-v-e3998e4b',A&&'active']}}"
+      wx:if="{{w}}"
+    >
+      <view class="data-v-e3998e4b" wx:if="{{x}}">
+        <text class="data-v-e3998e4b">{{y}}</text>
+      </view>
+      <u-icon
+        bind:__l="__l"
+        class="data-v-e3998e4b"
+        uI="e3998e4b-0"
+        uP="{{z||''}}"
+        wx:else
+      ></u-icon>
+    </view>
+  </view>
+  <view class="{{['panel','data-v-e3998e4b',I&&'show']}}">
+    <view class="header data-v-e3998e4b">
+      <view bindtap="{{D}}" class="data-v-e3998e4b">重置</view>
+      <view bindtap="{{E}}" class="data-v-e3998e4b">完成</view>
+    </view>
+    <view class="panelList data-v-e3998e4b">
+      <view class="item data-v-e3998e4b" wx:for="{{F}}" wx:key="e">
+        <view
+          bindtap="{{item.d}}"
+          class="{{['data-v-e3998e4b',item.c&&'disabled']}}"
+          wx:if="{{item.a}}"
+          >{{item.b}}</view
+        >
+      </view>
+      <view
+        bindtap="{{H}}"
+        class="{{['item','backspace','data-v-e3998e4b',G&&'special']}}"
+        >×</view
+      >
+    </view>
+  </view>
+</view>

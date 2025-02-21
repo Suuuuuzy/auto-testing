@@ -1,0 +1,25 @@
+<view class="flex flexWrap _div data-v-4d36e90a" style="{{calcStyle}}">
+  <view
+    class="different-npart f22 flex mr20r _div data-v-4d36e90a"
+    wx:if="{{chooseUnit4Npart.isShow}}"
+    >{{'第'+chooseUnit4Npart.npartNum+'份￥'+chooseUnit4Npart.npartPr+'（售卖价低者享折扣，仅'}}<view
+      bindtap="__e"
+      class="show-npart-dialog _div data-v-4d36e90a"
+      data-event-opts="{{[ [ 'tap',[ [ 'openNpartPop',['$event'] ] ] ] ]}}"
+      style="{{'color:'+themeColor+';'}}"
+      >部分菜品</view
+    >参与活动）</view
+  >
+  <block wx:else>
+    <view
+      class="different-npart f22 flex mr20r _div data-v-4d36e90a"
+      wx:if="{{chooseUnit4Npart.isShowSame}}"
+      >{{''+'第'+chooseUnit4Npart.npartNum+'份'+'￥'+chooseUnit4Npart.npartPr+''}}</view
+    >
+  </block>
+  <view
+    class="different-npart f22 flex _div data-v-4d36e90a"
+    wx:if="{{chooseUnit4LimitQuantity.isShow}}"
+    >{{'可售'+chooseUnit4LimitQuantity.limitQuantity+'份'}}</view
+  >
+</view>

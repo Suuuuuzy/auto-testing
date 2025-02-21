@@ -1,0 +1,14 @@
+<view
+  bindtap="__e"
+  class="boutique-item-big boutique-item-mid _div data-v-a6979d18"
+  data-event-opts="{{[ [ 'tap',[ [ 'jumpWeb',['$0'],['item.url'] ] ] ] ]}}"
+>
+  <view class="panel _div data-v-a6979d18" wx:if="{{item.thumb}}">
+    <image
+      class="pic _img data-v-a6979d18"
+      mode="aspectFill"
+      src="{{item.thumb}}"
+    ></image>
+  </view>
+  <view class="boutique-item-title _div data-v-a6979d18">{{item.name}}</view>
+</view>

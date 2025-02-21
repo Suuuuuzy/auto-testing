@@ -1,0 +1,103 @@
+<navBar
+  back="{{false}}"
+  background="#fff"
+  bindback="handlerGobackClick"
+  bindhome="handlerGohomeClick"
+  home="{{true}}"
+  title="火瞳企业消费管理平台"
+></navBar>
+<view class="delivery">
+  <view class="user-info">
+    <view class="user-info-main">
+      <image class="background" src="/assets/img/userBg.png"></image>
+      <image class="user-image" src="{{headDefaultUrl}}"></image>
+      <view class="user-info-details">
+        <view class="account">账号： {{accountPhone}}</view>
+        <view class="company">
+          <van-dropdown-menu activeColor="#3680FD">
+            <van-dropdown-item
+              bind:change="changeCard"
+              value="{{companyId}}"
+              options="{{companyOption}}"
+            ></van-dropdown-item>
+          </van-dropdown-menu>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="main">
+    <view class="nav">
+      <van-sidebar
+        activeKey="{{activeDay}}"
+        bindchange="changeDay"
+        customClass="sidebar"
+      >
+        <van-sidebar-item wx:for="{{days}}" wx:key="date">
+          <view slot="title">
+            <view class="">{{item.weekday}}</view>
+            <view class="">{{item.day}}</view>
+          </view>
+        </van-sidebar-item>
+      </van-sidebar>
+      <view class="nav-bottom"></view>
+    </view>
+    <view class="delivery-list">
+      <block wx:for="{{deliveryDayData}}" wx:key="itemId">
+        <view bind:tap="toDetail" class="dish" data-item="{{item}}">
+          <view class="dish-image">
+            <image
+              class="image"
+              mode="aspectFit"
+              src="{{item.item.attach[0].shrinkUrl?item.item.attach[0].shrinkUrl:defaultFoodUrl}}"
+            ></image>
+          </view>
+          <view class="dish-info">
+            <view class="name">{{item.item.name}}</view>
+            <view class="pickupInfo"
+              >提货日期：{{item.pickupInfo.startDate}}</view
+            >
+            <view class="pickupInfo"
+              >提货时间：{{item.pickupInfo.startTime.length===2?item.pickupInfo.startTime+':00':item.pickupInfo.startTime}}-{{item.pickupInfo.endTime.length===2?item.pickupInfo.endTime+':00':item.pickupInfo.endTime}}</view
+            >
+            <view>
+              <text class="inventory">库存：{{item.item.inventory}}</text>
+              <text class="limit">每人次限购{{item.limit}}件</text>
+            </view>
+            <view class="price-stepper">
+              <view class="price">￥{{item.item.price}}</view>
+              <view class="stepper">
+                <van-stepper
+                  disableInput
+                  integer
+                  bind:change="changeCount"
+                  catch:tap="catchTap"
+                  customClass="stepper-box"
+                  data-item="{{item}}"
+                  inputClass="stepper-input"
+                  max="{{item.max}}"
+                  min="0"
+                  minusClass="stepper-minus"
+                  plusClass="stepper-plus"
+                  value="{{item.count}}"
+                ></van-stepper>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view
+          class="splitline"
+          wx:if="{{index!==deliveryDayData.length-1}}"
+        ></view>
+      </block>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="bottom-left"></view>
+    <view class="bottom-right"></view>
+  </view>
+  <shopping-cart
+    bindchangecart="onChangeCart"
+    bindremovecart="onRemoveCart"
+    id="shopping-cart"
+  ></shopping-cart>
+</view>

@@ -1,0 +1,29 @@
+<view bindtap="{{h}}" class="u-tabbar-item data-v-660b8720" style="{{g}}">
+  <view class="u-tabbar-item__icon data-v-660b8720">
+    <u-icon
+      bind:__l="__l"
+      class="data-v-660b8720"
+      uI="660b8720-0"
+      uP="{{b}}"
+      wx:if="{{a}}"
+    ></u-icon>
+    <block wx:else>
+      <slot name="active-icon" wx:if="{{c}}"></slot>
+      <slot name="inactive-icon" wx:else></slot>
+    </block>
+    <u-badge
+      bind:__l="__l"
+      class="data-v-660b8720"
+      uI="660b8720-1"
+      uP="{{d}}"
+      wx:if="{{d}}"
+    ></u-badge>
+  </view>
+  <slot name="text" wx:if="{{$slots.text}}"></slot>
+  <text
+    class="u-tabbar-item__text data-v-660b8720"
+    style="{{'color:'+f}}"
+    wx:else
+    >{{e}}</text
+  >
+</view>

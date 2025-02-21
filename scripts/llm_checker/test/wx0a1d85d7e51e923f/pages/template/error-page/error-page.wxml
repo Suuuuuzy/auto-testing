@@ -1,0 +1,14 @@
+<template name="errorPage">
+  <view bindtap="errorRefresh" class="text-center padding-top">
+    <image
+      src="/resource/images/common/error_page.png"
+      style="width: 400rpx; height: 400rpx"
+    ></image>
+    <view class="text-lg padding-bottom-sm text-red"> {{content}} </view>
+    <view class="padding">
+      <button class="cu-btn lg shadow-warp radius line-red">
+        {{retryStr}}
+      </button>
+    </view>
+  </view>
+</template>

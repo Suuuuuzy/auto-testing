@@ -1,0 +1,27 @@
+<view class="warp data-v-87c24263">
+  <zym-navigation
+    bind:__l="__l"
+    class="data-v-87c24263"
+    uI="87c24263-0"
+    uP="{{a}}"
+    wx:if="{{a}}"
+  ></zym-navigation>
+  <zym-tabs
+    bind:__l="__l"
+    bindchange="{{d}}"
+    class="data-v-87c24263"
+    uI="87c24263-1"
+    uP="{{e}}"
+    uS="{{['tabcontent']}}"
+    wx:if="{{e}}"
+  >
+    <cupon-list
+      bind:__l="__l"
+      class="r data-v-87c24263"
+      slot="tabcontent"
+      uI="87c24263-2,87c24263-1"
+      uP="{{c}}"
+      uR="refresh"
+    ></cupon-list>
+  </zym-tabs>
+</view>

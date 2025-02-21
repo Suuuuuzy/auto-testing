@@ -1,0 +1,14 @@
+<transitions
+  bind:__l="__l"
+  bind:click="__e"
+  catchtouchmove="__e"
+  customClass="wx-overlay"
+  customStyle="{{'z-index: '+zIndex+'; '+customStyle}}"
+  data-event-opts="{{[ [ '^click',[ ['onClick'] ] ],[ 'touchmove',[ [ 'noop',['$event'] ] ] ] ]}}"
+  duration="{{duration}}"
+  show="{{show}}"
+  vueId="662c50d4-1"
+  vueSlots="{{['default']}}"
+>
+  <slot></slot>
+</transitions>

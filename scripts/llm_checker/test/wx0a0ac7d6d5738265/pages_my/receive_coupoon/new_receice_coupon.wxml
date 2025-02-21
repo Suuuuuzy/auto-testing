@@ -1,0 +1,91 @@
+<view>
+  <zym-navigation
+    bind:__l="__l"
+    uI="e15927f0-0"
+    uP="{{a}}"
+    wx:if="{{a}}"
+  ></zym-navigation>
+  <view class="content" style="{{'padding-top:'+w}}">
+    <view class="img">
+      <image mode="" src="{{b}}"></image>
+    </view>
+    <view style="position: absolute; top: 666rpx; z-index: 2">
+      <view class="conpus" wx:if="{{c}}">
+        <view class="couplsit" wx:for="{{d}}" wx:key="h">
+          <view class="{{['momm',e&&'mommback']}}">
+            <text class="txt">￥{{item.a}}</text>
+            <text class="jyq">加油券</text>
+          </view>
+          <view class="lis">
+            <text class="station"> 满{{item.b}}元减{{item.c}}元 </text>
+            <text class="coupondate">
+              <text wx:if="{{item.d}}">{{item.e}}-{{item.f}}</text>
+              <text wx:else>有效期：{{item.g}}天</text>
+            </text>
+          </view>
+          <view class="ylq" wx:if="{{f}}"> 已领取 </view>
+        </view>
+      </view>
+      <view class="roles">
+        <view class="divtitle">
+          <image class="titleimg" mode="" src="{{g}}"></image>
+          <text class="jianju">活动规则</text>
+          <image class="titleimg" mode="" src="{{h}}"></image>
+        </view>
+        <view class="detail">
+          <view class="item">
+            <view class=""> <text class="dian">·</text>活动时间: </view>
+            <view class="nr" wx:if="{{i}}">{{j}}-{{k}}</view>
+            <view class="nr" wx:else> 暂未开始 </view>
+          </view>
+          <view class="item">
+            <view class=""> <text class="dian">·</text>如何获得优惠: </view>
+            <view class="nr">
+              活动时间内，点击活动页“立即领取”，即可领取优惠。
+            </view>
+          </view>
+          <view class="item">
+            <view class=""> <text class="dian">·</text> 如何使用优惠: </view>
+            <view class="nr">
+              获得优惠后，优惠有效期内，在适用油站，使用小程序自助支付油费，优惠即会自动抵扣。
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="footer" wx:if="{{l}}">
+      <u-button
+        bind:__l="__l"
+        uI="e15927f0-1"
+        uP="{{n}}"
+        uS="{{['d']}}"
+        wx:if="{{m}}"
+      >
+        活动暂未开始</u-button
+      >
+      <u-button
+        bind:__l="__l"
+        uI="e15927f0-2"
+        uP="{{p}}"
+        uS="{{['d']}}"
+        wx:elif="{{o}}"
+      >
+        活动已结束</u-button
+      >
+      <image
+        bindtap="{{s}}"
+        class="receiceImg"
+        mode=""
+        src="{{r}}"
+        wx:elif="{{q}}"
+      ></image>
+      <image
+        bindtap="{{v}}"
+        class="receiceImg"
+        mode=""
+        src="{{t}}"
+        wx:else
+      ></image>
+    </view>
+  </view>
+</view>

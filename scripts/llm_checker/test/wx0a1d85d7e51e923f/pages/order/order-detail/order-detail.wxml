@@ -1,0 +1,642 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view class="margin-sm tap-page" wx:if="{{result}}">
+  <view
+    class="margin-bottom-sm text-center flex justify-center"
+    wx:if="{{result.order.table_num&&result.order.order_type==1}}"
+  >
+    <view class="bg-img text-center table-num">
+      <view class="text-c4" style="margin-top: 130rpx">
+        <i
+          class="iconfont icon-num_{{item}}"
+          style="font-size: 44rpx"
+          wx:for="{{result.order.tableNums}}"
+        ></i>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{result.order.is_volunteer==0}}">
+    <view class="cu-bar bg-white solids-bottom">
+      <view class="action">
+        <text>{{Str.orderState[lanIndex]}}</text>
+      </view>
+      <view class="action">
+        <text
+          class="text-red"
+          wx:if="{{result.order.order_state==0&&result.order.pay_type==0}}"
+          >{{Str.unpayed[lanIndex]}}</text
+        >
+        <text class="text-gray" wx:if="{{result.order.order_state==-2}}"
+          >{{Str.canceld[lanIndex]}}</text
+        >
+        <text
+          class="text-cyan"
+          wx:if="{{result.order.order_state==0&&result.order.pay_type!=0}}"
+          >{{isUy?stateList[3].uy_name:stateList[3].ch_name}}</text
+        >
+        <text class="text-cyan" wx:if="{{result.order.order_state==1}}"
+          >{{isUy?stateList[4].uy_name:stateList[4].ch_name}}</text
+        >
+        <text class="text-cyan" wx:if="{{result.order.order_state==2}}"
+          >{{isUy?stateList[5].uy_name:stateList[5].ch_name}}</text
+        >
+      </view>
+    </view>
+    <scroll-view
+      scrollWithAnimation
+      scrollX
+      class="bg-white padding response cu-steps steps-bottom"
+      scrollIntoView="scroll-{{scroll}}"
+    >
+      <view
+        class="cu-item {{index>scroll?'':'text-pink'}} {{index==1?'text-red':''}}  padding-lr"
+        id="scroll-{{index}}"
+        wx:if="{{scroll!=2&&index!=2||scroll==2}}"
+        wx:for="{{stateList}}"
+      >
+        <text class="text-sm text-red" wx:if="{{scroll==1&&index==scroll}}"
+          >{{isUy?item.uy_name_:item.ch_name_}}</text
+        >
+        <text class="text-sm text-grey" wx:elif="{{scroll==2&&index==scroll}}"
+          >{{isUy?item.uy_name:item.ch_name}}</text
+        >
+        <text class="text-sm" wx:else>{{isUy?item.uy_name:item.ch_name}}</text>
+        <text
+          class="num {{index==1?'err text-red':''}}"
+          data-index="{{index+1}}"
+          wx:if="{{scroll==1&&index==scroll}}"
+        ></text>
+        <text
+          class="num text-grey"
+          data-index="{{index+1}}"
+          wx:elif="{{scroll==2&&index==scroll}}"
+        ></text>
+        <text class="num" data-index="{{index+1}}" wx:else></text>
+      </view>
+    </scroll-view>
+    <view class="cu-bar bg-white solids-top">
+      <view class="action">{{Str.payWay[lanIndex]}}</view>
+      <view class="action">
+        <text class="text-green text-lg" wx:if="{{result.order.pay_type==1}}"
+          >{{Str.weixin[lanIndex]}}</text
+        >
+        <text class="text-red text-lg" wx:if="{{result.order.pay_type==2}}"
+          >{{Str._cash[lanIndex]}}</text
+        >
+        <text class="text-blue text-lg" wx:if="{{result.order.pay_type==3}}"
+          >{{Str.alipay[lanIndex]}}</text
+        >
+      </view>
+    </view>
+    <view class="cu-bar bg-white solids-top">
+      <view class="action">{{Str.takeFoodNum[lanIndex]}}</view>
+      <view class="action">
+        <text class="text-xl text-blue">{{result.order.id}}</text>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{result.order.is_volunteer==1}}">
+    <view class="cu-bar bg-white solids-bottom">
+      <view class="action">
+        <text>{{Str.orderState[lanIndex]}}</text>
+      </view>
+      <view class="action">
+        <text class="text-gray" wx:if="{{result.order.order_state==-2}}"
+          >{{Str.canceld[lanIndex]}}</text
+        >
+        <text class="text-cyan" wx:if="{{result.order.order_state==0}}"
+          >{{isUy?stateList[3].uy_name:stateList[3].ch_name}}</text
+        >
+        <text class="text-cyan" wx:if="{{result.order.order_state==1}}"
+          >{{isUy?stateList[4].uy_name:stateList[4].ch_name}}</text
+        >
+        <text class="text-cyan" wx:if="{{result.order.order_state==2}}"
+          >{{isUy?stateList[5].uy_name:stateList[5].ch_name}}</text
+        >
+      </view>
+    </view>
+    <scroll-view
+      scrollWithAnimation
+      scrollX
+      class="bg-white padding response cu-steps steps-bottom"
+      scrollIntoView="scroll-{{scroll}}"
+    >
+      <view
+        class="cu-item {{index>scroll?'':'text-pink'}} {{index==1?'text-red':''}}  padding-lr"
+        id="scroll-{{index}}"
+        wx:for="{{stateList}}"
+      >
+        <text class="text-sm text-red" wx:if="{{scroll==1&&index==scroll}}"
+          >{{isUy?item.uy_name_:item.ch_name_}}</text
+        >
+        <text class="text-sm text-grey" wx:elif="{{scroll==2&&index==scroll}}"
+          >{{isUy?item.uy_name:item.ch_name}}</text
+        >
+        <text class="text-sm" wx:else>{{isUy?item.uy_name:item.ch_name}}</text>
+        <text
+          class="num {{index==1?'err text-red':''}}"
+          data-index="{{index+1}}"
+          wx:if="{{scroll==1&&index==scroll}}"
+        ></text>
+        <text
+          class="num text-grey"
+          data-index="{{index+1}}"
+          wx:elif="{{scroll==2&&index==scroll}}"
+        ></text>
+        <text class="num" data-index="{{index+1}}" wx:else></text>
+      </view>
+    </scroll-view>
+  </view>
+  <view
+    class="cu-item margin-top-sm bg-white padding-sm"
+    wx:if="{{result.order.delivery}}"
+  >
+    <view class="content">
+      <text class="icon-titles text-pink"></text>
+      <text class="text-sm padding-right-sm"
+        >{{Str.deliveryMan[lanIndex]}}</text
+      >
+      <button
+        bindtap="callPhone"
+        class="cu-btn sm bg-pink radius shadow"
+        data-phone="{{result.order.delivery.phone}}"
+      >
+        <text class="icon-phone"></text>{{result.order.delivery.phone}}
+      </button>
+    </view>
+  </view>
+  <view class="margin-top-sm">
+    <view class="cu-list menu sm-border">
+      <view class="cu-item" style="border-bottom: 2rpx dashed #ddd">
+        <view class="content">
+          <text
+            class="cu-tag line-pink uy radius text-sm"
+            wx:if="{{result.order.order_type==3}}"
+            >{{Str.pickup[lanIndex]}}</text
+          >
+          <text
+            class="cu-tag line-pink uy radius text-sm"
+            wx:elif="{{result.order.order_type==4}}"
+            >{{Str.purchasing[lanIndex]}}</text
+          >
+          <text class="cu-tag line-pink uy radius text-sm" wx:else
+            >{{Str.takeMeal[lanIndex]}}</text
+          >
+        </view>
+        <view class="action text-center">
+          <view class="text-cyan text-sm"
+            >{{isUy?result.order.errand_type.uy_name:result.order.errand_type.ch_name}}
+          </view>
+        </view>
+      </view>
+      <view
+        class="cu-item dashed-top"
+        style="border-bottom: 0rpx dashed #ddd; padding: 5rpx"
+        wx:if="{{result.order.shop}}"
+      >
+        <view class="content">
+          <navigator
+            class="flex justify-start"
+            url="/pages/home/mall/mall-home?shopId={{result.order.shop.id}}&title={{isUy?result.order.shop.uy_name:result.order.shop.ch_name}}"
+            wx:if="{{result.order.shop}}"
+          >
+            <view>
+              <view
+                class="cu-avatar margin-xs xl radius"
+                style="background-image:url({{ossImage+result.order.shop.icon_url+'?x-oss-process=image/resize,m_lfit,h_100,w_100'}});"
+                wx:if="{{result.order.shop}}"
+              ></view>
+            </view>
+            <view>
+              <view
+                >{{isUy?result.order.shop.uy_name:result.order.shop.ch_name}}</view
+              >
+              <view class="flex justify-between" style="width: 500rpx">
+                <view class="text-df">
+                  <text
+                    class="icon icon-favorfill text-{{index<result.order.shop.star_count?'c4':'grey1'}}"
+                    wx:for="{{5}}"
+                    wx:for-item="_item"
+                    wx:key="index"
+                  ></text>
+                </view>
+              </view>
+              <view class="flex justify-between" style="width: 500rpx">
+                <view class="flex justify-start padding-top-xs">
+                  <view
+                    class="cu-tag line-pink radius uy sm"
+                    wx:if="{{result.order.shop.area}}"
+                  >
+                    {{isUy?result.order.shop.area.uy_name:result.order.shop.area.ch_name}}
+                  </view>
+                  <view
+                    class="margin-left-sm cu-tag line-cyan radius uy sm"
+                    wx:if="{{result.order.shop}}"
+                  >
+                    {{isUy?result.order.shop.cat.uy_name:result.order.shop.cat.ch_name}}</view
+                  >
+                </view>
+              </view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+      <view
+        class="cu-item dashed-top"
+        style="border-bottom: 2rpx dashed #ddd"
+        wx:if="{{result.order.start_address}}"
+      >
+        <view class="sm" style="width: 100%">
+          <view class="flex justify-start align-center padding-tb-xs">
+            <view class="padding-right-sm">
+              <image
+                src="/resource/images/common/take.png"
+                style="width: 35rpx; height: 35rpx"
+              ></image>
+            </view>
+            <view>
+              <view class="text-sm">
+                <text wx:if="{{result.order.start_address.search_address}}"
+                  >{{isUy?result.order.start_address.search_address.uy_name?result.order.start_address.search_address.uy_name:result.order.start_address.search_address.name:result.order.start_address.search_address.name}}
+                  / </text
+                >{{result.order.end_address.house_number}}</view
+              >
+              <view class="text-gray text-sm"
+                >{{result.order.start_address.contact_name}}
+                <text
+                  bindtap="callPhone"
+                  class="text-cyan radius"
+                  data-phone="{{result.order.start_address.contact_phone}}"
+                  >{{result.order.start_address.contact_phone}}</text
+                >
+              </view>
+              <view
+                class="text-gray text-sm"
+                wx:if="{{result.order.start_address.search_address}}"
+              >
+                {{result.order.start_address.search_address.address}}</view
+              >
+            </view>
+          </view>
+        </view>
+      </view>
+      <view
+        class="cu-item dashed-top"
+        style="border-bottom: 2rpx dashed #ddd"
+        wx:if="{{result.order.end_address}}"
+      >
+        <view class="sm" style="width: 100%">
+          <view class="flex justify-start align-center padding-tb-xs">
+            <view class="padding-right-sm">
+              <image
+                src="/resource/images/common/received.png"
+                style="width: 35rpx; height: 35rpx"
+              ></image>
+            </view>
+            <view>
+              <view class="text-sm">
+                <text wx:if="{{result.order.end_address.search_address}}"
+                  >{{isUy?result.order.end_address.search_address.uy_name?result.order.end_address.search_address.uy_name:result.order.end_address.search_address.name:result.order.end_address.search_address.name}}
+                  / </text
+                >{{result.order.end_address.house_number}}</view
+              >
+              <view class="text-gray text-sm"
+                >{{result.order.end_address.contact_name}}
+                <text
+                  bindtap="callPhone"
+                  class="text-cyan radius"
+                  data-phone="{{result.order.end_address.contact_phone}}"
+                  >{{result.order.end_address.contact_phone}}</text
+                >
+              </view>
+              <view
+                class="text-gray text-sm"
+                wx:if="{{result.order.end_address.search_address}}"
+              >
+                {{result.order.end_address.search_address.address}}</view
+              >
+            </view>
+          </view>
+        </view>
+      </view>
+      <view
+        class="cu-bar bg-white"
+        wx:if="{{result.order.take_food_way==2&&result.order.shop['location_address']}}"
+      >
+        <view class="action">
+          <text class="text-black text-bold"
+            >{{result.order.shop['location_address']}}</text
+          >
+        </view>
+      </view>
+      <view
+        bindtap="callPhone"
+        class="cu-bar bg-white solid-top"
+        data-phone="{{result.order.phone}}"
+        wx:if="{{result.order.take_food_way==2}}"
+      >
+        <view class="action">{{Str.shopPhone[lanIndex]}}</view>
+        <view class="action text-xl text-black text-bold"
+          >{{result.order.shop['contact_phone']}}</view
+        >
+      </view>
+      <view
+        bindtap="callPhone"
+        class="cu-bar bg-white solid-top solids-bottom"
+        data-phone="{{result.order.phone}}"
+        wx:if="{{result.order.phone}}"
+      >
+        <view class="action"> {{Str.customerPhone[lanIndex]}} </view>
+        <view class="action text-xl text-black text-bold"
+          >{{result.order.phone}}</view
+        >
+      </view>
+      <view wx:for="{{result.order.goods}}" wx:key="index">
+        <view class="cu-list menu-avatar sm-border">
+          <view class="cu-item" style="min-height: 200rpx">
+            <view
+              class="cu-avatar radius lg"
+              style="background-image:url({{item.mall_good.img_url+'?x-oss-process=image/resize,m_lfit,h_100,w_100'}});"
+            ></view>
+            <view class="content">
+              <view class="text-black"
+                >{{isUy?item.mall_good.uy_name:item.mall_good.ch_name}}</view
+              >
+              <view class="flex justify-start">
+                <view
+                  class="padding-right-xs sm text-gray"
+                  wx:for="{{item.specification_items}}"
+                  wx:for-item="_item"
+                >
+                  {{isUy?_item.uy_name:_item.ch_name}}</view
+                >
+              </view>
+              <view class="text-gray text-sm flex">
+                <text class="text-cut">
+                  <text
+                    class="text-price text-red text-df"
+                    style="text-decoration:{{item.is_activity==1?'line-through':''}}"
+                    >{{item.price}}</text
+                  >
+                  <text decode="true">&nbsp;&nbsp;</text>
+                  <text
+                    class="text-price text-cyan"
+                    wx:if="{{item.is_activity==1}}"
+                    >{{item.activity_price}}</text
+                  >
+                </text>
+              </view>
+              <view class="text-sm text-gray" wx:if="{{item.phone}}">
+                <text class="icon-phone"></text> {{item.phone}}
+                <text
+                  class=""
+                  style="word-break: break-all"
+                  wx:if="{{item.pickup_number}}"
+                >
+                  / {{item.pickup_number}}
+                </text>
+              </view>
+            </view>
+            <view class="action">
+              <view class="text-grey text-xs"></view>
+              <view class="cu-tag round bg-grey sm">X{{item.count}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="cu-item">
+        <view class="content text-sm text-gray text-sm">
+          <text class="text-sm">{{Str.pickupTime[lanIndex]}}</text>
+        </view>
+        <view class="action">
+          <text class="text-pink"
+            >{{result.order.arrive_time==0?Str.getNow[lanIndex]:result.order.arrive_time}}</text
+          >
+        </view>
+      </view>
+      <view class="cu-item" wx:if="{{result.order.material_value}}">
+        <view class="content text-sm text-gray text-sm">
+          <text class="text-sm">{{Str.estimateGoodFee[lanIndex]}}</text>
+        </view>
+        <view class="action">
+          <text class="text-red">{{result.order.material_value.ch_name}}</text>
+        </view>
+      </view>
+      <view class="cu-item" wx:if="{{result.order.estimate_value>0}}">
+        <view class="content text-sm text-gray text-sm">
+          <text class="text-sm">{{Str.estimateGoodFee[lanIndex]}}</text>
+        </view>
+        <view class="action">
+          <text class="text-red text-price"
+            >{{result.order.estimate_value}}</text
+          >
+        </view>
+      </view>
+      <view class="cu-item" wx:if="{{result.order.people_num>0}}">
+        <view class="content text-sm text-gray text-sm">
+          <text class="text-sm">{{Str.numberOfPeople[lanIndex]}}</text>
+        </view>
+        <view class="action">
+          <text class="text-pink text-lg">{{result.order.people_num}}</text>
+        </view>
+      </view>
+      <view class="cu-item" wx:if="{{result.order.base_fee>0}}">
+        <view class="content text-sm text-gray text-sm">
+          <text
+            wx:if="{{result.order.order_type==3||result.order.order_type==4}}"
+            >{{Str.baseFee[lanIndex]}}</text
+          >
+          <text class="text-sm" wx:else>{{Str.deliveryFee[lanIndex]}}</text>
+        </view>
+        <view class="action">
+          <text class="text-red">￥{{result.order.base_fee}}</text>
+        </view>
+      </view>
+      <view class="cu-item" wx:if="{{result.order.packing_fee>0}}">
+        <view class="content text-sm text-gray text-sm">
+          <text class="text-sm">{{Str.packingFee[lanIndex]}}</text>
+        </view>
+        <view class="action">
+          <text class="text-black">￥{{result.order.packing_fee}}</text>
+        </view>
+      </view>
+      <view class="cu-item" wx:if="{{result.order.weight_fee>0}}">
+        <view class="content text-sm text-gray sm">
+          <text class="text-sm">{{Str.weightFee[lanIndex]}}</text>
+        </view>
+        <view class="action">
+          <text class="text-red">￥{{result.order.weight_fee}}</text>
+        </view>
+      </view>
+      <view class="cu-item" wx:if="{{result.order.distance_fee>0}}">
+        <view class="content text-sm text-gray sm">
+          <text class="text-sm">{{Str.distanceFee[lanIndex]}}</text>
+        </view>
+        <view class="action">
+          <text>￥{{result.order.distance_fee}}</text>
+        </view>
+      </view>
+      <view class="cu-item" wx:if="{{result.order.tip_value>0}}">
+        <view class="content text-sm text-gray sm">
+          <text class="text-sm">{{Str.tip[lanIndex]}}</text>
+        </view>
+        <view class="action">
+          <text>￥{{result.order.tip_value}}</text>
+        </view>
+      </view>
+      <view class="cu-item" wx:if="{{result.order.total_fee>0}}">
+        <view class="content text-sm text-gray sm">
+          <text class="text-sm">{{Str.totalPrice[lanIndex]}}</text>
+        </view>
+        <view class="action">
+          <text class="text-cyan text-lg">￥{{result.order.total_fee}}</text>
+        </view>
+      </view>
+      <view class="cu-item" wx:if="{{result.order.actual_discount_fee>0}}">
+        <view class="content text-sm text-gray sm">
+          <text class="text-sm">{{Str.couponAmount[lanIndex]}}</text>
+        </view>
+        <view class="action">
+          <text class="text-pink text-lg"
+            >￥{{result.order.actual_discount_fee}}</text
+          >
+        </view>
+      </view>
+      <view class="cu-item" wx:if="{{result.order.actual_fee>0}}">
+        <view class="content text-sm text-gray sm">
+          <text class="text-sm">{{Str.actulyPayed[lanIndex]}}</text>
+        </view>
+        <view class="action">
+          <text class="text-black text-lg">￥{{result.order.actual_fee}}</text>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{result.order.text_remark}}">
+      <view class="cu-bar bg-white margin-top-sm solid-bottom">
+        <view class="action">
+          <text class="text-edit"></text>
+          <text class="text-sm">{{Str.remark[lanIndex]}}</text>
+        </view>
+      </view>
+      <view class="text-sm bg-white padding">{{result.order.text_remark}}</view>
+    </view>
+    <view wx:if="{{result.order.audio_remark_url}}">
+      <view class="cu-bar bg-white margin-top-sm solid-bottom">
+        <view class="action">
+          <text class="icon-voice"></text>
+          <text class="text-sm">{{Str.audioRemark[lanIndex]}}</text>
+        </view>
+      </view>
+      <view
+        class="text-center pading-sm radius bg-white"
+        style="min-height: 200rpx"
+      >
+        <view class="circle-box">
+          <canvas
+            canvasId="canvasCircle"
+            class="circle"
+            style="z-index: -1; width: 100px; height: 100px"
+          ></canvas>
+          <canvas
+            bindtap="playRecord"
+            canvasId="canvasArcCir"
+            class="_circle"
+            style="width: 100px; height: 100px"
+          ></canvas>
+          <view bindtap="drawCircle" style="margin-top: -75px; z-index: -100">
+            <i
+              class="iconfont {{record.recordIsPlaying?'icon-stop':'icon-PLAY'}} text-pink"
+              style="font-size: 60rpx"
+              wx:if="{{!audioIsPlaying}}"
+            ></i>
+            <i class="text-pink text-lg" style="font-size: 60rpx" wx:else
+              >{{playingSecond}}</i
+            >
+          </view>
+          <view class="text-gray text-sm margin-top-xs"
+            >{{Str.listenIt[lanIndex]}}</view
+          >
+        </view>
+      </view>
+    </view>
+    <view class="cu-list menu margin-top-sm">
+      <view class="cu-item">
+        <view class="content text-grey text-sm">
+          <text class="text-sm">{{result.order.created_at}}</text>
+        </view>
+        <view class="action">
+          <text class="text-cyan"
+            >{{isUy?result.order.area.uy_name:result.order.area.ch_name}}</text
+          >
+        </view>
+      </view>
+      <view class="cu-item">
+        <view class="content text-grey text-sm">
+          <text class="text-sm">{{Str.orderNo[lanIndex]}}</text>:
+          <text class="text-sm">{{result.order.order_no}}</text>
+        </view>
+        <view class="action">
+          <button bindtap="copyBtn" class="cu-btn line-pink radius sm">
+            {{Str.copy[lanIndex]}}
+          </button>
+        </view>
+      </view>
+    </view>
+    <view class="margin-top-sm" wx:if="{{result.order.id_img_url}}">
+      <view class="cu-bar bg-white">
+        <view class="action">{{Str.relatedImage[lanIndex]}}</view>
+      </view>
+      <view class="solid-top padding">
+        <image
+          bindtap="imageBind"
+          data-url="{{ossImage+result.order.id_img_url+'?x-oss-process=image/watermark,rotate_45,type_d3F5LXplbmhlaQ,size_18,text_6IC25aGU5r2Y6LeR6IW_,color_FFFFFF,shadow_50,t_100,g_se,x_10,y_10'}}"
+          src="{{ossImage+result.order.id_img_url+'?x-oss-process=image/resize,w_300,h_300/watermark,type_d3F5LXplbmhlaQ,rotate_45,size_18,text_6IC25aGU5r2Y6LeR6IW_,color_FFFFFF,shadow_50,t_100,g_se,x_10,y_10'}}"
+          style="width: 150rpx; height: 150rpx"
+        ></image>
+      </view>
+    </view>
+    <view class="barcode" wx:if="{{result.order.order_no}}">
+      <view class="barnum">{{result.order.order_no}}</view>
+      <canvas canvasId="barcode"></canvas>
+    </view>
+  </view>
+</view>
+<view
+  class="weui-footer weui-footer_fixed-bottom"
+  style="bottom: 0"
+  wx:if="{{0&&userId==result.order.user_id}}"
+>
+  <view class="bg-white padding-sm text-center flex">
+    <view class="flex-sub">
+      <button
+        bindtap="cancelOrder"
+        class="cu-btn bg-pink radius shadow block margin-lr-sm"
+        disabled="{{!( result.order.order_state==0&&(result.order.pay_state==1||result.order.pay_type==2) )||result.order.order_state==-1}}"
+        style="border-radius: 0"
+      >
+        {{Str.cancelOrder[lanIndex]}}
+      </button>
+    </view>
+    <view class="flex-sub">
+      <button
+        bindtap="confrimReceiptBtn"
+        class="cu-btn bg-pink block radius shadow margin-lr-sm"
+        disabled="{{result.order.order_state!=1}}"
+        style="border-radius: 0"
+      >
+        {{Str.confirmReceipt[lanIndex]}}
+      </button>
+    </view>
+  </view>
+</view>
+<dialog
+  cancel="{{Str.cancel[lanIndex]}}"
+  confirm="{{Str.confirm[lanIndex]}}"
+  content="{{dialogContent}}"
+  id="dialog"
+  isInput="{{dialogIsInput}}"
+  title="{{Str.warning[lanIndex]}}"
+  type="normal"
+></dialog>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

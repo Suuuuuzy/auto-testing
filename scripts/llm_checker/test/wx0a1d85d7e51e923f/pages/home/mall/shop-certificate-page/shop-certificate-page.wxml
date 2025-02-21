@@ -1,0 +1,26 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view class="cu-bar bg-white margin-xs">
+  <view class="action"
+    >{{type==0?Str.showShopCertificate[lanIndex]:Str.shopCondition[lanIndex]}}</view
+  >
+</view>
+<view
+  class="bg-white margin-sm padding-xs"
+  style="border-radius: 16rpx"
+  wx:if="{{pageData.images.length>0}}"
+>
+  <view class="grid col-2">
+    <view class="padding-xs" wx:for="{{pageData.images}}">
+      <view
+        bindtap="viewImage"
+        class="bg-img padding-top-xl flex align-end radius"
+        data-index="{{index}}"
+        data-url="{{ossImage+item.img_url}}"
+        style="background-image: url({{ossImage+item.img_url}});height: 160rpx;"
+      ></view>
+    </view>
+  </view>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

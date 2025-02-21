@@ -1,0 +1,99 @@
+.contai.data-v-4f93fb8d {
+  margin-top: 24rpx;
+  max-height: 80vh;
+  overflow-y: scroll;
+  padding: 0 32rpx;
+}
+.lq-btn.data-v-4f93fb8d {
+  display: -webkit-flex;
+  display: flex;
+  height: 56.44rpx;
+  justify-content: flex-end;
+  width: 100%;
+}
+.lq-btn .btn.data-v-4f93fb8d {
+  align-items: center;
+  backdrop-filter: blur(20rpx);
+  background: #0ca3ad;
+  border-radius: 875px;
+  color: #fff;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 28rpx;
+  font-weight: 500;
+  justify-content: center;
+  padding: 8rpx 24rpx;
+  width: 160rpx;
+}
+.lq-btn .btn.data-v-4f93fb8d:active {
+  background: rgba(7, 108, 113, 0.894);
+}
+.cardlist.data-v-4f93fb8d {
+  align-items: flex-start;
+  background: url(https://yiningjiayou.com/yn/ynxcx/oilcardbg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 4rpx;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24rpx;
+  padding: 24rpx;
+  width: 100%;
+}
+.cardlist .listtop.data-v-4f93fb8d {
+  width: 100%;
+}
+.cardlist .cardName.data-v-4f93fb8d {
+  color: #fff;
+  flex-direction: column;
+  font-weight: 500;
+  justify-content: space-between;
+  letter-spacing: 0rpx;
+  line-height: 40.54rpx;
+  margin-bottom: 15.74rpx;
+  text-align: left;
+  vertical-align: top;
+}
+.cardlist .cardName .c_name.data-v-4f93fb8d,
+.cardlist .cardName.data-v-4f93fb8d {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+}
+.cardlist .cardName .c_name.data-v-4f93fb8d {
+  font-family: myfontB;
+  font-size: 36rpx;
+  font-weight: 700;
+  margin: 8rpx 0;
+  text-shadow: 4rpx 4rpx 16rpx #01363833;
+}
+.cardlist .cardName .c_name .name.data-v-4f93fb8d {
+  padding-left: 24rpx;
+}
+.cardlist .oiltypes.data-v-4f93fb8d {
+  align-items: center;
+  background: linear-gradient(90deg, #e88282, #f0a8a8);
+  border-radius: 4rpx;
+  display: -webkit-flex;
+  display: flex;
+  height: 44rpx;
+  justify-content: flex-start;
+  opacity: 1;
+  padding: 4rpx 8rpx;
+}
+.cardlist .oiltypes .icon.data-v-4f93fb8d {
+  height: 28rpx;
+  width: 28rpx;
+}
+.cardlist .oiltypes .txt.data-v-4f93fb8d {
+  color: #fff;
+  font-family: \601d\6e90\9ed1\4f53;
+  font-size: 24rpx;
+  font-weight: 400;
+  letter-spacing: 0rpx;
+  line-height: 34.76rpx;
+  text-align: left;
+  vertical-align: top;
+}

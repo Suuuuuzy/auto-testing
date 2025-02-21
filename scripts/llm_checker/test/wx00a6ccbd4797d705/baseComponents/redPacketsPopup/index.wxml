@@ -1,0 +1,47 @@
+<view class="_div data-v-706b5218">
+  <weixin-popup
+    bind:__l="__l"
+    bind:close="__e"
+    class="data-v-706b5218"
+    closeable="{{true}}"
+    customStyle="border-radius: 10px;background: none;"
+    data-event-opts="{{[ [ '^close',[ ['hidePopup'] ] ] ]}}"
+    position="center"
+    show="{{showPopup}}"
+    vueId="b028392a-1"
+    vueSlots="{{['default']}}"
+  >
+    <view
+      bindtap="__e"
+      class="redPacketsPopup _div data-v-706b5218"
+      data-event-opts="{{[ [ 'tap',[ [ 'beforgo',['$event'] ] ] ] ]}}"
+    >
+      <image
+        class="redPacketsPopupBg data-v-706b5218"
+        src="{{pageInfo.passwordBillPagePicUrl?pageInfo.passwordBillPagePicUrl:'https://cdnpic.wuuxiang.com/msgjDecorationImg/orderRedPackets.png'}}"
+      ></image>
+      <view class="_div data-v-706b5218" wx:if="{{pageInfo.passwordType==1}}">
+        <view class="text f28 _div data-v-706b5218">文本口令</view>
+        <view
+          class="redPacketstext _div data-v-706b5218"
+          style="{{'font-size:'+(pageInfo.passwordContent.length>10?'41rpx':'52rpx')+';'}}"
+          >{{'“ '+pageInfo.passwordContent+' ”'}}</view
+        >
+        <view class="redPacketsCopy f36 _div data-v-706b5218"
+          >复制口令,去领红包</view
+        >
+      </view>
+      <view class="_div data-v-706b5218" wx:else>
+        <view class="text f28 _div data-v-706b5218">语音口令</view>
+        <view
+          class="redPacketstext _div data-v-706b5218"
+          style="{{'font-size:'+(pageInfo.passwordContent.length>10?'41rpx':'52rpx')+';'}}"
+          >{{'“ '+pageInfo.passwordContent+' ”'}}</view
+        >
+        <view class="redPacketsCopy f36 _div data-v-706b5218"
+          >记住口令,去领红包</view
+        >
+      </view>
+    </view>
+  </weixin-popup>
+</view>

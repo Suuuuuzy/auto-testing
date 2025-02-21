@@ -1,0 +1,35 @@
+<view class="{{['_div','data-v-bc32e68a',_class]}}">
+  <block wx:if="{{trueNum>0}}">
+    <view
+      catchtap="__e"
+      class="displayInline iconfont icon-subtract _div data-v-bc32e68a"
+      data-event-opts="{{[ [ 'tap',[ [ 'minus',['$event'] ] ] ] ]}}"
+      style="{{'color:'+color+';'+'font-size:'+set.size+'px'+';'}}"
+    ></view>
+    <view
+      class="inlineFlex center _div data-v-bc32e68a"
+      style="{{'min-width:'+set.inputSize+'px'}}"
+    >
+      <input-num
+        bind:__l="__l"
+        bind:click="__e"
+        bind:input="__e"
+        bind:shift="__e"
+        class="f28 data-v-bc32e68a"
+        customClass="flexCenter"
+        data-event-opts="{{[ [ '^input',[ ['printNewNum'] ] ],[ '^click',[ ['inputClick'] ] ],[ '^shift',[ ['shift'] ] ] ]}}"
+        precision="{{precision}}"
+        style="{{'width:'+set.inputSize+'px'}}"
+        value="{{trueNum}}"
+        vueId="4401f273-1"
+      ></input-num>
+    </view>
+  </block>
+  <view
+    catchtap="__e"
+    class="displayInline iconfont icon-add _div data-v-bc32e68a"
+    data-event-opts="{{[ [ 'tap',[ [ 'plus',['$event'] ] ] ] ]}}"
+    id="plus"
+    style="{{'color:'+color+';'+'font-size:'+set.size+'px'+';'}}"
+  ></view>
+</view>

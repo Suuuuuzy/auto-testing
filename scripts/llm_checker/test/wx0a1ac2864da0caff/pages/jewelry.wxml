@@ -1,0 +1,228 @@
+<view class="container _div data-v-0a7f9426">
+  <scroll-view
+    class="common-scroll data-v-0a7f9426"
+    enableBackToTop="{{true}}"
+    scrollY="{{true}}"
+    style="{{'top:'+navigationBarHeight+'px'+';'}}"
+  >
+    <view class="{{['topic-top','_div','data-v-0a7f9426',showMore?'more':'']}}">
+      <view class="topic-title _div data-v-0a7f9426">珠宝/配饰</view>
+      <view class="topic-pic _div data-v-0a7f9426">
+        <image
+          class="pic _img data-v-0a7f9426"
+          mode="aspectFill"
+          src="http://cdn.impdigital.cn/patek/img/banner_jewelery.jpg"
+        ></image>
+      </view>
+      <view class="topic-more-title _div data-v-0a7f9426"
+        >袖扣、戒指、带扣</view
+      >
+      <view class="topic-more-detail _div data-v-0a7f9426"
+        >百达翡丽为您奉上独特精致的女式和男式珠宝配饰，搭配相应的时计作品，营造独特的整体效果，此外，我们还推出了一系列精美高贵的品牌珠宝，令任何一款百达翡丽时计倍添优雅气质。这一珠宝系列体现了百达翡丽设计师和工匠的非凡创意和超群技艺。秉承珍贵时计品质优异的传统，我们手工打造的珠宝系列同样精致细腻、巧夺天工。百达翡丽珠宝系列以18K黄金、白金或玫瑰金打造，饰以完美无暇的钻石、缟玛瑙、青金石或玛瑙等宝石。</view
+      >
+      <view
+        bindtap="__e"
+        class="topic-arrow-down _div data-v-0a7f9426"
+        data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+      >
+        <image
+          class="pic _img data-v-0a7f9426"
+          src="/static/img/arrow-down-round.svg"
+        ></image>
+      </view>
+      <view class="treasure-topic-title _div data-v-0a7f9426">袖扣</view>
+      <view class="topic-divider _div data-v-0a7f9426"></view>
+    </view>
+    <view class="topic-list _div data-v-0a7f9426">
+      <view
+        class="topic-list-line _div data-v-0a7f9426"
+        wx:for="{{dataList}}"
+        wx:key="index"
+      >
+        <view
+          class="topic-list-line-item topic-list-line-item-j _div data-v-0a7f9426"
+          wx:for="{{item}}"
+          wx:for-index="indexInner"
+          wx:for-item="itemInner"
+          wx:key="indexInner"
+        >
+          <view class="topic-list-line-item-pic _div data-v-0a7f9426">
+            <image
+              class="pic _img data-v-0a7f9426"
+              lazyLoad="{{true}}"
+              mode="aspectFit"
+              src="{{itemInner.articleImages}}"
+            ></image>
+          </view>
+          <view class="topic-list-line-item-code _div data-v-0a7f9426"
+            >{{itemInner.articleRef}}</view
+          >
+        </view>
+      </view>
+    </view>
+    <view class="topic-more-top _div data-v-0a7f9426">
+      <view class="treasure-topic-title _div data-v-0a7f9426">耳环</view>
+      <view class="topic-divider _div data-v-0a7f9426"></view>
+    </view>
+    <view class="topic-list _div data-v-0a7f9426">
+      <view
+        class="topic-list-line _div data-v-0a7f9426"
+        wx:for="{{dataListH}}"
+        wx:key="index"
+      >
+        <view
+          class="topic-list-line-item topic-list-line-item-j _div data-v-0a7f9426"
+          wx:for="{{item}}"
+          wx:for-index="indexInner"
+          wx:for-item="itemInner"
+          wx:key="indexInner"
+        >
+          <view class="topic-list-line-item-pic _div data-v-0a7f9426">
+            <image
+              class="pic _img data-v-0a7f9426"
+              lazyLoad="{{true}}"
+              mode="aspectFit"
+              src="{{itemInner.articleImages}}"
+            ></image>
+          </view>
+          <view class="topic-list-line-item-code _div data-v-0a7f9426"
+            >{{itemInner.articleRef}}</view
+          >
+        </view>
+      </view>
+    </view>
+    <view class="topic-more-top _div data-v-0a7f9426">
+      <view class="treasure-topic-title _div data-v-0a7f9426">戒指</view>
+      <view class="topic-divider _div data-v-0a7f9426"></view>
+    </view>
+    <view class="topic-list _div data-v-0a7f9426">
+      <view
+        class="topic-list-line _div data-v-0a7f9426"
+        wx:for="{{dataListZ}}"
+        wx:key="index"
+      >
+        <view
+          class="topic-list-line-item topic-list-line-item-j _div data-v-0a7f9426"
+          wx:for="{{item}}"
+          wx:for-index="indexInner"
+          wx:for-item="itemInner"
+          wx:key="indexInner"
+        >
+          <view class="topic-list-line-item-pic _div data-v-0a7f9426">
+            <image
+              class="pic _img data-v-0a7f9426"
+              lazyLoad="{{true}}"
+              mode="aspectFit"
+              src="{{itemInner.articleImages}}"
+            ></image>
+          </view>
+          <view class="topic-list-line-item-code _div data-v-0a7f9426"
+            >{{itemInner.articleRef}}</view
+          >
+        </view>
+      </view>
+    </view>
+    <view class="topic-more-top _div data-v-0a7f9426">
+      <view class="treasure-topic-title _div data-v-0a7f9426">怀表挂链</view>
+      <view class="topic-divider _div data-v-0a7f9426"></view>
+    </view>
+    <view class="topic-list _div data-v-0a7f9426">
+      <view
+        class="topic-list-line _div data-v-0a7f9426"
+        wx:for="{{dataListZ2}}"
+        wx:key="index"
+      >
+        <view
+          class="topic-list-line-item topic-list-line-item-j _div data-v-0a7f9426"
+          wx:for="{{item}}"
+          wx:for-index="indexInner"
+          wx:for-item="itemInner"
+          wx:key="indexInner"
+        >
+          <view class="topic-list-line-item-pic _div data-v-0a7f9426">
+            <image
+              class="pic _img data-v-0a7f9426"
+              lazyLoad="{{true}}"
+              mode="aspectFit"
+              src="{{itemInner.articleImages}}"
+            ></image>
+          </view>
+          <view class="topic-list-line-item-code _div data-v-0a7f9426"
+            >{{itemInner.articleRef}}</view
+          >
+        </view>
+      </view>
+    </view>
+    <view class="topic-more-top _div data-v-0a7f9426">
+      <view class="treasure-topic-title _div data-v-0a7f9426">钥匙圈</view>
+      <view class="topic-divider _div data-v-0a7f9426"></view>
+    </view>
+    <view class="topic-list _div data-v-0a7f9426">
+      <view
+        class="topic-list-line _div data-v-0a7f9426"
+        wx:for="{{dataListZ3}}"
+        wx:key="index"
+      >
+        <view
+          class="topic-list-line-item topic-list-line-item-j _div data-v-0a7f9426"
+          wx:for="{{item}}"
+          wx:for-index="indexInner"
+          wx:for-item="itemInner"
+          wx:key="indexInner"
+        >
+          <view class="topic-list-line-item-pic _div data-v-0a7f9426">
+            <image
+              class="pic _img data-v-0a7f9426"
+              lazyLoad="{{true}}"
+              mode="aspectFit"
+              src="{{itemInner.articleImages}}"
+            ></image>
+          </view>
+          <view class="topic-list-line-item-code _div data-v-0a7f9426"
+            >{{itemInner.articleRef}}</view
+          >
+        </view>
+      </view>
+    </view>
+    <view class="topic-more-top _div data-v-0a7f9426">
+      <view class="treasure-topic-title _div data-v-0a7f9426">钱夹</view>
+      <view class="topic-divider _div data-v-0a7f9426"></view>
+    </view>
+    <view class="topic-list _div data-v-0a7f9426">
+      <view
+        class="topic-list-line _div data-v-0a7f9426"
+        wx:for="{{dataListZ4}}"
+        wx:key="index"
+      >
+        <view
+          class="topic-list-line-item topic-list-line-item-j _div data-v-0a7f9426"
+          wx:for="{{item}}"
+          wx:for-index="indexInner"
+          wx:for-item="itemInner"
+          wx:key="indexInner"
+        >
+          <view class="topic-list-line-item-pic _div data-v-0a7f9426">
+            <image
+              class="pic _img data-v-0a7f9426"
+              lazyLoad="{{true}}"
+              mode="aspectFit"
+              src="{{itemInner.articleImages}}"
+            ></image>
+          </view>
+          <view class="topic-list-line-item-code _div data-v-0a7f9426"
+            >{{itemInner.articleRef}}</view
+          >
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <pp-nav
+    back="{{true}}"
+    bind:__l="__l"
+    class="data-v-0a7f9426"
+    fixed="{{true}}"
+    logo="{{true}}"
+    placeholder="{{navigationBarHeightPlaceholder}}"
+    vueId="927e1e76-1"
+  ></pp-nav>
+</view>

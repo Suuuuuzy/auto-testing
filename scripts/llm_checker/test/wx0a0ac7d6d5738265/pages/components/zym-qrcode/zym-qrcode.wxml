@@ -1,0 +1,15 @@
+<view class="u-qrcode data-v-64eba783">
+  <canvas
+    canvasId="{{b}}"
+    class="u-qrcode__canvas data-v-64eba783"
+    id="{{a}}"
+    style="{{'width:'+c+';'+'height:'+d}}"
+    wx:if="{{r0}}"
+  ></canvas>
+  <image
+    class="data-v-64eba783"
+    hidden="{{!e}}"
+    src="{{f}}"
+    style="{{'width:'+g+';'+'height:'+h}}"
+  ></image>
+</view>

@@ -1,0 +1,69 @@
+@import "/app.wxss";
+.shop-img {
+  border-radius: 16rpx;
+}
+.divider {
+  border-radius: 3rpx;
+  height: 20rpx;
+  margin: 0 20rpx;
+  width: 5rpx;
+}
+.notice {
+  background-color: #fff;
+  height: 60rpx;
+  overflow: hidden;
+  padding: 0 20rpx;
+  width: 100%;
+}
+.r {
+  animation: 10s var(--loop) linear infinite normal;
+  color: var(--color);
+  display: inline-block;
+  font-size: 32rpx;
+  vertical-align: top;
+  white-space: nowrap;
+}
+@keyframes loop {
+  100% {
+    transform: translateX(300px);
+  }
+  0% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes _loop {
+  0% {
+    transform: translateX(300px);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes loop {
+  100% {
+    transform: translateX(300px);
+  }
+  0% {
+    transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes _loop {
+  0% {
+    transform: translateX(300px);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.scroll-tag-box {
+  width: 100%;
+}
+.scroll-tag-box scroll-view {
+  display: -webkit-flex;
+  display: flex;
+  white-space: nowrap;
+}
+.scroll-tag-box scroll-view view {
+  display: inline-block;
+  width: auto;
+}

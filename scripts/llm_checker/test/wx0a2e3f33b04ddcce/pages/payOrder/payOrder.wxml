@@ -1,0 +1,44 @@
+<view class="pay-order">
+  <view class="money">
+    <view class="money-top">
+      <text>应付金额(元)</text>
+      <text class="total-price">{{totalPrice}}</text>
+    </view>
+    <view class="split-line"></view>
+    <view class="money-bottom">
+      <text>卡片余额(元)</text>
+      <text>{{money}}</text>
+    </view>
+  </view>
+  <view class="order-content">
+    <view class="company">{{orderDetail.companyName}}</view>
+    <view class="split-line"></view>
+    <view class="order-bottom" wx:for="{{orderData}}" wx:key="orderItemId">
+      <view class="dish-image">
+        <image
+          class="image"
+          mode="aspectFit"
+          src="{{item.attach[0].shrinkUrl?item.attach[0].shrinkUrl:defaultFoodUrl}}"
+        ></image>
+      </view>
+      <view class="order-bottom-right">
+        <view class="order-text">
+          <text class="text1">{{item.itemName}}【{{item.weekday}}】</text>
+          <text class="text1">￥{{item.itemPrice}}</text>
+        </view>
+        <text class="text2">x{{item.itemCount}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="buttons">
+    <text bind:tap="toDelivery" class="button button1">返回外卖</text>
+    <text
+      bind:tap="pay"
+      class="button button2"
+      style="pointer-events:{{pointerEvents}}"
+      wx:if="{{flag}}"
+      >{{payText}}</text
+    >
+    <text class="button button3" wx:if="{{!flag}}">余额不足</text>
+  </view>
+</view>

@@ -1,0 +1,53 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view class="cu-list menu sm-border" wx:for="{{pageData}}">
+  <view bindtap="goShop" class="cu-item" data-item="{{item}}">
+    <view class="content">
+      <text class="text-lg">{{isUy?item.uy_name:item.ch_name}}</text>
+    </view>
+  </view>
+  <view
+    class="cu-item"
+    wx:for="{{item.item}}"
+    wx:for-index="_index"
+    wx:for-item="_item"
+  >
+    <view bindtap="goShop" class="content" data-item="{{item}}">
+      <view class="flex justify-start">
+        <view
+          class="cu-avatar radius"
+          style="background-image:url({{_item.item.img_url}});"
+        ></view>
+        <view class="margin-left-sm">
+          <view>{{isUy?_item.item.uy_name:_item.item.ch_name}}</view>
+          <view class="flex justify-between align-center" style="width: 400rpx">
+            <view class="text-price text-red">{{_item.item.price}}</view>
+            <view class="cu-tag round bg-grey sm">X{{_item.count}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="action">
+      <view
+        bindtap="deleteBtn"
+        data-_index="{{_index}}"
+        data-index="{{index}}"
+        style="font-size: 45rpx"
+      >
+        <text class="icon-delete text-xl"></text>
+      </view>
+    </view>
+  </view>
+</view>
+<view>
+  <view class="weui-loadmore weui-loadmore_line">
+    <view
+      class="weui-loadmore__tips weui-loadmore__tips_in-line"
+      style="background-color: #f1f1f1"
+    >
+      {{Str.noContent[lanIndex]}}</view
+    >
+  </view>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

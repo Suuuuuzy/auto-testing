@@ -1,0 +1,87 @@
+.page1-inputbox {
+  background-color: #fff;
+  box-sizing: border-box;
+  color: #9b9b9b;
+  padding: 15px 10px;
+  text-align: left;
+}
+.inputlist:last-child {
+  margin-bottom: 0;
+  padding-top: 0;
+}
+.inputlist {
+  border-bottom: 1px solid #f3f3f3;
+  line-height: 40px;
+  margin-bottom: 15px;
+  min-height: 40px;
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+.short-inputname {
+  display: inline-block;
+  float: left;
+  font-size: 14px;
+  width: 35%;
+}
+.short-input {
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: block;
+  float: right;
+  height: 40px;
+  overflow: hidden;
+  position: relative;
+  width: 65%;
+}
+.input {
+  color: #333;
+  display: block;
+  font-size: 14px;
+  height: 100%;
+  line-height: 14px;
+  outline: 0;
+  text-align: center;
+  width: 100%;
+}
+.placeholder {
+  color: #ccc;
+}
+.start {
+  background-color: #fff;
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: block;
+  font-size: 16px;
+  padding: 12px 10px;
+}
+.normalstartbtn .start {
+  background: #fabf11;
+  color: #fff;
+  line-height: 1.5;
+  margin: 13px 0 60rpx;
+  text-align: center;
+}
+.normalstartbtn .start::before,
+.normalstartbtn .start:after {
+  display: none;
+}
+.gameinfobox {
+  align-items: center;
+  background-color: #f0f0f0;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  padding: 20rpx;
+}
+.water-list .item {
+  padding: 20rpx 10rpx;
+  position: relative;
+  width: 320rpx;
+}
+.water-list .item .img {
+  display: block;
+  height: 480rpx;
+  position: relative;
+  width: 100%;
+}

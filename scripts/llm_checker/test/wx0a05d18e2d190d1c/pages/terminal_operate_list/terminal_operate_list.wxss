@@ -1,0 +1,33 @@
+.item_layout_style {
+  height: 190rpx;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  position: relative;
+  -webkit-box-align: center;
+  align-items: center;
+  padding-left: 30rpx;
+}
+.terminal_text_style {
+  height: 100%;
+  line-height: 190rpx;
+  color: #010101;
+  font-size: 50rpx;
+}
+.line_grey {
+  height: 1px;
+  background-color: #eee;
+  position: relative;
+}
+.icon_style {
+  width: 50rpx;
+  height: 50rpx;
+}

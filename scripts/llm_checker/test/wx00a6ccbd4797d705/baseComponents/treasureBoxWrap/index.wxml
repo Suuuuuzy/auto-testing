@@ -1,0 +1,10 @@
+<treasure-box-common-package
+  BoxState="{{boxState}}"
+  bind:__l="__l"
+  bind:close="__e"
+  bind:get="__e"
+  context="{{context}}"
+  data-event-opts="{{[ [ '^get',[ ['resetDishConnextStep'] ] ],[ '^close',[ ['close'] ] ] ]}}"
+  vueId="45869197-1"
+  wx:if="{{componentReady}}"
+></treasure-box-common-package>

@@ -1,0 +1,28 @@
+<view class="msg-new">
+  <view class="text">点击右上角添加到我的小程序，随时使用</view>
+  <view class="img">
+    <image
+      src="https://apis.ddfans.com/bian/public/static/image/qsy/icon-top.png"
+    ></image>
+  </view>
+</view>
+<view class="btn-box">
+  <view bindtap="longPicSew" class="btn">
+    <image
+      mode="widthFix"
+      src="https://apis.ddfans.com/bian/public/static/image/qsy/icon-choose-btn.jpg"
+    ></image>
+  </view>
+</view>
+<view class="line"></view>
+<view class="box-title">简单教程</view>
+<view class="teach-msg">
+  截取多张带有重叠部分的截图，生成一张滚动截图。可拼接聊 天记录、订单记录等截图
+</view>
+<view class="teach">
+  <image
+    mode="widthFix"
+    src="https://apis.ddfans.com/bian/public/static/image/qsy/choose.jpg"
+    style="width: 100%"
+  ></image>
+</view>

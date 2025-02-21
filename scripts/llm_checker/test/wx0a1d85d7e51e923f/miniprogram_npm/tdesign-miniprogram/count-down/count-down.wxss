@@ -1,0 +1,148 @@
+.t-float-left {
+  float: left;
+}
+.t-float-right {
+  float: right;
+}
+@-webkit-keyframes tdesign-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes tdesign-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.hotspot-expanded.relative {
+  position: relative;
+}
+.hotspot-expanded::after {
+  bottom: 0;
+  content: "";
+  display: block;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: scale(1.5);
+}
+.t-count-down--small.t-count-down--default {
+  font-size: var(--td-font-size-base, 28rpx);
+}
+.t-count-down--small.t-count-down--round > .t-count-down__item,
+.t-count-down--small.t-count-down--square > .t-count-down__item {
+  font-size: var(--td-font-size-s, 24rpx);
+}
+.t-count-down--small.t-count-down--round > .t-count-down__item,
+.t-count-down--small.t-count-down--square > .t-count-down__item {
+  height: 40rpx;
+  width: 40rpx;
+}
+.t-count-down--small.t-count-down--round > .t-count-down__split--dot,
+.t-count-down--small.t-count-down--square > .t-count-down__split--dot {
+  font-size: var(--td-font-size-base, 28rpx);
+  font-weight: 700;
+  margin: 0 4rpx;
+}
+.t-count-down--small.t-count-down--round > .t-count-down__split--text,
+.t-count-down--small.t-count-down--square > .t-count-down__split--text {
+  font-size: var(--td-font-size, 20rpx);
+  margin: 0 8rpx;
+}
+.t-count-down--medium.t-count-down--default {
+  font-size: var(--td-font-size-m, 32rpx);
+}
+.t-count-down--medium.t-count-down--round > .t-count-down__item,
+.t-count-down--medium.t-count-down--square > .t-count-down__item {
+  font-size: var(--td-font-size-base, 28rpx);
+}
+.t-count-down--medium.t-count-down--round > .t-count-down__item,
+.t-count-down--medium.t-count-down--square > .t-count-down__item {
+  height: 48rpx;
+  width: 48rpx;
+}
+.t-count-down--medium.t-count-down--round > .t-count-down__split--dot,
+.t-count-down--medium.t-count-down--square > .t-count-down__split--dot {
+  font-size: var(--td-font-size-m, 32rpx);
+  font-weight: 700;
+  margin: 0 6rpx;
+}
+.t-count-down--medium.t-count-down--round > .t-count-down__split--text,
+.t-count-down--medium.t-count-down--square > .t-count-down__split--text {
+  font-size: var(--td-font-size-s, 24rpx);
+  margin: 0 10rpx;
+}
+.t-count-down--large.t-count-down--default {
+  font-size: 36rpx;
+}
+.t-count-down--large.t-count-down--round > .t-count-down__item,
+.t-count-down--large.t-count-down--square > .t-count-down__item {
+  font-size: var(--td-font-size-m, 32rpx);
+}
+.t-count-down--large.t-count-down--round > .t-count-down__item,
+.t-count-down--large.t-count-down--square > .t-count-down__item {
+  height: 56rpx;
+  width: 56rpx;
+}
+.t-count-down--large.t-count-down--round > .t-count-down__split--dot,
+.t-count-down--large.t-count-down--square > .t-count-down__split--dot {
+  font-size: 36rpx;
+  font-weight: 700;
+  margin: 0 12rpx;
+}
+.t-count-down--large.t-count-down--round > .t-count-down__split--text,
+.t-count-down--large.t-count-down--square > .t-count-down__split--text {
+  font-size: var(--td-font-size-base, 28rpx);
+  margin: 0 12rpx;
+}
+.t-count-down {
+  font-family: DIN Alternate, Courier New, Courier, monospace;
+}
+.t-count-down .t-count-down__item,
+.t-count-down .t-count-down__split {
+  align-items: center;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  justify-content: center;
+}
+.t-count-down--round > .t-count-down__split--dot,
+.t-count-down--square > .t-count-down__split--dot {
+  color: var(--td-error-color-6, #d54941);
+}
+.t-count-down--round > .t-count-down__split--text,
+.t-count-down--square > .t-count-down__split--text {
+  color: var(--td-font-gray-1, rgba(0, 0, 0, 0.9));
+}
+.t-count-down--default {
+  color: var(
+    --td-countdown-default-color,
+    var(--td-font-gray-1, rgba(0, 0, 0, 0.9))
+  );
+}
+.t-count-down--square {
+  color: var(--td-countdown-round-color, var(--td-font-white-1, #fff));
+}
+.t-count-down--square > .t-count-down__item {
+  background: var(--td-countdown-bg-color, var(--td-error-color-6, #d54941));
+  border-radius: var(
+    --td-countdown-square-border-radius,
+    var(--td-radius-small, 6rpx)
+  );
+}
+.t-count-down--round {
+  color: var(--td-countdown-round-color, var(--td-font-white-1, #fff));
+}
+.t-count-down--round > .t-count-down__item {
+  background: var(--td-countdown-bg-color, var(--td-error-color-6, #d54941));
+  border-radius: var(
+    --td-countdown-round-border-radius,
+    var(--td-radius-circle, 50%)
+  );
+}

@@ -1,0 +1,47 @@
+<view class="warp">
+  <zym-navigation
+    bind:__l="__l"
+    uI="4703e539-0"
+    uP="{{a}}"
+    wx:if="{{a}}"
+  ></zym-navigation>
+  <view class="content">
+    <view class="washtime">
+      <view class="timetxt">
+        <text>洗车剩余时间</text>
+      </view>
+      <view class="time">
+        <view class="bg">{{b}}</view>
+        <text class="maohao">：</text>
+        <view class="bg">{{c}}</view>
+        <text class="maohao">：</text>
+        <view class="bg">{{d}}</view>
+      </view>
+    </view>
+    <view class="autowashnotice">
+      <view class="notice">
+        <text>全自动洗车须知</text>
+      </view>
+      <view class="notice-item">
+        <text
+          >1.洗车设备采用先进的智能光电感应系统，根据车身长短自动调节冲洗距离，不受任何车身车距的限制，全面扫除清洗盲区，包括轮胎、底盘、车身缝隙等。</text
+        >
+      </view>
+      <view class="notice-item">
+        <text
+          >2.洗车设备采用先进的智能光电感应系统，根据车身长短自动调节冲洗距离</text
+        >
+      </view>
+      <view class="notice-item">
+        <text
+          >3.洗车设备采用先进的智能光电感应系统，根据车身长短自动调节冲洗距离，不受任何车身车距的限制，全面扫除清洗盲区，包括轮胎、底盘、车身缝隙等。</text
+        >
+      </view>
+      <view class="notice-item">
+        <text
+          >4.洗车设备采用先进的智能光电感应系统，根据车身长短自动调节冲洗距离</text
+        >
+      </view>
+    </view>
+  </view>
+</view>

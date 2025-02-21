@@ -1,0 +1,36 @@
+.hidden {
+  display: none;
+}
+.textarea-edit-content {
+  background: #f9f9f9;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  line-height: 1.6em;
+  overflow-y: scroll;
+  padding: 20rpx;
+  word-break: break-all;
+}
+.textarea-edit-content.border {
+  border: 2rpx solid #ddd;
+}
+.iosTextarea {
+  padding: 10rpx !important;
+}
+.textarea-edit-placeholder {
+  color: #999;
+}
+.inputlength {
+  bottom: 0;
+  font-size: 26rpx;
+  padding: 10rpx;
+  right: 0;
+  text-align: right;
+}
+.countDownText {
+  background: #f9f9f9;
+  bottom: 8rpx;
+  position: absolute;
+  right: 8rpx;
+  z-index: 1;
+}

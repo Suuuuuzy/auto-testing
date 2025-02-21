@@ -1,0 +1,59 @@
+<zym-paging
+  bind:__l="__l"
+  bindloadData="{{f}}"
+  bindreFresh="{{e}}"
+  uI="7479e46a-0"
+  uP="{{g}}"
+  uS="{{['item']}}"
+  wx:if="{{g}}"
+>
+  <view slot="item">
+    <view class="items" wx:for="{{a}}" wx:key="m">
+      <view style="margin-bottom: 24rpx" wx:if="{{item.a}}">
+        <text class="Ltime">{{item.b}}</text>
+      </view>
+      <view bindtap="{{item.l}}" class="ordlist">
+        <view class="listTop">
+          <view class="tleft">
+            <image class="Mapicon" mode="" src="{{b}}"></image>
+            <view class="tname"
+              >{{item.c}} <text class="gunNo">{{item.d}}</text> 号枪
+            </view>
+            <image class="listricon" src="{{c}}"></image>
+          </view>
+          <view>
+            <text style="color: rgba(153, 153, 153, 1)">{{item.e}}</text>
+          </view>
+        </view>
+        <view class="center">
+          <view class="cleft" style="{{'background-color:'+item.g}}">
+            <text class="cimg">{{item.f}}</text>
+          </view>
+          <view class="cright">
+            <view class="cclum">
+              <view> 升数：<text class="blig">{{item.h}}L</text> </view>
+              <text>{{item.i}}</text>
+            </view>
+            <view class="cclum ccr">
+              <view>
+                单价：<text class="cprice blig">￥{{item.j}}元</text>
+              </view>
+              <view class="detail">
+                <text class="tright">详情 </text>
+                <image class="listricon" mode="" src="{{d}}"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="listbtm">
+          <view class="paymony">
+            <text style="color: red"></text>
+            <text class="textline"></text> 实付：<text class="blig">
+              ￥{{item.k}}</text
+            >
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</zym-paging>

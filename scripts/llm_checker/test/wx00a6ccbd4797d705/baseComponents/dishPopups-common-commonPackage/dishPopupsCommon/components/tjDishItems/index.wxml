@@ -1,0 +1,90 @@
+<view
+  class="{{['_div','data-v-7d2d287b',!isWoods&&layout=='23'?'dishItemWrap':'']}}"
+>
+  <view
+    class="{{['_div','data-v-7d2d287b',isWoods?'dishLayout9_woods':'',layout=='9'?'dishLayout9':'']}}"
+    style="{{$root.s0}}"
+    wx:for="{{tjData}}"
+    wx:key="index"
+  >
+    <block wx:if="{{context!='DC'}}">
+      <dish-item-w-m
+        bind:__l="__l"
+        class="data-v-7d2d287b vue-ref-in-for"
+        context="{{context}}"
+        data-ref="dishItem"
+        dishBtnSize="{{init.dishBtnSize}}"
+        dishData="{{item}}"
+        dishItemIndex="{{index}}"
+        isShadow="{{true}}"
+        isVip="{{isVip}}"
+        layout="10"
+        promPriceName="{{init.promPriceName}}"
+        themeColor="{{themeColor}}"
+        vipTxt="{{init.vipTxt}}"
+        vipTxtNext="{{init.vipTxtNext}}"
+        vueId="{{'7254ba8d-1-'+index}}"
+        wx:if="{{isWoods}}"
+      ></dish-item-w-m>
+      <dish-item-w-m
+        bind:__l="__l"
+        class="data-v-7d2d287b vue-ref-in-for"
+        context="{{context}}"
+        data-ref="dishItem"
+        dishBtnSize="{{init.dishBtnSize}}"
+        dishData="{{item}}"
+        dishItemIndex="{{index}}"
+        isShadow="{{true}}"
+        isVip="{{isVip}}"
+        layout="{{layout}}"
+        promPriceName="{{init.promPriceName}}"
+        themeColor="{{themeColor}}"
+        vipTxt="{{init.vipTxt}}"
+        vipTxtNext="{{init.vipTxtNext}}"
+        vueId="{{'7254ba8d-2-'+index}}"
+        wx:else
+      ></dish-item-w-m>
+    </block>
+    <block wx:else>
+      <dish-item-fast
+        bind:__l="__l"
+        class="data-v-7d2d287b vue-ref-in-for"
+        context="{{context}}"
+        data-ref="dishItem"
+        dishBtnSize="{{init.dishBtnSize}}"
+        dishData="{{item}}"
+        dishItemIndex="{{index}}"
+        gqData="{{null}}"
+        isShadow="{{true}}"
+        isVip="{{isVip}}"
+        layout="{{layout}}"
+        lockDish="{{null}}"
+        promPriceName="{{init.promPriceName}}"
+        themeColor="{{themeColor}}"
+        type="pageB"
+        vipTxt="{{init.vipTxt}}"
+        vipTxtNext="{{init.vipTxtNext}}"
+        vueId="{{'7254ba8d-3-'+index}}"
+        wx:if="{{isFastFood}}"
+      ></dish-item-fast>
+      <dish-item-d-c
+        bind:__l="__l"
+        class="data-v-7d2d287b vue-ref-in-for"
+        context="{{context}}"
+        data-ref="dishItem"
+        dishBtnSize="{{init.dishBtnSize}}"
+        dishData="{{item}}"
+        dishItemIndex="{{index}}"
+        isShadow="{{true}}"
+        isVip="{{isVip}}"
+        layout="{{layout}}"
+        promPriceName="{{init.promPriceName}}"
+        themeColor="{{themeColor}}"
+        vipTxt="{{init.vipTxt}}"
+        vipTxtNext="{{init.vipTxtNext}}"
+        vueId="{{'7254ba8d-4-'+index}}"
+        wx:else
+      ></dish-item-d-c>
+    </block>
+  </view>
+</view>

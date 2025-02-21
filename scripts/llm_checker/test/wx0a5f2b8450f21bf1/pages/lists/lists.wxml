@@ -1,0 +1,30 @@
+<view class="container">
+  <cu-custom
+    bgColor="bg-gradual-blue"
+    bind:__l="__l"
+    isBack="{{true}}"
+    vueId="2e637200-1"
+    vueSlots="{{['content']}}"
+  >
+    <view slot="backText">返回</view>
+    <view slot="content">邀请记录</view>
+  </cu-custom>
+  <view class="container">
+    <view class="title">剩余次数:{{keyong}}次</view>
+    <view class="padding-sm flex flex-direction">
+      <button class="cu-btn bg-blue" openType="share">
+        分享好友 + {{song}}次
+      </button>
+    </view>
+    <view
+      class="historyList font-color-333"
+      wx:for="{{withdrawList}}"
+      wx:for-item="list"
+    >
+      <view class="historyList-hd">
+        <text>邀请时间：{{list.createtime}}</text>
+        <text class="font-color-999">奖励次数：{{list.cishu}}次</text>
+      </view>
+    </view>
+  </view>
+</view>

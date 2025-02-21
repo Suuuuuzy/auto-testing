@@ -1,0 +1,18 @@
+<view class="wrap">
+    <zym-navigation bind:__l="__l" uI="e1d7b92e-0" uP="{{a}}" wx:if="{{a}}"></zym-navigation>
+    <view class="cont">
+        <view class="upPhone">
+            <view class="phonet"> 验证手机号码 </view>
+            <view class="slectipt">
+                <input bindinput="{{c}}" class="ipt" maxlength="11" placeholder="请输入原手机号" placeholderClass="palce" type="number" value="{{b}}"></input>
+            </view>
+            <view class="phones btns">
+                <input bindinput="{{e}}" class="input" maxlength="6" placeholder="请输入验证码" type="number" value="{{d}}"></input>
+                <text bindtap="{{g}}" class="btnco" wx:if="{{f}}">获取验证码</text>
+                <text class="btnco" wx:else>{{h}}秒后重发</text>
+            </view>
+            <view class="error" wx:if="{{i}}"> 手机号格式错误 </view>
+        </view>
+        <button bindtap="{{j}}" class="update" lang="zh_CN">确认</button>
+    </view>
+</view>

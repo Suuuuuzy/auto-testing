@@ -1,0 +1,39 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view class="bg-white" style="height: 100vh" wx:if="{{good}}">
+  <swiper
+    autoplay="{{1}}"
+    circular="{{1}}"
+    class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}"
+    duration="500"
+    indicatorActiveColor="yellow"
+    indicatorColor="red"
+    indicatorDots="{{1}}"
+    interval="5000"
+    style="min-height: 550rpx; height: 550rpx"
+  >
+    <swiper-item wx:for="{{good.images}}">
+      <image
+        mode="aspectFill"
+        src="{{item.img_url}}"
+        style="border-radius: 16rpx"
+      ></image>
+      <text class="text-white">1</text>
+    </swiper-item>
+  </swiper>
+  <view class="bg-white">
+    <view class="padding-lr padding-tb-sm {{isUy?'rtl':''}}">
+      <text class="text-price text-xxl text-red">{{good.price}}</text>
+      <text decode="ture">&nbsp;</text>
+      <text class="delete-txt text-lg" wx:if="{{good.time2>0}}"
+        >{{good.activity_price}}</text
+      >
+    </view>
+    <view
+      class="{{isUy?'rtl':''}} padding-lr-sm text-lg uy-tom text-black text-bold"
+      >{{isUy?good.uy_name:good.ch_name}}</view
+    >
+  </view>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

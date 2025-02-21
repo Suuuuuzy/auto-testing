@@ -1,0 +1,245 @@
+<view class="warp data-v-efe5ac0d">
+  <zym-navigation
+    bind:__l="__l"
+    class="data-v-efe5ac0d"
+    uI="efe5ac0d-0"
+    uP="{{a}}"
+    wx:if="{{a}}"
+  ></zym-navigation>
+  <u-skeleton
+    bind:__l="__l"
+    class="data-v-efe5ac0d"
+    uI="efe5ac0d-1"
+    uP="{{M}}"
+    uS="{{['d']}}"
+    wx:if="{{M}}"
+  >
+    <view class="Paycontent data-v-efe5ac0d">
+      <view class="Map-MIn data-v-efe5ac0d">
+        <text class="data-v-efe5ac0d">您在：{{b}}</text>
+        <image class="Mapicon data-v-efe5ac0d" mode="" src="{{c}}"></image>
+        <view bindtap="{{e}}" class="waitPay data-v-efe5ac0d" wx:if="{{d}}"
+          >您有其他待支付订单
+        </view>
+      </view>
+      <form class="payForm data-v-efe5ac0d">
+        <view class="guns fsb data-v-efe5ac0d">
+          <view class="fc data-v-efe5ac0d">
+            <image class="gimg data-v-efe5ac0d" src="{{f}}"></image>
+            <text class="txt data-v-efe5ac0d" style="text-align: center">
+              枪号</text
+            >
+          </view>
+          <text class="inputNumber data-v-efe5ac0d" style="{{'color:'+h}}"
+            >{{g}}</text
+          >
+        </view>
+        <view class="oilGunOrderIdber fsb data-v-efe5ac0d">
+          <view class="fc data-v-efe5ac0d">
+            <image class="gimg data-v-efe5ac0d" src="{{i}}"></image>
+            <text class="txt data-v-efe5ac0d">金额</text>
+          </view>
+          <view class="data-v-efe5ac0d">
+            <text class="f30 hs data-v-efe5ac0d">实付：</text>
+            <text class="totalColor data-v-efe5ac0d">￥{{j}}</text>
+          </view>
+        </view>
+      </form>
+      <view class="pay-choose data-v-efe5ac0d">
+        <view class="yhbg pt20 mb20 data-v-efe5ac0d">
+          <view class="fsb mb20 data-v-efe5ac0d">
+            <text class="hs data-v-efe5ac0d">升数：</text>
+            <text class="jianmian data-v-efe5ac0d">{{k}}L</text>
+          </view>
+          <view class="fsb mb20 data-v-efe5ac0d">
+            <text class="hs data-v-efe5ac0d">单价：</text>
+            <text class="jianmian data-v-efe5ac0d">{{l}}/L </text>
+          </view>
+          <view class="fsb mb20 data-v-efe5ac0d">
+            <text class="hs data-v-efe5ac0d">类型：</text>
+            <text class="jianmian data-v-efe5ac0d">{{m}}</text>
+          </view>
+          <view class="fsb mb20 data-v-efe5ac0d">
+            <text class="hs data-v-efe5ac0d">车牌号：</text>
+            <text class="jianmian data-v-efe5ac0d" wx:if="{{n}}">{{o}}</text>
+          </view>
+          <view class="fsb mb20 data-v-efe5ac0d" wx:if="{{p}}">
+            <text class="hs data-v-efe5ac0d">优惠券：</text>
+            <text class="jianmian data-v-efe5ac0d"> -{{q}}元</text>
+          </view>
+          <view class="fsb mb20 data-v-efe5ac0d" wx:if="{{r}}">
+            <text class="hs data-v-efe5ac0d">会员：</text>
+            <text class="jianmian data-v-efe5ac0d">-{{s}}元</text>
+          </view>
+        </view>
+        <view class="data-v-efe5ac0d" wx:if="{{t}}">
+          <label bindtap="{{y}}" class="radio fsb mt10 data-v-efe5ac0d">
+            <view class="cupons data-v-efe5ac0d">
+              <image class="payimg data-v-efe5ac0d" src="{{v}}"></image>
+              <text class="data-v-efe5ac0d">优惠券</text>
+            </view>
+            <view class="cuponright data-v-efe5ac0d">
+              <text class="jianmian data-v-efe5ac0d">{{w}}</text>
+              <image class="payimg data-v-efe5ac0d" mode="" src="{{x}}"></image>
+            </view>
+          </label>
+        </view>
+        <view class="pays data-v-efe5ac0d" wx:if="{{z}}">
+          <view bindtap="{{C}}" class="wx-pay data-v-efe5ac0d">
+            <view class="wx-logo data-v-efe5ac0d">
+              <image class="wximg data-v-efe5ac0d" mode="" src="{{A}}"></image>
+              <text class="data-v-efe5ac0d" style="padding-left: 16rpx"
+                >微信支付</text
+              >
+            </view>
+            <label class="data-v-efe5ac0d">
+              <radio
+                checked="{{B}}"
+                class="data-v-efe5ac0d"
+                color="rgba(6, 185, 192, 1)"
+                value="wx"
+              ></radio>
+              <text class="data-v-efe5ac0d"></text>
+            </label>
+          </view>
+          <view class="{{['oil-card-pay','data-v-efe5ac0d',J&&'cardpayed']}}">
+            <view bindtap="{{G}}" class="oil-card-pay-rd data-v-efe5ac0d">
+              <view class="card-logo data-v-efe5ac0d">
+                <image
+                  class="cardimg data-v-efe5ac0d"
+                  mode=""
+                  src="{{D}}"
+                ></image>
+                <text class="data-v-efe5ac0d" style="padding-left: 16rpx"
+                  >会员卡支付</text
+                >
+                <text
+                  class="data-v-efe5ac0d"
+                  style="
+                    padding-left: 20rpx;
+                    font-size: 26rpx;
+                    color: rgba(51, 51, 51, 1);
+                  "
+                >
+                  余额:{{E}}</text
+                >
+              </view>
+              <label class="data-v-efe5ac0d">
+                <radio
+                  checked="{{F}}"
+                  class="data-v-efe5ac0d"
+                  color="rgba(6, 185, 192, 1)"
+                  value="yk"
+                ></radio>
+                <text class="data-v-efe5ac0d"></text>
+              </label>
+            </view>
+            <view class="data-v-efe5ac0d" hidden="{{!I}}" style="width: 100%">
+              <view
+                bindtap="{{item.f}}"
+                class="{{['cardlist','data-v-efe5ac0d',item.h&&'boderColor']}}"
+                wx:for="{{H}}"
+                wx:key="g"
+              >
+                <view class="cardAmn data-v-efe5ac0d">
+                  <view class="cardName data-v-efe5ac0d">
+                    <text
+                      class="name data-v-efe5ac0d"
+                      style="{{'color:'+item.b}}"
+                      >{{item.a}}</text
+                    >
+                  </view>
+                  <view
+                    class="{{['cardAmntxt','data-v-efe5ac0d',item.d&&'amntxtcorlor']}}"
+                  >
+                    <text class="txt data-v-efe5ac0d">余额:</text>
+                    <text class="amnNum data-v-efe5ac0d">{{item.c}}</text>
+                  </view>
+                </view>
+                <view
+                  class="conponitem data-v-efe5ac0d"
+                  wx:for="{{item.e}}"
+                  wx:for-item="t"
+                  wx:key="h"
+                >
+                  <view class="copontype data-v-efe5ac0d" wx:if="{{t.a}}">
+                    <text
+                      class="type data-v-efe5ac0d"
+                      style="{{'color:'+t.c+';'+'background:'+t.d}}"
+                      >{{t.b}}</text
+                    >
+                    <view class="cop data-v-efe5ac0d" style="{{'color:'+t.g}}">
+                      每升优惠
+                      <text class="data-v-efe5ac0d" style="{{'color:'+t.f}}"
+                        >{{t.e}}</text
+                      >
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="footer fc data-v-efe5ac0d">
+      <button
+        class="payBtn data-v-efe5ac0d"
+        disabled="true"
+        style="background-color: rgba(223, 223, 223, 1); color: white"
+        type="submit"
+        wx:if="{{K}}"
+      >
+        确认
+      </button>
+      <button
+        bindtap="{{L}}"
+        class="payBtn data-v-efe5ac0d"
+        style="background-color: rgba(6, 185, 192, 1); color: white"
+        type="submit"
+        wx:else
+      >
+        确认
+      </button>
+    </view>
+  </u-skeleton>
+  <view class="data-v-efe5ac0d" wx:if="{{N}}">
+    <pass-word
+      bind:__l="__l"
+      bindmyPassWordChange="{{O}}"
+      bindshowPassChange="{{P}}"
+      class="data-v-efe5ac0d"
+      uI="efe5ac0d-2"
+      uP="{{Q}}"
+      wx:if="{{Q}}"
+    ></pass-word>
+  </view>
+  <view class="data-v-efe5ac0d">
+    <u-popup
+      bind:__l="__l"
+      class="data-v-efe5ac0d"
+      uI="efe5ac0d-3"
+      uP="{{V}}"
+      uS="{{['d']}}"
+      wx:if="{{V}}"
+    >
+      <view class="pops data-v-efe5ac0d">
+        <view class="title data-v-efe5ac0d">
+          <text class="titletxt data-v-efe5ac0d">油卡支付</text>
+          <image
+            bindtap="{{R}}"
+            class="closeimg data-v-efe5ac0d"
+            mode=""
+            src="{{S}}"
+          ></image>
+        </view>
+        <view class="line data-v-efe5ac0d"></view>
+        <view class="posview data-v-efe5ac0d">
+          <text class="data-v-efe5ac0d">即将进行支付</text>
+          <text class="totalColor data-v-efe5ac0d">￥{{T}}</text>
+        </view>
+        <view bindtap="{{U}}" class="nopwpop data-v-efe5ac0d"> 确认 </view>
+      </view>
+    </u-popup>
+  </view>
+</view>

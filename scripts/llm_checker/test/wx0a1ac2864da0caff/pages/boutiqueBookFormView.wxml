@@ -1,0 +1,194 @@
+<view class="container _div data-v-2fa43990">
+  <scroll-view
+    class="content data-v-2fa43990"
+    enableBackToTop="{{true}}"
+    scrollY="{{true}}"
+    wx:if="{{detail}}"
+  >
+    <view
+      class="_div data-v-2fa43990"
+      style="{{'height:'+navigationBarHeightPlaceholder+'px'+';'}}"
+    ></view>
+    <view class="boutique-logo-out _div data-v-2fa43990">
+      <view class="boutique-logo-large _div data-v-2fa43990">
+        <image
+          class="pic _img data-v-2fa43990"
+          src="/static/img/logo-large.png"
+        ></image>
+      </view>
+    </view>
+    <view class="form-out _div data-v-2fa43990">
+      <view class="form-title _div data-v-2fa43990">请确认您的个人信息</view>
+      <view class="form-input-out _div data-v-2fa43990" wx:if="{{bookCache}}">
+        <view class="form-line _div data-v-2fa43990">
+          <view class="form-label _div data-v-2fa43990">称谓</view>
+          <view class="form-gender-out _div data-v-2fa43990">
+            <view
+              class="{{['form-gender-item','_div','data-v-2fa43990',bookCache.gender===1?'active':'']}}"
+            >
+              <view class="form-gender-dot _div data-v-2fa43990">
+                <view class="form-gender-dot-inner _div data-v-2fa43990"></view>
+              </view>
+              <view class="form-gender-label _div data-v-2fa43990">先生</view>
+            </view>
+            <view class="form-gender-item-divider _div data-v-2fa43990">/</view>
+            <view
+              class="{{['form-gender-item','_div','data-v-2fa43990',bookCache.gender===2?'active':'']}}"
+            >
+              <view class="form-gender-dot _div data-v-2fa43990">
+                <view class="form-gender-dot-inner _div data-v-2fa43990"></view>
+              </view>
+              <view class="form-gender-label _div data-v-2fa43990">女士</view>
+            </view>
+          </view>
+        </view>
+        <view class="form-line form-line-2 _div data-v-2fa43990">
+          <view class="form-line-half _div data-v-2fa43990">
+            <view class="form-label _div data-v-2fa43990">姓</view>
+            <view class="form-input _div data-v-2fa43990">
+              <view class="input placeholder _div data-v-2fa43990"
+                >{{bookCache.lastname}}</view
+              >
+            </view>
+          </view>
+          <view class="form-line-half _div data-v-2fa43990">
+            <view class="form-label _div data-v-2fa43990">名</view>
+            <view class="form-input _div data-v-2fa43990">
+              <view class="input placeholder _div data-v-2fa43990"
+                >{{bookCache.firstname}}</view
+              >
+            </view>
+          </view>
+        </view>
+        <view class="form-line form-line-2 _div data-v-2fa43990">
+          <view class="form-line-half _div data-v-2fa43990">
+            <view class="form-label _div data-v-2fa43990">姓（拼音）</view>
+            <view class="form-input _div data-v-2fa43990">
+              <view class="input placeholder _div data-v-2fa43990"
+                >{{bookCache.lastname_pinyin}}</view
+              >
+            </view>
+          </view>
+          <view class="form-line-half _div data-v-2fa43990">
+            <view class="form-label _div data-v-2fa43990">名（拼音）</view>
+            <view class="form-input _div data-v-2fa43990">
+              <view class="input placeholder _div data-v-2fa43990"
+                >{{bookCache.firstname_pinyin}}</view
+              >
+            </view>
+          </view>
+        </view>
+        <view class="form-line _div data-v-2fa43990">
+          <view class="form-label _div data-v-2fa43990">手机号</view>
+          <view class="form-input _div data-v-2fa43990">
+            <view class="input placeholder _div data-v-2fa43990"
+              >{{bookCache.phone}}</view
+            >
+          </view>
+        </view>
+        <view class="form-line form-line-2 _div data-v-2fa43990">
+          <view class="form-line-half _div data-v-2fa43990">
+            <view class="form-label _div data-v-2fa43990">您的地区</view>
+            <view class="form-input _div data-v-2fa43990">
+              <view class="input placeholder _div data-v-2fa43990"
+                >{{bookCache.province}}</view
+              >
+            </view>
+          </view>
+          <view class="form-line-half _div data-v-2fa43990">
+            <view class="form-label _div data-v-2fa43990"></view>
+            <view class="form-input _div data-v-2fa43990">
+              <view class="input placeholder _div data-v-2fa43990"
+                >{{bookCache.city}}</view
+              >
+            </view>
+          </view>
+        </view>
+        <view class="form-line _div data-v-2fa43990">
+          <view class="form-label _div data-v-2fa43990">服务类型</view>
+          <view class="form-input _div data-v-2fa43990">
+            <view class="input placeholder _div data-v-2fa43990"
+              >{{bookCache.service_type}}</view
+            >
+          </view>
+        </view>
+        <view class="more-form _div data-v-2fa43990">
+          <view
+            class="form-line _div data-v-2fa43990"
+            wx:if="{{bookCache.watch_series}}"
+          >
+            <view class="form-label _div data-v-2fa43990"
+              >您的腕表序列编号</view
+            >
+            <view class="form-input _div data-v-2fa43990">
+              <view class="input placeholder _div data-v-2fa43990"
+                >{{bookCache.watch_series}}</view
+              >
+            </view>
+          </view>
+          <view class="form-line _div data-v-2fa43990" wx:if="{{$root.g0}}">
+            <view class="form-label _div data-v-2fa43990"
+              >您的腕表证书照片</view
+            >
+            <view class="form-pic-out _div data-v-2fa43990">
+              <view
+                class="form-pic _div data-v-2fa43990"
+                wx:for="{{cert}}"
+                wx:key="index"
+              >
+                <image
+                  class="pic _img data-v-2fa43990"
+                  mode="aspectFill"
+                  src="{{item}}"
+                ></image>
+              </view>
+            </view>
+          </view>
+          <view
+            class="form-line _div data-v-2fa43990"
+            wx:if="{{bookCache.others}}"
+          >
+            <view class="form-label _div data-v-2fa43990"
+              >补充其他服务要求</view
+            >
+            <view class="form-input form-input-textarea _div data-v-2fa43990">
+              <view class="input placeholder _div data-v-2fa43990"
+                >{{bookCache.others}}</view
+              >
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="boutique-map-gap _div data-v-2fa43990"></view>
+    <view class="btn-bottom-inner _div data-v-2fa43990"></view>
+    <view
+      class="_div data-v-2fa43990"
+      style="{{'height:'+navigationBarHeightPlaceholder+'px'+';'}}"
+    ></view>
+  </scroll-view>
+  <view class="btn-bottom _div data-v-2fa43990" wx:if="{{detail}}">
+    <view class="btn-bottom-inner _div data-v-2fa43990">
+      <view
+        bindtap="__e"
+        class="btn-bottom-btn _div data-v-2fa43990"
+        data-event-opts="{{[ [ 'tap',[ [ 'nextBook',['$event'] ] ] ] ]}}"
+        >确认</view
+      >
+    </view>
+    <view
+      class="btn-bottom-gap _div data-v-2fa43990"
+      style="{{'height:'+navigationBarHeightPlaceholder+'px'+';'}}"
+    ></view>
+  </view>
+  <pp-nav
+    back="{{true}}"
+    bind:__l="__l"
+    class="data-v-2fa43990"
+    noCircle="{{true}}"
+    placeholder="{{navigationBarHeightPlaceholder}}"
+    transparent="{{true}}"
+    value="{{true}}"
+    vueId="1fb5e4d7-1"
+  ></pp-nav>
+</view>

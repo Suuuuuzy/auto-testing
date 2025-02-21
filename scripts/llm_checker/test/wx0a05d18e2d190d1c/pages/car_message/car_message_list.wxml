@@ -1,0 +1,27 @@
+<view>
+  <empty
+    bind:__l="__l"
+    vueId="6e146239-1"
+    wx:if="{{data_list.length==0}}"
+  ></empty>
+  <scroll-view scrollY="true" style="width: 100%; height: 100%">
+    <view class="uni-list">
+      <view
+        bindtap="__e"
+        class="uni-list-cell uni-list-cell-pd"
+        data-event-opts="{{[ [ 'tap',[ [ 'delete_message',['$0',index],[ [ ['data_list','',index] ] ] ] ] ] ]}}"
+        style="margin-top: 5rpx"
+        wx:for="{{data_list}}"
+        wx:key="index"
+      >
+        <image
+          class="gl_icon_size gl_margin_lr"
+          mode="aspectFit"
+          src="../../static/images/car_alarm_icon.png"
+        ></image>
+        <view class="uni-list-cell-db gl_color_title">{{item.alarmName}}</view>
+        <view class="uni-list-cell-db rcv_time_style">{{item.rcvTime}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

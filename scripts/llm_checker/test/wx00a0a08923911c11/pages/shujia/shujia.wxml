@@ -1,0 +1,121 @@
+<view class="container shujiaCon flexible flex-direction data-v-74171868">
+  <scroll-view
+    bindscrolltolower="__e"
+    class="{{['app-container','flex','data-v-74171868',isEdit?'edit-container':'']}}"
+    data-event-opts="{{[ [ 'scrolltolower',[ [ 'scrolltolowerFun',['$event'] ] ] ] ]}}"
+    scrollWithAnimation="{{true}}"
+    scrollY="true"
+  >
+    <view
+      class="module-title f28 flexible jc-between aItem-start data-v-74171868"
+      wx:if="{{$root.g0}}"
+    >
+      <view
+        class="selectAll flexible text-333 data-v-74171868"
+        wx:if="{{isEdit}}"
+      >
+        <image
+          catchtap="__e"
+          class="radio-btn data-v-74171868"
+          data-event-opts="{{[ [ 'tap',[ ['allSelect'] ] ] ]}}"
+          src="/static/img/ic_all_Selected.png"
+          wx:if="{{$root.g1==$root.g2}}"
+        ></image>
+        <image
+          catchtap="__e"
+          class="radio-btn data-v-74171868"
+          data-event-opts="{{[ [ 'tap',[ ['allSelect'] ] ] ]}}"
+          src="/static/img/ic_all_select.png"
+          wx:else
+        ></image
+        >全选</view
+      >
+      <view class="flex data-v-74171868"></view>
+      <view
+        bindtap="__e"
+        class="edit-con text-333 flexible data-v-74171868"
+        data-event-opts="{{[ [ 'tap',[ ['changeEdit'] ] ] ]}}"
+        wx:if="{{!isEdit}}"
+      >
+        <uni-icons
+          bind:__l="__l"
+          class="data-v-74171868"
+          color="#454545"
+          type="compose"
+          vueId="3d8f1240-1"
+        ></uni-icons>
+        <view class="data-v-74171868">编辑</view>
+      </view>
+    </view>
+    <view
+      class="common-List flexible flex-flow data-v-74171868"
+      wx:if="{{$root.g3}}"
+    >
+      <view
+        bindtap="__e"
+        class="common-item mb20 data-v-74171868"
+        data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+        data-event-params="{{index:index,sj:sj}}"
+        wx:for="{{dataList}}"
+        wx:for-item="sj"
+      >
+        <view class="book-cover-con data-v-74171868">
+          <image
+            class="book-cover data-v-74171868"
+            mode="scaleToFill"
+            src="{{sj.iconUrlMedium}}"
+          ></image>
+          <view class="bg-cover data-v-74171868" wx:if="{{isEdit}}"></view>
+          <image
+            class="radio-btn data-v-74171868"
+            src="/static/img/ic_select.png"
+            wx:if="{{isEdit&&!sj.selected}}"
+          ></image>
+          <image
+            class="radio-btn data-v-74171868"
+            src="/static/img/ic_select_act.png"
+            wx:if="{{isEdit&&sj.selected}}"
+          ></image>
+        </view>
+        <view
+          class="common-item-title f26 text-default mt20 text-hidden-1 data-v-74171868"
+          >{{sj.name}}</view
+        >
+      </view>
+    </view>
+    <nodata
+      bind:__l="__l"
+      class="posCen data-v-74171868"
+      imgtype="watch"
+      vueId="3d8f1240-2"
+      vueSlots="{{['datatitle']}}"
+      wx:if="{{$root.g4}}"
+    >
+      <view class="data-v-74171868" slot="datatitle">
+        <view class="data-info f24 text-838383 mt10 data-v-74171868"
+          >书架暂时没有书哦！</view
+        >
+        <view
+          bindtap="__e"
+          class="el-btn-warning data-v-74171868"
+          data-event-opts="{{[ [ 'tap',[ ['gohome'] ] ] ]}}"
+          >去添加</view
+        >
+      </view>
+    </nodata>
+  </scroll-view>
+  <view class="edit-footer flexible data-v-74171868" wx:if="{{isEdit}}">
+    <view
+      bindtap="__e"
+      class="data-v-74171868"
+      data-event-opts="{{[ [ 'tap',[ ['changeEdit'] ] ] ]}}"
+      >取消</view
+    >
+    <view
+      bindtap="__e"
+      class="data-v-74171868"
+      data-event-opts="{{[ [ 'tap',[ ['shelfdelFun'] ] ] ]}}"
+      >{{'删除('+$root.g5+')'}}</view
+    >
+  </view>
+</view>

@@ -1,0 +1,107 @@
+<import src="/pages/template/toast/toast.wxml"></import>
+<import src="/pages/template/footer/footer.wxml"></import>
+<import src="/pages/template/shop-item/shop-item.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+<view class="bg-white" style="padding-bottom: 100rpx" wx:if="{{pageData}}">
+  <view>
+    <view class="flex margin-sm radius {{isUy?'rtl':''}}">
+      <view
+        class="bg-img radius-20"
+        style="background-image: url({{ossImage+pageData.shop.icon_url}}); width: 200rpx; height: 200rpx;"
+      ></view>
+      <view class="padding-sm">
+        <view>
+          <text class="text-bold text-lg uy-tom"
+            >{{isUy?pageData.shop.uy_name:pageData.shop.ch_name}}</text
+          >
+        </view>
+        <view class="text-df">
+          <text wx:for="{{5}}" wx:for-index="_index" wx:for-item="_item">
+            <text
+              class="icon cuIcon-favorfill text-{{_index>pageData.stars-1?'gray':'c4'}}"
+            ></text>
+          </text>
+          <text class="text-c4">{{pageData.stars}}</text>
+        </view>
+        <view class="padding-top-xs">
+          <text class="cu-tag line-green uy radius uy-tom"
+            >{{isUy?pageData.shop.uy_address:pageData.shop.ch_address}}</text
+          >
+        </view>
+      </view>
+    </view>
+    <view
+      class=" padding-tb-sm  solid-top solid-bottom margin-lr {{isUy?'rtl':''}}"
+    >
+      <view class="flex align-center">
+        <view class="text-green text-xl" wx:if="{{pageData.is_opening==1}}"
+          >{{Str.isOpening[lanIndex]}}</view
+        >
+        <view class="text-gray text-xl" wx:else
+          >{{Str.isClosing[lanIndex]}}</view
+        >
+        <view class="text-black text-bold text-xl padding-lr-sm ltr">
+          <text>{{pageData.shop.start_time}} ~ {{pageData.shop.end_time}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="padding-tb-xs margin-lr-xs bg-white padding-top">
+      <View class="margin-top-xs" wx:for="{{pageData.goods}}" wx:key="index">
+        <view
+          bindtap="goodClick"
+          class="bg-white padding-sm flex {{isUy?'rtl':''}}"
+          data-item="{{item}}"
+        >
+          <view
+            class="bg-img radius {{item.good_state==0?'grayscale':''}}"
+            style="height: 160rpx; width: 160rpx;background-image: url({{item.images[0].img_url}});"
+          ></view>
+          <view class="padding-lr-sm">
+            <view class="text-bold text-black uy-tom">
+              {{isUy?item.uy_name:item.ch_name}}
+              <text class="icon-right"></text>
+            </view>
+            <view class="flex justify-between" style="width: 500rpx">
+              <view class="">
+                <view>
+                  <text class="cu-tag uy bg-white sm text-cyan"
+                    >{{Str.canUseDuringBuisness[lanIndex]}}</text
+                  >
+                  <text
+                    class="cu-tag uy sm text-green bg-white solid-{{isUy?'right':'left'}}"
+                    >{{Str.supportPickup[lanIndex]}}</text
+                  >
+                  <text></text>
+                </view>
+                <view>
+                  <price
+                    decimalSmaller
+                    class="text-bold text-red uy-tom text-xl"
+                    price="{{item.activity_price}}"
+                    priceUnit="yuan"
+                  ></price>
+                  <text>&nbsp;</text>
+                  <price
+                    decimalSmaller
+                    class=""
+                    price="{{item.price}}"
+                    priceUnit="yuan"
+                    type="delthrough"
+                  ></price>
+                </view>
+              </view>
+              <navigator
+                url="/pages/home/group/group-goods/group-good-details/group-good-details?goodId={{item.id}}"
+              >
+                <view class="bg-red padding-lr-sm padding-tb-xs radius"
+                  >{{Str.buy[lanIndex]}}</view
+                >
+              </navigator>
+            </view>
+          </view>
+        </view>
+      </View>
+    </view>
+  </view>
+</view>
+<loading hidden="{{!isLoading}}">{{Str.loadingTxt[lanIndex]}}</loading>

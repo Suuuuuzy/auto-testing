@@ -1,0 +1,461 @@
+<view class="container _div data-v-a299ea6a">
+  <canvas
+    canvasId="poster"
+    class="data-v-a299ea6a"
+    id="poster"
+    style="
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+      width: 750px;
+      height: 1390px;
+      z-index: 10;
+      pointer-events: none;
+    "
+  ></canvas>
+  <scroll-view
+    class="content data-v-a299ea6a"
+    enableBackToTop="{{true}}"
+    scrollY="{{true}}"
+    wx:if="{{detail}}"
+  >
+    <view class="watch-detail-top _div data-v-a299ea6a">
+      <view
+        class="_div data-v-a299ea6a"
+        style="{{'height:'+navigationBarHeightPlaceholder+'px'+';'}}"
+      ></view>
+      <view class="watch-pic _div data-v-a299ea6a" wx:if="{{!loaded3d}}">
+        <image
+          class="pic _img data-v-a299ea6a"
+          mode="aspectFit"
+          src="{{detail.articleImages}}"
+        ></image>
+      </view>
+    </view>
+    <view class="watch-info-out _div data-v-a299ea6a">
+      <view class="logo-s-fill _div data-v-a299ea6a">
+        <image
+          class="pic _img data-v-a299ea6a"
+          src="/static/img/logo-s-fill.svg"
+        ></image>
+      </view>
+      <view class="watch-info-title _div data-v-a299ea6a">
+        <label class="_span data-v-a299ea6a">{{detail.articleRef}}</label>
+      </view>
+      <view class="watch-info-title-more _div data-v-a299ea6a"
+        >{{detail.collection}}</view
+      >
+      <view class="watch-info-sub _div data-v-a299ea6a"
+        >{{detail.caliberType}}</view
+      >
+      <view
+        class="watch-info-price _div data-v-a299ea6a"
+        wx:if="{{detail.price&&detail.price!=='null'}}"
+      >
+        <label class="_span data-v-a299ea6a">价格 :</label
+        >{{detail.price+''}}</view
+      >
+      <view class="watch-info-price _div data-v-a299ea6a" wx:else>
+        <label class="_span data-v-a299ea6a">价格 : 敬请垂询</label>
+      </view>
+      <view class="watch-info-more _div data-v-a299ea6a"
+        >建议零售价 (含税)<view class="_br data-v-a299ea6a"></view
+        >价格可能随时更改，因此并不构成合约报价</view
+      >
+    </view>
+    <view class="watch-content-out _div data-v-a299ea6a">
+      <view class="watch-content-title _div data-v-a299ea6a">介绍</view>
+      <view class="watch-content-pic _div data-v-a299ea6a">
+        <image
+          class="pic _img data-v-a299ea6a"
+          mode="widthFix"
+          src="{{detail.bannerPicture}}"
+        ></image>
+      </view>
+      <view class="watch-content-detail _div data-v-a299ea6a">
+        <view
+          class="_div data-v-a299ea6a"
+          wx:for="{{detail.productDescription}}"
+          wx:key="index"
+          >{{''+item+''}}</view
+        >
+        <view class="_div data-v-a299ea6a" id="watch-content-detail">
+          <view class="watch-content-detail-title _div data-v-a299ea6a" id="w1"
+            >腕表</view
+          >
+          <view class="_div data-v-a299ea6a" id="w1-content">
+            <label
+              class="_span data-v-a299ea6a"
+              wx:for="{{detail.watchDescription}}"
+              wx:key="index"
+              >{{item}}</label
+            >
+          </view>
+          <view class="watch-content-detail-title _div data-v-a299ea6a"
+            >表盘</view
+          >
+          <view class="_div data-v-a299ea6a" id="w2-content"
+            >{{detail.dialDescription}}</view
+          >
+          <view class="watch-content-detail-title _div data-v-a299ea6a"
+            >表壳</view
+          >
+          <view class="_div data-v-a299ea6a" id="w3-content">
+            <label
+              class="_span data-v-a299ea6a"
+              wx:for="{{detail.caseDescription}}"
+              wx:key="index"
+              >{{item}}</label
+            >
+          </view>
+          <view class="watch-content-detail-title _div data-v-a299ea6a"
+            >表带</view
+          >
+          <view class="_div data-v-a299ea6a" id="w4-content"
+            >{{detail.strapTechnical}}</view
+          >
+        </view>
+      </view>
+    </view>
+    <view class="watch-pic-swiper-out _div data-v-a299ea6a">
+      <swiper
+        bindchange="__e"
+        circular="{{true}}"
+        class="panel data-v-a299ea6a"
+        data-event-opts="{{[ [ 'change',[ [ 'changeSwiper',['$event'] ] ] ] ]}}"
+        nextMargin="320rpx"
+      >
+        <swiper-item
+          class="watch-pic-swiper-item data-v-a299ea6a"
+          wx:for="{{detail.imagesArtistic}}"
+          wx:key="index"
+        >
+          <view
+            bindtap="__e"
+            class="watch-pic-swiper-item-inner _div data-v-a299ea6a"
+            data-event-opts="{{[ [ 'tap',[ [ 'preview',['$0'],[ [ ['detail.imagesArtistic','',index] ] ] ] ] ] ]}}"
+          >
+            <image
+              class="pic _img data-v-a299ea6a"
+              lazyLoad="{{true}}"
+              mode="aspectFill"
+              src="{{item}}"
+            ></image>
+          </view>
+        </swiper-item>
+      </swiper>
+      <view class="watch-pic-swiper-dot _div data-v-a299ea6a">
+        <view
+          class="{{['_div','data-v-a299ea6a',index===nowPic?'active':'']}}"
+          wx:for="{{detail.imagesArtistic}}"
+          wx:key="index"
+        ></view>
+      </view>
+    </view>
+    <view class="watch-inner-out _div data-v-a299ea6a">
+      <view class="watch-content-title _div data-v-a299ea6a">机芯</view>
+      <view class="watch-inner-code _div data-v-a299ea6a"
+        >{{detail.caliberRefFull}}</view
+      >
+      <view class="watch-inner-code-sub _div data-v-a299ea6a"
+        >{{detail.caliberType}}</view
+      >
+      <view
+        bindtouchstart="__e"
+        class="{{['watch-inner-pic-out','_div','data-v-a299ea6a',cType===2?'active':'']}}"
+        data-event-opts="{{[ [ 'touchstart',[ [ 'e0',['$event'] ] ] ] ]}}"
+      >
+        <view class="watch-inner-pic-1 _div data-v-a299ea6a">
+          <image
+            class="pic _img data-v-a299ea6a"
+            mode="aspectFit"
+            src="{{detail.caliberImageFront}}"
+          ></image>
+        </view>
+        <view class="watch-inner-pic-2 _div data-v-a299ea6a">
+          <image
+            class="pic _img data-v-a299ea6a"
+            mode="aspectFit"
+            src="{{detail.caliberImageBack}}"
+          ></image>
+        </view>
+      </view>
+      <view class="watch-inner-tab _div data-v-a299ea6a">
+        <view
+          bindtap="__e"
+          class="{{['watch-inner-tab-item','_div','data-v-a299ea6a',cType===1?'active':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'chooseType',[1] ] ] ] ]}}"
+        >
+          <view class="_div data-v-a299ea6a">正面</view>
+          <view class="watch-inner-tab-line _div data-v-a299ea6a"></view>
+        </view>
+        <view
+          bindtap="__e"
+          class="{{['watch-inner-tab-item','_div','data-v-a299ea6a',cType===2?'active':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'chooseType',[2] ] ] ] ]}}"
+        >
+          <view class="_div data-v-a299ea6a">背面</view>
+          <view class="watch-inner-tab-line _div data-v-a299ea6a"></view>
+        </view>
+      </view>
+      <view class="watch-inner-more-out _div data-v-a299ea6a">
+        <rich-text
+          class="data-v-a299ea6a"
+          nodes="{{detail.caliberDescriptionHTML}}"
+        ></rich-text>
+      </view>
+      <view
+        bindtap="__e"
+        class="watch-inner-more-btn _div data-v-a299ea6a"
+        data-event-opts="{{[ [ 'tap',[ [ 'toSeal',['$event'] ] ] ] ]}}"
+        wx:if="{{detail.PPSeal}}"
+      >
+        <view class="icon-pp _div data-v-a299ea6a">
+          <image
+            class="pic _img data-v-a299ea6a"
+            src="/static/img/icon-pp.svg"
+          ></image>
+        </view>
+        <view class="_div data-v-a299ea6a">百达翡丽印记</view>
+      </view>
+    </view>
+    <view
+      class="{{['watch-book','_div','data-v-a299ea6a',bg]}}"
+      wx:if="{{detail.savoirFaire&&bg}}"
+    >
+      <view class="panel _div data-v-a299ea6a" wx:if="{{bg}}">
+        <image
+          class="pic _img data-v-a299ea6a"
+          mode="aspectFill"
+          src="{{'http://cdn.impdigital.cn/patek/savoir/'+bg+'.png'}}"
+        ></image>
+      </view>
+      <view class="watch-book-shadow _div data-v-a299ea6a"></view>
+      <view class="panel _div data-v-a299ea6a">
+        <view class="watch-book-title _div data-v-a299ea6a">专业技术</view>
+        <view class="watch-book-title-big _div data-v-a299ea6a"
+          >{{detail.savoirFaire.title}}</view
+        >
+        <view class="watch-book-title-sub _div data-v-a299ea6a">
+          <rich-text
+            class="data-v-a299ea6a"
+            nodes="{{detail.savoirFaire.subtitle}}"
+          ></rich-text>
+        </view>
+        <view class="watch-book-detail _div data-v-a299ea6a">
+          <rich-text
+            class="data-v-a299ea6a"
+            nodes="{{detail.savoirFaire.content}}"
+          ></rich-text>
+        </view>
+        <view
+          bindtap="__e"
+          class="watch-book-btn _div data-v-a299ea6a"
+          data-event-opts="{{[ [ 'tap',[ [ 'toSavior',['$event'] ] ] ] ]}}"
+        >
+          <view class="watch-book-btn-inner _div data-v-a299ea6a"
+            >{{btnMore}}</view
+          >
+        </view>
+      </view>
+    </view>
+    <view class="watch-other-out _div data-v-a299ea6a">
+      <view class="watch-other-inner _div data-v-a299ea6a" wx:if="{{others}}">
+        <view class="watch-other-title _div data-v-a299ea6a">其他型号</view>
+        <view class="watch-other-swiper-out _div data-v-a299ea6a">
+          <swiper
+            bindchange="__e"
+            class="watch-other-swiper data-v-a299ea6a"
+            data-event-opts="{{[ [ 'change',[ [ 'changeProductSwiper',['$event'] ] ] ] ]}}"
+            nextMargin="235rpx"
+            previousMargin="235rpx"
+          >
+            <swiper-item
+              class="watch-other-item data-v-a299ea6a"
+              wx:for="{{others}}"
+              wx:key="index"
+            >
+              <view
+                bindtap="__e"
+                class="{{['watch-other-item-inner','_div','data-v-a299ea6a',nowProduct===index?'active':'']}}"
+                data-event-opts="{{[ [ 'tap',[ [ 'learnMore',['$0'],[ [ ['others','',index] ] ] ] ] ] ]}}"
+              >
+                <view class="watch-other-item-pic _div data-v-a299ea6a">
+                  <image
+                    class="pic _img data-v-a299ea6a"
+                    mode="aspectFit"
+                    src="{{item.articleImages}}"
+                  ></image>
+                </view>
+                <view class="watch-other-item-title _div data-v-a299ea6a"
+                  >{{''+item.articleRef+''}}</view
+                >
+                <view class="watch-other-item-sub _div data-v-a299ea6a"
+                  >{{item.collection}}</view
+                >
+                <view class="watch-other-item-more _div data-v-a299ea6a"
+                  >了解更多</view
+                >
+              </view>
+            </swiper-item>
+          </swiper>
+        </view>
+      </view>
+      <view
+        class="_div data-v-a299ea6a"
+        style="{{'height:'+navigationBarHeightPlaceholder+'px'+';'}}"
+      ></view>
+    </view>
+  </scroll-view>
+  <view class="watch-tab-bottom-out _div data-v-a299ea6a">
+    <view class="watch-tab-bottom-out-inner _div data-v-a299ea6a">
+      <view
+        bindtap="__e"
+        class="watch-tab-bottom-item _div data-v-a299ea6a"
+        data-event-opts="{{[ [ 'tap',[ [ 'toBoutique',['$event'] ] ] ] ]}}"
+      >
+        <view class="watch-tab-icon _div data-v-a299ea6a">
+          <image
+            class="pic _img data-v-a299ea6a"
+            src="/static/img/icon-map.svg"
+          ></image>
+        </view>
+        <view class="watch-tab-text _div data-v-a299ea6a">销售中心</view>
+      </view>
+      <view
+        bindtap="__e"
+        class="watch-tab-bottom-item _div data-v-a299ea6a"
+        data-event-opts="{{[ [ 'tap',[ [ 'downPDF',['$event'] ] ] ] ]}}"
+      >
+        <view class="watch-tab-icon _div data-v-a299ea6a">
+          <image
+            class="pic _img data-v-a299ea6a"
+            src="/static/img/icon-pdf.svg"
+          ></image>
+        </view>
+        <view class="watch-tab-text _div data-v-a299ea6a">使用说明</view>
+      </view>
+      <view
+        bindtap="__e"
+        class="watch-tab-bottom-item _div data-v-a299ea6a"
+        data-event-opts="{{[ [ 'tap',[ [ 'likeThis',['$event'] ] ] ] ]}}"
+      >
+        <view class="watch-tab-icon _div data-v-a299ea6a" wx:if="{{!liked}}">
+          <image
+            class="pic _img data-v-a299ea6a"
+            src="/static/img/icon-like.svg"
+          ></image>
+        </view>
+        <view class="watch-tab-icon _div data-v-a299ea6a" wx:else>
+          <image
+            class="pic _img data-v-a299ea6a"
+            src="/static/img/icon-like-fill.svg"
+          ></image>
+        </view>
+        <view class="watch-tab-text _div data-v-a299ea6a"
+          >{{''+(liked?'移出愿望清单':'加入愿望清单')+''}}</view
+        >
+      </view>
+      <view
+        bindtap="__e"
+        class="watch-tab-bottom-item _div data-v-a299ea6a"
+        data-event-opts="{{[ [ 'tap',[ [ 'showShareNow',['$event'] ] ] ] ]}}"
+      >
+        <view class="watch-tab-icon _div data-v-a299ea6a">
+          <image
+            class="pic _img data-v-a299ea6a"
+            src="/static/img/icon-share.svg"
+          ></image>
+        </view>
+        <view class="watch-tab-text _div data-v-a299ea6a">分享</view>
+      </view>
+    </view>
+    <view
+      class="_div data-v-a299ea6a"
+      style="{{'height:'+navigationBarHeightPlaceholder+'px'+';'}}"
+    ></view>
+  </view>
+  <pp-nav
+    back="{{true}}"
+    bind:__l="__l"
+    class="data-v-a299ea6a"
+    fixed="{{true}}"
+    noCircle="{{true}}"
+    placeholder="{{navigationBarHeightPlaceholder}}"
+    transparent="{{true}}"
+    vueId="3319f5c0-1"
+  ></pp-nav>
+  <privacy-popup
+    bind:__l="__l"
+    class="data-v-a299ea6a"
+    vueId="3319f5c0-2"
+  ></privacy-popup>
+  <view
+    class="{{['share-panel-out','_div','data-v-a299ea6a',showShare?'active':'']}}"
+  >
+    <view
+      bindtap="__e"
+      class="content _div data-v-a299ea6a"
+      data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}"
+    ></view>
+    <view class="share-top _div data-v-a299ea6a">
+      <view
+        class="_div data-v-a299ea6a"
+        style="{{'height:'+navigationBarHeightPlaceholder+'px'+';'}}"
+      ></view>
+      <view class="share-top-inner _div data-v-a299ea6a">
+        <view class="share-top-text _div data-v-a299ea6a">现在分享</view>
+        <view
+          bindtap="__e"
+          class="icon-close _div data-v-a299ea6a"
+          data-event-opts="{{[ [ 'tap',[ [ 'e2',['$event'] ] ] ] ]}}"
+          style="{{'margin-top:'+navigationBarHeightPlaceholder+'px'+';'}}"
+        >
+          <image
+            class="pic _img data-v-a299ea6a"
+            src="/static/img/icon-close.svg"
+          ></image>
+        </view>
+      </view>
+    </view>
+    <view
+      bindtap="__e"
+      class="share-main-pic _div data-v-a299ea6a"
+      data-event-opts="{{[ [ 'tap',[ [ 'saveImageToPhoto',['$event'] ] ] ] ]}}"
+      style="{{'margin-top:'+navigationBarHeightPlaceholder+'px'+';'}}"
+      wx:if="{{shareImg}}"
+    >
+      <image
+        class="_img data-v-a299ea6a"
+        mode="widthFix"
+        src="{{shareImg}}"
+        style="display: block; width: 100%; height: auto"
+      ></image>
+    </view>
+    <view class="share-btn-bottom _div data-v-a299ea6a">
+      <view class="share-btn _div data-v-a299ea6a">
+        <view class="share-btn-icon _div data-v-a299ea6a">
+          <image
+            class="pic _img data-v-a299ea6a"
+            src="/static/img/share-wechat.svg"
+          ></image>
+        </view>
+        <view class="share-btn-text _div data-v-a299ea6a">发送给好友</view>
+        <button class="a-top data-v-a299ea6a" openType="share"></button>
+      </view>
+      <view
+        bindtap="__e"
+        class="share-btn _div data-v-a299ea6a"
+        data-event-opts="{{[ [ 'tap',[ [ 'saveImageToPhoto',['$event'] ] ] ] ]}}"
+      >
+        <view class="share-btn-icon _div data-v-a299ea6a">
+          <image
+            class="pic _img data-v-a299ea6a"
+            src="/static/img/share-pic.svg"
+          ></image>
+        </view>
+        <view class="share-btn-text _div data-v-a299ea6a">保存图片</view>
+      </view>
+    </view>
+  </view>
+</view>

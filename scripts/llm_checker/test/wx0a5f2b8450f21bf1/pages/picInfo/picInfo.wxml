@@ -1,0 +1,103 @@
+<view>
+  <cu-custom
+    bgColor="bg-gradual-blue"
+    bind:__l="__l"
+    isBack="{{true}}"
+    vueId="0dd4384e-1"
+    vueSlots="{{['content']}}"
+  >
+    <view slot="backText">返回</view>
+    <view slot="content">图片去水印</view>
+  </cu-custom>
+  <view class="padding-sm">
+    <view class="flex">
+      <view class="flex-sub">
+        <button
+          bindtap="__e"
+          class="file-btn"
+          data-event-opts="{{[ [ 'tap',[ [ 'downLoad',[-1] ] ] ] ]}}"
+          style="width: 98%"
+        >
+          保存到手机相册
+        </button>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub">
+        <button
+          bindtap="__e"
+          class="file-btn"
+          data-event-opts="{{[ [ 'tap',[ [ 'copyTitle',['$event'] ] ] ] ]}}"
+          style="width: 98%"
+        >
+          复制文案
+        </button>
+      </view>
+    </view>
+  </view>
+  <view class="tui-product-box">
+    <view class="tui-product-list">
+      <view class="tui-product-container">
+        <view
+          class="tui-pro-item"
+          hoverClass="hover"
+          hoverStartTime="{{150}}"
+          wx:if="{{(index+1)%2!=0}}"
+          wx:for="{{productList}}"
+          wx:key="index"
+        >
+          <image
+            class="tui-pro-img"
+            mode="widthFix"
+            src="{{productList[index]}}"
+          ></image>
+          <view
+            bindtap="__e"
+            class="tui-pro-content"
+            data-event-opts="{{[ [ 'tap',[ [ 'downLoad',[index] ] ] ] ]}}"
+          >
+            <view class="tui-pro-tit">下载图片</view>
+          </view>
+          <view
+            bindtap="__e"
+            class="tui-pro-content"
+            data-event-opts="{{[ [ 'tap',[ [ 'copyPic',[index] ] ] ] ]}}"
+          >
+            <view class="tui-pro-tit">复制图片链接</view>
+          </view>
+        </view>
+      </view>
+      <view class="tui-product-container">
+        <view
+          class="tui-pro-item"
+          hoverClass="hover"
+          hoverStartTime="{{150}}"
+          wx:if="{{(index+1)%2==0}}"
+          wx:for="{{productList}}"
+          wx:key="index"
+        >
+          <image
+            class="tui-pro-img"
+            mode="widthFix"
+            src="{{productList[index]}}"
+          ></image>
+          <view
+            bindtap="__e"
+            class="tui-pro-content"
+            data-event-opts="{{[ [ 'tap',[ [ 'downLoad',[index] ] ] ] ]}}"
+          >
+            <view class="tui-pro-tit">下载图片</view>
+          </view>
+          <view
+            bindtap="__e"
+            class="tui-pro-content"
+            data-event-opts="{{[ [ 'tap',[ [ 'copyPic',[index] ] ] ] ]}}"
+          >
+            <view class="tui-pro-tit">复制图片链接</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="tui-safearea-bottom"></view>
+</view>

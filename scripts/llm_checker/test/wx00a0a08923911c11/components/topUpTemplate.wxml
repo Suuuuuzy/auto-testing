@@ -1,0 +1,117 @@
+<view class="topUpTemplate data-v-4e5707d9">
+  <view class="topup-List flexible flex-flow mt30 data-v-4e5707d9">
+    <view
+      bindtap="__e"
+      class="{{['topup-item','','data-v-4e5707d9',i.paySceneType.value==2?'topup-item-xufei':'',productId==i.productId?'topup-item-act':'']}}"
+      data-event-opts="{{[ [ 'tap',[ [ 'changeprice',['$0'],[ [ ['consumegradeList','',__i0__] ] ] ] ] ] ]}}"
+      wx:for="{{consumegradeList}}"
+      wx:for-index="__i0__"
+      wx:for-item="i"
+    >
+      <view class="tips data-v-4e5707d9" wx:if="{{i.tips}}">{{i.tips}}</view>
+      <block wx:else>
+        <image
+          class="img_vip data-v-4e5707d9"
+          src="/static/img/img_vip@2x.png"
+          wx:if="{{i.isVip}}"
+        ></image>
+      </block>
+      <view
+        class="topup_money data-v-4e5707d9"
+        wx:if="{{i.paySceneType.value==2}}"
+        >{{i.paySceneDetail+i.moneyStr+(gradeType==1?'元':'钻石')}}</view
+      >
+      <view class="topup_money data-v-4e5707d9" wx:else
+        >{{i.moneyStr+(gradeType==1?'元':'钻石')}}</view
+      >
+      <view class="topup_fuli data-v-4e5707d9" wx:if="{{i.type==2}}"
+        >{{i.property}}</view
+      >
+      <view class="topup_slogan data-v-4e5707d9" wx:else>{{i.text}}</view>
+      <view class="topup_type data-v-4e5707d9"
+        >{{i.type==2?i.text:i.property}}</view
+      >
+    </view>
+  </view>
+  <uni-popup
+    animation="{{false}}"
+    bind:__l="__l"
+    class="h5-pay-con data-v-4e5707d9 vue-ref"
+    data-ref="h5PayCon"
+    ismaskShow="{{true}}"
+    maskClick="{{false}}"
+    vueId="26edc3a7-1"
+    vueSlots="{{['default']}}"
+  >
+    <view class="h5PayCon data-v-4e5707d9">
+      <uni-icons
+        bind:__l="__l"
+        bind:click="__e"
+        class="h5PayCon-close data-v-4e5707d9"
+        color="#999"
+        data-event-opts="{{[ [ '^click',[ ['closeFun'] ] ] ]}}"
+        size="30"
+        type="closeempty"
+        vueId="{{'26edc3a7-2'+','+'26edc3a7-1'}}"
+      ></uni-icons>
+      <view class="h5-pay-money flexible aItem-start jc-center data-v-4e5707d9"
+        >{{paySceneType.moneyStr+(gradeType==1?'元':'钻石')}}</view
+      >
+      <view class="h5-pay-tips f24 text-muted mt15 f-tac data-v-4e5707d9"
+        >{{paySceneType.paySceneDetail}}</view
+      >
+      <view class="centenList data-v-4e5707d9">
+        <payment-list
+          bind:__l="__l"
+          bindchange="handlePaymentSelect"
+          binderror="handleError"
+          class="data-v-4e5707d9"
+          payScene="RENEW"
+          vueId="{{'26edc3a7-3'+','+'26edc3a7-1'}}"
+        ></payment-list>
+      </view>
+      <view
+        bindtap="__e"
+        class="pay-btn data-v-4e5707d9"
+        data-event-opts="{{[ [ 'tap',[ ['topupFun'] ] ] ]}}"
+        >签约并支付</view
+      >
+      <view
+        bindtap="__e"
+        class="xufei-con data-v-4e5707d9"
+        data-event-opts="{{[ [ 'tap',[ [ 'goNext',['/pages/wode/renewalAgreement'] ] ] ] ]}}"
+        >购买前请仔细阅读<text class="data-v-4e5707d9"
+          >《自动续费服务协议》</text
+        >
+      </view>
+    </view>
+  </uni-popup>
+  <uni-popup
+    bind:__l="__l"
+    class="sync-pop data-v-4e5707d9 vue-ref"
+    data-ref="detainmentPopup"
+    vueId="26edc3a7-4"
+    vueSlots="{{['default']}}"
+  >
+    <view class="sync-pop-con data-v-4e5707d9">
+      <view class="f28 sync-pop-title data-v-4e5707d9"
+        >老铁，此订单已享受最大优惠，放弃后无法享受哦！确认继续操作吗?</view
+      >
+      <view class="flexible sync-pop-opr data-v-4e5707d9">
+        <view
+          bindtap="__e"
+          class="flex f30 text-muted f-tac data-v-4e5707d9"
+          data-event-opts="{{[ [ 'tap',[ [ 'hidePop',['$event'] ] ] ] ]}}"
+          >残忍放弃</view
+        >
+        <view
+          bindtap="__e"
+          class="flex f30 f-tac data-v-4e5707d9"
+          data-event-opts="{{[ [ 'tap',[ [ 'syncFun',['$event'] ] ] ] ]}}"
+          style="color: #5873fc; border-right: none"
+          >我再想想</view
+        >
+      </view>
+    </view>
+  </uni-popup>
+</view>

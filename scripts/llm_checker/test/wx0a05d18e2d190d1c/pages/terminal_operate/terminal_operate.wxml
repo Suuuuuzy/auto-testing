@@ -1,0 +1,22 @@
+<view>
+    <view>
+        <image class="guide_img_style" mode="aspectFit" src="../../static/images/gps_guide_pic.png"></image>
+        <text class="hint_style">{{hint_text}}</text>
+        <view class="input_item_sytle">
+            <input bindinput="__e" class="input_style" data-event-opts="{{[ [ 'input',[ [ 'input_terminal',['$event'] ] ] ] ]}}" disabled="{{!input_enable}}" placeholder="请输入终端号" type="number" value="{{terminal==undefined?'':terminal.terminalNo}}"></input>
+            <image bindtap="__e" class="icon_style" data-event-opts="{{[ [ 'tap',[ [ 'click_scan_code',['$event'] ] ] ] ]}}" mode="aspectFit" src="../../static/images/icon_scan.png" wx:if="{{terminal==undefined}}"></image>
+        </view>
+        <button bindtap="__e" class="btn_style" data-event-opts="{{[ [ 'tap',[ [ 'confirm',['$event'] ] ] ] ]}}" type="warn">{{input_enable?'激活':'解绑'}}</button>
+        <view class="{{[show_dialog?'dialog_page':'view_hidde']}}" style="z-index:1000;">
+            <view class="dialog_overlay"></view>
+            <view class="dialog_view">
+                <text class="hint_style">请验证密码</text>
+                <input bindinput="__e" class="input_item_sytle" data-event-opts="{{[ [ 'input',[ [ 'dialog_input',['$event'] ] ] ] ]}}" password="true" placeholder="请输入密码进行验证" style="border:1rpx solid #E5E5E5;" type="text" value=""></input>
+                <view class="dialog_btn_layout_style">
+                    <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'dialog_cancel',['$event'] ] ] ] ]}}" style="flex-grow:1;margin:10rpx;" type="default">取消</button>
+                    <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'dialog_confirm',['$event'] ] ] ] ]}}" style="flex-grow:1;margin:10rpx;" type="warn">确定</button>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
