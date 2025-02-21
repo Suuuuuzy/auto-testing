@@ -1,1 +1,0 @@
-function addNetworkMockRule(a,b){var c=new global.__minium__.MockRule("%(interface)s_network_mock_rule");return b?c.unshift(a):c.push(a),!!global.__minium__["%(interface)s_network_mocked"]}

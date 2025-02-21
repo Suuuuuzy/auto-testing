@@ -1,1 +1,0 @@
-function ideHandleMap(_){return _?global.__minium__.handle_mock_map_modal&&global.__minium__.handle_mock_map_modal(_):global.__minium__.handle_mock_map_modal&&global.__minium__.handle_mock_map_modal("确定")}

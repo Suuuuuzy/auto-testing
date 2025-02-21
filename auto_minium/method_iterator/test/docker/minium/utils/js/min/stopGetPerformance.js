@@ -1,1 +1,0 @@
-function stopGetPerformance(){return global.__minium__.allperfdata=global.__minium__.performanceList,global.__minium__.observer.disconnect(),global.__minium__.performanceList=[],global.__minium__.allperfdata}
