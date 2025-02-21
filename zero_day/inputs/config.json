@@ -1,0 +1,51 @@
+{
+  "sources": {
+    "storage":[
+      "wx.getStorage", 
+      "wx.getStorageSync"
+    ],
+    "profile":[
+      "wx.getUserInfo",
+      "wx.getUserProfile"
+    ],
+    "location":[
+      "wx.getLocation",
+      "wx.onLocationChange",
+      "wx.startLocationUpdate",
+      "wx.startLocationUpdateBackground"
+    ],
+    "device":[
+      "wx.getNetworkType",
+      "wx.createCameraContext",
+      "wx.getBLEDeviceCharacteristics",
+      "wx.getConnectedWifi"
+    ],
+    "media":[
+      "wx.chooseVideo",
+      "wx.chooseMedia",
+      "wx.getFileInfo",
+      "wx.startRecord"
+    ],
+    "address":[
+      "wx.chooseAddress"
+    ],
+    "open-API":[
+      "wx.getWeRunData",
+      "wx.chooseInvoiceTitle",
+      "wx.chooseInvoice",
+      "wx.chooseContact"
+    ]
+  },       
+  "sinks": {
+    "navigate":[
+      "wx.navigateToMiniProgram",
+      "wx.openEmbeddedMiniProgram",
+      "wx.navigateBackMiniProgram",
+      "wx.postMessageToReferrerMiniProgram"
+    ],
+    "websocket":["wx.sendSocketMessage"],
+    "UDP":["wx.createUDPSocket"],
+    "request":["wx.request"],
+    "upload": ["wx.uploadFile"]
+  }
+}

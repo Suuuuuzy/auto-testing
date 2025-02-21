@@ -8,6 +8,13 @@ class Minium_Query(BaseDef):
     
     def setUp(self):
         appid = self.mini.project_path.split('/')[-1]
+<<<<<<< HEAD
+=======
+        # __setLog__('/home/suzy/temp/new_taint_log_file/'+appid)
+        # result = self.app.evaluate(
+        #     "function(){args=arguments;__setLog__('/home/suzy/temp/new_taint_log_file/'+args[0])}",[appid], sync=True
+        # )
+>>>>>>> 5ecb2dcc5d7c7c4e329524c97f843b5b904f8a1d
     
     def periodic_progress_log(self):
         """Log progress every 5 seconds in a separate thread."""
@@ -42,6 +49,10 @@ class Minium_Query(BaseDef):
         progress_thread = threading.Thread(target=self.periodic_progress_log, daemon=True)
         progress_thread.start()
 
+<<<<<<< HEAD
+=======
+    # @timeout_decorator.timeout(300) # set timeout to be 300s (5min)
+>>>>>>> 5ecb2dcc5d7c7c4e329524c97f843b5b904f8a1d
     def test_methods(self):
         self.eles_in_pages = {} # a global variable to record eles in pages
         text_input = "javascriptMinium"
@@ -73,8 +84,14 @@ class Minium_Query(BaseDef):
         
         self._setupProcessOutput()
         
+<<<<<<< HEAD
         # 1. inputs
         def dealWithInput(inputs, page):
+=======
+        def dealWithInput(inputs, page):
+            # 1. inputs
+            # inputs = self.find_all_inputs()
+>>>>>>> 5ecb2dcc5d7c7c4e329524c97f843b5b904f8a1d
             self.logger.info(f"[+] There are {len(inputs)} inputs left on page {page}")
             while len(inputs)>0:
                 cur_input = inputs[0]
@@ -90,8 +107,15 @@ class Minium_Query(BaseDef):
                     dealWithPage(cur_path)
         
         
+<<<<<<< HEAD
         # 2. forms         
         def dealWithForm(forms, page):
+=======
+                      
+        def dealWithForm(forms, page):
+            # 2. forms
+            # forms = self.find_all_forms()
+>>>>>>> 5ecb2dcc5d7c7c4e329524c97f843b5b904f8a1d
             self.logger.info(f"[+] There are {len(forms)} forms left on page {page}")
             while len(forms)>0:
                 form_block = forms[0]
@@ -110,7 +134,10 @@ class Minium_Query(BaseDef):
                 if page!=cur_path:
                     dealWithPage(cur_path)
         
+<<<<<<< HEAD
         # 3. other methods
+=======
+>>>>>>> 5ecb2dcc5d7c7c4e329524c97f843b5b904f8a1d
         def dealWithOtherMethods(triggers, page):
             page_in_json = page[1:] if page.startswith('/') else page
             self.logger.info(f'[+] See triggers {triggers} in page: {page}')
@@ -186,7 +213,11 @@ class Minium_Query(BaseDef):
             dealWithOtherMethods(triggers, page)
             
         # test starts here
+<<<<<<< HEAD
         time.sleep(10) # give it some time for onLaunch 
+=======
+        time.sleep(10) # give it some time for onLaunch?  
+>>>>>>> 5ecb2dcc5d7c7c4e329524c97f843b5b904f8a1d
         MAX_VISIT_TIME = 3
         while len(self.pages)>0:
             page = self.pages[0]
