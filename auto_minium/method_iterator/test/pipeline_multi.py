@@ -333,11 +333,7 @@ def main():
 
 def single_worker_test():
   miniapp_ids = read_miniapp_ids(INPUT_FILE)
-<<<<<<< HEAD
   miniapp_ids = ["wxb937e3d0b3ca117e"]
-=======
-  miniapp_ids = ["wxc395913ec26476b3"]
->>>>>>> 5ecb2dcc5d7c7c4e329524c97f843b5b904f8a1d
   logger.info(f"Read {len(miniapp_ids)} miniapp IDs from {INPUT_FILE}")
   
   worker = Worker("Zhengyu-0", 0)
@@ -345,10 +341,4 @@ def single_worker_test():
     worker.run(miniapp_id)
   
 if __name__ == "__main__":
-<<<<<<< HEAD
-  # main()
-  single_worker_test()
-=======
   main()
-  # single_worker_test()
->>>>>>> 5ecb2dcc5d7c7c4e329524c97f843b5b904f8a1d
