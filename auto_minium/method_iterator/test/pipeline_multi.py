@@ -31,7 +31,7 @@ from logger import setup_logger
 logger = setup_logger(__name__, "logs/pipeline_multi.log", level=logging.DEBUG)
 
 # Constants
-INPUT_FILE = "/media/dataj/wechat-devtools-linux/testing/auto-testing/tasks/voyage/navi_miniapps.json"
+INPUT_FILE = "/media/dataj/wechat-devtools-linux/testing/auto-testing/tasks/taintmini_detected/output/tainmini_10k.txt"
 # INPUT_FILE = "/media/dataj/wechat-devtools-linux/testing/auto-testing/data/scripts/meta_data_checker/meta_json_output.json"
 CONFIG_WORK_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/work"
 CONFIG_READY_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test"
@@ -39,7 +39,7 @@ PACKAGE_JSON_READY_PATH = "/media/dataj/wechat-devtools-linux/wechat-web-devtool
 PREPROCESS_SCRIPT_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/data_utils/single_preprocess.py"
 PREPROCESS_SCRIPT_GENERATE_BIND_PATH = "/media/dataj/wechat-devtools-linux/prework/MiniScope/src/static/generate_binds_for_jianjia.py"
 # OUTPUT_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/miniTracker_gt/outputs"
-OUTPUT_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/navi/output"
+OUTPUT_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/auto_minium/method_iterator/test/tasks/tainmini_10k/output"
 MINIAPP_PATH = "/media/dataj/wechat-devtools-linux/testing/auto-testing/data/newcrawl/pkg_unpack/"
 DEV_TOOL_PATH = "/media/dataj/wechat-devtools-linux/wechat-web-devtools-linux-nodebug/bin/wechat-devtools-cli"
 
