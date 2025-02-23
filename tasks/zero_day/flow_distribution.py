@@ -73,6 +73,16 @@ for range_label in sorted_ranges:
     count = range_counts[range_label]
     percentage = count / len(distribution) * 100
     print(f"{range_label}: {count} miniappids, {percentage:.2f}%")
+    
+less10 = sum([range_counts[i] for i in sorted_ranges[:4]])   
+print("<10:", less10, "miniappids,")
+percentage = less10 / len(distribution) * 100
+print(percentage)
+more10 = sum([range_counts[i] for i in sorted_ranges[4:]])
+print(">10:", more10, "miniappids,")
+percentage = more10 / len(distribution) * 100
+print(percentage)
+
 """
 459
 Categorized distribution of miniappids:

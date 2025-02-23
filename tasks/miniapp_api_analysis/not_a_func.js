@@ -1,0 +1,12 @@
+wx.requestPluginPayment()
+wx.chooseLicensePlate()
+wx.createTCPSocket()
+wx.createCacheManager()
+wx.editImage()
+wx.getDeviceIn
+requestSubscribeDeviceMessage
+getDeviceVoIPList
+reserveChannelsLive
+getDeviceInfo
+offBLEMTUChange
+wx.openSystemBluetoothSetting()

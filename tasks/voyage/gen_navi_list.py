@@ -23,7 +23,7 @@ def main():
     print(miniapps)
     dir = "/media/dataj/wechat-devtools-linux/testing/auto-testing/data/newcrawl/pkg_unpack/"
     miniapps = [dir+miniapp for miniapp in miniapps]
-    with open("navi_miniapps.json", "w") as f:
+    with open("output/navi_miniapps.json", "w") as f:
         for i in miniapps:
             f.write(i+'\n')
 

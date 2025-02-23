@@ -1,51 +1,51 @@
 {
   "sources": {
     "storage":[
-      "wx.getStorage", 
-      "wx.getStorageSync"
+      "getStorage", 
+      "getStorageSync"
     ],
     "profile":[
-      "wx.getUserInfo",
-      "wx.getUserProfile"
+      "getUserInfo",
+      "getUserProfile"
     ],
     "location":[
-      "wx.getLocation",
-      "wx.onLocationChange",
-      "wx.startLocationUpdate",
-      "wx.startLocationUpdateBackground"
+      "getLocation",
+      "onLocationChange",
+      "startLocationUpdate",
+      "startLocationUpdateBackground"
     ],
     "device":[
-      "wx.getNetworkType",
-      "wx.createCameraContext",
-      "wx.getBLEDeviceCharacteristics",
-      "wx.getConnectedWifi"
+      "getNetworkType",
+      "createCameraContext",
+      "getBLEDeviceCharacteristics",
+      "getConnectedWifi"
     ],
     "media":[
-      "wx.chooseVideo",
-      "wx.chooseMedia",
-      "wx.getFileInfo",
-      "wx.startRecord"
+      "chooseVideo",
+      "chooseMedia",
+      "getFileInfo",
+      "startRecord"
     ],
     "address":[
-      "wx.chooseAddress"
+      "chooseAddress"
     ],
     "open-API":[
-      "wx.getWeRunData",
-      "wx.chooseInvoiceTitle",
-      "wx.chooseInvoice",
-      "wx.chooseContact"
+      "getWeRunData",
+      "chooseInvoiceTitle",
+      "chooseInvoice",
+      "chooseContact"
     ]
   },       
   "sinks": {
     "navigate":[
-      "wx.navigateToMiniProgram",
-      "wx.openEmbeddedMiniProgram",
-      "wx.navigateBackMiniProgram",
-      "wx.postMessageToReferrerMiniProgram"
+      "navigateToMiniProgram",
+      "openEmbeddedMiniProgram",
+      "navigateBackMiniProgram",
+      "postMessageToReferrerMiniProgram"
     ],
-    "websocket":["wx.sendSocketMessage"],
-    "UDP":["wx.createUDPSocket"],
-    "request":["wx.request"],
-    "upload": ["wx.uploadFile"]
+    "websocket":["sendSocketMessage"],
+    "UDP":["createUDPSocket"],
+    "request":["request"],
+    "upload": ["upload"]
   }
 }
