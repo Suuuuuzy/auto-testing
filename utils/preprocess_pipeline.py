@@ -5,7 +5,7 @@ import argparse
 import logging
 logger = logging.getLogger(__name__)
 from single_preprocess import preprocess
-logfileName = 'wxapkgs-42w-unpacked-preprocessing.log'
+logfileName = 'preprocessing.log'
 logging.basicConfig(
     filename= logfileName,
     level=logging.DEBUG,
