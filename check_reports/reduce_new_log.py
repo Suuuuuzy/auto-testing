@@ -8,7 +8,6 @@
 
 import sys, os, json, re
 from decoded_check import CAPNPParser, convert_string
-from guess_appid_from_log_fix import get_org_fit
 log_basepath = "/home/suzy/temp/decoded_new_taint_log_file/"
 
 def details_in_record(frame):
