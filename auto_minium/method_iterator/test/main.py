@@ -2,6 +2,7 @@
 
 from test_minium_ablation import Minium_Query
 from test_monkey_ablation import Monkey_Query
+from test_minium_performance import Minium_Query_Perf
 import unittest, time, datetime
 import subprocess
 import logging
@@ -30,20 +31,6 @@ class MyTestRunner(unittest.TextTestRunner):
     def _makeResult(self):
         return MyTestResult(self.stream, self.descriptions, self.verbosity)
 
-def kill_wechat():
-    # Find PIDs of processes containing "wechat"
-    find_process = subprocess.run(['pgrep', '-f', 'wechat-web-devtools-linux-nodebug'], capture_output=True, text=True)
-
-    # Check if any PIDs were found
-    if find_process.stdout:
-        pids = find_process.stdout.splitlines()  # Split output into lines to get individual PIDs
-        for pid in pids:
-            # Kill each process using SIGKILL
-            subprocess.run(['kill', '-9', pid])
-            print(f"Killed process with PID: {pid}")
-    else:
-        print("No processes found matching 'wechat'.")
-
 def cleanup():
     """Function to call teardown on each test case."""
     logger_main.info("Running cleanup: calling teardown on all test cases.")
@@ -70,11 +57,14 @@ def maintest(test='autominium_test', log_file_path='autominium_test.log'):
 
     Minium_Query.logger_main = logger_main
     Monkey_Query.logger_main = logger_main
+    Minium_Query_Perf.logger_main = logger_main
     
     if test == 'autominium_test':
         loaded_suite = unittest.TestLoader().loadTestsFromTestCase(Minium_Query)
-    else:
+    elif test == 'monkey_test':
         loaded_suite = unittest.TestLoader().loadTestsFromTestCase(Monkey_Query)
+    elif test == 'autominium_test_perf':
+        loaded_suite = unittest.TestLoader().loadTestsFromTestCase(Minium_Query_Perf)
 
     for test_case in loaded_suite:
         logger_main.info(test_case)
@@ -90,4 +80,4 @@ def maintest(test='autominium_test', log_file_path='autominium_test.log'):
     logger_main.info(elapse_time)
 
 if __name__ == "__main__":
-    maintest()
+    maintest(test='autominium_test_perf')
