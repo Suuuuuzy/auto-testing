@@ -145,12 +145,12 @@ def decrypt_by_salt_and_iv(wxid, input_file, output_file, salt, iv):
 
 
 if __name__ == '__main__':
-    # wxapkg_path = '/Users/jianjia/Library/Containers/com.tencent.xinWeChat/Data/.wxapplet/packages/wx43aab19a93a3a6f2/448/__APP__.wxapkg'
+    wxapkg_path = '/Users/jianjia/Library/Containers/com.tencent.xinWeChat/Data/.wxapplet/packages/wx43aab19a93a3a6f2/448/__APP__.wxapkg'
     # test unveilr
-    # decompile_wxapkg_with_unveilr(wxapkg_path, output_path='/root/minidroid/dataset/WeMint-TP/miniprograms/')
+    decompile_wxapkg_with_unveilr(wxapkg_path, output_path='/root/minidroid/dataset/WeMint-TP/miniprograms/')
 
     # test wxappUnpacker
-    import sys
-    wxapkg_path = sys.argv[1]
-    output_path = wxapkg_path.replace(".wxapkg", "")
-    decompile_wxapkg_with_wxUnpacker(wxapkg_path, output_path)
+    # import sys
+    # wxapkg_path = sys.argv[1]
+    # output_path = wxapkg_path.replace(".wxapkg", "")
+    # decompile_wxapkg_with_wxUnpacker(wxapkg_path, output_path)
