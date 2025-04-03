@@ -229,9 +229,6 @@ class Minium_Query_Perf(BaseDef):
             self.visited_pages[page] += 1
             self.logger_main.info(f'Page: {page} visited {self.visited_pages[page]} time.')
             dealWithPage(page)
-            
-        perf_data = self.app.stop_get_perf_time()
-        self.logger_main.info(f'Performance data: {perf_data}.')
         
         query = {'testkey': 'testvalueOnLoad'}
         # visit the rest pages if they have not been visited with query
@@ -255,6 +252,8 @@ class Minium_Query_Perf(BaseDef):
         self.logger_main.info(f'Visited {len(self.visited_pages)} pages out of {len(self.all_pages)}.')
         self.logger_main.info(f'Visited {self.all_binding_cnt-self.get_binding_cnt()} binding functions out of {self.all_binding_cnt}.')
         self.logger_main.info(f'Visited {self.all_ele_cnt-self.get_ele_cnt()} input/forms out of {self.all_ele_cnt}.')
+        perf_data = self.app.collect_get_perf_time()
+        self.logger_main.info(f'Performance data: {perf_data}.')
         self.logger_main.info("==============================OUTPUT PROGRESS==============================")
         
     def tearDown(self):
